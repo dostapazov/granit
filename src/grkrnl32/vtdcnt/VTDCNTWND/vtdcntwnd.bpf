@@ -1,0 +1,12 @@
+USEFORM("..\..\GKLIB\VCL\gkmodule_form.cpp", GKModuleForm);
+USEFORM("vtdsetup.cpp", VTDSetupFrm);
+USEFORM("..\..\GKLIB\VCL\gkmod_frame.cpp", GKModuleFrame); /* TFrame: File Type */
+USEFORM("mod_config_frame.cpp", VtdModConfig); /* TFrame: File Type */
+USEFORM("vtd_line_cfg_frame.cpp", VtdLineConfig); /* TFrame: File Type */
+USEFORM("MonFrame.cpp", MonitorFrame); /* TFrame: File Type */
+USEFORM("vtd_group_cfg_frame.cpp", VtdGroupConfig); /* TFrame: File Type */
+USEFORM("view_frame.cpp", ViewFrame); /* TFrame: File Type */
+//---------------------------------------------------------------------------
+This file is used by the project manager only and should be treated like the project file
+
+DllMain

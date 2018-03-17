@@ -1,0 +1,60 @@
+ term_request = 0
+
+ function can_work()
+   tr = check_terminate();
+   if ( tr ~= term_request) then
+       term_request = tr;
+     __trace("need send undo");
+     set_rc_active(0);
+   end    
+  if(term_request) then return 0; 
+  else
+  return 1;
+  end;
+ end
+
+ function wait_value(item_name,value,quality,count,sleep_long)
+  result    = 0;
+  success   = 1;
+  __trace(("begin wait_value ".. count));
+  while (count>0 and success == 1 and result == 0 and can_work() ) do
+       count = count-1;
+      succes,cval,cqual = get_value(item_name);
+      __trace (("succes "..success.." cval "..cval.." qality "..cqual));
+    if  ( success == 1 and cqual == quality and cval == value) then
+       result = 1;
+       else
+       sleep(sleep_long);
+     end    
+  end
+  __trace(("end wait_value result "..result));
+  return result; 
+ end
+
+
+function tu_main()
+ -- main tu function
+  __trace("begin tu_main");
+   set_rc_prepare(1);
+   s,v,q = get_value();
+   set_value(10,"System.TimeOutDB");
+   wait_res =  wait_value("System.TimeOutDB",8,192,50,100); 
+   if  (wait_res == 1)  then
+        if ( can_work() and term_request>0 ) then return 0;end;      
+        set_rc_active(1);
+        set_value    (0,"System.TimeOutDB");
+        wait_res =  wait_value("System.TimeOutDB",-2,192,50,100); 
+        if ( can_work() and term_request>0 ) then return 0;end;      
+        set_value   (wait_res*1000,"System.TimeOutDB");
+        sleep(500);
+        set_rc_error (0);
+        set_rc_active(0);
+      else
+        set_value(-100,"System.TimeOutDB");
+        set_rc_error(1);
+     end
+  __trace("end tu_main");
+ return 0;
+end
+
+return tu_main();

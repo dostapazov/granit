@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="D:\USER\GRANIT\GRKRNL32\mediumDbwnd.dll"/>
+    <OBJFILES value="d:\temp\mediumdb\mediumdbwnd_main.obj d:\temp\mediumdb\gkmodule_form.obj 
+      d:\temp\mediumdb\mediumdb_frm.obj d:\temp\mediumdb\mdb_currstate.obj 
+      d:\temp\mediumdb\record_frame.obj d:\temp\mediumdb\kadr_painter.obj 
+      d:\temp\mediumdb\kadrs_editor.obj d:\temp\mediumdb\kadr_painter_frame.obj 
+      d:\temp\mediumdb\kadrs_table.obj d:\temp\mediumdb\inpaddtmask.obj"/>
+    <RESFILES value="mediumDbwnd.res d:\temp\mediumdb\med_dbwnd.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) ..\..\GKLIB\VCL\gkmodule_form.dfm mediumdb_frm.dfm 
+      mdb_currstate.dfm record_frame.dfm kadr_painter.dfm kadrs_editor.dfm 
+      kadr_painter_frame.dfm ..\inpaddtmask.dfm"/>
+    <LIBFILES value="..\..\..\..\LIB\Ke_rtls.lib ..\..\..\..\LIB\GKHANDLE.LIB 
+      ..\..\..\..\LIB\gklib.lib D:\BCB\Lib\memmgr.lib 
+      ..\..\..\..\LIB\otdhlpr.lib ..\..\..\..\..\LIB\PICTDLGS.LIB"/>
+    <LIBRARIES value="vclx.lib bcbsmp.lib rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib bcbsmp.lib vclx.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;..\..\GKLIB\VCL;.."/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="STRICT;STRETCH;_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT;_NO_VCL"/>
+    <MAINSOURCE value="mediumDbwnd.bpf"/>
+    <INCLUDEPATH value="..\;..;..\..\VTDCNT\VTDCNTWND;..\..;..\..\GKLIB\VCL;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE"/>
+    <LIBPATH value="..\;..;..\..\VTDCNT\VTDCNTWND;..\..;..\..\GKLIB\VCL;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\. -I.. -I..\..\VTDCNT\VTDCNTWND -I..\.. -I..\..\GKLIB\VCL 
+      -I$(BCB)\include -I$(BCB)\include\vcl -ID:\USER\GRANIT\INC 
+      -ID:\USER\GRANIT\INC\GRKRNL32 -ID:\USER\INCLUDE -src_suffix cpp -DSTRICT 
+      -DSTRETCH -D_DEBUG -boa"/>
+    <CFLAG1 value="-WD -Od -H=d:\temp\mediumdb\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -5 -b- -k -y 
+      -v -vi- -tWD -tWM -c"/>
+    <PFLAGS value="-N2d:\temp\mediumdb -N0d:\temp\mediumdb -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-Id:\temp\mediumdb -D&quot;&quot; -H:0x1000000 -aa -Tpd -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="mediumDbwnd.res" FORMNAME="" UNITNAME="mediumDbwnd.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="mediumDbwnd.bpf" FORMNAME="" UNITNAME="mediumDbwnd" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="mediumdbwnd_main.cpp" FORMNAME="" UNITNAME="mediumdbwnd_main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GKLIB\VCL\gkmodule_form.cpp" FORMNAME="GKModuleForm" UNITNAME="gkmodule_form" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\LIB\Ke_rtls.lib" FORMNAME="" UNITNAME="Ke_rtls.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\LIB\GKHANDLE.LIB" FORMNAME="" UNITNAME="GKHANDLE.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\LIB\gklib.lib" FORMNAME="" UNITNAME="gklib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\BCB\Lib\memmgr.lib" FORMNAME="" UNITNAME="memmgr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="mediumdb_frm.cpp" FORMNAME="MediumDBFrm" UNITNAME="mediumdb_frm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="mdb_currstate.cpp" FORMNAME="MDBCurrentState" UNITNAME="mdb_currstate" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\LIB\otdhlpr.lib" FORMNAME="" UNITNAME="otdhlpr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="record_frame.cpp" FORMNAME="RecordFrame" UNITNAME="record_frame" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\..\LIB\PICTDLGS.LIB" FORMNAME="" UNITNAME="PICTDLGS.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="med_dbwnd.rc" FORMNAME="" UNITNAME="med_dbwnd.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="kadr_painter.cpp" FORMNAME="KadrPainter" UNITNAME="kadr_painter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="kadrs_editor.cpp" FORMNAME="KadrsEditor" UNITNAME="kadrs_editor" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="kadr_painter_frame.cpp" FORMNAME="KadrPainterFrame" UNITNAME="kadr_painter_frame" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\kadrs_table.cpp" FORMNAME="" UNITNAME="kadrs_table" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\inpaddtmask.cpp" FORMNAME="InputAddrMask" UNITNAME="inpaddtmask" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=17
+Item0=..\;..;..\..\VTDCNT\VTDCNTWND;..\..;..\..\GKLIB\VCL;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item1=..;..\..\VTDCNT\VTDCNTWND;..\..;..\..\GKLIB\VCL;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item2=..\;..\..\VTDCNT\VTDCNTWND;..\..;..;..\..\GKLIB\VCL;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item3=..\..\VTDCNT\VTDCNTWND;..\..;..\;..;..\..\GKLIB\VCL;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item4=..;..\..\GKLIB\VCL;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item5=..\;..\..\GKLIB\VCL;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item6=..\..\GKLIB\VCL;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item7=..;..\..\..\..\PROJS;..\..;..\..\GKLIB\VCL;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item8=..\;..\..\..\..\PROJS;..\..;..\..\GKLIB\VCL;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item9=..\..\..\..\PROJS;..\..;..\..\GKLIB\VCL;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item10=..\..\..\..\PROJS;..\..;..\..\GKLIB\VCL;MediumDB\MediumDbWnd;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item11=..\..;..\..\GKLIB\VCL;MediumDB\MediumDbWnd;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item12=$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item13=..\OTDHLPR;..\GKLIB;..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item14=..\GKLIB;..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item15=..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item16=..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=17
+Item0=..\;..;..\..\VTDCNT\VTDCNTWND;..\..;..\..\GKLIB\VCL;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..;..\..\VTDCNT\VTDCNTWND;..\..;..\..\GKLIB\VCL;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\;..\..\VTDCNT\VTDCNTWND;..\..;..;..\..\GKLIB\VCL;$(BCB)\lib\obj;$(BCB)\lib
+Item3=..\..\VTDCNT\VTDCNTWND;..\..;..\;..;..\..\GKLIB\VCL;$(BCB)\lib\obj;$(BCB)\lib
+Item4=..;..\..\GKLIB\VCL;$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\;..;..\..\GKLIB\VCL;$(BCB)\lib\obj;$(BCB)\lib
+Item6=..\;..\..\GKLIB\VCL;$(BCB)\lib\obj;$(BCB)\lib
+Item7=..\..\GKLIB\VCL;$(BCB)\lib\obj;$(BCB)\lib
+Item8=..;..\..\..\..\PROJS;..\..;..\..\GKLIB\VCL;MediumDB\MediumDbWnd;$(BCB)\lib\obj;$(BCB)\lib
+Item9=..\;..\..\..\..\PROJS;..\..;..\..\GKLIB\VCL;MediumDB\MediumDbWnd;$(BCB)\lib\obj;$(BCB)\lib
+Item10=..\..\..\..\PROJS;..\..;..\..\GKLIB\VCL;MediumDB\MediumDbWnd;$(BCB)\lib\obj;$(BCB)\lib
+Item11=..\..;..\..\GKLIB\VCL;MediumDB\MediumDbWnd;$(BCB)\lib\obj;$(BCB)\lib
+Item12=$(BCB)\lib\obj;$(BCB)\lib
+Item13=..\OTDHLPR;..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item14=..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item15=..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item16=..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=5
+Item0=STRICT;STRETCH;_DEBUG
+Item1=STRICT;STRETCH
+Item2=_DEBUG;STRICT;STRETCH
+Item3=_DEBUG;STRETCH
+Item4=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=d:\temp\mediumdb
+Item1=d:\temp
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=D:\USER\GRANIT\GRKRNL32\
+Item1=D:\USER\GRANIT\GRKRNL32
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=-nosplash -config
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=D:\USER\GRANIT\GRKRNL32\grkrnl32.exe
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

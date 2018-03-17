@@ -1,0 +1,15 @@
+#include "gkopc_client.h"
+
+STRINGTABLE
+BEGIN
+IDS_MODULE_PROVIDER  PROVIDER_STRING
+
+IDS_MODULE_DESCRIPT      "Реализация модема OPC клиента"
+IDS_MODULE_NAME          "Модем OPC клиент"
+IDS_MODEM_INFO           "Модем OPC клиент"
+END
+
+
+IDI_MODULE_ICONSM  ICON "opc_client16.ICO"
+IDI_MODULE_ICON    ICON "opc_client32.ICO"
+

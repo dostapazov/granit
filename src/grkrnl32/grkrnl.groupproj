@@ -1,0 +1,1110 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9E6E24B5-0286-4D06-8283-B63C5CEFD88F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\KE_RTL\KE_RTLS.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GKLIB\gklib.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HANDLE\gkhandle.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="KERNEL\grkrnl32.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="KERNEL\tlmcentr32.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OTDHLPR\otdhlpr.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="KERNEL\gkernel.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="KERNEL\KEXPLORER\gkexplorer.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ReporterEx\ReporterEx.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ReporterEx\ReporterEx_WND\ReporterExWnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MODEMMER\modemmer.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MODEMMER\MODEMMERWND\modemmerwnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GKIPMODEM\gkipmodem.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GKIPMODEM\GKIPMODEM_WND\gkipmodemwnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GKTLMDB\gktlmdb.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GKTLMDB\GKTLMDBWND\gktlmdbwnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MediumDB\mediumdb.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MediumDB\MediumDbWnd\mediumdbwnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="rechistory\rechistory.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="rechistory\rechistory_wnd\rechistory_wnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GRANITMDM\granitmdm.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GRANITMDM\GRANITMDM_WND\granitmdmwnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GRANIT_TCPIO\granit_udpio.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="iec60870\iec60870.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="iec60870\iec60870wnd\iec60870wnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GRIPXMOD\gripxmod.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GRIPXMOD\GRIPXMODWND\gripxmodwnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="opc_client\gkopc_client.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="opc_client\wnd\gkopc_client_wnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="tlmobj_painter\tlmobj_painter.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="gkawp\gk_workplace.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GKSECURITY\gksecurity.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GKSECURITY\gksecurwnd\gksecurwnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="cpc152dev\cpc152dev.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="cpc152dev\cpc152devwnd\cpc152dev_wnd.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\OPC\OPCSRV\opc_serv32.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="KE_RTLS">
+        <MSBuild Projects="..\KE_RTL\KE_RTLS.cbproj"/>
+    </Target>
+    <Target Name="KE_RTLS:Clean">
+        <MSBuild Projects="..\KE_RTL\KE_RTLS.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="KE_RTLS:Make">
+        <MSBuild Projects="..\KE_RTL\KE_RTLS.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gklib">
+        <MSBuild Projects="GKLIB\gklib.cbproj"/>
+    </Target>
+    <Target Name="gklib:Clean">
+        <MSBuild Projects="GKLIB\gklib.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gklib:Make">
+        <MSBuild Projects="GKLIB\gklib.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gkhandle">
+        <MSBuild Projects="HANDLE\gkhandle.cbproj"/>
+    </Target>
+    <Target Name="gkhandle:Clean">
+        <MSBuild Projects="HANDLE\gkhandle.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gkhandle:Make">
+        <MSBuild Projects="HANDLE\gkhandle.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="grkrnl32">
+        <MSBuild Projects="KERNEL\grkrnl32.cbproj"/>
+    </Target>
+    <Target Name="grkrnl32:Clean">
+        <MSBuild Projects="KERNEL\grkrnl32.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="grkrnl32:Make">
+        <MSBuild Projects="KERNEL\grkrnl32.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="tlmcentr32">
+        <MSBuild Projects="KERNEL\tlmcentr32.cbproj"/>
+    </Target>
+    <Target Name="tlmcentr32:Clean">
+        <MSBuild Projects="KERNEL\tlmcentr32.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="tlmcentr32:Make">
+        <MSBuild Projects="KERNEL\tlmcentr32.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="otdhlpr">
+        <MSBuild Projects="OTDHLPR\otdhlpr.cbproj"/>
+    </Target>
+    <Target Name="otdhlpr:Clean">
+        <MSBuild Projects="OTDHLPR\otdhlpr.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="otdhlpr:Make">
+        <MSBuild Projects="OTDHLPR\otdhlpr.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gkernel">
+        <MSBuild Projects="KERNEL\gkernel.cbproj"/>
+    </Target>
+    <Target Name="gkernel:Clean">
+        <MSBuild Projects="KERNEL\gkernel.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gkernel:Make">
+        <MSBuild Projects="KERNEL\gkernel.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gkexplorer">
+        <MSBuild Projects="KERNEL\KEXPLORER\gkexplorer.cbproj"/>
+    </Target>
+    <Target Name="gkexplorer:Clean">
+        <MSBuild Projects="KERNEL\KEXPLORER\gkexplorer.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gkexplorer:Make">
+        <MSBuild Projects="KERNEL\KEXPLORER\gkexplorer.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="ReporterEx">
+        <MSBuild Projects="ReporterEx\ReporterEx.cbproj"/>
+    </Target>
+    <Target Name="ReporterEx:Clean">
+        <MSBuild Projects="ReporterEx\ReporterEx.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ReporterEx:Make">
+        <MSBuild Projects="ReporterEx\ReporterEx.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="ReporterExWnd">
+        <MSBuild Projects="ReporterEx\ReporterEx_WND\ReporterExWnd.cbproj"/>
+    </Target>
+    <Target Name="ReporterExWnd:Clean">
+        <MSBuild Projects="ReporterEx\ReporterEx_WND\ReporterExWnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ReporterExWnd:Make">
+        <MSBuild Projects="ReporterEx\ReporterEx_WND\ReporterExWnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="modemmer">
+        <MSBuild Projects="MODEMMER\modemmer.cbproj"/>
+    </Target>
+    <Target Name="modemmer:Clean">
+        <MSBuild Projects="MODEMMER\modemmer.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="modemmer:Make">
+        <MSBuild Projects="MODEMMER\modemmer.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="modemmerwnd">
+        <MSBuild Projects="MODEMMER\MODEMMERWND\modemmerwnd.cbproj"/>
+    </Target>
+    <Target Name="modemmerwnd:Clean">
+        <MSBuild Projects="MODEMMER\MODEMMERWND\modemmerwnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="modemmerwnd:Make">
+        <MSBuild Projects="MODEMMER\MODEMMERWND\modemmerwnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gkipmodem">
+        <MSBuild Projects="GKIPMODEM\gkipmodem.cbproj"/>
+    </Target>
+    <Target Name="gkipmodem:Clean">
+        <MSBuild Projects="GKIPMODEM\gkipmodem.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gkipmodem:Make">
+        <MSBuild Projects="GKIPMODEM\gkipmodem.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gkipmodemwnd">
+        <MSBuild Projects="GKIPMODEM\GKIPMODEM_WND\gkipmodemwnd.cbproj"/>
+    </Target>
+    <Target Name="gkipmodemwnd:Clean">
+        <MSBuild Projects="GKIPMODEM\GKIPMODEM_WND\gkipmodemwnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gkipmodemwnd:Make">
+        <MSBuild Projects="GKIPMODEM\GKIPMODEM_WND\gkipmodemwnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gktlmdb">
+        <MSBuild Projects="GKTLMDB\gktlmdb.cbproj"/>
+    </Target>
+    <Target Name="gktlmdb:Clean">
+        <MSBuild Projects="GKTLMDB\gktlmdb.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gktlmdb:Make">
+        <MSBuild Projects="GKTLMDB\gktlmdb.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gktlmdbwnd">
+        <MSBuild Projects="GKTLMDB\GKTLMDBWND\gktlmdbwnd.cbproj"/>
+    </Target>
+    <Target Name="gktlmdbwnd:Clean">
+        <MSBuild Projects="GKTLMDB\GKTLMDBWND\gktlmdbwnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gktlmdbwnd:Make">
+        <MSBuild Projects="GKTLMDB\GKTLMDBWND\gktlmdbwnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="mediumdb">
+        <MSBuild Projects="MediumDB\mediumdb.cbproj"/>
+    </Target>
+    <Target Name="mediumdb:Clean">
+        <MSBuild Projects="MediumDB\mediumdb.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mediumdb:Make">
+        <MSBuild Projects="MediumDB\mediumdb.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="mediumdbwnd">
+        <MSBuild Projects="MediumDB\MediumDbWnd\mediumdbwnd.cbproj"/>
+    </Target>
+    <Target Name="mediumdbwnd:Clean">
+        <MSBuild Projects="MediumDB\MediumDbWnd\mediumdbwnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="mediumdbwnd:Make">
+        <MSBuild Projects="MediumDB\MediumDbWnd\mediumdbwnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="rechistory">
+        <MSBuild Projects="rechistory\rechistory.cbproj"/>
+    </Target>
+    <Target Name="rechistory:Clean">
+        <MSBuild Projects="rechistory\rechistory.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="rechistory:Make">
+        <MSBuild Projects="rechistory\rechistory.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="rechistory_wnd">
+        <MSBuild Projects="rechistory\rechistory_wnd\rechistory_wnd.cbproj"/>
+    </Target>
+    <Target Name="rechistory_wnd:Clean">
+        <MSBuild Projects="rechistory\rechistory_wnd\rechistory_wnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="rechistory_wnd:Make">
+        <MSBuild Projects="rechistory\rechistory_wnd\rechistory_wnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="granitmdm">
+        <MSBuild Projects="GRANITMDM\granitmdm.cbproj"/>
+    </Target>
+    <Target Name="granitmdm:Clean">
+        <MSBuild Projects="GRANITMDM\granitmdm.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="granitmdm:Make">
+        <MSBuild Projects="GRANITMDM\granitmdm.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="granitmdmwnd">
+        <MSBuild Projects="GRANITMDM\GRANITMDM_WND\granitmdmwnd.cbproj"/>
+    </Target>
+    <Target Name="granitmdmwnd:Clean">
+        <MSBuild Projects="GRANITMDM\GRANITMDM_WND\granitmdmwnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="granitmdmwnd:Make">
+        <MSBuild Projects="GRANITMDM\GRANITMDM_WND\granitmdmwnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="granit_udpio">
+        <MSBuild Projects="GRANIT_TCPIO\granit_udpio.cbproj"/>
+    </Target>
+    <Target Name="granit_udpio:Clean">
+        <MSBuild Projects="GRANIT_TCPIO\granit_udpio.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="granit_udpio:Make">
+        <MSBuild Projects="GRANIT_TCPIO\granit_udpio.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="iec60870">
+        <MSBuild Projects="iec60870\iec60870.cbproj"/>
+    </Target>
+    <Target Name="iec60870:Clean">
+        <MSBuild Projects="iec60870\iec60870.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="iec60870:Make">
+        <MSBuild Projects="iec60870\iec60870.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="iec60870wnd">
+        <MSBuild Projects="iec60870\iec60870wnd\iec60870wnd.cbproj"/>
+    </Target>
+    <Target Name="iec60870wnd:Clean">
+        <MSBuild Projects="iec60870\iec60870wnd\iec60870wnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="iec60870wnd:Make">
+        <MSBuild Projects="iec60870\iec60870wnd\iec60870wnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gripxmod">
+        <MSBuild Projects="GRIPXMOD\gripxmod.cbproj"/>
+    </Target>
+    <Target Name="gripxmod:Clean">
+        <MSBuild Projects="GRIPXMOD\gripxmod.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gripxmod:Make">
+        <MSBuild Projects="GRIPXMOD\gripxmod.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gripxmodwnd">
+        <MSBuild Projects="GRIPXMOD\GRIPXMODWND\gripxmodwnd.cbproj"/>
+    </Target>
+    <Target Name="gripxmodwnd:Clean">
+        <MSBuild Projects="GRIPXMOD\GRIPXMODWND\gripxmodwnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gripxmodwnd:Make">
+        <MSBuild Projects="GRIPXMOD\GRIPXMODWND\gripxmodwnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gkopc_client">
+        <MSBuild Projects="opc_client\gkopc_client.cbproj"/>
+    </Target>
+    <Target Name="gkopc_client:Clean">
+        <MSBuild Projects="opc_client\gkopc_client.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gkopc_client:Make">
+        <MSBuild Projects="opc_client\gkopc_client.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gkopc_client_wnd">
+        <MSBuild Projects="opc_client\wnd\gkopc_client_wnd.cbproj"/>
+    </Target>
+    <Target Name="gkopc_client_wnd:Clean">
+        <MSBuild Projects="opc_client\wnd\gkopc_client_wnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gkopc_client_wnd:Make">
+        <MSBuild Projects="opc_client\wnd\gkopc_client_wnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="tlmobj_painter">
+        <MSBuild Projects="tlmobj_painter\tlmobj_painter.cbproj"/>
+    </Target>
+    <Target Name="tlmobj_painter:Clean">
+        <MSBuild Projects="tlmobj_painter\tlmobj_painter.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="tlmobj_painter:Make">
+        <MSBuild Projects="tlmobj_painter\tlmobj_painter.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gk_workplace">
+        <MSBuild Projects="gkawp\gk_workplace.cbproj"/>
+    </Target>
+    <Target Name="gk_workplace:Clean">
+        <MSBuild Projects="gkawp\gk_workplace.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gk_workplace:Make">
+        <MSBuild Projects="gkawp\gk_workplace.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gksecurity">
+        <MSBuild Projects="GKSECURITY\gksecurity.cbproj"/>
+    </Target>
+    <Target Name="gksecurity:Clean">
+        <MSBuild Projects="GKSECURITY\gksecurity.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gksecurity:Make">
+        <MSBuild Projects="GKSECURITY\gksecurity.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gksecurwnd">
+        <MSBuild Projects="GKSECURITY\gksecurwnd\gksecurwnd.cbproj"/>
+    </Target>
+    <Target Name="gksecurwnd:Clean">
+        <MSBuild Projects="GKSECURITY\gksecurwnd\gksecurwnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gksecurwnd:Make">
+        <MSBuild Projects="GKSECURITY\gksecurwnd\gksecurwnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="cpc152dev">
+        <MSBuild Projects="cpc152dev\cpc152dev.cbproj"/>
+    </Target>
+    <Target Name="cpc152dev:Clean">
+        <MSBuild Projects="cpc152dev\cpc152dev.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="cpc152dev:Make">
+        <MSBuild Projects="cpc152dev\cpc152dev.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="cpc152dev_wnd">
+        <MSBuild Projects="cpc152dev\cpc152devwnd\cpc152dev_wnd.cbproj"/>
+    </Target>
+    <Target Name="cpc152dev_wnd:Clean">
+        <MSBuild Projects="cpc152dev\cpc152devwnd\cpc152dev_wnd.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="cpc152dev_wnd:Make">
+        <MSBuild Projects="cpc152dev\cpc152devwnd\cpc152dev_wnd.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="opc_serv32">
+        <MSBuild Projects="..\OPC\OPCSRV\opc_serv32.cbproj"/>
+    </Target>
+    <Target Name="opc_serv32:Clean">
+        <MSBuild Projects="..\OPC\OPCSRV\opc_serv32.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="opc_serv32:Make">
+        <MSBuild Projects="..\OPC\OPCSRV\opc_serv32.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="KE_RTLS;gklib;gkhandle;grkrnl32;tlmcentr32;otdhlpr;gkernel;gkexplorer;ReporterEx;ReporterExWnd;modemmer;modemmerwnd;gkipmodem;gkipmodemwnd;gktlmdb;gktlmdbwnd;mediumdb;mediumdbwnd;rechistory;rechistory_wnd;granitmdm;granitmdmwnd;granit_udpio;iec60870;iec60870wnd;gripxmod;gripxmodwnd;gkopc_client;gkopc_client_wnd;tlmobj_painter;gk_workplace;gksecurity;gksecurwnd;cpc152dev;cpc152dev_wnd;opc_serv32"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="KE_RTLS:Clean;gklib:Clean;gkhandle:Clean;grkrnl32:Clean;tlmcentr32:Clean;otdhlpr:Clean;gkernel:Clean;gkexplorer:Clean;ReporterEx:Clean;ReporterExWnd:Clean;modemmer:Clean;modemmerwnd:Clean;gkipmodem:Clean;gkipmodemwnd:Clean;gktlmdb:Clean;gktlmdbwnd:Clean;mediumdb:Clean;mediumdbwnd:Clean;rechistory:Clean;rechistory_wnd:Clean;granitmdm:Clean;granitmdmwnd:Clean;granit_udpio:Clean;iec60870:Clean;iec60870wnd:Clean;gripxmod:Clean;gripxmodwnd:Clean;gkopc_client:Clean;gkopc_client_wnd:Clean;tlmobj_painter:Clean;gk_workplace:Clean;gksecurity:Clean;gksecurwnd:Clean;cpc152dev:Clean;cpc152dev_wnd:Clean;opc_serv32:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="KE_RTLS:Make;gklib:Make;gkhandle:Make;grkrnl32:Make;tlmcentr32:Make;otdhlpr:Make;gkernel:Make;gkexplorer:Make;ReporterEx:Make;ReporterExWnd:Make;modemmer:Make;modemmerwnd:Make;gkipmodem:Make;gkipmodemwnd:Make;gktlmdb:Make;gktlmdbwnd:Make;mediumdb:Make;mediumdbwnd:Make;rechistory:Make;rechistory_wnd:Make;granitmdm:Make;granitmdmwnd:Make;granit_udpio:Make;iec60870:Make;iec60870wnd:Make;gripxmod:Make;gripxmodwnd:Make;gkopc_client:Make;gkopc_client_wnd:Make;tlmobj_painter:Make;gk_workplace:Make;gksecurity:Make;gksecurwnd:Make;cpc152dev:Make;cpc152dev_wnd:Make;opc_serv32:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Modemmer'">
+        <BuildGroupProject Include="GKLIB\gklib.cbproj">
+            <ProjectGuid>{A8DB880C-16FF-4B54-8AF1-EB2EE4A2EB17}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKTLMDB\GKTLMDBWND\gktlmdbwnd.cbproj">
+            <ProjectGuid>{01CC0C2A-6750-41E2-B770-BB8BF21B3B3C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MediumDB\MediumDbWnd\mediumdbwnd.cbproj">
+            <ProjectGuid>{71506A5C-65A2-4A87-98C8-9CA41B3730E7}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\tlmcentr32.cbproj">
+            <ProjectGuid>{52AF567B-5FAA-44AA-AED7-9CB18066AFBF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRIPXMOD\gripxmod.cbproj">
+            <ProjectGuid>{B35D2C5D-70E6-4A15-8D1B-599D39858CE2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="rechistory\rechistory.cbproj">
+            <ProjectGuid>{1AD5902F-FC92-4EB5-8C55-C2ED44ACDD04}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="iec60870\iec60870.cbproj">
+            <ProjectGuid>{BBBED608-12C3-4077-BE4E-EDD249741249}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="tlmobj_painter\tlmobj_painter.cbproj">
+            <ProjectGuid>{95510910-9E9F-4F33-922E-9C51760BCAD4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gkawp\gk_workplace.cbproj">
+            <ProjectGuid>{AA160CA2-FDF2-4D09-836A-76E674ABC4A1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRANIT_TCPIO\granit_udpio.cbproj">
+            <ProjectGuid>{1D387322-336A-4559-AEC3-A65248BD1BAC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRANITMDM\granitmdm.cbproj">
+            <ProjectGuid>{6BB64F23-8F4F-4281-8250-CCBE54CC8B1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="HANDLE\gkhandle.cbproj">
+            <ProjectGuid>{F5297779-176F-4C91-9B36-C95F3324192C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MODEMMER\MODEMMERWND\modemmerwnd.cbproj">
+            <ProjectGuid>{722F0DAA-B2E6-434A-8FE0-ADECDA6CEDB4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\KE_RTL\KE_RTLS.cbproj">
+            <ProjectGuid>{47C491BE-1858-4A98-B6CF-24373E1D9F60}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\gkernel.cbproj">
+            <ProjectGuid>{E6E7BD8D-4442-42BB-B53E-637715DC76C8}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKSECURITY\gksecurwnd\gksecurwnd.cbproj">
+            <ProjectGuid>{686E2D6B-140D-4F03-A7BD-65E0524D1462}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKTLMDB\gktlmdb.cbproj">
+            <ProjectGuid>{1D57C5F7-9A31-42B8-ABC9-61E972AE90BA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRANITMDM\GRANITMDM_WND\granitmdmwnd.cbproj">
+            <ProjectGuid>{CB7E34A3-596C-4DD8-ADF7-390F9145B6AE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKSECURITY\gksecurity.cbproj">
+            <ProjectGuid>{B77E8A59-9972-469A-B92B-3F2D39F03B51}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="opc_client\wnd\gkopc_client_wnd.cbproj">
+            <ProjectGuid>{42925580-9223-4794-8475-D4C52DE6E31C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKIPMODEM\GKIPMODEM_WND\gkipmodemwnd.cbproj">
+            <ProjectGuid>{76B303F8-8742-4897-97C1-61AEF8C9F958}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\OPC\OPCSRV\opc_serv32.cbproj">
+            <ProjectGuid>{78BD5AD0-A4D3-4F3D-8219-75DFAE85BE6D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="cpc152dev\cpc152dev.cbproj">
+            <ProjectGuid>{13E25493-BA28-4C1C-808F-479DC3483A3E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="iec60870\iec60870wnd\iec60870wnd.cbproj">
+            <ProjectGuid>{E709A6B1-1E44-4BE7-9A31-7D755EE0DFD5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="cpc152dev\cpc152devwnd\cpc152dev_wnd.cbproj">
+            <ProjectGuid>{EA41F171-AC12-481C-BDF1-737446012A56}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MediumDB\mediumdb.cbproj">
+            <ProjectGuid>{CDFE1FBC-276E-477F-8FC6-D66B3AF709BC}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ReporterEx\ReporterEx.cbproj">
+            <ProjectGuid>{192288F9-220C-4357-A305-CBCA309BAD49}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRIPXMOD\GRIPXMODWND\gripxmodwnd.cbproj">
+            <ProjectGuid>{CF80016F-9482-4D66-98AB-37A7FB0FBC11}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="opc_client\gkopc_client.cbproj">
+            <ProjectGuid>{7A4424CE-1630-4E44-A525-B91C9E373508}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MODEMMER\modemmer.cbproj">
+            <ProjectGuid>{8F9C3ACB-8A0E-4F56-89BF-AAD2F578DAE0}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ReporterEx\ReporterEx_WND\ReporterExWnd.cbproj">
+            <ProjectGuid>{720D04B6-4DF9-40EE-87DF-B325B2BBB567}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="rechistory\rechistory_wnd\rechistory_wnd.cbproj">
+            <ProjectGuid>{55556CCC-FC1C-468C-B744-85731B920F7C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\grkrnl32.cbproj">
+            <ProjectGuid>{BD5EED4B-927E-4FA7-847C-BDEEC2D26FC9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKIPMODEM\gkipmodem.cbproj">
+            <ProjectGuid>{9DFE8268-4EE9-453C-9BCE-3EAB689F5B84}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="OTDHLPR\otdhlpr.cbproj">
+            <ProjectGuid>{1FA63846-A868-4EA5-9DE1-FD615277A999}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\KEXPLORER\gkexplorer.cbproj">
+            <ProjectGuid>{7DB5B844-21DD-4FB4-896D-DEBCD6AB9C6B}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
+        <BuildGroupProject Include="GKLIB\gklib.cbproj">
+            <ProjectGuid>{A8DB880C-16FF-4B54-8AF1-EB2EE4A2EB17}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKTLMDB\GKTLMDBWND\gktlmdbwnd.cbproj">
+            <ProjectGuid>{01CC0C2A-6750-41E2-B770-BB8BF21B3B3C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MediumDB\MediumDbWnd\mediumdbwnd.cbproj">
+            <ProjectGuid>{71506A5C-65A2-4A87-98C8-9CA41B3730E7}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\tlmcentr32.cbproj">
+            <ProjectGuid>{52AF567B-5FAA-44AA-AED7-9CB18066AFBF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRIPXMOD\gripxmod.cbproj">
+            <ProjectGuid>{B35D2C5D-70E6-4A15-8D1B-599D39858CE2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="rechistory\rechistory.cbproj">
+            <ProjectGuid>{1AD5902F-FC92-4EB5-8C55-C2ED44ACDD04}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="iec60870\iec60870.cbproj">
+            <ProjectGuid>{BBBED608-12C3-4077-BE4E-EDD249741249}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="tlmobj_painter\tlmobj_painter.cbproj">
+            <ProjectGuid>{95510910-9E9F-4F33-922E-9C51760BCAD4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gkawp\gk_workplace.cbproj">
+            <ProjectGuid>{AA160CA2-FDF2-4D09-836A-76E674ABC4A1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRANIT_TCPIO\granit_udpio.cbproj">
+            <ProjectGuid>{1D387322-336A-4559-AEC3-A65248BD1BAC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRANITMDM\granitmdm.cbproj">
+            <ProjectGuid>{6BB64F23-8F4F-4281-8250-CCBE54CC8B1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="HANDLE\gkhandle.cbproj">
+            <ProjectGuid>{F5297779-176F-4C91-9B36-C95F3324192C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MODEMMER\MODEMMERWND\modemmerwnd.cbproj">
+            <ProjectGuid>{722F0DAA-B2E6-434A-8FE0-ADECDA6CEDB4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\KE_RTL\KE_RTLS.cbproj">
+            <ProjectGuid>{47C491BE-1858-4A98-B6CF-24373E1D9F60}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\gkernel.cbproj">
+            <ProjectGuid>{E6E7BD8D-4442-42BB-B53E-637715DC76C8}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKSECURITY\gksecurwnd\gksecurwnd.cbproj">
+            <ProjectGuid>{686E2D6B-140D-4F03-A7BD-65E0524D1462}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKTLMDB\gktlmdb.cbproj">
+            <ProjectGuid>{1D57C5F7-9A31-42B8-ABC9-61E972AE90BA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRANITMDM\GRANITMDM_WND\granitmdmwnd.cbproj">
+            <ProjectGuid>{CB7E34A3-596C-4DD8-ADF7-390F9145B6AE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKSECURITY\gksecurity.cbproj">
+            <ProjectGuid>{B77E8A59-9972-469A-B92B-3F2D39F03B51}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="opc_client\wnd\gkopc_client_wnd.cbproj">
+            <ProjectGuid>{42925580-9223-4794-8475-D4C52DE6E31C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKIPMODEM\GKIPMODEM_WND\gkipmodemwnd.cbproj">
+            <ProjectGuid>{76B303F8-8742-4897-97C1-61AEF8C9F958}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\OPC\OPCSRV\opc_serv32.cbproj">
+            <ProjectGuid>{78BD5AD0-A4D3-4F3D-8219-75DFAE85BE6D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="cpc152dev\cpc152dev.cbproj">
+            <ProjectGuid>{13E25493-BA28-4C1C-808F-479DC3483A3E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="iec60870\iec60870wnd\iec60870wnd.cbproj">
+            <ProjectGuid>{E709A6B1-1E44-4BE7-9A31-7D755EE0DFD5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="cpc152dev\cpc152devwnd\cpc152dev_wnd.cbproj">
+            <ProjectGuid>{EA41F171-AC12-481C-BDF1-737446012A56}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MediumDB\mediumdb.cbproj">
+            <ProjectGuid>{CDFE1FBC-276E-477F-8FC6-D66B3AF709BC}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ReporterEx\ReporterEx.cbproj">
+            <ProjectGuid>{192288F9-220C-4357-A305-CBCA309BAD49}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRIPXMOD\GRIPXMODWND\gripxmodwnd.cbproj">
+            <ProjectGuid>{CF80016F-9482-4D66-98AB-37A7FB0FBC11}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="opc_client\gkopc_client.cbproj">
+            <ProjectGuid>{7A4424CE-1630-4E44-A525-B91C9E373508}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MODEMMER\modemmer.cbproj">
+            <ProjectGuid>{8F9C3ACB-8A0E-4F56-89BF-AAD2F578DAE0}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ReporterEx\ReporterEx_WND\ReporterExWnd.cbproj">
+            <ProjectGuid>{720D04B6-4DF9-40EE-87DF-B325B2BBB567}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="rechistory\rechistory_wnd\rechistory_wnd.cbproj">
+            <ProjectGuid>{55556CCC-FC1C-468C-B744-85731B920F7C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\grkrnl32.cbproj">
+            <ProjectGuid>{BD5EED4B-927E-4FA7-847C-BDEEC2D26FC9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKIPMODEM\gkipmodem.cbproj">
+            <ProjectGuid>{9DFE8268-4EE9-453C-9BCE-3EAB689F5B84}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="OTDHLPR\otdhlpr.cbproj">
+            <ProjectGuid>{1FA63846-A868-4EA5-9DE1-FD615277A999}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\KEXPLORER\gkexplorer.cbproj">
+            <ProjectGuid>{7DB5B844-21DD-4FB4-896D-DEBCD6AB9C6B}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='GrKernel'">
+        <BuildGroupProject Include="GKLIB\gklib.cbproj">
+            <ProjectGuid>{A8DB880C-16FF-4B54-8AF1-EB2EE4A2EB17}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKTLMDB\GKTLMDBWND\gktlmdbwnd.cbproj">
+            <ProjectGuid>{01CC0C2A-6750-41E2-B770-BB8BF21B3B3C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MediumDB\MediumDbWnd\mediumdbwnd.cbproj">
+            <ProjectGuid>{71506A5C-65A2-4A87-98C8-9CA41B3730E7}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\tlmcentr32.cbproj">
+            <ProjectGuid>{52AF567B-5FAA-44AA-AED7-9CB18066AFBF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRIPXMOD\gripxmod.cbproj">
+            <ProjectGuid>{B35D2C5D-70E6-4A15-8D1B-599D39858CE2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="rechistory\rechistory.cbproj">
+            <ProjectGuid>{1AD5902F-FC92-4EB5-8C55-C2ED44ACDD04}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="iec60870\iec60870.cbproj">
+            <ProjectGuid>{BBBED608-12C3-4077-BE4E-EDD249741249}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="tlmobj_painter\tlmobj_painter.cbproj">
+            <ProjectGuid>{95510910-9E9F-4F33-922E-9C51760BCAD4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="gkawp\gk_workplace.cbproj">
+            <ProjectGuid>{AA160CA2-FDF2-4D09-836A-76E674ABC4A1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRANIT_TCPIO\granit_udpio.cbproj">
+            <ProjectGuid>{1D387322-336A-4559-AEC3-A65248BD1BAC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRANITMDM\granitmdm.cbproj">
+            <ProjectGuid>{6BB64F23-8F4F-4281-8250-CCBE54CC8B1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="HANDLE\gkhandle.cbproj">
+            <ProjectGuid>{F5297779-176F-4C91-9B36-C95F3324192C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MODEMMER\MODEMMERWND\modemmerwnd.cbproj">
+            <ProjectGuid>{722F0DAA-B2E6-434A-8FE0-ADECDA6CEDB4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\KE_RTL\KE_RTLS.cbproj">
+            <ProjectGuid>{47C491BE-1858-4A98-B6CF-24373E1D9F60}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\gkernel.cbproj">
+            <ProjectGuid>{E6E7BD8D-4442-42BB-B53E-637715DC76C8}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKSECURITY\gksecurwnd\gksecurwnd.cbproj">
+            <ProjectGuid>{686E2D6B-140D-4F03-A7BD-65E0524D1462}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKTLMDB\gktlmdb.cbproj">
+            <ProjectGuid>{1D57C5F7-9A31-42B8-ABC9-61E972AE90BA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRANITMDM\GRANITMDM_WND\granitmdmwnd.cbproj">
+            <ProjectGuid>{CB7E34A3-596C-4DD8-ADF7-390F9145B6AE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKSECURITY\gksecurity.cbproj">
+            <ProjectGuid>{B77E8A59-9972-469A-B92B-3F2D39F03B51}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="opc_client\wnd\gkopc_client_wnd.cbproj">
+            <ProjectGuid>{42925580-9223-4794-8475-D4C52DE6E31C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKIPMODEM\GKIPMODEM_WND\gkipmodemwnd.cbproj">
+            <ProjectGuid>{76B303F8-8742-4897-97C1-61AEF8C9F958}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\OPC\OPCSRV\opc_serv32.cbproj">
+            <ProjectGuid>{78BD5AD0-A4D3-4F3D-8219-75DFAE85BE6D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="cpc152dev\cpc152dev.cbproj">
+            <ProjectGuid>{13E25493-BA28-4C1C-808F-479DC3483A3E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="iec60870\iec60870wnd\iec60870wnd.cbproj">
+            <ProjectGuid>{E709A6B1-1E44-4BE7-9A31-7D755EE0DFD5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="cpc152dev\cpc152devwnd\cpc152dev_wnd.cbproj">
+            <ProjectGuid>{EA41F171-AC12-481C-BDF1-737446012A56}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MediumDB\mediumdb.cbproj">
+            <ProjectGuid>{CDFE1FBC-276E-477F-8FC6-D66B3AF709BC}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ReporterEx\ReporterEx.cbproj">
+            <ProjectGuid>{192288F9-220C-4357-A305-CBCA309BAD49}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GRIPXMOD\GRIPXMODWND\gripxmodwnd.cbproj">
+            <ProjectGuid>{CF80016F-9482-4D66-98AB-37A7FB0FBC11}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="opc_client\gkopc_client.cbproj">
+            <ProjectGuid>{7A4424CE-1630-4E44-A525-B91C9E373508}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="MODEMMER\modemmer.cbproj">
+            <ProjectGuid>{8F9C3ACB-8A0E-4F56-89BF-AAD2F578DAE0}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ReporterEx\ReporterEx_WND\ReporterExWnd.cbproj">
+            <ProjectGuid>{720D04B6-4DF9-40EE-87DF-B325B2BBB567}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="rechistory\rechistory_wnd\rechistory_wnd.cbproj">
+            <ProjectGuid>{55556CCC-FC1C-468C-B744-85731B920F7C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\grkrnl32.cbproj">
+            <ProjectGuid>{BD5EED4B-927E-4FA7-847C-BDEEC2D26FC9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="GKIPMODEM\gkipmodem.cbproj">
+            <ProjectGuid>{9DFE8268-4EE9-453C-9BCE-3EAB689F5B84}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="OTDHLPR\otdhlpr.cbproj">
+            <ProjectGuid>{1FA63846-A868-4EA5-9DE1-FD615277A999}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="KERNEL\KEXPLORER\gkexplorer.cbproj">
+            <ProjectGuid>{7DB5B844-21DD-4FB4-896D-DEBCD6AB9C6B}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

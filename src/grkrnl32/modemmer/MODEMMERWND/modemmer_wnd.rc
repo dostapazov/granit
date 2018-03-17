@@ -1,0 +1,77 @@
+
+#include "modemmer_wnd.rh"
+
+STRINGTABLE
+LANGUAGE LANG_RUSSIAN,SUBLANG_NEUTRAL
+BEGIN
+IDS_MODEM                "Модем"
+IDS_MODEMS_LIST          "Список модемов"
+IDS_MODEMS_LIST_NONUMBER "Модемы без номера"
+IDS_LINE                 "Линия"
+IDS_WORK                 " работает"
+IDS_STOP                 " остановлен"
+IDS_START_PENDING        " запускается"
+IDS_STOP_PENDING         " останавливается"
+
+IDS_LINE_STATE           "Состояние линии № %d: "
+IDS_LOST_CONNECT         "Обрыв связи"
+IDS_TX_READY             " готовность к передаче "
+IDS_RX_DATA              " приняты новые данные "
+IDS_LINE_NOTACTIVE       "линия неактивна"
+IDS_RX_TEMPLATE          "%s %03d.%03d.%03d -> %03d.%03d.%03d кадр № %5d FA=%04X размер данных = %5d"
+IDS_RX                   "приём          :"
+IDS_TX                   "передача       :"
+IDS_REDIRECT             "перенаправление:"
+IDS_ROUTE                "маршрутизация  :"
+
+IDS_UNDEF_SPEED          "неопределено "
+
+IDS_LINE_CONNECTING      " Подключение "
+IDS_LINE_DISCONNECTING   " Отключение "
+
+IDS_MON_FASTR0           "вызов"
+IDS_MON_FASTR1           "подписка"
+IDS_MON_FASTR2           "вызов+подписка"
+IDS_MON_FASTR3           "отмена подписки"
+IDS_MON_FASTR4           "квитанция"
+
+IDS_MON_OTDADDR          "ОТД адрес %03d.%03d.%03d.%03d "
+END
+
+STRINGTABLE
+LANGUAGE LANG_ENGLISH,SUBLANG_NEUTRAL
+BEGIN
+IDS_MODEM                "Modem"
+IDS_MODEMS_LIST          "Modems list"
+IDS_MODEMS_LIST_NONUMBER "Modems without number"
+IDS_LINE                 "Line"
+IDS_WORK                 " working"
+IDS_STOP                 " stopped"
+IDS_START_PENDING        " starting"
+IDS_STOP_PENDING         " stopping"
+
+IDS_LINE_STATE           "line state № %d: "
+IDS_LOST_CONNECT         "lost connect"
+IDS_TX_READY             " transmit ready "
+IDS_RX_DATA              " receive new data "
+IDS_LINE_NOTACTIVE       "line is inactive"
+IDS_RX_TEMPLATE          "%s %03d.%03d.%03d -> %03d.%03d.%03d кадр № %5d FA=%04X data size = %5d"
+IDS_RX                   "receive        :"
+IDS_TX                   "transmit       :"
+IDS_REDIRECT             "redirection    :"
+IDS_ROUTE                "routing        :"
+
+IDS_UNDEF_SPEED          "undefined    "
+
+IDS_LINE_CONNECTING      " Connecting   "
+IDS_LINE_DISCONNECTING   " Disconnecting"
+
+IDS_MON_FASTR0           "call"
+IDS_MON_FASTR1           "order"
+IDS_MON_FASTR2           "call+order"
+IDS_MON_FASTR3           "order undo"
+IDS_MON_FASTR4           "receipt"
+
+IDS_MON_OTDADDR          "OTD address %03d.%03d.%03d.%03d "
+END
+

@@ -1,0 +1,98 @@
+//---------------------------------------------------------------------------
+
+#ifndef tlm_painter_formH
+#define tlm_painter_formH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <System.ImageList.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.Dialogs.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.ExtDlgs.hpp>
+#include <Vcl.ImgList.hpp>
+#include <Vcl.ToolWin.hpp>
+#include <Vcl.Menus.hpp>
+#include <Vcl.ButtonGroup.hpp>
+#include <memory>
+#include <tlm_painter.hpp>
+#include <kadrs_table.hpp>
+#include <text_table.hpp>
+
+
+
+typedef bool           __fastcall (__closure * Tget_record_closure)(DWORD rec_id,MDB_RECORD & rec);
+typedef UnicodeString  __fastcall (__closure * Tget_text_closure  )(DWORD str_id);
+
+//---------------------------------------------------------------------------
+class TTlmPainterFrom : public TForm
+{
+__published:	// IDE-managed Components
+	TToolBar *ToolBar1;
+	TStatusBar *StatusBar1;
+	TPaintBox *PaintBox1;
+	TImageList *TbImageList;
+	void __fastcall FormResize(TObject *Sender);
+	void __fastcall PaintBox1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
+	void __fastcall PaintBox1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
+          int X, int Y);
+	void __fastcall FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
+	void __fastcall PaintBox1Paint(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
+	void __fastcall ToolButton4Click(TObject *Sender);
+	void __fastcall PaintBox1MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift,int X, int Y);
+
+protected:	// User declarations
+      Tget_record_closure    Fon_get_record;
+      Tget_text_closure      Fon_get_text;
+      UnicodeString          _gts;
+      int                    paint_context;
+      tlmpaint::TBmpBkgnd    bkgnd;
+      std::auto_ptr<TBitmap> bk_bmp;
+
+      Tmouse_state           mstate;
+      single_kadr          * Fkadr;
+      bool                   Fcaptured;
+      DWORD                  Fcurrent_over;
+      bool                   Feditable;
+
+      TBitmap * __fastcall get_bitmap();
+      void __fastcall      CreateParams(TCreateParams & params);
+
+      virtual void __fastcall paint_entryes         (bool erase);
+      virtual void __fastcall paint_selected_entryes(bool erase);
+
+      virtual void __fastcall  do_move_selected(int dx,int dy);
+      virtual void __fastcall  do_size_selected(int dx,int dy);
+      virtual void __fastcall  set_current_over(DWORD val);
+      virtual void __fastcall  paint_select_rect(HDC dc,POINT & spot_pt,LPPOINT  new_pt,LPPOINT old_pt);
+      virtual void __fastcall  captured_mouse_move(TObject *Sender, TShiftState Shift,int X, int Y);
+              void __fastcall  set_captured (bool val);
+              void __fastcall  set_kadr_size(int cx,int cy);
+
+      __property bool  captured     = {read = Fcaptured    , write = set_captured};
+      __property DWORD current_over = {read = Fcurrent_over, write = set_current_over};
+
+      void __fastcall WndProc(TMessage & msg);
+
+
+public:		// User declarations
+	__fastcall TTlmPainterFrom(TComponent* Owner);
+      __property Tget_record_closure  on_get_record  = {read = Fon_get_record ,write = Fon_get_record};
+      __property Tget_text_closure    on_get_text    = {read = Fon_get_text   ,write = Fon_get_text  };
+
+  virtual       void      __fastcall get_record   (DWORD rec_id,MDB_RECORD & rec) const;
+  virtual const wchar_t * __fastcall get_name     (MDB_RECORD & rec,bool short_name) const;
+          UnicodeString   __fastcall get_text     (DWORD str_id) const;
+                void      __fastcall set_bk_mode  (tlmpaint::TBmpBkgnd::bkgnd_mode_t mode);
+                void      __fastcall set_bk_image (UnicodeString image_name);
+                void      __fastcall set_bk_grid  (int grid_size);
+                void      __fastcall set_bk_grayed(bool grayed);
+                void      __fastcall set_kadr     (single_kadr * kadr);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TTlmPainterFrom *TlmPainterFrom;
+//---------------------------------------------------------------------------
+#endif

@@ -1,0 +1,114 @@
+EXPORTS
+otd_calc_data_size     @1
+otd_get_value          @2
+otd_set_value          @3
+otd_copy               @4
+otd_clear              @5
+
+otd_text_copy          @6
+otd_text_merge         @7
+otd_text_compare       @8
+
+
+otd_text_init          @9
+otd_text_getwstr       @10
+
+otd_inc_value          @11
+otd_dec_value          @12
+otd_zero_value         @14
+otd_proto_getvalue     @15
+otd_proto_setvalue     @16
+otd_fill               @17
+
+otd_proto_getver       @20
+otd_proto_parser       @21
+otd_proto_calc_size    @22
+otd_proto_format       @23
+otd_proto_getparts     @24
+otd_scan_personal_diag @25
+otd_cmp_copy           @26
+otd_proto_get_verpart  @27
+otd_proto_format_alarm @28
+
+
+otd_addr_cmp_part         @30
+otd_addr_type             @31
+otd_addr_include          @32
+
+otd_text_set              @50
+otd_text_get_length       @51
+
+
+otd_proto_calc_size_ex    @202
+otd_proto_format_ex       @203
+otd_proto_getparts_ex     @204
+otd_proto_getparam        @205
+otd_proto_format_query    @206
+otd_proto_format_tutr     @207
+otd_proto_getvalue_ex     @208
+
+otd_arch_proto_format      @209
+otd_arch_proto_get_error   @210
+otd_arch_proto_format_list @211
+
+
+otd_calc_checksum         @300
+otd_proto_protect         @301
+otd_proto_check           @302
+
+otd_convert_atony2otd     @400
+otd_convert_otd2atony     @401
+
+gr_proto_parser           @500
+gr_proto_format           @501
+gr_proto_protect          @502
+gr_proto_val2poscode      @503
+gr_proto_poscode2val      @504
+gr_proto_fill_inverse     @505
+gr_proto_tu               @506
+gr_get_ts                 @507
+gr_set_ts                 @508
+gr_calc_kpk               @509
+
+otdm_pack_record          @600
+otdm_unpack_record        @601
+otdm_pack_kadr            @602
+otdm_unpack_kadr          @603
+
+
+modbus_calc_crc           @700
+modbus_ascii2bin          @701
+modbus_bin2ascii          @702
+modbus_format_query       @703
+
+modbus_get_discrete       @704
+modbus_get_analog         @705
+
+modbus_set_discrete       @706
+modbus_set_analog         @707
+
+
+modbus_format_preset      @708
+modbus_format_respond     @709
+
+modbus_protect_crc        @710
+modbus_check_crc          @711
+
+gksecur_coder             @800
+gksecur_login_format      @801
+gksecur_login_extract     @802
+
+iec60870_proto_init_frame       @900
+iec60870_proto_startdt          @901
+iec60870_proto_stopdt           @902
+iec60870_proto_testfr           @903
+iec60870_proto_get_asdu_header  @904
+iec60870_proto_frame_add_data   @905
+iec60870_proto_get_obj_addr     @906
+iec60870_proto_set_obj_addr     @907
+iec60870_proto_receipt          @908
+iec60870_proto_interrogate      @909
+iec60870_proto_control          @910
+
+
+

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.627,=D:\USER\GRANIT\SRC\KE_RTL\Tthread.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.870,=D:\USER\GRANIT\SRC\OPC\LOPC\BIN\unilog_bor.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.258,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\opc_light_iface.cpp=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\opc_light_drv.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.104,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\opc_light_iface.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.309,D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_serv32.cbproj=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.796,=D:\USER\GRANIT\SRC\OPC\LOPC\lo-0.888\bin\lopcsample_bor1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.726,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.106,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.835,=D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_serv32.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.044,D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_serv32PCH1.h=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.371,D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_srv_service.cpp=D:\USER\GRANIT\SRC\OPC\OPCSRV\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.048,=D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_srv_config.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.092,=D:\USER\GRANIT\LIB_XE\unilog_bor.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.070,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.371,D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_srv_service.h=D:\USER\GRANIT\SRC\OPC\OPCSRV\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.527,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.162,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.053,=D:\USER\GRANIT\SRC\OPC\OPCSRV\opcconst.c</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.462,=D:\USER\GRANIT\SRC\OPC\OPCGate\opcconst.c</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.113,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.757,=D:\USER\GRANIT\SRC\OPC\OPCGate\OPC\opcconst.c</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.879,=D:\USER\GRANIT\SRC\GrKrnl32\OTDHLPR\otd_proto_medium.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.285,=D:\USER\GRANIT\SRC\OPC\OPCSRV\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.201,D:\USER\GRANIT\SRC\OPC\OPCGate\opcconst.c=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.942,=D:\USER\GRANIT\LIB_XE\lightopc_bor.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.745,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.058,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.830,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.084,D:\USER\GRANIT\SRC\OPC\LOPC\lo-0.888\bin\lopcsample_bor1PCH1.h=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.932,D:\USER\GRANIT\SRC\OPC\LOPC\BIN\lightopc_bor.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.866,=D:\USER\GRANIT\SRC\OPC\LOPC\BIN\lightopc_bor.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.729,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.510,=D:\USER\GRANIT\SRC\OPC\LOPC\BIN\lightopc_bor.lib</Transaction>
+  </Transactions>
+</BorlandProject>

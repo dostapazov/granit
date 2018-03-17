@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.729,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.995,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_serv32_params.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.327,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.058,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.242,=D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_srv_config.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.410,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp=D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_serv32_params.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.330,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.009,=D:\USER\GRANIT\SRC\KE_RTL\rx_buffer.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.558,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.070,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.107,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\mproto_buffer.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.527,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.162,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.594,=D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_config_form.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.223,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_serv32_params_PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.564,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.040,=D:\USER\GRANIT\SRC\OPC\LOPC\BIN\lightopc_bor.lib</Transaction>
+  </Transactions>
+</BorlandProject>

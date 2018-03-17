@@ -1,0 +1,12 @@
+USEFORM("..\..\GKLIB\VCL\gkmodule_form.cpp", GKModuleForm);
+USEFORM("mediumdb_frm.cpp", MediumDBFrm);
+USEFORM("mdb_currstate.cpp", MDBCurrentState);
+USEFORM("record_frame.cpp", RecordFrame); /* TFrame: File Type */
+USEFORM("kadr_painter.cpp", KadrPainter);
+USEFORM("kadrs_editor.cpp", KadrsEditor);
+USEFORM("kadr_painter_frame.cpp", KadrPainterFrame);
+USEFORM("..\inpaddtmask.cpp", InputAddrMask);
+//---------------------------------------------------------------------------
+This file is used by the project manager only and should be treated like the project file
+
+DllMain 

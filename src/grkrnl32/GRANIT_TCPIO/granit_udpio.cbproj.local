@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.666,C:\Users\sdtu\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\TCPGRANITIO\granit_tcpio.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.578,=D:\USER\GRANIT\SRC\GrKrnl32\FT2USBIO\ft2_usb_io.rc</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.071,=D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.307,=D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.200,D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\gr_udp_io.rc=D:\USER\GRANIT\SRC\GrKrnl32\FT2USBIO\ft2_usb_io.rc</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.518,D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\granit_udpio.h=D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.415,D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\granit_udpio.h=D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.023,D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\granit_udpio.hpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.483,D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\granit_udpio.cpp=D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\tcp_granit_io_main.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.672,D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\granit_udpio.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\granit_tcpio.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.877,C:\Users\sdtu\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\TCPGRANITIO\tcp_granit_io.PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.746,C:\Users\sdtu\Documents\Embarcadero\Studio\Projects\File1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\TCPGRANITIO\tcp_granit_io_main.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.263,=C:\Users\sdtu\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.196,=C:\Users\sdtu\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.564,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.143,=D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.686,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.692,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+  </Transactions>
+</BorlandProject>

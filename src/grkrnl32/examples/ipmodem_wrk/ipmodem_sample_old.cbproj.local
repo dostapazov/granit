@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.826,=D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.013,D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\ipmodem_wrk.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.269,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.281,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.212,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.421,D:\USER\GRANIT\LIB\gklib.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.802,=D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_srv_service.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.951,D:\USER\GRANIT\SRC\OPC\OPCSRV\opc_srv_service.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.436,D:\USER\GRANIT\LIB\Ke_rtls.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.441,D:\USER\GRANIT\LIB\otdhlpr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.586,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>2016.06.11 17:20:50.964,D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\Unit2.cpp=</Transaction>
+    <Transaction>2016.06.11 17:21:02.912,=D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\ipmodem_work.cpp</Transaction>
+    <Transaction>2016.06.11 17:21:14.784,D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\ipmodem_work.cpp=</Transaction>
+    <Transaction>2016.06.11 17:21:23.020,=D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\ipmodem_work.cpp</Transaction>
+    <Transaction>2016.06.11 17:21:37.108,D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\ipmodem_work.cpp=</Transaction>
+    <Transaction>2016.06.11 17:22:46.637,=D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\ipmodem_wrk.cpp</Transaction>
+    <Transaction>2016.06.11 17:24:12.218,D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\ipmodem_sample_old.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\ipmodem_sample.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

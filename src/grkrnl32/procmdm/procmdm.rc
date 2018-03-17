@@ -1,0 +1,20 @@
+#include "gkmodules.h"
+#include "processmdm.h"
+
+STRINGTABLE
+BEGIN
+
+#ifdef COMERCIAL_BUILD
+IDS_MODULE_PROVIDER  "ООО \"Компания промышленной автоматизации\""
+#else
+
+IDS_MODULE_PROVIDER      "Остапенко Д.В. г.Азов 1993-2008"
+#endif
+
+IDS_MODULE_DESCRIPT  "Модем связи с процессом"
+IDS_MODULE_NAME      "Модем связи с процессом"
+IDS_MODEM_INFO       "Просесс-модем"
+END
+
+IDI_MODULE_ICON   ICON "D044_mIRC.ico"
+/*IDI_MODULE_ICONSM ICON "gkipmodem.ico"*/

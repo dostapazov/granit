@@ -1,0 +1,15 @@
+#include "modemmer.h"
+#include "gripxmod_err.rc"
+
+STRINGTABLE
+BEGIN
+IDS_MODULE_PROVIDER      PROVIDER_STRING
+IDS_MODULE_DESCRIPT      "Реализация сетевого IPX протокола 'Гранит'"
+IDS_MODULE_NAME          "Модем IPX протокола 'Гранит' сервер/клиент"
+IDS_MODEM_INFO           "NET IPX 'Гранит'"
+END
+
+IDI_MODULE_ICONSM    ICON "GRNETMOD.ICO"
+IDI_MODULE_ICON      ICON "GRNETMOD.ICO"
+
+

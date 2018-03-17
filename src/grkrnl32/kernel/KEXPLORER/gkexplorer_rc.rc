@@ -1,0 +1,72 @@
+#include "gkexplorer_rc.h"
+
+STRINGTABLE
+LANGUAGE LANG_RUSSIAN,SUBLANG_NEUTRAL
+BEGIN
+IDS_MHANDLE       "Хендл"
+IDS_MVERSION      "Версия"
+IDS_MIMAGE        "Образ"
+IDS_MLANGUAGE     "Язык"
+IDS_REGKEY        "Ключ в реестре"
+IDS_CONFFOLDER    "Папка данных"
+IDS_MPROVIDER     "Разработчик"
+IDS_MDESCRIPT     "Описание"
+IDS_MWORKTIME     "Время работы"
+IDS_MEM_USED      "Память модуля"
+IDS_MOD_TYPE      "Тип модуля"
+IDS_REG_INFO      "Лицензирование"
+
+IDS_CAPTION           "Настройка модуля"
+IDS_MODSTART_PENDING  "Запуск модуля..."
+IDS_MODSTOP_PENDING   "Останов модуля..."
+IDS_RUNNING           "Модуль работает"
+IDS_STOPPED           "Модуль остановлен"
+
+IDS_CMD_APPEND        "Подключение нового модуля"
+IDS_CMD_REMOVING      "Отключение модуля"
+IDS_CMD_STARTING      "Запуск модуля"
+IDS_CMD_STOPPING      "Останов модуля"
+IDS_QUERY_REMOVING    "Вы уверены, что хотите отключить модуль?"
+
+IDS_ENDCMD_ERROR      "Ошибка:"
+IDS_ENDCMD_EXCEPT     "командa вызвалa исключение %X"
+IDS_ENDCMD_CANCEL     "команда отмененa"
+IDS_ENDCMD_SUCCESS    "выполненo успешно"
+END
+
+STRINGTABLE
+LANGUAGE LANG_ENGLISH,SUBLANG_NEUTRAL
+BEGIN
+IDS_MHANDLE       "Handle"
+IDS_MVERSION      "Version"
+IDS_MIMAGE        "Image"
+IDS_MLANGUAGE     "Language"
+IDS_REGKEY        "Registry key"
+IDS_CONFFOLDER    "Data folder"
+IDS_MPROVIDER     "Developer"
+IDS_MDESCRIPT     "Description"
+IDS_MWORKTIME     "Work time"
+IDS_MEM_USED      "Memory in use"
+IDS_MOD_TYPE      "Module type"
+IDS_REG_INFO      "License"
+
+IDS_CAPTION           "Module settings"
+IDS_MODSTART_PENDING  "Module starting..."
+IDS_MODSTOP_PENDING   "Module stoping..."
+IDS_RUNNING           "Module is working"
+IDS_STOPPED           "Module is stopped"
+
+IDS_CMD_APPEND        "Plug in new module"
+IDS_CMD_REMOVING      "Remove module"
+IDS_CMD_STARTING      "Module starting"
+IDS_CMD_STOPPING      "Module stoping"
+IDS_QUERY_REMOVING    "Are you shure to remove module?"
+
+IDS_ENDCMD_ERROR      "Error :"
+IDS_ENDCMD_EXCEPT     "Command raised exception %X"
+IDS_ENDCMD_CANCEL     "Command is cancelled"
+IDS_ENDCMD_SUCCESS    "Command done successfull"
+END
+
+
+

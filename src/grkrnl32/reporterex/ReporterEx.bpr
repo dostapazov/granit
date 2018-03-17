@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="D:\User\GRANIT\GRKRNL32\ReporterEx.gkm"/>
+    <OBJFILES value="d:\temp\reporterex\reporterex_main.obj d:\temp\reporterex\GKReporterEx.obj 
+      d:\temp\reporterex\gkreporter.obj d:\temp\reporterex\gkmodules.obj"/>
+    <RESFILES value="d:\temp\reporterex\ReporterEx.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value="..\..\..\LIB\Ke_rtls.lib ..\..\..\LIB\GKHANDLE.LIB ..\..\..\LIB\gklib.lib &quot;D:\Program Files\Borland\CBuilder6\Lib\memmgr.lib&quot;"/>
+    <LIBRARIES value="bdertl.lib dbrtl.lib rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib bdertl.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;..\GKLIB"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT;_NO_VCL"/>
+    <MAINSOURCE value="ReporterEx.bpf"/>
+    <INCLUDEPATH value="..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\include;$(BCB)\include\vcl;D:\User\GRANIT\INC;D:\User\GRANIT\INC\GRKRNL32"/>
+    <LIBPATH value="..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\GKLIB -I..\KE_RTL -I..\GrKrnl32\GKLIB -I..\GrKrnl32\HANDLE 
+      -I&quot;D:\Program Files\Borland\CBuilder6\Projects&quot; 
+      -ID:\User\GRANIT\SRC\ReporterEx -I$(BCB)\include -I$(BCB)\include\vcl 
+      -ID:\User\GRANIT\INC -ID:\User\GRANIT\INC\GRKRNL32 -src_suffix cpp 
+      -D_DEBUG -boa"/>
+    <CFLAG1 value="-WD -Od -H=d:\temp\reporterex\reporterex.csm -Hc -Vx -Ve -X- -r- -a8 -5 
+      -b- -k -y -v -vi- -tWD -tWM -c"/>
+    <PFLAGS value="-N2d:\temp\reporterex -N0d:\temp\reporterex -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-Id:\temp\reporterex -D&quot;&quot; -aa -Tpd -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cw32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="ReporterEx.RC" FORMNAME="" UNITNAME="ReporterEx.RC" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ReporterEx.bpf" FORMNAME="" UNITNAME="ReporterEx" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="reporterex_main.cpp" FORMNAME="" UNITNAME="reporterex_main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="GKReporterEx.cpp" FORMNAME="" UNITNAME="GKReporterEx" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\Ke_rtls.lib" FORMNAME="" UNITNAME="Ke_rtls.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\GKHANDLE.LIB" FORMNAME="" UNITNAME="GKHANDLE.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\gklib.lib" FORMNAME="" UNITNAME="gklib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\Program Files\Borland\CBuilder6\Lib\memmgr.lib" FORMNAME="" UNITNAME="memmgr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\gkreporter.cpp" FORMNAME="" UNITNAME="gkreporter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\gkmodules.cpp" FORMNAME="" UNITNAME="gkmodules" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=5
+Item0=..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\include;$(BCB)\include\vcl;D:\User\GRANIT\INC;D:\User\GRANIT\INC\GRKRNL32
+Item1=..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\include;$(BCB)\include\vcl;D:\User\GRANIT\INC;D:\User\GRANIT\INC\GRKRNL32
+Item2=..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\include;$(BCB)\include\vcl;D:\User\GRANIT\INC;D:\User\GRANIT\INC\GRKRNL32
+Item3=D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\include;$(BCB)\include\vcl;D:\User\GRANIT\INC;D:\User\GRANIT\INC\GRKRNL32
+Item4=D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=4
+Item0=..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\lib\obj;$(BCB)\lib
+Item3=D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=d:\temp\reporterex
+Item1=d:\temp
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=D:\User\GRANIT\GRKRNL32\
+Item1=D:\User\GRANIT\GRKRNL32
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=nosplash
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=D:\User\GRANIT\GRKRNL32\grkrnl32.exe
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

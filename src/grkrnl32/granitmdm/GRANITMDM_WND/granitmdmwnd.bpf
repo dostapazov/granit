@@ -1,0 +1,15 @@
+USEFORM("..\..\GKLIB\VCL\gkmodule_form.cpp", GKModuleForm);
+USEFORM("grscfrm.cpp", SCGranFrm);
+USEFORM("sc_monitor.cpp", SCMonitor);
+USEFORM("sc_base_frame.cpp", SCBaseFrame); /* TFrame: File Type */
+USEFORM("cp_frame.cpp", CPFrame); /* TFrame: File Type */
+USEFORM("floor_frame.cpp", FloorFrame); /* TFrame: File Type */
+USEFORM("settings_frame1.cpp", SCSettingsFrm); /* TFrame: File Type */
+USEFORM("grp_frame.cpp", GroupFrame); /* TFrame: File Type */
+USEFORM("sc_base_data_frame.cpp", SCBaseDataFrame); /* TFrame: File Type */
+USEFORM("sc_grp_data_frame.cpp", SCGroupDataFrame); /* TFrame: File Type */
+USEFORM("sc_cp_data_frame.cpp", SCCpDataFrame); /* TFrame: File Type */
+//---------------------------------------------------------------------------
+This file is used by the project manager only and should be treated like the project file
+
+DllMain

@@ -1,0 +1,195 @@
+inherited GKEventFrm: TGKEventFrm
+  Left = 491
+  Top = 257
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = #1057#1074#1086#1081#1089#1090#1074#1072': '#1057#1086#1073#1099#1090#1080#1077
+  ClientHeight = 450
+  ClientWidth = 443
+  Font.Charset = RUSSIAN_CHARSET
+  OldCreateOrder = True
+  Position = poOwnerFormCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel: TPanel
+    Left = 8
+    Top = 8
+    Width = 426
+    Height = 400
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 16
+      Top = 16
+      Width = 29
+      Height = 13
+      Caption = #1044#1072#1090#1072':'
+    end
+    object LDate: TLabel
+      Left = 72
+      Top = 16
+      Width = 3
+      Height = 13
+    end
+    object Label3: TLabel
+      Left = 16
+      Top = 40
+      Width = 36
+      Height = 13
+      Caption = #1042#1088#1077#1084#1103':'
+    end
+    object LTime: TLabel
+      Left = 72
+      Top = 40
+      Width = 3
+      Height = 13
+    end
+    object Label5: TLabel
+      Left = 176
+      Top = 16
+      Width = 22
+      Height = 13
+      Caption = #1058#1080#1087':'
+    end
+    object LType: TLabel
+      Left = 216
+      Top = 16
+      Width = 3
+      Height = 13
+    end
+    object Label7: TLabel
+      Left = 16
+      Top = 64
+      Width = 51
+      Height = 13
+      Caption = #1048#1089#1090#1086#1095#1085#1080#1082':'
+    end
+    object LSource: TLabel
+      Left = 72
+      Top = 64
+      Width = 3
+      Height = 13
+    end
+    object Label9: TLabel
+      Left = 16
+      Top = 88
+      Width = 53
+      Height = 13
+      Caption = #1054#1087#1080#1089#1072#1085#1080#1077':'
+    end
+    object LData: TLabel
+      Left = 16
+      Top = 216
+      Width = 44
+      Height = 13
+      Caption = #1044#1072#1085#1085#1099#1077':'
+      Enabled = False
+    end
+    object BtUp: TBitBtn
+      Left = 365
+      Top = 16
+      Width = 41
+      Height = 23
+      TabOrder = 0
+      OnClick = BtUpClick
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        3333333333333333333333333333333333333333333333333333333333333333
+        33333333333FFF3333333333330003333333333333777F333333333333000333
+        3333333333777F3333333333330003333333333333777F333333333333000333
+        3333333333777F33333333333300033333333333FF777FFFF333333000000000
+        3333333777777777333333330000000333333333777777733333333330000033
+        3333333337777733333333333300033333333333337773333333333333303333
+        3333333333373333333333333333333333333333333333333333333333333333
+        3333333333333333333333333333333333333333333333333333}
+      NumGlyphs = 2
+    end
+    object BtDown: TBitBtn
+      Left = 365
+      Top = 43
+      Width = 41
+      Height = 23
+      TabOrder = 1
+      OnClick = BtDownClick
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        3333333333333333333333333333333333333333333333333333333333333333
+        333333333333F33333333333333033333333333333373F333333333333000333
+        33333333337773F33333333330000033333333333777773F3333333300000003
+        3333333377777773F33333300000000033333337777777773333333333000333
+        3333333333777F3333333333330003333333333333777F333333333333000333
+        3333333333777F3333333333330003333333333333777F333333333333000333
+        3333333333777333333333333333333333333333333333333333333333333333
+        3333333333333333333333333333333333333333333333333333}
+      NumGlyphs = 2
+    end
+    object MDesc: TMemo
+      Left = 16
+      Top = 104
+      Width = 393
+      Height = 105
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Courier New'
+      Font.Style = []
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssVertical
+      TabOrder = 2
+    end
+    object MData: TMemo
+      Left = 16
+      Top = 232
+      Width = 393
+      Height = 153
+      Enabled = False
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Courier New'
+      Font.Style = []
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssVertical
+      TabOrder = 3
+    end
+    object BtCopy: TBitBtn
+      Left = 365
+      Top = 72
+      Width = 41
+      Height = 23
+      TabOrder = 4
+      Visible = False
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000130B0000130B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF003333330B7FFF
+        FFB0333333777F3333773333330B7FFFFFB0333333777F3333773333330B7FFF
+        FFB0333333777F3333773333330B7FFFFFB03FFFFF777FFFFF77000000000077
+        007077777777777777770FFFFFFFF00077B07F33333337FFFF770FFFFFFFF000
+        7BB07F3FF3FFF77FF7770F00F000F00090077F77377737777F770FFFFFFFF039
+        99337F3FFFF3F7F777FF0F0000F0F09999937F7777373777777F0FFFFFFFF999
+        99997F3FF3FFF77777770F00F000003999337F773777773777F30FFFF0FF0339
+        99337F3FF7F3733777F30F08F0F0337999337F7737F73F7777330FFFF0039999
+        93337FFFF7737777733300000033333333337777773333333333}
+      NumGlyphs = 2
+    end
+  end
+  object BtClose: TButton
+    Left = 360
+    Top = 416
+    Width = 75
+    Height = 25
+    Caption = #1047#1072#1082#1088#1099#1090#1100
+    TabOrder = 1
+    OnClick = BtCloseClick
+  end
+end

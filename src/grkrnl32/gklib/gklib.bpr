@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="D:\USER\GRANIT\LIB\gklib.lib"/>
+    <OBJFILES value="d:\temp\gklib\gkhandle_based.obj d:\temp\gklib\crcunit_wrapper.obj 
+      d:\temp\gklib\grnet32wrapper.obj d:\temp\gklib\gkmodules.obj 
+      d:\temp\gklib\gkmodule_loader.obj d:\temp\gklib\gkmodules_list.obj 
+      d:\temp\gklib\gkmodules_set.obj d:\temp\gklib\gkhandles_list.obj 
+      d:\temp\gklib\__module_entry.obj d:\temp\gklib\gkreporter.obj 
+      d:\temp\gklib\gkutils.obj d:\temp\gklib\modem.obj 
+      d:\temp\gklib\modem_line.obj d:\temp\gklib\modem_queue.obj 
+      d:\temp\gklib\otd_storage.obj d:\temp\gklib\gkio_iface.obj 
+      d:\temp\gklib\mproto_buffer.obj d:\temp\gklib\rx_buffer.obj"/>
+    <RESFILES value=""/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value=""/>
+    <PACKAGES value=""/>
+    <PATHCPP value=".;..\..\COMMON;..\..\GRNET32;..\..\KE_RTL"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <LINKER value="TLib"/>
+    <USERDEFINES value="STRICT;_NO_VCL;_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="gklib.bpf"/>
+    <INCLUDEPATH value="..\..\KE_RTL;..\..\..\PROJS;..\..\GRNET32;..\..\COMMON;$(BCB)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32"/>
+    <LIBPATH value="..\..\KE_RTL;..\..\..\PROJS;..\..\GRNET32;..\..\COMMON;d:\BCB\CBuilder5\Projects;..\SRC\GRNET32;..\SRC\COMMON;..\SRC\GrKrnl32\GKLIB;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <LISTFILE value=""/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\..\KE_RTL -I..\..\..\PROJS -I..\..\GRNET32 -I..\..\COMMON 
+      -I$(BCB)\include -ID:\USER\GRANIT\INC -ID:\USER\GRANIT\INC\GRKRNL32 
+      -src_suffix cpp -DSTRICT -D_NO_VCL -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=d:\temp\gklib\grkrnl32.csm -Hc -Vx -Ve -X- -r- -a8 -5 -b- -k -y -v 
+      -vi- -c -tW -tWM"/>
+    <PFLAGS value="-N2d:\temp\gklib -N0d:\temp\gklib -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-lD:\USER\GRANIT\LIB /0 /E"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="$(OBJFILES)"/>
+    <ALLLIB value=""/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="gklib.bpf" FORMNAME="" UNITNAME="gklib" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkhandle_based.cpp" FORMNAME="" UNITNAME="gkhandle_based" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\COMMON\crcunit_wrapper.CPP" FORMNAME="" UNITNAME="crcunit_wrapper" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GRNET32\grnet32wrapper.cpp" FORMNAME="" UNITNAME="grnet32wrapper" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkmodules.cpp" FORMNAME="" UNITNAME="gkmodules" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkmodule_loader.cpp" FORMNAME="" UNITNAME="gkmodule_loader" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkmodules_list.cpp" FORMNAME="" UNITNAME="gkmodules_list" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkmodules_set.cpp" FORMNAME="" UNITNAME="gkmodules_set" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkhandles_list.cpp" FORMNAME="" UNITNAME="gkhandles_list" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="__module_entry.cpp" FORMNAME="" UNITNAME="__module_entry" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkreporter.cpp" FORMNAME="" UNITNAME="gkreporter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkutils.cpp" FORMNAME="" UNITNAME="gkutils" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modem.cpp" FORMNAME="" UNITNAME="modem" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modem_line.cpp" FORMNAME="" UNITNAME="modem_line" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modem_queue.cpp" FORMNAME="" UNITNAME="modem_queue" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="otd_storage.cpp" FORMNAME="" UNITNAME="otd_storage" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkio_iface.cpp" FORMNAME="" UNITNAME="gkio_iface" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="mproto_buffer.cpp" FORMNAME="" UNITNAME="mproto_buffer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\KE_RTL\rx_buffer.cpp" FORMNAME="" UNITNAME="rx_buffer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=8
+Item0=..\..\KE_RTL;..\..\..\PROJS;..\..\GRNET32;..\..\COMMON;$(BCB)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item1=..\..\..\PROJS;..\..\GRNET32;..\..\COMMON;$(BCB)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item2=$(BCB)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item3=..\..\GRNET32;..\..\COMMON;d:\BCB\CBuilder5\Projects;..\SRC\GRNET32;..\SRC\COMMON;..\SRC\GrKrnl32\GKLIB;$(BCB)\include;$(BCB)\include\vcl;..\INC;..\INC\GRKRNL32
+Item4=d:\BCB\CBuilder5\Projects;..\SRC\GRNET32;..\SRC\COMMON;..\SRC\GrKrnl32\GKLIB;$(BCB)\include;$(BCB)\include\vcl;..\INC;..\INC\GRKRNL32
+Item5=..\SRC\GRNET32;..\SRC\COMMON;..\SRC\GrKrnl32\GKLIB;$(BCB)\include;$(BCB)\include\vcl;..\INC;..\INC\GRKRNL32
+Item6=$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item7=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=6
+Item0=..\..\KE_RTL;..\..\..\PROJS;..\..\GRNET32;..\..\COMMON;d:\BCB\CBuilder5\Projects;..\SRC\GRNET32;..\SRC\COMMON;..\SRC\GrKrnl32\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\..\..\PROJS;..\..\GRNET32;..\..\COMMON;d:\BCB\CBuilder5\Projects;..\SRC\GRNET32;..\SRC\COMMON;..\SRC\GrKrnl32\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\..\GRNET32;..\..\COMMON;d:\BCB\CBuilder5\Projects;..\SRC\GRNET32;..\SRC\COMMON;..\SRC\GrKrnl32\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item3=d:\BCB\CBuilder5\Projects;..\SRC\GRNET32;..\SRC\COMMON;..\SRC\GrKrnl32\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item4=..\SRC\GRNET32;..\SRC\COMMON;..\SRC\GrKrnl32\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item5=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=5
+Item0=STRICT;_NO_VCL;_DEBUG
+Item1=STRICT;_NO_VCL
+Item2=STRICT;
+Item3=_DEBUG
+Item4=_USE_OLD_RW_STL;
+
+[HistoryLists\hlIntOutputDir]
+Count=3
+Item0=d:\temp\gklib
+Item1=d:\temp
+Item2=d:\temp\
+
+[HistoryLists\hlFinalOutputDir]
+Count=3
+Item0=D:\USER\GRANIT\LIB\
+Item1=D:\USER\GRANIT\LIB
+Item2=..\LIB\
+
+[HistoryLists\hIBPIOutputDir]
+Count=2
+Item0=D:\USER\GRANIT\LIB
+Item1=D:\USER\GRANIT\LIB\
+
+[HistoryLists\hlTlibPageSize]
+Count=1
+Item0=0x0010
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

@@ -1,0 +1,123 @@
+/*******************************************************************************
+ *
+ * Модуль    : grkernel
+ * Описание  : Ресурсы
+ * Автор     : Остапенко Д.В.
+ * Версия    : 1
+ * Создан    : 17.07.2002
+ *
+ ******************************************************************************/
+
+
+/*#include "modemmer.h"*/
+#include "granit_modem.h"
+#include "granit_modem_err.rc"
+
+
+
+STRINGTABLE
+LANGUAGE LANG_RUSSIAN,SUBLANG_NEUTRAL
+BEGIN
+IDS_MODULE_PROVIDER  PROVIDER_STRING
+
+IDS_MODULE_DESCRIPT      "Реализация системной централи "
+IDS_MODULE_NAME          "Системная централь 'Гранит'"
+IDS_MODEM_INFO           "Системная централь 'Гранит'"
+END
+
+STRINGTABLE
+LANGUAGE LANG_ENGLISH,SUBLANG_NEUTRAL
+BEGIN
+IDS_MODULE_PROVIDER  PROVIDER_STRING_ENGL
+
+IDS_MODULE_DESCRIPT      "System central implementation "
+IDS_MODULE_NAME          "System central 'Granit'"
+IDS_MODEM_INFO           "System central 'Granit'"
+END
+
+
+/*
+IDI_MODULE_ICONSM  ICON "D063_GM.ICO"
+IDI_MODULE_ICON    ICON "D063_GM.ICO"
+*/
+
+IDI_MODULE_ICONSM  ICON "D037_SC.ico"
+IDI_MODULE_ICON    ICON "D037_SC.ico"
+
+/*
+IDI_MODULE_ICONSM  ICON "telep1.ico"
+IDI_MODULE_ICON    ICON "telep1.ico"
+*/
+
+
+
+
+STRINGTABLE
+LANGUAGE LANG_RUSSIAN,SUBLANG_NEUTRAL
+BEGIN
+IDS_SC_FLOOR_TEXT       "Этаж №"
+IDS_SC_EVENT_LOGTITLE        "СЦ 'Гранит' события "
+IDS_SC_TUTR_LOGTITLE         "СЦ 'Гранит' ТУ-ТР "
+IDS_SC_LOG0             "Неисправность КП %d %08X"
+IDS_SC_LOG1             "Ошибочная посылка ТУ. Источник %03d.%03d.%03d"
+IDS_SC_LOG2             "КП %03d гр. %03d  %s  не отвечает на вызов %08X"
+IDS_SC_LOG3             "Ошибка контроллера КП %03d"
+IDS_SC_LOG4             ""
+IDS_SC_LOG5             ""
+IDS_SC_LOG6             ""
+IDS_SC_LOG7             ""
+IDS_SC_LOG8             ""
+IDS_SC_LOG9             ""
+IDS_SC_LOG10            ""
+IDS_SC_TUTR_BEGIN       ""
+IDS_SC_TUON             "команда ВКЛ /+"
+IDS_SC_TUOFF            "команда ОТКЛ/- "
+IDS_SC_TUTRCANCEL       "команда ОТМЕНА "
+
+IDS_SC_TUTR_SELECT      "выбор "
+IDS_SC_TUTR_DESELECT    "отмена выбора "
+
+IDS_SC_TULOG            "ТУ/ТР модем  %03d.%03d.%03d "
+IDS_SC_TU_OBJ           "объект %03d.%03d.%03d - № %03d "
+IDS_SC_TU_GRPOBJ        " ТУ %03d-%03d "
+IDS_SC_TR_GRPOBJ        " ТР %03d-%03d "
+
+IDS_SC_CHANNEL          "Канал № "
+END
+
+STRINGTABLE
+LANGUAGE LANG_ENGLISH,SUBLANG_NEUTRAL
+BEGIN
+IDS_SC_FLOOR_TEXT       "Floor №"
+IDS_SC_EVENT_LOGTITLE        "SC 'Granit' events "
+IDS_SC_TUTR_LOGTITLE         "SC 'Granit' Remote control"
+IDS_SC_LOG0             "Malfunctiion CP %d %08X"
+IDS_SC_LOG1             "ERROR Remote control frame. source %03d.%03d.%03d"
+IDS_SC_LOG2             "CP %03d gr. %03d  %s  Does not answer the call %08X"
+IDS_SC_LOG3             "CP %03d controller error"
+IDS_SC_LOG4             ""
+IDS_SC_LOG5             ""
+IDS_SC_LOG6             ""
+IDS_SC_LOG7             ""
+IDS_SC_LOG8             ""
+IDS_SC_LOG9             ""
+IDS_SC_LOG10            ""
+IDS_SC_TUTR_BEGIN       ""
+IDS_SC_TUON             "command ON  /+"
+IDS_SC_TUOFF            "command OFF /- "
+IDS_SC_TUTRCANCEL       "command UNDO "
+
+IDS_SC_TUTR_SELECT      "select "
+IDS_SC_TUTR_DESELECT    "undo select "
+
+IDS_SC_TULOG            "RC modem  %03d.%03d.%03d "
+IDS_SC_TU_OBJ           "оobject %03d.%03d.%03d - № %03d "
+IDS_SC_TU_GRPOBJ        " RC %03d-%03d "
+IDS_SC_TR_GRPOBJ        " RA %03d-%03d "
+
+IDS_SC_CHANNEL          "Channel № "
+END
+
+
+
+

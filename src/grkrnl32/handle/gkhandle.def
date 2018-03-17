@@ -1,0 +1,53 @@
+EXPORTS
+create_gkhandleA       @1
+create_gkhandleW       @2
+open_gkhandleA         @3
+open_gkhandleW         @4
+close_gkhandle         @5
+call_gkhandle          @6
+find_gkhandleA         @7
+find_gkhandleW         @8
+get_gkhandle_attr      @9
+set_gkhandle_attr      @10
+get_gkhandle_nameA     @11
+get_gkhandle_nameW     @12
+dup_gkhandle           @14 
+enum_gkhandles         @15
+get_gkhandle_usage     @16
+
+get_gkhandle_data      @18
+is_same_gkhandle       @19
+call_gkhandle_bynameA  @20
+call_gkhandle_bynameW  @21
+lock_gkhandle          @22
+unlock_gkhandle        @23
+try_lock_gkhandle      @24
+get_owner_threadid     @25
+fullunlock_gkhandle    @26
+restorelock_gkhandle   @27
+get_gkhandle_lockcount @28
+
+create_gkhandle_tagA   @30
+create_gkhandle_tagW   @31
+
+set_gkhandle_nameA     @32
+set_gkhandle_nameW     @33
+gkhandle_compare       @34
+
+gkhandle_subclass      @50
+
+gkhandle_post_message  @60
+gkhandle_peek_message  @61
+gkhandle_process_all_messages @62
+
+
+get_gkhandle_except_record      @100
+release_all_gkhandles           @101
+
+set_gkhandle_exception_filter   @200
+set_gkhandle_exception_filterP  @201
+
+
+ 
+
+

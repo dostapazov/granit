@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.624,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.h=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_frm.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.101,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\about_common_frame.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.972,C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_wnd.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.533,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.h=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\sel_div_pref.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.114,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.h=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_line_settings.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.467,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.h=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopcitem_view_frame.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.557,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.210,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\opc_config_editor.dfm=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.965,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\text_editor.h=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit2.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.303,=D:\USER\GRANIT\SRC\GrKrnl32\GrOPC\OPCClient\DataCallbackSink.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.371,D:\USER\GRANIT\SRC\GrKrnl32\GrOPC\OPCClient\DataCallbackSink.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.564,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.020,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.454,=D:\USER\GRANIT\SRC\GrKrnl32\GrOPC\OPCClient\OPCClient.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.114,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.dfm=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_line_settings.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.624,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.dfm=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_frm.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.965,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\text_editor.cpp=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.022,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\text_editor.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.080,D:\USER\GRANIT\SRC\GrKrnl32\GrOPC\OPCClient\OPCClient.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.085,D:\USER\GRANIT\SRC\GrKrnl32\GrOPC\OPCClient\OPCEnum.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.555,=D:\USER\GRANIT\SRC\GrKrnl32\GrOPC\OPCClient\OPCEnum.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.902,C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_wnd.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.533,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.dfm=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\sel_div_pref.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.467,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.dfm=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopcitem_view_frame.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.996,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmod_frame.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.638,C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_wndPCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.122,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.076,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.084,=D:\ERADS\19.0\Imports\opc\OPCDA_TLB.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.814,D:\ERADS\19.0\Imports\opc\OPCDA_TLB.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.210,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\opc_config_editor.h=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit2.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.965,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\text_editor.dfm=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.741,=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.612,=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.428,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.296,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.672,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_mod_settings_frame.h=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.672,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_mod_settings_frame.cpp=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.114,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_line_settings.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.425,=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.030,=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.301,=D:\ERADS\19.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.672,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_mod_settings_frame.dfm=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.210,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\opc_config_editor.cpp=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.251,=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.466,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopcitem_view_frame.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.533,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\sel_div_pref.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.886,=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.579,=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.624,D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\Unit1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\opc_client\wnd\gkopc_client_frm.cpp</Transaction>
+  </Transactions>
+</BorlandProject>

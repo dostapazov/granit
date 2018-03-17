@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.418,D:\USER\GRANIT\LIB\gklib.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.998,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.416,D:\USER\GRANIT\LIB\GKHANDLE.LIB=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.962,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.420,D:\USER\GRANIT\LIB\Ke_rtls.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.902,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.811,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>2015.11.18 18:30:54.522,D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx_old.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx.cbproj</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="..\..\GrKrnl32"/>
+    <File Path="..\GKLIB"/>
+    <File Path="..\GKLIB\gkmodules.cpp"/>
+    <File Path="..\GKLIB\gkreporter.cpp"/>
+    <File Path="GKReporterEx.cpp"/>
+    <File Path="reporterex_main.cpp"/>
+    <File Path="ReporterEx.RC"/>
+    <File Path="..\..\..\LIB_XE\gkhandle.lib"/>
+    <File Path="D:\ERADS\17.0\lib\win32\release\memmgr.lib"/>
+    <File Path="..\..\..\LIB_XE\KE_RTLS.lib"/>
+    <File Path="..\..\..\LIB_XE\gklib.lib"/>
+  </ProjectSortOrder>
+</BorlandProject>

@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="d:\user\granit\grkrnl32\tlm_viewer.exe"/>
+    <OBJFILES value="d:\temp\tlm_viewer.obj d:\temp\mproto_buffer.obj 
+      d:\temp\monitor_otd_med.obj d:\temp\mon_otd.obj 
+      d:\temp\tlm_viewer_main.obj d:\temp\TIpClientForm.obj 
+      d:\temp\itlm_net_client.obj d:\temp\tlm_net_client.obj 
+      d:\temp\tlm_painter_ctrl.obj d:\temp\tlm_painter_frm.obj 
+      d:\temp\rx_buffer.obj d:\temp\LayoutEdit.obj"/>
+    <RESFILES value="tlm_viewer.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) tlm_viewer_main.dfm TIpClientForm.dfm tlm_painter_frm.dfm 
+      LayoutEdit.dfm"/>
+    <LIBFILES value="D:\BCB\Lib\memmgr.lib ..\..\..\LIB\Ke_rtls.lib ..\..\..\LIB\otdhlpr.lib 
+      ..\..\..\LIB\gklib.lib ..\..\..\..\LIB\PICTDLGS.LIB"/>
+    <LIBRARIES value="rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi"/>
+    <PATHCPP value=".;..\GKLIB;..\MODEMMER\MODEMMERWND;..\Examples\PROCMDM_APP;..\GKLIB\tlm_painter;..\..\KE_RTL"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="STRICT;_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="tlm_viewer.cpp"/>
+    <INCLUDEPATH value="$(BCB)\Projects;$(BCB)\Source\vcl;..\..\KE_RTL;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE"/>
+    <LIBPATH value="$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\Source\vcl;..\..\KE_RTL;..;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\Projects -I$(BCB)\Source\vcl -I..\..\KE_RTL -I.. 
+      -I..\Examples\PROCMDM_APP -I..\MODEMMER\MODEMMERWND -I..\GKLIB\tlm_painter 
+      -I..\GKLIB -I$(BCB)\include -I$(BCB)\include\vcl 
+      -ID:\USER\GRANIT\INC\GRKRNL32 -ID:\USER\GRANIT\INC -ID:\USER\INCLUDE 
+      -src_suffix cpp -DSTRICT -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=d:\temp\tlm_viewer.csm -Hc -Vx -Ve -X- -r- -a8 -5 -b- -k -y -v -vi- 
+      -c -tW -tWM"/>
+    <PFLAGS value="-N2d:\temp -N0d:\temp -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-Id:\temp -D&quot;&quot; -H:0x1000000 -aa -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="tlm_viewer.res" FORMNAME="" UNITNAME="tlm_viewer.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="tlm_viewer.cpp" FORMNAME="" UNITNAME="tlm_viewer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\BCB\Lib\memmgr.lib" FORMNAME="" UNITNAME="memmgr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\Ke_rtls.lib" FORMNAME="" UNITNAME="Ke_rtls.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\otdhlpr.lib" FORMNAME="" UNITNAME="otdhlpr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\gklib.lib" FORMNAME="" UNITNAME="gklib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\mproto_buffer.cpp" FORMNAME="" UNITNAME="mproto_buffer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\MODEMMER\MODEMMERWND\monitor_otd_med.cpp" FORMNAME="" UNITNAME="monitor_otd_med" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\Examples\PROCMDM_APP\mon_otd.cpp" FORMNAME="" UNITNAME="mon_otd" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="tlm_viewer_main.cpp" FORMNAME="TlmViewer" UNITNAME="tlm_viewer_main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TIpClientForm.cpp" FORMNAME="IPClient" UNITNAME="TIpClientForm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="itlm_net_client.cpp" FORMNAME="" UNITNAME="itlm_net_client.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="tlm_net_client.cpp" FORMNAME="" UNITNAME="tlm_net_client.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\tlm_painter\tlm_painter_ctrl.cpp" FORMNAME="" UNITNAME="tlm_painter_ctrl" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="tlm_painter_frm.cpp" FORMNAME="PainterForm" UNITNAME="tlm_painter_frm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\LIB\PICTDLGS.LIB" FORMNAME="" UNITNAME="PICTDLGS.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\KE_RTL\rx_buffer.cpp" FORMNAME="" UNITNAME="rx_buffer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="LayoutEdit.cpp" FORMNAME="LaoutEdit" UNITNAME="LayoutEdit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=23
+Item0=$(BCB)\Projects;$(BCB)\Source\vcl;..\..\KE_RTL;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE
+Item1=$(BCB)\Source\vcl;..\..\KE_RTL;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE
+Item2=..\..\KE_RTL;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE
+Item3=..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE
+Item4=..\;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE
+Item5=..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE
+Item6=..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC
+Item7=..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC
+Item8=$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC
+Item9=..\GKTLMDB\GKTLMDBWND;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GR ANIT\INC;D:\USER\
+Item10=..\GKTLMDB\GKTLMDBWND;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\G
+Item11=..\GKTLMDB\GKTLMDBWND;..\;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\
+Item12=..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item13=..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\include;$(BCB)\i
+Item14=..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item15=..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item16=..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item17=..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item18=..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item19=D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item20=$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item21=$(BCB)\include;$(BCB)\include\vcl
+Item22=D:\Program Files\Borland\CBuilder6\Projects;D:\Temp;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=19
+Item0=$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\Source\vcl;..\..\KE_RTL;..;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item1=$(BCB)\Projects\Lib;$(BCB)\Source\vcl;..\..\KE_RTL;..;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\..\KE_RTL;..;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item3=..;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item4=..\;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item6=..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item7=..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item8=..\GKTLMDB\GKTLMDBWND;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item9=..\GKTLMDB\GKTLMDBWND;..\;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib
+Item10=$(BCB)\lib\obj;$(BCB)\lib
+Item11=..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\lib\obj;$(BCB)\li
+Item12=..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib
+Item13=..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib
+Item14=..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib
+Item15=..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib
+Item16=..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib
+Item17=D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib
+Item18=D:\Program Files\Borland\CBuilder6\Projects;D:\Temp;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=5
+Item0=STRICT;_DEBUG
+Item1=STRICT
+Item2=_DEBUG;STRICT
+Item3=_DEBUG;
+Item4=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=d:\temp
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=d:\user\granit\grkrnl32\
+Item1=d:\user\granit\grkrnl32
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

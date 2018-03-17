@@ -1,0 +1,241 @@
+#ifndef KADRS_TABLE_HPP
+#define KADRS_TABLE_HPP
+#include <mediumdb.h>
+#include <kestrm.hpp>
+#include <map>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+#pragma pack(push,1)
+
+
+#pragma pack(pop)
+
+  #define KADRS_TABLE_STREAM_VER 0
+
+  typedef vector<mdb_kadr>        kadrs_list;
+  typedef vector<mdb_kadr_entry>  kadr_entryes_table;
+  typedef vector<DWORD>           entry_index;
+
+  class kadrs_table
+  {
+   protected:
+   DWORD               gen_kadrid;
+   kadrs_list          kadrs;
+   kadr_entryes_table  entry_table;
+   entry_index         index;
+   DWORD __fastcall    build_index();
+   public:
+   kadrs_table():gen_kadrid(0){};
+   kadrs_list::iterator  __fastcall create_kadr ();
+   kadrs_list::iterator  __fastcall create_kadr  (MDB_KADR & kdr);
+   kadrs_list::iterator  __fastcall find_kadr    (DWORD id);
+
+   kadrs_list::iterator  __fastcall begin_kadr   (){ return kadrs.begin(); }
+   kadrs_list::iterator  __fastcall end_kadr     (){ return kadrs.end  (); }
+
+   DWORD                 __fastcall enum_kadr    (DWORD idx);
+   DWORD                 __fastcall enum_kadr    (DWORD idx,MDB_KADR & kdr);
+   bool                  __fastcall remove_kadr  (DWORD id);
+   bool                  __fastcall is_valid_kadr_ptr(kadrs_list::iterator kdr){return kdr< kadrs.end() ? true:false;}
+   DWORD                 __fastcall kadr_clear(DWORD kadr_id);
+
+   kadr_entryes_table::iterator __fastcall add_entry   (DWORD id,DWORD rec_id);
+   kadr_entryes_table::iterator __fastcall add_entry   (MDB_KADR_ENTRY & ke);
+   kadr_entryes_table::iterator __fastcall find_entry  (DWORD kid,DWORD id,DWORD number);
+   kadr_entryes_table::iterator __fastcall find_entry  (MDB_KADR_ENTRY & ke);
+   kadr_entryes_table::iterator __fastcall entry_at    (DWORD offset);
+   DWORD                 __fastcall enum_entry  (DWORD kid,DWORD idx);
+   DWORD                 __fastcall enum_entry  (DWORD kid,DWORD idx,MDB_KADR_ENTRY & ke);
+   bool                  __fastcall remove_entry(MDB_KADR * kdr,MDB_KADR_ENTRY & entry);
+   bool                  __fastcall remove_entry(DWORD rec_id);
+   DWORD                 __fastcall get_entry_range(DWORD kadr_id,DWORD rec_id,kadr_entryes_table::iterator & low,kadr_entryes_table::iterator & hi);
+   DWORD                 __fastcall get_entry_range(DWORD kadr_id,kadr_entryes_table::iterator & low,kadr_entryes_table::iterator & hi);
+   DWORD                 __fastcall get_kadr_range (DWORD rec_id,entry_index::iterator & low,entry_index::iterator & hi);
+   DWORD                 __fastcall get_stream_ver(){return KADRS_TABLE_STREAM_VER;}
+   DWORD                 __fastcall stream_write  (KeRTL::TStream & strm);
+   DWORD                 __fastcall stream_read    (KeRTL::TStream & strm,DWORD ver,DWORD count);
+   DWORD                 __fastcall size(){return kadrs.size();}
+   DWORD                 __fastcall get_genid(){return gen_kadrid;}
+   void                  __fastcall clear();
+  };
+  
+
+  struct  kadr_entry_less_by_recid
+  {
+   kadr_entryes_table * entry_table;
+   DWORD                table_size;
+   mdb_kadr_entry       base;
+   kadr_entry_less_by_recid(kadr_entryes_table * et,mdb_kadr_entry & ke);
+   kadr_entry_less_by_recid(const kadr_entry_less_by_recid & src);
+   bool  operator ()(const DWORD & idx1,const DWORD & idx2);
+  };
+
+   inline kadr_entry_less_by_recid::kadr_entry_less_by_recid(kadr_entryes_table * et,mdb_kadr_entry & ke)
+   {
+    entry_table = et;
+    table_size = et? et->size():0;
+    base = ke;
+   }
+
+   inline kadr_entry_less_by_recid::kadr_entry_less_by_recid(const kadr_entry_less_by_recid & src)
+   {
+    entry_table = src.entry_table;
+    table_size  = src.table_size;
+    base        = src.base;
+   }
+
+   inline bool  kadr_entry_less_by_recid::operator ()(const DWORD & idx1,const DWORD & idx2)
+   {
+    mdb_kadr_entry & e1 = idx1<table_size ? entry_table->at(idx1):base;
+    mdb_kadr_entry & e2 = idx2<table_size ? entry_table->at(idx2):base;
+    if(e1.rec_id == e2.rec_id)
+      {
+       if(e1.kadr_id == e2.kadr_id)
+          return e1.number < e2.number ? true:false;
+       return  e1.kadr_id < e2.kadr_id ? true:false;
+      }
+     return e1.rec_id < e2.rec_id ? true:false;
+   }
+
+
+   // Структура для хранения информации по кадру
+
+   struct single_kadr
+   {
+     mdb_kadr                     kadr;
+     kadr_entryes_table           entryes;
+     std::vector<DWORD>           selected;
+     bool                         multi_select_mode;
+     single_kadr():multi_select_mode(false){};
+
+     void          __fastcall clear_entryes(){entryes.clear();entryes.resize(0);}
+     kadr_entryes_table::iterator
+                  __fastcall  add(DWORD record_id,DWORD number,int x,int y);
+     DWORD        __fastcall  get_offset(kadr_entryes_table::iterator ptr);
+     kadr_entryes_table::iterator
+                  __fastcall lower_entry(DWORD rec_id,DWORD num);
+     kadr_entryes_table::iterator
+                  __fastcall upper_entry(DWORD rec_id,DWORD num);
+     DWORD   __fastcall range_entry(DWORD rec_id,kadr_entryes_table::iterator &lo,kadr_entryes_table::iterator & hi);
+     kadr_entryes_table::iterator
+                  __fastcall find_entry(DWORD rec_id,DWORD num);
+     DWORD        __fastcall remove_record(DWORD rec_id);
+     DWORD        __fastcall sel_count(){return selected.size();}
+     bool         __fastcall is_selected(DWORD offset);
+     bool         __fastcall is_selected(kadr_entryes_table::iterator ptr);
+     DWORD        __fastcall select(DWORD offset);
+     DWORD        __fastcall select(kadr_entryes_table::iterator ptr);
+     DWORD        __fastcall deselect(DWORD offset);
+     DWORD        __fastcall deselect(kadr_entryes_table::iterator ptr);
+     void         __fastcall clear_select(){selected.clear();}
+     mdb_kadr_entry * __fastcall get_selected(DWORD idx);
+   };
+
+     inline bool         __fastcall single_kadr::is_selected(DWORD offset)
+     {
+      return std::find(selected.begin(),selected.end(),offset) < selected.end()? true:false;
+     }
+
+     inline bool         __fastcall single_kadr::is_selected(kadr_entryes_table::iterator ptr)
+     {
+      return is_selected(get_offset(ptr));
+     }
+
+     inline DWORD        __fastcall single_kadr::select(DWORD offs)
+     {
+       if(offs<entryes.size() && !is_selected(offs))
+         selected.insert(selected.end(),offs);
+       return sel_count();
+     }
+
+
+     inline DWORD        __fastcall single_kadr::select(kadr_entryes_table::iterator ptr)
+     {
+         return select(get_offset(ptr));
+     }
+
+     inline DWORD        __fastcall single_kadr::deselect(DWORD offset)
+     {
+       if(offset<entryes.size())
+          selected.erase(find(selected.begin(),selected.end(),offset));
+          else
+          selected.clear();
+       return 0;
+     }
+
+     inline DWORD        __fastcall single_kadr::deselect(kadr_entryes_table::iterator ptr)
+     {
+       return deselect(get_offset(ptr));
+     }
+
+     #pragma warn -8027
+     inline mdb_kadr_entry * __fastcall single_kadr::get_selected(DWORD idx)
+
+     {
+      if(idx<sel_count())
+      {
+       idx = selected.at(idx);
+       if(idx<entryes.size())
+           return &entryes.at(idx);
+      }
+      return 0;
+     }
+     #pragma warn .8027
+
+
+
+inline kadr_entryes_table::iterator __fastcall single_kadr::add(DWORD record_id,DWORD number,int x,int y)
+{
+ mdb_kadr_entry entry(kadr.kadr_id,record_id,number == (DWORD)-1 ? entryes.size():number);
+ entry.position.x = x;entry.position.y = y;
+ return entryes.insert(std::lower_bound(entryes.begin(),entryes.end(),entry),entry);
+}
+
+inline DWORD        __fastcall  single_kadr::get_offset(kadr_entryes_table::iterator ptr)
+{
+ if(ptr>=entryes.begin() && ptr<entryes.end())
+   return distance(entryes.begin(),ptr);
+  return -1;
+}
+
+inline   kadr_entryes_table::iterator
+                  __fastcall single_kadr::lower_entry(DWORD rec_id,DWORD num)
+{
+ mdb_kadr_entry entry(kadr.kadr_id,rec_id,num);
+ return std::lower_bound(entryes.begin(),entryes.end(),entry);
+}
+
+inline    kadr_entryes_table::iterator
+                  __fastcall single_kadr::upper_entry(DWORD rec_id,DWORD num)
+{
+ mdb_kadr_entry entry(kadr.kadr_id,rec_id,num);
+ return std::upper_bound(entryes.begin(),entryes.end(),entry);
+}
+
+inline  DWORD   __fastcall single_kadr::range_entry(DWORD rec_id,kadr_entryes_table::iterator &lo,kadr_entryes_table::iterator & hi)
+{
+ lo = lower_entry(rec_id,0);
+ hi = upper_entry(rec_id,-1);
+ return (DWORD)std::distance(lo,hi);
+}
+
+
+
+inline DWORD        __fastcall single_kadr::remove_record(DWORD rec_id)
+{
+ kadr_entryes_table::iterator lo, hi;
+ DWORD ret = range_entry(rec_id,lo,hi);
+ if(ret)
+   entryes.erase(lo,hi);
+ return ret;  
+}
+
+
+
+
+#endif
+

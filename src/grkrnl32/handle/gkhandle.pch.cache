@@ -1,0 +1,1344 @@
+<PchDataCache xmlns="urn://codegear_pch_cache" Path="D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle.cbproj" Guid="{F5297779-176F-4C91-9B36-C95F3324192C}" CreationTime="1213636461">
+    <Source Path="D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp">
+        <TLI>D:\USER\GRANIT\INC\kertl.hpp</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\vector</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\algorithm</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\map</TLI>
+        <TLI>D:\USER\GRANIT\INC\kedatas.hpp</TLI>
+        <TLI>D:\USER\GRANIT\INC\GRKRNL32\gkhandle.h</TLI>
+    </Source>
+    <Header Path="D:\USER\GRANIT\INC\kertl.hpp" Level="1" TotalLines="579642" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</IncludedBy>
+        <TLI>D:\USER\GRANIT\INC\ke_defs.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winbase.h</TLI>
+    </Header>
+    <Header Path="D:\USER\GRANIT\INC\ke_defs.h" Level="2" TotalLines="569764" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\USER\GRANIT\INC\kertl.hpp</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\tchar.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\Windows.h" Level="3" TotalLines="143562" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\USER\GRANIT\INC\ke_defs.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\winapifamily.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\sdkddkver.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\mem.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\excpt.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\stdarg.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\windef.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winbase.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\wingdi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winuser.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winnls.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\wincon.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\consoleapi.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\winver.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winreg.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winnetwk.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\cderr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\dde.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ddeml.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\dlgs.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\lzexpand.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmsystem.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\nb30.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\shellapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winperf.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winsock2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\wincrypt.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winefs.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winscard.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winspool.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ole2.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\unknwnbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objidlbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\unknwn.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidlbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oaidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\urlmon.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oleidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\servprov.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidl.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\commdlg.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\stralign.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winsvc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\mcx.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\imm.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winapifamily.h" Level="4" TotalLines="182" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\sdkddkver.h" Level="4" TotalLines="298" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\mem.h" Level="4" TotalLines="552" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\_str.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\_stddef.h" Level="4" TotalLines="339" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\mem.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_defs.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\_null.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\stdarg.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\ctype.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\mbctype.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\_str.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\_loc.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\stdlib.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\search.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\errno.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\tchar.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\stddef.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\stdio.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\_lim.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\_defs.h" Level="6" TotalLines="123" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\_stddef.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\_null.h" Level="6" TotalLines="27" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\_stddef.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\excpt.h" Level="4" TotalLines="190" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\stdarg.h" Level="4" TotalLines="264" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winuser.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\yvals.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\windef.h" Level="4" TotalLines="32843" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\minwindef.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\minwindef.h" Level="5" TotalLines="32595" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\windef.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\specstrings.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winnt.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\specstrings.h" Level="6" TotalLines="7241" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\minwindef.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\sal.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\specstrings_strict.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\driverspecs.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\no_sal2.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\sal.h" Level="7" TotalLines="3359" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\specstrings.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\ConcurrencySal.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\ConcurrencySal.h" Level="8" TotalLines="361" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\sal.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\specstrings_strict.h" Level="7" TotalLines="1194" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\specstrings.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\driverspecs.h" Level="7" TotalLines="930" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\specstrings.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\sdv_driverspecs.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\sdv_driverspecs.h" Level="8" TotalLines="26" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\driverspecs.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\no_sal2.h" Level="7" TotalLines="1044" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\specstrings.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winnt.h" Level="6" TotalLines="25061" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\minwindef.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\ctype.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\kernelspecs.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\basetsd.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\guiddef.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack4.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack8.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\apiset.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\string.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ktmtypes.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\ctype.h" Level="7" TotalLines="734" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnt.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\mbctype.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\mbctype.h" Level="8" TotalLines="281" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\ctype.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\kernelspecs.h" Level="7" TotalLines="263" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnt.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\basetsd.h" Level="7" TotalLines="510" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnt.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\guiddef.h" Level="7" TotalLines="1553" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnt.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\string.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wtypesbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\combaseapi.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\string.h" Level="6" TotalLines="1335" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\guiddef.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_str.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnt.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\cstring</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\_str.h" Level="4" TotalLines="1321" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\string.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\locale.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\mem.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\tchar.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\locale.h" Level="10" TotalLines="343" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\_str.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_loc.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\_loc.h" Level="11" TotalLines="329" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\locale.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\pshpack4.h" Level="5" TotalLines="35" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnt.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wingdi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\prsht.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\poppack.h" Level="5" TotalLines="38" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnt.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wingdi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winuser.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsyscom.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsystem.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\shellapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winperf.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\rpcndr.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winioctl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\prsht.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\combaseapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oleauto.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\ole2.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\commdlg.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\pshpack2.h" Level="5" TotalLines="35" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnt.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wingdi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winuser.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\pshpack8.h" Level="5" TotalLines="35" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnt.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winperf.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\rpcndr.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\ole2.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\combaseapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oleauto.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\apiset.h" Level="7" TotalLines="92" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnt.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\ktmtypes.h" Level="7" TotalLines="219" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnt.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winbase.h" Level="2" TotalLines="78075" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\apisetcconv.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\minwinbase.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\processenv.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\fileapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\debugapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\utilapiset.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\handleapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\errhandlingapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\fibersapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\namedpipeapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\profileapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\heapapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ioapiset.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\synchapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\interlockedapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\processthreadsapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\sysinfoapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\memoryapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\threadpoollegacyapiset.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\threadpoolapiset.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\jobapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\wow64apiset.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\libloaderapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\securitybaseapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\namespaceapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\systemtopologyapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\processtopologyapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\securityappcontainer.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\realtimeapiset.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winerror.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\timezoneapi.h</TLI>
+        <IncludedBy>D:\USER\GRANIT\INC\kertl.hpp</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\apisetcconv.h" Level="5" TotalLines="98" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\minwinbase.h" Level="5" TotalLines="439" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\processenv.h" Level="5" TotalLines="409" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\fileapi.h" Level="5" TotalLines="1566" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\debugapi.h" Level="5" TotalLines="211" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\utilapiset.h" Level="5" TotalLines="134" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\handleapi.h" Level="5" TotalLines="120" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\errhandlingapi.h" Level="5" TotalLines="352" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\fibersapi.h" Level="5" TotalLines="137" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\namedpipeapi.h" Level="5" TotalLines="231" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\profileapi.h" Level="5" TotalLines="75" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\heapapi.h" Level="5" TotalLines="292" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\ioapiset.h" Level="5" TotalLines="228" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\synchapi.h" Level="5" TotalLines="993" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\interlockedapi.h" Level="5" TotalLines="137" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\processthreadsapi.h" Level="5" TotalLines="1351" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\sysinfoapi.h" Level="5" TotalLines="782" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\memoryapi.h" Level="5" TotalLines="963" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\threadpoollegacyapiset.h" Level="5" TotalLines="136" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\threadpoolapiset.h" Level="5" TotalLines="438" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\jobapi.h" Level="5" TotalLines="71" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\wow64apiset.h" Level="5" TotalLines="138" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\libloaderapi.h" Level="5" TotalLines="715" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winuser.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnls.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\securitybaseapi.h" Level="5" TotalLines="1349" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\namespaceapi.h" Level="5" TotalLines="112" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\systemtopologyapi.h" Level="5" TotalLines="78" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\processtopologyapi.h" Level="5" TotalLines="106" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\securityappcontainer.h" Level="5" TotalLines="78" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\realtimeapiset.h" Level="5" TotalLines="153" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winerror.h" Level="5" TotalLines="56954" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\timezoneapi.h" Level="5" TotalLines="253" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\wingdi.h" Level="4" TotalLines="6663" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack1.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack4.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\pshpack1.h" Level="5" TotalLines="35" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wingdi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsyscom.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsystem.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\shellapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winioctl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\commdlg.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winuser.h" Level="4" TotalLines="16322" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\stdarg.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\libloaderapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\tvout.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\tvout.h" Level="5" TotalLines="101" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winuser.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winnls.h" Level="4" TotalLines="5081" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\datetimeapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\libloaderapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\stringapiset.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\stringapiset.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\datetimeapi.h" Level="5" TotalLines="220" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnls.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\stringapiset.h" Level="5" TotalLines="3028" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnls.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\winnls.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\wincon.h" Level="4" TotalLines="1592" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\consoleapi.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\consoleapi.h" Level="5" TotalLines="536" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wincon.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winver.h" Level="4" TotalLines="435" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\verrsrc.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\verrsrc.h" Level="5" TotalLines="176" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winver.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winreg.h" Level="4" TotalLines="1625" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\reason.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\reason.h" Level="5" TotalLines="130" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winreg.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winnetwk.h" Level="4" TotalLines="984" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\wnnc.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\wnnc.h" Level="5" TotalLines="123" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winnetwk.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\cderr.h" Level="4" TotalLines="66" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\dde.h" Level="4" TotalLines="216" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\ddeml.h" Level="4" TotalLines="678" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\dlgs.h" Level="4" TotalLines="279" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\lzexpand.h" Level="4" TotalLines="175" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\mmsystem.h" Level="4" TotalLines="8392" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmsyscom.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack1.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\mciapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmiscapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmiscapi2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\playsoundapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmeapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\timeapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\joystickapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\mmsyscom.h" Level="5" TotalLines="398" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsystem.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack1.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mciapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmiscapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmiscapi2.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\playsoundapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmeapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\timeapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\joystickapi.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\mciapi.h" Level="5" TotalLines="1793" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsystem.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmsyscom.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\mmiscapi.h" Level="5" TotalLines="983" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsystem.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmsyscom.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\mmiscapi2.h" Level="5" TotalLines="425" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsystem.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmsyscom.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\playsoundapi.h" Level="5" TotalLines="489" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsystem.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmsyscom.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\mmeapi.h" Level="5" TotalLines="2842" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsystem.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmsyscom.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\timeapi.h" Level="5" TotalLines="445" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsystem.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmsyscom.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\joystickapi.h" Level="5" TotalLines="796" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\mmsystem.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\mmsyscom.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\nb30.h" Level="4" TotalLines="335" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\rpc.h" Level="4" TotalLines="6551" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcdce.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcnsi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcnterr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcasync.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wtypes.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wtypesbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\combaseapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\unknwnbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objidlbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\unknwn.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidlbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oaidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\urlmon.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oleidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\servprov.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\msxml.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidl.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\rpcdce.h" Level="5" TotalLines="4429" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\rpc.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcdcep.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\rpcdcep.h" Level="6" TotalLines="1318" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\rpcdce.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\rpcnsi.h" Level="5" TotalLines="567" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\rpc.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\rpcnterr.h" Level="5" TotalLines="564" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\rpc.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\rpcasync.h" Level="5" TotalLines="766" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\rpc.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\shellapi.h" Level="4" TotalLines="1811" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack1.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winperf.h" Level="4" TotalLines="772" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack8.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winsock2.h" Level="4" TotalLines="5559" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\ws2def.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\qos.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\ws2def.h" Level="5" TotalLines="1120" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winsock2.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\inaddr.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\inaddr.h" Level="6" TotalLines="40" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\ws2def.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\qos.h" Level="5" TotalLines="222" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winsock2.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\wincrypt.h" Level="4" TotalLines="25006" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\bcrypt.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ncrypt.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\dpapi.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\bcrypt.h" Level="5" TotalLines="1840" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wincrypt.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\ncrypt.h" Level="5" TotalLines="1008" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wincrypt.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\dpapi.h" Level="5" TotalLines="312" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wincrypt.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winefs.h" Level="4" TotalLines="482" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winscard.h" Level="4" TotalLines="22011" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\wtypes.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winioctl.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\winsmcrd.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\wtypes.h" Level="5" TotalLines="9307" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winscard.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\wtypesbase.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\unknwn.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\rpcndr.h" Level="6" TotalLines="3803" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wtypes.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack8.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcnsip.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcsal.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wtypesbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\combaseapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\unknwnbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objidlbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\unknwn.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidlbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oaidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\urlmon.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oleidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\servprov.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\msxml.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidl.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\rpcnsip.h" Level="7" TotalLines="106" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\rpcndr.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\rpcsal.h" Level="7" TotalLines="334" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\rpcndr.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\wtypesbase.h" Level="6" TotalLines="4305" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\wtypes.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\guiddef.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\combaseapi.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\unknwnbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winioctl.h" Level="5" TotalLines="10922" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winscard.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack1.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winsmcrd.h" Level="5" TotalLines="360" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winscard.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winspool.h" Level="4" TotalLines="4883" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\prsht.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\prsht.h" Level="5" TotalLines="990" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\winspool.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack4.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\commdlg.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\ole2.h" Level="4" TotalLines="17790" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack8.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\objbase.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\unknwnbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objidlbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\unknwn.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidlbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oaidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\urlmon.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oleidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\servprov.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidl.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\oleauto.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\oleidl.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\objbase.h" Level="5" TotalLines="316678" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\ole2.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack8.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\combaseapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\coml2api.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\objidl.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\urlmon.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\propidl.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\combaseapi.h" Level="6" TotalLines="37313" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objbase.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack8.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\stdlib.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\wtypesbase.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\unknwnbase.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\objidlbase.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\guiddef.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\cguid.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\coml2api.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\stdlib.h" Level="4" TotalLines="1869" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\combaseapi.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\search.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\errno.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\cstdlib</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\search.h" Level="8" TotalLines="281" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\stdlib.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\errno.h" Level="6" TotalLines="680" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\stdlib.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/config/compiler/codegear.hpp</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\unknwnbase.h" Level="7" TotalLines="8879" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\combaseapi.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ole2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\wtypesbase.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objidlbase.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\objidlbase.h" Level="7" TotalLines="16919" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\combaseapi.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ole2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\unknwnbase.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\cguid.h" Level="7" TotalLines="203" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\combaseapi.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\coml2api.h" Level="6" TotalLines="88061" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objbase.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\combaseapi.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\objidl.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\propidlbase.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\objidl.h" Level="6" TotalLines="28638" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\coml2api.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ole2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\unknwn.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidlbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oaidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objbase.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\urlmon.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oleidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\servprov.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\msxml.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidl.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\unknwn.h" Level="8" TotalLines="9286" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objidl.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ole2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\wtypes.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\msxml.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\propidlbase.h" Level="7" TotalLines="54022" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\coml2api.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ole2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\objidl.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\oaidl.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\oaidl.h" Level="6" TotalLines="29310" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidlbase.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ole2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\objidl.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\msxml.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\propidl.h</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\oleauto.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\urlmon.h" Level="6" TotalLines="133257" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objbase.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ole2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\objidl.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\oleidl.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\servprov.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\msxml.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\oleidl.h" Level="5" TotalLines="27664" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\urlmon.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ole2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\objidl.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\ole2.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\servprov.h" Level="7" TotalLines="23814" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\urlmon.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ole2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\objidl.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\msxml.h" Level="7" TotalLines="47748" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\urlmon.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\unknwn.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\objidl.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\oaidl.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\propidl.h" Level="6" TotalLines="34824" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\objbase.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpc.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\rpcndr.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\Windows.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\ole2.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\objidl.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\oaidl.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\oleauto.h" Level="5" TotalLines="11462" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\ole2.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack8.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\oaidl.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\commdlg.h" Level="4" TotalLines="2236" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\prsht.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\pshpack1.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\sdk\poppack.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\stralign.h" Level="4" TotalLines="704" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\winsvc.h" Level="4" TotalLines="1756" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\mcx.h" Level="4" TotalLines="735" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\imm.h" Level="4" TotalLines="811" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\Windows.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\sdk\ime_cmodes.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\sdk\ime_cmodes.h" Level="5" TotalLines="27" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\sdk\imm.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\tchar.h" Level="3" TotalLines="2031" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\USER\GRANIT\INC\ke_defs.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\_str.h</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\vector" Level="1" TotalLines="23809" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/tr1/detail/config_all.hpp</TLI>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/vector</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/tr1/detail/config_all.hpp" Level="2" TotalLines="12244" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\vector</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\cstddef</TLI>
+        <TLI>d:\erads\17.0\include\dinkumware\cstdlib</TLI>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/utility</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/tr1/detail/config.hpp</TLI>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\utility</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\cstddef" Level="3" TotalLines="1465" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/tr1/detail/config_all.hpp</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\yvals.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\stddef.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\yvals.h" Level="4" TotalLines="1221" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\cstddef</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\stdarg.h</TLI>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\cstdlib</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\cstdio</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\cstring</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\cwchar</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\climits</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\stddef.h" Level="4" TotalLines="218" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\cstddef</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\cstdlib" Level="3" TotalLines="2526" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/tr1/detail/config_all.hpp</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\yvals.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\stdlib.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/utility" Level="3" TotalLines="6784" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/tr1/detail/config_all.hpp</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\iosfwd</TLI>
+        <TLI>d:\erads\17.0\include\dinkumware\xremoveref</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\iosfwd" Level="4" TotalLines="6420" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/utility</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\cstdio</TLI>
+        <TLI>d:\erads\17.0\include\dinkumware\cstring</TLI>
+        <TLI>d:\erads\17.0\include\dinkumware\cwchar</TLI>
+        <TLI>d:\erads\17.0\include\dinkumware\xstddef</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\cstdio" Level="5" TotalLines="2183" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\iosfwd</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\yvals.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\stdio.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\stdio.h" Level="6" TotalLines="883" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\cstdio</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\_nfile.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\_nfile.h" Level="7" TotalLines="29" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\stdio.h</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\cstring" Level="5" TotalLines="2012" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\iosfwd</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\yvals.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\string.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\cwchar" Level="5" TotalLines="1376" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\iosfwd</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\yvals.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\wchar.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\wchar.h" Level="6" TotalLines="78" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\cwchar</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\xstddef" Level="5" TotalLines="131" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\iosfwd</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\xremoveref" Level="4" TotalLines="30" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/utility</IncludedBy>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/tr1/detail/config.hpp" Level="3" TotalLines="2272" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/tr1/detail/config_all.hpp</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/config.hpp</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/config.hpp" Level="4" TotalLines="2108" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/tr1/detail/config.hpp</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/config/user.hpp</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/config/select_compiler_config.hpp</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/config/compiler/codegear.hpp</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/config/select_stdlib_config.hpp</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/config/stdlib/dinkumware.hpp</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/config/select_platform_config.hpp</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/config/platform/win32.hpp</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/config/suffix.hpp</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/config/user.hpp" Level="5" TotalLines="126" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/config.hpp</IncludedBy>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/config/select_compiler_config.hpp" Level="5" TotalLines="121" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/config.hpp</IncludedBy>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/config/compiler/codegear.hpp" Level="5" TotalLines="654" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/config.hpp</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\errno.h</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/config/select_stdlib_config.hpp" Level="5" TotalLines="304" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/config.hpp</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/config/no_tr1/utility.hpp</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/config/no_tr1/utility.hpp" Level="6" TotalLines="235" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/config/select_stdlib_config.hpp</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\utility</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\utility" Level="7" TotalLines="206" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/config/no_tr1/utility.hpp</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost/tr1/detail/config_all.hpp</TLI>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\xutility</IncludedBy>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/config/stdlib/dinkumware.hpp" Level="5" TotalLines="113" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/config.hpp</IncludedBy>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/config/select_platform_config.hpp" Level="5" TotalLines="92" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/config.hpp</IncludedBy>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/config/platform/win32.hpp" Level="5" TotalLines="60" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/config.hpp</IncludedBy>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost/config/suffix.hpp" Level="5" TotalLines="574" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost/config.hpp</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/vector" Level="2" TotalLines="10575" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\vector</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\memory</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\stdexcept</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\memory" Level="3" TotalLines="5977" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/vector</IncludedBy>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/memory</TLI>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/algorithm</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\xtree</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/deque</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/memory" Level="4" TotalLines="5945" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\memory</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\xmemory</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\type_traits</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\xmemory" Level="5" TotalLines="4066" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/memory</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\new</TLI>
+        <TLI>d:\erads\17.0\include\dinkumware\xutility</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\new" Level="6" TotalLines="437" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\xmemory</IncludedBy>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/new</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/new" Level="7" TotalLines="401" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\new</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\exception</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\exception" Level="5" TotalLines="255" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/new</IncludedBy>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/exception</TLI>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/stdexcept</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/exception" Level="9" TotalLines="215" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\exception</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\xutility" Level="6" TotalLines="3374" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\xmemory</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\climits</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\utility</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\climits" Level="7" TotalLines="1457" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\xutility</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\yvals.h</TLI>
+        <TLI>d:\erads\17.0\include\windows\crtl\limits.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\limits.h" Level="8" TotalLines="297" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\climits</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_lim.h</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\windows\crtl\_lim.h" Level="9" TotalLines="283" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\windows\crtl\limits.h</IncludedBy>
+        <TLI>d:\erads\17.0\include\windows\crtl\_stddef.h</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\type_traits" Level="5" TotalLines="709" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/memory</IncludedBy>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/type_traits</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/type_traits" Level="6" TotalLines="664" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\type_traits</IncludedBy>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\stdexcept" Level="3" TotalLines="2297" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/vector</IncludedBy>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/stdexcept</TLI>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\xtree</IncludedBy>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/deque</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/stdexcept" Level="4" TotalLines="2262" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\stdexcept</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\exception</TLI>
+        <TLI>d:\erads\17.0\include\dinkumware\xstring</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\xstring" Level="5" TotalLines="1945" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/stdexcept</IncludedBy>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\algorithm" Level="1" TotalLines="3175" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</IncludedBy>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/algorithm</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/algorithm" Level="2" TotalLines="3147" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\algorithm</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\memory</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\map" Level="1" TotalLines="2726" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</IncludedBy>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/map</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/map" Level="2" TotalLines="2698" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\map</IncludedBy>
+        <TLI>d:\erads\17.0\include\dinkumware\xtree</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\dinkumware\xtree" Level="3" TotalLines="2379" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/map</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\functional</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\memory</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\stdexcept</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\functional" Level="4" TotalLines="911" Guarded="0">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\dinkumware\xtree</IncludedBy>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/functional</TLI>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/queue</IncludedBy>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/functional" Level="5" TotalLines="880" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\functional</IncludedBy>
+    </Header>
+    <Header Path="D:\USER\GRANIT\INC\kedatas.hpp" Level="1" TotalLines="1772" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\queue</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\queue" Level="2" TotalLines="1661" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\USER\GRANIT\INC\kedatas.hpp</IncludedBy>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/queue</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/queue" Level="3" TotalLines="1633" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\queue</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\deque</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\functional</TLI>
+    </Header>
+    <Header Path="D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\deque" Level="4" TotalLines="1363" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>d:\erads\17.0\include\../include/dinkumware/queue</IncludedBy>
+        <TLI>d:\erads\17.0\include\../include/dinkumware/deque</TLI>
+    </Header>
+    <Header Path="d:\erads\17.0\include\../include/dinkumware/deque" Level="5" TotalLines="1335" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\deque</IncludedBy>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\memory</TLI>
+        <TLI>D:\ERADS\17.0\include\boost_1_39\boost\tr1\tr1\stdexcept</TLI>
+    </Header>
+    <Header Path="D:\USER\GRANIT\INC\GRKRNL32\gkhandle.h" Level="1" TotalLines="152" Guarded="1">
+        <Reference>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</Reference>
+        <IncludedBy>D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_main.cpp</IncludedBy>
+    </Header>
+</PchDataCache>

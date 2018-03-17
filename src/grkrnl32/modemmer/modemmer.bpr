@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="D:\USER\GRANIT\GRKRNL32\modemmer.gkm"/>
+    <OBJFILES value="D:\temp\modemmer\modemmer_main.obj D:\temp\modemmer\modems_list.obj 
+      D:\temp\modemmer\modem_ref.obj D:\temp\modemmer\mline_ref.obj 
+      D:\temp\modemmer\dfa.obj D:\temp\modemmer\redirect_table.obj 
+      D:\temp\modemmer\mdm_intlines.obj D:\temp\modemmer\gkhandle_based.obj 
+      D:\temp\modemmer\gkhandles_list.obj D:\temp\modemmer\gkmodules.obj 
+      D:\temp\modemmer\gkmodules_list.obj D:\temp\modemmer\gkmodules_set.obj"/>
+    <RESFILES value="modemmer.res D:\temp\modemmer\modemmer_mod.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value="..\..\..\LIB\GKHANDLE.LIB ..\..\..\LIB\Ke_rtls.lib ..\..\..\LIB\gklib.lib 
+      D:\BCB\Lib\memmgr.lib ..\..\..\LIB\otdhlpr.lib"/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value=""/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi DclClxIBXtras.bpi"/>
+    <PATHCPP value=".;..\GKLIB"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="STRICT;_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT;_NO_VCL"/>
+    <MAINSOURCE value="modemmer.bpf"/>
+    <INCLUDEPATH value="..;..\GKTLMDB;..\..\..\PROJS;..\..\KE_RTL;..\GKLIB;D:\USER\GRANIT\INC;..\..\..\INC\GRKRNL32;$(BCB)\include"/>
+    <LIBPATH value="..;..\GKTLMDB;..\..\..\INC\GRKRNL32;..\GRIPXMOD;..\..\KE_RTL;..\GKLIB;..\..\..\PROJS;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I.. -I..\GKTLMDB -I..\..\..\PROJS -I..\..\KE_RTL -I..\GKLIB 
+      -ID:\USER\GRANIT\INC -I..\..\..\INC\GRKRNL32 -I$(BCB)\include -src_suffix 
+      cpp -DSTRICT -D_DEBUG -boa"/>
+    <CFLAG1 value="-WD -Od -H=D:\temp\modemmer\modemmer.csm -Vx -Ve -X- -r- -a8 -5 -b- -k -y 
+      -v -vi- -tWD -tWM -c"/>
+    <PFLAGS value="-N2D:\temp\modemmer -N0D:\temp\modemmer -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-ID:\temp\modemmer -D&quot;&quot; -aa -Tpd -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cw32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="modemmer.res" FORMNAME="" UNITNAME="modemmer.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modemmer.bpf" FORMNAME="" UNITNAME="modemmer" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modemmer_main.cpp" FORMNAME="" UNITNAME="modemmer_main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modems_list.cpp" FORMNAME="" UNITNAME="modems_list" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modem_ref.cpp" FORMNAME="" UNITNAME="modem_ref" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="mline_ref.cpp" FORMNAME="" UNITNAME="mline_ref" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modemmer_mod.rc" FORMNAME="" UNITNAME="modemmer_mod" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dfa.cpp" FORMNAME="" UNITNAME="dfa" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="redirect_table.cpp" FORMNAME="" UNITNAME="redirect_table" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\GKHANDLE.LIB" FORMNAME="" UNITNAME="GKHANDLE.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\Ke_rtls.lib" FORMNAME="" UNITNAME="Ke_rtls.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\gklib.lib" FORMNAME="" UNITNAME="gklib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\BCB\Lib\memmgr.lib" FORMNAME="" UNITNAME="memmgr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\otdhlpr.lib" FORMNAME="" UNITNAME="otdhlpr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="mdm_intlines.cpp" FORMNAME="" UNITNAME="mdm_intlines" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\gkhandle_based.cpp" FORMNAME="" UNITNAME="gkhandle_based.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\gkhandles_list.cpp" FORMNAME="" UNITNAME="gkhandles_list.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\gkmodules.cpp" FORMNAME="" UNITNAME="gkmodules.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\gkmodules_list.cpp" FORMNAME="" UNITNAME="gkmodules_list.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\gkmodules_set.cpp" FORMNAME="" UNITNAME="gkmodules_set.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=12
+Item0=..;..\GKTLMDB;..\..\..\PROJS;..\..\KE_RTL;..\GKLIB;D:\USER\GRANIT\INC;..\..\..\INC\GRKRNL32;$(BCB)\include
+Item1=..\;..\GKTLMDB;..\..\..\PROJS;..\..\KE_RTL;..\GKLIB;D:\USER\GRANIT\INC;..\..\..\INC\GRKRNL32;$(BCB)\include
+Item2=..\GKTLMDB;..\..\..\PROJS;..\..\KE_RTL;..\GKLIB;D:\USER\GRANIT\INC;..\..\..\INC\GRKRNL32;$(BCB)\include
+Item3=..\..\..\PROJS;..\..\KE_RTL;..\GKLIB;D:\USER\GRANIT\INC;..\..\..\INC\GRKRNL32;$(BCB)\include
+Item4=..\..\KE_RTL;..\GKLIB;D:\USER\GRANIT\INC;..\..\..\INC\GRKRNL32;$(BCB)\include
+Item5=D:\USER\GRANIT\INC;..\..\..\INC\GRKRNL32;$(BCB)\include
+Item6=..\..\..\INC\GRKRNL32;..\GRIPXMOD;..\..\KE_RTL;..\GKLIB;..\..\..\PROJS;$(BCB)\include;D:\USER\GRANIT\INC
+Item7=..\..\..\INC\GRKRNL32;..\GRIPXMOD;..\..\KE_RTL;..\GKLIB;..\..\..\PROJS;$(BCB)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item8=..\GRIPXMOD;..\..\KE_RTL;..\GKLIB;..\..\..\PROJS;$(BCB)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item9=..\GKLIB;..\..\..\PROJS;$(BCB)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item10=$(BCB)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item11=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=7
+Item0=..;..\GKTLMDB;..\..\..\INC\GRKRNL32;..\GRIPXMOD;..\..\KE_RTL;..\GKLIB;..\..\..\PROJS;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\;..\GKTLMDB;..\..\..\INC\GRKRNL32;..\GRIPXMOD;..\..\KE_RTL;..\GKLIB;..\..\..\PROJS;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\GKTLMDB;..\..\..\INC\GRKRNL32;..\GRIPXMOD;..\..\KE_RTL;..\GKLIB;..\..\..\PROJS;$(BCB)\lib\obj;$(BCB)\lib
+Item3=..\..\..\INC\GRKRNL32;..\GRIPXMOD;..\..\KE_RTL;..\GKLIB;..\..\..\PROJS;$(BCB)\lib\obj;$(BCB)\lib
+Item4=..\GRIPXMOD;..\..\KE_RTL;..\GKLIB;..\..\..\PROJS;$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\GKLIB;..\..\..\PROJS;$(BCB)\lib\obj;$(BCB)\lib
+Item6=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=5
+Item0=STRICT;_DEBUG
+Item1=STRICT
+Item2=STRICT;;_DEBUG
+Item3=STRICT;
+Item4=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=D:\temp\modemmer
+Item1=D:\temp
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=D:\USER\GRANIT\GRKRNL32\
+Item1=D:\USER\GRANIT\GRKRNL32
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=nosplash -config
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=D:\USER\GRANIT\GRKRNL32\grkrnl32.exe
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[RDP Source Files]
+Item0=modemmer.rc
+Item1=..\..\..\GRKRNL32\modemmer.drc
+
+[Language]
+ActiveLang=
+ProjectLang=0x00000419
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

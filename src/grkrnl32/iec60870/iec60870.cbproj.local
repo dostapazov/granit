@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.955,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.774,=D:\ERADS\19.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.695,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870_line_socket.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.960,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.317,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870.cbproj=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.891,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.962,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.164,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870_line.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.301,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.062,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870_buffer.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870_rxbuffer.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.837,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec60870_line_asdu_handler.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.216,D:\USER\GRANIT\INC\vector_index.h=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.746,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870_rxbuffer.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.913,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870_main.cpp=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.958,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.934,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem_line.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.800,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\New1.rc</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.576,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\New1.rc=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870.rc</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.599,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.482,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.h=D:\USER\GRANIT\INC\GRKRNL32\iec60870.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.465,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.041,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.501,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.911,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.383,D:\USER\GRANIT\SRC\GrKrnl32\OTDHLPR\iec60870_proto.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.163,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870_line_asdu_handler.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec60870_line_asdu_handler.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.119,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870modem.hpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.454,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870modem.h=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.097,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gkmodules.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.984,=D:\USER\GRANIT\SRC\KE_RTL\tlicense.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.947,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.208,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870_modem.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.863,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870_PCH1.h=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.163,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.197,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.587,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.419,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="..\..\..\INC"/>
+    <File Path="..\..\..\INC\vector_index.hpp"/>
+    <File Path="..\..\KE_RTL"/>
+    <File Path="..\..\KE_RTL\tlicense.cpp"/>
+    <File Path="..\GKLIB"/>
+    <File Path="..\GKLIB\gkmodules.cpp"/>
+    <File Path="..\GKLIB\modem.cpp"/>
+    <File Path="..\GKLIB\modem_line.cpp"/>
+    <File Path="..\OTDHLPR"/>
+    <File Path="..\OTDHLPR\iec60870_proto.cpp"/>
+    <File Path="..\..\..\LIB_XE\gkhandle.lib"/>
+    <File Path="..\..\..\LIB_XE\gklib.lib"/>
+    <File Path="iec60870.rc"/>
+    <File Path="iec60870_buffer.cpp"/>
+    <File Path="iec60870_line.cpp"/>
+    <File Path="iec60870_line_asdu_handler.cpp"/>
+    <File Path="iec60870_line_socket.cpp"/>
+    <File Path="iec60870_main.cpp"/>
+    <File Path="iec60870_modem.cpp"/>
+    <File Path="iec60870_PCH1.h"/>
+    <File Path="..\..\..\LIB_XE\KE_RTLS.lib"/>
+    <File Path="D:\ERADS\19.0\lib\win32\release\memmgr.lib"/>
+    <File Path="..\..\..\LIB_XE\otdhlpr.lib"/>
+  </ProjectSortOrder>
+</BorlandProject>

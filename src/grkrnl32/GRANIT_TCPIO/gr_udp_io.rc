@@ -1,0 +1,32 @@
+#include "gkmodules.h"
+#include "granit_udpio.h"
+
+
+
+STRINGTABLE
+BEGIN
+IDS_MODULE_PROVIDER      "Остапенко Д.В. СДТУ 1993-2005"
+IDS_MODULE_DESCRIPT      "Модуль ввода/вывода через Ethernet-UDP"
+IDS_MODULE_NAME          "FT2USB_IO"
+END
+
+STRINGTABLE
+BEGIN
+IDS_REPORT_TITLE  "CЦ-Гранит UDP Ввод/вывод"
+IDS_REPORT_TMPL1  "%d кадр без завершения"
+IDS_REPORT_TMPL2  "%d кадров без завершения"
+IDS_REPORT_TMPL3  "Переполнение приёмного буфера"
+IDS_REPORT_TMPL4  "Завершение пакета без начала"
+IDS_REPORT_TMPL5  "Набор байт"
+IDS_REPORT_TMPL6  "пропуск принятого пакета %03d %03d"
+
+IDS_REPORT_TMPL7  "USB устройство %s - "
+IDS_REPORT_TMPL8  " не открыто %s"
+IDS_REPORT_TMPL9  " открыто хендл = %08X"
+IDS_REPORT_TMPL10 "USB устройство хендл %08X - закрыто"
+IDS_REPORT_TMPL11 "FT_GetStatus вернуло ошибку %04X %s переоткрытие устройства"
+IDS_REPORT_TMPL12  "обрыв канала связи %d"
+
+IDS_INACTIVITY_RESET "Нет данных на приём в течении минуты - сброс устройства"
+
+END

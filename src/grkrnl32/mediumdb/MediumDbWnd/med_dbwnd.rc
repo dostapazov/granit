@@ -1,0 +1,6 @@
+#include "mediumdb.rh"
+
+
+BMP_DISCRETE_MASK BITMAP "D:\USER\GRANIT\SRC\GrKrnl32\MediumDB\MediumDbWnd\discrete_image_mask.bmp"
+BMP_DISCRETE_OFF  BITMAP "D:\USER\GRANIT\SRC\GrKrnl32\MediumDB\MediumDbWnd\discrete_image_off.bmp"
+BMP_DISCRETE_ON   BITMAP "D:\USER\GRANIT\SRC\GrKrnl32\MediumDB\MediumDbWnd\discrete_image_on.bmp"

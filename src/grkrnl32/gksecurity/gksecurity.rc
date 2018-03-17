@@ -1,0 +1,16 @@
+#include "gkmodules.h"
+#include "gksecurity.h"
+
+
+STRINGTABLE
+BEGIN
+
+IDS_MODULE_PROVIDER  PROVIDER_STRING
+
+IDS_MODULE_DESCRIPT  "Модуль хранения информации о пользователях и разрешениях"
+IDS_MODULE_NAME      "Пользователи и права"
+END
+
+IDI_MODULE_ICON   ICON "users-edit.ico"
+IDI_MODULE_ICONSM ICON "users-edit16.ico"
+

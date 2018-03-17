@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="D:\User\GRANIT\GRKRNL32\gkscale_wnd.dll"/>
+    <OBJFILES value="d:\temp\gkscale\gkscalewnd_main.obj d:\temp\gkscale\GKScaleFrm.obj 
+      d:\temp\gkscale\gkmodule_form.obj d:\temp\gkscale\TIndexedFile.obj 
+      d:\temp\gkscale\TSegment.obj"/>
+    <RESFILES value="gkscale_wnd.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) GKScaleFrm.dfm ..\..\GKLIB\VCL\gkmodule_form.dfm"/>
+    <LIBFILES value="..\..\..\..\LIB\gklib.lib ..\..\..\..\LIB\Ke_rtls.lib 
+      ..\..\..\..\LIB\GKHANDLE.LIB D:\bcb\CBuilder5\Lib\memmgr.lib"/>
+    <LIBRARIES value="vclx.lib bcbsmp.lib rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib bcbsmp.lib vclx.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;..\..\GKLIB\VCL;..\..\..\KE_RTL;.."/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="gkscale_wnd.bpf"/>
+    <INCLUDEPATH value="..\;..;..\..\..\KE_RTL;..\..\GKLIB\VCL;..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\include;$(BCB)\include\vcl;D:\User\GRANIT\INC;D:\User\GRANIT\INC\GRKRNL32"/>
+    <LIBPATH value="..\;..;..\..\..\KE_RTL;..\..\GKLIB\VCL;..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;&quot;D:\Program Files\Borland\CBuilder6\Projects&quot;;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\. -I.. -I..\..\..\KE_RTL -I..\..\GKLIB\VCL -I..\GKLIB -I..\KE_RTL 
+      -I..\GrKrnl32\GKLIB -I..\GrKrnl32\HANDLE 
+      -I&quot;D:\Program Files\Borland\CBuilder6\Projects&quot; 
+      -ID:\User\GRANIT\SRC\ReporterEx -I$(BCB)\include -I$(BCB)\include\vcl 
+      -ID:\User\GRANIT\INC -ID:\User\GRANIT\INC\GRKRNL32 -src_suffix cpp -boa"/>
+    <CFLAG1 value="-WD -O2 -H=d:\temp\gkscale\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -tWD 
+      -tWM -c"/>
+    <PFLAGS value="-N2d:\temp\gkscale -N0d:\temp\gkscale -$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-Id:\temp\gkscale -D&quot;&quot; -aa -Tpd -x -Gn"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="gkscale_wnd.res" FORMNAME="" UNITNAME="gkscale_wnd.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkscale_wnd.bpf" FORMNAME="" UNITNAME="gkscale_wnd" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkscalewnd_main.cpp" FORMNAME="" UNITNAME="gkscalewnd_main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="GKScaleFrm.cpp" FORMNAME="GKModuleForm1" UNITNAME="GKScaleFrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GKLIB\VCL\gkmodule_form.cpp" FORMNAME="GKModuleForm" UNITNAME="gkmodule_form" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\LIB\gklib.lib" FORMNAME="" UNITNAME="gklib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\LIB\Ke_rtls.lib" FORMNAME="" UNITNAME="Ke_rtls.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\LIB\GKHANDLE.LIB" FORMNAME="" UNITNAME="GKHANDLE.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\bcb\CBuilder5\Lib\memmgr.lib" FORMNAME="" UNITNAME="memmgr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\KE_RTL\TIndexedFile.cpp" FORMNAME="" UNITNAME="TIndexedFile" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\TSegment.cpp" FORMNAME="" UNITNAME="TSegment" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=5
+Item0=..\;..;..\..\..\KE_RTL;..\..\GKLIB\VCL;..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\include;$(BCB)\include\vcl;D:\User\GRANIT\INC;D:\User\GRANIT\INC\GRKRNL32
+Item1=..\;..\..\..\KE_RTL;..\..\GKLIB\VCL;..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\include;$(BCB)\include\vcl;D:\User\GRANIT\INC;D:\User\GRANIT\INC\GRKRNL32
+Item2=..\..\GKLIB\VCL;..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\include;$(BCB)\include\vcl;D:\User\GRANIT\INC;D:\User\GRANIT\INC\GRKRNL32
+Item3=..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\include;$(BCB)\include\vcl;D:\User\GRANIT\INC;D:\User\GRANIT\INC\GRKRNL32
+Item4=D:\Program Files\Borland\CBuilder6\Projects;..\..\GKLIB\VCL;D:\User\GRANIT\SRC\GrKrnl32\Scale\Scale_Wnd;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=5
+Item0=..\;..;..\..\..\KE_RTL;..\..\GKLIB\VCL;..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\;..\..\..\KE_RTL;..\..\GKLIB\VCL;..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\..\GKLIB\VCL;..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\lib\obj;$(BCB)\lib
+Item3=..\GKLIB;..\KE_RTL;..\GrKrnl32\GKLIB;..\GrKrnl32\HANDLE;D:\Program Files\Borland\CBuilder6\Projects;D:\User\GRANIT\SRC\ReporterEx;$(BCB)\lib\obj;$(BCB)\lib
+Item4=D:\Program Files\Borland\CBuilder6\Projects;..\..\GKLIB\VCL;D:\User\GRANIT\SRC\GrKrnl32\Scale\Scale_Wnd;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=d:\temp\gkscale
+Item1=d:\temp
+
+[HistoryLists\hlFinalOutputDir]
+Count=1
+Item0=D:\User\GRANIT\GRKRNL32\
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=nosplash config
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=D:\User\GRANIT\GRKRNL32\grkrnl32.exe
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

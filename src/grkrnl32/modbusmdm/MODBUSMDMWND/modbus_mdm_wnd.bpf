@@ -1,0 +1,9 @@
+USEFORM("..\..\GKLIB\VCL\gkmodule_form.cpp", GKModuleForm);
+USEFORM("modbus_mdm_form.cpp", ModbusModemForm);
+USEFORM("..\..\GKLIB\VCL\gkmod_frame.cpp", GKModuleFrame); /* TFrame: File Type */
+USEFORM("mdbus_mod_cfg_frame.cpp", ModbusModConfig); /* TFrame: File Type */
+USEFORM("modbus_device_frame.cpp", ModbusDevFrame); /* TFrame: File Type */
+//---------------------------------------------------------------------------
+This file is used by the project manager only and should be treated like the project file
+
+DllMain

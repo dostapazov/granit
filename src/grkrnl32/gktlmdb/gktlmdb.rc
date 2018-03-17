@@ -1,0 +1,78 @@
+/*******************************************************************************/
+/*                                                                             */
+/* Модуль    : grkernel                                                        */
+/* Описание  : Ресурсы                                                         */
+/* Автор     : Остапенко Д.В.                                                  */
+/* Версия    : 1                                                               */
+/* Создан    : 17.07.2002                                                      */
+/*                                                                             */
+/*******************************************************************************/
+
+
+#include "gkmodules.h"
+#include "gktlmdb.h"
+#include "gktlmdberr.rc"
+
+STRINGTABLE
+BEGIN
+IDS_MODULE_PROVIDER  PROVIDER_STRING
+IDS_MODULE_DESCRIPT      "База телемеханических данных нижнего уровня"
+IDS_MODULE_NAME          "ТБД-нижнего уровня"
+IDS_PULIST               "Список ПУ"
+END
+
+IDI_MODULE_ICONSM  ICON "GKTLMDB.ICO"
+IDI_MODULE_ICON    ICON "GKTLMDB.ICO"
+
+STRINGTABLE
+BEGIN
+
+
+IDS_LOG_CONFLICT              "Конфликт: данные ПУ №%03d приходят с модемов  %03d и %03d. С последнего адреса не обрабатываются "
+IDS_LOG_MODEM_CONNECTSRC      "Линия модема источника %03d.%03d активизировалась.Отправлен вызов"
+IDS_LOG_MODEM_DISCONNECTSRC   "Отключение линии модема источника %03d.%03d  Диагностика ПУ № %d установлена 'Отсутствие связи с ПУ'"
+IDS_LOG_MODEM_DISCONNECTDEST  "Отключение линии модема потребителя %03d.%03d - Снятие подписки"
+
+END
+
+
+
+/*
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "ASDU\0"
+            VALUE "FileDescription", "Low level telemechanic data base GRKERNEL32\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "gktlmdb\0"
+            VALUE "LegalCopyright", "Copyright © 2001 SDTU Norilsk\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "gktlmdb.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "ASDU gktlmdb\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+*/
+

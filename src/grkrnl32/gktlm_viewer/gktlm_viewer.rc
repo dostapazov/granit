@@ -1,0 +1,22 @@
+#include <gkmodules.h>
+#include "gktlm_viewer.h"
+
+/*
+LANGUAGE 0x19,0x1
+1 11 REC_HIST_ERR_RU.bin
+LANGUAGE 0x9,0x1
+1 11 REC_HIST_ERR_EN.bin
+*/
+
+
+STRINGTABLE
+BEGIN
+
+IDS_MODULE_PROVIDER  PROVIDER_STRING
+
+IDS_MODULE_DESCRIPT  "Модуль просмотра кадров MediumDB"
+IDS_MODULE_NAME      "Модуль просмотра кадров MediumDB"
+END
+
+IDI_MODULE_ICON   ICON "tlm_viewer_1.ico"
+IDI_MODULE_ICONSM ICON "tlm_viewer_1_16.ico"

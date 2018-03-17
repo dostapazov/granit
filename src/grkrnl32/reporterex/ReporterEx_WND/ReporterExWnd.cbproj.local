@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.489,D:\ERADS\18.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.870,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.876,=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx_WND\ReporterEx_frm.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.200,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.711,=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx_WND\GKEvent_frm.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.640,D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx_WND\GKEvent_frm.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.091,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.857,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmod_frame.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.652,=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx_WND\BeepThread.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.232,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.070,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.527,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.162,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.222,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.774,=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx_WND\Property_frm.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.249,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.254,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx_WND\reporterex_wndPCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.343,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.554,=D:\ERADS\lib\win32\release\usebormm.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.822,=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx_WND\ReadLogThread.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.895,=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx_WND\ReporterEx_wnd.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.058,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.773,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx_WND\ReporterExWnd.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.443,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.213,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.228,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.729,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="-1" SortType="0">
+	</ProjectSortOrder>
+</BorlandProject>

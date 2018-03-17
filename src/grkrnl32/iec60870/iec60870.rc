@@ -1,0 +1,20 @@
+#include "iec60870_modem.h"
+#include "iec60870_modem_err.rc"
+
+
+
+
+STRINGTABLE
+BEGIN
+IDS_MODULE_PROVIDER  PROVIDER_STRING
+
+IDS_MODULE_DESCRIPT      "Реализация модема протокола МЭК-60870-5-104"
+IDS_MODULE_NAME          "Модем протокола МЭК-60870-5-104"
+IDS_MODEM_INFO           "Модем протокола МЭК-60870-5-104"
+END
+
+
+IDI_MODULE_ICONSM  ICON "control_panel32.ICO"
+IDI_MODULE_ICON    ICON "control_panel64.ICO"
+
+

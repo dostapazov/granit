@@ -1,0 +1,75 @@
+/*******************************************************************************
+ *
+ * Модуль    : grkernel
+ * Описание  : Ресурсы
+ * Автор     : Остапенко Д.В.
+ * Версия    : 1
+ * Создан    : 17.07.2002
+ *
+ ******************************************************************************/
+
+
+#include <grkernel.h>
+
+
+STRINGTABLE
+LANGUAGE LANG_RUSSIAN,SUBLANG_NEUTRAL
+BEGIN
+IDS_MODULE_PROVIDER      PROVIDER_STRING
+IDS_MODULE_DESCRIPT      "Модуль основатель всей функциональности центра телемеханики"
+IDS_MODULE_NAME          "Ядро ОУИК \"Центр\" "
+IDS_EVAL_PERIOD_EXPIRED  "Период пробного использования программы истек"
+END
+
+STRINGTABLE
+LANGUAGE LANG_ENGLISH,SUBLANG_NEUTRAL
+BEGIN
+IDS_MODULE_PROVIDER      PROVIDER_STRING_ENGL
+IDS_MODULE_DESCRIPT      "Module founder of all the functionality of the telemechanics center"
+IDS_MODULE_NAME          "Kernel of \"Centre\""
+IDS_EVAL_PERIOD_EXPIRED  "Evaluating period is expired"
+END
+
+
+IDI_MODULE_ICON    ICON "GKERNEL.ico"
+IDI_MODULE_ICONSM  ICON "GKERNEL.ICO"
+
+/*
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "Comments", "Ядро Центра телемеханики\0"
+            VALUE "CompanyName", "ASDU\0"
+            VALUE "FileDescription", "Ядро Центра телемеханики\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "grkernel\0"
+            VALUE "LegalCopyright", "Copyright © 2004 Ostapenko D.V. Azov Russia\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "grkernel.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", " grkernel\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+*/
+

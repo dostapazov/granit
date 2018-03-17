@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{94CA7E65-E1B9-4789-9EF6-ECE59E98E1D7}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="calcf.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="tstc.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="calcf">
+        <MSBuild Projects="calcf.cbproj"/>
+    </Target>
+    <Target Name="calcf:Clean">
+        <MSBuild Projects="calcf.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="calcf:Make">
+        <MSBuild Projects="calcf.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="tstc">
+        <MSBuild Projects="tstc.cbproj"/>
+    </Target>
+    <Target Name="tstc:Clean">
+        <MSBuild Projects="tstc.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="tstc:Make">
+        <MSBuild Projects="tstc.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="calcf;tstc"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="calcf:Clean;tstc:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="calcf:Make;tstc:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

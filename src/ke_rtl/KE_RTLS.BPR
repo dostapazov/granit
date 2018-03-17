@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="D:\USER\GRANIT\LIB\KE_RTLS.lib"/>
+    <OBJFILES value="d:\temp\ke_rtl\KE_RTLS.obj d:\temp\ke_rtl\Tthread.obj 
+      d:\temp\ke_rtl\Sysinfo.obj d:\temp\ke_rtl\Tfile.obj 
+      d:\temp\ke_rtl\Tlogfile.obj d:\temp\ke_rtl\Rtl_util.obj 
+      d:\temp\ke_rtl\Grkmenu.obj d:\temp\ke_rtl\gkdlgs.obj 
+      d:\temp\ke_rtl\tregstry_w.obj d:\temp\ke_rtl\opensave_dlg.obj 
+      d:\temp\ke_rtl\kertlio.obj d:\temp\ke_rtl\pipes.obj 
+      d:\temp\ke_rtl\kedatas.obj d:\temp\ke_rtl\iocprt.obj 
+      d:\temp\ke_rtl\TREGSTRYWR_W.obj d:\temp\ke_rtl\TREGSTRYRD_W.obj 
+      d:\temp\ke_rtl\gkcommctrl.obj d:\temp\ke_rtl\ttooltips.obj 
+      d:\temp\ke_rtl\tmrsw.obj d:\temp\ke_rtl\hbase.obj 
+      d:\temp\ke_rtl\gkwctrls.obj d:\temp\ke_rtl\gkbtn.obj 
+      d:\temp\ke_rtl\gkstatic.obj d:\temp\ke_rtl\tmodule.obj 
+      d:\temp\ke_rtl\tlistview.obj d:\temp\ke_rtl\comm_prt.obj 
+      d:\temp\ke_rtl\regs_base.obj d:\temp\ke_rtl\tregstry.obj 
+      d:\temp\ke_rtl\TREGSTRYRD.obj d:\temp\ke_rtl\TREGSTRYWR.obj 
+      d:\temp\ke_rtl\browse_folder_w.obj d:\temp\ke_rtl\browse_folder_c.obj 
+      d:\temp\ke_rtl\browse_folder.obj d:\temp\ke_rtl\wnd_pos_sizing.obj 
+      d:\temp\ke_rtl\force_dirs_a.obj d:\temp\ke_rtl\force_dirs_w.obj 
+      d:\temp\ke_rtl\progress_bar.obj d:\temp\ke_rtl\tree_view.obj 
+      d:\temp\ke_rtl\toolbar.obj d:\temp\ke_rtl\memory_stream.obj 
+      d:\temp\ke_rtl\gkedit.obj d:\temp\ke_rtl\base64endecode.obj 
+      d:\temp\ke_rtl\SRVASYNC.obj d:\temp\ke_rtl\Tipxsock.obj 
+      d:\temp\ke_rtl\Wsockdef.obj d:\temp\ke_rtl\async_socks.obj 
+      d:\temp\ke_rtl\macaddr_detect.obj d:\temp\ke_rtl\rtl_util1.obj 
+      d:\temp\ke_rtl\proces_w.obj d:\temp\ke_rtl\proces_a.obj 
+      d:\temp\ke_rtl\thread_pool.obj d:\temp\ke_rtl\threads_list.obj 
+      d:\temp\ke_rtl\Syssync.obj d:\temp\ke_rtl\heap_getmemused.obj 
+      d:\temp\ke_rtl\storage.obj d:\temp\ke_rtl\rtl_memfunc.obj 
+      d:\temp\ke_rtl\TIndexedFile.obj d:\temp\ke_rtl\Grkrwnd.obj 
+      d:\temp\ke_rtl\rtl_util2.obj d:\temp\ke_rtl\Ibclass.obj 
+      d:\temp\ke_rtl\IBService.obj d:\temp\ke_rtl\file_stream.obj 
+      d:\temp\ke_rtl\Ibclass_cllib.obj d:\temp\ke_rtl\CRCUNIT.obj"/>
+    <RESFILES value=""/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value=""/>
+    <PACKAGES value=""/>
+    <PATHCPP value=".;..\KE_WIN;..\NETRTL;..\COMMON"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value=""/>
+    <RELEASELIBPATH value=""/>
+    <LINKER value="TLib"/>
+    <USERDEFINES value="STRICT;NO_VCL;_NO_VCL;;_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT;_VIS_NOLIB"/>
+    <MAINSOURCE value="KE_RTLS.cpp"/>
+    <INCLUDEPATH value="..\COMMON;$(BCB)\Projects;..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\DVERI-K\Mdoors\inc\ibase"/>
+    <LIBPATH value="..\COMMON;$(BCB)\Projects;..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN"/>
+    <WARNINGS value="-w-par -w-8027 -w-8026"/>
+    <WARNOPTSTR value=""/>
+    <LISTFILE value=""/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\COMMON -I$(BCB)\Projects -I..\..\PROJS -I..\GrKrnl32 -I..\NETRTL 
+      -I..\KE_WIN -I$(BCB)\include -I$(BCB)\include\vcl -ID:\USER\GRANIT\INC 
+      -ID:\USER\DVERI-K\Mdoors\inc\ibase -src_suffix cpp -DSTRICT -DNO_VCL 
+      -D_NO_VCL -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=d:\temp\ke_rtl\ke_rtls.csm -Hc -Vx -Ve -X- -r- -a8 -5 -b- -k -y -v 
+      -vi- -c -tWM"/>
+    <PFLAGS value="-N2d:\temp\ke_rtl -N0d:\temp\ke_rtl -$Y+ -$W -$O- -$A8 -v -JPHN -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-ld:\user\granit\lib /P256 /0 /E"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="$(OBJFILES)"/>
+    <ALLRES value=""/>
+    <ALLLIB value=""/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="KE_RTLS.cpp" FORMNAME="" UNITNAME="KE_RTLS" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Tthread.cpp" FORMNAME="" UNITNAME="Tthread" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Sysinfo.cpp" FORMNAME="" UNITNAME="Sysinfo" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Tfile.cpp" FORMNAME="" UNITNAME="Tfile" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Tlogfile.cpp" FORMNAME="" UNITNAME="Tlogfile" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Rtl_util.cpp" FORMNAME="" UNITNAME="Rtl_util" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\Grkmenu.cpp" FORMNAME="" UNITNAME="Grkmenu" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\gkdlgs.cpp" FORMNAME="" UNITNAME="gkdlgs" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="tregstry_w.cpp" FORMNAME="" UNITNAME="tregstry_w" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\opensave_dlg.cpp" FORMNAME="" UNITNAME="opensave_dlg" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="kertlio.cpp" FORMNAME="" UNITNAME="kertlio" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="pipes.cpp" FORMNAME="" UNITNAME="pipes" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="kedatas.cpp" FORMNAME="" UNITNAME="kedatas" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="iocprt.cpp" FORMNAME="" UNITNAME="iocprt" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TREGSTRYWR_W.CPP" FORMNAME="" UNITNAME="TREGSTRYWR_W" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TREGSTRYRD_W.CPP" FORMNAME="" UNITNAME="TREGSTRYRD_W" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\gkcommctrl.cpp" FORMNAME="" UNITNAME="gkcommctrl" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\ttooltips.cpp" FORMNAME="" UNITNAME="ttooltips" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="tmrsw.cpp" FORMNAME="" UNITNAME="tmrsw" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="hbase.cpp" FORMNAME="" UNITNAME="hbase" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\gkwctrls.cpp" FORMNAME="" UNITNAME="gkwctrls" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\gkbtn.cpp" FORMNAME="" UNITNAME="gkbtn" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\gkstatic.cpp" FORMNAME="" UNITNAME="gkstatic" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="tmodule.cpp" FORMNAME="" UNITNAME="tmodule" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\tlistview.cpp" FORMNAME="" UNITNAME="tlistview" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="comm_prt.cpp" FORMNAME="" UNITNAME="comm_prt" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="regs_base.cpp" FORMNAME="" UNITNAME="regs_base" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="tregstry.cpp" FORMNAME="" UNITNAME="tregstry" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TREGSTRYRD.CPP" FORMNAME="" UNITNAME="TREGSTRYRD" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TREGSTRYWR.CPP" FORMNAME="" UNITNAME="TREGSTRYWR" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\browse_folder_w.cpp" FORMNAME="" UNITNAME="browse_folder_w" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\browse_folder_c.cpp" FORMNAME="" UNITNAME="browse_folder_c" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\browse_folder.cpp" FORMNAME="" UNITNAME="browse_folder" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\wnd_pos_sizing.cpp" FORMNAME="" UNITNAME="wnd_pos_sizing" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="force_dirs_a.cpp" FORMNAME="" UNITNAME="force_dirs_a" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="force_dirs_w.cpp" FORMNAME="" UNITNAME="force_dirs_w" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\progress_bar.cpp" FORMNAME="" UNITNAME="progress_bar" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\tree_view.cpp" FORMNAME="" UNITNAME="tree_view" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\toolbar.cpp" FORMNAME="" UNITNAME="toolbar" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="memory_stream.cpp" FORMNAME="" UNITNAME="memory_stream" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\gkedit.cpp" FORMNAME="" UNITNAME="gkedit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="base64endecode.cpp" FORMNAME="" UNITNAME="base64endecode" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\NETRTL\SRVASYNC.CPP" FORMNAME="" UNITNAME="SRVASYNC" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\NETRTL\Tipxsock.cpp" FORMNAME="" UNITNAME="Tipxsock" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\NETRTL\Wsockdef.cpp" FORMNAME="" UNITNAME="Wsockdef" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\NETRTL\async_socks.cpp" FORMNAME="" UNITNAME="async_socks" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\NETRTL\macaddr_detect.cpp" FORMNAME="" UNITNAME="macaddr_detect" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl_util1.cpp" FORMNAME="" UNITNAME="rtl_util1" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="proces_w.cpp" FORMNAME="" UNITNAME="proces_w.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="proces_a.cpp" FORMNAME="" UNITNAME="proces_a.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="thread_pool.cpp" FORMNAME="" UNITNAME="thread_pool" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="threads_list.cpp" FORMNAME="" UNITNAME="threads_list" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Syssync.cpp" FORMNAME="" UNITNAME="Syssync" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="heap_getmemused.cpp" FORMNAME="" UNITNAME="heap_getmemused" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="storage.cpp" FORMNAME="" UNITNAME="storage" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl_memfunc.cpp" FORMNAME="" UNITNAME="rtl_memfunc" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TIndexedFile.cpp" FORMNAME="" UNITNAME="TIndexedFile" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\KE_WIN\Grkrwnd.cpp" FORMNAME="" UNITNAME="Grkrwnd" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl_util2.cpp" FORMNAME="" UNITNAME="rtl_util2" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Ibclass.cpp" FORMNAME="" UNITNAME="Ibclass" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="IBService.cpp" FORMNAME="" UNITNAME="IBService" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="file_stream.cpp" FORMNAME="" UNITNAME="file_stream" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Ibclass_cllib.cpp" FORMNAME="" UNITNAME="Ibclass_cllib" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\COMMON\CRCUNIT.CPP" FORMNAME="" UNITNAME="CRCUNIT" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=22
+Item0=..\COMMON;$(BCB)\Projects;..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\DVERI-K\Mdoors\inc\ibase
+Item1=$(BCB)\Projects;..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\DVERI-K\Mdoors\inc\ibase
+Item2=$(BCB)\Projects;..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\Firebird2_1\include
+Item3=$(BCB)\Projects;..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC
+Item4=..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC
+Item5=..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC
+Item6=$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC
+Item7=..\GrKrnl32\GKLIB;..\..\PROJS;..\NETRTL;..\KE_WIN;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC
+Item8=..\GrKrnl32\GKLIB;..\WINATONY;..\..\PROJS;..\NETRTL;..\KE_WIN;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC
+Item9=..\WINATONY;..\..\PROJS;..\NETRTL;..\KE_WIN;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC
+Item10=..\NETRTL;..\KE_WIN;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC
+Item11=..\NETRTL;..\KE_WIN;..\..\PROJS;..\..\Proxy\SRC;..\SRC\NETRTL;..\SRC\GrKrnl32\adrrmapper;..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects;C:\WINNT\Profiles\Администратор\Рабочий стол;..\SRC\KE_WIN;..\SRC\KE_RTL;$(BCB)\include;$(BCB)\include\vcl;..\INC
+Item12=..\..\Proxy\SRC;..\SRC\NETRTL;..\SRC\GrKrnl32\adrrmapper;..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects;C:\WINNT\Profiles\Администратор\Рабочий стол;..\SRC\KE_WIN;..\SRC\KE_RTL;$(BCB)\include;$(BCB)\include\vcl;..\INC
+Item13=..\..\Proxy\SRC;..\SRC\NETRTL;..\SRC\GrKrnl32\adrrmapper;..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects\;C:\WINNT\Profiles\Администратор\Рабочий стол\;..\SRC\KE_WIN;..\SRC\KE_RTL;$(BCB)\include;$(BCB)\include\vcl;..\INC
+Item14=..\SRC\GrKrnl32\adrrmapper;..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects\;C:\WINNT\Profiles\Администратор\Рабочий стол\;..\SRC\KE_WIN;..\SRC\KE_RTL;$(BCB)\include;$(BCB)\include\vcl;..\INC
+Item15=..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects\;C:\WINNT\Profiles\Администратор\Рабочий стол\;..\SRC\KE_WIN;..\SRC\KE_RTL;$(BCB)\include;$(BCB)\include\vcl;..\INC
+Item16=..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects;C:\WINNT\Profiles\Администратор\Рабочий стол\;..\SRC\KE_WIN;..\SRC\KE_RTL;$(BCB)\include;$(BCB)\include\vcl;..\INC
+Item17=C:\WINNT\Profiles\Администратор\Рабочий стол;..\SRC\KE_WIN;..\SRC\KE_RTL;$(BCB)\include;$(BCB)\include\vcl;..\INC
+Item18=..\SRC\KE_WIN;..\SRC\KE_RTL;$(BCB)\include;$(BCB)\include\vcl;..\INC
+Item19=..\SRC\KE_RTL;$(BCB)\include;$(BCB)\include\vcl;..\INC
+Item20=..\SRC\KE_RTL;$(BCB)\include;..\INC
+Item21=$(BCB)\include;D:\USER\GRANIT\INC
+
+[HistoryLists\hlLibraryPath]
+Count=17
+Item0=..\COMMON;$(BCB)\Projects;..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN
+Item1=$(BCB)\Projects;..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN
+Item2=..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN
+Item3=..\GrKrnl32;..\NETRTL;..\KE_WIN
+Item4=..\GrKrnl32\GKLIB;..\NETRTL;..\KE_WIN;..\..\PROJS
+Item5=..\GrKrnl32\GKLIB;..\WINATONY;..\NETRTL;..\KE_WIN;..\..\PROJS;..\..\Proxy\SRC;..\SRC\NETRTL;..\SRC\GrKrnl32\adrrmapper;..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects;C:\WINNT\Profiles\Администратор\Рабочий стол;..\SRC\KE_WIN;..\SRC\KE_RTL
+Item6=..\WINATONY;..\NETRTL;..\KE_WIN;..\..\PROJS;..\..\Proxy\SRC;..\SRC\NETRTL;..\SRC\GrKrnl32\adrrmapper;..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects;C:\WINNT\Profiles\Администратор\Рабочий стол;..\SRC\KE_WIN;..\SRC\KE_RTL
+Item7=..\NETRTL;..\KE_WIN;..\..\PROJS;..\..\Proxy\SRC;..\SRC\NETRTL;..\SRC\GrKrnl32\adrrmapper;..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects;C:\WINNT\Profiles\Администратор\Рабочий стол;..\SRC\KE_WIN;..\SRC\KE_RTL
+Item8=..\..\Proxy\SRC;..\SRC\NETRTL;..\SRC\GrKrnl32\adrrmapper;..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects;C:\WINNT\Profiles\Администратор\Рабочий стол;..\SRC\KE_WIN;..\SRC\KE_RTL
+Item9=..\..\Proxy\SRC;..\SRC\NETRTL;..\SRC\GrKrnl32\adrrmapper;..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects\;C:\WINNT\Profiles\Администратор\Рабочий стол\;..\SRC\KE_WIN;..\SRC\KE_RTL
+Item10=..\SRC\GrKrnl32\adrrmapper;..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects\;C:\WINNT\Profiles\Администратор\Рабочий стол\;..\SRC\KE_WIN;..\SRC\KE_RTL
+Item11=..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects\;C:\WINNT\Profiles\Администратор\Рабочий стол\;..\SRC\KE_WIN;..\SRC\KE_RTL
+Item12=..\SRC\GrKrnl32;d:\bcb\CBuilder5\Projects;C:\WINNT\Profiles\Администратор\Рабочий стол\;..\SRC\KE_WIN;..\SRC\KE_RTL
+Item13=C:\WINNT\Profiles\Администратор\Рабочий стол;..\SRC\KE_WIN;..\SRC\KE_RTL
+Item14=..\SRC\KE_WIN;..\SRC\KE_RTL
+Item15=..\SRC\KE_RTL
+Item16=..\SRC\KE_RTL;
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=6
+Item0=STRICT;NO_VCL;_NO_VCL;;_DEBUG
+Item1=STRICT;NO_VCL;_NO_VCL;
+Item2=STRICT;NO_VCL;_NO_VCL;_USE_OLD_RW_STL
+Item3=STRICT;NO_VCL;_NO_VCL
+Item4=STRICT;NO_VCL;_NO_VCL;_DEBUG
+Item5=STRICT;NO_VCL
+
+[HistoryLists\hlIntOutputDir]
+Count=6
+Item0=d:\temp\ke_rtl
+Item1=d:\temp\ke_rtl\
+Item2=d:\temp
+Item3=d:\temp\
+Item4=..\temp
+Item5=..\..\..\temp
+
+[HistoryLists\hlFinalOutputDir]
+Count=20
+Item0=D:\USER\GRANIT\LIB\
+Item1=D:\USER\GRANIT\LIB
+Item2=..\lib\
+Item3=..\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=..\libItem1=d:\user\granit\lib
+Item4=
+Item5=
+Item6=
+Item7=
+Item8=
+Item9=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=..\libItem1=..\libItem1=..\libItem1=..\libItem1=d:\user\granit\libItem1=..\grkrnl32Item1=..\grkrnl32Item1=d:\user\granit\grkrnl32
+Item10=
+Item11=
+Item12=
+Item13=
+Item14=
+Item15=
+Item16=
+Item17=
+Item18=
+Item19=
+
+[HistoryLists\hIBPIOutputDir]
+Count=23
+Item0=d:\user\granit\lib
+Item1=d:\user\granit\lib\
+Item2=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\libItem1=d:\user\granit\lib
+Item3=
+Item4=
+Item5=
+Item6=
+Item7=
+Item8=
+Item9=
+Item10=
+Item11=
+Item12=
+Item13=
+Item14=
+Item15=
+Item16=
+Item17=
+Item18=
+Item19=
+Item20=
+Item21=
+Item22=
+
+[HistoryLists\hlTlibPageSize]
+Count=3
+Item0=0x0100
+Item1=0x0020
+Item2=0x0010
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

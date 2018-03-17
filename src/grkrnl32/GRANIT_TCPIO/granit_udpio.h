@@ -1,0 +1,20 @@
+
+#ifndef _GRANIT_UDPIO_INC_
+#define _GRANIT_UDPIO_INC_
+
+ #define  IDS_REPORT_TITLE     1000
+ #define  IDS_REPORT_TMPL1     1001
+ #define  IDS_REPORT_TMPL2     1002
+ #define  IDS_REPORT_TMPL3     1003
+ #define  IDS_REPORT_TMPL4     1004
+ #define  IDS_REPORT_TMPL5     1005
+ #define  IDS_REPORT_TMPL6     1006
+ #define  IDS_REPORT_TMPL7     1007
+ #define  IDS_REPORT_TMPL8     1008
+ #define  IDS_REPORT_TMPL9     1009
+ #define  IDS_REPORT_TMPL10    1010
+ #define  IDS_REPORT_TMPL11    1011
+ #define  IDS_REPORT_TMPL12    1012
+ #define  IDS_INACTIVITY_RESET 1500
+
+#endif

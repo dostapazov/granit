@@ -1,0 +1,20 @@
+#include "gkmodules.h"
+#include "cpc152dev.h"
+
+
+STRINGTABLE
+BEGIN
+
+#ifdef COMERCIAL_BUILD
+IDS_MODULE_PROVIDER  "ООО \"Компания промышленной автоматизации 2015\""
+#else
+
+IDS_MODULE_PROVIDER      "Остапенко Д.В. г.Азов 1993-2016"
+#endif
+IDS_MODULE_DESCRIPT  "Контроллер CPC152 "
+IDS_MODULE_NAME      "CPC152"
+//IDS_LINE_TEMPL       ""
+END
+
+IDI_MODULE_ICON   ICON "cpc152_dev32.ico"
+IDI_MODULE_ICONSM ICON "cpc152_dev16.ico"

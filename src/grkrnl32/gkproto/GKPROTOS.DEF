@@ -1,0 +1,16 @@
+EXPORTS
+
+   otd_parser             @100
+   otd_maker              @101
+   otd_get_param          @102
+   otd_set_param          @103
+   otd_bytes_for_bitparam @104
+   otd_get_bit            @105
+   otd_set_bit            @106
+   otd_copy_data          @107
+   otd_compare_addr       @108
+
+   besproto_parser        @200
+   besproto_maker         @201
+   
+

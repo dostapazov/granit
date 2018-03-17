@@ -1,0 +1,29 @@
+object TlmViewerForm: TTlmViewerForm
+  Left = 0
+  Top = 0
+  Caption = 'TlmViewerForm'
+  ClientHeight = 311
+  ClientWidth = 643
+  Color = clBtnFace
+  Font.Charset = RUSSIAN_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poDesigned
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PainterPanel: TPanel
+    Left = 64
+    Top = 32
+    Width = 537
+    Height = 249
+    TabOrder = 0
+    OnResize = PainterPanelResize
+  end
+end

@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="d:\user\granit\grkrnl32\vtdcnt.gkm"/>
+    <OBJFILES value="d:\temp\vtdcnt\vtdcnt_main.obj d:\temp\vtdcnt\vtdcnt_mod.obj 
+      d:\temp\vtdcnt\vtd_line.obj d:\temp\vtdcnt\Wsockdef.obj 
+      d:\temp\vtdcnt\gkmodules.obj d:\temp\vtdcnt\vtd_line_std.obj 
+      d:\temp\vtdcnt\modem_line.obj d:\temp\vtdcnt\modem.obj 
+      d:\temp\vtdcnt\otd_storage.obj"/>
+    <RESFILES value="vtdcnt.res d:\temp\vtdcnt\vtdcnt.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value="..\..\..\LIB\otdhlpr.lib ..\..\..\LIB\GKHANDLE.LIB ..\..\..\LIB\gklib.lib 
+      ..\..\..\LIB\KE_RTLS.lib memmgr.lib"/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value=""/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;..\..\NETRTL;..\GKLIB"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="STRICT;_DEBUG;_NO_VCL"/>
+    <SYSDEFINES value="NO_STRICT;_NO_VCL"/>
+    <MAINSOURCE value="vtdcnt.bpf"/>
+    <INCLUDEPATH value="..\GKLIB;..\..\NETRTL;..;$(BCB)\Projects;$(BCB)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC"/>
+    <LIBPATH value="..\GKLIB;..\..\NETRTL;..;$(BCB)\Projects;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\GKLIB -I..\..\NETRTL -I.. -I$(BCB)\Projects -I$(BCB)\include 
+      -ID:\USER\GRANIT\INC\GRKRNL32 -ID:\USER\GRANIT\INC -src_suffix cpp 
+      -DSTRICT -D_DEBUG -D_NO_VCL -boa"/>
+    <CFLAG1 value="-WD -Od -H=d:\temp\vtdcnt\vtdcnt.csm -Hc -Vx -Ve -fp -ff -X- -r- -a8 -5 
+      -b- -k -y -v -vi- -tWD -tWM- -c"/>
+    <PFLAGS value="-N2d:\temp\vtdcnt -N0d:\temp\vtdcnt -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-Id:\temp\vtdcnt -D&quot;&quot; -aa -Tpd -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cw32.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="vtdcnt.res" FORMNAME="" UNITNAME="vtdcnt.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vtdcnt.bpf" FORMNAME="" UNITNAME="vtdcnt" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\otdhlpr.lib" FORMNAME="" UNITNAME="otdhlpr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\GKHANDLE.LIB" FORMNAME="" UNITNAME="GKHANDLE.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\gklib.lib" FORMNAME="" UNITNAME="gklib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\KE_RTLS.lib" FORMNAME="" UNITNAME="KE_RTLS.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="memmgr.lib" FORMNAME="" UNITNAME="memmgr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vtdcnt_main.cpp" FORMNAME="" UNITNAME="vtdcnt_main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vtdcnt_mod.cpp" FORMNAME="" UNITNAME="vtdcnt_mod" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vtdcnt.rc" FORMNAME="" UNITNAME="vtdcnt.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vtd_line.cpp" FORMNAME="" UNITNAME="vtd_line" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\NETRTL\Wsockdef.cpp" FORMNAME="" UNITNAME="Wsockdef" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\gkmodules.cpp" FORMNAME="" UNITNAME="gkmodules.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vtd_line_std.cpp" FORMNAME="" UNITNAME="vtd_line_std" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\modem_line.cpp" FORMNAME="" UNITNAME="modem_line.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\modem.cpp" FORMNAME="" UNITNAME="modem.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\otd_storage.cpp" FORMNAME="" UNITNAME="otd_storage" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=5
+Item0=..\GKLIB;..\..\NETRTL;..;$(BCB)\Projects;$(BCB)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC
+Item1=..\GKLIB;..\..\NETRTL;..\;$(BCB)\Projects;$(BCB)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC
+Item2=$(BCB)\Projects;$(BCB)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC
+Item3=$(BCB)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC
+Item4=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=4
+Item0=..\GKLIB;..\..\NETRTL;..;$(BCB)\Projects;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\GKLIB;..\..\NETRTL;..\;$(BCB)\Projects;$(BCB)\lib\obj;$(BCB)\lib
+Item2=$(BCB)\Projects;$(BCB)\lib\obj;$(BCB)\lib
+Item3=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=7
+Item0=STRICT;_DEBUG;_NO_VCL
+Item1=STRICT;_DEBUG;NO_VCL
+Item2=STRICT;_DEBUG
+Item3=STRICT
+Item4=STRICT;;_DEBUG
+Item5=STRICT;
+Item6=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=d:\temp\vtdcnt
+Item1=d:\temp
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=d:\user\granit\grkrnl32\
+Item1=d:\user\granit\grkrnl32
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=nosplash config
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=D:\USER\GRANIT\GRKRNL32\grkrnl32.exe
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

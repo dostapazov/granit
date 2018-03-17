@@ -1,0 +1,18 @@
+#include "gkmodules.h"
+#include "vtdcnt_err.rc"
+
+STRINGTABLE
+BEGIN
+
+#ifdef COMERCIAL_BUILD
+IDS_MODULE_PROVIDER  "ООО \"Компания промышленной автоматизации\""
+#else
+
+IDS_MODULE_PROVIDER      "Остапенко Д.В. г.Азов 1993-2008"
+#endif
+IDS_MODULE_DESCRIPT  "Модем счётчиков ВТД, ВТД-В, ВТД-Г, ВТД-У"
+IDS_MODULE_NAME      "Модем счётчиков ВТД, ВТД-В, ВТД-Г, ВТД-У"
+END
+
+IDI_MODULE_ICON   ICON "D077_CD Kakumei Virtual.ico"
+IDI_MODULE_ICONSM ICON "D077_CD Kakumei Virtual.ico"

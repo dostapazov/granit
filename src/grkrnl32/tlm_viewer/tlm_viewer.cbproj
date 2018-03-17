@@ -1,0 +1,434 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{75ABC4F4-064C-49C5-9390-122B0FC9A01D}</ProjectGuid>
+        <ProjectType>CppVCLApplication</ProjectType>
+        <MainSource>tlm_viewer.cpp</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>18.0</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1025</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_1)'=='true') or '$(Cfg_1_iOSDevice64)'!=''">
+        <Cfg_1_iOSDevice64>true</Cfg_1_iOSDevice64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
+        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <IncludePath>..\MODEMMER\MODEMMERWND\;..\GKLIB\;..\Examples\PROCMDM_APP\;..\..\KE_RTL\;..\GKLIB\tlm_painter\;$(IncludePath)</IncludePath>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <SanitizedProjectName>tlm_viewer</SanitizedProjectName>
+        <VerInfo_Locale>1049</VerInfo_Locale>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+        <BRCC_IncludePath>$(BDS)\Projects;$(BDS)\Source\vcl;..\..\KE_RTL;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BDS)\include;$(BDS)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE;$(BRCC_IncludePath)</BRCC_IncludePath>
+        <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+        <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+        <TASM_IncludePath>$(BDS)\Projects;$(BDS)\Source\vcl;..\..\KE_RTL;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BDS)\include;$(BDS)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE;$(TASM_IncludePath)</TASM_IncludePath>
+        <AllPackageLibs>vcl.lib;rtl.lib</AllPackageLibs>
+        <PackageImports>vcl.bpi;rtl.bpi;$(PackageImports)</PackageImports>
+        <ILINK_AppType>Windows</ILINK_AppType>
+        <BRCC_OutputDir>d:\temp\</BRCC_OutputDir>
+        <BCC_IncludePath>$(BDS)\Source\vcl;..\..\KE_RTL;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BDS)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE;$(BCC_IncludePath)</BCC_IncludePath>
+        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+        <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
+        <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+        <BCC_GenerateWindowsApp>true</BCC_GenerateWindowsApp>
+        <DCC_ObjOutput>d:\temp\</DCC_ObjOutput>
+        <ILINK_HeapReserveSize>0x1000000</ILINK_HeapReserveSize>
+        <TASM_AdditionalSwitches> /w2 d:\temp\</TASM_AdditionalSwitches>
+        <FinalOutputDir>d:\user\granit\grkrnl32\</FinalOutputDir>
+        <ILINK_LibraryPath>..\MODEMMER\MODEMMERWND\;..\GKLIB\;..\Examples\PROCMDM_APP\;..\..\KE_RTL\;..\GKLIB\tlm_painter\;$(BDS)\Projects;$(BDS)\Projects\Lib;$(BDS)\Source\vcl;..\..\KE_RTL;..;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BDS)\lib\obj;$(BDS)\lib;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <DCC_AdditionalSwitches> -N0d:\temp\ -M</DCC_AdditionalSwitches>
+        <BCC_PCHCache>true</BCC_PCHCache>
+        <ILINK_IntermediateOutputPath>d:\temp</ILINK_IntermediateOutputPath>
+        <BCC_OutputDir>d:\temp\</BCC_OutputDir>
+        <TASM_Debugging>Full</TASM_Debugging>
+        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <BCC_Defines>NO_STRICT;STRICT;$(BCC_Defines)</BCC_Defines>
+        <BCC_UserSuppliedOptions> -tWM -5 -Vx -r- -k -Ve</BCC_UserSuppliedOptions>
+        <TASM_Defines>STRICT _DEBUG;$(TASM_Defines)</TASM_Defines>
+        <BRCC_Defines>STRICT;_DEBUG;$(BRCC_Defines)</BRCC_Defines>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <OutputExt>exe</OutputExt>
+        <BCC_UserSuppliedOptions> -tWM -5 -Vx -r- -k -Ve</BCC_UserSuppliedOptions>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <BCC_Defines>STRICT;$(BCC_Defines)</BCC_Defines>
+        <BRCC_Defines>STRICT;_DEBUG;$(BRCC_Defines)</BRCC_Defines>
+        <TASM_Defines>STRICT _DEBUG;$(TASM_Defines)</TASM_Defines>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+        <Icon_MainIcon>tlm_viewer_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>tlm_viewer_Icon.ico</Icon_MainIcon>
+        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+        <BCC_Defines>STRICT;$(BCC_Defines)</BCC_Defines>
+        <TASM_Defines>STRICT _DEBUG;$(TASM_Defines)</TASM_Defines>
+        <BRCC_Defines>STRICT;_DEBUG;$(BRCC_Defines)</BRCC_Defines>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <IntermediateOutputDir>Debug_Build</IntermediateOutputDir>
+        <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+        <DCC_Define>DEBUG;$(DCC_Define);$(DCC_Define)</DCC_Define>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_AdditionalSwitches> -N0d:\temp\ -M -V</DCC_AdditionalSwitches>
+        <ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_iOSDevice64)'!=''">
+        <BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
+        <LinkPackageStatics>vcl.lib;rtl.lib</LinkPackageStatics>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+        <AppEnableHighDPI>true</AppEnableHighDPI>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <BCC_OptimizationLevel>Level2</BCC_OptimizationLevel>
+        <IntermediateOutputDir>Release_Build</IntermediateOutputDir>
+        <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
+        <ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <TASM_Debugging>None</TASM_Debugging>
+        <DCC_AdditionalSwitches> -N0d:\temp\ -M -$O+</DCC_AdditionalSwitches>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
+        <BCC_UserSuppliedOptions> -tWM -5 -Vx -r- -k -Ve -r</BCC_UserSuppliedOptions>
+        <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <BCC_UserSuppliedOptions> -tWM -5 -Vx -r- -k -Ve -r</BCC_UserSuppliedOptions>
+        <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+        <AppEnableHighDPI>true</AppEnableHighDPI>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="D:\BCB\Lib\memmgr.lib">
+            <BuildOrder>9</BuildOrder>
+            <BuildOrder>8</BuildOrder>
+        </None>
+        <None Include="..\..\..\LIB\gklib.lib">
+            <BuildOrder>17</BuildOrder>
+            <BuildOrder>16</BuildOrder>
+        </None>
+        <None Include="..\..\..\LIB\Ke_rtls.lib">
+            <BuildOrder>11</BuildOrder>
+            <BuildOrder>10</BuildOrder>
+        </None>
+        <None Include="..\..\..\LIB\otdhlpr.lib">
+            <BuildOrder>14</BuildOrder>
+            <BuildOrder>13</BuildOrder>
+        </None>
+        <CppCompile Include="..\Examples\PROCMDM_APP\mon_otd.cpp">
+            <BuildOrder>26</BuildOrder>
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\GKLIB\mproto_buffer.cpp">
+            <BuildOrder>20</BuildOrder>
+            <BuildOrder>17</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\GKLIB\tlm_painter\tlm_painter_ctrl.cpp">
+            <BuildOrder>41</BuildOrder>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\MODEMMER\MODEMMERWND\monitor_otd_med.cpp">
+            <BuildOrder>23</BuildOrder>
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="itlm_net_client.cpp">
+            <BuildOrder>35</BuildOrder>
+            <BuildOrder>0</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="LayoutEdit.cpp">
+            <BuildOrder>6</BuildOrder>
+            <Form>LaoutEdit</Form>
+            <DependentOn>LayoutEdit.h</DependentOn>
+            <BuildOrder>53</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="TIpClientForm.cpp">
+            <BuildOrder>32</BuildOrder>
+            <Form>IPClient</Form>
+            <DependentOn>TIpClientForm.h</DependentOn>
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="tlm_net_client.cpp">
+            <BuildOrder>38</BuildOrder>
+            <BuildOrder>1</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="tlm_painter_frm.cpp">
+            <BuildOrder>7</BuildOrder>
+            <Form>PainterForm</Form>
+            <DependentOn>tlm_painter_frm.h</DependentOn>
+            <BuildOrder>44</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="tlm_viewer.cpp">
+            <BuildOrder>5</BuildOrder>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
+        <ResFiles Include="tlm_viewer.res">
+            <BuildOrder>2</BuildOrder>
+            <BuildOrder>11</BuildOrder>
+        </ResFiles>
+        <CppCompile Include="tlm_viewer_main.cpp">
+            <BuildOrder>29</BuildOrder>
+            <Form>TlmViewer</Form>
+            <DependentOn>tlm_viewer_main.h</DependentOn>
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\KE_RTL\rx_buffer.cpp">
+            <BuildOrder>50</BuildOrder>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <None Include="..\..\..\..\LIB\PICTDLGS.LIB">
+            <BuildOrder>8</BuildOrder>
+            <BuildOrder>47</BuildOrder>
+        </None>
+        <FormResources Include="tlm_painter_frm.dfm"/>
+        <FormResources Include="LayoutEdit.dfm"/>
+        <FormResources Include="TIpClientForm.dfm"/>
+        <FormResources Include="tlm_viewer_main.dfm"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+    <ProjectExtensions>
+        <Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+        <Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <CPlusPlusBuilder.Personality>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">0</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">0</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">0</VersionInfo>
+                    <VersionInfo Name="PreRelease">0</VersionInfo>
+                    <VersionInfo Name="Special">0</VersionInfo>
+                    <VersionInfo Name="Private">0</VersionInfo>
+                    <VersionInfo Name="DLL">0</VersionInfo>
+                    <VersionInfo Name="Locale">1049</VersionInfo>
+                    <VersionInfo Name="CodePage">1251</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Count">23</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item0">$(BCB)\Projects;$(BCB)\Source\vcl;..\..\KE_RTL;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item1">$(BCB)\Source\vcl;..\..\KE_RTL;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item2">..\..\KE_RTL;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item3">..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item4">..\;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item5">..\GKLIB\tlm_painter;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;D:\USER\INCLUDE</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item6">..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item7">..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item8">$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item9">..\GKTLMDB\GKTLMDBWND;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GR ANIT\INC;D:\USER\</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item10">..\GKTLMDB\GKTLMDBWND;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\G</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item11">..\GKTLMDB\GKTLMDBWND;..\;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item12">..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item13">..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\include;$(BCB)\i</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item14">..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item15">..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item16">..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item17">..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item18">..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item19">D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item20">$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item21">$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item22">D:\Program Files\Borland\CBuilder6\Projects;D:\Temp;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+                </HistoryLists_hlIncludePath>
+                <HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Count">19</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item0">$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\Source\vcl;..\..\KE_RTL;..;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item1">$(BCB)\Projects\Lib;$(BCB)\Source\vcl;..\..\KE_RTL;..;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item2">..\..\KE_RTL;..;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item3">..;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item4">..\;..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item5">..\GKLIB\tlm_painter;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item6">..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item7">..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item8">..\GKTLMDB\GKTLMDBWND;..;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item9">..\GKTLMDB\GKTLMDBWND;..\;..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item10">$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item11">..\Examples\PROCMDM_APP;..\MODEMMER\MODEMMERWND;..\GKLIB;..\Examples\IPMODEM_WRK;..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\lib\obj;$(BCB)\li</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item12">..\PROCMDM_APP;..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item13">..\..\MODEMMER\MODEMMERWND;..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item14">..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item15">..\..\..\..\PROJS;..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item16">..\..\GKLIB;..\..\PROCMDM\example_app;..\SRC\GrKrnl32\Examples\IPMODEM_WRK;D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item17">D:\USER\GRANIT\PROJS;D:\TEMP;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item18">D:\Program Files\Borland\CBuilder6\Projects;D:\Temp;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                </HistoryLists_hlLibraryPath>
+                <HistoryLists_hlDebugSourcePath>
+                    <HistoryLists_hlDebugSourcePath Name="Count">1</HistoryLists_hlDebugSourcePath>
+                    <HistoryLists_hlDebugSourcePath Name="Item0">$(BCB)\source\vcl</HistoryLists_hlDebugSourcePath>
+                </HistoryLists_hlDebugSourcePath>
+                <HistoryLists_hlConditionals>
+                    <HistoryLists_hlConditionals Name="Count">5</HistoryLists_hlConditionals>
+                    <HistoryLists_hlConditionals Name="Item0">STRICT;_DEBUG</HistoryLists_hlConditionals>
+                    <HistoryLists_hlConditionals Name="Item1">STRICT</HistoryLists_hlConditionals>
+                    <HistoryLists_hlConditionals Name="Item2">_DEBUG;STRICT</HistoryLists_hlConditionals>
+                    <HistoryLists_hlConditionals Name="Item3">_DEBUG;</HistoryLists_hlConditionals>
+                    <HistoryLists_hlConditionals Name="Item4">_DEBUG</HistoryLists_hlConditionals>
+                </HistoryLists_hlConditionals>
+                <HistoryLists_hlIntOutputDir>
+                    <HistoryLists_hlIntOutputDir Name="Count">1</HistoryLists_hlIntOutputDir>
+                    <HistoryLists_hlIntOutputDir Name="Item0">d:\temp</HistoryLists_hlIntOutputDir>
+                </HistoryLists_hlIntOutputDir>
+                <HistoryLists_hlFinalOutputDir>
+                    <HistoryLists_hlFinalOutputDir Name="Count">2</HistoryLists_hlFinalOutputDir>
+                    <HistoryLists_hlFinalOutputDir Name="Item0">d:\user\granit\grkrnl32\</HistoryLists_hlFinalOutputDir>
+                    <HistoryLists_hlFinalOutputDir Name="Item1">d:\user\granit\grkrnl32</HistoryLists_hlFinalOutputDir>
+                </HistoryLists_hlFinalOutputDir>
+                <Debugging>
+                    <Debugging Name="DebugSourceDirs">$(BCB)\source\vcl</Debugging>
+                </Debugging>
+                <Parameters>
+                    <Parameters Name="RunParams"/>
+                    <Parameters Name="Launcher"/>
+                    <Parameters Name="UseLauncher">0</Parameters>
+                    <Parameters Name="DebugCWD"/>
+                    <Parameters Name="HostApplication"/>
+                    <Parameters Name="RemoteHost"/>
+                    <Parameters Name="RemotePath"/>
+                    <Parameters Name="RemoteLauncher"/>
+                    <Parameters Name="RemoteCWD"/>
+                    <Parameters Name="RemoteDebug">0</Parameters>
+                </Parameters>
+                <Compiler>
+                    <Compiler Name="ShowInfoMsgs">0</Compiler>
+                    <Compiler Name="LinkDebugVcl">0</Compiler>
+                    <Compiler Name="LinkCGLIB">0</Compiler>
+                </Compiler>
+                <CORBA>
+                    <CORBA Name="AddServerUnit">1</CORBA>
+                    <CORBA Name="AddClientUnit">1</CORBA>
+                    <CORBA Name="PrecompiledHeaders">1</CORBA>
+                </CORBA>
+                <ProjectProperties>
+                    <ProjectProperties Name="AutoShowDeps">True</ProjectProperties>
+                    <ProjectProperties Name="ManagePaths">True</ProjectProperties>
+                    <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+                    <ProjectProperties Name="IndexFiles">False</ProjectProperties>
+                </ProjectProperties>
+                <Source>
+                    <Source Name="MainSource">tlm_viewer.cpp</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k230.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp230.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k230.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp230.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </CPlusPlusBuilder.Personality>
+            <Platforms>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

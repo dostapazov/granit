@@ -1,0 +1,13 @@
+#ifndef GKTLMDB_RH
+#define GKTLMDB_RH
+#define IDS_PULIST  1000
+
+
+
+#define IDS_LOG_CONFLICT             6000
+#define IDS_LOG_MODEM_CONNECTSRC     6001
+#define IDS_LOG_MODEM_DISCONNECTSRC  6002
+#define IDS_LOG_MODEM_DISCONNECTDEST 6003
+
+#endif
+

@@ -1,0 +1,16 @@
+#include "gkmodules.h"
+#include "modbusmod.h"
+
+
+STRINGTABLE
+BEGIN
+
+IDS_MODULE_PROVIDER  PROVIDER_STRING
+
+IDS_MODULE_DESCRIPT  "Модем MODBUS-устройств"
+IDS_MODULE_NAME      "Модем MODBUS-устройств"
+IDS_LINE_TEMPL       ""
+END
+
+IDI_MODULE_ICON   ICON "modbus_dev32x32.ico"
+IDI_MODULE_ICONSM ICON "modbus_dev16x16.ico"
