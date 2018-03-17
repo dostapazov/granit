@@ -1,4 +1,4 @@
-#include <otd_grancvt.h>
+п»ї#include <otd_grancvt.h>
 #include <grnet_dos.h>
 
 
@@ -38,9 +38,9 @@ inline void __fastcall set_gran_tit(DWORD i ,BYTE val,LPBYTE tit_array)
 
 #pragma warn -8057
 /*
- Возвращает количество байт в выходном буфере;
- если значение отрицательное - то размер буфера недостаточен и
- модуль возврата - необходимый размер буфера
+ Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ Р±Р°Р№С‚ РІ РІС‹С…РѕРґРЅРѕРј Р±СѓС„РµСЂРµ;
+ РµСЃР»Рё Р·РЅР°С‡РµРЅРёРµ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕРµ - С‚Рѕ СЂР°Р·РјРµСЂ Р±СѓС„РµСЂР° РЅРµРґРѕСЃС‚Р°С‚РѕС‡РµРЅ Рё
+ РјРѕРґСѓР»СЊ РІРѕР·РІСЂР°С‚Р° - РЅРµРѕР±С…РѕРґРёРјС‹Р№ СЂР°Р·РјРµСЂ Р±СѓС„РµСЂР°
 */
 int WINAPI otd_convert_atony2otd(DWORD num_pu,
                                  lp_gratony_kadr src_kadr,
@@ -66,7 +66,7 @@ int WINAPI otd_convert_atony2otd(DWORD num_pu,
         otd_fa  = OTD_FA_ANALOG;
         opp.dt_param.type  = OTD_ANALOG_BYTE;
         opp.dt_param.count = 16;
-        // Предварительный просмотр всех значение тит
+        // РџСЂРµРґРІР°СЂРёС‚РµР»СЊРЅС‹Р№ РїСЂРѕСЃРјРѕС‚СЂ РІСЃРµС… Р·РЅР°С‡РµРЅРёРµ С‚РёС‚
         array = src_kadr->data;
         for(DWORD i = 0;i<opp.dt_param.count;i++)
          {
@@ -90,7 +90,7 @@ int WINAPI otd_convert_atony2otd(DWORD num_pu,
       *new_op.diag = 0;
       OTD_SET_ADDR(new_op.addr,num_pu,src_kadr->numCp,otd_fa,src_kadr->numGrp);
       array = src_kadr->data;
-        /*Копирование элементов*/
+        /*РљРѕРїРёСЂРѕРІР°РЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ*/
         for(DWORD i = 0;i<opp.dt_param.count;i++)
          {
           DWORD value,pd;
@@ -132,17 +132,17 @@ int __fastcall otd_convert_data2atony(lpotd_proto src,LPBYTE dest_buffer,DWORD d
   if(src && src->proto_size && src->addr)
   {
     lp_gratony_kadr  kadr = (lp_gratony_kadr)dest_buffer;
-    /*Вычисление необходимого размера*/
+    /*Р’С‹С‡РёСЃР»РµРЅРёРµ РЅРµРѕР±С…РѕРґРёРјРѕРіРѕ СЂР°Р·РјРµСЂР°*/
     int need_size = 0;
     if(src->addr->fa == OTD_FA_DISCRETE && src->data)
       {
-       need_size+=sizeof(*kadr)+7;//8 байт тс 1 уже есть в atony_kadr::data;
+       need_size+=sizeof(*kadr)+7;//8 Р±Р°Р№С‚ С‚СЃ 1 СѓР¶Рµ РµСЃС‚СЊ РІ atony_kadr::data;
        param_count = KeRTL::MIN(64,OTD_GET_COUNT(&src->data->numbers));
 
       }
     if(src->addr->fa == OTD_FA_ANALOG)
        {
-        need_size+=sizeof(*kadr)+15;//16 байт тит 1 уже есть в atony_kadr::data;
+        need_size+=sizeof(*kadr)+15;//16 Р±Р°Р№С‚ С‚РёС‚ 1 СѓР¶Рµ РµСЃС‚СЊ РІ atony_kadr::data;
         param_count = KeRTL::MIN(16,OTD_GET_COUNT(&src->data->numbers));
        }
     if(dest_buffer && need_size<(int)dest_bsz)
@@ -186,7 +186,7 @@ int WINAPI otd_convert_otd2atony(lpotd_proto src,LPDWORD cmd,LPBYTE dest_buffer,
  {
   if(OTD_FA_ISQUERY(src->addr->fa))
   {
-   //Вызовы данных
+   //Р’С‹Р·РѕРІС‹ РґР°РЅРЅС‹С…
    DWORD net_command = CmQuery;
    lp_gratony_kadr kadr  = (lp_gratony_kadr)dest_buffer;
    ret = sizeof(gratony_kadr);
@@ -205,7 +205,7 @@ int WINAPI otd_convert_otd2atony(lpotd_proto src,LPDWORD cmd,LPBYTE dest_buffer,
    else
    ret = -ret;
 
-      /*Вызов данных*/
+      /*Р’С‹Р·РѕРІ РґР°РЅРЅС‹С…*/
       if(cmd)
          *cmd = net_command;
       return ret;
@@ -215,7 +215,7 @@ int WINAPI otd_convert_otd2atony(lpotd_proto src,LPDWORD cmd,LPBYTE dest_buffer,
   if(src->addr->cp != OTD_ADDR_MAXVALUE &&
      src->addr->fa<OTD_FA_ALL && src->addr->sb != OTD_ADDR_MAXVALUE)
      {
-      /*Это данные*/
+      /*Р­С‚Рѕ РґР°РЅРЅС‹Рµ*/
       ret = otd_convert_data2atony(src,dest_buffer,dest_bsz);
       if(cmd)
          *cmd = CmRetranslation;
