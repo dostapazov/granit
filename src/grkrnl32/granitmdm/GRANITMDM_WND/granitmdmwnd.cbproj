@@ -260,16 +260,16 @@
         <CppCompile Include="..\..\..\KE_RTL\rtl_util1.cpp">
             <BuildOrder>22</BuildOrder>
         </CppCompile>
-        <FormResources Include="sc_base_data_frame.dfm"/>
         <FormResources Include="sc_base_frame.dfm"/>
-        <FormResources Include="grscfrm.dfm"/>
-        <FormResources Include="grp_frame.dfm"/>
         <FormResources Include="sc_cp_data_frame.dfm"/>
-        <FormResources Include="settings_frame.dfm"/>
-        <FormResources Include="settings_frame1.dfm"/>
-        <FormResources Include="sel_folder_dlg.dfm"/>
+        <FormResources Include="sc_base_data_frame.dfm"/>
+        <FormResources Include="grp_frame.dfm"/>
+        <FormResources Include="grscfrm.dfm"/>
         <FormResources Include="sc_grp_data_frame.dfm"/>
+        <FormResources Include="settings_frame1.dfm"/>
+        <FormResources Include="settings_frame.dfm"/>
         <FormResources Include="sc_monitor.dfm"/>
+        <FormResources Include="sel_folder_dlg.dfm"/>
         <FormResources Include="..\..\GKLIB\VCL\about_common_frame.dfm"/>
         <FormResources Include="..\..\GKLIB\VCL\gkmodule_form.dfm"/>
         <FormResources Include="floor_frame.dfm"/>
