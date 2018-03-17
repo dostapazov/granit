@@ -1,0 +1,152 @@
+#include "grscfrm_rh.h"
+
+STRINGTABLE
+BEGIN
+STR_DIAG_NODATA              "Нет данных "
+STR_DIAG_PUCONNECT           "ПУ-связь "
+STR_DIAG_PURESPOND           "ПУ не отвечает "
+STR_DIAG_RESERV1             ""
+STR_DIAG_CPCONNECT           "КП-связь "
+STR_DIAG_CPRESPOND           "КП не отвечает "
+STR_DIAG_MODRESPOND          "модуль не отвечает "
+STR_DIAG_MODTXCHANGES        "неисправна передача по изменением "
+
+STR_DIAG_RESERV2             ""
+STR_DIAG_RESERV3             ""
+STR_DIAG_RESERV4             ""
+STR_DIAG_RESERV5             ""
+STR_DIAG_RESERV6             ""
+STR_DIAG_RESERV7             ""
+STR_DIAG_RESERV8             ""
+STR_DIAG_REMOVED             "Удалён из базы"
+
+STR_PART_DIAG_PARAM          "недостоверны параметры "
+STR_PART_DIAG_RESERV1        ""
+STR_PART_DIAG_RESERV2        ""
+STR_PART_DIAG_RESERV3        ""
+
+
+STR_DIAG_STATE_NOTRECEIPT    "модуль не квитируется "
+STR_DIAG_STATE_TUTR_ERROR    "неуспешное ТУ/ТР "
+STR_DIAG_STATE_RESERV1       "отсутствует описатель ТУ/ТР"
+STR_DIAG_STATE_RESERV2       ""
+
+STR_STATE_CALL_SENDED   "Отправлен вызов "
+STR_STATE_RESERV2       ""
+STR_STATE_RESERV3       ""
+STR_STATE_RESERV4       ""
+STR_STATE_RESERV5       ""
+STR_STATE_RESERV6       ""
+STR_STATE_TUTR_ACTIVE   "команда ТУ/ТР отправлены "
+STR_STATE_TUTR_PREPARE  "подготовка к ТУ/ТР "
+
+STR_PDIAG_NODATA             "Нет данных "
+STR_PDIAG_ERROR              "Параметр не достоверен "
+STR_PDIAG_OUTSCALE           "Выход за границы шкалы/дребезг "
+STR_PDIAG_TUTR_ERROR         "Неуспешное ТУ/ТР "
+
+STR_PDIAG_TUTR_DESCRIPT      "Отсутствует описатель ТУ/ТР объекта"
+STR_PSTATE_RESERV1           ""
+STR_PSTATE_TUTR_ACTIVE       "Команда ТУ/ТР активна "
+STR_PSTATE_TUTR_PREPARE      "Подготовка ТУ/ТР "
+
+
+STR_MON_RXTYPE               "Приём    канал № "
+STR_MON_TXTYPE               "Передача канал № "
+
+STR_MON_ERR0                 ""
+STR_MON_ERR1                 "Ошибочный размер структуры"
+STR_MON_ERR2                 "Ошибка буфера"
+STR_MON_ERR3                 "Кадр с данными"
+STR_MON_ERR4                 "Ошибка КПК"
+STR_MON_ERR5                 "Несуществующий тип кадра"
+STR_MON_ERR6                 "Несуществующий вид данных"
+STR_MON_ERR7                 "Несовпадение прямой и инверсной части"
+
+STR_MON_KADRTYPE0             "Квитанция  "
+STR_MON_KADRTYPE1             "Вызов      "
+STR_MON_KADRTYPE2             "?ktype 0x02"
+STR_MON_KADRTYPE3             "Опрос      "
+STR_MON_KADRTYPE4             "Данные     "
+STR_MON_KADRTYPE5             "Данные     "
+STR_MON_KADRTYPE6             "?ktype 0x06"
+STR_MON_KADRTYPE7             "?ktype 0x07"
+STR_MON_KADRTYPE8             "Готовность "
+STR_MON_KADRTYPE9             "Нет данных "
+STR_MON_KADRTYPE10            "Ошибка     "
+STR_MON_KADRTYPE11            "?ktype 0x0B"
+STR_MON_KADRTYPE12            "?ktype 0x0C"
+STR_MON_KADRTYPE13            "?ktype 0x0D"
+STR_MON_KADRTYPE14            "?ktype 0x0E"
+STR_MON_KADRTYPE15            "?ktype 0x0F"
+
+STR_MON_KADRINF0              "Обрыв связи"
+STR_MON_KADRINF1              "INF:0x01   "
+STR_MON_KADRINF2              "ТС         "
+STR_MON_KADRINF3              "INF:0x03   "
+STR_MON_KADRINF4              "ТИИ        "
+STR_MON_KADRINF5              "INF:0x05   "
+STR_MON_KADRINF6              "ТИТ        "
+STR_MON_KADRINF7              "INF:0x07   "
+STR_MON_KADRINF8              "Ошибка     "
+STR_MON_KADRINF9              "INF:0x09   "
+STR_MON_KADRINF10             "INF:0x0A   "
+STR_MON_KADRINF11             "INF:0x0B   "
+STR_MON_KADRINF12             "INF:0x0C   "
+STR_MON_KADRINF13             "INF:0x0D   "
+STR_MON_KADRINF14             "INF:0x0E   "
+STR_MON_KADRINF15             "INF:0x0F   "
+
+STR_MON_CALLAFB00             "? 00   ",
+STR_MON_CALLAFB01             "ТУ-ВКЛ ",
+STR_MON_CALLAFB02             "ТУ-ОТКЛ",
+STR_MON_CALLAFB03             "ТР-БОЛЬШЕ"
+STR_MON_CALLAFB04             "ТР-МЕНЬШЕ"
+STR_MON_CALLAFB05             "CMD1",
+STR_MON_CALLAFB06             "CMD1",
+STR_MON_CALLAFB07             "?AFB 07",
+STR_MON_CALLAFB08             "ТС  ",
+STR_MON_CALLAFB09             "ТИТ ",
+STR_MON_CALLAFB10             "ТИИ ",
+STR_MON_CALLAFB11             "?AFB 11",
+STR_MON_CALLAFB12             "?AFB 12",
+STR_MON_CALLAFB13             "?AFB 13",
+STR_MON_CALLAFB14             "ТР-ОТМЕНА"
+STR_MON_CALLAFB15             "?AFB 15"
+
+STR_MON_FA0                   "ТС "
+STR_MON_FA1                   "ТИТ"
+STR_MON_FA2                   "ТИИ"
+STR_MON_FAALL                 "ВСЕ"
+
+STR_MON_FILTER_TEMPL          "КП-%s ФА-%s ГР-%s"
+
+STR_MON_TUTR_DETAIL           " группа %02X объект %02X "
+
+STR_MON_DETAIL1_1             "%s : Этаж - %03o КП - %03o  модуль %03o "
+STR_MON_DETAIL1_2             "%s : Этаж - %03d КП - %03d  модуль %03d "
+STR_MON_DETAIL1_3             "%s : Этаж - %02X КП - %02X  модуль %02X "
+STR_MON_DETAIL2_1             "группа - %03o %s %s"
+STR_MON_DETAIL2_2             "группа - %03d %s %s"
+STR_MON_DETAIL2_3             "группа - %02X %s %s"
+STR_MON_DETAIL3_1             "%s %s: Этаж - %03o КП - %03o "
+STR_MON_DETAIL3_2             "%s %s: Этаж - %03d КП - %03d "
+STR_MON_DETAIL3_3             "%s %s: Этаж - %02X КП - %02X "
+
+
+STR_TU_CMD1                   "Команда ВКЛ /+"
+STR_TU_CMD2                   "Команда ОТКЛ/-"
+STR_TU_CMD3                   "Команда ОТМЕНА"
+
+STR_TU_STATE1                 " отправлена";
+STR_TU_STATE2                 " удержание";
+STR_TU_STATE3                 " ожидание";
+STR_TU_STATE4                 " в очереди";
+STR_TU_STATE5                 " подготовка"
+STR_TU_STATE6                 " сброс";
+
+STR_FA_TS                     "ТС "
+STR_FA_TIT                    "ТИТ"
+STR_FA_TII                    "ТИИ"
+
+END

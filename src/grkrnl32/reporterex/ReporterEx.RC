@@ -1,0 +1,19 @@
+#include <gkmodules.h>
+
+STRINGTABLE
+
+BEGIN
+
+#ifdef COMERCIAL_BUILD
+IDS_MODULE_PROVIDER  "ООО \"Компания промышленной автоматизации\""
+#else
+
+IDS_MODULE_PROVIDER      "Витус В.В г.Норильск СДТУ 2004-2006"
+#endif
+  IDS_MODULE_DESCRIPT      "Расширенный модуль отчёта работы центра"
+  IDS_MODULE_NAME          "Репортёр"
+END
+
+IDI_MODULE_ICON    ICON "rep_icon.ico"
+IDI_MODULE_ICONSM  ICON "rep_icon.ico"
+

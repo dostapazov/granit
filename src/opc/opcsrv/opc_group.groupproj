@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2A34AA03-04EC-4BBA-A8F6-56C6D7905622}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\KE_RTL\KE_RTLS.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\GrKrnl32\GKLIB\gklib.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\LOPC\lo-0.888\bin\lopcsample_bor.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="opc_serv32_params.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="opc_serv32.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\OTD_VIEWER\VER1\otdviewer.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="KE_RTLS">
+        <MSBuild Projects="..\..\KE_RTL\KE_RTLS.cbproj"/>
+    </Target>
+    <Target Name="KE_RTLS:Clean">
+        <MSBuild Projects="..\..\KE_RTL\KE_RTLS.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="KE_RTLS:Make">
+        <MSBuild Projects="..\..\KE_RTL\KE_RTLS.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="gklib">
+        <MSBuild Projects="..\..\GrKrnl32\GKLIB\gklib.cbproj"/>
+    </Target>
+    <Target Name="gklib:Clean">
+        <MSBuild Projects="..\..\GrKrnl32\GKLIB\gklib.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gklib:Make">
+        <MSBuild Projects="..\..\GrKrnl32\GKLIB\gklib.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="lopcsample_bor">
+        <MSBuild Projects="..\LOPC\lo-0.888\bin\lopcsample_bor.cbproj"/>
+    </Target>
+    <Target Name="lopcsample_bor:Clean">
+        <MSBuild Projects="..\LOPC\lo-0.888\bin\lopcsample_bor.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="lopcsample_bor:Make">
+        <MSBuild Projects="..\LOPC\lo-0.888\bin\lopcsample_bor.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="opc_serv32_params">
+        <MSBuild Projects="opc_serv32_params.cbproj"/>
+    </Target>
+    <Target Name="opc_serv32_params:Clean">
+        <MSBuild Projects="opc_serv32_params.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="opc_serv32_params:Make">
+        <MSBuild Projects="opc_serv32_params.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="opc_serv32">
+        <MSBuild Projects="opc_serv32.cbproj"/>
+    </Target>
+    <Target Name="opc_serv32:Clean">
+        <MSBuild Projects="opc_serv32.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="opc_serv32:Make">
+        <MSBuild Projects="opc_serv32.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="otdviewer">
+        <MSBuild Projects="..\..\OTD_VIEWER\VER1\otdviewer.cbproj"/>
+    </Target>
+    <Target Name="otdviewer:Clean">
+        <MSBuild Projects="..\..\OTD_VIEWER\VER1\otdviewer.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="otdviewer:Make">
+        <MSBuild Projects="..\..\OTD_VIEWER\VER1\otdviewer.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="KE_RTLS;gklib;lopcsample_bor;opc_serv32_params;opc_serv32;otdviewer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="KE_RTLS:Clean;gklib:Clean;lopcsample_bor:Clean;opc_serv32_params:Clean;opc_serv32:Clean;otdviewer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="KE_RTLS:Make;gklib:Make;lopcsample_bor:Make;opc_serv32_params:Make;opc_serv32:Make;otdviewer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,197 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = testVTD.exe dataserv.dll ipmodem_sample.exe test_app_mdm.exe \
+  tlmobj_std_painter.dll tlm_painter.exe tlm_viewer.exe PICTDLGS.dll KE_RTLS.lib \
+  gklib.lib gkhandle.dll gkcomerr.dll otdhlpr.dll gkernel.gkm gkexplorer.dll \
+  tlmcentr32.exe grkrnl32.exe ft2usbio.mio granitmdm.gkm granitmdmwnd.dll \
+  grantablet.gkm grantabletwnd.dll modemmer.gkm modemmerwnd.dll gkipmodem.gkm \
+  gkipmodemwnd.dll gripxmod.gkm gripxmodwnd.dll processmdm.gkm procmdmwnd.dll \
+  gktlmdb.gkm gktlmdbwnd.dll ReporterExWnd.dll ReporterEx.gkm mediumdb.gkm \
+  mediumDbwnd.dll gkscale.gkm gkscale_wnd.dll vtdcnt.gkm vtdcntwnd.dll \
+  modbus_mdm.gkm modbus_mdm_wnd.dll test_modbus.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+gklib.lib: GKLIB\gklib.bpr
+  $(ROOT)\bin\bpr2mak -t$(ROOT)\bin\deflib.bmk $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gktlmdb.gkm: GKTLMDB\gktlmdb.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gktlmdbwnd.dll: GKTLMDB\GKTLMDBWND\gktlmdbwnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+granitmdm.gkm: GRANITMDM\granitmdm.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+modemmer.gkm: MODEMMER\modemmer.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+granitmdmwnd.dll: GRANITMDM\GRANITMDM_WND\granitmdmwnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+modemmerwnd.dll: MODEMMER\MODEMMERWND\modemmerwnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gripxmod.gkm: GRIPXMOD\gripxmod.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gripxmodwnd.dll: GRIPXMOD\GRIPXMODWND\gripxmodwnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ft2usbio.mio: FT2USBIO\ft2usbio.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gkipmodem.gkm: GKIPMODEM\gkipmodem.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+processmdm.gkm: PROCMDM\processmdm.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+procmdmwnd.dll: PROCMDM\procmdm_wnd\procmdmwnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+mediumdb.gkm: MediumDB\mediumdb.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+mediumDbwnd.dll: MediumDB\MediumDbWnd\mediumDbwnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ipmodem_sample.exe: Examples\IPMODEM_WRK\ipmodem_sample.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+otdhlpr.dll: OTDHLPR\otdhlpr.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gkipmodemwnd.dll: GKIPMODEM\GKIPMODEM_WND\gkipmodemwnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+KE_RTLS.lib: ..\KE_RTL\KE_RTLS.BPR
+  $(ROOT)\bin\bpr2mak -t$(ROOT)\bin\deflib.bmk $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+grantablet.gkm: grantablet\grantablet.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+grantabletwnd.dll: grantablet\grantabletwnd\grantabletwnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+tlmobj_std_painter.dll: tlmobj_std_painter\tlmobj_std_painter.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+tlmcentr32.exe: KERNEL\tlmcentr32.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gkernel.gkm: KERNEL\gkernel.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dataserv.dll: opc\dataserv.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+testVTD.exe: ..\..\Cчетчики\SRC\Test\testVTD.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+vtdcnt.gkm: VTDCNT\vtdcnt.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+vtdcntwnd.dll: VTDCNT\VTDCNTWND\vtdcntwnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gkexplorer.dll: KERNEL\KEXPLORER\gkexplorer.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+tlm_painter.exe: GKLIB\tlm_painter\tlm_painter.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+tlm_viewer.exe: tlm_viewer\tlm_viewer.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+PICTDLGS.dll: ..\..\..\LIB\PICTDLGS\PICTDLGS.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ReporterExWnd.dll: ReporterEx\ReporterEx_WND\ReporterExWnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ReporterEx.gkm: ReporterEx\ReporterEx.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gkscale.gkm: Scale\gkscale.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gkscale_wnd.dll: Scale\Scale_Wnd\gkscale_wnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+modbus_mdm.gkm: MODBUSMDM\modbus_mdm.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+test_app_mdm.exe: Examples\PROCMDM_APP\test_app_mdm.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+modbus_mdm_wnd.dll: MODBUSMDM\MODBUSMDMWND\modbus_mdm_wnd.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gkhandle.dll: HANDLE\gkhandle.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+test_modbus.exe: ..\OPC\OPCSRV\trash\test_modbus.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+gkcomerr.dll: GKCOMERR\gkcomerr.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+grkrnl32.exe: KERNEL\grkrnl32.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+

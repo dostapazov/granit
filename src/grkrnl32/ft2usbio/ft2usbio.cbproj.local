@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.079,D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\granit_udpio.rc=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.170,=D:\USER\GRANIT\SRC\GrKrnl32\FT2USBIO\ft2_usb_io.rc</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.012,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.293,D:\USER\GRANIT\SRC\GrKrnl32\GRANIT_TCPIO\granit_udpio.rc=D:\USER\GRANIT\SRC\GrKrnl32\FT2USBIO\ft2_usb_io.rc</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.051,C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\FT2USBIO\ft2usbio.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.097,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.502,=D:\USER\GRANIT\SRC\GrKrnl32\FT2USBIO\ft2_usb_io.rc</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.363,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.485,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.040,=D:\USER\GRANIT\USB\DRIVER\ftd2xxbc.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.094,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.099,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.387,=D:\USER\GRANIT\SRC\GrKrnl32\FT2USBIO\ft2_usb_io.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.392,=D:\USER\GRANIT\SRC\GrKrnl32\FT2USBIO\rx_buffer.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.724,D:\USER\GRANIT\SRC\GrKrnl32\FT2USBIO\rx_buffer.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.927,C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\FT2USBIO\ft2uibioPCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.087,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="ft2uibioPCH1.h"/>
+    <File Path="ft2_usb_io.cpp"/>
+    <File Path="ft2_usb_io.rc"/>
+    <File Path="..\..\..\USB\DRIVER\ftd2xxbc.lib"/>
+    <File Path="..\..\..\LIB_XE\gkhandle.lib"/>
+    <File Path="..\..\..\LIB_XE\gklib.lib"/>
+    <File Path="..\..\..\LIB_XE\KE_RTLS.lib"/>
+  </ProjectSortOrder>
+</BorlandProject>

@@ -1,0 +1,8 @@
+USEFORM("gkexplorer_form.cpp", GKExplorerFrm);
+USEFORM("..\..\GKLIB\VCL\gkmodule_form.cpp", GKModuleForm);
+USEFORM("module_info_frame.cpp", ModuleInfoFrame); /* TFrame: File Type */
+USEFORM("moddet_frm.cpp", ModuleDefine);
+//---------------------------------------------------------------------------
+This file is used by the project manager only and should be treated like the project file
+
+DllMain

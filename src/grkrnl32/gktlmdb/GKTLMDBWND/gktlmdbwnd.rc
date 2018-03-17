@@ -1,0 +1,113 @@
+#include "gktlmdbwnd.rh"
+
+STRINGTABLE
+BEGIN
+IDS_NO_OBJECT               "Нет объектов"
+
+IDS_PU_TEXT                  "ПУ"
+IDS_CP_TEXT                  "КП"
+IDS_FA_TEXT                  "ФА"
+IDS_SB_TEXT                  "Модуль"
+
+IDS_CMD_UNDEF                "Неизвестаня команда"
+IDS_CMD_CREATE               "Создание объекта"
+IDS_CMD_DELETE               "Удаление объекта"
+IDS_CMD_RECREATE             "Изменение свойств объекта"
+
+IDS_CMD_EXCEPT               "Исключение при выполнении"
+IDS_CMD_CANCEL               "Действие отменено"
+
+
+IDS_FADISCRETE_TEXT          "Дискретные параметры"
+IDS_FAANALOG_TEXT            "Аналоговые параметры"
+IDS_FAANALOG2_TEXT           "Аналоговые параметры1"
+IDS_FADISCRETE_CTRL_TEXT     "Дискретное управление"
+IDS_FAANALOG_CTRL_TEXT       "Аналоговое регулирование"
+
+IDS_SB_DISCRETE_TEXT         "ДМ"
+IDS_SB_ANALOG_TEXT           "АМ"
+IDS_SB_ANALOG_TEXT1          "АМ1"
+IDS_SB_ANALOG_CTRL           "модуль аналогового регулирования"
+
+IDS_DT_ABSENT                "Отсутствует"
+IDS_DT_BIT                   "Бит"
+IDS_DT_BYTE                  "Байт"
+IDS_DT_WORD                  "Слово"
+IDS_DT_DWORD                 "Слово32"
+IDS_DT_QWORD                 "Слово64"
+
+IDS_VPSB_TEXT                "Просмотр модуля %s № %d [%03d.%03d.%03d.%03d]"
+IDS_VPSB_COL1                "Номер"
+IDS_VPSB_COL2                "Значение"
+IDS_VPSB_COL3                "Диагностика"
+IDS_VPSB_COL4                "Изменения"
+
+IDS_VPPU_TEXT                "Просмотр ПУ № %d [%03d.%03d.%03d.%03d]"
+IDS_VPCP_TEXT                "Просмотр КП № %d [%03d.%03d.%03d.%03d]"
+IDS_VPFA_TEXT                "Просмотр ФА № %d [%03d.%03d.%03d.%03d]"
+IDS_VPDB_TEXT                "Просмотр БД"
+
+
+IDS_VPCP_COL1                "Номер КП"
+IDS_VPFA_COL1                "Номер ФА"
+IDS_VPPU_COL1                "Номер ПУ"
+
+IDS_VPGRP_COL2               "Диагностика"
+IDS_VPGRP_COL3               "Изменения"
+END
+
+
+STRINGTABLE
+BEGIN
+STR_DIAG_NODATA              "Нет данных "
+STR_DIAG_PUCONNECT           "ПУ-связь "
+STR_DIAG_PURESPOND           "ПУ не отвечает "
+STR_DIAG_RESERV1             ""
+STR_DIAG_CPCONNECT           "КП-связь "
+STR_DIAG_CPRESPOND           "КП не отвечает "
+STR_DIAG_MODRESPOND          "модуль не отвечает "
+STR_DIAG_MODTXCHANGES        "неисправна передача по изменением "
+
+STR_DIAG_RESERV2             ""
+STR_DIAG_RESERV3             ""
+STR_DIAG_RESERV4             ""
+STR_DIAG_RESERV5             ""
+STR_DIAG_RESERV6             ""
+STR_DIAG_RESERV7             ""
+STR_DIAG_RESERV8             ""
+STR_DIAG_REMOVED             "Удалён из базы"
+
+STR_PART_DIAG_PARAM          "недостоверны параметры "
+STR_PART_DIAG_RESERV1        ""
+STR_PART_DIAG_RESERV2        ""
+STR_PART_DIAG_RESERV3        ""
+
+
+STR_DIAG_STATE_NOTRECEIPT    "модуль не квитируется "
+STR_DIAG_STATE_TUTR_ERROR    "неуспешное ТУ/ТР "
+STR_DIAG_STATE_TUTR_DESCRIPT "отсутствует описатель ТУ/ТР"
+STR_DIAG_STATE_RESERV2       ""
+
+STR_STATE_CALL_SENDED        "Отправлен вызов "
+STR_STATE_RESERV2            ""
+STR_STATE_RESERV3            ""
+STR_STATE_RESERV4            ""
+STR_STATE_RESERV5            ""
+STR_STATE_TUTR_OFF_LESS      "команда ОТКЛ-МЕНЬШЕ отправлена "
+STR_STATE_TUTR_ON_MORE       "команда  ВКЛ-БОЛЬШЕ отправлена "
+STR_STATE_TUTR_PREPARE       "подготовка к ТУ/ТР "
+
+STR_PDIAG_NODATA             "Нет данных "
+STR_PDIAG_ERROR              "Параметр не достоверен "
+STR_PDIAG_OUTSCALE           "Выход за границы шкалы/дребезг "
+STR_PDIAG_TUTR_ERROR         "Нет описателя ТУ/ТР объекта"
+STR_PDIAG_TUTR_FAIL          "Неуспешное ТУ/ТР "
+
+STR_PSTATE_TUTR_OFFLESS_SEND "команда ОТКЛ-МЕНЬШЕ отправлена "
+STR_PSTATE_TUTR_ONMORE_SEND  "команда  ВКЛ-БОЛЬШЕ отправлена "
+STR_PSTATE_TUTR_PREPARE      "Подготовка ТУ/ТР "
+END
+
+
+
+

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.413,=D:\USER\GRANIT\SRC\GrKrnl32\Scale\Scale_Wnd\gkscalewnd_main.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.087,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.097,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.389,=D:\USER\GRANIT\SRC\GrKrnl32\Scale\Scale_Wnd\GKScaleFrm.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.911,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmod_frame.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.197,=D:\USER\GRANIT\SRC\GrKrnl32\Scale\TSegment.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.929,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.332,C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\Scale\Scale_Wnd\gkscale_wndPCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.610,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.393,C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\Scale\Scale_Wnd\gkscale_wnd.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.938,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmod_tree_frame.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.623,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmod_tree_frame.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.933,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.732,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.257,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.947,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
+  </Transactions>
+</BorlandProject>

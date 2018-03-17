@@ -1,0 +1,48 @@
+#include "gkmodules.h"
+#include "gkcomerr.rc"
+
+STRINGTABLE
+LANGUAGE 0x19,0x1
+BEGIN
+IDS_COMMON_LOAD             "Загрузка  модуля "
+IDS_COMMON_UNLOAD           "Выгрузка  модуля "
+IDS_COMMON_LOADFAIL         "Ошибка   загрузки  модуля "
+IDS_COMMON_STARTSUCCESS     "Успешный запуск    модуля "
+IDS_COMMON_STARTFAIL        "Ошибка   запуска   модуля "
+IDS_COMMON_STOPSUCCESS      "Успешный останов   модуля "
+IDS_COMMON_STOPFAIL         "Ошибка   останова  модуля "
+IDS_COMMON_PLUG_MODULE      "Подключение модуля "
+IDS_COMMON_UNPLUG_MODULE    "Отключение  модуля "
+IDS_COMMON_INVALID_GKHANDLE "Несуществующий хендл"
+IDS_COMMON_SUCCESS          "Успешно"
+IDS_COMMON_ERROR            "Ошибка"
+IDS_COMMON_EXCEPTION        "Исключение"
+
+IDS_COMMON_MOD_REGISTERED   "Зерегистрирован"
+IDS_COMMON_MOD_UNREGISTERED "Незарегестрирован"
+IDS_COMMON_MOD_TRIAL        "Период пробного использования истекает %d.%02d.%02d %02d:%02d"
+
+IDS_COMMON_NOTIFY_TEMPL     "%s - удаление хендла %X %s при обработке уведомления %s"
+END
+
+STRINGTABLE
+LANGUAGE 0x9,0x1
+BEGIN
+IDS_COMMON_LOAD             "Loaded  module "
+IDS_COMMON_UNLOAD           "Unload  module  "
+IDS_COMMON_LOADFAIL         "Error   loading module  "
+IDS_COMMON_STARTSUCCESS     "Started module  "
+IDS_COMMON_STARTFAIL        "Error module start"
+IDS_COMMON_STOPSUCCESS      "Stopped module "
+IDS_COMMON_STOPFAIL        "Error module stop "
+IDS_COMMON_PLUG_MODULE      "Plug module "
+IDS_COMMON_UNPLUG_MODULE    "Unplug module "
+IDS_COMMON_INVALID_GKHANDLE "Invalid gkhandle "
+IDS_COMMON_EXCEPTION        "Exception "
+IDS_COMMON_MOD_REGISTERED   "registered"
+IDS_COMMON_MOD_UNREGISTERED "!!!UNREGISTERED!!!"
+IDS_COMMON_MOD_TRIAL        "Trial period would expire %s %d.%02d.%02d %02d:%02d"
+
+
+IDS_COMMON_NOTIFY_TEMPL     "%s - removing gkhandle %X %s on handle notification %s"
+END

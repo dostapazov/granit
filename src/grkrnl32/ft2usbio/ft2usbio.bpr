@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="D:\USER\GRANIT\GRKRNL32\ft2usbio.mio"/>
+    <OBJFILES value="d:\temp\ft2usbio\ft2_usb_io.obj d:\temp\ft2usbio\rx_buffer.obj 
+      d:\temp\ft2usbio\gkio_iface.obj"/>
+    <RESFILES value="ft2usbio.res d:\temp\ft2usbio\ft2_usb_io.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value="..\..\..\LIB\FTD2XXBC.LIB ..\..\..\LIB\GKHANDLE.LIB ..\..\..\LIB\gklib.lib 
+      ..\..\..\LIB\KE_RTLS.lib D:\BCB\Lib\memmgr.lib"/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value=""/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi DclClxIBXtras.bpi"/>
+    <PATHCPP value=".;..\..\KE_RTL;..\GKLIB"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="STRICT;"/>
+    <SYSDEFINES value="NO_STRICT;_NO_VCL"/>
+    <MAINSOURCE value="ft2usbio.bpf"/>
+    <INCLUDEPATH value="..\GKLIB;..\..\KE_RTL;..\..\..\PROJS;..\GRANITMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32"/>
+    <LIBPATH value="..\GKLIB;..\..\KE_RTL;..\..\..\PROJS;..\GRANITMDM;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\GKLIB -I..\..\KE_RTL -I..\..\..\PROJS -I..\GRANITMDM -I$(BCB)\include 
+      -I$(BCB)\include\vcl -ID:\USER\GRANIT\INC -ID:\USER\GRANIT\INC\GRKRNL32 
+      -src_suffix cpp -DSTRICT -boa"/>
+    <CFLAG1 value="-WD -O2 -H=d:\temp\ft2usbio\ft2uibio.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi 
+      -tWD -tWM- -c"/>
+    <PFLAGS value="-N2d:\temp\ft2usbio -N0d:\temp\ft2usbio -$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-Id:\temp\ft2usbio -D&quot;&quot; -aa -Tpd -x -Gn"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cw32.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="ft2usbio.res" FORMNAME="" UNITNAME="ft2usbio.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ft2usbio.bpf" FORMNAME="" UNITNAME="ft2usbio" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ft2_usb_io.cpp" FORMNAME="" UNITNAME="ft2_usb_io" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\FTD2XXBC.LIB" FORMNAME="" UNITNAME="FTD2XXBC.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\GKHANDLE.LIB" FORMNAME="" UNITNAME="GKHANDLE.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\gklib.lib" FORMNAME="" UNITNAME="gklib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\KE_RTLS.lib" FORMNAME="" UNITNAME="KE_RTLS.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\BCB\Lib\memmgr.lib" FORMNAME="" UNITNAME="memmgr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ft2_usb_io.rc" FORMNAME="" UNITNAME="ft2_usb_io.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\KE_RTL\rx_buffer.cpp" FORMNAME="" UNITNAME="rx_buffer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\gkio_iface.cpp" FORMNAME="" UNITNAME="gkio_iface" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=7
+Item0=..\GKLIB;..\..\KE_RTL;..\..\..\PROJS;..\GRANITMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item1=..\..\KE_RTL;..\..\..\PROJS;..\GRANITMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item2=..\..\..\PROJS;..\GRANITMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item3=..\..\..\PROJS;..\GRANITMDM;..\SRC\GrKrnl32\GRANITMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item4=..\SRC\GrKrnl32\GRANITMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item5=$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item6=..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=6
+Item0=..\GKLIB;..\..\KE_RTL;..\..\..\PROJS;..\GRANITMDM;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\..\KE_RTL;..\..\..\PROJS;..\GRANITMDM;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\..\..\PROJS;..\GRANITMDM;$(BCB)\lib\obj;$(BCB)\lib
+Item3=..\..\..\PROJS;..\GRANITMDM;..\SRC\GrKrnl32\GRANITMDM;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item4=..\SRC\GrKrnl32\GRANITMDM;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=2
+Item0=STRICT;
+Item1=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=d:\temp\ft2usbio
+Item1=d:\temp
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=D:\USER\GRANIT\GRKRNL32\
+Item1=D:\USER\GRANIT\GRKRNL32
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=nosplash -config
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=D:\USER\GRANIT\GRKRNL32\grkrnl32.exe
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

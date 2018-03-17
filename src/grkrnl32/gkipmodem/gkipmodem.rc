@@ -1,0 +1,64 @@
+#include "gkmodules.h"
+#include "gkipmodem_mod.h"
+
+STRINGTABLE
+LANGUAGE LANG_RUSSIAN,SUBLANG_NEUTRAL
+BEGIN
+IDS_MODULE_PROVIDER  PROVIDER_STRING
+IDS_MODULE_DESCRIPT  "Модем TCP/IP Сервер/клиент"
+IDS_MODULE_NAME      "Сервер/клиент TCP/IP"
+IDS_TCP_SERVER       "Сервер TCP/IP"
+IDS_TCP_CLIENT       "Клиент TCP/IP"
+
+IDS_CONNECTION_WAIT  "Ожидание подключения"
+IDS_LINE_NO          "Линия №-%03d"
+IDS_CONNECT_WITH     "Соединение с %s"
+IDS_FREE_LINE        "Свободая IP линия"
+
+IDS_REP_CONNECT_ESTABLISH   "%03d.%03d : Установлено соединение с сервером %s "
+IDS_REP_CLIENT_CONNECTED    "%03d.%03d : Подключение клиента  %s"
+IDS_REP_RECV_ERROR          "%03d.%03d : Ошибка при приёме %d"
+IDS_REP_SYNC_ERROR          "%03d.%03d : Сбой синхронизации на %d байт"
+IDS_REP_CHECKSUM_ERROR      "%03d.%03d : Ошибка контрольной суммы %04X"
+IDS_REP_LOSTKADR_ERROR      "%03d.%03d : Потеря кадров с %u по %u"
+IDS_REP_DISCONNECT          "%03d.%03d : Хост %s разовал соединение %d"
+IDS_REP_CONNECT_ERROR       "%03d.%03d : Ошибка соединения %d c %s"
+IDS_REP_TRANSMIT_ERROR      "%03d.%03d : %s Рассоединение: Ошибка %d при передаче "
+IDS_REP_KPA_ERROR           "%03d.%03d : %s Рассоединение Не работоспособен тракт передачи"
+IDS_REP_NO_RX_ERROR         "%03d.%03d : %s Рассоединение Не работоспособен тракт приёма"
+IDS_REP_ZERO_CHECKSUM_ERROR "%03d.%03d : Заголовок MPROTO_HEADER с 0 контрольной суммой"
+END
+
+STRINGTABLE
+LANGUAGE LANG_ENGLISH,SUBLANG_NEUTRAL
+BEGIN
+IDS_MODULE_PROVIDER  PROVIDER_STRING
+IDS_MODULE_DESCRIPT  "TCP/IP modem Server/client"
+IDS_MODULE_NAME      "Server/client TCP/IP"
+IDS_TCP_SERVER       "Server TCP/IP"
+IDS_TCP_CLIENT       "Client TCP/IP"
+
+IDS_CONNECTION_WAIT  "Waiting connection"
+IDS_LINE_NO          "Line  №-%03d"
+IDS_CONNECT_WITH     "Connection with %s"
+IDS_FREE_LINE        "Free IP line"
+
+IDS_REP_CONNECT_ESTABLISH   "%03d.%03d : Server connection Establish %s "
+IDS_REP_CLIENT_CONNECTED    "%03d.%03d : Client connected  %s"
+IDS_REP_RECV_ERROR          "%03d.%03d : error during receive %d"
+IDS_REP_SYNC_ERROR          "%03d.%03d : Synchronization error %d байт"
+IDS_REP_CHECKSUM_ERROR      "%03d.%03d : checksum error %04X"
+IDS_REP_LOSTKADR_ERROR      "%03d.%03d : frames lost с %u по %u"
+IDS_REP_DISCONNECT          "%03d.%03d : Host %s dropped connection %d"
+IDS_REP_CONNECT_ERROR       "%03d.%03d : Connection error %d c %s"
+IDS_REP_TRANSMIT_ERROR      "%03d.%03d : %s disconnect : transmit error %d"
+IDS_REP_KPA_ERROR           "%03d.%03d : %s disconnect. transmission does not work"
+IDS_REP_NO_RX_ERROR         "%03d.%03d : %s disconnect. receive does not work"
+IDS_REP_ZERO_CHECKSUM_ERROR "%03d.%03d : Header MPROTO_HEADER with zero checsum"
+END
+
+
+IDI_MODULE_ICON   ICON "gkipmodem.ico"
+IDI_MODULE_ICONSM ICON "gkipmodem.ico"
+
+

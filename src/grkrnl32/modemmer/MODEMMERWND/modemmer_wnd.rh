@@ -1,0 +1,37 @@
+#ifndef _MODEMMER_WND_RH
+#define _MODEMMER_WND_RH
+
+#define IDS_MODEM                 20000
+#define IDS_MODEMS_LIST           20001
+#define IDS_MODEMS_LIST_NONUMBER  20002
+#define IDS_LINE                  20003
+#define IDS_WORK                  20004
+#define IDS_STOP                  20005
+#define IDS_START_PENDING         20006
+#define IDS_STOP_PENDING          20007
+#define IDS_LINE_STATE            20008
+#define IDS_LOST_CONNECT          20050
+#define IDS_TX_READY              20051
+#define IDS_RX_DATA               20052
+#define IDS_LINE_NOTACTIVE        20053
+#define IDS_RX_TEMPLATE           20054
+#define IDS_RX                    20055
+#define IDS_TX                    20056
+#define IDS_REDIRECT              20057
+#define IDS_ROUTE                 20058
+#define IDS_UNDEF_SPEED           20060
+#define IDS_LINE_CONNECTING       20061
+#define IDS_LINE_DISCONNECTING    20063
+
+
+#define IDS_MON_FASTR0            21000
+#define IDS_MON_FASTR1            21001
+#define IDS_MON_FASTR2            21002
+#define IDS_MON_FASTR3            21003
+#define IDS_MON_FASTR4            21004
+
+#define IDS_MON_OTDADDR           21010
+
+
+
+#endif

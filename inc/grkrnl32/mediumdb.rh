@@ -1,0 +1,8 @@
+#ifndef _MEDIUMDB_RH_
+#define _MEDIUMDB_RH_
+
+#define BMP_DISCRETE_MASK  10000
+#define BMP_DISCRETE_OFF   10001
+#define BMP_DISCRETE_ON    10002
+
+#endif

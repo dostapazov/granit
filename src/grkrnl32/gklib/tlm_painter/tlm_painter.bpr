@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="D:\USER\GRANIT\GRKRNL32\tlm_painter.exe"/>
+    <OBJFILES value="d:\temp\tlm_painter.obj d:\temp\tlm_painter_frm.obj 
+      d:\temp\tlm_painter_ctrl.obj d:\temp\Grkrwnd.obj"/>
+    <RESFILES value="tlm_painter.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) tlm_painter_frm.dfm"/>
+    <LIBFILES value="..\..\..\..\LIB\Ke_rtls.lib ..\..\..\..\LIB\gklib.lib 
+      D:\BCB\Lib\memmgr.lib ..\..\..\..\..\LIB\PICTDLGS.LIB"/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="vcl.lib rtl.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi"/>
+    <PATHCPP value=".;..\..\..\KE_WIN"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG;STRICT"/>
+    <SYSDEFINES value="NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="tlm_painter.cpp"/>
+    <INCLUDEPATH value="..\..;..\..\..\KE_WIN;..\..\..\..\..\LIB\PICTDLGS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE"/>
+    <LIBPATH value="..\..;..\..\..\KE_WIN;..\..\..\..\..\LIB\PICTDLGS;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\.. -I..\..\..\KE_WIN -I..\..\..\..\..\LIB\PICTDLGS -I$(BCB)\include 
+      -I$(BCB)\include\vcl -ID:\USER\GRANIT\INC -ID:\USER\GRANIT\INC\GRKRNL32 
+      -ID:\USER\INCLUDE -src_suffix cpp -D_DEBUG -DSTRICT -boa"/>
+    <CFLAG1 value="-Od -H=d:\temp\tlm_painter.csm -Hc -Vx -Ve -X- -r- -a8 -5 -b- -k -y -v 
+      -vi- -tWD -tWM -c"/>
+    <PFLAGS value="-N2d:\temp -N0d:\temp -$YD -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w0 /zd"/>
+    <LFLAGS value="-Id:\temp -D&quot;&quot; -aa -Tpe -x -Gn -Gi -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(PACKAGES) sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cw32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="tlm_painter.res" FORMNAME="" UNITNAME="tlm_painter.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="tlm_painter.cpp" FORMNAME="" UNITNAME="tlm_painter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="tlm_painter_frm.cpp" FORMNAME="Form2" UNITNAME="tlm_painter_frm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="tlm_painter_ctrl.cpp" FORMNAME="" UNITNAME="tlm_painter_ctrl" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\LIB\Ke_rtls.lib" FORMNAME="" UNITNAME="Ke_rtls.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\LIB\gklib.lib" FORMNAME="" UNITNAME="gklib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\BCB\Lib\memmgr.lib" FORMNAME="" UNITNAME="memmgr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\..\..\LIB\PICTDLGS.LIB" FORMNAME="" UNITNAME="PICTDLGS.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\KE_WIN\Grkrwnd.cpp" FORMNAME="" UNITNAME="Grkrwnd" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=12
+Item0=..\..;..\..\..\KE_WIN;..\..\..\..\..\LIB\PICTDLGS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item1=..\..\..\KE_WIN;..\..\..\..\..\LIB\PICTDLGS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item2=$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item3=..\..\..\..\..\LIB\PICTDLGS;..\..;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item4=..\..;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE
+Item5=..\..;GKLIB\tlm_painter;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item6=GKLIB\tlm_painter;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item7=$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item8=..\OTDHLPR;..\GKLIB;..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item9=..\GKLIB;..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item10=..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item11=..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=10
+Item0=..\..;..\..\..\KE_WIN;..\..\..\..\..\LIB\PICTDLGS;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\..\..\KE_WIN;..\..\..\..\..\LIB\PICTDLGS;$(BCB)\lib\obj;$(BCB)\lib
+Item2=$(BCB)\lib\obj;$(BCB)\lib
+Item3=..\..\..\..\..\LIB\PICTDLGS;..\..;GKLIB\tlm_painter;$(BCB)\lib\obj;$(BCB)\lib
+Item4=..\..;GKLIB\tlm_painter;$(BCB)\lib\obj;$(BCB)\lib
+Item5=GKLIB\tlm_painter;$(BCB)\lib\obj;$(BCB)\lib
+Item6=..\OTDHLPR;..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item7=..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item8=..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item9=..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=2
+Item0=_DEBUG;STRICT
+Item1=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=d:\temp
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=D:\USER\GRANIT\GRKRNL32\
+Item1=D:\USER\GRANIT\GRKRNL32
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2017.05.17 13:34:54.196,=C:\Users\sdtu\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2017.05.17 13:34:54.263,=C:\Users\sdtu\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2017.05.17 13:36:17.746,D:\USER\GRANIT\SRC\GrKrnl32\TCPGRANITIO\tcp_granit_io_main.cpp=C:\Users\sdtu\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2017.05.17 13:36:37.877,D:\USER\GRANIT\SRC\GrKrnl32\TCPGRANITIO\tcp_granit_io.PCH1.h=C:\Users\sdtu\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2017.05.17 13:37:18.666,D:\USER\GRANIT\SRC\GrKrnl32\TCPGRANITIO\granit_tcpio.cbproj=C:\Users\sdtu\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

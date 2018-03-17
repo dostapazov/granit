@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.044,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.100,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.093,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.814,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\groupedItems.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.119,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\splitItemDetail.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.535,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.154,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.861,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.858,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2018.02.27 23:03:22.786,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018.02.27 23:03:22.882,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2018.02.27 23:03:54.486,=D:\USER\GRANIT\SRC\CALCF\calc_fact.cpp</Transaction>
+    <Transaction>2018.02.27 23:03:54.491,=D:\USER\GRANIT\SRC\CALCF\calcf.cpp</Transaction>
+    <Transaction>2018.02.27 23:03:54.494,=D:\USER\GRANIT\SRC\CALCF\calcf_sql.cpp</Transaction>
+    <Transaction>2018.02.27 23:03:54.521,=D:\USER\GRANIT\SRC\CALCF\calcf_sql_ib.cpp</Transaction>
+    <Transaction>2018.02.27 23:03:54.534,=D:\USER\GRANIT\SRC\CALCF\calcf_sql_ms.cpp</Transaction>
+    <Transaction>2018.02.27 23:03:54.537,=D:\USER\GRANIT\SRC\CALCF\calcf1.cpp</Transaction>
+    <Transaction>2018.02.27 23:03:54.556,=D:\USER\GRANIT\SRC\CALCF\calcfdll.cpp</Transaction>
+    <Transaction>2018.02.27 23:05:11.722,D:\USER\GRANIT\SRC\CALCF\calcf1PCH1.h=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018.02.27 23:05:18.973,D:\USER\GRANIT\SRC\CALCF\calcf.cbproj=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2018.02.27 23:11:01.843,=D:\USER\GRANIT\SRC\CALCF\CALCF_BCB.DEF</Transaction>
+  </Transactions>
+</BorlandProject>

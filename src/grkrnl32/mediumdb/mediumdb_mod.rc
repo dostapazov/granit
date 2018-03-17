@@ -1,0 +1,36 @@
+#include "gkmodules.h"
+#include "mediumdb.h"
+
+STRINGTABLE
+BEGIN
+
+IDS_MODULE_PROVIDER  PROVIDER_STRING
+
+IDS_MODULE_DESCRIPT  "База данных среднего уровня"
+IDS_MODULE_NAME      "База данных среднего уровня"
+END
+
+IDI_MODULE_ICON   ICON "meddb32.ico"
+IDI_MODULE_ICONSM ICON "meddb16.ico"
+
+STRINGTABLE
+BEGIN
+MDB_RCSTR_ORDER_LINE_OFF  "Отключение линии подписчика %03d.%03d. Снятие подписки"
+MDB_RCSTR_ORDER_KADR      "Оформление подписки на кадр %d, Modem %03d.%03d"
+MDB_RCSTR_UNORDER_KADR    "Отказ от подписки на кадр %d, Modem %03d.%03d"
+MDB_RCSTR_UNORDER_ALLKADR "Отказ от подписки на все кадры. Modem %03d.%03d"
+MDB_RCSTR_TU_OPERATION    "ТУ - %s %03d.%03d.%03d.%03d-.%03d %s "
+MDB_RCSTR_TR_OPERATION    "ТР - %s %03.2f %03d.%03d.%03d.%03d-.%03d %s "
+MDB_RCSTR_TU_OPNONE        ""
+MDB_RCSTR_TU_OPON          "ВКЛЮЧИТЬ"
+MDB_RCSTR_TU_OPOFF         "ОТКЛЮЧИТЬ"
+MDB_RCSTR_TU_OPMORE        "БОЛЬШЕ"
+MDB_RCSTR_TU_OPLESS        "МЕНЬШЕ"
+MDB_RCSTR_TU_OPSET         "УСТАНОВИТЬ"
+MDB_RCSTR_TU_OPCANCEL      "ОТМЕНА"
+MDB_RCSTR_ALARM_RESTORE    "ПУ-%d КП-%d стало работоспособно. Отправка настроек авариныйх событий на ПУ"
+MDB_RCSTR_ALARM_OFF        "Запись %u [%s]  аварийные уставки отключены"
+MDB_RCSTR_ALARM_CHANGED    "Запись %u [%s]  аварийные уставки min %.3f , max %.3f"
+
+END
+

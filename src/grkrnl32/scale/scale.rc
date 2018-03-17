@@ -1,0 +1,19 @@
+#include <gkmodules.h>
+
+STRINGTABLE
+
+BEGIN
+
+#ifdef COMERCIAL_BUILD
+IDS_MODULE_PROVIDER  "ООО \"Компания промышленной автоматизации\""
+#else
+
+IDS_MODULE_PROVIDER      "Витус В.В. г.Азов 1993-2008"
+#endif
+  IDS_MODULE_DESCRIPT      "Диспетчер шкал"
+  IDS_MODULE_NAME          "Шкалы"
+END
+
+IDI_MODULE_ICON    ICON "..\..\..\images\GRKRNL32.ICO"
+IDI_MODULE_ICONSM  ICON "..\..\..\images\GRKRNL32.ICO"
+

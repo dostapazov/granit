@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="..\..\..\..\SRC"/>
+    <File Path="..\..\..\KE_WIN"/>
+    <File Path="..\..\..\KE_WIN\Grkrwnd.cpp"/>
+    <File Path="D:"/>
+    <File Path="D:\BCB"/>
+    <File Path="D:\BCB\Lib"/>
+    <File Path="D:\BCB\Lib\memmgr.lib"/>
+    <File Path="D:\USER"/>
+    <File Path="..\..\..\..\..\LIB"/>
+    <File Path="..\..\..\..\..\LIB\PICTDLGS.LIB"/>
+    <File Path="..\..\..\..\..\GRANIT"/>
+    <File Path="..\..\..\..\LIB"/>
+    <File Path="..\..\..\..\LIB\gklib.lib"/>
+    <File Path="..\..\..\..\LIB\Ke_rtls.lib"/>
+    <File Path="tlm_painter.cpp"/>
+    <File Path="tlm_painter.res"/>
+    <File Path="tlm_painter_ctrl.cpp"/>
+    <File Path="tlm_painter_frm.cpp"/>
+    <File Path="tlm_painter_frm.cpp"/>
+    <File Path="tlm_painter_frm.dfm"/>
+    <File Path="tlm_painter_frm.h"/>
+  </ProjectSortOrder>
+</BorlandProject>

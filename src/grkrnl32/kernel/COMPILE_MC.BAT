@@ -1,0 +1,1 @@
+D:\USER\GRANIT\SRC\GrKrnl32\GKCOMERR\mc.exe -s -h d:\user\granit\inc\grkrnl32 gkernel_mod_err.mc

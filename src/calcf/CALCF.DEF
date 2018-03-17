@@ -1,0 +1,28 @@
+LIBRARY     CALCF.DLL
+
+EXPORTS
+    AddVariable                    @3   ; AddVariable
+    AddVariableFromString          @4   ; AddVariableFromString
+    CalcFormula                    @6   ; CalcFormula
+    ClearVariables                 @5   ; ClearVariables
+    CreateCalculator               @1   ; CreateCalculator
+    DestroyCalculator              @2   ; DestroyCalculator
+    GetCalcError                   @7   ; GetCalcError
+    SetVariable                    @200 ; SetVariable
+    SetVariableFromString          @201 ; SetVariableFromString
+    __GetXpVersion                 @16  ; __GetXpVersion
+    ___CPPdebugHook                @8   ; ___CPPdebugHook
+    ib_AddCalculatorVariable       @13  ; ib_AddCalculatorVariable
+    ib_AllocCalculator             @15  ; ib_AllocCalculator
+    ib_CalcClearVariables          @12  ; ib_CalcClearVariables
+    ib_CalcFormula                 @10  ; ib_CalcFormula
+    ib_CalcGetError                @11  ; ib_CalcGetError
+    ib_CalcSetVariable             @9   ; ib_CalcSetVariable
+    ib_FreeCalculator              @14  ; ib_FreeCalculator
+    msxp_AddCalculatorVariable     @19  ; msxp_AddCalculatorVariable
+    msxp_AllocCalculator           @17  ; msxp_AllocCalculator
+    msxp_CalcClearVariables        @21  ; msxp_CalcClearVariables
+    msxp_CalcFormula               @20  ; msxp_CalcFormula
+    msxp_CalcGetError              @22  ; msxp_CalcGetError
+    msxp_CalcSetVariable           @23  ; msxp_CalcSetVariable
+    msxp_FreeCalculator            @18  ; msxp_FreeCalculator

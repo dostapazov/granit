@@ -1,0 +1,6 @@
+USEFORM("..\..\GKLIB\VCL\gkmodule_form.cpp", GKModuleForm);
+USEFORM("grantablet_wnd.cpp", GranTabledFrm);
+//---------------------------------------------------------------------------
+This file is used by the project manager only and should be treated like the project file
+
+DllMain

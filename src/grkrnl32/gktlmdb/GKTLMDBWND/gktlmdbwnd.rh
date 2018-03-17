@@ -1,0 +1,112 @@
+#ifndef __GKTLMDBWND_RH
+#define __GKTLMDBWND_RH
+
+#define IDS_NO_OBJECT    998
+#define IDS_FIRST 1000
+
+#define IDS_PU_TEXT               (IDS_FIRST)
+#define IDS_CP_TEXT               (IDS_FIRST+1)
+#define IDS_FA_TEXT               (IDS_FIRST+2)
+#define IDS_SB_TEXT               (IDS_FIRST+3)
+
+#define IDS_CMD_UNDEF             (IDS_FIRST+49)
+#define IDS_CMD_CREATE            (IDS_FIRST+50)
+#define IDS_CMD_DELETE            (IDS_FIRST+51)
+#define IDS_CMD_RECREATE          (IDS_FIRST+52)
+
+#define IDS_CMD_EXCEPT            (IDS_FIRST+70)
+#define IDS_CMD_CANCEL            (IDS_FIRST+71)
+
+
+
+#define IDS_FADISCRETE_TEXT       (IDS_FIRST+100)
+#define IDS_FAANALOG_TEXT         (IDS_FIRST+101)
+#define IDS_FAANALOG2_TEXT        (IDS_FIRST+102)
+
+#define IDS_FADISCRETE_CTRL_TEXT  (IDS_FIRST+103)
+#define IDS_FAANALOG_CTRL_TEXT    (IDS_FIRST+104)
+
+#define IDS_SB_DISCRETE_TEXT      (IDS_FIRST+150)
+#define IDS_SB_ANALOG_TEXT        (IDS_FIRST+151)
+#define IDS_SB_ANALOG_TEXT1       (IDS_FIRST+152)
+#define IDS_SB_ANALOG_CTRL        (IDS_FIRST+153)
+
+#define IDS_DT_ABSENT             (IDS_FIRST+199)
+#define IDS_DT_BIT                (IDS_FIRST+200)
+#define IDS_DT_BYTE               (IDS_FIRST+201)
+#define IDS_DT_WORD               (IDS_FIRST+202)
+#define IDS_DT_DWORD              (IDS_FIRST+204)
+#define IDS_DT_QWORD              (IDS_FIRST+208)
+
+#define IDS_VPSB_TEXT             (IDS_FIRST+300)
+#define IDS_VPSB_COL1             (IDS_FIRST+301)
+#define IDS_VPSB_COL2             (IDS_FIRST+302)
+#define IDS_VPSB_COL3             (IDS_FIRST+303)
+#define IDS_VPSB_COL4             (IDS_FIRST+304)
+
+#define IDS_VPPU_TEXT             (IDS_FIRST+305)
+#define IDS_VPCP_TEXT             (IDS_FIRST+306)
+#define IDS_VPFA_TEXT             (IDS_FIRST+307)
+#define IDS_VPDB_TEXT             (IDS_FIRST+309)
+
+#define IDS_VPCP_COL1             (IDS_FIRST+310)
+#define IDS_VPFA_COL1             (IDS_FIRST+311)
+#define IDS_VPPU_COL1             (IDS_FIRST+314)
+
+
+#define IDS_VPGRP_COL2            (IDS_FIRST+315)
+#define IDS_VPGRP_COL3            (IDS_FIRST+316)
+
+#define STR_DIAG_BEGIN                   2000
+#define STR_DIAG_NODATA                  (STR_DIAG_BEGIN+0)
+#define STR_DIAG_PUCONNECT               (STR_DIAG_BEGIN+1)
+#define STR_DIAG_PURESPOND               (STR_DIAG_BEGIN+2)
+#define STR_DIAG_RESERV1                 (STR_DIAG_BEGIN+3)
+#define STR_DIAG_CPCONNECT               (STR_DIAG_BEGIN+4)
+#define STR_DIAG_CPRESPOND               (STR_DIAG_BEGIN+5)
+#define STR_DIAG_MODRESPOND              (STR_DIAG_BEGIN+6)
+#define STR_DIAG_MODTXCHANGES            (STR_DIAG_BEGIN+7)
+
+#define STR_DIAG_RESERV2                 (STR_DIAG_BEGIN+8)
+#define STR_DIAG_RESERV3                 (STR_DIAG_BEGIN+9)
+#define STR_DIAG_RESERV4                 (STR_DIAG_BEGIN+10)
+#define STR_DIAG_RESERV5                 (STR_DIAG_BEGIN+11)
+#define STR_DIAG_RESERV6                 (STR_DIAG_BEGIN+12)
+#define STR_DIAG_RESERV7                 (STR_DIAG_BEGIN+13)
+#define STR_DIAG_RESERV8                 (STR_DIAG_BEGIN+14)
+#define STR_DIAG_REMOVED                 (STR_DIAG_BEGIN+15)
+
+#define STR_PART_DIAG_PARAM              (STR_DIAG_BEGIN+16)
+#define STR_PART_DIAG_RESERV1            (STR_DIAG_BEGIN+17)
+#define STR_PART_DIAG_RESERV2            (STR_DIAG_BEGIN+18)
+#define STR_PART_DIAG_RESERV3            (STR_DIAG_BEGIN+19)
+
+
+#define STR_DIAG_STATE_NOTRECEIPT        (STR_DIAG_BEGIN+20)
+#define STR_DIAG_STATE_TUTR_ERROR        (STR_DIAG_BEGIN+21)
+#define STR_DIAG_STATE_TUTR_DESCRIPT     (STR_DIAG_BEGIN+22)
+#define STR_DIAG_STATE_RESERV2           (STR_DIAG_BEGIN+23)
+
+#define STR_STATE_CALL_SENDED            (STR_DIAG_BEGIN+24)
+#define STR_STATE_RESERV2                (STR_DIAG_BEGIN+25)
+#define STR_STATE_RESERV3                (STR_DIAG_BEGIN+26)
+#define STR_STATE_RESERV4                (STR_DIAG_BEGIN+27)
+#define STR_STATE_RESERV5                (STR_DIAG_BEGIN+28)
+#define STR_STATE_TUTR_OFF_LESS          (STR_DIAG_BEGIN+29)
+#define STR_STATE_TUTR_ON_MORE           (STR_DIAG_BEGIN+30)
+#define STR_STATE_TUTR_PREPARE           (STR_DIAG_BEGIN+31)
+
+#define STR_PDIAG_NODATA                 (STR_DIAG_BEGIN+40)
+#define STR_PDIAG_ERROR                  (STR_DIAG_BEGIN+41)
+#define STR_PDIAG_OUTSCALE               (STR_DIAG_BEGIN+42)
+#define STR_PDIAG_TUTR_ERROR             (STR_DIAG_BEGIN+43)
+
+#define STR_PDIAG_TUTR_FAIL              (STR_DIAG_BEGIN+44)
+#define STR_PSTATE_TUTR_OFFLESS_SEND     (STR_DIAG_BEGIN+45)
+#define STR_PSTATE_TUTR_ONMORE_SEND      (STR_DIAG_BEGIN+46)
+#define STR_PSTATE_TUTR_PREPARE          (STR_DIAG_BEGIN+47)
+
+
+
+
+#endif

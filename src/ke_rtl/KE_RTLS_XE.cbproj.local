@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.036,D:\USER\GRANIT\SRC\KE_RTL\KE_RTLS.cbproj=D:\USER\GRANIT\SRC\KE_RTL\KE_RTLS_XE4.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.741,D:\USER\GRANIT\SRC\KE_RTL\Ibclass_cllib.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.338,D:\USER\GRANIT\SRC\KE_RTL\KE_RTLS.cbproj=D:\USER\GRANIT\SRC\KE_RTL\KE_RTLS.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.653,D:\USER\GRANIT\SRC\KE_RTL\Ibclass.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.220,D:\USER\GRANIT\SRC\KE_RTL\IBService.cpp=</Transaction>
+  </Transactions>
+</BorlandProject>

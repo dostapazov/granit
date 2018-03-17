@@ -1,0 +1,406 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "tlm_painter_form.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+
+
+TTlmPainterFrom *TlmPainterFrom;
+//---------------------------------------------------------------------------
+__fastcall TTlmPainterFrom::TTlmPainterFrom(TComponent* Owner)
+	: TForm(Owner)
+
+{
+  Feditable        = true;
+  Fcurrent_over    = -1;
+  Fcaptured        = false;
+  DoubleBuffered   = true;
+  AlphaBlend       = false;
+  Fkadr            = NULL;
+  Fon_get_record   = NULL;
+  Fon_get_text     = NULL;
+}
+//---------------------------------------------------------------------------
+
+void      __fastcall TTlmPainterFrom::get_record   (DWORD rec_id,MDB_RECORD & rec) const
+{
+  if(!on_get_record || !on_get_record(rec_id,rec ) )
+     rec.diag = -1;
+}
+
+  UnicodeString    __fastcall TTlmPainterFrom::get_text     (DWORD str_id) const
+  {
+    if(on_get_text)
+       return on_get_text(str_id);
+    return UnicodeString();
+  }
+
+  const wchar_t * __fastcall TTlmPainterFrom::get_name     (MDB_RECORD & rec,bool short_name) const
+  {
+    const_cast<TTlmPainterFrom*>(this)->_gts = get_text(short_name ? rec.name : rec.sname);
+    return _gts.c_str();
+  }
+
+
+void      __fastcall TTlmPainterFrom::set_kadr     (single_kadr * kadr)
+{
+  Fkadr = kadr;
+  bkgnd.set_bitmap(NULL,true);
+  set_kadr_size(kadr->kadr.kadr_size.cx,kadr->kadr.kadr_size.cy);
+  int cw = PaintBox1->ClientWidth;
+  int hw = PaintBox1->ClientHeight;
+  cw = hw;
+  PaintBox1->Refresh();
+}
+
+void __fastcall  TTlmPainterFrom::set_kadr_size(int cx,int cy)
+{
+  int dx = ClientWidth  - PaintBox1->ClientWidth;
+  int dy = ClientHeight - PaintBox1->ClientHeight;
+  ClientWidth   = cx +   dx;
+  ClientHeight  = cy +   dy;
+}
+
+
+void __fastcall TTlmPainterFrom::CreateParams(TCreateParams & params)
+{
+  TForm::CreateParams(params);
+  //params.WindowClass.style |= CS_BYTEALIGNWINDOW|CS_BYTEALIGNCLIENT|CS_DBLCLKS|CS_OWNDC|CS_VREDRAW|CS_HREDRAW;
+}
+
+TBitmap * __fastcall TTlmPainterFrom::get_bitmap()
+{
+   if(!bk_bmp.get())
+       bk_bmp.reset(new TBitmap);
+    return bk_bmp.get();
+}
+
+void __fastcall TTlmPainterFrom::FormResize(TObject *Sender)
+{
+   bkgnd.set_size(PaintBox1->Width,PaintBox1->Height);
+   PaintBox1->Refresh();
+
+}
+//---------------------------------------------------------------------------
+
+void      __fastcall TTlmPainterFrom::set_bk_grid  (int grid_size)
+{
+   bkgnd.set_grid(grid_size);
+   PaintBox1->Refresh();
+}
+
+void      __fastcall TTlmPainterFrom::set_bk_grayed(bool grayed  )
+{
+   bkgnd.set_grayed(grayed);
+   PaintBox1->Refresh();
+}
+
+void __fastcall TTlmPainterFrom::set_bk_mode(tlmpaint::TBmpBkgnd::bkgnd_mode_t mode)
+{
+ bkgnd.set_mode(mode);
+ PaintBox1->Refresh();
+}
+
+void __fastcall TTlmPainterFrom::set_bk_image(UnicodeString image_name)
+{
+    HBITMAP   bmp  = tlmpaint::load_image(image_name.c_str());
+    bkgnd.set_bitmap(bmp);
+    PaintBox1->Refresh();
+}
+
+void __fastcall TTlmPainterFrom::paint_selected_entryes(bool erase)
+{
+   tlmpaint::paint_action_t<TTlmPainterFrom>
+   paint_action(paint_context,PaintBox1->Canvas->Handle,NULL,bkgnd(),erase,*this,*this);
+   tlmpaint::single_kadr_for_each<tlmpaint::paint_action_t<TTlmPainterFrom,TTlmPainterFrom>,tlmpaint::single_kadr_selected_iterator> skfe(paint_action,Fkadr);
+   skfe();
+}
+
+void __fastcall TTlmPainterFrom::paint_entryes(bool erase)
+{
+   tlmpaint::paint_action_t<TTlmPainterFrom>
+   paint_action(paint_context,PaintBox1->Canvas->Handle,NULL,bkgnd(),erase,*this,*this);
+   tlmpaint::single_kadr_for_each<tlmpaint::paint_action_t<TTlmPainterFrom>,tlmpaint::single_kadr_iterator> skfe(paint_action,Fkadr);
+   skfe();
+}
+
+void __fastcall TTlmPainterFrom::PaintBox1Paint(TObject *Sender)
+{
+   RECT r;
+   SetRect(&r,0,0,PaintBox1->Width,PaintBox1->Height);
+   bkgnd.paint(PaintBox1->Canvas->Handle,r);
+   paint_entryes(false);
+}
+//---------------------------------------------------------------------------
+
+
+void  __fastcall TTlmPainterFrom::set_captured(bool val)
+{
+    if(captured != val)
+    {
+      if(val)
+         SetCapture(Handle);
+      else
+         SetCapture(NULL);
+      Fcaptured = val;
+    }
+}
+
+
+void __fastcall TTlmPainterFrom::do_move_selected(int dx,int dy)
+{
+  if(Fkadr && Fkadr->sel_count())
+  {
+      paint_selected_entryes(true);
+      tlmpaint::move_action_t move_act(dx,dy);
+      tlmpaint::single_kadr_for_each<tlmpaint::move_action_t,tlmpaint::single_kadr_selected_iterator> fe(move_act,Fkadr);
+      fe();
+      paint_entryes(false);
+  }
+}
+void __fastcall TTlmPainterFrom::do_size_selected(int dx,int dy)
+{
+  if(Fkadr &&  Fkadr->sel_count())
+  {
+   tlmpaint::size_action_t size_act(dx,dy);
+   tlmpaint::single_kadr_for_each<tlmpaint::size_action_t,tlmpaint::single_kadr_selected_iterator>(size_act,Fkadr)();
+  }
+}
+
+void __fastcall  TTlmPainterFrom::set_current_over(DWORD over)
+{
+ if(Fcurrent_over != over)
+   {
+    Fcurrent_over = over;
+   }
+}
+
+ void         __fastcall TTlmPainterFrom::paint_select_rect(HDC dc,POINT & spot_pt,LPPOINT  new_pt,LPPOINT old_pt )
+ {
+     int old_rop = ::SetROP2(dc ,R2_NOTXORPEN);
+     if(old_pt)
+     {
+      MoveToEx(dc,spot_pt.x,spot_pt.y,NULL);
+      LineTo  (dc,old_pt->x,spot_pt.y );
+      LineTo  (dc,old_pt->x,old_pt->y);
+      LineTo  (dc,spot_pt.x ,old_pt->y);
+      LineTo  (dc,spot_pt.x ,spot_pt.y );
+     }
+
+     if(new_pt)
+     {
+     MoveToEx(dc,spot_pt.x ,spot_pt.y,NULL);
+     LineTo  (dc,new_pt->x,spot_pt.y );
+     LineTo  (dc,new_pt->x,new_pt->y);
+     LineTo  (dc,spot_pt.x ,new_pt->y);
+     LineTo  (dc,spot_pt.x ,spot_pt.y );
+     }
+
+     SetROP2(dc,old_rop);
+
+ }
+
+void __fastcall  TTlmPainterFrom::captured_mouse_move(TObject *Sender, TShiftState Shift,int X, int Y)
+{
+    if(mstate.mb_left.is_down())
+    {
+    if(current_over!=DWORD(-1))
+    {
+     if(Feditable)
+     {
+     int dx = mstate.mb_left.get_dx(X);
+     int dy = mstate.mb_left.get_dy(Y);
+     mstate.mb_left.set_state(true,X,Y);
+     if(Shift.Contains(ssShift))
+       {
+       do_size_selected(dx,dy);
+       PaintBox1->Refresh();
+       }
+       else
+       {
+        do_move_selected (dx,dy);
+       }
+      }
+     }
+     else
+     {
+      POINT old_pt = mstate.mb_left.get_spot();
+      mstate.mb_left.set_state(true,X,Y);
+      POINT new_pt = mstate.mb_left.get_spot();
+      paint_select_rect(PaintBox1->Canvas->Handle,*&mstate.mb_left.get_switch_spot(),&new_pt,&old_pt);
+     }
+    }
+
+}
+
+void __fastcall TTlmPainterFrom::PaintBox1MouseMove(TObject *Sender, TShiftState Shift,
+          int X, int Y)
+{
+  if(!Fkadr) return;
+  if(captured)
+     captured_mouse_move(Sender,Shift,X,Y);
+  else
+  {
+   if(mstate.mb_left.is_down())
+   {
+    captured = true;
+    if(current_over!=DWORD(-1))
+    {
+      if(!Shift.Contains(ssCtrl))
+         Fkadr->clear_selections();
+      Fkadr->select(current_over);
+    }
+    captured_mouse_move(Sender,Shift,X,Y);    return;
+   }
+   DWORD over = Fkadr->get_at_position(X,Y);
+   set_current_over(over);
+  }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TTlmPainterFrom::PaintBox1MouseDown(TObject *Sender, TMouseButton Button,
+          TShiftState Shift, int X, int Y)
+{
+  if(!Fkadr) return;
+  if(Button == mbLeft)
+  {
+   mstate.mb_left.set_state(true,X,Y);
+  }
+}
+//---------------------------------------------------------------------------
+void __fastcall TTlmPainterFrom::PaintBox1MouseUp(TObject *Sender, TMouseButton Button,
+          TShiftState Shift, int X, int Y)
+{
+  if(!Fkadr) return;
+  if(Button == mbLeft)
+  {
+    if(captured )
+    {
+     captured = false;
+     if(current_over == DWORD(-1)  )
+     {
+      POINT pt1 = mstate.mb_left.get_switch_spot();
+      POINT pt2; pt2.x = X;pt2.y = Y;
+      Fkadr->select_in_rect(pt1,pt2,Shift.Contains(ssCtrl) ? true : false);
+     }
+     else
+     Fkadr->position_index_resort() ;
+     PaintBox1->Repaint();
+    }
+    else
+    {
+      if(current_over!=(DWORD)-1 )
+      {
+        bool ctrl = Shift.Contains(ssCtrl);
+        if(ctrl)
+           Fkadr->toggle_select(current_over);
+        else
+        {
+         if(Fkadr->is_selected(current_over))
+           {
+            if(Fkadr->sel_count() == 1)
+               Fkadr->deselect(current_over);
+               else
+               {
+                Fkadr->clear_selections();
+                Fkadr->select(current_over);
+               }
+           }
+            else
+            {
+              Fkadr->clear_selections();
+              Fkadr->select(current_over);
+            }
+        }
+        PaintBox1->Refresh();
+      }
+      else
+      {
+        if(Fkadr->sel_count())
+        {
+          Fkadr->clear_selections();
+          PaintBox1->Refresh();
+        }
+      }
+    }
+    mstate.mb_left.set_state(false,X,Y);
+  }
+  else
+  captured = false;
+
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TTlmPainterFrom::FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
+
+{
+
+  int dx = 0,dy = 0;
+  switch(Key)
+  {
+    case VK_LEFT   :  dx = -1; break;
+    case VK_RIGHT  :  dx =  1; break;
+    case VK_UP     :  dy = -1; break;
+    case VK_DOWN   :  dy =  1; break;
+  }
+
+  if(Fkadr && Fkadr->get_entryes_count() && ( dx+dy ))
+  {
+    bool shift = Shift.Contains(ssShift);
+    bool alt   = Shift.Contains(ssAlt);
+    if(shift || alt)
+    {
+        if(bkgnd.get_grid()) {dx*=bkgnd.get_grid();dy*=bkgnd.get_grid();}
+        if(alt)
+            do_move_selected(dx,dy);
+        else
+        {
+        if(shift)
+            do_size_selected(dx,dy);
+        }
+         Fkadr->position_index_resort();
+    }
+    else
+    {
+     Fkadr->select_next((dx+dy)>0,Shift.Contains(ssCtrl));
+    }
+     PaintBox1->Refresh();
+  }
+}
+//---------------------------------------------------------------------------
+
+#define WM_SHOW_Refresh (WM_USER+100)
+
+void __fastcall TTlmPainterFrom::WndProc(TMessage & msg)
+{
+   if(msg.Msg == WM_SHOW_Refresh)
+     {
+       PaintBox1->Refresh();
+       msg.Result = 0;
+     }
+     else
+     TForm::WndProc(msg);
+}
+
+
+void __fastcall TTlmPainterFrom::FormShow(TObject *Sender)
+{
+  PostMessage(Handle,WM_SHOW_Refresh,0,0);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TTlmPainterFrom::ToolButton4Click(TObject *Sender)
+{
+  //this->DoubleBuffered = !this->DoubleBuffered;
+  Feditable = !Feditable;
+}
+//---------------------------------------------------------------------------
+
+
+
+

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.070,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.213,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.058,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.222,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.162,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.527,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.729,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2016.03.07 18:16:20.329,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2016.03.07 18:16:20.346,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2016.03.07 18:17:01.755,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmod_frame.cpp</Transaction>
+    <Transaction>2016.03.07 18:17:01.761,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
+    <Transaction>2016.03.07 18:17:33.796,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2016.03.07 18:28:37.562,D:\USER\GRANIT\SRC\GrKrnl32\gktlm_viewer\wnd\gktlmviewer_setup_frm.cpp=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2016.03.07 18:28:37.562,D:\USER\GRANIT\SRC\GrKrnl32\gktlm_viewer\wnd\gktlmviewer_setup_frm.dfm=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2016.03.07 18:28:37.562,D:\USER\GRANIT\SRC\GrKrnl32\gktlm_viewer\wnd\gktlmviewer_setup_frm.h=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2016.03.07 18:29:22.519,D:\USER\GRANIT\SRC\GrKrnl32\gktlm_viewer\wnd\gktlm_viewer_wnd.cpp=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2016.03.07 18:29:40.535,D:\USER\GRANIT\SRC\GrKrnl32\gktlm_viewer\wnd\gktlm_viewer_wndPCH1.h=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2016.03.07 18:29:53.515,D:\USER\GRANIT\SRC\GrKrnl32\gktlm_viewer\wnd\gktlm_viewer_wnd.cbproj=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2016.03.07 19:03:22.434,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>2016.03.07 19:03:22.489,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>2016.03.07 19:03:22.596,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>2016.03.07 19:03:22.603,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+  </Transactions>
+</BorlandProject>

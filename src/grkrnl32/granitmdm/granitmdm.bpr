@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="D:\USER\GRANIT\GRKRNL32\granitmdm.gkm"/>
+    <OBJFILES value="d:\temp\granitmdm\granitmdm_main.obj d:\temp\granitmdm\granit_modem.obj 
+      d:\temp\granitmdm\sc_floor.obj d:\temp\granitmdm\gr_cp.obj 
+      d:\temp\granitmdm\gr_group.obj d:\temp\granitmdm\gr_cp_tutr.obj"/>
+    <RESFILES value="granitmdm.res d:\temp\granitmdm\granitmdm.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value="D:\BCB\Lib\memmgr.lib ..\..\..\LIB\KE_RTLS.lib ..\..\..\LIB\gklib.lib 
+      ..\..\..\LIB\GKHANDLE.LIB ..\..\..\LIB\otdhlpr.lib"/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value=""/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="STRICT;_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT;_NO_VCL"/>
+    <MAINSOURCE value="granitmdm.bpf"/>
+    <INCLUDEPATH value="..;..\..\KE_RTL;..\..\..\PROJS;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32"/>
+    <LIBPATH value="..;..\..\KE_RTL;..\OTDHLPR;..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I.. -I..\..\KE_RTL -I..\..\..\PROJS -I..\GKLIB -I$(BCB)\include 
+      -I$(BCB)\include\vcl -ID:\USER\GRANIT\INC -ID:\USER\GRANIT\INC\GRKRNL32 
+      -src_suffix cpp -DSTRICT -D_DEBUG -boa"/>
+    <CFLAG1 value="-WD -Od -H=d:\temp\granitmdm\granitmdm.csm -Hc -Vx -Ve -X- -r- -a8 -5 -b- 
+      -k -y -v -vi- -tWD -tWM- -c"/>
+    <PFLAGS value="-N2d:\temp\granitmdm -N0d:\temp\granitmdm -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-Id:\temp\granitmdm -D&quot;&quot; -aa -Tpd -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cw32.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="granitmdm.res" FORMNAME="" UNITNAME="granitmdm.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="granitmdm.bpf" FORMNAME="" UNITNAME="granitmdm" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\BCB\Lib\memmgr.lib" FORMNAME="" UNITNAME="memmgr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\KE_RTLS.lib" FORMNAME="" UNITNAME="KE_RTLS.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\gklib.lib" FORMNAME="" UNITNAME="gklib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\GKHANDLE.LIB" FORMNAME="" UNITNAME="GKHANDLE.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\otdhlpr.lib" FORMNAME="" UNITNAME="otdhlpr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="granitmdm_main.cpp" FORMNAME="" UNITNAME="granitmdm_main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="granitmdm.rc" FORMNAME="" UNITNAME="granitmdm.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="granit_modem.cpp" FORMNAME="" UNITNAME="granit_modem" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="sc_floor.cpp" FORMNAME="" UNITNAME="sc_floor" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gr_cp.cpp" FORMNAME="" UNITNAME="gr_cp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gr_group.cpp" FORMNAME="" UNITNAME="gr_group" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gr_cp_tutr.cpp" FORMNAME="" UNITNAME="gr_cp_tutr" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=7
+Item0=..;..\..\KE_RTL;..\..\..\PROJS;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item1=..\;..\..\KE_RTL;..\..\..\PROJS;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item2=$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item3=..\OTDHLPR;..\GKLIB;..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item4=..\GKLIB;..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item5=..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item6=..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=6
+Item0=..;..\..\KE_RTL;..\OTDHLPR;..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\;..\..\KE_RTL;..\OTDHLPR;..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\OTDHLPR;..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item3=..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item4=..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=5
+Item0=STRICT;_DEBUG
+Item1=STRICT
+Item2=STRICT;;_DEBUG
+Item3=STRICT;
+Item4=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=d:\temp\granitmdm
+Item1=d:\temp
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=D:\USER\GRANIT\GRKRNL32\
+Item1=D:\USER\GRANIT\GRKRNL32
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=-nosplash -config
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=D:\USER\GRANIT\GRKRNL32\grkrnl32.exe
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

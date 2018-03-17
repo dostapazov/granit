@@ -1,0 +1,58 @@
+#include "modemmer.h"
+#include "gripxmod_err.rc"
+
+STRINGTABLE
+BEGIN
+
+#ifdef COMERCIAL_BUILD
+IDS_MODULE_PROVIDER  "ООО \"Компания промышленной автоматизации\""
+#else
+
+IDS_MODULE_PROVIDER      "Остапенко Д.В. г.Азов 1993-2008"
+#endif
+
+IDS_MODULE_DESCRIPT      "Модуль GRNET32.DLL [IpxBased Протокол <Гранит> ]"
+IDS_MODULE_NAME          "Модем IPX протокола 'Гранит'"
+IDS_MODEM_INFO           "Модем IPX протокола 'Гранит' сервер/клиент"
+END
+
+IDI_MODULE_ICONSM    ICON "GRNETMOD.ICO"
+IDI_MODULE_ICON      ICON "GRNETMOD.ICO"
+
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "Comments", "Модем GRNET32.DLL [IpxBased Протокол <Гранит> ]\0"
+            VALUE "CompanyName", "ASDU\0"
+            VALUE "FileDescription", "Модем GRNET32.DLL [IpxBased Протокол <Гранит> ]\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "gripxmod\0"
+            VALUE "LegalCopyright", "Copyright © 2001-2004 SDTU Norilsk\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "gripxmod.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "ASDU gripxmod\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END

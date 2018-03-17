@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="D:\USER\GRANIT\GRKRNL32\gkhandle.dll"/>
+    <OBJFILES value="d:\temp\gkhandle\gkhandle_main.obj"/>
+    <RESFILES value=""/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value="gkhandle.def"/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value="..\..\..\LIB\Ke_rtls.lib D:\BCB\Lib\memmgr.lib"/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value=""/>
+    <PACKAGES value="rtl.bpi vcl.bpi vclx.bpi bcbsmp.bpi dbrtl.bpi vcldb.bpi adortl.bpi 
+      ibsmp.bpi bdertl.bpi vcldbx.bpi qrpt.bpi teeui.bpi teedb.bpi tee.bpi 
+      dss.bpi teeqr.bpi ibxpress.bpi dsnap.bpi vclie.bpi inetdb.bpi inet.bpi 
+      nmfast.bpi webdsnap.bpi bcbie.bpi dclocx.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="STRICT;_DEBUG;_NO_VCL"/>
+    <SYSDEFINES value="NO_STRICT;_NO_VCL"/>
+    <MAINSOURCE value="gkhandle.bpf"/>
+    <INCLUDEPATH value="$(BCB)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;..\SRC\KE_RTL"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -ID:\USER\GRANIT\INC\GRKRNL32 -ID:\USER\GRANIT\INC 
+      -src_suffix cpp -DSTRICT -D_DEBUG -D_NO_VCL -boa"/>
+    <CFLAG1 value="-WD -Od -H=d:\temp\gkhandle\grkrnl32.csm -Hc -Vx -Ve -X- -r- -a8 -5 -b -k 
+      -y -v -vi- -tWD -tWM- -c"/>
+    <PFLAGS value="-N2d:\temp\gkhandle -N0d:\temp\gkhandle -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-lD:\USER\GRANIT\LIB -Id:\temp\gkhandle -D&quot;&quot; -aa -Tpd -x -Gn -Gi -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cw32.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="gkhandle.bpf" FORMNAME="" UNITNAME="gkhandle" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkhandle_main.cpp" FORMNAME="" UNITNAME="gkhandle_main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\Ke_rtls.lib" FORMNAME="" UNITNAME="Ke_rtls" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gkhandle.def" FORMNAME="" UNITNAME="gkhandle" CONTAINERID="DefTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\BCB\Lib\memmgr.lib" FORMNAME="" UNITNAME="memmgr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+
+[HistoryLists\hlIncludePath]
+Count=7
+Item0=$(BCB)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC
+Item1=..\SRC\KE_RTL;..\SRC\GrKrnl32\HANDLE;$(BCB)\include;..\INC;..\INC\grkrnl32
+Item2=..\SRC\GrKrnl32\HANDLE;$(BCB)\include;..\INC;..\INC\grkrnl32
+Item3=$(BCB)\include;..\INC;..\INC\grkrnl32
+Item4=$(BCB)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\grkrnl32
+Item5=D:\USER\GRANIT\SRC\GrKrnl32\HANDLE;$(BCB)\include;$(BCB)\include\vcl
+Item6=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=5
+Item0=$(BCB)\lib\obj;$(BCB)\lib;..\SRC\KE_RTL
+Item1=..\SRC\KE_RTL;..\SRC\GrKrnl32\HANDLE;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\SRC\GrKrnl32\HANDLE;$(BCB)\lib\obj;$(BCB)\lib
+Item3=$(BCB)\lib\obj;$(BCB)\lib
+Item4=D:\USER\GRANIT\SRC\GrKrnl32\HANDLE;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=8
+Item0=STRICT;_DEBUG;_NO_VCL
+Item1=STRICT;_DEBUG
+Item2=STRICT
+Item3=_USE_OLD_RW_STL
+Item4=_USE_OLD_RW_STL;_DEBUG
+Item5=_USE_OLD_RW_STL;;_DEBUG
+Item6=_USE_OLD_RW_STL;
+Item7=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=3
+Item0=d:\temp\gkhandle
+Item1=d:\temp
+Item2=d:\temp\
+
+[HistoryLists\hlFinalOutputDir]
+Count=7
+Item0=D:\USER\GRANIT\GRKRNL32\
+Item1=D:\USER\Proxy\
+Item2=D:\USER\Proxy
+Item3=D:\USER\GRANIT\GRKRNL32
+Item4=..\..\Proxy\
+Item5=..\GRKRNL32\
+Item6=d:\temp\
+
+[HistoryLists\hIBPIOutputDir]
+Count=2
+Item0=D:\USER\GRANIT\LIB
+Item1=D:\USER\GRANIT\LIB\
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=D:\USER\GRANIT\GRKRNL32\grkrnl32.exe
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

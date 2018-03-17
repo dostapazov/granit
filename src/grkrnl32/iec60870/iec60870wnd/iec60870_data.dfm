@@ -1,0 +1,420 @@
+inherited IEC60870DataFrame: TIEC60870DataFrame
+  Width = 618
+  Height = 236
+  ExplicitWidth = 618
+  ExplicitHeight = 236
+  DesignSize = (
+    618
+    236)
+  object data_types: TRadioGroup
+    Left = 3
+    Top = 1
+    Width = 63
+    Height = 113
+    Caption = #1058#1080#1087#1099
+    ItemIndex = 0
+    Items.Strings = (
+      #1058#1057
+      #1058#1048#1058
+      #1058#1048#1048)
+    TabOrder = 0
+    OnClick = data_typesClick
+  end
+  object group_panel: TPanel
+    Left = 71
+    Top = 2
+    Width = 534
+    Height = 42
+    Anchors = [akLeft, akTop, akRight]
+    BevelKind = bkFlat
+    BevelOuter = bvNone
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    object bAssignGroup: TSpeedButton
+      Left = 356
+      Top = 6
+      Width = 22
+      Height = 22
+      Hint = #1053#1072#1079#1085#1072#1095#1080#1090#1100' '#1075#1088#1091#1087#1087#1091
+      Flat = True
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000000000000000000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFCFCFCECECECD5D5D5C6C6C6C5C5C5D3D3D3E9E9E9FBFBFBFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1F1F19E9E9E7A7A7A8686869B
+        9B9BA3A3A39696966E6E6E8F8F8FDFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        F4F4F49595958B8B8BC4C4C4E0E0E0E6E6E6DEDEDECFCFCFADADADA8A8A8B5B5
+        B5EDEDEDFFFFFFFFFFFFFFFFFFF7F7F79A9A9AB7B7B7F3F4F3ADCFB565B77C43
+        AE6540AC6454AB717CA98AADB0AEC0C0C0C8C8C8EEEEEEFFFFFFFFFFFFB2B2B2
+        CECECED9E7DD40B26317B14B409C612FAB6321C46B22C56C21C3692CAE629CBA
+        A7D8D8D8C9C9C9FCFCFCF4F4F4AEAEAEE0EAE223B45310BD527EA68FD5D5D5C7
+        CCCA39B5811AD1861AD18418CF7F19BF6CB6D4C3DFDFDFE3E3E3D1D1D1ECECEC
+        55BA7408BD4A7BAA8EE6E6E6E7E7E7DFDFDFC1C9C62BB78412D18A11D0850FCD
+        792AB86DF2F4F3D9D9D9E0E0E0E0E9E206AB3A67A77EE3E3E3E3E4E468CDA0B4
+        DBCBE9E9E9C4D0CC24B57E0DC77C0BC47009BD5EAED3BBE8E8E8EDEDEDBFD7C5
+        21B24DC4DCCBF6F6F676C99B08B66016B86FB9D6C9E6E6E6BECDC71AAA6908B6
+        5E06B2517CBF94EFEFEFEFEFEFC2D7C75ABE7634B05949B66C04A13F05A44806
+        A65018A85EC3D7CCE5E5E5B2C5BB11994A04A13E76B78AECECECF0F0F0D9DFDA
+        77BE8870BF844CB06812973B02913303923803933B209A50D5E1D9E9E9E9A8BD
+        AF0A893097BCA1EBEBEBFCFCFCDCDCDCA4C9AC8BC59884C1927BBD8B54AB6B28
+        964708862D0183282B9349E6EEE8E7ECE829833ECED2CFF5F5F5FFFFFFE1E1E1
+        D6DCD8A6CCAD9DCAA697C7A190C39B89C09581BB8E69AF7A55A46872B28074B0
+        80A7C1ACE1E1E1FFFFFFFFFFFFFFFFFFCFCFCFDAE1DBB8D4BDAED2B5A8CFB0A2
+        CCAA9CC8A595C59E8EC1988ABB93BFD2C2DDDDDDFCFCFCFFFFFFFFFFFFFFFFFF
+        FEFEFEDEDEDEE7E8E7DCE8DEC6DDCAB8D5BEB3D2B9B7D4BCC8DCCBE0E4E1E2E2
+        E2FBFBFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7F7F1F1F1F2F2F2F3
+        F3F3F4F4F4F2F2F2E9E9E9F1F1F1FFFFFFFFFFFFFFFFFFFFFFFF}
+      OnClick = bAssignGroupClick
+    end
+    object Label1: TLabel
+      Left = 2
+      Top = 10
+      Width = 36
+      Height = 13
+      Caption = #1043#1088#1091#1087#1087#1072
+    end
+    object bRemoveGroup: TSpeedButton
+      Left = 383
+      Top = 6
+      Width = 22
+      Height = 22
+      Hint = #1054#1089#1074#1086#1073#1086#1076#1080#1090#1100' '#1075#1088#1091#1087#1087#1091
+      Flat = True
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000000000000000000000000000000000000FFFFFFFFFFFF
+        FFFFFFF9F9F9ECECECDFDFDFC3C3C3B5B5B5B7B7B7C7C7C7E7E7E7F7F7F7FFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBEBEBB9B9B97E7E7E919191BCBCBCD0
+        D0D0C7C7C7A7A7A77E7E7EA0A0A0F5F5F5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        EDEDEDAAAAAADCDDDE9DA2C84853A92635A026359F4B58A7898EACA9A9A9A1A1
+        A1F2F2F2FFFFFFFFFFFFFFFFFFF8F8F8B2B2B2D8D9E23744A50317A9031CB704
+        22C20626C90729CC0727C04052A9CACBCFB1B1B1FCFCFCFFFFFFFFFFFFC4C4C4
+        E2E3E52F3EA5041DB50625C6082ED70A35E20C39E80D3DED0E3EEE0E3BE5485F
+        BBE3E3E4CCCCCCFFFFFFF6F6F6C9C9C9868EC3061FAF0827BC0B33CF0C39D90E
+        3CDE0E3EE00F41E31042E61143E8113EDE9AA5CDC4C4C4FAFAFADBDBDBEAEAEA
+        384AAE2942B66174BE6076BF5F75BF647BC5657CC6667CC6667CC6667DCA3056
+        DA415CBFE1E1E1E5E5E5D3D3D3E5E5EB364DBD8B9BDBFCFCFCF3F3F3F0F0F0E3
+        E3E3E1E1E1E4E4E4E2E2E2E9E9E9788FE1163DCBEDEDEED4D4D4D8D8D8DEE0E9
+        576CCC92A3E7FFFFFFFFFFFFFFFFFFFFFFFFFCFCFCF3F3F3F0F0F0E3E3E3617F
+        E6133DD5E6E7EAD2D2D2DEDEDEEFEFF07382CE778DEA7290F86B8CFA5F81F93B
+        65F81E4EF81749F81748F81848F91849FC2548CAE0E0E0DDDDDDECECECE5E5E5
+        A7AED595A5EC90A6F98AA4FF829EFF7B98FF7391FF5A7EFF436BFF325EFF2A57
+        FC6B7EC6C8C8C8F0F0F0FAFAFADADADAD4D6DFACB5E5A9B8F5A5B7FD9FB3FF98
+        AEFF91A9FF8AA3FF839DFF7C97FE778EE5D1D3DACECECEFCFCFCFFFFFFE7E7E7
+        E0E0E0D3D6E3BEC5EDBAC6F8B6C5FDB1C1FEABBDFFA5B8FF9FB3FE98ABEECBD0
+        E1D4D4D4EBEBEBFFFFFFFFFFFFFFFFFFE1E1E1EBEBEBE9EBF1CCD1EBC4CDF2C2
+        CCF7BFCAF8B9C6F3C0C9EAE1E3E9DDDDDDE2E2E2FFFFFFFFFFFFFFFFFFFFFFFF
+        FCFCFCE7E7E7E9E9E9FBFBFBEFF0F5E6E7F0E4E6EFEFF0F4F1F1F1DBDBDBE7E7
+        E7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6F6F6E6E6E6E7E7E7E6
+        E6E6E6E6E6E5E5E5E3E3E3F8F8F8FFFFFFFFFFFFFFFFFFFFFFFF}
+      OnClick = bRemoveGroupClick
+    end
+    object Label2: TLabel
+      Left = 135
+      Top = 11
+      Width = 31
+      Height = 13
+      Caption = #1053#1086#1084#1077#1088
+    end
+    object otd_group: TEdit
+      Tag = 2
+      Left = 50
+      Top = 7
+      Width = 74
+      Height = 21
+      BevelInner = bvNone
+      BevelKind = bkFlat
+      BorderStyle = bsNone
+      TabOrder = 0
+      OnChange = otd_groupChange
+    end
+    object StaticText1: TStaticText
+      Left = 257
+      Top = 10
+      Width = 39
+      Height = 17
+      Caption = #1050#1086#1083'-'#1074#1086
+      TabOrder = 1
+    end
+    object obj_count: TStaticText
+      Left = 301
+      Top = 9
+      Width = 50
+      Height = 17
+      Alignment = taCenter
+      AutoSize = False
+      BorderStyle = sbsSunken
+      Caption = '0'
+      ShowAccelChar = False
+      TabOrder = 3
+    end
+    object otd_number: TEdit
+      Tag = 2
+      Left = 178
+      Top = 7
+      Width = 70
+      Height = 21
+      BevelInner = bvNone
+      BevelKind = bkFlat
+      BorderStyle = bsNone
+      TabOrder = 2
+      OnChange = otd_groupChange
+    end
+  end
+  object rc_param_panel: TPanel
+    Left = 70
+    Top = 45
+    Width = 535
+    Height = 69
+    Anchors = [akLeft, akTop, akRight]
+    BevelKind = bkFlat
+    BevelOuter = bvNone
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+    object bAssignTuTr: TSpeedButton
+      Left = 431
+      Top = 2
+      Width = 22
+      Height = 22
+      Hint = #1053#1072#1079#1085#1072#1095#1080#1090#1100' '#1058#1059
+      Flat = True
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000000000000000000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD5DADBD5DADBD5DADBD5DADBD5DADBD5
+        DADBD5DADBD5DADBD5DADBD5DADBD5DADBD5DADBFFFFFFFFFFFFFFFFFFFFFFFF
+        6BAE946BAE946BAE946BAE946BAE946BAE946BAE946BAE946BAE946BAE946BAE
+        946BAE94FFFFFFFFFFFFFFFFFFFFFFFF6BAE94B4F0E19DECD891E9D391E9D391
+        E9D391E9D391E9D391E9D39DECD8B4F0E16BAE94FFFFFFFFFFFFFFFFFFFFFFFF
+        6BAE949DECD882E6CD75E4C873D7BC71CEB373D7BC75E4C875E4C882E6CD9DEC
+        D86BAE94FFFFFFFFFFFFFFFFFFFFFFFF6BAE9491E9D375E4C868D5B769CDB0F9
+        FDFC69CDB068D5B767E1C275E4C891E9D36BAE94FFFFFFFFFFFFFFFFFFFFFFFF
+        6BAE9491E9D373D7BC69CDB0F9FDFCF9FDFCF9FDFC69CDB068D5B775E4C891E9
+        D36BAE94FFFFFFFFFFFFFFFFFFFFFFFF6BAE9491E9D371CEB3F9FDFCF9FDFCF9
+        FDFCF9FDFCF9FDFC69CDB073D7BC91E9D36BAE94FFFFFFFFFFFFFFFFFFFFFFFF
+        6BAE94CFEEE6AEDCCE9CD1C0F9FDFC9CD1C0F9FDFCF9FDFCF9FDFCA0D2C2B7DF
+        D36BAE94FFFFFFFFFFFFFFFFFFFFFFFF6BAE94DAF1ECD1EEE7B5DDD1A5D3C4B5
+        DDD1A5D3C4F9FDFCF9FDFCF9FDFCAED6C96BAE94FFFFFFFFFFFFFFFFFFFFFFFF
+        6BAE94E6F6F1DFF3EEDCF2ECDCF2ECDCF2ECC2E2D7AFD7C9F9FDFCF9FDFCF9FD
+        FC6BAE94FFFFFFFFFFFFFFFFFFFFFFFF6BAE94F1FAF8EEF8F6ECF8F5ECF8F5EC
+        F8F5ECF8F5CDE6DEB8DACEF9FDFCBBDCD06BAE94FFFFFFFFFFFFFFFFFFFFFFFF
+        6BAE94FBFEFDF9FDFCF9FDFBF9FDFBF9FDFBF9FDFBF9FDFBD7EAE3C0DDD2D9EB
+        E46BAE94FFFFFFFFFFFFFFFFFFFFFFFF6BAE946BAE946BAE946BAE946BAE946B
+        AE946BAE946BAE946BAE946BAE946BAE946BAE94FFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      OnClick = bAssignTuTrClick
+    end
+    object rc_object: TEdit
+      Tag = 2
+      Left = 228
+      Top = 3
+      Width = 50
+      Height = 21
+      BevelInner = bvNone
+      BevelKind = bkFlat
+      BorderStyle = bsNone
+      TabOrder = 0
+    end
+    object StaticText2: TStaticText
+      Left = 180
+      Top = 7
+      Width = 43
+      Height = 17
+      Caption = #1054#1073#1098#1077#1082#1090
+      TabOrder = 1
+    end
+    object StaticText3: TStaticText
+      Left = 0
+      Top = 6
+      Width = 48
+      Height = 17
+      Caption = #1050#1086#1084#1072#1085#1076#1072
+      TabOrder = 2
+    end
+    object cbRcCommand: TComboBox
+      Left = 50
+      Top = 3
+      Width = 118
+      Height = 21
+      BevelKind = bkFlat
+      Style = csDropDownList
+      ItemIndex = 3
+      TabOrder = 3
+      Text = #1056#1077#1075#1091#1083#1080#1088#1086#1074#1072#1085#1080#1077
+      Items.Strings = (
+        #1053#1077#1090
+        #1054#1076#1085#1086#1087#1086#1079#1080#1094#1080#1086#1085#1085#1072#1103' '
+        #1044#1074#1091#1093#1087#1086#1079#1080#1094#1080#1086#1085#1085#1072#1103' '
+        #1056#1077#1075#1091#1083#1080#1088#1086#1074#1072#1085#1080#1077)
+    end
+    object GroupBox1: TGroupBox
+      Left = 1
+      Top = 25
+      Width = 432
+      Height = 35
+      Caption = #1048#1084#1087#1091#1083#1100#1089
+      TabOrder = 4
+      object rb_imp_short: TRadioButton
+        Tag = 1
+        Left = 5
+        Top = 11
+        Width = 74
+        Height = 17
+        Caption = #1050#1086#1088#1086#1090#1082#1080#1081' '
+        TabOrder = 0
+        OnClick = rb_imp_shortClick
+      end
+      object rb_imp_long: TRadioButton
+        Tag = 2
+        Left = 89
+        Top = 11
+        Width = 74
+        Height = 17
+        Caption = #1044#1083#1080#1085#1085#1099#1081' '
+        TabOrder = 1
+        OnClick = rb_imp_shortClick
+      end
+      object rb_imp_persist: TRadioButton
+        Tag = 3
+        Left = 168
+        Top = 11
+        Width = 86
+        Height = 17
+        Caption = #1055#1086#1089#1090#1086#1103#1085#1085#1099#1081
+        TabOrder = 2
+        OnClick = rb_imp_shortClick
+      end
+      object rb_imp_user: TRadioButton
+        Left = 260
+        Top = 11
+        Width = 113
+        Height = 17
+        Caption = #1055#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1100#1089#1082#1080#1081
+        Checked = True
+        TabOrder = 3
+        TabStop = True
+      end
+      object rc_imp_param: TEdit
+        Tag = 1
+        Left = 378
+        Top = 10
+        Width = 50
+        Height = 21
+        BevelInner = bvNone
+        BevelKind = bkFlat
+        BorderStyle = bsNone
+        TabOrder = 4
+        Text = '0'
+        OnChange = rc_imp_paramChange
+      end
+    end
+    object rc_timeout: TEdit
+      Tag = 1
+      Left = 378
+      Top = 2
+      Width = 50
+      Height = 21
+      BevelInner = bvNone
+      BevelKind = bkFlat
+      BorderStyle = bsNone
+      TabOrder = 5
+    end
+    object StaticText4: TStaticText
+      Left = 288
+      Top = 5
+      Width = 80
+      Height = 17
+      Caption = #1058#1072#1081#1084#1072#1091#1090' ('#1084#1089#1077#1082')'
+      TabOrder = 6
+    end
+  end
+  object TabControl1: TTabControl
+    Left = 5
+    Top = 116
+    Width = 600
+    Height = 115
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 3
+    Tabs.Strings = (
+      #1042#1089#1077
+      #1057#1074#1103#1079#1103#1085#1085#1099#1077
+      #1057#1074#1086#1073#1086#1076#1085#1099#1077)
+    TabIndex = 0
+    OnChange = data_typesClick
+    object ASDU_Records: TListView
+      Left = 4
+      Top = 24
+      Width = 592
+      Height = 87
+      Align = alClient
+      BevelInner = bvNone
+      BevelOuter = bvNone
+      BevelKind = bkSoft
+      Columns = <
+        item
+          Caption = #8470
+        end
+        item
+          Caption = #1054#1058#1044' '#1072#1076#1088#1077#1089
+          Width = 68
+        end
+        item
+          Caption = #1047#1085#1072#1095#1077#1085#1080#1077
+          Width = 60
+        end
+        item
+          Caption = 'FL'
+          Width = 27
+        end
+        item
+          Caption = 'IV'
+          Width = 27
+        end
+        item
+          Caption = 'BL'
+          Width = 27
+        end
+        item
+          Caption = 'SB'
+          Width = 27
+        end
+        item
+          Caption = 'NP'
+          Width = 27
+        end
+        item
+          Caption = 'OV'
+          Width = 27
+        end
+        item
+          Caption = #1042#1088#1077#1084#1103
+          Width = 135
+        end
+        item
+          Caption = #1058#1059'/'#1058#1056
+          Width = 48
+        end
+        item
+          Caption = 'ASDU'
+          Width = 355
+        end>
+      ColumnClick = False
+      DoubleBuffered = True
+      FlatScrollBars = True
+      GridLines = True
+      HideSelection = False
+      MultiSelect = True
+      ReadOnly = True
+      RowSelect = True
+      ParentDoubleBuffered = False
+      TabOrder = 0
+      ViewStyle = vsReport
+      OnSelectItem = ASDU_RecordsSelectItem
+    end
+  end
+end

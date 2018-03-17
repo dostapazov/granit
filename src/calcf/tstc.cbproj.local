@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.858,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.861,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.154,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.093,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.100,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.119,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\splitItemDetail.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.814,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\groupedItems.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.044,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.535,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018.02.27 23:26:43.111,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018.02.27 23:26:47.020,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2018.02.27 23:27:14.770,=D:\USER\GRANIT\SRC\CALCF\tstc.cpp</Transaction>
+    <Transaction>2018.02.27 23:27:14.771,=D:\USER\GRANIT\SRC\CALCF\tstf.cpp</Transaction>
+    <Transaction>2018.02.27 23:27:33.167,D:\USER\GRANIT\SRC\CALCF\tstc.cpp=</Transaction>
+    <Transaction>2018.02.27 23:29:35.016,D:\USER\GRANIT\SRC\CALCF\tstc1PCH1.h=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018.02.27 23:29:41.708,D:\USER\GRANIT\SRC\CALCF\tstc.cbproj=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2018.02.27 23:31:02.803,=D:\USER\GRANIT\SRC\CALCF\calcf.lib</Transaction>
+  </Transactions>
+</BorlandProject>

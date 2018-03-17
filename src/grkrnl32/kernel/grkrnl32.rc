@@ -1,0 +1,92 @@
+/*******************************************************************************
+ *
+ * Модуль    : grkrnl32.exe
+ * Описание  : Ресурсы
+ * Автор     : Остапенко Д.В.
+ * Версия    : 1
+ * Создан    : 17.07.2002
+ *
+ ******************************************************************************/
+
+
+#include "windows.h"
+#include "winuser.rh"
+#include "winresrc.h"
+
+#include "grkrnl32_main.hpp"
+
+
+
+IDI_SEM_OFF     ICON "sem_off.ico"
+IDI_SEM_GREEN   ICON "sem_green.ico"
+IDI_SEM_YELLOW  ICON "sem_yello.ico"
+IDI_SEM_RED     ICON "sem_red.ico"
+
+IDI_SERVICE_ICON_START  ICON "GKERNEL.ICO"
+IDI_SERVICE_ICON_STOP   ICON "GKERNEL.ICO"
+IDI_SERVICE_ICON_CONFIG ICON "GKERNEL.ICO"
+
+/*
+IBM_SPLASH       BITMAP "splash.bmp"
+IBM_SPLASH1      BITMAP "splash1.bmp"
+IBM_SPLASH2      BITMAP "splash2.bmp"
+IBM_SPLASH3      BITMAP "splash3.bmp"
+IBM_SPLASH4      BITMAP "splash4.bmp"
+IBM_SPLASH5      BITMAP "splash5.bmp"
+IBM_SPLASH6      BITMAP "splash6.bmp"
+IBM_SPLASH7      BITMAP "splash7.bmp"
+IBM_SPLASH8      BITMAP "splash8.bmp"
+*/
+
+
+
+IDM_TRAY_MENU MENUEX DISCARDABLE
+LANGUAGE LANG_ENGLISH,SUBLANG_NEUTRAL
+BEGIN
+ POPUP ""
+ BEGIN
+  MENUITEM "Settings...",CM_SETUP,0,MFS_DEFAULT
+  MENUITEM SEPARATOR
+  MENUITEM "Restart",CM_APP_RESTART
+  MENUITEM "E&xit",CM_EXIT
+ END
+END
+
+IDM_TRAY_MENU MENUEX DISCARDABLE
+LANGUAGE LANG_RUSSIAN,SUBLANG_NEUTRAL
+BEGIN
+ POPUP ""
+ BEGIN
+  MENUITEM "Настроить...",CM_SETUP,0,MFS_DEFAULT
+  MENUITEM "Перезапустить",CM_APP_RESTART
+  MENUITEM "Завершить",CM_EXIT
+ END
+END
+
+STRINGTABLE
+LANGUAGE LANG_RUSSIAN,SUBLANG_NEUTRAL
+BEGIN
+IDS_SELKERNEL          "Выбор модуля ядра"
+IDS_MAINLOOP_EXCEPT    "Исключение в главном цикле программы"
+IDS_WORK               " работатет"
+IDS_STOP               " остановлен"
+IDS_SERVICE_DISPLAY    "Служба ядра центра Телемеханики"
+END
+
+STRINGTABLE
+LANGUAGE LANG_ENGLISH,SUBLANG_NEUTRAL
+BEGIN
+IDS_SELKERNEL          "Select Kernel Module"
+IDS_MAINLOOP_EXCEPT    "Program main loop Exception"
+IDS_WORK               " working"
+IDS_STOP               " stopped"
+IDS_SERVICE_DISPLAY    "Telemechanics center kernel service"
+END
+
+
+
+
+
+
+
+

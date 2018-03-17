@@ -1,0 +1,874 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4DD2BA71-C792-4DA2-8538-E9A267A3C35B}</ProjectGuid>
+        <ProjectType>CppDynamicLibrary</ProjectType>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <FrameworkType>None</FrameworkType>
+        <ProjectVersion>18.2</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Library</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <PreBuildEvent><![CDATA[compile_mc.bat
+$(PreBuildEvent)]]></PreBuildEvent>
+        <VerInfo_Locale>1049</VerInfo_Locale>
+        <SanitizedProjectName>modbus_mdm</SanitizedProjectName>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <IntermediateOutputDir>$(GRKRNL_TEMP)\$(Platform)\$(CONFIG)\modbusmdm</IntermediateOutputDir>
+        <IncludePath>..\cpc152dev\;..\GKLIB\;..\..\KE_RTL\;..\..\NETRTL\;$(KERTL_INC);$(GRKRNL_INC);$(bds)\include;$(bds)\include\windows;$(bds)\include\windows\sdk;$(IncludePath)</IncludePath>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <TASM_IncludePath>..;..\GKLIB;$(BDS)\include;$(BDS)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL;$(TASM_IncludePath)</TASM_IncludePath>
+        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+        <BRCC_IncludePath>$(BDS)\include;$(BDS)\include\windows\sdk;$(BDS)\include\windows;$(BRCC_IncludePath)</BRCC_IncludePath>
+        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+        <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+        <ILINK_LibraryPath>..\cpc152dev\;..\GKLIB\;..\..\KE_RTL\;..\..\NETRTL\;$(BDS)\lib;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
+        <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+        <ILINK_WinAppType>DLL</ILINK_WinAppType>
+        <DCC_AdditionalSwitches> -N0 -M</DCC_AdditionalSwitches>
+        <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <ILINK_AppType>Windows</ILINK_AppType>
+        <TASM_Debugging>Full</TASM_Debugging>
+        <FinalOutputDir>$(GRKRNL_BIN)</FinalOutputDir>
+        <BCC_PCHCache>true</BCC_PCHCache>
+        <TASM_AdditionalSwitches> /w2 </TASM_AdditionalSwitches>
+        <PackageImports>vcl.bpi;rtl.bpi;dbrtl.bpi;adortl.bpi;vcldb.bpi;vclx.bpi;bdertl.bpi;vcldbx.bpi;ibxpress.bpi;dsnap.bpi;dsnap.bpi;dsnapcon.bpi;teeui.bpi;teedb.bpi;tee.bpi;dss.bpi;dsnapcon.bpi;bcbsmp.bpi;vclie.bpi;xmlrtl.bpi;inet.bpi;inetdbbde.bpi;inetdbxpress.bpi;inetdb.bpi;webdsnap.bpi;bcbie.bpi;websnap.bpi;soaprtl.bpi;dbexpress.bpi;dbxcds.bpi;indycore.bpi;indysystem.bpi;bcboffice2k.bpi;$(PackageImports)</PackageImports>
+        <ILINK_MapFileType>None</ILINK_MapFileType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <ILINK_LibraryPath>D:\ERADS\lib\win32\release\;D:\ERADS\18.0\lib\win32\release\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_BaseAddress>0x15000000</ILINK_BaseAddress>
+        <BCC_PCHWithExternalTypeFiles>false</BCC_PCHWithExternalTypeFiles>
+        <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+        <ILINK_DisplayTime>true</ILINK_DisplayTime>
+        <ILINK_MapFileType>None</ILINK_MapFileType>
+        <BCC_StackFrames>true</BCC_StackFrames>
+        <BCC_InstructionSet>5</BCC_InstructionSet>
+        <Manifest_File>None</Manifest_File>
+        <TASM_Defines>_DEBUG STRICT _NO_VCL;$(TASM_Defines)</TASM_Defines>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <OutputExt>gkm</OutputExt>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Debugger_RunParams>-nosplash -config</Debugger_RunParams>
+        <BCC_Defines>STRICT;_NO_VCL;$(BCC_Defines)</BCC_Defines>
+        <BRCC_Defines>_DEBUG;STRICT;_NO_VCL;$(BRCC_Defines)</BRCC_Defines>
+        <BCC_UserSuppliedOptions> -5 -Vx -r- -k -tWD -Ve</BCC_UserSuppliedOptions>
+        <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\grkrnl32.exe</Debugger_HostApplication>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <BRCC_Defines>_DEBUG;STRICT;_NO_VCL;$(BRCC_Defines)</BRCC_Defines>
+        <TASM_Defines>_DEBUG STRICT _NO_VCL;$(TASM_Defines)</TASM_Defines>
+        <BCC_Defines>STRICT;_NO_VCL;$(BCC_Defines)</BCC_Defines>
+        <Icon_MainIcon>modbus_mdm_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+        <DCC_Define>DEBUG;$(DCC_Define);$(DCC_Define)</DCC_Define>
+        <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_AdditionalSwitches> -N0 -M -V</DCC_AdditionalSwitches>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <ILINK_wsrd>false</ILINK_wsrd>
+        <BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+        <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
+        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+        <Debugger_DebugSourcePath>D:\USER\GRANIT\SRC\GrKrnl32\MODEMMER\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
+        <PreBuildEventCancelOnError>false</PreBuildEventCancelOnError>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Debugger_RunParams>-nosplash -config -service</Debugger_RunParams>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <ILINK_MapFileType>None</ILINK_MapFileType>
+        <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
+        <BCC_OptimizationLevel>Level2</BCC_OptimizationLevel>
+        <ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <TASM_Debugging>None</TASM_Debugging>
+        <DCC_AdditionalSwitches> -N0 -M -$O+</DCC_AdditionalSwitches>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
+        <BCC_PCHWithExternalTypeFiles>false</BCC_PCHWithExternalTypeFiles>
+        <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+        <BCC_SourceDebuggingOn>false</BCC_SourceDebuggingOn>
+        <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+        <BCC_DebugLineNumbers>false</BCC_DebugLineNumbers>
+        <ILINK_FullDebugInfo>false</ILINK_FullDebugInfo>
+        <BCC_DisableOptimizations>false</BCC_DisableOptimizations>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <BCC_UserSuppliedOptions> -5 -Vx -r- -k -tWD -Ve -r</BCC_UserSuppliedOptions>
+        <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+    </PropertyGroup>
+    <ItemGroup>
+        <LibFiles Include="D:\ERADS\18.0\lib\win32\release\memmgr.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>11</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\LIB_XE\gkhandle.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>11</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\LIB_XE\gklib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>12</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\LIB_XE\KE_RTLS.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>13</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <LibFiles Include="..\..\..\LIB_XE\otdhlpr.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>14</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <CppCompile Include="modbusmod.cpp">
+            <BuildOrder>26</BuildOrder>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="modbusmod_main.cpp">
+            <BuildOrder>23</BuildOrder>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
+        <ResourceCompile Include="modbus_err.rc">
+            <BuildOrder>47</BuildOrder>
+            <BuildOrder>4</BuildOrder>
+        </ResourceCompile>
+        <CppCompile Include="modbus_line.cpp">
+            <BuildOrder>6</BuildOrder>
+            <BuildOrder>41</BuildOrder>
+        </CppCompile>
+        <ResFiles Include="modbus_mdm.res">
+            <BuildOrder>17</BuildOrder>
+            <BuildOrder>15</BuildOrder>
+        </ResFiles>
+        <ResourceCompile Include="modbus_mod.rc">
+            <BuildOrder>50</BuildOrder>
+            <BuildOrder>5</BuildOrder>
+        </ResourceCompile>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+    <ProjectExtensions>
+        <Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+        <Borland.ProjectType>CppDynamicLibrary</Borland.ProjectType>
+        <BorlandProject>
+            <CPlusPlusBuilder.Personality>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">0</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">0</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">0</VersionInfo>
+                    <VersionInfo Name="PreRelease">0</VersionInfo>
+                    <VersionInfo Name="Special">0</VersionInfo>
+                    <VersionInfo Name="Private">0</VersionInfo>
+                    <VersionInfo Name="DLL">0</VersionInfo>
+                    <VersionInfo Name="Locale">1049</VersionInfo>
+                    <VersionInfo Name="CodePage">1251</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Count">12</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item0">..;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item1">..;..\GKLIB;MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item2">..\;..\GKLIB;MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item3">..\GKLIB;MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item4">MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item5">..\..\NETRTL;..\GKLIB;MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item6">MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item7">$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item8">..\OTDHLPR;..\GKLIB;..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item9">..\GKLIB;..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item10">..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32</HistoryLists_hlIncludePath>
+                    <HistoryLists_hlIncludePath Name="Item11">..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+                </HistoryLists_hlIncludePath>
+                <HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Count">9</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item0">..;..\..\NETRTL;..\GKLIB;MODBUSMDM;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item1">..\;..\..\NETRTL;..\GKLIB;MODBUSMDM;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item2">..\..\NETRTL;..\GKLIB;MODBUSMDM;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item3">MODBUSMDM;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item4">$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item5">..\OTDHLPR;..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item6">..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item7">..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                    <HistoryLists_hlLibraryPath Name="Item8">..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+                </HistoryLists_hlLibraryPath>
+                <HistoryLists_hlDebugSourcePath>
+                    <HistoryLists_hlDebugSourcePath Name="Count">1</HistoryLists_hlDebugSourcePath>
+                    <HistoryLists_hlDebugSourcePath Name="Item0">$(BCB)\source\vcl</HistoryLists_hlDebugSourcePath>
+                </HistoryLists_hlDebugSourcePath>
+                <HistoryLists_hlConditionals>
+                    <HistoryLists_hlConditionals Name="Count">4</HistoryLists_hlConditionals>
+                    <HistoryLists_hlConditionals Name="Item0">_DEBUG;STRICT;_NO_VCL</HistoryLists_hlConditionals>
+                    <HistoryLists_hlConditionals Name="Item1">_DEBUG;STRICT;NO_VCL</HistoryLists_hlConditionals>
+                    <HistoryLists_hlConditionals Name="Item2">_DEBUG;STRICT</HistoryLists_hlConditionals>
+                    <HistoryLists_hlConditionals Name="Item3">_DEBUG</HistoryLists_hlConditionals>
+                </HistoryLists_hlConditionals>
+                <HistoryLists_hlIntOutputDir>
+                    <HistoryLists_hlIntOutputDir Name="Count">2</HistoryLists_hlIntOutputDir>
+                    <HistoryLists_hlIntOutputDir Name="Item0"/>
+                    <HistoryLists_hlIntOutputDir Name="Item1"/>
+                </HistoryLists_hlIntOutputDir>
+                <HistoryLists_hlFinalOutputDir>
+                    <HistoryLists_hlFinalOutputDir Name="Count">2</HistoryLists_hlFinalOutputDir>
+                    <HistoryLists_hlFinalOutputDir Name="Item0">D:\USER\GRANIT\GRKRNL32\</HistoryLists_hlFinalOutputDir>
+                    <HistoryLists_hlFinalOutputDir Name="Item1">D:\USER\GRANIT\GRKRNL32</HistoryLists_hlFinalOutputDir>
+                </HistoryLists_hlFinalOutputDir>
+                <Debugging>
+                    <Debugging Name="DebugSourceDirs">$(BCB)\source\vcl</Debugging>
+                </Debugging>
+                <Parameters>
+                    <Parameters Name="RunParams">-nosplash -config</Parameters>
+                    <Parameters Name="Launcher"/>
+                    <Parameters Name="UseLauncher">0</Parameters>
+                    <Parameters Name="DebugCWD"/>
+                    <Parameters Name="HostApplication">D:\USER\GRANIT\GRKRNL32\grkrnl32.exe</Parameters>
+                    <Parameters Name="RemoteHost"/>
+                    <Parameters Name="RemotePath"/>
+                    <Parameters Name="RemoteLauncher"/>
+                    <Parameters Name="RemoteCWD"/>
+                    <Parameters Name="RemoteDebug">0</Parameters>
+                </Parameters>
+                <Compiler>
+                    <Compiler Name="ShowInfoMsgs">0</Compiler>
+                    <Compiler Name="LinkDebugVcl">0</Compiler>
+                    <Compiler Name="LinkCGLIB">0</Compiler>
+                </Compiler>
+                <CORBA>
+                    <CORBA Name="AddServerUnit">1</CORBA>
+                    <CORBA Name="AddClientUnit">1</CORBA>
+                    <CORBA Name="PrecompiledHeaders">1</CORBA>
+                </CORBA>
+                <ProjectProperties>
+                    <ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+                    <ProjectProperties Name="ManagePaths">True</ProjectProperties>
+                    <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+                    <ProjectProperties Name="IndexFiles">False</ProjectProperties>
+                </ProjectProperties>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k250.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp250.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k250.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </CPlusPlusBuilder.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <Deployment Version="3">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c240mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32230.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32250mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32240mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64240.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64240mt.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\GRKRNL32\modbus_mdm.gkm" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>modbus_mdm.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c250mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c250.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin64\borlndmm.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin\borlndmm.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\GRKRNL32\modbus_mdm.tds" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteName>modbus_mdm.tds</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgstl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32230mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgsqlite3.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64250mt.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32240.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32250.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64230mt.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeX86File"/>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_CppLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_CppLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
+        <PreBuildEvent>compile_mc.bat</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>True</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win64'">
+        <PreBuildEvent>compile_mc.bat</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
+        <PreBuildEvent>compile_mc.bat</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win64'">
+        <PreBuildEvent>compile_mc.bat</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+</Project>

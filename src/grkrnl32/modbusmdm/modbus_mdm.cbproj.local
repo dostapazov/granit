@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.414,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.867,D:\ERADS\18.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.177,=D:\USER\GRANIT\SRC\KE_RTL\kedatas.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.797,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.498,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem_line.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.486,D:\USER\GRANIT\SRC\KE_RTL\Tthread.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.411,=D:\USER\GRANIT\SRC\KE_RTL\Tthread.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.870,D:\USER\GRANIT\SRC\KE_RTL\rx_buffer.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.200,=D:\USER\GRANIT\SRC\KE_RTL\rx_buffer.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.323,D:\USER\GRANIT\SRC\GrKrnl32\cpc152dev\cpc152dev.h=D:\USER\GRANIT\SRC\GrKrnl32\MODBUSMDM\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.561,D:\USER\GRANIT\LIB\otdhlpr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.167,D:\USER\GRANIT\SRC\KE_RTL\kedatas.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.500,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\otd_storage.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.559,D:\USER\GRANIT\LIB\gklib.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.693,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.550,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.640,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.514,=D:\USER\GRANIT\SRC\GrKrnl32\MODBUSMDM\File1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.560,D:\USER\GRANIT\LIB\KE_RTLS.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.091,D:\USER\GRANIT\SRC\GrKrnl32\cpc152dev\cpc152dev.hpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.710,=D:\ERADS\lib\win32\release\usebormm.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.462,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.551,D:\USER\GRANIT\LIB\GKHANDLE.LIB=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.477,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gkmodules.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.925,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.699,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.495,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.110,D:\USER\GRANIT\SRC\NETRTL\Wsockdef.cpp=</Transaction>
+  </Transactions>
+</BorlandProject>

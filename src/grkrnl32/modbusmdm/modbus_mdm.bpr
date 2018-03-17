@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="D:\USER\GRANIT\GRKRNL32\modbus_mdm.gkm"/>
+    <OBJFILES value="d:\temp\modbusmdm\modbusmod_main.obj d:\temp\modbusmdm\modbusmod.obj 
+      d:\temp\modbusmdm\modem_line.obj d:\temp\modbusmdm\modem.obj 
+      d:\temp\modbusmdm\gkmodules.obj d:\temp\modbusmdm\Wsockdef.obj 
+      d:\temp\modbusmdm\modbus_line.obj d:\temp\modbusmdm\otd_storage.obj"/>
+    <RESFILES value="modbus_mdm.res d:\temp\modbusmdm\modbus_err.res 
+      d:\temp\modbusmdm\modbus_mod.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value="..\..\..\LIB\otdhlpr.lib ..\..\..\LIB\GKHANDLE.LIB ..\..\..\LIB\gklib.lib 
+      ..\..\..\LIB\KE_RTLS.lib ..\VTDCNT\memmgr.lib"/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value=""/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;..\GKLIB;..\..\NETRTL"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG;STRICT;_NO_VCL"/>
+    <SYSDEFINES value="NO_STRICT;_NO_VCL"/>
+    <MAINSOURCE value="modbus_mdm.bpf"/>
+    <INCLUDEPATH value="..;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL"/>
+    <LIBPATH value="..;..\..\NETRTL;..\GKLIB;MODBUSMDM;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I.. -I..\GKLIB -I$(BCB)\include -I$(BCB)\include\vcl -ID:\USER\GRANIT\INC 
+      -ID:\USER\GRANIT\INC\GRKRNL32 -I..\..\NETRTL -src_suffix cpp -D_DEBUG 
+      -DSTRICT -D_NO_VCL -boa"/>
+    <CFLAG1 value="-WD -Od -H=d:\temp\modbusmdm\modbusmdm.csm -Hc -Vx -Ve -X- -r- -a8 -5 -b- 
+      -k -y -v -vi- -tWD -tWM- -c"/>
+    <PFLAGS value="-N2d:\temp\modbusmdm -N0d:\temp\modbusmdm -$YD -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-Id:\temp\modbusmdm -D&quot;&quot; -aa -Tpd -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cw32.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="..\..\..\LIB\otdhlpr.lib" FORMNAME="" UNITNAME="otdhlpr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\GKHANDLE.LIB" FORMNAME="" UNITNAME="GKHANDLE.LIB" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\gklib.lib" FORMNAME="" UNITNAME="gklib.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\LIB\KE_RTLS.lib" FORMNAME="" UNITNAME="KE_RTLS.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\VTDCNT\memmgr.lib" FORMNAME="" UNITNAME="memmgr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modbus_mdm.res" FORMNAME="" UNITNAME="modbus_mdm.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modbus_mdm.bpf" FORMNAME="" UNITNAME="modbus_mdm" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modbusmod_main.cpp" FORMNAME="" UNITNAME="modbusmod_main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modbusmod.cpp" FORMNAME="" UNITNAME="modbusmod" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\modem_line.cpp" FORMNAME="" UNITNAME="modem_line" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\modem.cpp" FORMNAME="" UNITNAME="modem" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\gkmodules.cpp" FORMNAME="" UNITNAME="gkmodules" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\NETRTL\Wsockdef.cpp" FORMNAME="" UNITNAME="Wsockdef" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modbus_line.cpp" FORMNAME="" UNITNAME="modbus_line" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GKLIB\otd_storage.cpp" FORMNAME="" UNITNAME="otd_storage" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modbus_err.rc" FORMNAME="" UNITNAME="modbus_err.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="modbus_mod.rc" FORMNAME="" UNITNAME="modbus_mod.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=12
+Item0=..;..\GKLIB;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL
+Item1=..;..\GKLIB;MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL
+Item2=..\;..\GKLIB;MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL
+Item3=..\GKLIB;MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL
+Item4=MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;..\..\NETRTL
+Item5=..\..\NETRTL;..\GKLIB;MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item6=MODBUSMDM;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item7=$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item8=..\OTDHLPR;..\GKLIB;..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item9=..\GKLIB;..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item10=..\..\..\PROJS;$(BCB)\include;$(BCB)\include\vcl;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32
+Item11=..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=9
+Item0=..;..\..\NETRTL;..\GKLIB;MODBUSMDM;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\;..\..\NETRTL;..\GKLIB;MODBUSMDM;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\..\NETRTL;..\GKLIB;MODBUSMDM;$(BCB)\lib\obj;$(BCB)\lib
+Item3=MODBUSMDM;$(BCB)\lib\obj;$(BCB)\lib
+Item4=$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\OTDHLPR;..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item6=..\GKLIB;..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item7=..\..\..\PROJS;..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+Item8=..\SRC\GrKrnl32\KERNEL\KEXPLORER;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=4
+Item0=_DEBUG;STRICT;_NO_VCL
+Item1=_DEBUG;STRICT;NO_VCL
+Item2=_DEBUG;STRICT
+Item3=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=d:\temp\modbusmdm
+Item1=d:\temp
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=D:\USER\GRANIT\GRKRNL32\
+Item1=D:\USER\GRANIT\GRKRNL32
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=-nosplash -config
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=D:\USER\GRANIT\GRKRNL32\grkrnl32.exe
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

@@ -1,0 +1,14 @@
+#include "tlm_painter.h"
+
+IDBMP_DISCRETE_LAMP_MASK    BITMAP "discrete_lamp_mask.bmp"
+IDBMP_DISCRETE_LAMP         BITMAP "discrete_lamp.bmp"
+IDBMP_DISCRETE_SQUARE_MASK  BITMAP "discrete_square_mask.bmp"
+IDBMP_DISCRETE_SQUARE       BITMAP "discrete_square.bmp"
+IDBMP_VSWITCH_MASK          BITMAP "vswitch_mask.bmp"
+IDBMP_VSWITCH               BITMAP "vswitch_image.bmp"
+IDBMP_HSWITCH_MASK          BITMAP "hswitch_mask.bmp"
+IDBMP_HSWITCH               BITMAP "hswitch_image.bmp"
+
+
+IDBMP_LED_DIGITS_MASK       BITMAP "7led-digit-mask.bmp"
+IDBMP_LED_DIGITS            BITMAP "7led-digit.bmp"

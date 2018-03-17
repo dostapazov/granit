@@ -1,0 +1,13 @@
+#include <gkmodules.h>
+
+STRINGTABLE
+BEGIN
+
+IDS_MODULE_PROVIDER  PROVIDER_STRING
+IDS_MODULE_DESCRIPT  "Рабочее место диспетчера"
+IDS_MODULE_NAME      "Рабочее место диспетчера"
+
+END
+
+IDI_MODULE_ICON   ICON "tlm_awp32.ico"
+IDI_MODULE_ICONSM ICON "tlm_awp16.ico"
