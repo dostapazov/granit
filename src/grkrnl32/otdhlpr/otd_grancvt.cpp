@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ï»¿#include <otd_grancvt.h>
+=======
+#include <otd_grancvt.h>
+>>>>>>> 652460b906d1f2b4be1ba85dbadd61e011b6ffc8
 #include <grnet_dos.h>
 
 
@@ -38,9 +42,15 @@ inline void __fastcall set_gran_tit(DWORD i ,BYTE val,LPBYTE tit_array)
 
 #pragma warn -8057
 /*
+<<<<<<< HEAD
  Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð±Ð°Ð¹Ñ‚ Ð² Ð²Ñ‹Ñ…Ð¾Ð´Ð½Ð¾Ð¼ Ð±ÑƒÑ„ÐµÑ€Ðµ;
  ÐµÑÐ»Ð¸ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ - Ñ‚Ð¾ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð±ÑƒÑ„ÐµÑ€Ð° Ð½ÐµÐ´Ð¾ÑÑ‚Ð°Ñ‚Ð¾Ñ‡ÐµÐ½ Ð¸
  Ð¼Ð¾Ð´ÑƒÐ»ÑŒ Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‚Ð° - Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð±ÑƒÑ„ÐµÑ€Ð°
+=======
+ Âîçâðàùàåò êîëè÷åñòâî áàéò â âûõîäíîì áóôåðå;
+ åñëè çíà÷åíèå îòðèöàòåëüíîå - òî ðàçìåð áóôåðà íåäîñòàòî÷åí è
+ ìîäóëü âîçâðàòà - íåîáõîäèìûé ðàçìåð áóôåðà
+>>>>>>> 652460b906d1f2b4be1ba85dbadd61e011b6ffc8
 */
 int WINAPI otd_convert_atony2otd(DWORD num_pu,
                                  lp_gratony_kadr src_kadr,
@@ -66,7 +76,11 @@ int WINAPI otd_convert_atony2otd(DWORD num_pu,
         otd_fa  = OTD_FA_ANALOG;
         opp.dt_param.type  = OTD_ANALOG_BYTE;
         opp.dt_param.count = 16;
+<<<<<<< HEAD
         // ÐŸÑ€ÐµÐ´Ð²Ð°Ñ€Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹ Ð¿Ñ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ Ð²ÑÐµÑ… Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ñ‚Ð¸Ñ‚
+=======
+        // Ïðåäâàðèòåëüíûé ïðîñìîòð âñåõ çíà÷åíèå òèò
+>>>>>>> 652460b906d1f2b4be1ba85dbadd61e011b6ffc8
         array = src_kadr->data;
         for(DWORD i = 0;i<opp.dt_param.count;i++)
          {
@@ -90,7 +104,11 @@ int WINAPI otd_convert_atony2otd(DWORD num_pu,
       *new_op.diag = 0;
       OTD_SET_ADDR(new_op.addr,num_pu,src_kadr->numCp,otd_fa,src_kadr->numGrp);
       array = src_kadr->data;
+<<<<<<< HEAD
         /*ÐšÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²*/
+=======
+        /*Êîïèðîâàíèå ýëåìåíòîâ*/
+>>>>>>> 652460b906d1f2b4be1ba85dbadd61e011b6ffc8
         for(DWORD i = 0;i<opp.dt_param.count;i++)
          {
           DWORD value,pd;
@@ -132,17 +150,29 @@ int __fastcall otd_convert_data2atony(lpotd_proto src,LPBYTE dest_buffer,DWORD d
   if(src && src->proto_size && src->addr)
   {
     lp_gratony_kadr  kadr = (lp_gratony_kadr)dest_buffer;
+<<<<<<< HEAD
     /*Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÐµÐ½Ð¸Ðµ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ð³Ð¾ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð°*/
     int need_size = 0;
     if(src->addr->fa == OTD_FA_DISCRETE && src->data)
       {
        need_size+=sizeof(*kadr)+7;//8 Ð±Ð°Ð¹Ñ‚ Ñ‚Ñ 1 ÑƒÐ¶Ðµ ÐµÑÑ‚ÑŒ Ð² atony_kadr::data;
+=======
+    /*Âû÷èñëåíèå íåîáõîäèìîãî ðàçìåðà*/
+    int need_size = 0;
+    if(src->addr->fa == OTD_FA_DISCRETE && src->data)
+      {
+       need_size+=sizeof(*kadr)+7;//8 áàéò òñ 1 óæå åñòü â atony_kadr::data;
+>>>>>>> 652460b906d1f2b4be1ba85dbadd61e011b6ffc8
        param_count = KeRTL::MIN(64,OTD_GET_COUNT(&src->data->numbers));
 
       }
     if(src->addr->fa == OTD_FA_ANALOG)
        {
+<<<<<<< HEAD
         need_size+=sizeof(*kadr)+15;//16 Ð±Ð°Ð¹Ñ‚ Ñ‚Ð¸Ñ‚ 1 ÑƒÐ¶Ðµ ÐµÑÑ‚ÑŒ Ð² atony_kadr::data;
+=======
+        need_size+=sizeof(*kadr)+15;//16 áàéò òèò 1 óæå åñòü â atony_kadr::data;
+>>>>>>> 652460b906d1f2b4be1ba85dbadd61e011b6ffc8
         param_count = KeRTL::MIN(16,OTD_GET_COUNT(&src->data->numbers));
        }
     if(dest_buffer && need_size<(int)dest_bsz)
@@ -186,7 +216,11 @@ int WINAPI otd_convert_otd2atony(lpotd_proto src,LPDWORD cmd,LPBYTE dest_buffer,
  {
   if(OTD_FA_ISQUERY(src->addr->fa))
   {
+<<<<<<< HEAD
    //Ð’Ñ‹Ð·Ð¾Ð²Ñ‹ Ð´Ð°Ð½Ð½Ñ‹Ñ…
+=======
+   //Âûçîâû äàííûõ
+>>>>>>> 652460b906d1f2b4be1ba85dbadd61e011b6ffc8
    DWORD net_command = CmQuery;
    lp_gratony_kadr kadr  = (lp_gratony_kadr)dest_buffer;
    ret = sizeof(gratony_kadr);
@@ -205,7 +239,11 @@ int WINAPI otd_convert_otd2atony(lpotd_proto src,LPDWORD cmd,LPBYTE dest_buffer,
    else
    ret = -ret;
 
+<<<<<<< HEAD
       /*Ð’Ñ‹Ð·Ð¾Ð² Ð´Ð°Ð½Ð½Ñ‹Ñ…*/
+=======
+      /*Âûçîâ äàííûõ*/
+>>>>>>> 652460b906d1f2b4be1ba85dbadd61e011b6ffc8
       if(cmd)
          *cmd = net_command;
       return ret;
@@ -215,7 +253,11 @@ int WINAPI otd_convert_otd2atony(lpotd_proto src,LPDWORD cmd,LPBYTE dest_buffer,
   if(src->addr->cp != OTD_ADDR_MAXVALUE &&
      src->addr->fa<OTD_FA_ALL && src->addr->sb != OTD_ADDR_MAXVALUE)
      {
+<<<<<<< HEAD
       /*Ð­Ñ‚Ð¾ Ð´Ð°Ð½Ð½Ñ‹Ðµ*/
+=======
+      /*Ýòî äàííûå*/
+>>>>>>> 652460b906d1f2b4be1ba85dbadd61e011b6ffc8
       ret = otd_convert_data2atony(src,dest_buffer,dest_bsz);
       if(cmd)
          *cmd = CmRetranslation;
