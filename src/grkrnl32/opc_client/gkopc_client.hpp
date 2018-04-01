@@ -56,6 +56,9 @@ typedef std::vector<OPCHANDLE> opc_handles_t;
 
 #define LUA_FUNC_OPC_ITEM_GET_VALUE      "get_value"
 #define LUA_FUNC_OPC_ITEM_SET_VALUE      "set_value"
+#define LUA_FUNC_OPC_SET_ITEMS_QUALITY   "set_items_quality"
+#define LUA_FUNC_OPC_SET_GROUP_QUALITY   "set_group_quality"
+
 #define LUA_FUNC_OPC_ITEM_SET_RC_STATE   "set_rc_state"
 
 #define LUA_FUNC_OPC_ITEM_SET_RC_PREPARE "set_rc_prepare"
@@ -93,6 +96,8 @@ class opc_line:public modem_line,public TGKThread
 
   static int lua_opc_item_get_value     (lua_State *L);
   static int lua_opc_item_set_value     (lua_State *L);
+  static int lua_opc_set_items_quality  (lua_State *L);
+  static int lua_opc_set_group_quality  (lua_State *L);
   static int lua_opc_item_set_rc_state  (lua_State *L);
   static int lua_opc_item_set_rc_prepare(lua_State *L);
   static int lua_opc_item_set_rc_active (lua_State *L);
@@ -104,7 +109,7 @@ class opc_line:public modem_line,public TGKThread
 
   void __fastcall rc_prepare_execute(lua::LUAInstance & lua);
   void __fastcall rc_run_script     (lua::LUAInstance & lua,gkopc_item & item);
-  int  rc_thread_proc();
+  int             rc_thread_proc();
   void __fastcall rc_start();
 
   lua::LUAInstance   calc_scripts;
@@ -141,18 +146,18 @@ class opc_line:public modem_line,public TGKThread
          DWORD __fastcall refresh(DWORD sbl);/*Функция обновления данных по линии*/
 
 
-          bool __fastcall is_need_restart(const GKOPC_LINE_CONFIG & ln_conf);
-          int  __fastcall load_items_from_file();
-          int  __fastcall build_otd_storage   ();
+         bool  __fastcall is_need_restart(const GKOPC_LINE_CONFIG & ln_conf);
+         int   __fastcall load_items_from_file();
+         int   __fastcall build_otd_storage   ();
 
-          DWORD __fastcall  __get_range_otd_type(gkopc_items_t::index_iterator iptr,gkopc_items_t::index_iterator  iend);
+         DWORD __fastcall  __get_range_otd_type(gkopc_items_t::index_iterator iptr,gkopc_items_t::index_iterator  iend);
 
-          DWORD __fastcall __create_otd_group   (DWORD fa,DWORD sb,DWORD first_num,DWORD count,DWORD otd_type);
-          DWORD __fastcall __get_opc_handles    (opc_handles_t & handles,gkopc_items_t::iterator beg,gkopc_items_t::iterator end);
-          DWORD __fastcall __get_opc_handles    (opc_handles_t & handles,gkopc_items_t::index_iterator ibeg,gkopc_items_t::index_iterator iend);
-          void  __fastcall __set_opc_item_values(gkopc_item & item,LPVARIANT v,LPWORD quality,__int64 * time,LPDWORD pstate = 0 );
-          void  __fastcall __calc_item_value(gkopc_item & item);
-          void  __fastcall __prepare_calc_scripts();
+         DWORD __fastcall __create_otd_group   (DWORD fa,DWORD sb,DWORD first_num,DWORD count,DWORD otd_type);
+         DWORD __fastcall __get_opc_handles    (opc_handles_t & handles,gkopc_items_t::iterator beg,gkopc_items_t::iterator end);
+         DWORD __fastcall __get_opc_handles    (opc_handles_t & handles,gkopc_items_t::index_iterator ibeg,gkopc_items_t::index_iterator iend);
+         void  __fastcall __set_opc_item_values(gkopc_item & item,LPVARIANT v,LPWORD quality,__int64 * time,LPDWORD pstate = 0 );
+         void  __fastcall __calc_item_value(gkopc_item & item);
+         void  __fastcall __prepare_calc_scripts();
 
          void  __fastcall __read_sync();
 
@@ -191,14 +196,15 @@ class opc_line:public modem_line,public TGKThread
   void __fastcall on_write_complete(DWORD     conn_id  , opc::TOpcGroup * grp       , DWORD dwTransid
                                    ,OPCHANDLE hGroup   , HRESULT     hrMasterquality, DWORD       dwCount
                                    ,OPCHANDLE * pClienthandles, HRESULT   * pErrors);
- void __fastcall on_cancel_complete(DWORD     conn_id  , opc::TOpcGroup * grp       , DWORD dwTransid,OPCHANDLE hGroup);
+  void __fastcall on_cancel_complete(DWORD     conn_id  , opc::TOpcGroup * grp       , DWORD dwTransid,OPCHANDLE hGroup);
 
- void  __fastcall start_async  ();
- void  __fastcall stop_async   ();
+  void  __fastcall start_async  ();
+  void  __fastcall stop_async   ();
+
+  bool __fastcall opc_item_set_value   (const wstring & item_id,double);
+  int  __fastcall opc_set_group_quality(BYTE fa,BYTE grp,WORD quality);
 
 
-
-  bool __fastcall opc_item_set_value(const wstring & item_id,double);
   public:
   opc_line():modem_line(-1),opc_server(NULL),opc_group(NULL),com_last_result(0),opc_data_callback(NULL),icp(128),calc_scripts(NULL){}
   opc_line(DWORD line_num):modem_line(line_num),opc_server(NULL),opc_group(NULL),com_last_result(0),opc_data_callback(NULL),icp(128),calc_scripts(NULL){}

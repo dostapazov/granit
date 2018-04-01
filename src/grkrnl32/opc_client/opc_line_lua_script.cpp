@@ -126,6 +126,42 @@ int opc_line::lua_opc_item_get_value(lua_State *L)
   return 3;
 }
 
+int opc_line::lua_opc_set_items_quality  (lua_State *L)
+{
+ //Установка качества для элементов
+  int result = 0;
+  lua::LUAInstance lua(L,false);
+  opc_line * line = NULL;
+  lua.global_get(LUA_CLASS_NAME,(const void*&)line);
+  if(line && lua.gettop()>0)
+  {
+  }
+  lua.push<int,void>(result);
+  return 1;
+}
+
+int opc_line::lua_opc_set_group_quality  (lua_State *L)
+{
+ //Установка качества для группы
+  int result = 0;
+  lua::LUAInstance lua(L,false);
+  opc_line * line = NULL;
+
+  lua.global_get(LUA_CLASS_NAME,(const void*&)line);
+  int top = lua.gettop();
+  if(line && top >1 && lua.isinteger(1))
+  {
+     int is_num = 0;
+     lua_Integer quality = quality = lua.tointegerx(1,&is_num);
+     lua_Integer fa      = (top>2) ? lua.tointegerx(2,&is_num) : -1;
+     lua_Integer grp     = (top>3) ? lua.tointegerx(3,&is_num) : -1;
+     result = line->opc_set_group_quality(fa,grp,quality);
+  }
+  lua.push<int,void>(result);
+  return 1;
+}
+
+
 int opc_line::lua_opc_item_set_rc_state(lua_State *L)
   {
       int result = 0;
@@ -429,6 +465,8 @@ void  __fastcall opc_line::__prepare_calc_scripts()
    calc_scripts.reg_function(LUA_TRACE                       ,lua_trace                  );
    calc_scripts.reg_function(LUA_FUNC_OPC_ITEM_GET_VALUE     ,lua_opc_item_get_value     );
    calc_scripts.reg_function(LUA_FUNC_OPC_ITEM_SET_VALUE     ,lua_opc_item_set_value     );
+   calc_scripts.reg_function(LUA_FUNC_OPC_SET_ITEMS_QUALITY  ,lua_opc_set_items_quality  );
+   calc_scripts.reg_function(LUA_FUNC_OPC_SET_GROUP_QUALITY  ,lua_opc_set_group_quality  );
    calc_scripts.enable_bin_functions();
 }
 

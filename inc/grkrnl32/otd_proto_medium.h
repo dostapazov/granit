@@ -570,7 +570,7 @@ struct  mdb_record:public _MDB_RECORD
   LONG   __fastcall get_signed_kvants(DWORD kv) const;
   bool   __fastcall is_discrete    () const {return (state&MDBR_STATE_DISCRETE      ) ? true:false;}
   bool   __fastcall is_tu_error    () const {return (state&MDBR_STATE_TUTR_ERROR    ) ? true:false;};
-  bool   __fastcall is_static      () const {return (state&MDBR_STATE_STATIC        ) ? true:false;}
+  bool   __fastcall is_static      () const {return (state&(MDBR_STATE_STATIC|MDBR_STATE_WORKOUT)) ? true:false;}
   DWORD  __fastcall get_init_nv    () const {return (state & MDBR_STATE_NORMAL  ) ? 1 : 0 ;}
   DWORD  __fastcall get_normal_value()const {return (state&MDBR_STATE_DYN_NORMAL) ? 1 : 0 ;}
   bool   __fastcall is_danger_state() const {return state & MDBR_STATE_DANGER  ? true:false;}

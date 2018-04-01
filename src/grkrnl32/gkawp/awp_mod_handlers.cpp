@@ -273,7 +273,8 @@ DWORD __fastcall TGkAwpModule::_copy_record_compare(record_t & dst_rec,const LPM
          {
           ++dst_rec.changes_count;
           if(!dst_rec.is_caution())
-          dst_rec.state |= MDBR_STATE_FLASH;
+              dst_rec.state |= MDBR_STATE_FLASH;
+
           if((dst_rec.changes_count&MDBR_CHANGES_COUNT_MASK) <= MDBR_CH_COUNT_MANY_IGNORE)   _increment_sounds(dst_rec);
          }
           dst_rec.changes_count|=MDBR_CHANGES_NEW_ATTRIB;

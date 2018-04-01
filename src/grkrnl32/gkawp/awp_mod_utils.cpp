@@ -23,15 +23,15 @@ UnicodeString   __fastcall TGkAwpModule::get_state_tu_text(DWORD state)
 UnicodeString   __fastcall TGkAwpModule::get_state_text(DWORD state)
 {
   UnicodeString ret;
-   if(state&MDBR_STATE_DISCRETE      ) ret+= L"Дискретный ";
-   if(state&MDBR_STATE_WORKOUT       ) ret+= L"Выведен из работы ";
-   if(state&MDBR_STATE_TUFLAG        ) ret+= L"Наличие ТУ ";
-   if(state&MDBR_STATE_HIDDEN        ) ret+= L"Скрытый ";
-   if(state&MDBR_STATE_STATIC        ) ret+= L"Статичный ";
+   if(state&MDBR_STATE_DISCRETE      ) ret+= L" Дискретный ";
+   if(state&MDBR_STATE_WORKOUT       ) ret+= L" Выведен из работы ";
+   if(state&MDBR_STATE_TUFLAG        ) ret+= L" Наличие ТУ ";
+   if(state&MDBR_STATE_HIDDEN        ) ret+= L" Скрытый ";
+   if(state&MDBR_STATE_STATIC        ) ret+= L" Статичный ";
    if(state&MDBR_STATE_NORMAL        ) ret+= L"";
-   if(state&MDBR_STATE_NORECEIPT     ) ret+= L"Неквитируемый ";
+   if(state&MDBR_STATE_NORECEIPT     ) ret+= L" Неквитируемый ";
    if(state&MDBR_STATE_PREKVIT       ) ret+= L"";
-   if(state&MDBR_STATE_FLASH         ) ret+= L"Мигание ";
+   if(state&MDBR_STATE_FLASH         ) ret+= L" Мигание ";
    if(state&MDBR_STATE_DYN_NORMAL    ) ret+= L"";
    ret += get_state_view_text(state);
    ret += get_state_tu_text  (state);
@@ -42,13 +42,13 @@ UnicodeString   __fastcall TGkAwpModule::get_state_view_text(DWORD state)
 {
   UnicodeString ret;
   if(state & MDBR_STATE_WORKOUT)
-     ret +=L"Выведен из работы";
+     ret +=L" Выведен из работы";
   else
   {
-   if(state&MDBR_STATE_ALARM         ) ret+= L"Авария";
+   if(state&MDBR_STATE_ALARM         ) ret+= L" Авария";
      else
      {
-      if(state&MDBR_STATE_DANGER        ) ret+= L"Предупреждение ";
+      if(state&MDBR_STATE_DANGER     ) ret+= L" Предупреждение ";
      }
   }
   return ret;

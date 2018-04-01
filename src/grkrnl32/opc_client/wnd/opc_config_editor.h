@@ -107,8 +107,6 @@ __published:	// IDE-managed Components
 	TLabel *Label7;
 	TEdit *tutr_tag;
 	TMemo *CalcScript;
-	TTabSheet *TabSheet3;
-	TMemo *TuTrScript;
 	TToolButton *ToolButton3;
 	TToolButton *ApplyPersonal;
 	TToolButton *UndoPersonal;
@@ -119,6 +117,8 @@ __published:	// IDE-managed Components
 	TOpenDialog *ImportDlg;
 	TTabSheet *TabSheet4;
 	TMemo *Memo1;
+	TMemo *TuTrScript;
+	TLabel *Label8;
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall tbRefreshOpcItemsClick(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);

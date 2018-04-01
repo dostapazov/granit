@@ -2,6 +2,7 @@
 #include "gkopc_client.hpp"
 #include <math.h>
 
+
 extern "C" void tss_cleanup_implemented(void)
 {
  //stub only for boost thread
@@ -254,17 +255,16 @@ void __fastcall opc_line::__setup_group_values  (otd_proto * op)
          }
        }
    }
-   DWORD diag;
+   DWORD diag ;
    if(is_connected() )
    {
-        (*op->diag) = 0;
-        *op->diag   = otd_scan_personal_diag(op);
+        diag = *op->diag;
+        diag |= otd_scan_personal_diag(op);
    }
    else
    diag = OTD_DIAG_CPMASK;
-  if(op->diag) *op->diag = diag;
 
-
+   if(op->diag) *op->diag = diag;
 }
 
 
@@ -670,11 +670,11 @@ void  __fastcall  opc_line::handle_changes()
     sotd_addr addr(beg->first);
     if(storage.find(addr,ptr))
       {
-        if(ptr->op.diag)
-           {
-            *ptr->op.diag  = OTD_DIAG_GOOD;
-            //*ptr->op.diag |= otd_scan_personal_diag(&ptr->op);
-           }
+//        if(ptr->op.diag)
+//           {
+//            *ptr->op.diag  = OTD_DIAG_GOOD;
+//            //*ptr->op.diag |= otd_scan_personal_diag(&ptr->op);
+//           }
 
         __queue_rxdata(&ptr->op);
         if(ptr->op.personal_chmask)
@@ -888,21 +888,34 @@ void __fastcall opc_line::__opc_create_group()
    refresh(-1);
 }
 
+DWORD __fastcall quality2otddiag(WORD quality)
+{
+  DWORD diag = 0;
+  if(quality)
+  {
+
+   if( quality&OPC_QUALITY_NOT_CONNECTED )
+         diag |= OTD_DIAG_CPCONNECT;
+   if( quality&OPC_QUALITY_DEVICE_FAILURE )
+         diag |= OTD_DIAG_MODRESPOND;
+  }
+  else
+  diag = OTD_DIAG_NODATA;
+  return diag;
+}
+
 
 void  __fastcall opc_line::__set_opc_item_values(gkopc_item & item,LPVARIANT v,LPWORD quality,__int64 * time ,LPDWORD rc_state )
 {
    proto_pointer ptr;
    sotd_param_addr pa = item.group_param.get_param_addr();
    bool changes = false;
-   if(v)
-    {
-       VariantCopy(&item.item_state.vDataValue,v);
-       __calc_item_value(item);
-    }
+
    if(quality && item.item_state.wQuality != *quality)
     {
           item.item_state.wQuality = *quality; changes = true;
     }
+
    if(rc_state && item.rc_state != *rc_state)
     {
            item.rc_state = *rc_state;
@@ -911,11 +924,26 @@ void  __fastcall opc_line::__set_opc_item_values(gkopc_item & item,LPVARIANT v,L
     if(time )
       item.item_state.ftTimeStamp = *((LPFILETIME)time);
 
+   if(v)
+    {
+       VariantCopy(&item.item_state.vDataValue,v);
+       __calc_item_value(item);
+    }
+
   if(storage.find(pa.addr,ptr))
    {
        QWORD value = 0;
        otd_get_value(ptr->op.data,pa.param_number,&value,sizeof(value));
        DWORD personal_diag = item.get_personal_diag();
+       if(quality)
+       {
+        DWORD new_diag = quality2otddiag(*quality);
+        if( *ptr->op.diag != new_diag )
+          {
+            *ptr->op.diag =  new_diag;
+            changes = true;
+          }
+       }
 
        if(item.item_state.is_value_integer())
        {
@@ -949,9 +977,6 @@ void  __fastcall opc_line::__set_opc_item_values(gkopc_item & item,LPVARIANT v,L
                changes = true;
               }
            }
-        //if(*pfloat  != (float)item.item_state)
-        //{
-         //*pfloat  = item.item_state;
           changes = true;
         }
 
@@ -970,8 +995,6 @@ void  __fastcall opc_line::__set_opc_item_values(gkopc_item & item,LPVARIANT v,L
 //        {
 //        *((__int64*)&item.item_state.ftTimeStamp)    = *time;
 //        }
-
-
 
         if(owner)
            owner->notify(MNF_LINE_ITEM_CHANGED,MAKELONG((WORD)line_number,(WORD)item.item_state.hClient),NULL,0 );
@@ -1317,6 +1340,37 @@ void __fastcall opc_line::report_opc_error(LONG err,const TCHAR * msg)
      }
     return false;
   }
+
+ int   __fastcall opc_line::opc_set_group_quality  (BYTE fa,BYTE grp,WORD quality)
+ {
+  int count = 0;
+  BYTE fa0  = fa  == OTD_ADDR_MAXVALUE ? 0 : fa;
+  BYTE grp0 = grp == OTD_ADDR_MAXVALUE ? 0 : grp;
+  gkopc_item i0(fa0,grp0,0);
+  gkopc_item i1(fa,grp  ,-1);
+
+  TLockHelper l(locker);
+  gkopc_items_t::index_iterator lo_idx = opc_items.index_begin()  ,hi_idx = opc_items.index_end();
+
+  if(opc_items.range(i0,i1,lo_idx,hi_idx) )
+  {
+   __int64 tm = GetTime();
+
+   while(lo_idx <hi_idx )
+   {
+     gkopc_item & item = opc_items.at(*lo_idx );
+     if(item.item_state.wQuality != quality)
+     {
+      __set_opc_item_values(item,NULL,&quality,&tm,NULL);
+      ++count;
+     }
+
+     ++lo_idx ;
+   }
+  }
+  return count;
+ }
+
 
 
 

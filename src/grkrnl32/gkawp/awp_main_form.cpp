@@ -325,7 +325,7 @@ void   __fastcall TAwpMainForm::show_record_info(const DWORD rec_id,bool _set)
   item = RecordInfo->get_item(RECINFO_TYPE);
   str  = rec.is_discrete() ? L"Дискретный":L"Аналоговый";
   if(rec.is_pseudo()) {
-     str.cat_printf(L"[%s]",rec.is_caution() ? L"Плакат" :L"Искуственный");
+     str.cat_printf(L" [%s]",rec.is_caution() ? L"Плакат" :L"Искуственный");
   }
   item->SubItems->Strings[0] = str;
 
