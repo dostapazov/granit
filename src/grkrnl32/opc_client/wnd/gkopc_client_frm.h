@@ -51,6 +51,8 @@ __published:	// IDE-managed Components
 	TAboutCommonFrame *AboutCommonFrame1;
 	TMemo *Memo1;
 	TToolButton *bRefresh;
+	TTabSheet *MonSheet;
+	TMemo *opc_mon;
 	void __fastcall bStartClick(TObject *Sender);
 	void __fastcall bStopClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -67,6 +69,7 @@ __published:	// IDE-managed Components
 	void __fastcall bRefreshClick(TObject *Sender);
 
 private:	// User declarations
+
         int                     in_setup;
         TTreeNode              * root_node;
         TGKModuleFrame         * Fcurrent_frame;
@@ -84,7 +87,7 @@ virtual void __fastcall WndProc(Messages::TMessage & msg);
         void __fastcall add_opc_line(LPMODEM_LINE_PROPS mlp );
     LRESULT  __fastcall on_gkhandle_notify (GKHANDLE from,LPNOTIFY_CODE nc,DWORD mask);
 
-
+        void __fastcall enable_monitor(bool _enable);
 public:		// User declarations
 	__fastcall TGKOpcClientFrm(TComponent* Owner, HWND parent, GKHANDLE mod_handle );
         void     __fastcall end_setup  (){if((--in_setup)<0) in_setup = 0;}

@@ -155,7 +155,7 @@ class opc_line:public modem_line,public TGKThread
          DWORD __fastcall __create_otd_group   (DWORD fa,DWORD sb,DWORD first_num,DWORD count,DWORD otd_type);
          DWORD __fastcall __get_opc_handles    (opc_handles_t & handles,gkopc_items_t::iterator beg,gkopc_items_t::iterator end);
          DWORD __fastcall __get_opc_handles    (opc_handles_t & handles,gkopc_items_t::index_iterator ibeg,gkopc_items_t::index_iterator iend);
-         void  __fastcall __set_opc_item_values(gkopc_item & item,LPVARIANT v,LPWORD quality,__int64 * time,LPDWORD pstate = 0 );
+         void  __fastcall __set_opc_item_values(gkopc_item & item,LPVARIANT v,LPWORD quality,__int64 * time,LPDWORD rc_state = 0 );
          void  __fastcall __calc_item_value(gkopc_item & item);
          void  __fastcall __prepare_calc_scripts();
 

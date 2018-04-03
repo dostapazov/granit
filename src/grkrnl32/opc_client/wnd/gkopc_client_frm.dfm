@@ -216,6 +216,12 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
               ExplicitWidth = 523
               ExplicitHeight = 103
             end
+            inherited TabSheet3: TTabSheet
+              ExplicitLeft = 4
+              ExplicitTop = 24
+              ExplicitWidth = 523
+              ExplicitHeight = 103
+            end
             inherited TabSheet4: TTabSheet
               ExplicitLeft = 4
               ExplicitTop = 24
@@ -236,6 +242,22 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
           TabOrder = 0
           ExplicitLeft = -124
           ExplicitTop = 19
+        end
+      end
+      object MonSheet: TTabSheet
+        Caption = #1052#1086#1085#1080#1090#1086#1088
+        ImageIndex = 3
+        object opc_mon: TMemo
+          Left = 0
+          Top = 0
+          Width = 538
+          Height = 375
+          Align = alClient
+          TabOrder = 0
+          ExplicitLeft = 16
+          ExplicitTop = 96
+          ExplicitWidth = 185
+          ExplicitHeight = 89
         end
       end
       object AboutSheet: TTabSheet

@@ -19,13 +19,13 @@
 TGKOpcClientFrm *GKOpcClientFrm;
 //---------------------------------------------------------------------------
 __fastcall TGKOpcClientFrm::TGKOpcClientFrm(TComponent* Owner)
-	: TGKModuleForm(Owner)
+	: TGKModuleForm(Owner),opc_mon(NULL)
 {
 }
 //---------------------------------------------------------------------------
 
 __fastcall TGKOpcClientFrm::TGKOpcClientFrm(TComponent* Owner, HWND parent, GKHANDLE mod_handle )
-	: TGKModuleForm(Owner,parent,mod_handle)
+	: TGKModuleForm(Owner,parent,mod_handle),opc_mon(NULL)
 {
 }
 
@@ -323,10 +323,11 @@ void __fastcall TGKOpcClientFrm::PageControl1Change(TObject *Sender)
 
      if(PageControl1->ActivePage == ConfigSheet)
      {
-     current_frame->current_object = LinesTree->Selected;
-     DataFrame->current_object = NULL;
+      current_frame->current_object = LinesTree->Selected;
+      DataFrame->current_object = NULL;
      }
 
+    enable_monitor(PageControl1->ActivePage == MonSheet ? true : false);
 }
 //---------------------------------------------------------------------------
 
@@ -374,4 +375,11 @@ void __fastcall TGKOpcClientFrm::bRefreshClick(TObject *Sender)
  mod_iface.call(MODEMCM_REFRESH_LINE,line_number,-1);
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TGKOpcClientFrm::enable_monitor(bool __enable)
+{
+
+}
+//---------------------------------------------------------------------------
+
 

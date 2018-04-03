@@ -115,7 +115,7 @@ void __fastcall  do_change_line_colors( LPDWORD array,DWORD dw_count,COLORREF on
         COLORREF black_replace = RGB(GetBValue(on_black),GetGValue(on_black),GetRValue(on_black));
         LPDWORD  b_arr = array;
         LPDWORD  e_arr = array+dw_count;
-        LPDWORD  m_arr = array+dw_count/2;
+        LPDWORD  m_arr = array+(dw_count>>1);
         bool in_white_from_start = false;
         bool in_white_from_end   = false;
 
@@ -139,6 +139,10 @@ void __fastcall  do_change_line_colors( LPDWORD array,DWORD dw_count,COLORREF on
             }
           ++b_arr;
         }
+       if((dw_count&1) && *b_arr == white )
+       {
+          *b_arr = white_replace;
+       }
 }
 
 

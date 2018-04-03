@@ -904,6 +904,9 @@ DWORD __fastcall quality2otddiag(WORD quality)
   return diag;
 }
 
+#define OPCI_CH_VALUE   1
+#define OPCI_CH_QUALITY 2
+#define OPCI_CH_RCSTATE 4
 
 void  __fastcall opc_line::__set_opc_item_values(gkopc_item & item,LPVARIANT v,LPWORD quality,__int64 * time ,LPDWORD rc_state )
 {
