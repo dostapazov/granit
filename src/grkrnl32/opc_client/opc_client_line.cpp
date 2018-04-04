@@ -561,7 +561,11 @@ DWORD __fastcall opc_line::get_tx_queue_size ()
 bool  __fastcall opc_line::do_start ()
 {
  bool  ret = true;
- if(!IsRunning()) ret = Start();
+ if(!IsRunning())
+   {
+    global_quality_mask = -1;
+    ret = Start();
+   }
  return ret;
 }
 
@@ -914,9 +918,14 @@ void  __fastcall opc_line::__set_opc_item_values(gkopc_item & item,LPVARIANT v,L
    sotd_param_addr pa = item.group_param.get_param_addr();
    bool changes = false;
 
-   if(quality && item.item_state.wQuality != *quality)
+   if(quality )
     {
-          item.item_state.wQuality = *quality; changes = true;
+      WORD new_quality = (*quality)&global_quality_mask;
+      if(item.item_state.wQuality != new_quality)
+      {
+       item.item_state.wQuality = new_quality;
+       changes = true;
+      }
     }
 
    if(rc_state && item.rc_state != *rc_state)
@@ -1354,11 +1363,12 @@ void __fastcall opc_line::report_opc_error(LONG err,const TCHAR * msg)
 
   TLockHelper l(locker);
   gkopc_items_t::index_iterator lo_idx = opc_items.index_begin()  ,hi_idx = opc_items.index_end();
-
-  if(opc_items.range(i0,i1,lo_idx,hi_idx) )
+  count = opc_items.range(i0,i1,lo_idx,hi_idx);
+  if( count  )
   {
+   count = 0;
    __int64 tm = GetTime();
-
+   count = 0;
    while(lo_idx <hi_idx )
    {
      gkopc_item & item = opc_items.at(*lo_idx );
@@ -1374,6 +1384,26 @@ void __fastcall opc_line::report_opc_error(LONG err,const TCHAR * msg)
   return count;
  }
 
+ int   __fastcall opc_line::opc_set_global_quality_mask  (WORD quality,bool set)
+ {
+    if(set)
+      {
+       DWORD new_mask = global_quality_mask | quality;
+       if(global_quality_mask != new_mask)
+       {
+          global_quality_mask |= new_mask;
+          if(global_quality_mask & OPC_QUALITY_GOOD)
+             refresh(-1);
+       }
+      }
+      else
+      {
+       global_quality_mask &= ~quality;
+      }
+
+
+
+ }
 
 
 

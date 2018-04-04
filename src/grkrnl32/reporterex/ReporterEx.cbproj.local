@@ -21,12 +21,12 @@
     <Transaction>1899.12.30 00:00:00.000.066,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.928,=D:\ERADS\lib\win32\release\usebormm.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.307,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\reporter_exPCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.058,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.213,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.425,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.062,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.729,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.425,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\ReporterEx\ReporterEx.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.058,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.213,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.062,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="-1" SortType="0">
 	</ProjectSortOrder>

@@ -292,6 +292,14 @@
          otd_inc_value(dest.personal_chmask,loN,TRUE);
          changes|=OTD_PROTO_PART_PERSONAL_DIAG|OTD_PROTO_PART_PERSONAL_CHMASK;
         }
+        else
+         {
+          if(old_pd && obj_changes)
+            {
+             changes     |=OTD_PROTO_PART_PERSONAL_DIAG ;
+            }
+         }
+
 
         if(obj_changes)
         {

@@ -376,7 +376,6 @@ float __fastcall mdb_record::calc_value(float kv )
 
 
      if (rec.otd_pd!=otd_pd)
-
      {
         ret|=(MDBR_FIELD_OTDPD|MDBR_FIELD_TIME);
         WORD new_state = rec.state & MDBR_STATE_MASK;
@@ -394,7 +393,7 @@ float __fastcall mdb_record::calc_value(float kv )
       rec.time  = time =  GetTime();
      }
 
-
+   if(otd_pd&OTD_PDIAG_MASK) new_diag = MDBR_DIAG_BAD;
    if(rec.diag!=(WORD)new_diag   )
     {
      rec.diag=new_diag;

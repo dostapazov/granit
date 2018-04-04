@@ -4,21 +4,21 @@
 	</ProjectSortOrder>
 	<Transactions>
     <Transaction>1899.12.30 00:00:00.000.384,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem_queue.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.144,D:\USER\GRANIT\SRC\KE_RTL\tlicense.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.343,=D:\USER\GRANIT\SRC\KE_RTL\tlicense.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.625,D:\USER\GRANIT\SRC\KE_RTL\storage.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.544,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem_line.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.821,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem_line.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.144,D:\USER\GRANIT\SRC\KE_RTL\tlicense.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.767,=D:\USER\GRANIT\SRC\KE_RTL\storage.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.821,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem_line.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.544,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem_line.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.625,D:\USER\GRANIT\SRC\KE_RTL\storage.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.249,D:\USER\GRANIT\SRC\KE_RTL\kedatas.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.872,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gkhandle_based.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.780,D:\USER\GRANIT\LIB\gklib.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.401,D:\USER\GRANIT\SRC\KE_RTL\rx_buffer.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.081,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.402,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.711,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\mproto_buffer.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.978,D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\ip_line_otd.cpp=D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\File1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.402,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.839,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gkmodules.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.081,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.943,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gkmodules.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.626,=D:\ERADS\lib\win32\release\usebormm.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.953,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.855,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
@@ -26,13 +26,13 @@
     <Transaction>1899.12.30 00:00:00.000.238,=D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.899,D:\USER\GRANIT\LIB\KE_RTLS.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.214,D:\ERADS\lib\win32\release\memmgr.lib=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.975,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.651,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.803,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.376,D:\USER\GRANIT\LIB\GKHANDLE.LIB=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.943,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gkmodules.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.009,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.839,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gkmodules.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.104,D:\USER\GRANIT\SRC\NETRTL\Wsockdef.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.680,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.651,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\modem.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.975,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.009,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
   </Transactions>
 </BorlandProject>

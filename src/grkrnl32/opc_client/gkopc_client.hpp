@@ -58,6 +58,7 @@ typedef std::vector<OPCHANDLE> opc_handles_t;
 #define LUA_FUNC_OPC_ITEM_SET_VALUE      "set_value"
 #define LUA_FUNC_OPC_SET_ITEMS_QUALITY   "set_items_quality"
 #define LUA_FUNC_OPC_SET_GROUP_QUALITY   "set_group_quality"
+#define LUA_FUNC_OPC_SET_GLOBAL_QUALITY_MASK   "set_global_quality_mask"
 
 #define LUA_FUNC_OPC_ITEM_SET_RC_STATE   "set_rc_state"
 
@@ -84,6 +85,7 @@ class opc_line:public modem_line,public TGKThread
   TOpcServer           * opc_server;
   TOpcGroup            * opc_group;
   HRESULT                com_last_result;
+  DWORD                  global_quality_mask;
 
   typedef opc::TOpcDataCallback<opc_line>  opc_data_callback_t;
   friend opc_data_callback_t;
@@ -98,6 +100,7 @@ class opc_line:public modem_line,public TGKThread
   static int lua_opc_item_set_value     (lua_State *L);
   static int lua_opc_set_items_quality  (lua_State *L);
   static int lua_opc_set_group_quality  (lua_State *L);
+  static int lua_opc_set_global_quality_mask  (lua_State *L);
   static int lua_opc_item_set_rc_state  (lua_State *L);
   static int lua_opc_item_set_rc_prepare(lua_State *L);
   static int lua_opc_item_set_rc_active (lua_State *L);
@@ -203,6 +206,7 @@ class opc_line:public modem_line,public TGKThread
 
   bool __fastcall opc_item_set_value   (const wstring & item_id,double);
   int  __fastcall opc_set_group_quality(BYTE fa,BYTE grp,WORD quality);
+  int  __fastcall opc_set_global_quality_mask  (WORD quality,bool set);
 
 
   public:
