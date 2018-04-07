@@ -898,10 +898,13 @@ DWORD __fastcall quality2otddiag(WORD quality)
   if(quality)
   {
 
-   if( quality&OPC_QUALITY_NOT_CONNECTED )
-         diag |= OTD_DIAG_CPCONNECT;
-   if( quality&OPC_QUALITY_DEVICE_FAILURE )
+   if((quality& OPC_QUALITY_MASK) != OPC_QUALITY_GOOD)
+   {
+    if( quality&OPC_QUALITY_NOT_CONNECTED )
+         diag |= OTD_DIAG_CPMASK;
+    if( quality&OPC_QUALITY_DEVICE_FAILURE )
          diag |= OTD_DIAG_MODRESPOND;
+   }
   }
   else
   diag = OTD_DIAG_NODATA;
@@ -938,6 +941,7 @@ void  __fastcall opc_line::__set_opc_item_values(gkopc_item & item,LPVARIANT v,L
 
    if(v)
     {
+
        VariantCopy(&item.item_state.vDataValue,v);
        __calc_item_value(item);
     }
@@ -1391,18 +1395,17 @@ void __fastcall opc_line::report_opc_error(LONG err,const TCHAR * msg)
        DWORD new_mask = global_quality_mask | quality;
        if(global_quality_mask != new_mask)
        {
-          global_quality_mask |= new_mask;
-          if(global_quality_mask & OPC_QUALITY_GOOD)
-             refresh(-1);
+
+         bool need_refresh = ((global_quality_mask^new_mask) & OPC_QUALITY_GOOD );
+         global_quality_mask = new_mask;
+         if(need_refresh) refresh(-1);
        }
       }
       else
       {
        global_quality_mask &= ~quality;
       }
-
-
-
+    return 0;
  }
 
 

@@ -218,7 +218,7 @@
 
      DWORD __fastcall get_personal_diag()
      {
-      return ((item_state.wQuality&OPC_QUALITY_GOOD) == OPC_QUALITY_GOOD) ? 0|rc_state : OTD_PDIAG_ERROR;
+      return ((item_state.wQuality&OPC_QUALITY_MASK) == OPC_QUALITY_GOOD) ? 0|rc_state : OTD_PDIAG_ERROR;
      }
    };
 
