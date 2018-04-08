@@ -286,7 +286,8 @@ case EXCEPTION_STACK_OVERFLOW           :str = "Переполнение стека ";break;
     len += wsprintf(str2+len,fmt,"SegSS",ctx->SegSs);
     len += wsprintf(str2+len,fmt,"SegCS",ctx->SegCs);
     len += wsprintf(str2+len,fmt,"SegDS",ctx->SegDs);
-    len += wsprintf(str2+len,fmt,"SegES",ctx->SegEs);
+	/*len += */
+	wsprintf(str2+len,fmt,"SegES",ctx->SegEs);
     #endif
 
     #ifdef _WIN64

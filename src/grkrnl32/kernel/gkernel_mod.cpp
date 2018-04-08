@@ -40,7 +40,9 @@
  LPVOID ret =  common_heap.Alloc(sz);
  if(ret)
  {
+   #ifdef _DEBUG
 	LONG mem_sz =  common_heap.MemSize(ret,0);
+   #endif
  }
  return ret;
 }

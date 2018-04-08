@@ -1,7 +1,9 @@
 //Редактирование только вариантов отрисовки дискретных сигналов
 
 #pragma hdrstop
+#include <algorithm>
 #pragma argsused
+
 
 /*extern "C" int _libmain(unsigned long reason)
 {

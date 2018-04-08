@@ -22,23 +22,23 @@
     <Transaction>1899.12.30 00:00:00.000.017,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec6070_mod_settings.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.384,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec60870wndPCH1.h=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.017,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec6070_mod_settings.h=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.090,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.089,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.940,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\mon_frame.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.772,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec60870wnd.cpp=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.464,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec60870wnd.cbproj=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.855,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.846,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\File1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.136,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\File1.h=D:\USER\GRANIT\INC\GRKRNL32\iec60870proto.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.502,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec60870_data.h=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.502,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec60870_data.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.940,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\mon_frame.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.537,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.912,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.089,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.090,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.502,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec60870_data.dfm=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.033,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec60870_line_param.cpp=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.464,D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\iec60870wnd.cbproj=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.294,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.305,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.069,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.403,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.305,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.537,=D:\USER\GRANIT\SRC\GrKrnl32\iec60870\iec60870wnd\Unit1.cpp</Transaction>
   </Transactions>
 </BorlandProject>

@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{42925580-9223-4794-8475-D4C52DE6E31C}</ProjectGuid>
-        <ProjectVersion>18.2</ProjectVersion>
+        <ProjectVersion>18.3</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
@@ -204,14 +204,14 @@
             <DependentOn>sel_div_pref.h</DependentOn>
             <BuildOrder>16</BuildOrder>
         </CppCompile>
-        <FormResources Include="gkopc_client_line_settings.dfm"/>
         <FormResources Include="gkopc_client_mod_settings_frame.dfm"/>
-        <FormResources Include="gkopcitem_view_frame.dfm"/>
+        <FormResources Include="gkopc_client_line_settings.dfm"/>
         <FormResources Include="gkopc_client_frm.dfm"/>
-        <FormResources Include="opc_config_editor.dfm"/>
+        <FormResources Include="gkopcitem_view_frame.dfm"/>
         <FormResources Include="sel_div_pref.dfm"/>
-        <FormResources Include="..\..\GKLIB\VCL\gkmodule_form.dfm"/>
+        <FormResources Include="opc_config_editor.dfm"/>
         <FormResources Include="..\..\GKLIB\VCL\gkmod_frame.dfm"/>
+        <FormResources Include="..\..\GKLIB\VCL\gkmodule_form.dfm"/>
         <FormResources Include="..\..\GKLIB\VCL\about_common_frame.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

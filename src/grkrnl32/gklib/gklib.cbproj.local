@@ -14,6 +14,7 @@
     <Transaction>1899.12.30 00:00:00.000.776,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\opc_light_drv.cpp</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="..\..\..\src"/>
     <File Path="..\..\COMMON"/>
     <File Path="..\..\COMMON\crcunit_wrapper.CPP"/>
     <File Path="..\..\GRNET32"/>

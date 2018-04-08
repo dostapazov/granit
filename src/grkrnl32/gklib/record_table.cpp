@@ -86,8 +86,7 @@
     if(table.size()== addr_index.size())
     {
      DWORD count = table.size();
-     DWORD i = 0;
-     for(i = 0;ret && i<count;i++)
+	 for(DWORD i = 0;ret && i<count;i++)
       {
        r2_ptr = table.begin();
        std::advance(r2_ptr,addr_index.at(i));

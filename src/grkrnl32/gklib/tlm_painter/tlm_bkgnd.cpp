@@ -246,7 +246,8 @@ void    __fastcall TBmpBkgnd::do_gray_bkgnd(LPRGBQUAD b_arr,DWORD count)
              {
                  if(grayed) do_gray_bkgnd((LPRGBQUAD)array,bmp_info.bmiHeader.biSizeImage/sizeof(RGBQUAD));
                  if(grid  ) do_setup_grid((LPRGBQUAD)array,bmp_info.bmiHeader.biWidth,bmp_info.bmiHeader.biHeight);
-                 lines_count = SetDIBits(dc,bkgnd_bmp,0,bmp_info.bmiHeader.biHeight,array,&bmp_info,DIB_RGB_COLORS);
+				 /*lines_count = */
+				 SetDIBits(dc,bkgnd_bmp,0,bmp_info.bmiHeader.biHeight,array,&bmp_info,DIB_RGB_COLORS);
              }
           delete [] array;
          }

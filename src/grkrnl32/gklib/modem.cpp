@@ -214,14 +214,13 @@ DWORD       __fastcall    TModemBase::lines_start(bool start)
 DWORD       __fastcall    TModemBase::start(DWORD reason,LPARAM start_param)
 {
   DWORD ret  = GKH_RET_SUCCESS;
-  DWORD error= 0;
 
   if(get_modem_number()<MAX_MODEM_COUNT)
   {
-	error = this->lines_start(true);
+	DWORD error = this->lines_start(true);
 	if(ret == GKH_RET_SUCCESS)
 		TGKModule::start(reason,start_param);
-	    SetLastError(error);
+		SetLastError(error);
   }
   else
   {
@@ -236,7 +235,6 @@ DWORD       __fastcall    TModemBase::stop (DWORD reason)
 {
   modem_line * line;
   modem_line * stop_list[MODEM_ADDR_MAXVALUE];
-  int line_count = 0;
   DWORD error = this->lines_start(false);
   SetLastError(error);
   //Отправить модеммеру кадр нет данных для всего ПУ
