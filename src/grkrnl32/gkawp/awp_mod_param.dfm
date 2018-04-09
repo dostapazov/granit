@@ -816,6 +816,8 @@ object AwpModuleParams: TAwpModuleParams
           TabOrder = 0
           OnButtonClicked = ReadyColorsEditButtonClicked
           OnDrawButton = ReadyColorsEditDrawButton
+          ExplicitLeft = 1
+          ExplicitTop = 26
         end
       end
     end
@@ -878,7 +880,7 @@ object AwpModuleParams: TAwpModuleParams
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    Options = [fdTrueTypeOnly, fdEffects, fdNoOEMFonts, fdWysiwyg, fdApplyButton]
+    Options = [fdTrueTypeOnly, fdEffects, fdNoVectorFonts, fdApplyButton]
     OnApply = ReadyFontApply
     Left = 444
     Top = 320
@@ -896,7 +898,7 @@ object AwpModuleParams: TAwpModuleParams
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    Options = [fdTrueTypeOnly, fdEffects, fdNoOEMFonts, fdWysiwyg, fdApplyButton]
+    Options = [fdEffects, fdApplyButton]
     OnApply = ReadyFontApply
     Left = 500
     Top = 320

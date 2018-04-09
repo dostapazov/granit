@@ -37,7 +37,7 @@ __fastcall TAwpModuleParams::TAwpModuleParams(TComponent* Owner,TGkAwpModule    
      str.printf(L"%s (%d x %d)",dd.DeviceString ,mon->Width,mon->Height);
      MonitorSelect->Items->Add(str);
    }
-   this->PageControl1->ActivePageIndex = 0;
+   PageControl1->ActivePageIndex = 0;
 }
 //---------------------------------------------------------------------------
 

@@ -74,7 +74,7 @@
     }
   }
 
-  wchar_t   ready_painter_t::state_chars[] = L" ÈÀÏÍÌÑÓ";
+  wchar_t   ready_painter_t::state_chars[] = L" uanHMCy";
 
   void __fastcall ready_painter_t::ready_paint_state (HDC dc,const RECT & r,const DWORD ready_state ,const bool flash_erase)
   {
