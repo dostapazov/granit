@@ -274,6 +274,7 @@ void     __fastcall  TIEC60870DataFrame::calc_unassigned_count()
          }
        }
     unassigned_count = uc;
+    assigned_count   = ac;
 }
 
 void __fastcall TIEC60870DataFrame::ASDU_RecordsSelectItem(TObject *Sender, TListItem *Item,

@@ -198,7 +198,7 @@ inline void   __fastcall LUAInstance::enable_bin_functions()
        int top = gettop();
        if(isstring(top))
           {
-           unsigned int len = 0;
+           size_t  len = 0;
            str = tolstring(top,&len);
            return len ;
           }

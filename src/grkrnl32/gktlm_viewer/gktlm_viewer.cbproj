@@ -47,7 +47,7 @@
     <PropertyGroup Condition="'$(Base)'!=''">
         <SanitizedProjectName>gktlm_viewer</SanitizedProjectName>
         <AllPackageLibs>rtl.lib;vcl.lib;dbrtl.lib;dsnap.lib;vcldb.lib;Tee.lib;vclimg.lib;inet.lib</AllPackageLibs>
-        <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+        <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
         <ProjectType>VCppStyleDll</ProjectType>
         <Multithreaded>true</Multithreaded>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>

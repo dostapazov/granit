@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.430,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.317,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.513,=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\New1.rc</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.196,D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\tlmobj_painter.rc=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\New1.rc</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.823,=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\discrete_painter.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.097,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.307,C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\File1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\tlmobj_painter_main.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.692,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.881,C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\tlmobj_painter.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.160,D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\File1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\obj_painter.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.470,D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\analog_painters.cpp=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.521,=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.617,=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\File1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.087,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.900,C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\tlmobj_painterPCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.991,=D:\USER\LIB\PICTDLGS.LIB</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.097,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.470,D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\File1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\analog_painters.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.674,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.881,D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\tlmobj_painter.cbproj=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.991,=D:\USER\LIB\PICTDLGS.LIB</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.087,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.160,D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\obj_painter.cpp=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.513,=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\New1.rc</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.196,D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\New1.rc=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\tlmobj_painter.rc</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.430,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.317,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.307,D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\tlmobj_painter_main.cpp=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.692,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.900,D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\tlmobj_painterPCH1.h=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.823,=D:\USER\GRANIT\SRC\GrKrnl32\tlmobj_painter\discrete_painter.cpp</Transaction>
   </Transactions>
 </BorlandProject>

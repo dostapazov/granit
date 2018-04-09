@@ -1,3 +1,4 @@
+#pragma hdrstop
 #include <kertl.hpp>
 #include <string>
 

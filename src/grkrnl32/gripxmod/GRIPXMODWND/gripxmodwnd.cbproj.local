@@ -1,21 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.493,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\about_common_frame.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.062,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.487,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.057,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.721,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\GRIPXMODWND\gripxmodwnd_main.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.403,=D:\ERADS\19.0\lib\win32\release\memmgr.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.532,D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\GRIPXMODWND\gripxmodwndPCH1.h=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.482,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmod_frame.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.389,D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\GRIPXMODWND\GrIpxModFrame.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.494,D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\GRIPXMODWND\gripxmodwnd.cbproj=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.323,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.493,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\about_common_frame.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.298,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\GRIPXMODWND\GrIpxModFrame.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.593,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\GRIPXMODWND\GrIpxModFrame.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.338,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.315,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.721,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\GRIPXMODWND\gripxmodwnd_main.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.389,D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\GRIPXMODWND\GrIpxModFrame.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.494,C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\GRIPXMODWND\gripxmodwnd.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.331,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.323,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.338,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.403,=D:\ERADS\19.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.560,D:\ERADS\19.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.057,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.532,C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\GRIPXMODWND\gripxmodwndPCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.315,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.487,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
   </Transactions>
 </BorlandProject>

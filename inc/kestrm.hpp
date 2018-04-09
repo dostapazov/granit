@@ -17,7 +17,7 @@ namespace KeRTL
 {
 #endif
 
-KERTL_CLASS DECLSPEC_NOVTABLE TStream
+KERTL_CLASS TStream
 {
  protected:
  DWORD      inc_by;
@@ -33,7 +33,7 @@ KERTL_CLASS DECLSPEC_NOVTABLE TStream
  virtual DWORD  __fastcall GetPosition()=0;
  virtual DWORD  __fastcall WaitEndWrite(DWORD to=INFINITE){return true;}
  virtual DWORD  __fastcall WaitEndRead (DWORD to=INFINITE){return true;}
- virtual bool   __fastcall IsGood();
+ virtual bool   __fastcall IsGood() = 0;
  virtual void   __fastcall Flush (){};
  virtual DWORD  __fastcall GetSize()=0;
  virtual DWORD  __fastcall Reserve(DWORD sz) = 0;

@@ -5,7 +5,6 @@
 #include <gklib/otd_base.h>
 #include <stdlib.h>
 #else
-#define STRICT
 #include <keRTL.hpp>
 #include <windows.h>
 #include <modbus_proto.h>

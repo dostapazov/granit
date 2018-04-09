@@ -521,7 +521,7 @@ sotd_param_addr __fastcall  TRecordFrame::make_record_addr()
 
 DWORD __fastcall TRecordFrame::apply_changes(DWORD mask)
 {
- DWORD ret = -1;
+ DWORD ret ;
  UnicodeString str;
   if(mask&MDBR_FIELD_ADDR)
      Frecord.addr = make_record_addr();
@@ -632,9 +632,7 @@ DWORD __fastcall TRecordFrame::apply_changes(DWORD mask)
   Frecord.rec_id = mod_iface.call(MDBCM_RECORD_CREATE,(LPARAM)&Frecord,0);
   ret    = Frecord.rec_id;
   if(ret == (DWORD)-1)
-   {
     return ret;
-   }
  }
  else
   ret = mod_iface.call(MDBCM_RECORD_UPDATE,(LPARAM)&Frecord,apply_mask);
@@ -921,7 +919,7 @@ void __fastcall TRecordFrame::MaxAlarmChange(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-
+ #pragma warn -8004
  void  __fastcall  TRecordFrame::adjust_alarms_dangers()
  {
   float min_v     =  get_min_value();
@@ -960,6 +958,7 @@ void __fastcall TRecordFrame::MaxAlarmChange(TObject *Sender)
    set_max_alarm (max_a);
    --setup_active;
  }
+ #pragma warn .8004
 
  float __fastcall  TRecordFrame::get_min_danger()
  {

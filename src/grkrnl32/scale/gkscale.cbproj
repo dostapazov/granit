@@ -46,7 +46,7 @@
         <Multithreaded>true</Multithreaded>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <ILINK_LibraryPath>$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+        <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <IntermediateOutputDir>$(GRKRNL_TEMP)\gkscale\$(Platform)\$(Config)</IntermediateOutputDir>
         <FinalOutputDir>$(GRKRNK_BIN)</FinalOutputDir>

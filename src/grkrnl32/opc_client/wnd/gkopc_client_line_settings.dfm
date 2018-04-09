@@ -266,6 +266,10 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = #1057#1082#1088#1080#1087#1090' '#1058#1059
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object TuLuaScript: TMemo
         Tag = 8192
         Left = 0
@@ -290,6 +294,10 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
     object TabSheet2: TTabSheet
       Caption = #1057#1082#1088#1080#1087#1090' '#1058#1056
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object TrLuaScript: TMemo
         Tag = 16384
         Left = 0
@@ -314,6 +322,10 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
     object TabSheet3: TTabSheet
       Caption = #1050#1072#1082' '#1087#1080#1089#1072#1090#1100
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Memo1: TMemo
         Left = 0
         Top = 0
@@ -407,6 +419,10 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
     object TabSheet4: TTabSheet
       Caption = #1052#1086#1085#1080#1090#1086#1088' '#1080#1089#1087#1086#1083#1085#1077#1085#1080#1103' '#1089#1082#1088#1080#1090#1086#1074
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object TraceMon: TMemo
         Left = 0
         Top = 0

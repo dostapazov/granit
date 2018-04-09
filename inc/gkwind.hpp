@@ -110,7 +110,6 @@ typedef LPVOID  HFONT;*/
 
     virtual const char * __fastcall GetClassName();
     virtual void         __fastcall GetWndClass(WNDCLASSEXA & );
-    //virtual void         __fastcall GetWndClass(WNDCLASSEXW & );
     virtual DWORD        __fastcall GetStyle(bool Ex = false);
 
     virtual WNDPROC      __fastcall GetDefWndProc();

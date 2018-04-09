@@ -61,6 +61,7 @@ wstring & __fastcall wstring_from_str(wstring & str,const char * src)
    return str;
 }
 
+#pragma warn -8057
 bool  __fastcall med_db::_lua_script_exec(const std::string & formula,int count,long double * result ,DWORD * ids,long double * args,LPWORD diags,LPDWORD error)
 {
   long double ret = .0;
@@ -92,6 +93,7 @@ bool  __fastcall med_db::_lua_script_exec(const std::string & formula,int count,
   }
   return false;
 }
+#pragma warn .8057
 
  /*Вычисление комбинированного объекта*/
  DWORD        __fastcall med_db::calc_combine(mdb_record & rec,float & value,DWORD opt)

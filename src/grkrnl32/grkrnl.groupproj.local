@@ -4,6 +4,6 @@
     <Transaction>1899.12.30 00:00:00.000.190,D:\USER\GRANIT\SRC\GrKrnl32\grkrnl.groupproj=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj</Transaction>
   </Transactions>
 	<Default.Personality>
-		<Projects ActiveProject="D:\USER\GRANIT\src\grkrnl32\MediumDB\MediumDbWnd\mediumdbwnd.cbproj"/>
+		<Projects ActiveProject="D:\USER\GRANIT\src\grkrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodemwnd.cbproj"/>
 	</Default.Personality>
 </BorlandProject>

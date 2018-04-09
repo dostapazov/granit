@@ -69,7 +69,7 @@
         <ILINK_LibraryPath>$(BDS)\lib;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
         <BRCC_OutputDir>d:\temp\</BRCC_OutputDir>
-        <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+        <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
         <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <ILINK_AppType>Windows</ILINK_AppType>
         <TASM_IncludePath>$(BDS)\Projects;..\GRANITMDM\GRANITMDM_WND;..\..\..\PROJS;..\GKLIB;$(BDS)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;$(TASM_IncludePath)</TASM_IncludePath>
@@ -121,6 +121,7 @@
         <Manifest_File>(None)</Manifest_File>
         <ILINK_LibraryPath>D:\USER\GRANIT\LIB_XE64\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <IncludePath>$(BDS)\include;$(KERTL_INC);$(GRKRNL_INC);$(IncludePath)</IncludePath>
+        <Defines>_WIN64;$(Defines)</Defines>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
@@ -146,6 +147,8 @@
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <ILINK_MapFileType>None</ILINK_MapFileType>
         <ILINK_DisableIncrementalLinking>false</ILINK_DisableIncrementalLinking>
+        <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
+        <BCC_PCHUsage>None</BCC_PCHUsage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
@@ -166,6 +169,7 @@
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
         <BCC_UserSuppliedOptions> -5 -Vx -r- -k -tWD -Ve -r</BCC_UserSuppliedOptions>
         <Debugger_RunParams>-nosplash -config -service</Debugger_RunParams>
+        <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
@@ -174,10 +178,6 @@
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <ItemGroup>
-        <LibFiles Include="D:\ERADS\18.0\lib\win32\release\memmgr.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>14</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
         <LibFiles Include="..\..\..\LIB_XE64\KE_RTLS.a" Condition="'$(Platform)'=='Win64'">
             <BuildOrder>16</BuildOrder>
             <IgnorePath>true</IgnorePath>
@@ -198,8 +198,7 @@
             <BuildOrder>3</BuildOrder>
         </CppCompile>
         <DefFile Include="OTDHLPR.DEF">
-            <BuildOrder>7</BuildOrder>
-            <BuildOrder>11</BuildOrder>
+            <BuildOrder>16</BuildOrder>
         </DefFile>
         <CppCompile Include="otdhlpr_m.cpp">
             <BuildOrder>26</BuildOrder>
@@ -407,6 +406,18 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="%GRKRNL64_BIN%\otdhlpr.dll" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>otdhlpr.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\grkrnl32\otdhlpr.dll" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>otdhlpr.dll</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

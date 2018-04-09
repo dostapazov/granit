@@ -3,7 +3,7 @@
         <ProjectGuid>{F5297779-176F-4C91-9B36-C95F3324192C}</ProjectGuid>
         <ProjectType>CppDynamicLibrary</ProjectType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <FrameworkType>None</FrameworkType>
         <ProjectVersion>18.3</ProjectVersion>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -72,7 +72,7 @@
         <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
         <BRCC_OutputDir>d:\temp\</BRCC_OutputDir>
         <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
-        <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+        <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
         <TASM_IncludePath>$(BDS)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;$(TASM_IncludePath)</TASM_IncludePath>
         <ILINK_AppType>Windows</ILINK_AppType>
         <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
@@ -106,6 +106,7 @@
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BRCC_Defines>STRICT;_DEBUG;$(BRCC_Defines)</BRCC_Defines>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <FinalOutputDir>$(GRKRNL_BIN)</FinalOutputDir>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <BCC_Defines>STRICT;$(BCC_Defines)</BCC_Defines>
@@ -157,18 +158,16 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
         <BCC_UserSuppliedOptions> -5 -Vx -r- -k -b -tWD -Ve -r</BCC_UserSuppliedOptions>
+        <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
     </PropertyGroup>
     <ItemGroup>
-        <LibFiles Include="D:\ERADS\18.0\lib\win32\release\memmgr.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>4</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
         <LibFiles Include="..\..\..\LIB_XE64\KE_RTLS.a" Condition="'$(Platform)'=='Win64'">
             <BuildOrder>5</BuildOrder>
             <IgnorePath>true</IgnorePath>
@@ -450,7 +449,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\GRKRNL32\\gkhandle.dll" Configuration="Release" Class="ProjectOutput">
+                <DeployFile LocalName="..\..\..\grkrnl32\gkhandle.dll" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>gkhandle.dll</RemoteName>
                         <Overwrite>true</Overwrite>

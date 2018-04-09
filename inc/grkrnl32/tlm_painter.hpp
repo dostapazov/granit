@@ -39,7 +39,7 @@ namespace tlmpaint
        TGdiObject():gdi_object(NULL)            {}
        TGdiObject(Hgdiobj _obj):gdi_object(_obj){}
        ~TGdiObject(){if(gdi_object )DeleteObject(gdi_object);}
-       TGdiObject & operator = (Hgdiobj _obj){if(gdi_object )DeleteObject(gdi_object); gdi_object = _obj;}
+       TGdiObject & operator = (Hgdiobj _obj){if(gdi_object )DeleteObject(gdi_object); gdi_object = _obj; return *this;}
        Hgdiobj operator()(){return gdi_object;}
        private:
        Hgdiobj   gdi_object;

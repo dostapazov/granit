@@ -777,9 +777,10 @@ inline  HRESULT __fastcall TOpcGroup::read(bool from_device,DWORD * count,OPCITE
             CoTaskMemFree(name);
            }
      }
-     return active ? true : false;
+     return res;
    }
 
+   #pragma warn -8004
    HRESULT  __fastcall TOpcGroup::set_active     (bool active)
    {
      HRESULT res = -1;
@@ -788,13 +789,12 @@ inline  HRESULT __fastcall TOpcGroup::read(bool from_device,DWORD * count,OPCITE
        int new_active = 0;
        res = group_mgt->SetState(&rate,&rate,&new_active,&time_bias,&dead_band,&lcid,&client_handle);
        if(SUCCEEDED(res))
-          {
-           active = new_active;
-           return true;
-          }
+          active = new_active;
+
      }
     return res;
    }
+   #pragma warn .8004
 
    HRESULT  __fastcall TOpcGroup::group_set_status ()
    {

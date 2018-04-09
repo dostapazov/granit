@@ -80,7 +80,7 @@ __fastcall TEntryProps::TEntryProps(TComponent* Owner,int pctx,DWORD _notify_com
    {
        wchar_t name[512];
        int     idx = 0;
-       bool    res = true;
+       bool    res ;
        do{
            res = discrete ? pdll->enum_discretes_ex(Fpaint_context,idx,name,KERTL_ARRAY_COUNT(name)):
                             pdll->enum_analogs_ex  (Fpaint_context,idx,name,KERTL_ARRAY_COUNT(name));

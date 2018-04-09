@@ -224,7 +224,7 @@ void __fastcall TTlmPainterForm::update_status_bar ()
 {
   if(Fkadr)
     {
-      mdb_kadr_entry * entry = NULL;
+      mdb_kadr_entry * entry ;
       if(current_over < Fkadr->entryes.size() )
          entry = &Fkadr->entryes.at(current_over);
          else

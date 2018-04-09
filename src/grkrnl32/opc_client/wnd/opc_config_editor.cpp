@@ -506,9 +506,7 @@ void __fastcall TOpcConfigEditor::OpcServerItemsTreeChange(TObject *Sender, TTre
   LPWSTR * prop_descr = NULL;
   LPWORD   prop_data_types = NULL;
   UnicodeString opc_id = get_item_opc_id(Node,this->divisor,this->prefix);
-  HRESULT res = S_OK;
-
-  res = iprops->QueryAvailableProperties(opc_id.c_str(),&prop_count,&prop_ids,&prop_descr,&prop_data_types);
+  HRESULT res = iprops->QueryAvailableProperties(opc_id.c_str(),&prop_count,&prop_ids,&prop_descr,&prop_data_types);
   if(S_OK == res )
    {
      LPVARIANT prop_values = NULL;

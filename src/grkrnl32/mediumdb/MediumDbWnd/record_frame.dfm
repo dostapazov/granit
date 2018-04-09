@@ -111,6 +111,10 @@ object RecordFrame: TRecordFrame
       TabOrder = 0
       object TabSheet1: TTabSheet
         Caption = #1057#1086#1089#1090#1072#1074' '#1074#1099#1095#1080#1089#1083#1103#1077#1084#1086#1075#1086
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Panel1: TPanel
           Left = 0
           Top = 0
@@ -301,6 +305,10 @@ object RecordFrame: TRecordFrame
       object FormulaSheet: TTabSheet
         Caption = #1060#1086#1088#1084#1091#1083#1072
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Formula: TMemo
           Left = 0
           Top = 0
@@ -320,6 +328,10 @@ object RecordFrame: TRecordFrame
       object TabSheet2: TTabSheet
         Caption = #1050#1072#1082' '#1087#1080#1089#1072#1090#1100' '#1089#1082#1088#1080#1087#1090#1099
         ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Memo1: TMemo
           Left = 0
           Top = 0

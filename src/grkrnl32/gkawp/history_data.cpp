@@ -627,7 +627,7 @@ void __fastcall THistoryForm::actAddSeriesExecute(TObject *Sender)
 {
    //Добавить на график
    TListItem * item = HistView->Selected;
-   bool is_discrete = false;
+
    if(item)
    {
     OTDM_ARCHIVE_REC rec_data;
@@ -637,7 +637,7 @@ void __fastcall THistoryForm::actAddSeriesExecute(TObject *Sender)
 
     if(module->get_record(rec_id,rec))
     {
-      is_discrete =     (rec.is_discrete());
+      bool is_discrete =     (rec.is_discrete());
       TChartSeries  *    fl = chart_frame->get_series(rec_id);
       fl->Title             = item->Caption;
       fl->XValues->DateTime = true;

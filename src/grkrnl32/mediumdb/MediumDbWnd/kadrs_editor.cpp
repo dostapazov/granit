@@ -486,6 +486,7 @@ void __fastcall TKadrsEditor::drop_finish(Tkadr_data * kd,int X,int Y)
 }
 
 
+#pragma warn -8004
 void __fastcall TKadrsEditor::drop_from_tree_view(Tkadr_data * kd,TTreeView * src,int X,int Y)
 {
   TTreeNode * node = src->Selected;
@@ -501,6 +502,7 @@ void __fastcall TKadrsEditor::drop_from_tree_view(Tkadr_data * kd,TTreeView * sr
     drop_finish(kd,X,Y);
   }
 }
+#pragma warn .8004
 
 void __fastcall TKadrsEditor::drop_from_list_view(Tkadr_data * kd,TListView * src,int X,int Y)
 {
@@ -587,7 +589,7 @@ void __fastcall TKadrsEditor::FormDestroy(TObject *Sender)
      }
 }
 //---------------------------------------------------------------------------
-
+#pragma warn -8004
 void __fastcall TKadrsEditor::store_paint_variants(int pcontext)
 {
    int     idx       = 0;
@@ -626,6 +628,8 @@ void __fastcall TKadrsEditor::store_paint_variants(int pcontext)
   }while(pvar);
    mod_iface.call(MDBCM_PAINTVARS_END_UPDATE,idx,0);
 }
+#pragma warn .8004
+
 //---------------------------------------------------------------------------
 void               __fastcall TKadrsEditor::set_paint_variant(UnicodeString name,LPMDB_PAINT_VARIANT pvar,bool update)
 {
@@ -924,6 +928,7 @@ mdb_kadr_entry * __fastcall TKadrsEditor::find_entry(TListItem * item)
   return entry;
 }
 //---------------------------------------------------------------------------
+#pragma warn -8004
 void __fastcall TKadrsEditor::move_entry_number(TListItem * item,bool down)
 {
  DWORD        changes = 0;
@@ -964,6 +969,7 @@ void __fastcall TKadrsEditor::move_entry_number(TListItem * item,bool down)
     }
    }
 }
+#pragma warn .8004
 //---------------------------------------------------------------------------
 void __fastcall TKadrsEditor::EntryMoveUpClick(TObject *Sender)
 {
@@ -1020,7 +1026,7 @@ void __fastcall TKadrsEditor::DeleteBtnClick(TObject *Sender)
 {
   //Удалить кадр
   Tkadr_data * kd = current_kadr;
-  if(kd && MessageBox(Handle,(UnicodeString(L"Удалить кадр ")+kd->owner_node->Text + UnicodeString(L" ?")).c_str()
+  if(kd && MessageBoxW(Handle,(UnicodeString(L"Удалить кадр ")+kd->owner_node->Text + UnicodeString(L" ?")).c_str()
                               ,L"Удаление кадра",MB_YESNO|MB_ICONQUESTION ) == IDYES
     )
   {
@@ -1101,7 +1107,7 @@ void __fastcall TKadrsEditor::FormCloseQuery(TObject *Sender, bool &CanClose)
      Tkadr_data * kd = this->get_kadr(ptr->second);
      if(kd && kd->changes)
      {
-       if(IDYES == MessageBox(Handle,L"Есть несохранненные изменения в кадрах. Сохранить все?",L"Запрос на сохранение", MB_YESNO|MB_ICONQUESTION))
+       if(IDYES == MessageBoxW(Handle,L"Есть несохранненные изменения в кадрах. Сохранить все?",L"Запрос на сохранение", MB_YESNO|MB_ICONQUESTION))
           save_all_kadrs();
        return;
      }

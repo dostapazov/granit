@@ -52,7 +52,7 @@
         <Multithreaded>true</Multithreaded>
         <ProjectType>CppDynamicLibrary</ProjectType>
         <ILINK_LibraryPath>..\;..\..\GKLIB\VCL\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+        <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <DynamicRTL>true</DynamicRTL>

@@ -151,8 +151,7 @@ int         __fastcall    TGkOpcModem::convert_rx_data(LPWORD fa,LPBYTE in,int i
 
   DWORD       __fastcall    TGkOpcModem::start(DWORD reason,LPARAM start_param)
   {
-   DWORD ret = GKH_RET_ERROR;
-   ret = TModemBase::start(reason,start_param);
+   DWORD ret = TModemBase::start(reason,start_param);
    if(ret == GKH_RET_SUCCESS)
        do_recv_pu_data(true);
    return ret;
@@ -160,10 +159,10 @@ int         __fastcall    TGkOpcModem::convert_rx_data(LPWORD fa,LPBYTE in,int i
 
   DWORD       __fastcall    TGkOpcModem::stop (DWORD reason)
   {
-   DWORD ret = GKH_RET_ERROR;
+
    pu_diag = OTD_DIAG_MASK;
    do_recv_pu_data(false);
-   ret = TModemBase::stop(reason);
+   DWORD ret = TModemBase::stop(reason);
        do_recv_pu_data(false);
    return ret;
   }

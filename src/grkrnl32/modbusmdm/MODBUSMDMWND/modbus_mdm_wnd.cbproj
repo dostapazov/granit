@@ -54,7 +54,7 @@
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <SanitizedProjectName>modbus_mdm_wnd</SanitizedProjectName>
         <Multithreaded>true</Multithreaded>
-        <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+        <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <UsePackages>true</UsePackages>
         <IntermediateOutputDir>$(GRKRNL_TEMP)\$(Platform)\$(CONFIG)\modbusmdm\wnd</IntermediateOutputDir>

@@ -1,38 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.527,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.625,=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\gktlmdbwnd_main.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.162,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.544,D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\gktlmdbfrm.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.617,=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\gktlmdbfrm.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.070,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.992,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.162,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.783,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.011,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\about_common_frame.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.163,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.992,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.966,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.847,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.959,=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\dblowfrm.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.518,=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\dblowfrm.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.046,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.714,D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\tlmdbwndPCH1.h=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.577,=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\fa_props.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.088,D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\gktlmdbwnd.cbproj=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.585,D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\dblowfrm.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.046,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.518,=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\dblowfrm.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.415,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.527,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.577,=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\fa_props.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.334,D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\fa_props.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.624,D:\ERADS\18.0\lib\win32\release\memmgr.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.885,D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\base_props.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.450,=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\base_props.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.617,=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\gktlmdbfrm.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.544,D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\gktlmdbfrm.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.058,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.713,=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\gktlmdbwnd.rc</Transaction>
     <Transaction>1899.12.30 00:00:00.000.610,=D:\ERADS\lib\win32\release\usebormm.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.415,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.362,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.324,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.362,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.271,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.847,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.966,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.163,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.011,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\about_common_frame.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.625,=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\gktlmdbwnd_main.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.714,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\tlmdbwndPCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.729,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.088,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\GKTLMDB\GKTLMDBWND\gktlmdbwnd.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.043,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.058,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
   </Transactions>
 </BorlandProject>

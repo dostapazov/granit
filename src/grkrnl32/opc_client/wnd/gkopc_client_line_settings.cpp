@@ -131,6 +131,7 @@ void     __fastcall  TOpcLineSetingsFrame::clear_controls()
  TrLuaScript->Text = str;
 }
 
+#pragma warn   -8004
 void     __fastcall  TOpcLineSetingsFrame::setup_controls(LPGKOPC_LINE_CONFIG lc)
 {
   if(lc->line_num  == (DWORD)-1 )
@@ -168,6 +169,7 @@ void     __fastcall  TOpcLineSetingsFrame::setup_controls(LPGKOPC_LINE_CONFIG lc
   cbLineOptReplaceTime->Checked = (lc->options & GKOPC_LINE_OPT_REPLACE_TIME);
   setup_scripts();
 }
+#pragma warn   .8004
 
 
 
@@ -183,7 +185,7 @@ void     __fastcall  TOpcLineSetingsFrame::current_object_changed(TObject * ,boo
 }
 
 
-
+#pragma warn -8004
 void __fastcall TOpcLineSetingsFrame::server_prog_idDropDown(TObject *Sender)
 {
     server_prog_id->Items->Clear();
@@ -239,6 +241,7 @@ void __fastcall TOpcLineSetingsFrame::server_prog_idDropDown(TObject *Sender)
      MessageBoxW(Handle,err.ErrorMessage(),_T("OPC Error"),MB_OK);
    }
 }
+#pragma warn .8004
 //---------------------------------------------------------------------------
 
 void __fastcall TOpcLineSetingsFrame::server_type_listChange(TObject *Sender)
@@ -389,7 +392,8 @@ void     __fastcall  TOpcLineSetingsFrame::setup_scripts ()
    if(line_num != (DWORD)-1)
      {
       LPSCRIPT_TEXT st = alloc_script_text(NULL,8192);
-      LRESULT ret = GKH_RET_SUCCESS;
+
+      LRESULT ret;
       do{
           if(st->text_len < 0)
              st = alloc_script_text(st,-st->text_len + 256);

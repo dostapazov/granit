@@ -273,6 +273,10 @@ object HistoryForm: THistoryForm
       Caption = #1048#1089#1090#1086#1088#1080#1103
       ImageIndex = 1
       OnResize = TabSheet1Resize
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object HistView: TListView
         Left = 0
         Top = 0
@@ -343,6 +347,10 @@ object HistoryForm: THistoryForm
     object tabStatistic: TTabSheet
       Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object StatisticView: TListView
         Left = 0
         Top = 0
@@ -388,6 +396,10 @@ object HistoryForm: THistoryForm
     object tabGraphics: TTabSheet
       Caption = #1043#1088#1072#1092#1080#1082
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       inline chart_frame: TTChartFrame
         Left = 0
         Top = 0
@@ -415,7 +427,7 @@ object HistoryForm: THistoryForm
     Left = 68
     Top = 85
     Bitmap = {
-      494C010107000900040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107001000080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000FEFEFE00FCFCFD00D6E6F000C9ECFD00F8FCFF0000000000000000000000
