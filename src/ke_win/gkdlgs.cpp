@@ -59,9 +59,9 @@ namespace KeWin
       {
       SetMessageExtraInfo(LPARAM(this));
 #ifdef __BORLANDC__
-       hWnd = CreateDialogParam((::HINSTANCE)hInstance,ResId,(::HWND)Parent,(DLGPROC)DlgProc,LPARAM(this));
+       hWnd = CreateDialogParamA((::HINSTANCE)hInstance,ResId,(::HWND)Parent,(DLGPROC)DlgProc,LPARAM(this));
 #else
-       hWnd = CreateDialogParam((::HINSTANCE)hInstance,ResId,(::HWND)Parent,(DLGPROC)DlgProc,LPARAM(this));
+       hWnd = CreateDialogParamA((::HINSTANCE)hInstance,ResId,(::HWND)Parent,(DLGPROC)DlgProc,LPARAM(this));
 #endif
       SetMessageExtraInfo(0);
 
@@ -79,7 +79,7 @@ namespace KeWin
 
       SetMessageExtraInfo(LPARAM(this));
       ModalDialog = true;
-      EndMessageLoopCode = DialogBoxParam((::HINSTANCE)this->hInstance,ResId,(::HWND)Parent,(DLGPROC)DlgProc,LPARAM(this));
+      EndMessageLoopCode = DialogBoxParamA((::HINSTANCE)this->hInstance,ResId,(::HWND)Parent,(DLGPROC)DlgProc,LPARAM(this));
       ModalDialog = false;
       hWnd = 0;
       return EndMessageLoopCode;

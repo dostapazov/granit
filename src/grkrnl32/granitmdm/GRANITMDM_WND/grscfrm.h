@@ -164,8 +164,8 @@ public   :	// User declarations
         __property DWORD ch_mask  = { read=Fch_mask, write=Setch_mask };
         __property bool create_mode  = { read=Fcreate_mode, write=Setcreate_mode };
 void    __fastcall sort_nodes(TTreeNode * node);
-void     __fastcall begin_call_gkhandle(char * cmd_name);
-void     __fastcall done_call_gkhandle(LRESULT ret,char * str = NULL);
+void     __fastcall begin_call_gkhandle(const TCHAR * cmd_name);
+void     __fastcall done_call_gkhandle(LRESULT ret,const TCHAR * str = NULL);
         void __fastcall OnSysCommand(TMessage & msg);
         void __fastcall OnMsgShowMonitor(TMessage & msg);
 

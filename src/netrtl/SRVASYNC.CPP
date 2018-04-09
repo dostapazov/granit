@@ -27,7 +27,7 @@
    if(KeRTL::TSysInfo::IsWinNT()==false)
    {
     //Не под NT Будем использовать окно
-	wnd = CreateWindow("STATIC","Asynchronous socket  helper Window",0,0,0,0,0,HWND_MESSAGE,0,0,0);
+	wnd = CreateWindow(L"STATIC",L"Asynchronous socket  helper Window",0,0,0,0,0,HWND_MESSAGE,0,0,0);
 	#ifdef _WIN64
 	PrevProc = (WNDPROC)SetWindowLongPtr(wnd,GWLP_WNDPROC,LONG(AsyncWndProc));
 	SetWindowLongPtr(wnd,GWLP_USERDATA,LONG(this));

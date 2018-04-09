@@ -16,7 +16,7 @@ bool __fastcall TProcess::Create(const char * exename, const char * cmd_line ,
     if(stpi) memcpy(&startup_info,stpi,sizeof(startup_info));
     startup_info.cb = sizeof(startup_info);
     PROCESS_INFORMATION pi;
-    bool ret = CreateProcess((char*)exename,(char*)cmd_line,proc_sa,thread_sa,
+    bool ret = CreateProcessA((char*)exename,(char*)cmd_line,proc_sa,thread_sa,
                              inherit? TRUE:FALSE,c_flags,
                              (char*)environment,(char*)curdir,&startup_info,&pi)
                              ? true:false;

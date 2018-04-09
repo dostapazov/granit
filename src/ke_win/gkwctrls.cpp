@@ -9,22 +9,22 @@ namespace KeWin
 
 
  void   __fastcall TWinControl::Create
-    ( HWND Parent,const char * Caption,RECT & r,int Id  ,
-      HMENU Menu ,DWORD Style,DWORD ExStyle,const char * ClassName)
+    ( HWND Parent,const wchar_t * Caption,RECT & r,int Id  ,
+      HMENU Menu ,DWORD Style,DWORD ExStyle,const wchar_t * ClassName)
  {
 
-    WNDCLASSEX wc;
+    WNDCLASSEXW wc;
     ZeroMemory(&wc,sizeof(wc));
     wc.cbSize = sizeof(wc);
-    GetClassInfoEx(0,ClassName ? ClassName:GetClassName(),&wc);
+    GetClassInfoExW(0,ClassName ? ClassName : GetClassName(),&wc);
     SuperclassProc = wc.lpfnWndProc;
-    char c_name [MAX_PATH];
-    lstrcpyA(c_name,"KEWIN_");
-    lstrcatA(c_name,ClassName ? ClassName:GetClassName());
+    wchar_t c_name [MAX_PATH];
+    lstrcpyW(c_name,L"KEWIN_");
+    lstrcatW(c_name,ClassName ? ClassName:GetClassName());
     wc.lpfnWndProc = (WNDPROC)DefaultProc;
     wc.hInstance = 0;
     wc.lpszClassName = c_name;
-    RegisterClassEx(&wc);
+    RegisterClassExW(&wc);
     TWindow::Create(Parent,Caption,r,Id,Menu,Style,ExStyle,c_name);
  }
 
@@ -46,7 +46,7 @@ namespace KeWin
   }
 
 
-  bool  __fastcall TWinControl::OnWMCreate(LPCREATESTRUCT cs)
+  bool  __fastcall TWinControl::OnWMCreate(LPCREATESTRUCTW cs)
   {
    HFONT Font;
    HWND p = GetParent();

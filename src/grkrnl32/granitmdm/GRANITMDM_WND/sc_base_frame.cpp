@@ -63,14 +63,14 @@ void  __fastcall TSCBaseFrame::set_active (DWORD _addr)
     on_change(this);
 }
 
-void  __fastcall TSCBaseFrame::begin_call_gkhandle(char * cmd_text)
+void  __fastcall TSCBaseFrame::begin_call_gkhandle(TCHAR * cmd_text)
 {
  TSCGranFrm * frm = dynamic_cast<TSCGranFrm*>(Owner);
  if(frm)
     frm->begin_call_gkhandle(cmd_text);
 }
 
-void  __fastcall TSCBaseFrame::done_call_gkhandle (DWORD ret,char * text )
+void  __fastcall TSCBaseFrame::done_call_gkhandle (DWORD ret,TCHAR * text )
 {
  TSCGranFrm * frm = dynamic_cast<TSCGranFrm*>(Owner);
  if(frm)

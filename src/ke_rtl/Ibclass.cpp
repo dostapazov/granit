@@ -290,7 +290,7 @@ int    __fastcall TIBStatus::get_error_text(char * text,int bsz,int offs,int cnt
     ISC_STATUS * ps = (ISC_STATUS*)status_vector+(offs<<1);
     while(offset<bsz && cnt-- && cl_lib.isc_interprete(text+offset,&ps))
     {
-      offset+=lstrlen(text+offset);
+      offset+=lstrlenA(text+offset);
       if(offset)
       {
        strcat (text,"\n\r");
@@ -1823,12 +1823,12 @@ string __fastcall TIBField::aliase()
         case SQL_TYPE_DATE:
                             {
                               SYSTEMTIME st = get_date_time();
-                              int dtl = GetDateFormat(0,0,&st,"dd'.'MM'.'yyyy",cvt,sizeof(cvt));
+                              int dtl = GetDateFormatA(0,0,&st,"dd'.'MM'.'yyyy",cvt,sizeof(cvt));
                               dtl--;
                               *(cvt+dtl) = ' ';
                               dtl++;
-                              dtl+=GetTimeFormat(LOCALE_USER_DEFAULT,0,&st,"HH':'mm':'ss",cvt+dtl,sizeof(cvt)-dtl);
-                              wsprintf(cvt+dtl-1,".%03d",(DWORD)st.wMilliseconds);
+                              dtl+=GetTimeFormatA(LOCALE_USER_DEFAULT,0,&st,"HH':'mm':'ss",cvt+dtl,sizeof(cvt)-dtl);
+                              wsprintfA(cvt+dtl-1,".%03d",(DWORD)st.wMilliseconds);
                               ret = cvt;
                             }
                             break;
@@ -1906,12 +1906,12 @@ string __fastcall TIBField::aliase()
         case SQL_TYPE_DATE:
                             {
                               SYSTEMTIME st = get_date_time();
-                              int dtl = GetDateFormat(0,0,&st,"dd'.'MM'.'yyyy",cvt,sizeof(cvt));
+                              int dtl = GetDateFormatA(0,0,&st,"dd'.'MM'.'yyyy",cvt,sizeof(cvt));
                               dtl--;
                               *(cvt+dtl) = ' ';
                               dtl++;
-                              dtl+=GetTimeFormat(LOCALE_USER_DEFAULT,0,&st,"HH':'mm':'ss",cvt+dtl,sizeof(cvt)-dtl);
-                              wsprintf(cvt+dtl-1,".%03d",(DWORD)st.wMilliseconds);
+                              dtl+=GetTimeFormatA(LOCALE_USER_DEFAULT,0,&st,"HH':'mm':'ss",cvt+dtl,sizeof(cvt)-dtl);
+                              wsprintfA(cvt+dtl-1,".%03d",(DWORD)st.wMilliseconds);
                               ret = strlen(cvt);
                               beg_ptr = cvt;
                             }
@@ -2216,15 +2216,15 @@ string __fastcall TIBField::aliase()
       int dtl = 0;
       if(st.wYear && st.wMonth && st.wDay)
       {
-      dtl = GetDateFormat(0,0,&st,"yyyy'-'MM'-'dd",date_time,sizeof(date_time));
+      dtl = GetDateFormatA(0,0,&st,"yyyy'-'MM'-'dd",date_time,sizeof(date_time));
       dtl--;
       *(date_time+dtl) = ' ';
       dtl++;
       }
 
-      dtl+=GetTimeFormat(LOCALE_USER_DEFAULT,0,&st,"HH':'mm':'ss",date_time+dtl,sizeof(date_time)-dtl);
+      dtl+=GetTimeFormatA(LOCALE_USER_DEFAULT,0,&st,"HH':'mm':'ss",date_time+dtl,sizeof(date_time)-dtl);
       dtl--;
-      wsprintf(date_time+dtl,".%03d",(DWORD)st.wMilliseconds);
+      wsprintfA(date_time+dtl,".%03d",(DWORD)st.wMilliseconds);
       *this = date_time;
      }
      break;

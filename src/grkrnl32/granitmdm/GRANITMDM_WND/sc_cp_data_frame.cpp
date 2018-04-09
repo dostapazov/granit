@@ -48,7 +48,7 @@ void  __fastcall TSCCpDataFrame::setup_data     (otd_proto & op)
  DWORD hi = op.personal_diag->numbers.hiN;
  while(lo<=hi )
  {
-  AnsiString s;
+  UnicodeString s;
   otd_get_value(op.personal_diag,lo,addr_pd,sizeof(addr_pd));
   TListItem * item = ListView1->FindData(0,(LPVOID)addr_pd[0],true,false);
   if(!item)
@@ -57,12 +57,12 @@ void  __fastcall TSCCpDataFrame::setup_data     (otd_proto & op)
    item->SubItems->Add(s);
    item->Data  = (LPVOID)addr_pd[0];
    sotd_addr sa(addr_pd[0]);
-   s.printf("%s ¹ %02d",load_rcstring(ModuleInstance,STR_FA_TS+(DWORD)sa.fa),sa.sb);
+   s.printf(L"%s ¹ %02d",load_rcstring(ModuleInstance,STR_FA_TS+(DWORD)sa.fa),sa.sb);
    item->Caption = s;
    if(item->Index == 0) item->Selected = true;
 
   }
-  s.printf("%08X",addr_pd[1]);
+  s.printf(L"%08X",addr_pd[1]);
   item->SubItems->Strings[0] =s ;
   if(item->Selected) ListView1SelectItem(this,item,true);
   lo++;

@@ -108,8 +108,8 @@ typedef LPVOID  HFONT;*/
     virtual bool    __fastcall TranslateAccelerator(MSG & msg);
 	
 
-    virtual const char * __fastcall GetClassName();
-    virtual void         __fastcall GetWndClass(WNDCLASSEXA & );
+    virtual const wchar_t* __fastcall GetClassName();
+    virtual void         __fastcall GetWndClass(WNDCLASSEXW & );
     virtual DWORD        __fastcall GetStyle(bool Ex = false);
 
     virtual WNDPROC      __fastcall GetDefWndProc();
@@ -117,7 +117,7 @@ typedef LPVOID  HFONT;*/
     virtual int          __fastcall Paint(HDC dc,RECT & r,bool);
             int          __fastcall on_paint(HDC dc,RECT & r,bool );
             void         __fastcall on_size(int how,int cx,int cy);
-    virtual bool         __fastcall OnWMCreate (LPCREATESTRUCTA);
+    virtual bool         __fastcall OnWMCreate (LPCREATESTRUCTW);
     virtual void         __fastcall OnWMDestroy();
     virtual bool         __fastcall OnWMStyleChange(bool ExStyle,bool change,LPSTYLESTRUCT);
     virtual int          __fastcall OnWMSetCursor(int TestCode,int MsgId);
@@ -131,7 +131,7 @@ typedef LPVOID  HFONT;*/
     virtual bool         __fastcall OnWMInitMenu(HMENU menu);
     virtual int          __fastcall OnWMNCCalcSize(LPNCCALCSIZE_PARAMS);
     virtual int          __fastcall OnWMCalcSize  (LPRECT  r);
-    virtual void         __fastcall OnWMGetMinmaxInfo(LPMINMAXINFO mmi); 
+    virtual void         __fastcall OnWMGetMinmaxInfo(LPMINMAXINFO mmi);
     virtual bool         __fastcall OnDrawItem(int id,LPDRAWITEMSTRUCT dis);
     virtual void         __fastcall OnWMShow(bool show,int Status);
     virtual bool         __fastcall OnMeasureItem(int id,LPMEASUREITEMSTRUCT mis);
@@ -149,8 +149,8 @@ typedef LPVOID  HFONT;*/
                                TWindow(HINSTANCE = GetModuleHandle(0));
     virtual                   ~TWindow();
     virtual void   __fastcall Create
-    ( HWND Parent,const char * Caption,RECT & r,int Id = -1,
-      HMENU Menu = 0,DWORD Style=0,DWORD ExStyle=0,const char * ClassName=0);
+    ( HWND Parent,const wchar_t * Caption,RECT & r,int Id = -1,
+      HMENU Menu = 0,DWORD Style=0,DWORD ExStyle=0,const wchar_t * ClassName=0);
     virtual bool   __fastcall Destroy();
     virtual int    __fastcall MessageLoop();
     virtual int    __fastcall ShowModal();
@@ -175,8 +175,8 @@ typedef LPVOID  HFONT;*/
             HICON  __fastcall SetIcon(HICON icon,bool Small);
             HFONT  __fastcall GetFont();
             HFONT  __fastcall SetFont(HFONT font,bool Redraw);
-            int    __fastcall GetCaption(char * buffer,int ccMax);
-            bool   __fastcall SetCaption(char * buffer);
+            int    __fastcall GetCaption(wchar_t * buffer,int ccMax);
+            bool   __fastcall SetCaption(wchar_t * buffer);
             int    __fastcall GetID    ();
             HWND   __fastcall GetParent();
             void   __fastcall EnableDelete(bool);

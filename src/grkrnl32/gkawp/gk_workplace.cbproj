@@ -82,7 +82,6 @@
         <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
         <Debugger_RunParams>-instance=viewer</Debugger_RunParams>
         <UsePackages>false</UsePackages>
-        <_TCHARMapping>char</_TCHARMapping>
         <DynamicRTL>false</DynamicRTL>
         <ILINK_MapFileType>None</ILINK_MapFileType>
     </PropertyGroup>
@@ -318,9 +317,9 @@
         <FormResources Include="..\GKLIB\VCL\gkmodule_form.dfm"/>
         <FormResources Include="..\GKLIB\VCL\gkmod_frame.dfm"/>
         <FormResources Include="..\GKLIB\VCL\tlm_painter_form.dfm"/>
-        <FormResources Include="about_form.dfm"/>
         <FormResources Include="arch_list.dfm"/>
         <FormResources Include="awp_main_form.dfm"/>
+        <FormResources Include="about_form.dfm"/>
         <FormResources Include="comtrade_param.dfm"/>
         <FormResources Include="awp_mod_param.dfm"/>
         <BuildConfiguration Include="Release">
@@ -379,8 +378,19 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="..\..\..\GRKRNL32\gk_workplace.gkm" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>gk_workplace</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgstl.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32250.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -397,17 +407,6 @@
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64250mt.dll" Class="DependencyModule">
                     <Platform Name="Win64">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\GRKRNL32\gk_workplace.gkm" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>gk_workplace</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32250.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

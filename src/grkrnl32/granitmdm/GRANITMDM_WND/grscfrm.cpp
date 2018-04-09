@@ -510,7 +510,7 @@ void __fastcall TSCGranFrm::SelectFrames(otd_addr & addr)
 
 void __fastcall TSCGranFrm::SCTreeChange(TObject *Sender, TTreeNode *Node)
 {
- begin_call_gkhandle("");
+ begin_call_gkhandle(_T(""));
  sotd_addr addr((DWORD)Node->Data);
  if(sc_monitor)
     sc_monitor->change_filter(addr.addr);
@@ -555,14 +555,14 @@ void __fastcall TSCGranFrm::SCTreeChanging(TObject *Sender,
 
 void __fastcall TSCGranFrm::StartBtnClick(TObject *Sender)
 {
-  begin_call_gkhandle("Запуск ситемной централи");
+  begin_call_gkhandle(_T("Запуск ситемной централи"));
   this->done_call_gkhandle(mod_iface.start(MODULE_START_REQUEST,0));;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TSCGranFrm::StopBtnClick(TObject *Sender)
 {
-  begin_call_gkhandle("Останов ситемной централи");
+  begin_call_gkhandle(_T("Останов ситемной централи"));
   done_call_gkhandle ( mod_iface.stop(MODULE_STOP_REQUEST));
   
 }
@@ -670,7 +670,7 @@ void __fastcall TSCGranFrm::DelBtnClick(TObject *Sender)
     }
     else
     {
-     if(MessageBox(Handle,"Действительно удалить?",NULL,MB_ICONQUESTION|MB_YESNO)==ID_YES)
+     if(MessageBox(Handle,_T("Действительно удалить?"),NULL,MB_ICONQUESTION|MB_YESNO)==ID_YES)
      {
       LRESULT ret = mod_iface.call(SCCM_REMOVE,(LPARAM)node->Data,0);
       if(ret == GKH_RET_SUCCESS)
@@ -686,7 +686,7 @@ void __fastcall TSCGranFrm::CreateBtnClick(TObject *Sender)
 {
  //Создание модуля
   create_mode = true;
-  begin_call_gkhandle(SCTree->Selected ? AnsiString(SCTree->Selected->Text).c_str() :(char*) "Создание объекта...");
+  begin_call_gkhandle(SCTree->Selected ? SCTree->Selected->Text.c_str() : _T("Создание объекта..."));
 }
 //---------------------------------------------------------------------------
 
@@ -779,7 +779,7 @@ void __fastcall TSCGranFrm::ApplyBtnClick(TObject *Sender)
 {
   AnsiString err_str;
   if(!create_mode)
-    begin_call_gkhandle("Применение изменений");
+    begin_call_gkhandle(_T("Применение изменений"));
  if(prop_frame->apply_changes())
  {
   done_call_gkhandle(0);
@@ -810,7 +810,7 @@ void __fastcall TSCGranFrm::UndoBtnClick(TObject *Sender)
 
  if(!create_mode)
    {
-    begin_call_gkhandle("Отмена изменений");
+    begin_call_gkhandle(_T("Отмена изменений"));
     done_call_gkhandle(prop_frame->undo_changes() ? GKH_RET_SUCCESS:GKH_RET_ERROR);
    } 
     else
@@ -850,14 +850,14 @@ void __fastcall TSCGranFrm::miAboutClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void     __fastcall TSCGranFrm::begin_call_gkhandle(char * cmd_name)
+void     __fastcall TSCGranFrm::begin_call_gkhandle(const TCHAR * cmd_name)
 {
 
  StatusBar1->Panels->Items[0]->Text =  cmd_name;
  StatusBar1->Panels->Items[1]->Text =  AnsiString();
 }
 
-void     __fastcall TSCGranFrm::done_call_gkhandle(LRESULT ret,char * str)
+void     __fastcall TSCGranFrm::done_call_gkhandle(LRESULT ret,const TCHAR * str)
 {
  DWORD last_error = ret ? GetLastError():0;
  if(str)

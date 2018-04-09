@@ -819,7 +819,7 @@ log(pow(10,2),10)
                    clear_ops();
 				   ErrorCode = 0;//Очистьть код ошибки;
 
-                    CharLowerBuff((char*)str.c_str(),str.size());
+                    CharLowerBuffA((char*)str.c_str(),str.size());
                                 LDOUBLE ret ;
                                 do{
                                    ret = DoCalc(i,0,var_count,var_array);

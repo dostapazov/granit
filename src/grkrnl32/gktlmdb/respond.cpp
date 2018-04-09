@@ -35,18 +35,18 @@
   if(src && src->get_module())
   {
    BOOL is_call      =  (addr.fa&OTD_FA_CALL) ? TRUE:FALSE;
-   BYTE buffer[2048+sizeof(MPROTO_HEADER)];
+   TCHAR buffer[2048+sizeof(MPROTO_HEADER)];
    DWORD tm = GetTickCount();
    modem_addr ma(dest.addr);
    DWORD mon_len =
-   wsprintf(buffer,"Обработка %s от модема %03d.%03d адрес %03d.%03d.%03d.%03d parts %04X",
+   wsprintf(buffer,_T("Обработка %s от модема %03d.%03d адрес %03d.%03d.%03d.%03d parts %04X"),
             is_call ? "вызова" : "подписки",
             (DWORD)ma.modem,(DWORD)ma.line,
             (DWORD)addr.pu,(DWORD)addr.cp,(DWORD)addr.fa&OTD_FA_ALL,(DWORD)addr.sb,
             parts
             )+1;
 
-   src->get_module()->notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_RESPOND,buffer,mon_len);
+   src->get_module()->notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_RESPOND,buffer,(mon_len+1)*sizeof(TCHAR));
 
    DWORD s_count = 0;
    LPMPROTO_HEADER mph =  (LPMPROTO_HEADER)buffer;
@@ -95,8 +95,8 @@
          #endif
               }
    tm = GetTickCount()-tm;
-   mon_len = wsprintf(buffer,"Отправлено кадров  %03d  Время обработки %03d ms Id - нити %X",s_count,tm,Id)+1;
-   src->get_module()->notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_RESPOND,buffer,mon_len);
+   mon_len = wsprintf(buffer,_T("Отправлено кадров  %03d  Время обработки %03d ms Id - нити %X"),s_count,tm,Id)+1;
+   src->get_module()->notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_RESPOND,buffer,(1+mon_len)*sizeof(TCHAR));
 
   }
  }

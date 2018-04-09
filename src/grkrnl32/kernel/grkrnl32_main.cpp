@@ -169,13 +169,12 @@ int __fastcall run_kernel(HINSTANCE,HINSTANCE, TCHAR * cmd ,int cmd_show,bool se
  TCHAR * config_module = NULL;
  bool  shutdown      = safe_strstr(cmd,commands[APP_CMDLINE_SHUTDOWN]) || safe_strstr(cmd,commands[APP_CMDLINE_SVC_STOP]) ? true:false;
  bool  splash        = false;
+ TCHAR  instance[MAX_PATH];
  #ifdef UNICODE
- get_instance(svc_instance,KERTL_ARRAY_COUNT(svc_instance),cmd);
+ get_instance(instance,KERTL_ARRAY_COUNT(svc_instance),cmd);
  #else
- char  instance[MAX_PATH];
  get_instance(instance,KERTL_ARRAY_COUNT(instance),cmd);
  Ansi2Unicode(svc_instance,KERTL_ARRAY_COUNT(svc_instance),instance);
-
  #endif
 
  if((!service || config) && !restart && !safe_strstr(cmd,commands[APP_CMDLINE_NOSPLASH]) )
@@ -237,7 +236,7 @@ HWND   __fastcall find_app_window (char * instance)
 }
 
 #pragma warn -8057
-int __fastcall run_kernel(bool restart,bool service,bool config,char * cfg_command,char * instance,bool shutdown,bool splash)
+int __fastcall run_kernel(bool restart,bool service,bool config,TCHAR * cfg_command,TCHAR * instance,bool shutdown,bool splash)
 {
  LRESULT ret_code(-1);
  DWORD LastError ;
@@ -392,7 +391,7 @@ int __fastcall run_as_app(::HINSTANCE hi1,::HINSTANCE hi2, TCHAR * cmd_line ,int
 
 
 //если в командной строке есть ключ - service то надо запускать как сервис
-int WINAPI WinMain(::HINSTANCE hi1,::HINSTANCE hi2, TCHAR * cmd_line ,int cmd_show)
+int WINAPI wWinMain(::HINSTANCE hi1,::HINSTANCE hi2, TCHAR * cmd_line ,int cmd_show)
 {
   #ifndef _DEBUG
   /*if(IsDebuggerPresent())

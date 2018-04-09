@@ -2,12 +2,12 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>1899.12.30 00:00:00.000.205,D:\USER\GRANIT\LIB\gklib.lib=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.716,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.938,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.203,D:\USER\GRANIT\LIB\GKHANDLE.LIB=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.208,D:\USER\GRANIT\LIB\otdhlpr.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.822,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.206,D:\USER\GRANIT\LIB\KE_RTLS.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.920,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.938,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.716,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
   </Transactions>
 </BorlandProject>

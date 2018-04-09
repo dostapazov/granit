@@ -45,7 +45,7 @@ inline modem_data  __fastcall get_modem_data(TTreeNode * node)
  return md;
 }
 
-typedef KeWin::TTextViewer<char> TModemmerMonitor;
+typedef KeWin::TTextViewer<wchar_t> TModemmerMonitor;
 //typedef KeWin::TTextViewer<wchar_t> TModemmerMonitor;
 
 class TModemmerFrm : public TGKModuleForm

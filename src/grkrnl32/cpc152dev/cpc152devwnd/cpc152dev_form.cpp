@@ -286,7 +286,7 @@ void __fastcall TCpc152DevFrm::tbDeleteClick(TObject *Sender)
 {
   TTreeNode * node = Cpc152Tree->Selected;
   if(node && node != root_node &&
-     IDYES == MessageBox(Handle,AnsiString(AnsiString("Удалить ") +node->Text + AnsiString(" ?" )).c_str(),"Запрос на удаление",MB_YESNO|MB_DEFBUTTON2)
+     IDYES == MessageBox(Handle,UnicodeString(UnicodeString(L"Удалить ") +node->Text + UnicodeString(L" ?" )).c_str(),L"Запрос на удаление",MB_YESNO|MB_DEFBUTTON2)
      )
   {
    current_frame->delete_current();

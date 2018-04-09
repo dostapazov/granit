@@ -3,7 +3,7 @@ inherited ModemmerFrm: TModemmerFrm
   Top = 221
   Caption = ''
   ClientHeight = 456
-  ClientWidth = 625
+  ClientWidth = 628
   Constraints.MinHeight = 472
   Constraints.MinWidth = 636
   Menu = MainMenu1
@@ -13,8 +13,8 @@ inherited ModemmerFrm: TModemmerFrm
   OnHide = FormHide
   OnResize = FormResize
   OnShow = FormShow
-  ExplicitWidth = 641
-  ExplicitHeight = 514
+  ExplicitWidth = 636
+  ExplicitHeight = 502
   PixelsPerInch = 96
   TextHeight = 13
   object Splitter1: TSplitter
@@ -52,7 +52,7 @@ inherited ModemmerFrm: TModemmerFrm
   object PageControl1: TPageControl
     Left = 188
     Top = 29
-    Width = 437
+    Width = 440
     Height = 406
     ActivePage = TabSheet1
     Align = alClient
@@ -73,12 +73,12 @@ inherited ModemmerFrm: TModemmerFrm
       ExplicitWidth = 444
       ExplicitHeight = 336
       DesignSize = (
-        429
+        432
         378)
       object ModemBox: TGroupBox
         Left = 0
         Top = 0
-        Width = 427
+        Width = 430
         Height = 36
         Anchors = [akLeft, akTop, akRight]
         Caption = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1084#1086#1076#1077#1084#1077
@@ -137,7 +137,7 @@ inherited ModemmerFrm: TModemmerFrm
       object LineBox: TGroupBox
         Left = 0
         Top = 36
-        Width = 428
+        Width = 431
         Height = 341
         Anchors = [akLeft, akTop, akRight, akBottom]
         Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072' '#1083#1080#1085#1080#1080
@@ -725,12 +725,12 @@ inherited ModemmerFrm: TModemmerFrm
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        429
+        432
         378)
       object MonitorBox: TGroupBox
         Left = 1
         Top = 84
-        Width = 427
+        Width = 430
         Height = 293
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 1
@@ -959,7 +959,7 @@ inherited ModemmerFrm: TModemmerFrm
       ExplicitWidth = 0
       ExplicitHeight = 0
       DesignSize = (
-        429
+        432
         378)
       object RedirectList: TListView
         Left = 0
@@ -1227,7 +1227,7 @@ inherited ModemmerFrm: TModemmerFrm
       object DfaTree: TTreeView
         Left = 0
         Top = 0
-        Width = 429
+        Width = 432
         Height = 378
         Align = alClient
         Indent = 19
@@ -1239,6 +1239,8 @@ inherited ModemmerFrm: TModemmerFrm
     object pgAbout: TTabSheet
       Caption = #1054' '#1084#1086#1076#1091#1083#1077
       ImageIndex = 3
+      ExplicitWidth = 116
+      ExplicitHeight = 135
       object Label31: TLabel
         Left = 26
         Top = 104
@@ -1252,16 +1254,16 @@ inherited ModemmerFrm: TModemmerFrm
       inline AboutCommonFrame1: TAboutCommonFrame
         Left = 0
         Top = 0
-        Width = 429
+        Width = 432
         Height = 94
         Align = alTop
         TabOrder = 0
-        ExplicitWidth = 429
+        ExplicitWidth = 116
         ExplicitHeight = 94
         inherited Memo2: TMemo
-          Width = 429
+          Width = 432
           Height = 94
-          ExplicitWidth = 429
+          ExplicitWidth = 116
           ExplicitHeight = 94
         end
       end
@@ -1270,7 +1272,7 @@ inherited ModemmerFrm: TModemmerFrm
   object StatusBar1: TStatusBar
     Left = 0
     Top = 435
-    Width = 625
+    Width = 628
     Height = 21
     Panels = <
       item
@@ -1286,7 +1288,7 @@ inherited ModemmerFrm: TModemmerFrm
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 625
+    Width = 628
     Height = 29
     ButtonHeight = 24
     ButtonWidth = 27
@@ -1463,7 +1465,7 @@ inherited ModemmerFrm: TModemmerFrm
     Left = 112
     Top = 367
     Bitmap = {
-      494C010110001500040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010110001800080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000005000000001002000000000000050
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

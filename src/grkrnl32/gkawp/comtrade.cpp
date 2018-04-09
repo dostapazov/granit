@@ -104,7 +104,7 @@ void __fastcall  Tcomtrade::get_time_string(int64_t timeval,string & time_str)
  char text[MAX_PATH];
  //timeval *= 10000;// В 100 наносекудный формат
  FileTimeToSystemTime((LPFILETIME)&timeval,&st);
- int len = GetDateFormat(LOCALE_SYSTEM_DEFAULT,0,&st,"MM'/'dd'/'yyyy",text,sizeof(text));
+ int len = GetDateFormatA(LOCALE_SYSTEM_DEFAULT,0,&st,"MM'/'dd'/'yyyy",text,sizeof(text));
  if(len)
  text[len-1]=',';
  else
@@ -113,7 +113,7 @@ void __fastcall  Tcomtrade::get_time_string(int64_t timeval,string & time_str)
   KeRTL::GetErrorMessage(GetLastError(),text,sizeof(text),(HINSTANCE)NULL);
  }
 
- len+=GetTimeFormat(LOCALE_SYSTEM_DEFAULT,TIME_FORCE24HOURFORMAT,&st,"hh':'mm':'ss",text+len,sizeof(text)-len);
+ len+=GetTimeFormatA(LOCALE_SYSTEM_DEFAULT,TIME_FORCE24HOURFORMAT,&st,"hh':'mm':'ss",text+len,sizeof(text)-len);
  --len;
  snprintf(text+len,sizeof(text)-len,".%hu",st.wMilliseconds);
  time_str = text;

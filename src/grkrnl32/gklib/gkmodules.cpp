@@ -640,7 +640,7 @@ BOOL    __fastcall TGKModule::can_stop (DWORD reason)
 
 DWORD   __fastcall TGKModule::start(DWORD reason,LPARAM p2)
 {
- GKD_TRACE("Module start begin");
+ GKD_TRACE(_T("Module start begin"));
  start_param = p2;
  if(reason == MODULE_START_REQUEST)
  {
@@ -662,7 +662,7 @@ DWORD   __fastcall TGKModule::start(DWORD reason,LPARAM p2)
  unlock();
  }
  set_module_state(MODULE_STATE_RUNNING,true);
- GKD_TRACE("Module start end");
+ GKD_TRACE(_T("Module start end"));
 
  return 0;
 }

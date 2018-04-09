@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.822,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.613,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\about_common_frame.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.753,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.823,D:\ERADS\18.0\lib\win32\release\memmgr.lib=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.699,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.655,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.192,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.066,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.136,=D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodem_frm.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.192,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.963,D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodem_wnd_main_rad.cpp=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.613,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\about_common_frame.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.823,D:\ERADS\18.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.753,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.655,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.699,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.398,D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodemwndPCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.896,=D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodem_wnd_main.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.336,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.963,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp=D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodem_wnd_main_rad.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.136,=D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodem_frm.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.070,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.162,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.971,D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodem_wnd_main_rad.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.527,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.162,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.311,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.399,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.876,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.451,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.227,=D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodem_form_rad.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.398,D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodemwndPCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.053,D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\Project1PCH1.h=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.882,=D:\ERADS\lib\win32\release\usebormm.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.200,D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodem_form_rad.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.434,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodemwnd.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.398,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL_RADS\gkmodule_form.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.287,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL_RADS\gkmodule_form.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.398,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL_RADS\gkmodule_form.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.822,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.434,D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\gkipmodemwnd.cbproj=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.058,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.053,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.313,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.729,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.313,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
   </Transactions>
 </BorlandProject>

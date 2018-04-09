@@ -559,7 +559,7 @@ void    __fastcall TGRNetModule::send_line_ready(grnet_line * line,DWORD cp,bool
   if(idx<GRNET_MAX_TU_CLIENTS)
      {
         grnet_tu_client tc(tu_clients[idx]);
-        lstrcpyn(gtc->name,tc.name,sizeof(gtc->name));
+        safe_strcpyn(gtc->name,tc.name,sizeof(gtc->name));
         gtc->sock_num = tc.sock_num;
       ret = GKH_RET_SUCCESS;
      }

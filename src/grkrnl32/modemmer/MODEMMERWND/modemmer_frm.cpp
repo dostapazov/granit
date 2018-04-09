@@ -24,10 +24,10 @@ __fastcall TModemmerFrm::TModemmerFrm(TComponent* Owner,HWND owner_hwnd,GKHANDLE
   KeWin::TRect r(0,0,MonitorBox->Width,MonitorBox->Height);
   r.Grow(-4,-10);
   r.Move(4,8);
-  monitor->DoCreate(MonitorBox->Handle,r,-1,256,"ModemmerMonitor");
-  HFONT font = CreateFont(-12,0,0,0,FW_NORMAL,0,0,0,
+  monitor->DoCreate(MonitorBox->Handle,r,-1,256,L"ModemmerMonitor");
+  HFONT font = CreateFontW(-12,0,0,0,FW_NORMAL,0,0,0,
                RUSSIAN_CHARSET,OUT_DEFAULT_PRECIS,CLIP_DEFAULT_PRECIS,DEFAULT_QUALITY,DEFAULT_PITCH,
-               "Courier New");
+               L"Courier New");
   font = monitor->SetFont(font,false);
   monitor->SetBkColor(GetSysColor(COLOR_INFOBK));
   DeleteObject(font);
@@ -835,8 +835,8 @@ void __fastcall TModemmerFrm::on_modem_line_state(LPMODEM_LINE_STATE mls)
 void        __fastcall TModemmerFrm::on_modem_change_number(LPMODEM_CHANGE_NUMBER mcn)
 {
  /*Обработка изменения номера модема*/
- AnsiString str;
- str.printf("Изменение номера модема %d -> %d",mcn->old_number,mcn->new_number);
+ UnicodeString str;
+ str.printf(L"Изменение номера модема %d -> %d",mcn->old_number,mcn->new_number);
  this->monitor->add_line(str.c_str());
  TTreeNode * modem_node = find_modem(mcn->old_number,mcn->modem);
  MODEM_ADDR addr;
@@ -844,8 +844,8 @@ void        __fastcall TModemmerFrm::on_modem_change_number(LPMODEM_CHANGE_NUMBE
  addr.sta  =  0;
  addr.modem = mcn->new_number;
  ModemsTree->Items->BeginUpdate();
- char res_str[MAX_PATH];
- LoadString(ModuleInstance,IDS_MODEM,res_str,sizeof(res_str));
+ wchar_t res_str[MAX_PATH];
+ LoadString(ModuleInstance,IDS_MODEM,res_str,KERTL_ARRAY_COUNT(res_str));
  str = res_str;
 
  if(modem_node)
@@ -860,7 +860,7 @@ void        __fastcall TModemmerFrm::on_modem_change_number(LPMODEM_CHANGE_NUMBE
    {
     if(mcn->new_number<MAX_MODEM_COUNT)
       {
-       str.cat_printf(" №% d",mcn->new_number);
+       str.cat_printf(L" №% d",mcn->new_number);
        modem_node->MoveTo(worked_modems,naAddChild);
        ((modem_data*)modem_node->Data)->addr.modem = mcn->new_number;
        Tree_setup_modem_lines(modem_node,addr);
@@ -873,7 +873,7 @@ void        __fastcall TModemmerFrm::on_modem_change_number(LPMODEM_CHANGE_NUMBE
    {
      if(mcn->new_number<MAX_MODEM_COUNT)
         {
-         str.cat_printf(" №% d",mcn->new_number);
+         str.cat_printf(L" №% d",mcn->new_number);
          addr.modem = mcn->new_number;
          ((modem_data*)modem_node->Data)->addr.addr = addr.addr;
          if(modem_node->Selected)

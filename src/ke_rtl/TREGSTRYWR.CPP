@@ -20,7 +20,7 @@ namespace KeRTL
          RegCloseKey(RootKey);
          RootKey = CurrentKey;
         }
-        if(ERROR_SUCCESS!=RegCreateKey(RootKey,SubKey,&CurrentKey))
+        if(ERROR_SUCCESS!=RegCreateKeyA(RootKey,SubKey,&CurrentKey))
            CurrentKey = 0;
            return bool(CurrentKey!=0);
 

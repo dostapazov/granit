@@ -105,7 +105,6 @@ inherited SCGroupDataFrame: TSCGroupDataFrame
     OnSelectItem = ObjectListSelectItem
   end
   inherited GroupBox1: TGroupBox
-    ExplicitWidth = 442
     inherited FullDiagText: TStaticText
       Width = 341
       ExplicitWidth = 341

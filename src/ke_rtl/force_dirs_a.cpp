@@ -52,28 +52,28 @@ bool       __fastcall ClearDir      (char * dir_name,char * wild_card)
 {
    if(dir_name && *dir_name)
    {
-   WIN32_FIND_DATA fd;
+   WIN32_FIND_DATAA fd;
    ZeroMemory(&fd,sizeof(fd));
    char folder[MAX_PATH<<2];
    lstrcpyA(folder,dir_name);
-   int folder_len = lstrlen(folder);
+   int folder_len = lstrlenA(folder);
    if(folder[folder_len-1]!='\\')
       {
        folder[folder_len++]='\\';
        folder[folder_len]=0;
       }
 
-   lstrcat(folder,(wild_card && *wild_card) ? wild_card :"*.*");
-   HANDLE find_handle = FindFirstFile(folder,&fd);
+   lstrcatA(folder,(wild_card && *wild_card) ? wild_card :"*.*");
+   HANDLE find_handle = FindFirstFileA(folder,&fd);
    if(find_handle && find_handle!=INVALID_HANDLE_VALUE)
    {
     //Óהאכÿול גסו פאיכû
     do{
        if(*fd.cFileName == '.')
           continue;
-       lstrcpy(folder+folder_len,fd.cFileName);
-       DeleteFile(folder);
-      }while(FindNextFile(find_handle,&fd));
+       lstrcpyA(folder+folder_len,fd.cFileName);
+       DeleteFileA(folder);
+      }while(FindNextFileA(find_handle,&fd));
     FindClose(find_handle);
     }
     return true;
@@ -88,14 +88,14 @@ bool       __fastcall ForceDeleteDir(char * dir_name)
    {
    char folder[MAX_PATH<<2];
    lstrcpyA(folder,dir_name);
-   int folder_len = lstrlen(folder);
+   int folder_len = lstrlenA(folder);
    if(folder[folder_len-1]!='\\')
       {
        folder[folder_len++]='\\';
        folder[folder_len]=0;
       }
    if(ClearDir(folder,(char*)"*.*"))
-    return RemoveDirectory(dir_name) ? true:false;
+    return RemoveDirectoryA(dir_name) ? true:false;
    }
    return false;
 

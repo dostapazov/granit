@@ -21,7 +21,7 @@ TCHAR * error_text[] =
  _T("Нет такой записи")
  };
 
-void __fastcall mon_otdm_error(KeWin::TTextViewer<char> * monitor,LPOTDM_PROTO_HEADER omph)
+void __fastcall mon_otdm_error(KeWin::TTextViewer<wchar_t> * monitor,LPOTDM_PROTO_HEADER omph)
 {
   TCHAR err_text[MAX_PATH];
   if(omph->error<6)
@@ -35,19 +35,18 @@ void __fastcall mon_otdm_error(KeWin::TTextViewer<char> * monitor,LPOTDM_PROTO_H
 
 }
 
-void __fastcall monitor_otd_sepline(KeWin::TTextViewer<char> *monitor)
+void __fastcall monitor_otd_sepline(KeWin::TTextViewer<wchar_t> *monitor)
 {
      TCHAR text_buffer[2048];
      TCHAR *sep_text = _T("-");
-     DWORD max_len = monitor->get_max_line_len();
-     for(int i = 0;i<(int)max_len;i++)
-         text_buffer[i]=*sep_text;
+     DWORD max_len = std::min(KERTL_ARRAY_COUNT(text_buffer)-1 ,(unsigned int)monitor->get_max_line_len());
+     std::fill(text_buffer,text_buffer+max_len,L'-');
      text_buffer[max_len] = 0;
      monitor->add_line(text_buffer);
 
 }
 
-void __fastcall monitor_otd_medium(KeWin::TTextViewer<char> *monitor, LPBYTE data, DWORD data_size)
+void __fastcall monitor_otd_medium(KeWin::TTextViewer<wchar_t> *monitor, LPBYTE data, DWORD data_size)
 {
   if(data && data_size)
   {
@@ -85,18 +84,18 @@ void __fastcall monitor_otd_medium(KeWin::TTextViewer<char> *monitor, LPBYTE dat
            }
 
 
-        char skadr_name [MAX_PATH];
-        char kadr_name [MAX_PATH];
+        wchar_t skadr_name [MAX_PATH];
+        wchar_t kadr_name  [MAX_PATH];
         *skadr_name = *kadr_name = 0;
         wchar_t * kname = kadr->names;
         if(kadr->mask&MDB_KADR_FIELD_SNAME)
         {
-        Unicode2Ansi(skadr_name,kname);
+        wcscpy(skadr_name,kname);
         kname+=lstrlenW(kname)+1;
         }
         if(kadr->mask&MDB_KADR_FIELD_NAME)
         {
-        Unicode2Ansi(kadr_name,kname);
+        wcscpy(kadr_name,kname);
         }
         text_len+=mprintf(text_buffer+text_len,_T(" %s [ %s ]"),kadr_name,skadr_name);
      }
@@ -323,7 +322,7 @@ TCHAR* arch_command_names[] =
  ,_T("")
 };
 
-void __fastcall monitor_otd_medium_alarm_archive  (KeWin::TTextViewer<char> *monitor, LPBYTE data, DWORD data_size)
+void __fastcall monitor_otd_medium_alarm_archive  (KeWin::TTextViewer<wchar_t> *monitor, LPBYTE data, DWORD data_size)
 {
    TCHAR mon_text[8192];
    LPOTDM_PROTO_HEADER         omph          = (LPOTDM_PROTO_HEADER)data;

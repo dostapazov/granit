@@ -14,7 +14,7 @@
 
 UnicodeString __fastcall TGKModuleForm::load_rcstring(HINSTANCE mod,DWORD str_id)
 {
-    wchar_t * text;
+    wchar_t * text ;
     int len = LoadStringW(mod,str_id,(wchar_t*)&text,0);
     if(len)
        return UnicodeString(text,len);

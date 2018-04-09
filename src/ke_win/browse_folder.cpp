@@ -15,7 +15,7 @@ namespace KeWin
                                                     )
    {
 
-    BROWSEINFO bi;
+    BROWSEINFOA bi;
     char  _buffer[MAX_PATH];
     ZeroMemory(&bi,sizeof(bi));
     bi.hwndOwner      = (::HWND)this->Parent;
@@ -27,7 +27,7 @@ namespace KeWin
     bi.lpszTitle = title;
     bi.ulFlags   = Flags;
 
-    LPITEMIDLIST idlist = SHBrowseForFolder(&bi);
+    LPITEMIDLIST idlist = SHBrowseForFolderA(&bi);
     hWnd = 0;
 	if(buffer && bsz)
 	{

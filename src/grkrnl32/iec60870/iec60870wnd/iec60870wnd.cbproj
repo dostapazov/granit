@@ -60,7 +60,7 @@
         <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
         <Multithreaded>true</Multithreaded>
         <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
-        <_TCHARMapping>char</_TCHARMapping>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
         <SanitizedProjectName>iec60870wnd</SanitizedProjectName>
         <IncludePath>..\..\MODBUSMDM\MODBUSMDMWND\;..\..\GKLIB\VCL\;..\..\..\..\INC\GRKRNL32\;$(KERTL_INC);$(GRKRNL_INC);$(IncludePath)</IncludePath>
         <ILINK_LibraryPath>..\..\MODBUSMDM\MODBUSMDMWND\;..\..\..\..\INC\GRKRNL32\;..\..\GKLIB\VCL\;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>

@@ -358,10 +358,10 @@ void __fastcall TRecHistroyForm::create_monitor()
    KeWin::TRect r(0,0,MonBox->Width,MonBox->Height);
    r.Grow(-4,-10);
    r.Move(4,8);
-   monitor->DoCreate(MonBox->Handle,r,-1,256,"RHMonitor");
-   HFONT font = CreateFont(-12,0,0,0,FW_NORMAL,0,0,0,
+   monitor->DoCreate(MonBox->Handle,r,-1,256,L"RHMonitor");
+   HFONT font = CreateFontW(-12,0,0,0,FW_NORMAL,0,0,0,
                RUSSIAN_CHARSET,OUT_DEFAULT_PRECIS,CLIP_DEFAULT_PRECIS,DEFAULT_QUALITY,DEFAULT_PITCH,
-               "Courier New");
+               L"Courier New");
    font = monitor->SetFont(font,false);
    monitor->SetBkColor(GetSysColor(COLOR_INFOBK));
    monitor->SetFlags(FLWND_DOUBLE_BUFFERED,false);

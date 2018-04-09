@@ -12,7 +12,7 @@ namespace KeRTL
    bool __fastcall TCommPort::OpenPort(int number,bool overlapped)
    {
     char p_name[32];
-    lstrcpy(p_name,"COM");
+    lstrcpyA(p_name,"COM");
     itoa(number,p_name+3,10);
 	DWORD flags=0;
 	if(overlapped)

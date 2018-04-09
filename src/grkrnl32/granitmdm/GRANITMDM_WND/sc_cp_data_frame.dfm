@@ -1,10 +1,4 @@
 inherited SCCpDataFrame: TSCCpDataFrame
-  Height = 344
-  Constraints.MinHeight = 344
-  ExplicitHeight = 344
-  DesignSize = (
-    451
-    344)
   object Label8: TLabel [1]
     Left = 233
     Top = 100
@@ -30,12 +24,12 @@ inherited SCCpDataFrame: TSCCpDataFrame
     Left = 0
     Top = 122
     Width = 443
-    Height = 598
+    Height = 547
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 2
     DesignSize = (
       443
-      598)
+      547)
     object ListView1: TListView
       Left = 2
       Top = 16
@@ -110,7 +104,6 @@ inherited SCCpDataFrame: TSCCpDataFrame
     Width = 339
     Caption = '12.12.2005 19:19:22:345'
     ExplicitTop = 70
-    ExplicitWidth = 339
   end
   object TxByteTime: TStaticText [7]
     Left = 319

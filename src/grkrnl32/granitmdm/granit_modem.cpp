@@ -975,14 +975,14 @@ LRESULT __fastcall TSCGranitModem::reset_tu_error(DWORD addr,DWORD obj)
 
    KeRTL::TFileStream  fs(settings.save_file_name);
    fs.Rewind();
-   fs.Write(sig,lstrlen(sig));
+   fs.Write(sig,lstrlenA(sig));
    for(DWORD i = 0;i<get_lines_limit();i++)
    {
      sc_floor * floor = get_floor(i);
      if(floor)
      {
       char floor_sep[32];
-      int len = wsprintf(floor_sep,"[ Floor %03d ]",floor->get_number());
+      int len = wsprintfA(floor_sep,"[ Floor %03d ]",floor->get_number());
       fs<<len;
       fs.Write(floor_sep,len);
       fs<<floor->get_stream_ver();
@@ -1031,7 +1031,7 @@ LRESULT __fastcall TSCGranitModem::reset_tu_error(DWORD addr,DWORD obj)
    {
    fs.Rewind();
    char check_sig[sizeof(sig)];
-   int len = lstrlen(sig);
+   int len = lstrlenA(sig);
    fs.Read(check_sig,len);
    if(memcmp(check_sig,sig,len)==0)
    {

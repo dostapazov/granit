@@ -58,7 +58,7 @@
         <Multithreaded>true</Multithreaded>
         <SanitizedProjectName>gripxmod</SanitizedProjectName>
         <IncludePath>..\..\COMMON\;..\GKLIB\;$(KERTL_INC);$(GRKRNL_INC);$(IncludePath)</IncludePath>
-        <_TCHARMapping>char</_TCHARMapping>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
         <ILINK_LibraryPath>..\..\COMMON\;..\GKLIB\;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <Defines>STRICT;$(Defines)</Defines>
         <BRCC_IncludePath>$(BDS)\include;$(BDS)\include\windows\sdk;$(BDS)\include\windows;$(BRCC_IncludePath)</BRCC_IncludePath>
@@ -238,12 +238,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\grkrnl32\gripxmod.gkm" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>gripxmod.dll</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
@@ -251,6 +245,12 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgsqlite3.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\grkrnl32\gripxmod.gkm" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>gripxmod.dll</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

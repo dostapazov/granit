@@ -62,13 +62,15 @@ inline bool  TResource::LoadResource(HINSTANCE module,wchar_t * type,wchar_t * n
       public:
                        TMenu();
                        TMenu(HMENU,bool ShouldDel = true);
+                       TMenu(LPCWSTR ResId,HINSTANCE from = 0,bool ShouldDel = true);
                        TMenu(LPCSTR ResId,HINSTANCE from = 0,bool ShouldDel = true);
                        TMenu(HWND Window,bool System,bool ShouldDel=true);
       virtual          ~TMenu();
               bool     __fastcall Destroy();
               bool     __fastcall CopyFrom (HMENU mnu);
               bool     __fastcall MergeFrom(HMENU mnu);
-              bool     __fastcall LoadFromResource(LPCSTR ResId,HINSTANCE from = 0);
+              bool     __fastcall LoadFromResource(LPCSTR  ResId,HINSTANCE from = 0);
+              bool     __fastcall LoadFromResource(LPCWSTR ResId,HINSTANCE from = 0);
               bool     __fastcall GetItemInfo(int i,bool ByPos ,LPMENUITEMINFO mi);
               bool     __fastcall SetItemInfo(int i,bool ByPos ,LPMENUITEMINFO mi);
               bool     __fastcall InsertItem(int i,bool ByPos  ,LPMENUITEMINFO);
@@ -83,7 +85,8 @@ inline bool  TResource::LoadResource(HINSTANCE module,wchar_t * type,wchar_t * n
       public:
              TPopupMenu():TMenu(){}
              TPopupMenu(HMENU );
-             TPopupMenu(LPCSTR  resId,HINSTANCE = 0);
+             TPopupMenu(LPCWSTR  resId,HINSTANCE = 0);
+             TPopupMenu(LPCSTR   resId,HINSTANCE = 0);
              bool       __fastcall Track(POINT & Where,int flags,HWND Owner,LPRECT =0);
              bool       __fastcall TrackEx(POINT &Where,int flags,HWND Owner,LPTPMPARAMS=0);
      };

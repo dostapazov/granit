@@ -139,8 +139,8 @@ return *this;
     SCROLLINFO      hsb;
     bool            lock_draw;
 
-    void         __fastcall GetWndClass(WNDCLASSEX & wc);
-    const char * __fastcall GetClassName(){return "KeWin_TTextViewer";};
+    void         __fastcall GetWndClass(WNDCLASSEXW & wc);
+    const wchar_t * __fastcall GetClassName(){return L"KeWin_TTextViewer";};
     void         __fastcall OnSize(int h,int x,int y);
     void         __fastcall OnWMSetFont(HFONT Font,bool Redraw);
     void         __fastcall OnWMKeyDown(DWORD wParam,DWORD lParam);
@@ -174,7 +174,7 @@ return *this;
     TTextViewer();
     ~TTextViewer(){free_lines();Destroy();};
     void         __fastcall set_lock_draw(bool lock);
-    bool __fastcall DoCreate(HWND parent,TRect & r,int id = -1,DWORD lines_limit = 512,const char * class_name = 0);
+    bool __fastcall DoCreate(HWND parent,TRect & r,int id = -1,DWORD lines_limit = 512,const wchar_t * class_name = 0);
     bool __fastcall DoCreate(HWND parent,int id);
 
 
@@ -223,7 +223,7 @@ hsb.cbSize = sizeof   (hsb);
 };
 
 template<typename C>
-void     __fastcall TTextViewer<C>::GetWndClass(WNDCLASSEX & wc)
+void     __fastcall TTextViewer<C>::GetWndClass(WNDCLASSEXW & wc)
 {
  TWindow::GetWndClass(wc);
  wc.style |= CS_OWNDC;
@@ -233,7 +233,7 @@ void     __fastcall TTextViewer<C>::GetWndClass(WNDCLASSEX & wc)
 
 
 template<typename C>
-bool __fastcall TTextViewer<C>::DoCreate(HWND parent,TRect & r,int id,DWORD lines_limit,const char * class_name )
+bool __fastcall TTextViewer<C>::DoCreate(HWND parent,TRect & r,int id,DWORD lines_limit,const wchar_t * class_name )
 {
  this->lines_limit =lines_limit;
  this->line_space  = 2;

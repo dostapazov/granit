@@ -56,7 +56,7 @@ using namespace KeWin;
 using namespace KeRTL;
 
 DWORD grkrnl32_except_filter(LPEXCEPTION_POINTERS exp,const char *text,DWORD = EXCEPTION_EXECUTE_HANDLER);
-int __fastcall gkapp_window(GKHANDLE kernel,BOOL show_setup,const char * instance);
+int __fastcall gkapp_window(GKHANDLE kernel,BOOL show_setup,const TCHAR * instance);
 
 #define GKAPP_WINDOW_NAME_A  "GKAPP_HIDDEN_WINDOW"
 #define GKAPP_WINDOW_NAME_W  L"GKAPP_HIDDEN_WINDOW"
@@ -105,14 +105,14 @@ class TSplashWindow:public TGKHandleBased,public TWindow
  void     __fastcall  add_module  (GKHANDLE );
  void     __fastcall  module_state(GKHANDLE,DWORD st);
  void     __fastcall  remove_handle(GKHANDLE );
- void     __fastcall  print_text(char * text);
+ void     __fastcall  print_text(TCHAR * text);
 };
 
 
 class TGKAppWindow:public TWindow
 {
  protected:
- char instance[256];
+ TCHAR instance[256];
  #ifdef _WIN64
  SIZE_T
  #else
@@ -122,7 +122,7 @@ class TGKAppWindow:public TWindow
 
  HICON    tray_icons    [4];
  GKHANDLE kernel_handle;
- NOTIFYICONDATA  tray;
+ NOTIFYICONDATAW  tray;
  static   ULONG  create_taskbar_msg;
  TPopupMenu      tray_menu;
  TGKModuleWindowLoader mwl;
@@ -131,10 +131,10 @@ class TGKAppWindow:public TWindow
  void     __fastcall init_tray();
  void     __fastcall tray_put();
  void     __fastcall tray_remove();
- void     __fastcall tray_icon(HICON ic);
- void     __fastcall tray_text(char * text);
+ void     __fastcall tray_icon  (HICON ic);
+ void     __fastcall tray_text  (wchar_t * text);
  int      __fastcall handle_tray(MSG & msg);
- bool     __fastcall OnWMCreate (LPCREATESTRUCT);
+ bool     __fastcall OnWMCreate (LPCREATESTRUCTW);
  void     __fastcall OnWMDestroy();
  LRESULT  __fastcall MessageHandler(MSG &);
  bool     __fastcall OnWMCommand  (HWND From,int nCode,int id);
@@ -144,11 +144,12 @@ class TGKAppWindow:public TWindow
  TGKAppWindow(GKHANDLE khandle);
  int      __fastcall MessageLoop();
  void     __fastcall ProcessMessages();
- void     __fastcall set_instance(const char * _inst);
+ void     __fastcall set_instance(const TCHAR * _inst);
 
 };
 
-void __fastcall get_instance(char * inst,int sz,LPSTR cmd);
+void __fastcall get_instance(char    * inst,int sz,LPSTR     cmd);
+void __fastcall get_instance(wchar_t * inst,int sz,wchar_t * cmd);
 int      __fastcall run_kernel (bool restart,bool service,bool config,TCHAR * cfg_command,TCHAR * instance,bool shutdown,bool splash);
 GKHANDLE __fastcall kernel_load(TGKModuleLoader & kldr,wchar_t * instance,bool service);
 GKHANDLE __fastcall kernel_load(TGKModuleLoader & kldr, char   * instance,bool service);

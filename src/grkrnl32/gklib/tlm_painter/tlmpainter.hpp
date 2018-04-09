@@ -313,7 +313,7 @@ class TTlmPainter:public TWindow
  void         __fastcall arrange_right (mdb_kadr_entry & leader,mdb_kadr_entry & entry);
  void         __fastcall arrange_bottom(mdb_kadr_entry & leader,mdb_kadr_entry & entry);
  void         __fastcall arrange_size  (mdb_kadr_entry & leader,mdb_kadr_entry & entry,how_arrange ha);
- const char * __fastcall GetClassName();
+ const wchar_t * __fastcall GetClassName();
  public:
  TTlmPainter(mdb_kadr * _kadr):editable(FALSE),
                               Fshow_hidden(FALSE),
@@ -324,8 +324,8 @@ class TTlmPainter:public TWindow
  {};
 
  void   __fastcall Create
-    ( HWND Parent,const char * Caption,RECT & r,int Id = -1,
-      HMENU Menu = 0,DWORD Style=0,DWORD ExStyle=0,const char * ClassName=0);
+    ( HWND Parent,const wchar_t * Caption,RECT & r,int Id = -1,
+      HMENU Menu = 0,DWORD Style=0,DWORD ExStyle=0,const wchar_t * ClassName=0);
  bool         __fastcall set_bkgnd(const wstring & img_name,bool force = false);
  DWORD        __fastcall set_bkgnd_mode(DWORD mode);
  mdb_kadr *   __fastcall set_kadr(mdb_kadr * kadr,DWORD ch_mask = -1);

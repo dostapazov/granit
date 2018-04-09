@@ -27,17 +27,17 @@ namespace KeWin
  {
   protected:
           COLORREF  TextColor;
-          const char * __fastcall GetClassName(){return "WndControl";};
+          const wchar_t * __fastcall GetClassName(){return L"WndControl";};
           DWORD        __fastcall GetStyle(bool Ex = false){return Ex ? 0:WS_CHILD|WS_VISIBLE;};
   LRESULT __fastcall MessageHandler(MSG & msg);
-  bool    __fastcall OnWMCreate(LPCREATESTRUCT );
+  bool    __fastcall OnWMCreate(LPCREATESTRUCTW );
   HBRUSH  __fastcall OnCtlColor(HWND,HDC,UINT);
   virtual DWORD __fastcall GetDlgCode(){return DefaultProcessing();}
   public:
   TWinControl(HINSTANCE inst= GetModuleHandle(0)):TWindow(inst),TextColor(0){}
   virtual void   __fastcall Create
-    ( HWND Parent,const char * Caption,RECT & r,int Id = -1,
-      HMENU Menu = 0,DWORD Style=0,DWORD ExStyle=0,const char * ClassName=0);
+    ( HWND Parent,const wchar_t * Caption,RECT & r,int Id = -1,
+      HMENU Menu = 0,DWORD Style=0,DWORD ExStyle=0,const wchar_t * ClassName=0);
       bool __fastcall DoCreate(HWND Parent,int Id);
       void __fastcall EnableSelfDraw(bool);
       virtual DWORD   GetOwnerDrawStyle(){return 0;};
@@ -50,7 +50,7 @@ namespace KeWin
  {
   public:
   TButton(HINSTANCE inst= GetModuleHandle(0)):TWinControl(inst){};
-  bool __fastcall DoCreate(HWND Parent,char * Caption,TRect & r,int Id = -1);
+  bool __fastcall DoCreate(HWND Parent,const wchar_t * Caption,TRect & r,int Id = -1);
   DWORD   GetOwnerDrawStyle(){return BS_OWNERDRAW;};
  };
 
@@ -59,7 +59,7 @@ namespace KeWin
  {
    public:
    TStatic(HINSTANCE inst= GetModuleHandle(0)):TWinControl(inst){};
-   bool __fastcall DoCreate(HWND Parent,char * Caption,TRect & r,int Id = -1);
+   bool __fastcall DoCreate(HWND Parent,const wchar_t * Caption,TRect & r,int Id = -1);
    DWORD   GetOwnerDrawStyle(){return SS_OWNERDRAW;};
  };
 
@@ -72,8 +72,8 @@ namespace KeWin
   TEdit(HINSTANCE inst= GetModuleHandle(0)):TWinControl(inst){};
   bool   __fastcall DoCreate(HWND parent,TRect & r,int id=-1,DWORD style = 0,DWORD ex_style = 0);
   bool   __fastcall DoCreate(HWND parent,int id);
-  DWORD  __fastcall GetText(char * text,int text_sz);
-  bool   __fastcall SetText(char * text);
+  DWORD  __fastcall GetText(wchar_t * text,int text_sz);
+  bool   __fastcall SetText(wchar_t * text);
   bool   __fastcall IsMultiline  ();
   DWORD  __fastcall GetLinesCount();
   DWORD  __fastcall GetLineLength(DWORD line_number);
@@ -108,10 +108,10 @@ namespace KeWin
   }
 
 
-inline  DWORD   __fastcall TEdit::GetText(char * text,int text_sz)
+inline  DWORD   __fastcall TEdit::GetText(wchar_t * text,int text_sz)
 {   return SendMessage(WM_GETTEXT,text_sz,LPARAM(text));  }
 
-inline  bool   __fastcall TEdit::SetText(char * text)
+inline  bool   __fastcall TEdit::SetText(wchar_t * text)
 {  return SendMessage(WM_SETTEXT,0,LPARAM(text)) ? true:false; }
 
 inline bool   __fastcall TEdit::IsMultiline  ()

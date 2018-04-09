@@ -113,6 +113,7 @@
         <BRCC_Defines>STRICT;_DEBUG;_NO_VCL;$(BRCC_Defines)</BRCC_Defines>
         <OutputExt>gkm</OutputExt>
         <ILINK_HeapReserveSize>0x00400000</ILINK_HeapReserveSize>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <BRCC_Defines>STRICT;_DEBUG;_NO_VCL;$(BRCC_Defines)</BRCC_Defines>
@@ -168,11 +169,11 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <ILINK_wsrd>false</ILINK_wsrd>
         <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
-        <VerInfo_Build>104</VerInfo_Build>
+        <VerInfo_Build>107</VerInfo_Build>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
         <VerInfo_Release>2</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=Ostapenko D.V. ;FileDescription=Ядро Центра телемеханики\;FileVersion=1.1.2.104;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Ostapenko D.V. ;FileDescription=Ядро Центра телемеханики\;FileVersion=1.1.2.107;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <ILINK_FullDebugInfo>false</ILINK_FullDebugInfo>
         <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
         <BCC_SourceDebuggingOn>false</BCC_SourceDebuggingOn>

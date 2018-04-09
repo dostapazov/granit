@@ -76,7 +76,7 @@ inherited DBLowForm: TDBLowForm
       Left = 46
       Top = 0
       Width = 52
-      Height = 13
+      Height = 22
       Alignment = taCenter
       Caption = '   '#1060#1080#1083#1100#1090#1088' '
     end
@@ -143,7 +143,7 @@ inherited DBLowForm: TDBLowForm
     Top = 29
     Width = 452
     Height = 366
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 2
     OnChange = PageControl1Change
@@ -151,10 +151,6 @@ inherited DBLowForm: TDBLowForm
     OnResize = PageControl1Resize
     object TabSheet1: TTabSheet
       Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Settings_Panel: TPanel
         Left = 17
         Top = 0
@@ -336,10 +332,6 @@ inherited DBLowForm: TDBLowForm
     object TabSheet2: TTabSheet
       Caption = #1055#1088#1086#1089#1084#1086#1090#1088' '#1089#1086#1089#1090#1086#1103#1085#1080#1103
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         444
         338)
@@ -579,10 +571,6 @@ inherited DBLowForm: TDBLowForm
     object TabSheet4: TTabSheet
       Caption = #1052#1086#1085#1080#1090#1086#1088#1080#1085#1075
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         444
         338)
@@ -650,10 +638,6 @@ inherited DBLowForm: TDBLowForm
     object orders_sheet: TTabSheet
       Caption = #1055#1086#1076#1087#1080#1089#1082#1080
       ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object orders_list: TListView
         Left = 0
         Top = 0
@@ -682,10 +666,6 @@ inherited DBLowForm: TDBLowForm
     object AboutSheet: TTabSheet
       Caption = #1054' '#1084#1086#1076#1091#1083#1077
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Memo1: TMemo
         Left = 0
         Top = 91
@@ -750,7 +730,7 @@ inherited DBLowForm: TDBLowForm
     Left = 24
     Top = 376
     Bitmap = {
-      494C01010A001000080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010A001000100010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000006528140067291300672913006729130067291300672913000000

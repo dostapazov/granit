@@ -173,7 +173,7 @@ LRESULT  __fastcall on_gkhandle_notify (GKHANDLE from,LPNOTIFY_CODE nc,DWORD mas
 void     __fastcall on_module_state(GKHANDLE mod,DWORD state) ;
 void     __fastcall on_module_config_change(GKHANDLE mod,LPMODULE_CONFIG_DATA mcd);
 void     __fastcall monitor_grnet_kadr (LPGRNET_KADR grnet_kadr,DWORD len, BOOL tx);
-void     __fastcall monitor_string(char * text1,char * text2 = NULL,DWORD color = -1);
+void     __fastcall monitor_string(TCHAR * text1,TCHAR * text2 = NULL,DWORD color = -1);
 void     __fastcall monitor_gratony_kadr( lp_gratony_kadr  kadr,DWORD color);
 bool     __fastcall check_monitor_filtr(LPGRNET_KADR grnet_kadr,DWORD len);
 TTreeNode * __fastcall add_line (DWORD line_number); 

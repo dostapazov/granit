@@ -1,6 +1,6 @@
 #include "grkrnl32_main.hpp"
 
-extern char * commands[];
+extern TCHAR * commands[];
 
 /******************************************************************************/
 /*                              Часть сервиса                                 */
@@ -434,17 +434,27 @@ DWORD  WINAPI   GKSvcThread(LPVOID)
 }
 
 
-int WINAPI run_as_service(::HINSTANCE hi1,LPSTR cmd_line)
+int WINAPI run_as_service(::HINSTANCE hi1,TCHAR * cmd_line)
 {
   int   ret    = -1;
-  char tmp[MAX_PATH];
+  TCHAR tmp[MAX_PATH];
   get_instance(tmp,KERTL_ARRAY_COUNT(tmp),cmd_line);
+  #ifndef UNICODE
   Ansi2Unicode(svc_instance,KERTL_ARRAY_COUNT(svc_instance),tmp);
   bool  inst   = strstr(cmd_line,commands[APP_CMDLINE_SVC_INSTALL]) ? true:false;
   bool  del    = strstr(cmd_line,commands[APP_CMDLINE_SVC_DELETE ]) ? true:false;
   bool  start  = strstr(cmd_line,commands[APP_CMDLINE_SVC_START  ]) ? true:false;
   bool  stop   = strstr(cmd_line,commands[APP_CMDLINE_SVC_STOP   ]) ? true:false;
   bool  config = strstr(cmd_line,commands[APP_CMDLINE_CONFIG     ]) ? true:false;
+  #else
+  bool  inst   = wcsstr(cmd_line,commands[APP_CMDLINE_SVC_INSTALL]) ? true:false;
+  bool  del    = wcsstr(cmd_line,commands[APP_CMDLINE_SVC_DELETE ]) ? true:false;
+  bool  start  = wcsstr(cmd_line,commands[APP_CMDLINE_SVC_START  ]) ? true:false;
+  bool  stop   = wcsstr(cmd_line,commands[APP_CMDLINE_SVC_STOP   ]) ? true:false;
+  bool  config = wcsstr(cmd_line,commands[APP_CMDLINE_CONFIG     ]) ? true:false;
+  #endif
+
+
   if(del)
   {
     ret = svc_delete();

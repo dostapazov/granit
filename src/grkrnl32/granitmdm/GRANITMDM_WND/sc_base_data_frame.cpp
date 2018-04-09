@@ -34,8 +34,8 @@ AnsiString __fastcall TSCBaseDataFrame::get_diag_text(DWORD diag,bool prn_val)
   {
    if(diag & mask)
    {
-    AnsiString rcs;
-    rcs.LoadStringA(ModuleInstance,STR_DIAG_NODATA+i);
+    UnicodeString rcs = load_rcstring(ModuleInstance,STR_DIAG_NODATA+i);
+
     s+= rcs;
     break;
    }

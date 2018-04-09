@@ -38,7 +38,7 @@ namespace KeRTL
 
   char *     __fastcall GetFileNameFromPath(LPCSTR  FullPath)
   {
-   int len(FullPath ? lstrlen(FullPath) : 0);
+   int len(FullPath ? lstrlenA(FullPath) : 0);
    char * ptr = (char*)FullPath+len;
    while(ptr>FullPath)
    {
@@ -128,7 +128,7 @@ namespace KeRTL
 
 KERTL_FUNC int        __fastcall GetErrorMessage(DWORD Error,char * buffer,int ccMax,char * module )
 {
- return GetErrorMessage(Error ,buffer,ccMax, (module && lstrlenA(module)) ? GetModuleHandle(module):0 );
+ return GetErrorMessage(Error ,buffer,ccMax, (module && lstrlenA(module)) ? GetModuleHandleA(module):0 );
 }
 
 KERTL_FUNC int        __fastcall GetErrorMessage(DWORD Error,wchar_t * buffer,int ccMax,HINSTANCE fromModule )

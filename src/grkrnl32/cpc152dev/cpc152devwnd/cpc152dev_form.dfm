@@ -130,6 +130,8 @@ inherited Cpc152DevFrm: TCpc152DevFrm
       OnChange = PageControl1Change
       object TabSheet1: TTabSheet
         Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
+        ExplicitWidth = 98
+        ExplicitHeight = 135
         inline cpc152dev_frame1: Tcpc152dev_frame
           Left = 68
           Top = 1
@@ -198,6 +200,9 @@ inherited Cpc152DevFrm: TCpc152DevFrm
             Height = 144
             ExplicitHeight = 144
             inherited TabSheet2: TTabSheet
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
               ExplicitHeight = 110
               inherited GroupBox2: TGroupBox
                 Height = 110
@@ -216,10 +221,14 @@ inherited Cpc152DevFrm: TCpc152DevFrm
                 end
                 inherited AlarmList: TListView
                   Height = 60
+                  ExplicitHeight = 60
                 end
               end
             end
             inherited dft_enabled_page: TTabSheet
+              ExplicitLeft = 4
+              ExplicitTop = 24
+              ExplicitWidth = 433
               ExplicitHeight = 116
               inherited Label18: TLabel
                 Width = 60
@@ -263,6 +272,10 @@ inherited Cpc152DevFrm: TCpc152DevFrm
       object ViewTabSheet: TTabSheet
         Caption = #1055#1088#1086#1089#1084#1086#1090#1088
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Panel2: TPanel
           Left = 0
           Top = 0
@@ -360,6 +373,10 @@ inherited Cpc152DevFrm: TCpc152DevFrm
       object TabSheet3: TTabSheet
         Caption = #1054' '#1084#1086#1076#1091#1083#1077
         ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Memo1: TMemo
           Left = 0
           Top = 91
@@ -394,10 +411,10 @@ inherited Cpc152DevFrm: TCpc152DevFrm
           Height = 91
           Align = alTop
           TabOrder = 1
-          ExplicitWidth = 588
+          ExplicitWidth = 98
           inherited Memo2: TMemo
             Width = 588
-            ExplicitWidth = 588
+            ExplicitWidth = 98
           end
         end
       end
@@ -407,7 +424,7 @@ inherited Cpc152DevFrm: TCpc152DevFrm
     Left = 24
     Top = 296
     Bitmap = {
-      494C010109000D00040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010109001000080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FAFAFA00EAEAEA00EBEBEB00FCFCFC00595959005151
@@ -820,7 +837,7 @@ inherited Cpc152DevFrm: TCpc152DevFrm
     Left = 136
     Top = 384
     Bitmap = {
-      494C010103000500040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000800080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

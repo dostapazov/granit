@@ -175,12 +175,12 @@ LRESULT WINAPI module_main(DWORD cmd,LPARAM p1,LPARAM p2)
        this->settings.pu_number = gs->pu_number;
     if(mask&GRNET_CFG_SERVERPARAM)
        {
-        lstrcpy(settings.server_name,gs->server_name) ;
+        safe_strcpy(settings.server_name,gs->server_name) ;
         settings.server_socket=gs->server_socket;
        }
     if(mask&GRNET_CFG_CLIENTPARAM)
       {
-       lstrcpy(settings.client_name,gs->client_name );
+       safe_strcpy(settings.client_name,gs->client_name );
        settings.client_socket=gs->client_socket;
       }
     if(mask&GRNET_CFG_TXPARAM)
@@ -226,9 +226,9 @@ LRESULT WINAPI module_main(DWORD cmd,LPARAM p1,LPARAM p2)
         cm |=GRNET_CFG_PUNUMBER;
     if((mask&GRNET_CFG_PUNAME) && lstrcmpiW(gs->pu_name,settings.pu_name))
         cm |=GRNET_CFG_PUNAME;
-    if((mask&GRNET_CFG_SERVERPARAM) && (lstrcmpi(gs->server_name,settings.server_name )||gs->server_socket!=settings.server_socket))
+    if((mask&GRNET_CFG_SERVERPARAM) && (lstrcmpiA(gs->server_name,settings.server_name )||gs->server_socket!=settings.server_socket))
         cm |=GRNET_CFG_SERVERPARAM;
-    if((mask&GRNET_CFG_CLIENTPARAM) && (lstrcmpi(gs->client_name,settings.client_name )||gs->client_socket!=settings.client_socket))
+    if((mask&GRNET_CFG_CLIENTPARAM) && (lstrcmpiA(gs->client_name,settings.client_name )||gs->client_socket!=settings.client_socket))
         cm |=GRNET_CFG_CLIENTPARAM;
     if((mask&GRNET_CFG_TXPARAM) &&   (gs->tx_retry_count!=settings.tx_retry_count || gs->tx_retry_delay!=settings.tx_retry_delay))
         cm |=GRNET_CFG_TXPARAM;
@@ -362,15 +362,15 @@ LRESULT WINAPI module_main(DWORD cmd,LPARAM p1,LPARAM p2)
    *out=0;
    if(this->settings.work_mode == GRNET_WM_AS_SERVER)
      {
-      wsprintf(out,"IPX Сервер %s",settings.server_name);
+      wsprintfA(out,"IPX Server %s",settings.server_name);
      }
    if(this->settings.work_mode == GRNET_WM_AS_CLIENT)
      {
-      wsprintf(out,"IPX клиент ");
+      wsprintfA(out,"IPX client ");
      }
    if(*out)
     {
-     int len = lstrlen(out)+1;
+     int len = lstrlenA(out)+1;
      if((DWORD)len<buff_len)
        Ansi2Unicode(buff,out);
        else

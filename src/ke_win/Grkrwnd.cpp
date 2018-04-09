@@ -93,7 +93,7 @@ namespace KeWin
 
    bool __fastcall TWindow::RegisterWindow(HINSTANCE hi)
    {
-    WNDCLASSEX wc;
+    WNDCLASSEXW wc;
     GetWndClass(wc);
 
     //wc.style |=CS_GLOBALCLASS	;
@@ -101,7 +101,7 @@ namespace KeWin
     wc.lpfnWndProc   = this->GetDefWndProc();
     wc.hInstance = (::HINSTANCE)hi;
     SetLastError(0);
-    ATOM reg_result  = RegisterClassEx(&wc);
+    ATOM reg_result  = RegisterClassExW(&wc);
     DWORD LastError = GetLastError();
     return (reg_result || LastError == 0 || LastError == ERROR_CLASS_ALREADY_EXISTS) ? true:false; 
    }
@@ -148,7 +148,7 @@ namespace KeWin
        case WM_CREATE     :
                             {
                              DefaultProcessing();
-                             LPCREATESTRUCT crst = LPCREATESTRUCT(msg.lParam);
+                             LPCREATESTRUCTW crst = LPCREATESTRUCTW(msg.lParam);
                              this->hWnd = msg.hwnd;
                              UD = SetWindowLong(GWL_USERDATA,LONG(this));
                              if(GetClassLong((::HWND)hWnd,GCL_STYLE)&CS_OWNDC)
@@ -331,12 +331,12 @@ void    __fastcall TWindow::NotHandledMsg(MSG &)
 
 
     void __fastcall TWindow::Create
-    ( HWND Parent,const char * Caption,RECT & r,int Id,
-      HMENU Menu,DWORD Style,DWORD ExStyle,const char * ClassName)
+    ( HWND Parent,const wchar_t * Caption,RECT & r,int Id,
+      HMENU Menu,DWORD Style,DWORD ExStyle,const wchar_t * ClassName)
 
     {
      //Создание окна
-     WNDCLASSEX wc;
+     WNDCLASSEXW wc;
      ZeroMemory(&wc,sizeof(wc));
 
 
@@ -345,7 +345,7 @@ void    __fastcall TWindow::NotHandledMsg(MSG &)
      if(ClassName)
        {
 
-        if(!GetClassInfoEx(0,ClassName,&wc))
+        if(!GetClassInfoExW(0,ClassName,&wc))
            {
             GetWndClass(wc);
             wc.lpszClassName = ClassName;
@@ -358,7 +358,7 @@ void    __fastcall TWindow::NotHandledMsg(MSG &)
      if(!ExStyle)
        ExStyle = GetStyle(true);
      SetLastError(0);
-     ATOM RegResult = RegisterClassEx(&wc);
+     ATOM RegResult = RegisterClassExW(&wc);
      DWORD LastError = GetLastError();
      if(RegResult || LastError == 0 || LastError == ERROR_CLASS_ALREADY_EXISTS)
       {
@@ -380,7 +380,7 @@ void    __fastcall TWindow::NotHandledMsg(MSG &)
            y = CW_USEDEFAULT;
 
         SetMessageExtraInfo(LPARAM(this));
-        hWnd = (HWND)CreateWindowEx(ExStyle,wc.lpszClassName,Caption,(Style&(~WS_VISIBLE)),
+        hWnd = (HWND)CreateWindowExW(ExStyle,wc.lpszClassName,Caption,(Style&(~WS_VISIBLE)),
                               x,y,w,h,
                               (::HWND)Parent,(::HMENU)Menu,(::HINSTANCE)hInstance,this);
         SetMessageExtraInfo(0);
@@ -417,29 +417,29 @@ void    __fastcall TWindow::NotHandledMsg(MSG &)
 
 
 
-    const char * __fastcall TWindow::GetClassName()
+    const wchar_t * __fastcall TWindow::GetClassName()
     {
      if(hWnd)
      {
-      WNDCLASSEX  wc;
+      WNDCLASSEXW  wc;
       TWindow::GetWndClass(wc);
       return wc.lpszClassName;
      }
      //const char *(__fastcall TWindow::*proc)() = &TWindow::GetClassName;
-     static char class_name[32];
-     sprintf(class_name,"KrnlWin::TWindow#%08X",(int)class_name);
+     static wchar_t class_name[32];
+     swprintf(class_name,L"KrnlWin::TWindow#%08F",this);
      return class_name;
     }
 
-    void         __fastcall TWindow::GetWndClass(WNDCLASSEXA & wc )
+    void         __fastcall TWindow::GetWndClass(WNDCLASSEXW & wc )
     {
        ZeroMemory(&wc,sizeof(wc));
        wc.cbSize        = sizeof(wc);
        if(hWnd)
        {
-        char name [MAX_PATH];
-        ::GetClassName((::HWND)hWnd,name,sizeof(name));
-        GetClassInfoExA(0,name,&wc);
+        wchar_t name [MAX_PATH];
+        ::GetClassNameW((::HWND)hWnd,name,KERTL_ARRAY_COUNT(name));
+        GetClassInfoExW(0,name,&wc);
         return ;
        }
 
@@ -484,13 +484,13 @@ void    __fastcall TWindow::NotHandledMsg(MSG &)
      {
       if((this->Flags& FLWND_ALIAS) == 0)
       {
-      char class_name[MAX_PATH];
-      ::GetClassName((::HWND)hWnd,class_name,sizeof(class_name));
+      wchar_t class_name[MAX_PATH];
+      ::GetClassNameW((::HWND)hWnd,class_name,KERTL_ARRAY_COUNT(class_name));
       bool ret ( DestroyWindow((::HWND)hWnd) ? true:false);
       if(ret)
         {
          hWnd = 0;
-         UnregisterClass(class_name,0);
+         UnregisterClassW(class_name,0);
         }
         return ret;
       }
@@ -635,7 +635,7 @@ void    __fastcall TWindow::NotHandledMsg(MSG &)
     void          __fastcall TWindow::create_dbl_buffered()
     {
        get_dbl_dc();
-       HDC scr_dc = CreateDC("DISPLAY",0,0,0);
+       HDC scr_dc = CreateDCW(L"DISPLAY",0,0,0);
        HBITMAP bmp   = CreateCompatibleBitmap(scr_dc,wnd_size.cx,wnd_size.cy);
                bmp   = (HBITMAP)SelectObject(dbl_dc,bmp);
        if(dbl_bmp)
@@ -793,7 +793,7 @@ void    __fastcall TWindow::NotHandledMsg(MSG &)
  #pragma warn .8084
 #endif
 
-  int    __fastcall TWindow::GetCaption(char * buffer,int ccMax)
+  int    __fastcall TWindow::GetCaption(wchar_t * buffer,int ccMax)
   {
    if(buffer)
    {
@@ -803,7 +803,7 @@ void    __fastcall TWindow::NotHandledMsg(MSG &)
    return 0;
   }
 
-  bool   __fastcall TWindow::SetCaption(char * buffer)
+  bool   __fastcall TWindow::SetCaption(wchar_t * buffer)
   {
    return SendMessage(WM_SETTEXT,0,LPARAM(buffer))? true:false;
   }
@@ -832,7 +832,7 @@ void    __fastcall TWindow::NotHandledMsg(MSG &)
  #pragma warn .8057
 #endif
 
-    bool         __fastcall TWindow::OnWMCreate (LPCREATESTRUCT)
+    bool         __fastcall TWindow::OnWMCreate (LPCREATESTRUCTW)
     {
      return true;
     }
@@ -1074,7 +1074,7 @@ HBRUSH       __fastcall TWindow::OnCtlColor(HWND wnd,HDC dc,UINT CtrlType)
 
        bool __fastcall TWindow::InitW2KSupport()
        {
-        HMODULE user32 = GetModuleHandle("USER32.DLL");
+        HMODULE user32 = GetModuleHandleW(L"USER32.DLL");
         if(user32)
         {
            pfnSetLayeredWindowAttributes  = (SETLAYEREDWINDOWATTRIBUTES)GetProcAddress( user32,"SetLayeredWindowAttributes");

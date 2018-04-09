@@ -37,8 +37,8 @@ public:		// User declarations
 
          DWORD          __fastcall get_addr(){return addr.addr;}
 
-         void  __fastcall begin_call_gkhandle(char * cmd_text);
-         void  __fastcall done_call_gkhandle (DWORD ret,char * text = 0);
+         void  __fastcall begin_call_gkhandle(TCHAR * cmd_text);
+         void  __fastcall done_call_gkhandle (DWORD ret,TCHAR * text = 0);
 virtual  bool  __fastcall apply_changes() {return true;};
 virtual  bool  __fastcall undo_changes () {return true;};
 virtual  void  __fastcall set_active   (DWORD _addr);
@@ -53,11 +53,11 @@ extern PACKAGE TSCBaseFrame *SCBaseFrame;
 //---------------------------------------------------------------------------
 
 
-inline AnsiString __fastcall load_rcstring(HINSTANCE h,DWORD rcid)
+inline UnicodeString __fastcall load_rcstring(HINSTANCE h,DWORD rcid)
 {
-  AnsiString s;
-  s.LoadStringA(h,rcid);
-  return s;
+  wchar_t * text;
+  int len = LoadStringW(h,rcid,(wchar_t * )&text,0);
+  return UnicodeString(text,len);
 }
 
 

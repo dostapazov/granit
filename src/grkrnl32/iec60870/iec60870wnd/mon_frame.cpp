@@ -40,14 +40,14 @@ void __fastcall TIEC60870MonFrame::create_mon_instance()
   r.Grow(-12,-12);
   r.Move(4,4);
   try{
-      char txtv_name [MAX_PATH];
-      safe_strcpy(txtv_name,"IEC60870Monitor");
-      int name_len = lstrlenA(txtv_name);
+      wchar_t txtv_name [MAX_PATH];
+      safe_strcpy(txtv_name,L"IEC60870Monitor");
+      int name_len = safe_strlen(txtv_name);
       int create_limit = 128;
       int create_cntr = 0;
       while(!mon.DoCreate(Panel2->Handle,r,-1,1024,txtv_name) && create_cntr<create_limit)
       {
-        wsprintfA(txtv_name+name_len,"%d",create_cntr++);
+        wsprintfW(txtv_name+name_len,_T("%d"),create_cntr++);
       }
      }
     catch(...)

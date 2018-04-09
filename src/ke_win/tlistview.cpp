@@ -19,7 +19,7 @@ namespace KrnlWin
   bool      __fastcall TListView::DoCreate(HWND parent,TRect & r,DWORD Style,DWORD ExStyle,int id)
   {
    CheckAndLoad(this);
-   Create(parent,0,r,id,0,Style,ExStyle,WC_LISTVIEW);
+   Create(parent,0,r,id,0,Style,ExStyle,WC_LISTVIEWW);
    if(hWnd)
       ClientDC = GetDC((::HWND)hWnd);
    return hWnd ? true:false;
@@ -102,22 +102,22 @@ namespace KrnlWin
    int ret(0);
    switch(mnhdr->code)
    {
-    case HDN_BEGINTRACK      :
+    case HDN_BEGINTRACKA     :
     case HDN_BEGINTRACKW     :
 
-    case HDN_DIVIDERDBLCLICK :
+    case HDN_DIVIDERDBLCLICKA :
     case HDN_DIVIDERDBLCLICKW:
-    case HDN_ENDTRACK        :
+    case HDN_ENDTRACKA       :
     case HDN_ENDTRACKW       :
-    case HDN_ITEMCHANGED     :
+    case HDN_ITEMCHANGEDA    :
     case HDN_ITEMCHANGEDW    :
-    case HDN_ITEMCHANGING    :
+    case HDN_ITEMCHANGINGA   :
     case HDN_ITEMCHANGINGW   :
-    case HDN_ITEMCLICK       :
+    case HDN_ITEMCLICKA      :
     case HDN_ITEMCLICKW      :
-    case HDN_ITEMDBLCLICK    :
+    case HDN_ITEMDBLCLICKA   :
     case HDN_ITEMDBLCLICKW   :
-    case HDN_TRACK           :
+    case HDN_TRACKA          :
     case HDN_TRACKW          :
             ret = DefaultProcessing();break;
     case LVN_BEGINDRAG:

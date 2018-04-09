@@ -14,8 +14,8 @@ void __fastcall grnet_line::begin_connection()
   host_addr = TIpxAddress(server_socket,true);
   GRNET_BEGIN_CONNECTION  bc;
   ZeroMemory(&bc,sizeof(bc));
-  lstrcpyn(bc.server_name,server_name,sizeof(bc.server_name));
-  lstrcpyn(bc.client_name,client_name,sizeof(bc.client_name));
+  safe_strcpyn(bc.server_name,server_name,sizeof(bc.server_name));
+  safe_strcpyn(bc.client_name,client_name,sizeof(bc.client_name));
   bc.ID           = -1;
   bc.client_level =  1; 
   tx_kadr_number  =  0;
@@ -56,8 +56,8 @@ void __fastcall grnet_line::begin_connection()
       rx_kadr_number = 1;
       if(!is_connected())
       {
-       lstrcpyn(server_name,bc->server_name,sizeof(server_name)-1);
-       lstrcpyn(client_name,bc->client_name,sizeof(client_name)-1);
+       safe_strcpyn(server_name,bc->server_name,sizeof(server_name)-1);
+       safe_strcpyn(client_name,bc->client_name,sizeof(client_name)-1);
        set_client_state(-1,false);
        start();
        net_send((LPBYTE)kadr,grnet_kadr_len(kadr));

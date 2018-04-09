@@ -32,7 +32,7 @@ namespace KrnlWin
  {
    if( (CtrlLoaded & ctrl->GetControlFlag())==0)
    {
-     HMODULE DllHinstance = GetModuleHandle("comctl32.dll");
+     HMODULE DllHinstance = GetModuleHandleA("comctl32.dll");
      static bool version_avail = __GetDllVersion(DllHinstance,&version);
      typedef BOOL (WINAPI * InitProc)(LPVOID);
      InitProc init_proc = (InitProc)GetProcAddress(DllHinstance,"InitCommonControlsEx");

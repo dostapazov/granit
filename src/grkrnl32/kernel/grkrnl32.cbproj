@@ -105,6 +105,7 @@
         <BRCC_Defines>_DEBUG;$(BRCC_Defines)</BRCC_Defines>
         <AppExecutionLevel>requireAdministrator</AppExecutionLevel>
         <AppEnableHighDPI>true</AppEnableHighDPI>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <BRCC_Defines>_DEBUG;$(BRCC_Defines)</BRCC_Defines>
@@ -155,7 +156,7 @@
         <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Build>122</VerInfo_Build>
+        <VerInfo_Build>125</VerInfo_Build>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
         <BCC_QuietFloatingPoint>false</BCC_QuietFloatingPoint>
@@ -165,7 +166,7 @@
         <VerInfo_Release>1</VerInfo_Release>
         <BCC_StackFrames>true</BCC_StackFrames>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Keys>CompanyName=Home Lab;FileDescription=Kernel for ASDU modules;FileVersion=1.1.1.122;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Home Lab;FileDescription=Kernel for ASDU modules;FileVersion=1.1.1.125;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <ILINK_FullDebugInfo>false</ILINK_FullDebugInfo>
         <BCC_DisableOptimizations>false</BCC_DisableOptimizations>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>

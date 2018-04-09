@@ -6,9 +6,9 @@ namespace KeWin
 {
 #endif
 
-  bool __fastcall TStatic::DoCreate(HWND Parent,char * Caption,TRect & r,int Id )
+  bool __fastcall TStatic::DoCreate(HWND Parent,const wchar_t * Caption,TRect & r,int Id )
   {
-    Create(Parent,Caption,r,Id,0,0,0,"STATIC");
+    Create(Parent,Caption,r,Id,0,0,0,L"STATIC");
     return hWnd ? true:false;
   }
 

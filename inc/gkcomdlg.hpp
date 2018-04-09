@@ -15,7 +15,7 @@ typedef UINT (APIENTRY * CD_HOOK)(HWND,UINT,WPARAM,LPARAM);
 
 KEWIN_CLASS TOpenDialog:public TDialog
 {
- OPENFILENAME  ofn;
+ OPENFILENAMEA  ofn;
 
  char * FileMask;
 

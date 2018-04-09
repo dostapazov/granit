@@ -58,7 +58,7 @@
         <Multithreaded>true</Multithreaded>
         <SanitizedProjectName>granit_udpio</SanitizedProjectName>
         <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
-        <_TCHARMapping>char</_TCHARMapping>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
         <IncludePath>..\FT2USBIO\;$(KERTL_INC);$(GRKRNL_INC);$(IncludePath)</IncludePath>
         <ILINK_LibraryPath>..\FT2USBIO\;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <BRCC_IncludePath>$(BDSINCLUDE)\windows\sdk;..\GRANIT_TCPIO\;$(BRCC_IncludePath)</BRCC_IncludePath>

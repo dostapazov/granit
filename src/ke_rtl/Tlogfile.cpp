@@ -202,10 +202,10 @@ TLogEntry::TLogEntry(const char * aHeader,const char * aText)
           char   td_str[32];
 
           int len =
-          wsprintf(td_str,"%2d.%2d.%2d",e.s_time.wDay,e.s_time.wMonth,e.s_time.wYear);
+          wsprintfA(td_str,"%2d.%2d.%2d",e.s_time.wDay,e.s_time.wMonth,e.s_time.wYear);
           SpaceZeroCh(td_str);
-          len+=wsprintf(td_str+len,"  ");
-          wsprintf(td_str+len,"%2d:%2d:%2d",e.s_time.wHour,e.s_time.wMinute,e.s_time.wSecond);
+          len+=wsprintfA(td_str+len,"  ");
+          wsprintfA(td_str+len,"%2d:%2d:%2d",e.s_time.wHour,e.s_time.wMinute,e.s_time.wSecond);
           SpaceZeroCh(td_str+len);
           File->Write(td_str,lstrlenA(td_str));
           File->Write(CRLF,2);

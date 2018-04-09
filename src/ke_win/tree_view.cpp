@@ -16,7 +16,7 @@ namespace KrnlWin{
 
  bool __fastcall TTreeView::DoCreate(HWND parent,TRect & r,DWORD Style,DWORD ExStyle, DWORD id)
  {
-   Create((::HWND)parent,0,r,id,0,Style|(parent ? WS_CHILD:0),ExStyle, WC_TREEVIEW );
+   Create((::HWND)parent,0,r,id,0,Style|(parent ? WS_CHILD:0),ExStyle, WC_TREEVIEWW );
    return hWnd ? true:false;
  }
 

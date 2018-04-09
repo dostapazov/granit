@@ -27,10 +27,6 @@ inherited GrIpxModuleWnd: TGrIpxModuleWnd
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
       Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ServerTUTR: TGroupBox
         Left = 265
         Top = 73
@@ -546,10 +542,6 @@ inherited GrIpxModuleWnd: TGrIpxModuleWnd
     object TabSheet2: TTabSheet
       Caption = #1055#1088#1086#1089#1084#1086#1090#1088
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Splitter1: TSplitter
         Left = 178
         Top = 0
@@ -815,10 +807,6 @@ inherited GrIpxModuleWnd: TGrIpxModuleWnd
     object TabSheet3: TTabSheet
       Caption = #1050#1072#1088#1090#1072' '#1076#1080#1072#1075#1085#1086#1089#1090#1080#1082#1080' '#1050#1055
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         600
         297)
@@ -989,6 +977,8 @@ inherited GrIpxModuleWnd: TGrIpxModuleWnd
     object TabSheet4: TTabSheet
       Caption = #1054' '#1084#1086#1076#1091#1083#1077
       ImageIndex = 3
+      ExplicitWidth = 304
+      ExplicitHeight = 137
       object Label30: TLabel
         Left = 7
         Top = 104
@@ -1011,7 +1001,7 @@ inherited GrIpxModuleWnd: TGrIpxModuleWnd
         Height = 91
         Align = alTop
         TabOrder = 0
-        ExplicitWidth = 600
+        ExplicitWidth = 304
         inherited Memo2: TMemo
           Width = 600
           ExplicitWidth = 600
@@ -1101,7 +1091,7 @@ inherited GrIpxModuleWnd: TGrIpxModuleWnd
     Left = 16
     Top = 320
     Bitmap = {
-      494C010106000900040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106000800080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

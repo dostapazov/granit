@@ -7,9 +7,9 @@
 
 #define GKEXPLORER_MODAL 0
 
- char * mod_name = NULL;
- char * mod_work = NULL;
- char * mod_stop = NULL;
+ wchar_t * mod_name = NULL;
+ wchar_t * mod_work = NULL;
+ wchar_t * mod_stop = NULL;
  
  ULONG  TGKAppWindow::create_taskbar_msg = 0;
  TGKAppWindow::TGKAppWindow(GKHANDLE khandle)
@@ -22,9 +22,9 @@
    this->mw_handle = NULL;
  }
 
- void __fastcall TGKAppWindow::set_instance(const char * _inst)
+ void __fastcall TGKAppWindow::set_instance(const TCHAR * _inst)
  {
-   strcpy(this->instance,_inst);
+   safe_strcpy(instance,_inst);
  }
 
  void     __fastcall TGKAppWindow::init_tray()
@@ -41,13 +41,13 @@
  {
   tray.hIcon  = ic;
   tray.uFlags = NIF_ICON;
-  Shell_NotifyIcon(NIM_MODIFY,&tray);
+  Shell_NotifyIconW(NIM_MODIFY,&tray);
  }
 
  #pragma warn -8004
- void     __fastcall TGKAppWindow::tray_text(char * text)
+ void     __fastcall TGKAppWindow::tray_text(wchar_t * text)
  {
-  int len = snprintf(tray.szTip,sizeof(tray.szTip)  ,"%s:%s",instance,text);
+  int len = snwprintf(tray.szTip,sizeof(tray.szTip)  ,L"%s:%s",instance,text);
   tray.uFlags = NIF_TIP;
 
   /*    len = snprintf(tray.szTip,sizeof(tray.szTip)  ,"%s",text);
@@ -57,7 +57,7 @@
   tray.uTimeout  = 1000;
   tray.uFlags = NIF_INFO ;
   */
-  Shell_NotifyIcon(NIM_MODIFY,&tray);
+  Shell_NotifyIconW(NIM_MODIFY,&tray);
  }
  #pragma warn .8004
 
@@ -65,27 +65,27 @@
  void     __fastcall TGKAppWindow::tray_put()
  {
   tray.uFlags = NIF_ICON|NIF_MESSAGE;
-  Shell_NotifyIcon(NIM_ADD,&tray);
+  Shell_NotifyIconW(NIM_ADD,&tray);
  }
 
  void     __fastcall TGKAppWindow::tray_remove()
  {
-  Shell_NotifyIcon(NIM_DELETE,&tray);
+  Shell_NotifyIconW(NIM_DELETE,&tray);
  }
 
  void     __fastcall TGKAppWindow::OnTrayTimer()
  {
 
   HICON icon ;
-  char  text[64]  ;
+  wchar_t  text[64]  ;
   TGKModuleInterface mi(kernel_handle,true);
   DWORD state = mi.get_module_state();
   bool running = (state&MODULE_STATE_RUNNING_MASK)==MODULE_STATE_RUNNING ? true:false;
-  strcpy(text,mod_name);
+  safe_strcpy(text,mod_name);
   if(running)
-     strcat(text,mod_work);
+     wcscat(text,mod_work);
      else
-      strcat(text,mod_stop);
+      wcscat(text,mod_stop);
 
   if(running && (++tray_timer_counter)&1)
   {
@@ -195,17 +195,17 @@ void     __fastcall TGKAppWindow::show_menu(int x,int y)
   return true;
  }
 
- bool     __fastcall TGKAppWindow::OnWMCreate(LPCREATESTRUCT ps)
+ bool     __fastcall TGKAppWindow::OnWMCreate(LPCREATESTRUCTW ps)
  {
   if(TWindow::OnWMCreate(ps))
     {
-      char str[MAX_PATH];
+      wchar_t str[MAX_PATH];
       ::HINSTANCE hInst = GetModuleHandle(0);
-      TGKModuleInterface(this->kernel_handle,true).get_module_name(str,sizeof(str));
-      mod_name  =newstr(str); 
-      LoadString(hInst,IDS_WORK,str,sizeof(str));
+      TGKModuleInterface(this->kernel_handle,true).get_module_name(str,KERTL_ARRAY_COUNT(str));
+      mod_name  = newstr(str);
+      LoadStringW(hInst,IDS_WORK,str,KERTL_ARRAY_COUNT(str));
       mod_work = newstr(str);
-      LoadString(hInst,IDS_STOP,str,sizeof(str));
+      LoadStringW(hInst,IDS_STOP,str,KERTL_ARRAY_COUNT(str));
       mod_stop = newstr(str);
       tray_icons[0] = CopyIcon(LoadIcon(hInst,MAKEINTRESOURCE(IDI_SEM_OFF)));
       tray_icons[1] = CopyIcon(LoadIcon(hInst,MAKEINTRESOURCE(IDI_SEM_GREEN)));
@@ -285,17 +285,18 @@ void     __fastcall TGKAppWindow::show_menu(int x,int y)
    return TWindow::MessageLoop();
  }
 
-int __fastcall gkapp_window(GKHANDLE kernel,BOOL show_setup,const char * instance)
+int __fastcall gkapp_window(GKHANDLE kernel,BOOL show_setup,const TCHAR * instance)
 {
      SetThreadLocale(MAKELCID(LANG_RUSSIAN,SUBLANG_NEUTRAL));
      int ret ;
      TGKAppWindow * wnd = new TGKAppWindow(kernel);
      wnd->set_instance(instance);
-     char  caption   [MAX_PATH];
-     char  wnd_class [MAX_PATH];
-     _make_name(caption  ,KERTL_ARRAY_COUNT(caption  ),_T("Гранит - Н")     ,instance,_T(' '));
-     _make_name(wnd_class,KERTL_ARRAY_COUNT(wnd_class),GKAPP_WINDOW_NAME,instance,_T('$'));
+     TCHAR  caption   [MAX_PATH];
+     TCHAR  wnd_class [MAX_PATH];
+     _make_name(caption  ,KERTL_ARRAY_COUNT(caption  ), _T("Гранит - Н")    ,instance,_T(' '));
+     _make_name(wnd_class,KERTL_ARRAY_COUNT(wnd_class), GKAPP_WINDOW_NAME,instance,_T('$'));
      TRect r(10,10,300,300);
+
      wnd->Create(0,caption,r,-1,0,WS_OVERLAPPEDWINDOW,WS_EX_TOOLWINDOW,wnd_class);
 
      wnd->ProcessMessages();
@@ -492,22 +493,22 @@ LRESULT      __fastcall TSplashWindow::MessageHandler(MSG &msg)
  void     __fastcall  TSplashWindow::module_state(GKHANDLE  h,DWORD st)
  {
     TGKModuleInterface mi(h,true);
-    char text[MAX_PATH<<1];
-    lstrcpy(text,"Модуль - ");
-    int len = lstrlen(text);
+    TCHAR text[MAX_PATH<<1];
+    safe_strcpy(text,_T("Модуль - "));
+    int len = wcslen(text);
     mi.get_module_name(text+len,sizeof(text) - len);
     bool stop_pending  = (st&MODULE_STATE_STOP_PENDING)  ? true:false;
     bool start_pending = (st&MODULE_STATE_START_PENDING) ? true:false;
     bool running       = (!start_pending && !stop_pending && (st&MODULE_STATE_RUNNING))       ? true:false;
     bool stopped       = (st == 0) ? true:false;
     if(start_pending)
-     lstrcat(text,"  запускается ...");
+     lstrcat(text,_T("  запускается ..."));
     if(stop_pending)
-     lstrcat(text,"  останавливается ...");
+     lstrcat(text,_T("  останавливается ..."));
     if(running)
-     lstrcat(text,"  работает");
+     lstrcat(text,_T("  работает"));
     if(stopped)
-     lstrcat(text,"  останавлен");
+     lstrcat(text,_T("  останавлен"));
     print_text(text);
     Sleep(SLEEP_TIME);
  }
@@ -520,11 +521,11 @@ LRESULT      __fastcall TSplashWindow::MessageHandler(MSG &msg)
     TGKModuleInterface * mi = new TGKModuleInterface(h,true);
     m_list.add(mi);
     mi->set_notify(_handle,MNF_COMMON,TRUE);
-    char text[MAX_PATH<<1];
-    lstrcpy(text,"Модуль - ");
-    int len = lstrlen(text);
+    TCHAR text[MAX_PATH<<1];
+    safe_strcpy(text,_T("Модуль - "));
+    int len = wcslen(text);
     mi->get_module_name(text+len,sizeof(text) - len);
-    lstrcat(text,"  загружается ...");
+    wcscat(text,_T("  загружается ..."));
     print_text(text);
     Sleep(SLEEP_TIME);
    }
@@ -535,11 +536,11 @@ LRESULT      __fastcall TSplashWindow::MessageHandler(MSG &msg)
     TGKModuleInterface * mi = m_list.remove(h);
     if(mi)
        {
-        char text[MAX_PATH<<1];
-        lstrcpy(text,"Модуль - ");
+        TCHAR text[MAX_PATH<<1];
+        safe_strcpy(text,_T("Модуль - "));
         int len = lstrlen(text);
         mi->get_module_name(text+len,sizeof(text) - len);
-        lstrcat(text,"  выгружен.");
+        wcscat(text,_T("  выгружен."));
         print_text(text);
         Sleep(SLEEP_TIME);
         delete mi;
@@ -582,11 +583,11 @@ int      __fastcall TSplashWindow::EraseBkgnd(HDC dc)
    return 0;
   }
 
-  void     __fastcall  TSplashWindow::print_text(char * text)
+  void     __fastcall  TSplashWindow::print_text(TCHAR * text)
   {
    KillTimer((::HWND)hWnd,100);
-   char out_text[MAX_PATH<<1];
-   wsprintf(out_text,"  %s",text);
+   TCHAR out_text[MAX_PATH<<1];
+   swprintf(out_text,_T("  %s"),text);
    stext.SetCaption(out_text);
    SetTimer((::HWND)hWnd,100,SLEEP_TIME<<1,NULL);
   }

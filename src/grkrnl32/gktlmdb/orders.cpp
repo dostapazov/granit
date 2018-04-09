@@ -7,7 +7,7 @@
 
  void   __fastcall TOrders::add_order(TGKTlmDB* mod,modem_addr & ma,otd_addr & addr,DWORD order_parts)
  {
-  char mon_text  [MAX_PATH];
+  TCHAR mon_text  [MAX_PATH];
   int  mon_len  = 0;
   wr_lock();
   otd_storage & ost = this->orders[ma];
@@ -27,7 +27,7 @@
      if(sop.op.addr->fa == OTD_FA_ALL || sop.op.addr->fa == OTD_FA_DATA_MASK)
        sop.op.addr->fa = OTD_ADDR_MAXVALUE;
      entry = ost.insert(sop.op);
-     mon_len = wsprintf(mon_text,"Оформление подписки модем %03d.%03d  адрес %03d.%03d.%03d.%03d  parts %04X",
+     mon_len = wsprintf(mon_text,_T("Оформление подписки модем %03d.%03d  адрес %03d.%03d.%03d.%03d  parts %04X"),
                (DWORD) ma.modem,(DWORD)ma.line,(DWORD)addr.pu,(DWORD)addr.cp,(DWORD)addr.fa&OTD_FA_ALL,(DWORD)addr.sb,order_parts);
     }
    }
@@ -35,14 +35,14 @@
     {
      if(order_parts)
        {
-        mon_len = wsprintf(mon_text,"Изменение подписки модем %03d.%03d  адрес %03d.%03d.%03d.%03d  parts %04X",
+        mon_len = wsprintf(mon_text,_T("Изменение подписки модем %03d.%03d  адрес %03d.%03d.%03d.%03d  parts %04X"),
                            (DWORD) ma.modem,(DWORD)ma.line,(DWORD)addr.pu,(DWORD)addr.cp,(DWORD)addr.fa&OTD_FA_ALL,(DWORD)addr.sb,order_parts);
         *entry->op.ver_parts = order_parts;
        }
     }
   wr_unlock();
   if( mod && mon_len++ )
-     mod->notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_ORDER,mon_text,mon_len);
+     mod->notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_ORDER,mon_text,mon_len*sizeof(TCHAR));
 
  }
 
@@ -50,7 +50,7 @@
  bool   __fastcall TOrders::remove_order(TGKTlmDB* mod,modem_addr & ma,otd_addr & addr)
  {
   bool ret = false;
-  char mon_text  [4096];
+  TCHAR mon_text  [4096];
   int  mon_len  = 0;
   wr_lock();
   if(orders.count(ma))
@@ -64,7 +64,7 @@
     release_storage(ost);
     orders.erase(ma);
     ret = true;
-    mon_len = wsprintf(mon_text,"Удаление из подписчиков модем %03d.%03d  ",
+    mon_len = wsprintf(mon_text,_T("Удаление из подписчиков модем %03d.%03d  "),
              (DWORD) ma.modem,(DWORD)ma.line);
    }
    else
@@ -72,14 +72,14 @@
      proto_pointer low_ptr = ost.begin(),hi_ptr = ost.end();
      if(ost.get_range(sa,low_ptr,hi_ptr))
      {
-      mon_len = wsprintf(mon_text,"Снятие подписки модем %03d.%03d  ",
+      mon_len = wsprintf(mon_text,_T("Снятие подписки модем %03d.%03d  "),
                  (DWORD) ma.modem,(DWORD)ma.line);
 
       while(low_ptr<hi_ptr)
       {
        if(sa.is_include(*low_ptr->op.addr,true))
          {
-          mon_len+=wsprintf(mon_text+mon_len,"%03d.%03d.%03d.%03d. ",(DWORD)low_ptr->op.addr->pu,(DWORD)low_ptr->op.addr->cp,(DWORD)low_ptr->op.addr->fa,(DWORD)low_ptr->op.addr->sb);
+          mon_len+=wsprintf(mon_text+mon_len,_T("%03d.%03d.%03d.%03d. "),(DWORD)low_ptr->op.addr->pu,(DWORD)low_ptr->op.addr->cp,(DWORD)low_ptr->op.addr->fa,(DWORD)low_ptr->op.addr->sb);
           this->release_sop(low_ptr);
           ost.erase(low_ptr);
           --hi_ptr;
@@ -90,7 +90,7 @@
       if(!ost.size())
        {
         orders.erase(ma);
-        mon_len+=wsprintf(mon_text+mon_len,"\rУдаление подписки");
+        mon_len+=wsprintf(mon_text+mon_len,_T("\rУдаление подписки"));
         
        }
 
@@ -99,7 +99,7 @@
   }
   wr_unlock();
   if( mod && mon_len++ )
-     mod->notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_ORDER,mon_text,mon_len);
+     mod->notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_ORDER,mon_text,mon_len*sizeof(TCHAR));
   return ret;
  }
 

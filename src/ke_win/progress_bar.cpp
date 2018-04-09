@@ -19,7 +19,7 @@ namespace KrnlWin
   bool      __fastcall TProgressBar::DoCreate(HWND parent,TRect & r,DWORD Style,DWORD ExStyle,int id)
   {
    this->CheckAndLoad(this);
-   Create((::HWND)parent,0,r,id,0,Style,ExStyle,PROGRESS_CLASSA);
+   Create((::HWND)parent,0,r,id,0,Style,ExStyle,PROGRESS_CLASSW);
    if(hWnd)
       ClientDC = GetDC((::HWND)hWnd);
    SetRange(minRange,maxRange);

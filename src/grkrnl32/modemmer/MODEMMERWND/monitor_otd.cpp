@@ -7,7 +7,7 @@
 
 
 
-int __fastcall get_fa_str(DWORD fa,DWORD pp,char * buf,DWORD buf_len)
+int __fastcall get_fa_str(DWORD fa,DWORD pp,TCHAR * buf,DWORD buf_len)
 {
  *buf = 0;
  if(fa&OTD_FA_CALL)
@@ -25,21 +25,21 @@ int __fastcall get_fa_str(DWORD fa,DWORD pp,char * buf,DWORD buf_len)
   return LoadString(ModuleInstance,IDS_MON_FASTR4,buf,buf_len);
 }
 
-int __fastcall get_tu_str(otd_tutr & tutr,char * out)
+int __fastcall get_tu_str(otd_tutr & tutr,TCHAR * out)
 {
  int ret = 0;
  switch(tutr.command&OTD_TUTR_CMDMASK)
  {
-  case OTD_TUTR_CMDSELECT  : ret = sprintf(out,"Выбор ТУ-ТР");break;
-  case OTD_TUTR_CMDENABLE  : ret = sprintf(out,"Разрешение ТУ-ТР");break;
-  case OTD_TUTR_CMDDESELECT: ret = sprintf(out,"Отмена выбора ТУ-ТР");break;
+  case OTD_TUTR_CMDSELECT  : ret = swprintf(out,_T("Выбор ТУ-ТР"))     ;break;
+  case OTD_TUTR_CMDENABLE  : ret = swprintf(out,_T("Разрешение ТУ-ТР"));break;
+  case OTD_TUTR_CMDDESELECT: ret = swprintf(out,_T("Отмена выбора ТУ-ТР"));break;
   default :
    {
        switch(tutr.command&OTD_TUTR_OPMASK)
        {
-       case OTD_TUOP_ON       :  ret = sprintf(out,"Команда ТУ-ТР ВКЛ /+");break;
-       case OTD_TUOP_OFF      :  ret = sprintf(out,"Команда ТУ-ТР ОТКЛ/-");break;
-       case OTD_TUTROP_CANCEL :  ret = sprintf(out,"Команда ТУ-ТР ОТМЕНА");break;
+       case OTD_TUOP_ON       :  ret = swprintf(out,_T("Команда ТУ-ТР ВКЛ /+"));break;
+       case OTD_TUOP_OFF      :  ret = swprintf(out,_T("Команда ТУ-ТР ОТКЛ/-"));break;
+       case OTD_TUTROP_CANCEL :  ret = swprintf(out,_T("Команда ТУ-ТР ОТМЕНА"));break;
        }
    }
    break;
@@ -48,7 +48,7 @@ int __fastcall get_tu_str(otd_tutr & tutr,char * out)
  return ret;
 }
 
-int  __fastcall get_time_string(char * date_time,int sz,LPQWORD timestamp)
+int  __fastcall get_time_string(TCHAR * date_time,int sz,LPQWORD timestamp)
 {
       SYSTEMTIME st;
       FileTimeToSystemTime((LPFILETIME)timestamp,&st);
@@ -56,9 +56,9 @@ int  __fastcall get_time_string(char * date_time,int sz,LPQWORD timestamp)
       dtl--;
       *(date_time+dtl) = ' ';
       dtl++;
-      dtl+=GetTimeFormat(LOCALE_USER_DEFAULT,0,&st,"HH':'mm':'ss",date_time+dtl,sz-dtl);
+      dtl+=GetTimeFormat(LOCALE_USER_DEFAULT,0,&st,_T("HH':'mm':'ss"),date_time+dtl,sz-dtl);
       dtl--;
-      dtl+=snprintf(date_time+dtl,sz-dtl,",%03d",(DWORD)st.wMilliseconds);
+      dtl+=snwprintf(date_time+dtl,sz-dtl,_T(",%03d"),(DWORD)st.wMilliseconds);
       return dtl;
 }
 
@@ -88,28 +88,28 @@ void __fastcall mon_alarm_param(TModemmerMonitor * monitor,lpotd_alarm_param ap)
 
 }
 
-char * __fastcall get_otd_type_string(DWORD otd_type)
+TCHAR * __fastcall get_otd_type_string(DWORD otd_type)
 {
   switch(otd_type)
   {
-    case OTD_DISCRETE       : return "distcrete";
+    case OTD_DISCRETE       : return _T("distcrete");
     //case OTD_BYTE           : return "byte";
-    case OTD_ANALOG_BYTE    : return "byte";
-    case OTD_ANALOG_WORD    : return "analog word";
-    case OTD_ANALOG_SHORT   : return "analog short";
-    case OTD_ANALOG_DWORD   : return "analog dword";
-    case OTD_ANALOG_LONG    : return "analog long";
-    case OTD_ANALOG_QWORD   : return "analog qword";
-    case OTD_ANALOG_LONGLONG: return "analog long long";
+    case OTD_ANALOG_BYTE    : return _T("byte");
+    case OTD_ANALOG_WORD    : return _T("analog word");
+    case OTD_ANALOG_SHORT   : return _T("analog short");
+    case OTD_ANALOG_DWORD   : return _T("analog dword");
+    case OTD_ANALOG_LONG    : return _T("analog long");
+    case OTD_ANALOG_QWORD   : return _T("analog qword");
+    case OTD_ANALOG_LONGLONG: return _T("analog long long");
     //case OTD_POINTER        : return "pointer";
     case OTD_FLOAT          :
-    case OTD_SIGNED_FLOAT   : return "float";
+    case OTD_SIGNED_FLOAT   : return _T("float");
     case OTD_DOUBLE         :
-    case OTD_SIGNED_DOUBLE  : return "double";
-    //case OTD_TUTR_COMMAND   : return "command";
-    case OTD_TR_COMMAND_SET : return "command_set";
+    case OTD_SIGNED_DOUBLE  : return _T("double");
+    //case OTD_TUTR_COMMAND   : return _T("command");
+    case OTD_TR_COMMAND_SET : return _T("command_set");
   }
-  return "unknown type";
+  return _T("unknown type");
 }
 
 void __fastcall monitor_otd(TModemmerMonitor * monitor, LPBYTE data, DWORD data_size)
@@ -119,35 +119,35 @@ void __fastcall monitor_otd(TModemmerMonitor * monitor, LPBYTE data, DWORD data_
  DWORD len;
  if(otd_proto_parser(data,data_size,&op,&len))
  {
- char str[MAX_PATH<<4];
- char str_templ1[128];
+ TCHAR str[MAX_PATH<<4];
+ TCHAR str_templ1[128];
  //char str_templ2[128];
- LoadString(ModuleInstance,IDS_MON_OTDADDR,str_templ1,sizeof(str_templ1));
- len = sprintf(str,str_templ1,(DWORD)op.addr->pu,(DWORD)op.addr->cp,(DWORD)(op.addr->fa),(DWORD)op.addr->sb);
+ LoadString(ModuleInstance,IDS_MON_OTDADDR,str_templ1,KERTL_ARRAY_COUNT(str_templ1));
+ len = swprintf(str,str_templ1,(DWORD)op.addr->pu,(DWORD)op.addr->cp,(DWORD)(op.addr->fa),(DWORD)op.addr->sb);
  if(OTD_FA_ISQUERY(op.addr->fa))
  {
-  char fa_str[64];
-  get_fa_str(op.addr->fa,*op.ver_parts,fa_str,sizeof(fa_str));
-  sprintf(str +len ,"%s маска составляющих %08X",fa_str,(DWORD)((*op.ver_parts)&OTD_PROTO_PARTSMASK));
+  TCHAR fa_str[64];
+  get_fa_str(op.addr->fa,*op.ver_parts,fa_str,KERTL_ARRAY_COUNT(fa_str));
+  swprintf(str +len ,_T("%s маска составляющих %08X"),fa_str,(DWORD)((*op.ver_parts)&OTD_PROTO_PARTSMASK));
   monitor->add_line(str);
  }
  else
  {
 
  if((*op.ver_parts)&OTD_PROTO_FLAG_QUERYRESPOND)
-    len+= sprintf(str+len," ** Ответ на вызов данных **");
+    len+= swprintf(str+len,_T(" ** Ответ на вызов данных **"));
     monitor->add_line(str);
 
  if(op.time_stamp)
   {
-      char date_time[MAX_PATH];
-      get_time_string(date_time,sizeof(date_time),op.time_stamp);
+      TCHAR date_time[MAX_PATH];
+      get_time_string(date_time,KERTL_ARRAY_COUNT(date_time),op.time_stamp);
       monitor->add_line(date_time);
   }
 
  if(op.diag)
     {
-     sprintf(str ,"Диагностика %08X ",*op.diag );
+     swprintf(str ,_T("Диагностика %08X "),*op.diag );
      monitor->add_line(str);
     }
 
@@ -156,9 +156,9 @@ void __fastcall monitor_otd(TModemmerMonitor * monitor, LPBYTE data, DWORD data_
    {
     wchar_t w_name[MAX_PATH];
     otd_text_getwstr(op.name,w_name,sizeof(w_name)/sizeof(wchar_t));
-    char    name[MAX_PATH];
-    KeRTL::Unicode2Ansi(name,w_name);
-    sprintf(str,"Имя - %s", name);
+//    TCHAR    name[MAX_PATH];
+//    KeRTL::Unicode2Ansi(name,w_name);
+    swprintf(str,_T("Имя - %s"), w_name);
     monitor->add_line(str);
    }
 
@@ -172,7 +172,7 @@ void __fastcall monitor_otd(TModemmerMonitor * monitor, LPBYTE data, DWORD data_
    if(OTD_FA_ISCTRL(op.addr->fa))
    {
     //ТУ/ТР
-    sprintf(str,"%s с %03d по %03d",(op.addr->fa&OTD_FA_ALL)? "ТР" : "ТУ", begin,end);
+    swprintf(str,_T("%s с %03d по %03d"),(op.addr->fa&OTD_FA_ALL)? _T("ТР") : _T("ТУ"), begin,end);
     monitor->add_line(str);
     len = 0;
     for(;begin<=end;begin++)
@@ -185,7 +185,7 @@ void __fastcall monitor_otd(TModemmerMonitor * monitor, LPBYTE data, DWORD data_
    else
    {
 
-    sprintf(str,"Данные с %03d по %03d - тип %s",begin,end,get_otd_type_string(op.data->otd_type));
+    swprintf(str,_T("Данные с %03d по %03d - тип %s"),begin,end,get_otd_type_string(op.data->otd_type));
     monitor->add_line(str);
     len = 0;
     if(op.addr->sb == 108 )
@@ -197,24 +197,24 @@ void __fastcall monitor_otd(TModemmerMonitor * monitor, LPBYTE data, DWORD data_
      switch(op.data->otd_type)
      {
       case OTD_DISCRETE :
-           len += sprintf(str+len,"%1d",value ? TRUE:FALSE);
+           len += swprintf(str+len,_T("%1d"),value ? TRUE:FALSE);
       break;
       case OTD_FLOAT:
       case OTD_SIGNED_FLOAT:
        {
         float fv = *((float*)&value);
-        len += sprintf(str+len,"%.2f ",fv );
+        len += swprintf(str+len,_T("%.2f "),fv );
        }
       break;
       case OTD_DOUBLE:
       case OTD_SIGNED_DOUBLE:
        {
         double dv = *((double*)&value);
-        len += sprintf(str+len,"%.2f ",dv );
+        len += swprintf(str+len,_T("%.2f "),dv );
        }
       break;
       default:
-      len += sprintf(str+len,"%04X ",(DWORD)value );
+      len += swprintf(str+len,_T("%04X "),(DWORD)value );
       break;
      }
 
@@ -227,14 +227,14 @@ void __fastcall monitor_otd(TModemmerMonitor * monitor, LPBYTE data, DWORD data_
  {
     DWORD begin = (DWORD)op.personal_diag->numbers.loN;
     DWORD end   = (DWORD)op.personal_diag->numbers.hiN;
-    sprintf(str,"Персональная диагностика с %03d по %03d",begin,end);
+    swprintf(str,_T("Персональная диагностика с %03d по %03d"),begin,end);
     monitor->add_line(str);
     len = 0;
     for(;begin<=end;begin++)
     {
      DWORD value = 0;
      otd_get_value(op.personal_diag,begin,&value,sizeof(value));
-      len += sprintf(str+len,"%04X ",value );
+      len += swprintf(str+len,_T("%04X "),value );
     }
     monitor->add_line(str);
  }
@@ -242,21 +242,21 @@ void __fastcall monitor_otd(TModemmerMonitor * monitor, LPBYTE data, DWORD data_
  {
     DWORD begin = (DWORD)op.personal_chmask->numbers.loN;
     DWORD end   = (DWORD)op.personal_chmask->numbers.hiN;
-    sprintf(str,"Персональная маска изменений с %03d по %03d",begin,end);
+    swprintf(str,_T("Персональная маска изменений с %03d по %03d"),begin,end);
     monitor->add_line(str);
     len = 0;
     for(;begin<=end;begin++)
     {
      DWORD value = 0;
      otd_get_value(op.personal_chmask,begin,&value,sizeof(value));
-      len += sprintf(str+len,"%04X ",value );
+      len += swprintf(str+len,_T("%04X "),value );
     }
     monitor->add_line(str);
  }
 
   if(OTD_FA_ISSETUP(op.addr->fa))
   {
-     sprintf(str,"Настройка  оборудование");
+     swprintf(str,_T("Настройка  оборудование"));
      monitor->add_line(str);
      if(op.extension && op.extension->block_type == OTD_BLOCKTYPE_ALARM)
      {
@@ -268,8 +268,8 @@ void __fastcall monitor_otd(TModemmerMonitor * monitor, LPBYTE data, DWORD data_
      }
   }
 
-  len = KeRTL::MIN((DWORD)sizeof(str),monitor->get_max_line_len());
-  memset(str,'-',len);
+  len = KeRTL::MIN((DWORD)KERTL_ARRAY_COUNT(str),monitor->get_max_line_len());
+  std::fill(str,str+len,L'-');
   str[len] = 0;
   monitor->add_line(str);
  }
@@ -278,13 +278,13 @@ void __fastcall monitor_otd(TModemmerMonitor * monitor, LPBYTE data, DWORD data_
 
 void __fastcall monitor_arch_list   (TModemmerMonitor * monitor, LPOTD_ARCH_LIST al)
 {
- char str[MAX_PATH];
+ TCHAR str[MAX_PATH];
  for(DWORD i = 0;i<al->count;i++)
  {
   QWORD   arch_id = al->archive[i];
   //SYSTEMTIME st;
-  int dtl = get_time_string(str,sizeof(str),&arch_id);
-  snprintf(str+dtl,sizeof(str)-dtl," - %Lu ",arch_id);
+  int dtl = get_time_string(str,KERTL_ARRAY_COUNT(str),&arch_id);
+  snwprintf(str+dtl,sizeof(str)-dtl,_T(" - %Lu "),arch_id);
   monitor->add_line(str);
  }
 }

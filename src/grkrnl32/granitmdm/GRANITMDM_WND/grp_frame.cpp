@@ -349,7 +349,7 @@ void __fastcall TGroupFrame::AddTuEntryClick(TObject *Sender)
   bool new_entry;
   if(make_tu_entry(tue,new_entry))
   {
-    begin_call_gkhandle("Добавление записи ТУ/ТР");
+    begin_call_gkhandle(_T("Добавление записи ТУ/ТР"));
     DWORD idx = mod_iface.call(SCCM_ADD_TUENTRY,(LPARAM)&tue,0);
     if( idx !=(DWORD) GKH_RET_ERROR)
     {
@@ -390,7 +390,7 @@ void __fastcall TGroupFrame::SetTuEntryClick(TObject *Sender)
   bool new_entry;
   if(make_tu_entry(tue,new_entry))
   {
-    begin_call_gkhandle("Изменение параметров ТУ/ТР");
+    begin_call_gkhandle(_T("Изменение параметров ТУ/ТР"));
     if(mod_iface.call(SCCM_SET_TUENTRY,(LPARAM)&tue,0) == GKH_RET_ERROR)
     {
      //TODO display error
@@ -413,7 +413,7 @@ void __fastcall TGroupFrame::DelTuEntryClick(TObject *Sender)
   bool new_entry;
   if(make_tu_entry(tue,new_entry))
   {
-    begin_call_gkhandle("Удаление записи ТУ/ТР");
+    begin_call_gkhandle(_T("Удаление записи ТУ/ТР"));
     if(mod_iface.call(SCCM_DEL_TUENTRY,(LPARAM)&tue,0) == GKH_RET_ERROR)
     {
       //TODO display error

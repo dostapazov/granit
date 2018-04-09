@@ -148,14 +148,14 @@ int  __fastcall TOpenDialog::ShowModal()
  ofn.lpstrFilter = this->FileMask;
  ofn.lpstrFile   = this->File;
  this->_FileCount = 0;
- BOOL ret = GetOpenFileName(&ofn);
+ BOOL ret = GetOpenFileNameA(&ofn);
  if(ret)
   {
    //Подсчет кол-ва файлов
    LPSTR  str = this->File+ofn.nFileOffset;
    int len;
    do{
-      len = lstrlen(str);
+      len = lstrlenA(str);
       str+=len+1;
       if(len) _FileCount++;
      }while(len && ofn.Flags&OFN_ALLOWMULTISELECT);
@@ -173,7 +173,7 @@ LRESULT  __fastcall TOpenDialog::MessageHandler(MSG & msg)
 
 int   __fastcall TOpenDialog::OnWMNotify(int /*CtrlId*/,LPNMHDR mnhdr)
 {
- LPOFNOTIFY  on = (LPOFNOTIFY)mnhdr;
+ LPOFNOTIFYA  on = (LPOFNOTIFYA)mnhdr;
  switch(on->hdr.code)
  {
   case CDN_FILEOK      :       if(!OnFileOK(on->pszFile))
@@ -203,18 +203,18 @@ int   __fastcall TOpenDialog::OnWMNotify(int /*CtrlId*/,LPNMHDR mnhdr)
       char f[MAX_PATH];
       bool Multy = _FileCount >1 ? true:false;
       char * str = _File;
-      lstrcpy(f,_File);
+      lstrcpyA(f,_File);
       if(Multy)
       {
         str+=ofn.nFileOffset;
         int i(0);
         while(i<idx)
         {
-         str+=lstrlen(str)+1;
+         str+=lstrlenA(str)+1;
          i++;
         }
-        lstrcat(f,"\\");
-        lstrcat(f,str);
+        lstrcatA(f,"\\");
+        lstrcatA(f,str);
       }
       if(lstrlenA(f)<bsz)
          lstrcpyA(buff,f);

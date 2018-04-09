@@ -23,7 +23,7 @@ grnet_line::grnet_line(DWORD ln,GRNET_SETTINGS & gs,diag_map * _diag):modem_line
        {
         char  cn[MAX_PATH];
         DWORD ln = sizeof(cn);
-        GetComputerName(cn,&ln);
+        GetComputerNameA(cn,&ln);
         if(ln) ln++;
         ln = KeRTL::MIN(ln,(DWORD)sizeof(client_name));
         cn[ln] = 0;
@@ -194,7 +194,7 @@ DWORD __fastcall grnet_line::get_line_text  (wchar_t * text,DWORD text_sz)
 {
  *text = 0;
   char lt[MAX_PATH]; DWORD len;
-  len = wsprintf(lt,"%s ID %X ",*client_name ? client_name:" ",(DWORD)client_id);
+  len = wsprintfA(lt,"%s ID %X ",*client_name ? client_name:" ",(DWORD)client_id);
   KeRTL::Ansi2Unicode(text,lt);
  return len;
 }

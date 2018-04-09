@@ -24,11 +24,11 @@ TSCMonitor *SCMonitor;
 #define FTXAFB_TUTR      5
 
 
-char * radix_str[] =
+TCHAR * radix_str[] =
 {
-"%03o",
-"%03d",
-"%02X"
+_T("%03o"),
+_T("%03d"),
+_T("%02X")
 };
 
 __fastcall TSCMonitor::TSCMonitor(TComponent* Owner,GKHANDLE handle)
@@ -241,7 +241,7 @@ void     __fastcall TSCMonitor::monitor_error(DWORD  err)
    mod_iface.get_error_text(err,err_text,sizeof(err_text)/sizeof(wchar_t));
    if(*err_text)
       {
-       AnsiString s(err_text);
+       UnicodeString s(err_text);
        s.Delete(s.Length()-1,2);
        monitor->add_line(s.c_str(),err_text_color);
       }
@@ -273,7 +273,7 @@ void     __fastcall TSCMonitor::monitor_data(bool tx,LPMIO_REQUEST io_req,DWORD 
   TCHAR parse_error[128];
   LoadString(ModuleInstance,STR_MON_RXTYPE+(int)tx,rxtx_type,sizeof(rxtx_type));
   LoadString(ModuleInstance,STR_MON_ERR0+error,parse_error,sizeof(parse_error));
-  sprintf(buf,_T("%02d.%02d.%02d %02d:%02d:%02d:%03d  %s %3d : %s"),
+  swprintf(buf,_T("%02d.%02d.%02d %02d:%02d:%02d:%03d  %s %3d : %s"),
           (DWORD)st.wDay,(DWORD)st.wMonth,(DWORD)st.wYear,
           (DWORD)st.wHour,(DWORD)st.wMinute,(DWORD)st.wSecond,(DWORD)st.wMilliseconds,
           rxtx_type,io_req->channel,parse_error);
@@ -321,11 +321,11 @@ void     __fastcall TSCMonitor::monitor_data(bool tx,LPMIO_REQUEST io_req,DWORD 
 void     __fastcall TSCMonitor::monitor_bytes(LPBYTE data,DWORD len,DWORD color)
 {
  int  text_len = 0;
- char text[MAX_PATH<<2];
+ TCHAR text[MAX_PATH<<2];
  LPBYTE end = data+len;
  while(data<end)
  {
-  text_len+=sprintf(text+text_len,radix_str[fmon_radix],(DWORD)*data++);
+  text_len+=swprintf(text+text_len,radix_str[fmon_radix],(DWORD)*data++);
   text[text_len++] = ' ';
  }
 
@@ -464,18 +464,18 @@ void     __fastcall TSCMonitor::monitor_details(gr_proto & gp,DWORD color)
  if(gp.type->ktype == GRKT_CALL)
     {
      LoadString(ModuleInstance,STR_MON_DETAIL3_1+fmon_radix,detail_templ1,sizeof(detail_templ1));
-     len =sprintf(buf,detail_templ1,kadr_type,call_afbs,floor,cp);
+     len =swprintf(buf,detail_templ1,kadr_type,call_afbs,floor,cp);
      if(gp.type->afb == GRKTAFB_TRCANCEL  || ( gp.type->afb >= GRKTAFB_TUON && gp.type->afb <= GRKTAFB_CMD2))
      {
        LoadString(ModuleInstance,STR_MON_TUTR_DETAIL,call_afbs,sizeof(call_afbs));
        lpgr_proto_data_tu  dtu = (lpgr_proto_data_tu)gp.data;
-       len+=sprintf(buf+len,call_afbs,gr_proto_poscode2val(dtu->pc_group,sizeof(dtu->pc_group)),gr_proto_poscode2val(dtu->pc_object,sizeof(dtu->pc_object)));
+       len+=swprintf(buf+len,call_afbs,gr_proto_poscode2val(dtu->pc_group,sizeof(dtu->pc_group)),gr_proto_poscode2val(dtu->pc_object,sizeof(dtu->pc_object)));
      }
     }
     else
     {
      LoadString(ModuleInstance,STR_MON_DETAIL1_1+fmon_radix,detail_templ1,sizeof(detail_templ1));
-     len = sprintf(buf,detail_templ1,kadr_type,floor,cp,mod);
+     len = swprintf(buf,detail_templ1,kadr_type,floor,cp,mod);
     }
 
   if(gp.info)
@@ -484,7 +484,7 @@ void     __fastcall TSCMonitor::monitor_details(gr_proto & gp,DWORD color)
   LoadString(ModuleInstance,STR_MON_KADRINF0 +(((DWORD)gp.info->inf)&0x07),kadr_inf,sizeof(kadr_inf));
   if((gp.info->inf&GRINF_ERRFL))
    LoadString(ModuleInstance,STR_MON_KADRINF8 ,kadr_inf1,sizeof(kadr_inf1));
-  len+=sprintf(buf+len,detail_templ2,
+  len+=swprintf(buf+len,detail_templ2,
                (DWORD)gp.info->grp,
                kadr_inf,
                kadr_inf1);
@@ -505,8 +505,8 @@ void    __fastcall TSCMonitor::change_filter(DWORD addr)
 
   LoadString(ModuleInstance,(sa.fa==OTD_ADDR_MAXVALUE) ? (DWORD)STR_MON_FAALL : (STR_MON_FA0+(DWORD)(sa.fa&3)),fa_text,sizeof(fa_text));
   LoadString(ModuleInstance,STR_MON_FILTER_TEMPL,buf,sizeof(buf));
-  sprintf(templ,buf,radix_str[fmon_radix],_T("%s"),radix_str[fmon_radix]);
-  sprintf(buf,templ,(DWORD)sa.cp,fa_text,(DWORD)sa.sb);
+  swprintf(templ,buf,radix_str[fmon_radix],_T("%s"),radix_str[fmon_radix]);
+  swprintf(buf,templ,(DWORD)sa.cp,fa_text,(DWORD)sa.sb);
   FlowFilterText->Text = buf;
 }
 
@@ -665,9 +665,9 @@ void    __fastcall TSCMonitor::add_string(char * str,DWORD color)
 }
 
 
-DWORD    __fastcall a_toi(const char    * str){return atoi(str);}
-//inline  DWORD    __fastcall a_toi(wchar_t * str){return _wtoi(str);}
-typedef DWORD (__fastcall * cvt_func)(const char * );
+//DWORD    __fastcall a_toi(const char    * str){return atoi(str);}
+inline  DWORD   __fastcall a_toi(const wchar_t * str){return _wtoi(str);}
+typedef DWORD (__fastcall * cvt_func)(const TCHAR * );
 
 cvt_func cvt_ftable[3] =
 {
@@ -679,17 +679,18 @@ cvt_func cvt_ftable[3] =
 void __fastcall TSCMonitor::SetRxCPNumber(DWORD value)
 {
  //TODO: Add your source code here
- AnsiString str;
+ UnicodeString str;
  str.printf(radix_str[fmon_radix],value);
  RxCP->Text = str;
 }
+
 DWORD __fastcall TSCMonitor::GetRxCPNumber()
 {
-  AnsiString s = RxCP->Text;
+  UnicodeString s = RxCP->Text;
   DWORD ret = 255 ;
   if(s.Length() && (fmon_radix>=0 && fmon_radix<=2))
   {
-     const char * str = s.c_str() ;
+     const TCHAR * str = s.c_str() ;
      ret = cvt_ftable[fmon_radix](str);
   }
   return ret;
@@ -698,14 +699,14 @@ DWORD __fastcall TSCMonitor::GetRxCPNumber()
 void __fastcall TSCMonitor::SetRxGRPNumber(DWORD value)
 {
         //TODO: Add your source code here
- AnsiString str;
+ UnicodeString str;
  str.printf(radix_str[fmon_radix],value);
  RxGRP->Text = str;
 }
 DWORD __fastcall TSCMonitor::GetRxGRPNumber()
 {
         //TODO: Add your source code here
-  AnsiString s = RxGRP->Text;
+  UnicodeString s = RxGRP->Text;
   DWORD ret = s.Length() ? cvt_ftable[fmon_radix](s.c_str()):255;
   return ret;
 }
@@ -713,7 +714,7 @@ DWORD __fastcall TSCMonitor::GetRxGRPNumber()
 void __fastcall TSCMonitor::SetRxAFBNumber(DWORD value)
 {
         //TODO: Add your source code here
- AnsiString str;
+ UnicodeString str;
  str.printf(radix_str[fmon_radix],value);
  RxAFB->Text = str;
 }
@@ -721,7 +722,7 @@ void __fastcall TSCMonitor::SetRxAFBNumber(DWORD value)
 DWORD __fastcall TSCMonitor::GetRxAFBNumber()
 {
         //TODO: Add your source code here
-  AnsiString s = RxAFB->Text;
+  UnicodeString s = RxAFB->Text;
   DWORD ret = s.Length() ? cvt_ftable[fmon_radix](s.c_str()):255;
   return ret;
 }
@@ -729,7 +730,7 @@ DWORD __fastcall TSCMonitor::GetRxAFBNumber()
 void __fastcall TSCMonitor::SetTxCPNumber(DWORD value)
 {
         //TODO: Add your source code here
- AnsiString str;
+ UnicodeString str;
  str.printf(radix_str[fmon_radix],value);
  TxCP->Text = str;
 }
@@ -737,7 +738,7 @@ void __fastcall TSCMonitor::SetTxCPNumber(DWORD value)
 DWORD __fastcall TSCMonitor::GetTxCPNumber()
 {
 
-  AnsiString s =TxCP->Text;
+  UnicodeString s =TxCP->Text;
   DWORD ret = s.Length() ? cvt_ftable[fmon_radix](s.c_str()):255;
   return ret;
 }
@@ -745,13 +746,13 @@ DWORD __fastcall TSCMonitor::GetTxCPNumber()
 
 void __fastcall TSCMonitor::SetTxAFBNumber(DWORD value)
 {
- AnsiString str;
+ UnicodeString str;
  str.printf(radix_str[fmon_radix],value);
  TxAFB->Text = str;
 }
 DWORD __fastcall TSCMonitor::GetTxAFBNumber()
 {
-  AnsiString s = TxAFB->Text;
+  UnicodeString s = TxAFB->Text;
   DWORD ret = s.Length() ? cvt_ftable[fmon_radix](s.c_str()) : 255;
   return ret;
 }
@@ -779,14 +780,14 @@ void __fastcall TSCMonitor::create_monitor_view()
   if(monitor)
   {
   try{
-      char txtv_name [MAX_PATH];
-      safe_strcpy(txtv_name,"SCMonitor");
-      int name_len = strlen(txtv_name);
+      wchar_t txtv_name [MAX_PATH];
+      safe_strcpy(txtv_name,_T("SCMonitor"));
+      int name_len = wcslen(txtv_name);
       int create_limit = 128;
       int create_cntr = 0;
       while(!monitor->DoCreate(MonitorBox->Handle,r,-1,256,txtv_name) && create_cntr<create_limit)
       {
-        sprintf(txtv_name+name_len,"%d",create_cntr++);
+        swprintf(txtv_name+name_len,_T("%d"),create_cntr++);
       }
    }
    catch( Exception & ex)
@@ -797,7 +798,7 @@ void __fastcall TSCMonitor::create_monitor_view()
    }
    catch(...)
    {
-    Caption = Caption+" Oopps Unknown Exception ...";
+    Caption = Caption+_T(" Oopps Unknown Exception ...");
     delete monitor;
     monitor = NULL;
    }

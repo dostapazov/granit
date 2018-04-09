@@ -17,7 +17,7 @@ KERTL_FUNC void __fastcall secunds2HMS(DWORD secs, char * text,int tsz)
   div_t dt = div(secs,60);
   int sec  = dt.rem;
   dt       = div(dt.quot,60);
-  wsprintf(text,"%02d:%02d:%02d",dt.quot,dt.rem,sec);
+  wsprintfA(text,"%02d:%02d:%02d",dt.quot,dt.rem,sec);
  }
 } 
 

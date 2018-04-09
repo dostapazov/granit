@@ -11,11 +11,17 @@ namespace KrnlWin
                        TMenu::TMenu(HMENU menu,bool ShouldDel )
                        {hMenu = menu; this->ShouldDel = ShouldDel ;}
 
+                       TMenu::TMenu(LPCWSTR ResId,HINSTANCE from ,bool sd)
+                       {
+                        LoadFromResource(ResId,from);
+                        ShouldDel = sd;
+                       }
                        TMenu::TMenu(LPCSTR ResId,HINSTANCE from ,bool sd)
                        {
                         LoadFromResource(ResId,from);
                         ShouldDel = sd;
                        }
+
                        TMenu::TMenu(HWND Window,bool System,bool sd)
                        {
                          hMenu = System ? GetSystemMenu((::HWND)Window,false) : GetMenu((::HWND)Window);
@@ -58,12 +64,12 @@ namespace KrnlWin
                 #else
                 mi.cbSize = sizeof(mi) - sizeof(mi.cbSize);
                 #endif
-                char  ItemText [256] ;
+                TCHAR  ItemText [256] ;
                 for ( int i = 0 ;i < Count;i++)
                 {
                      mi.fMask = MIIM_TYPE|MIIM_DATA|MIIM_ID|MIIM_STATE|MIIM_SUBMENU|MIIM_CHECKMARKS;
                      mi.dwTypeData = ItemText;
-                     mi.cch        = sizeof(ItemText);
+                     mi.cch        = KERTL_ARRAY_COUNT(ItemText);
                     if(menu.GetItemInfo(i,true,&mi))
                     {
                      this->InsertItem(i+DstCount,true,&mi);
@@ -79,10 +85,16 @@ namespace KrnlWin
 
               bool     __fastcall TMenu::LoadFromResource(LPCSTR ResId,HINSTANCE from )
               {
-               hMenu = (HMENU)LoadMenu((::HINSTANCE)(from ? from :GetModuleHandle(0)),ResId);
+               hMenu = (HMENU)LoadMenuA((::HINSTANCE)(from ? from :GetModuleHandle(0)),ResId);
                return bool(hMenu!=0);
               }
-              
+
+              bool     __fastcall TMenu::LoadFromResource(LPCWSTR ResId,HINSTANCE from )
+              {
+               hMenu = (HMENU)LoadMenuW((::HINSTANCE)(from ? from :GetModuleHandle(0)),ResId);
+               return bool(hMenu!=0);
+              }
+
               bool     __fastcall TMenu::GetItemInfo(int i,bool ByPos , LPMENUITEMINFO mi)
               {
 		return GetMenuItemInfo((::HMENU)hMenu,i,ByPos,mi)?true:false;
@@ -146,6 +158,12 @@ namespace KrnlWin
              }
 
             TPopupMenu::TPopupMenu(LPCSTR  resId,HINSTANCE from)
+             {
+              TMenu menu(resId,from,false);
+              hMenu = GetSubMenu((::HMENU)menu(),0);
+             }
+
+            TPopupMenu::TPopupMenu(LPCWSTR  resId,HINSTANCE from)
              {
               TMenu menu(resId,from,false);
               hMenu = GetSubMenu((::HMENU)menu(),0);

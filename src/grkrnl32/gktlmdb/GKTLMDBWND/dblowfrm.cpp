@@ -53,9 +53,9 @@ void     __fastcall TDBLowForm::on_module_state(GKHANDLE mod,DWORD state)
   StartBtn->Enabled = stopped;
   StopBtn->Enabled  = running;
   if(running)
-     StatusBar1->Panels->Items[0]->Text =  "Работатет";
+     StatusBar1->Panels->Items[0]->Text =  L"Работатет";
   if(stopped)
-     StatusBar1->Panels->Items[0]->Text =  "Останов";
+     StatusBar1->Panels->Items[0]->Text =  L"Останов";
 }
 
 void     __fastcall TDBLowForm::on_module_config_change(GKHANDLE mod,LPMODULE_CONFIG_DATA mcd)
@@ -73,14 +73,14 @@ LRESULT     __fastcall TDBLowForm::on_gkhandle_notify (GKHANDLE from,LPNOTIFY_CO
    {
      if(!MonPause->Checked)
      {
-       monitor_handler  (nc->notify_code,(char*)nc->notify_data);
+       monitor_handler  (nc->notify_code,(PTCHAR)nc->notify_data);
        
      }  
    }
   return TGKModuleForm::on_gkhandle_notify(from,nc,mask);
 }
 
-void        __fastcall TDBLowForm::monitor_handler(DWORD code,char * text)
+void        __fastcall TDBLowForm::monitor_handler(DWORD code,PTCHAR  text)
 {
  if(code == TLMDB_DBLOW_MONITOR_CHANGES && MonChanges->Checked)
     monitor.add_line(text,clBlue);
@@ -98,10 +98,10 @@ void     __fastcall TDBLowForm::after_set_gkhandle()
 
 
 
-int __fastcall TDBLowForm::get_tlmmodule_rctext(lpotd_addr adr, int type,char * name,int bsz)
+int __fastcall TDBLowForm::get_tlmmodule_rctext(lpotd_addr adr, int type,TCHAR * name,int bsz)
 {
  int ret ;
- char buf[MAX_PATH];
+ TCHAR buf[MAX_PATH];
          int str_id;
          switch(type)
          {
@@ -116,16 +116,16 @@ int __fastcall TDBLowForm::get_tlmmodule_rctext(lpotd_addr adr, int type,char * 
          }
          ret = LoadString(ModuleInstance,str_id,buf,sizeof(buf));
          if(ret)
-           ret = wsprintf(name,"%s №%03d",buf,DWORD(((LPBYTE)adr)[type]));
+           ret = wsprintf(name,_T("%s №%03d"),buf,DWORD(((LPBYTE)adr)[type]));
      return ret;
 }
 
-AnsiString __fastcall TDBLowForm::get_diag_text(DWORD diag,bool prn_val)
+UnicodeString __fastcall TDBLowForm::get_diag_text(DWORD diag,bool prn_val)
 {
-  AnsiString s;
+  UnicodeString s;
   DWORD mask = OTD_DIAG_NODATA;
   if(prn_val)
-   s.printf("%04X ",(DWORD)HIWORD(diag));
+   s.printf(L"%04X ",(DWORD)HIWORD(diag));
   for(int i = 0;i<16;i++)
   {
    if(diag & mask)
@@ -139,11 +139,11 @@ AnsiString __fastcall TDBLowForm::get_diag_text(DWORD diag,bool prn_val)
   return s;
 }
 
-AnsiString __fastcall TDBLowForm::get_part_diag_text(DWORD value,bool prn_val)
+UnicodeString __fastcall TDBLowForm::get_part_diag_text(DWORD value,bool prn_val)
 {
- AnsiString s;
+ UnicodeString s;
  if(prn_val)
-  s.printf("%04X ",(value&(OTD_DIAG_PART_MASK|OTD_DIAG_STATE_MASK)));
+  s.printf(L"%04X ",(value&(OTD_DIAG_PART_MASK|OTD_DIAG_STATE_MASK)));
  DWORD  mask = OTD_PART_DIAG_PARAM ;
   for(int i = 0;i<8;i++)
   {
@@ -157,11 +157,11 @@ AnsiString __fastcall TDBLowForm::get_part_diag_text(DWORD value,bool prn_val)
  return s;
 }
 
-AnsiString __fastcall TDBLowForm::get_state_text(DWORD value,bool prn_val)
+UnicodeString __fastcall TDBLowForm::get_state_text(DWORD value,bool prn_val)
 {
- AnsiString s;
+ UnicodeString s;
  if(prn_val)
- s.printf("%04X ",(value&OTD_STATE_MASK));
+ s.printf(L"%04X ",(value&OTD_STATE_MASK));
  DWORD  mask = OTD_STATE_RESERV1;
   for(int i = 0;i<8;i++)
   {
@@ -177,11 +177,11 @@ AnsiString __fastcall TDBLowForm::get_state_text(DWORD value,bool prn_val)
 
 
 
-AnsiString __fastcall TDBLowForm::get_pdiag_text(DWORD value,bool prn_val)
+UnicodeString __fastcall TDBLowForm::get_pdiag_text(DWORD value,bool prn_val)
 {
- AnsiString s;
+ UnicodeString s;
  if(prn_val)
-  s.printf("%02X ",value);
+  s.printf(L"%02X ",value);
  DWORD  mask = OTD_PDIAG_NODATA;
   for(int i = 0;i<8;i++)
   {
@@ -295,7 +295,7 @@ TTreeNode * __fastcall TDBLowForm::add_pu (DWORD addr)
   TTreeNode * node = this->find_pu(sa.addr);
   if(!node)
     {
-      node = DbTree->Items->AddChild(db_root,"");
+      node = DbTree->Items->AddChild(db_root,L"");
       if(!db_root->Expanded)
           db_root->Expand(false);
       node->Data = (LPVOID)sa.addr;
@@ -318,7 +318,7 @@ TTreeNode * __fastcall TDBLowForm::add_cp (DWORD addr)
     TTreeNode * cp = find_cp(sa.addr,pu);
     if(!cp)
     {
-      cp = DbTree->Items->AddChild(pu,"");
+      cp = DbTree->Items->AddChild(pu,L"");
       cp->Data = (LPVOID)sa.addr;
       pu->CustomSort(node_comparer,0,false);
       update_node_text(cp);
@@ -337,7 +337,7 @@ TTreeNode * __fastcall TDBLowForm::add_sb (DWORD addr)
     TTreeNode * sb = find_sb(sa.addr,cp);
     if(!sb)
     {
-     char str[MAX_PATH];
+     TCHAR str[MAX_PATH];
      get_tlmmodule_rctext(&sa,OTD_ADDR_TYPE_SB,str,sizeof(str));
      sb = DbTree->Items->AddChild(cp,str);
      sb->Data = (LPVOID)sa.addr;
@@ -356,7 +356,7 @@ TTreeNode * __fastcall TDBLowForm::add_tree_item(otd_proto & op)
  TTreeNode * node = NULL;
  if(otd_addr_include(op.addr,&filter_addr))
  {
- AnsiString str;
+ UnicodeString str;
  DWORD type = otd_addr_type(op.addr);
  switch(type)
  {
@@ -368,8 +368,7 @@ TTreeNode * __fastcall TDBLowForm::add_tree_item(otd_proto & op)
  if(node && op.name)
  {
   wchar_t name[MAX_PATH];
-  get_tlmmodule_rctext(op.addr,type,(char*)name,sizeof(name));
-  str = (char*)name;
+  get_tlmmodule_rctext(op.addr,type,name,KERTL_ARRAY_COUNT(name));
   name[otd_text_getwstr(op.name,name,MAX_PATH)]=0;
   str+=' ';
   str+=name;
@@ -486,8 +485,8 @@ void        __fastcall TDBLowForm::update_node_text (TTreeNode * node)
  {
   sotd_addr sa((DWORD)node->Data);
   BYTE buffer[4096];
-  get_tlmmodule_rctext(&sa,sa.addrtype(),buffer,sizeof(buffer));
-  AnsiString text = (char*)buffer;
+  get_tlmmodule_rctext(&sa,sa.addrtype(),(TCHAR*)buffer,sizeof(buffer)/sizeof(TCHAR));
+  UnicodeString text = (char*)buffer;
   sotd_proto sop;
   if(get_dbentry_data(sa.addr,OTD_PROTO_PART_NAME,0,-1,buffer,sizeof(buffer),sop)>0)
   {
@@ -533,12 +532,12 @@ void __fastcall TDBLowForm::DbTreeChange(TObject *Sender, TTreeNode *Node)
   }
  sotd_addr  addr((DWORD)Node->Data);
  DWORD type = addr.addrtype();
- AnsiString str;
+ UnicodeString str;
  if(type<OTD_ADDR_TYPE_BROADCAST)
  {
   modem_addr ma((DWORD)mod_iface.call(TLMDBCM_DBLOW_GET_SRCMODEM,addr.addr,0));
 
-  str.printf("%03d.%03d.%03d.%03d <- %d.%d",(DWORD)addr.pu,(DWORD)addr.cp,(DWORD)addr.fa,(DWORD)addr.sb,(DWORD)ma.modem,(DWORD)ma.line);
+  str.printf(L"%03d.%03d.%03d.%03d <- %d.%d",(DWORD)addr.pu,(DWORD)addr.cp,(DWORD)addr.fa,(DWORD)addr.sb,(DWORD)ma.modem,(DWORD)ma.line);
 
  }
  StatusBar1->Panels->Items[0]->Text = str;
@@ -561,7 +560,7 @@ void        __fastcall TDBLowForm::show_param_panel(TTreeNode * node,bool show)
  if(show)
    {
     panel->Align = alClient;
-    panel->Caption = AnsiString();
+    panel->Caption = UnicodeString();
     apply_mask = 0;
    }
    panel->Visible = show;
@@ -730,7 +729,7 @@ void __fastcall TDBLowForm::setup_view(sotd_proto & sop)
    lo = KeRTL::MIN(lo,(DWORD) sop.op.personal_chmask->numbers.loN);
    hi = KeRTL::MAX(hi,(DWORD) sop.op.personal_chmask->numbers.hiN);
   }
-  AnsiString str;
+  UnicodeString str;
   while(lo<=hi)
   {
    TListItem  * item = ListView1->Items->Add();
@@ -765,29 +764,29 @@ void        __fastcall TDBLowForm::setup_param(lpotd_data data)
     {
      param  p ; p.qw_param = 0;
      otd_get_value(data,lo,&p,sizeof(p));
-     AnsiString str;
+     UnicodeString str;
      WORD type = data->otd_type;
      switch(type)
      {
       case OTD_DISCRETE         :
       case OTD_BYTE             :
-      case OTD_ANALOG_WORD      : str.printf("%hu",(WORD)p.w_param);
+      case OTD_ANALOG_WORD      : str.printf(L"%hu",(WORD)p.w_param);
       break;
-      case OTD_ANALOG_SHORT     : str.printf("%hi",(WORD)p.sh_param);
+      case OTD_ANALOG_SHORT     : str.printf(L"%hi",(WORD)p.sh_param);
       break;
-      case OTD_ANALOG_DWORD     : str.printf("%lu",(DWORD)p.sh_param);
+      case OTD_ANALOG_DWORD     : str.printf(L"%lu",(DWORD)p.sh_param);
       break;
-      case OTD_ANALOG_LONG      : str.printf("%lu",(DWORD)p.sh_param);
+      case OTD_ANALOG_LONG      : str.printf(L"%lu",(DWORD)p.sh_param);
       break;
-      case OTD_ANALOG_QWORD     : str.printf("%Ld",(QWORD)p.sh_param);
+      case OTD_ANALOG_QWORD     : str.printf(L"%Ld",(QWORD)p.sh_param);
       break;
-      case OTD_ANALOG_LONGLONG  : str.printf("%Lu",(QWORD)p.sh_param);
+      case OTD_ANALOG_LONGLONG  : str.printf(L"%Lu",(QWORD)p.sh_param);
       break;
       case OTD_SIGNED_FLOAT     :
-      case OTD_FLOAT            : str.printf("%02f",(float)p.f_param);
+      case OTD_FLOAT            : str.printf(L"%02f",(float)p.f_param);
       break;
       case OTD_SIGNED_DOUBLE    :
-      case OTD_DOUBLE           : str.printf("%02f",(float)p.d_param);
+      case OTD_DOUBLE           : str.printf(L"%02f",(float)p.d_param);
       break;
       default :
       //str.printf("%02X",(DWORD)type);
@@ -811,12 +810,12 @@ void        __fastcall TDBLowForm::setup_pd   (lpotd_data data)
     DWORD lo = data->numbers.loN;
     DWORD hi = data->numbers.hiN;
     TListItem * item = this->ListView1->FindData(0,(LPVOID)lo,true,false);
-    AnsiString str;
+    UnicodeString str;
     while(item && lo<=hi)
     {
      DWORD param = 0;
      otd_get_value(data,lo,&param,sizeof(param));
-     str.printf("%02X",param);
+     str.printf(L"%02X",param);
      item->SubItems->Strings[1] = str;
      if(item->Selected)
        this->ListView1SelectItem(this,item,true);
@@ -833,17 +832,17 @@ void        __fastcall TDBLowForm::setup_cp_pd   (lpotd_data data)
     DWORD lo = data->numbers.loN;
     DWORD hi = data->numbers.hiN;
     TListItem * item = this->ListView1->FindData(0,(LPVOID)lo,true,false);
-    AnsiString str;
+    UnicodeString str;
     while(item && lo<=hi)
     {
      otd_group_pd_entry param = {0};
      DWORD sz = sizeof(param);
      otd_get_value(data,lo,&param,sz);
-     str.printf("%08X",param.diag);
+     str.printf(L"%08X",param.diag);
      item->SubItems->Strings[1] = str;
 
      sotd_addr sa(param.addr);
-     str.printf("%s № %d",sa.fa ? "ТИ":"ТС",(DWORD)sa.sb);
+     str.printf(L"%s № %d",sa.fa ? L"ТИ":L"ТС",(DWORD)sa.sb);
      item->SubItems->Strings[0] = str;
      if(item->Selected)
        this->ListView1SelectItem(this,item,true);
@@ -860,15 +859,15 @@ void        __fastcall TDBLowForm::setup_pu_pd   (lpotd_data data)
     DWORD lo = data->numbers.loN;
     DWORD hi = data->numbers.hiN;
     TListItem * item = this->ListView1->FindData(0,(LPVOID)lo,true,false);
-    AnsiString str;
+    UnicodeString str;
     while(item && lo<=hi)
     {
      otd_group_pd_entry param = {0};
      otd_get_value(data,lo,&param,sizeof(param));
-     str.printf("%08X",param.diag);
+     str.printf(L"%08X",param.diag);
      item->SubItems->Strings[1] = str;
      sotd_addr sa(param.addr);
-     str.printf("КП № %d",(DWORD)sa.cp);
+     str.printf(L"КП № %d",(DWORD)sa.cp);
      item->SubItems->Strings[0] = str;
      item = ListView1->Items->Item[item->Index+1];
      lo++;
@@ -883,7 +882,7 @@ void        __fastcall TDBLowForm::setup_cm   (lpotd_data data)
  {
 
     TListItem * item = this->ListView1->Items->Item[0];
-    AnsiString str;
+    UnicodeString str;
     while(item )
     {
      DWORD param = 0;
@@ -891,7 +890,7 @@ void        __fastcall TDBLowForm::setup_cm   (lpotd_data data)
      if(otd_data_inrange(data,index))
      {
       otd_get_value(data,index,&param,sizeof(param));
-      str.printf("%d",param);
+      str.printf(L"%d",param);
      }
      else
      str = 0;
@@ -905,7 +904,7 @@ void        __fastcall TDBLowForm::setup_cm   (lpotd_data data)
 
 void        __fastcall TDBLowForm::setup_timestamp(LPFILETIME ftm)
 {
-      char date_time[MAX_PATH];
+      TCHAR date_time[MAX_PATH];
       if(ftm)
       {
       SYSTEMTIME st;
@@ -914,9 +913,9 @@ void        __fastcall TDBLowForm::setup_timestamp(LPFILETIME ftm)
       dtl--;
       *(date_time+dtl) = ' ';
       dtl++;
-      dtl+=GetTimeFormat(LOCALE_USER_DEFAULT,0,&st,"HH':'mm':'ss",date_time+dtl,sizeof(date_time)-dtl);
+      dtl+=GetTimeFormat(LOCALE_USER_DEFAULT,0,&st,_T("HH':'mm':'ss"),date_time+dtl,sizeof(date_time)-dtl);
       dtl--;
-      wsprintf(date_time+dtl,",%03d",(DWORD)st.wMilliseconds);
+      wsprintf(date_time+dtl,_T(",%03d"),(DWORD)st.wMilliseconds);
       }
       else
       *date_time = 0;
@@ -1056,7 +1055,7 @@ void __fastcall TDBLowForm::DbTreeCollapsing(TObject *Sender,
 void __fastcall TDBLowForm::ListView1SelectItem(TObject *Sender,
       TListItem *Item, bool Selected)
 {
-  AnsiString text;
+  UnicodeString text;
   if(Selected)
   {
   sotd_addr sa ((DWORD)DbTree->Selected->Data);
@@ -1095,7 +1094,7 @@ void __fastcall TDBLowForm::activate_monitor(bool active)
   {
    KeWin::TRect r(0,0,MonitorBox->Width-14,MonitorBox->Height-14);
    r.Move(6,12);
-   monitor.DoCreate(MonitorBox->Handle,r,33333,8192,"DbLowMon");
+   monitor.DoCreate(MonitorBox->Handle,r,33333,8192,L"DbLowMon");
    monitor.SetFont(MonitorBox->Font->Handle,true);
 
   }
@@ -1140,7 +1139,7 @@ void        __fastcall TDBLowForm::calc_value()
  TListItem * item = this->ListView1->Selected;
  if(item)
   {
-   AnsiString str;
+   UnicodeString str;
 
    float  kvants = (DWORD)abs(atof(Kvants->Text.c_str()));
    if(kvants)
@@ -1149,7 +1148,7 @@ void        __fastcall TDBLowForm::calc_value()
    float  beg_s  = atof(this->ScaleBeg->Text.c_str());
    float  end_s  = atof(this->ScaleEnd->Text.c_str());
    float  res    = beg_s + param * (end_s - beg_s)/float(kvants);
-   str.printf("%.3f",res);
+   str.printf(L"%.3f",res);
    }
    Result->Text = str;
   }

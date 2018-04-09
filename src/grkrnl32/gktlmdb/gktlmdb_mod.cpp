@@ -688,7 +688,7 @@ LRESULT __fastcall TGKTlmDB::handle_otd(LPMPROTO_HEADER mph,GKHANDLE src)
 void     __fastcall TGKTlmDB::send_otd_changes(otd_addr  & addr,DWORD parts,DWORD lo_obj,DWORD hi_obj)
 {
  DWORD mon_len = 0;
- char  mon_text[2048];
+ TCHAR  mon_text[2048];
  DWORD   ticks = GetTickCount();
  BYTE src_buffer[8192];
  if(parts&OTD_PROTO_PART_DATA)
@@ -712,8 +712,8 @@ void     __fastcall TGKTlmDB::send_otd_changes(otd_addr  & addr,DWORD parts,DWOR
   sz = orders.get_order_addrs(addr,parts,send_list);
   if(sz)
   {
-   mon_len = sprintf(mon_text,"Изменения %03d.%03d.%03d.%03d - %X отправлены подписчикам:",(DWORD)addr.pu, (DWORD)addr.cp,(DWORD)addr.fa,(DWORD)addr.sb,parts);
-   notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_CHANGES,mon_text,mon_len+1);
+   mon_len = swprintf(mon_text,_T("Изменения %03d.%03d.%03d.%03d - %X отправлены подписчикам:"),(DWORD)addr.pu, (DWORD)addr.cp,(DWORD)addr.fa,(DWORD)addr.sb,parts);
+   notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_CHANGES,mon_text,(mon_len+1)*sizeof(TCHAR));
    mon_len = 0;
    BYTE buffer[16384+sizeof(MPROTO_HEADER)];
    LPMPROTO_HEADER mph =  (LPMPROTO_HEADER)buffer;
@@ -750,11 +750,11 @@ void     __fastcall TGKTlmDB::send_otd_changes(otd_addr  & addr,DWORD parts,DWOR
        bad_send.push_back(*beg);
        else
        {
-        mon_len+=sprintf(mon_text+mon_len,"%03d.%03d",(DWORD)mph->addr_to.modem,(DWORD)mph->addr_to.line);
+        mon_len+=swprintf(mon_text+mon_len,_T("%03d.%03d"),(DWORD)mph->addr_to.modem,(DWORD)mph->addr_to.line);
        }
     ++beg;
     if(beg<end)
-       lstrcat(mon_text,", "),mon_len+=2;
+       lstrcat(mon_text,_T(", ")),mon_len+=2;
    }
   }
   }
@@ -774,13 +774,13 @@ void     __fastcall TGKTlmDB::send_otd_changes(otd_addr  & addr,DWORD parts,DWOR
    }
  }
  if(mon_len)
-  notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_CHANGES,mon_text,mon_len+1);
+  notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_CHANGES,mon_text,(mon_len+1)*sizeof(TCHAR));
 
  ticks = GetTickCount()-ticks;
  if(mon_len)
    {
-    mon_len=sprintf(mon_text,"Время рассылки %d ms", ticks);
-    notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_CHANGES,mon_text,mon_len+1);
+    mon_len=swprintf(mon_text,_T("Время рассылки %d ms"), ticks);
+    notify(TLMDB_DBLOW_MONITOR,TLMDB_DBLOW_MONITOR_CHANGES,mon_text,(mon_len+1)*sizeof(TCHAR));
    }
 }
 

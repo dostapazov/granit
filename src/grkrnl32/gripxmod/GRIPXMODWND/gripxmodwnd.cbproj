@@ -57,7 +57,7 @@
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
         <Multithreaded>true</Multithreaded>
-        <_TCHARMapping>char</_TCHARMapping>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
         <IncludePath>..\..\GKLIB\VCL\;$(KERTL_INC);$(GRKRNL_INC);$(IncludePath)</IncludePath>
         <ILINK_LibraryPath>..\..\GKLIB\VCL\;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <ILINK_MapFileType>None</ILINK_MapFileType>
@@ -240,14 +240,14 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\..\grkrnl32\gripxmodwnd.dll" Configuration="Release" Class="ProjectOutput">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32250.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <RemoteName>gripxmodwnd.dll</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32250.dll" Class="DependencyModule">
+                <DeployFile LocalName="..\..\..\..\grkrnl32\gripxmodwnd.dll" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
+                        <RemoteName>gripxmodwnd.dll</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

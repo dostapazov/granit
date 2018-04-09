@@ -1990,7 +1990,7 @@ LRESULT __fastcall TRecHistory::restore_database (LPRECHIST_RESTORE rhr,char * c
            }
      }
      char mod_dll[MAX_PATH<<1];
-     GetModuleFileName(this->get_module_instance(),mod_dll,sizeof(mod_dll));
+     GetModuleFileNameA(this->get_module_instance(),mod_dll,sizeof(mod_dll));
      TKFName<char> bkp;
      bkp.set_fullname(mod_dll);
      bkp.set_name("rechistory");

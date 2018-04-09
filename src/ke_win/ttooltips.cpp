@@ -57,7 +57,7 @@ bool __fastcall TToolTips::DoCreate(DWORD Style)
 {
  CheckAndLoad(this);
  TRect r;
- this->Create(0,0,r,-1,0,Style|WS_POPUP,WS_EX_TOOLWINDOW,TOOLTIPS_CLASS);
+ this->Create(0,0,r,-1,0,Style|WS_POPUP,WS_EX_TOOLWINDOW,TOOLTIPS_CLASSW);
  return hWnd!=0 ? true:false;
 }
 

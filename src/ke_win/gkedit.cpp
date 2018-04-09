@@ -28,7 +28,7 @@ namespace KeWin{
 
    Create(parent,0,r,id,0,
           style,
-          ex_style,"EDIT");
+          ex_style,L"EDIT");
    UD = 0;
    return hWnd ? true:false;
   }

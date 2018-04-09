@@ -46,13 +46,12 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <IntermediateOutputDir>$(GRKRNL_TEMP)\$(Platform)\$(CONFIG)\modemmer\wnd</IntermediateOutputDir>
-        <IncludePath>..\..\MediumDB\MediumDbWnd\;..\..\GKLIB\VCL\;..\..\GKLIB\VCL_RADS\;D:\USER\GRANIT\SRC\GrKrnl32\MODEMMER\MODEMMERWND\;$(IncludePath)</IncludePath>
+        <IncludePath>..\..\..\KE_WIN\;..\..\MediumDB\MediumDbWnd\;..\..\GKLIB\VCL\;..\..\GKLIB\VCL_RADS\;D:\USER\GRANIT\SRC\GrKrnl32\MODEMMER\MODEMMERWND\;$(IncludePath)</IncludePath>
         <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <ILINK_LibraryPath>..\..\MediumDB\MediumDbWnd\;..\..\GKLIB\VCL\;..\..\GKLIB\VCL_RADS\;D:\USER\GRANIT\SRC\GrKrnl32\MODEMMER\MODEMMERWND\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>..\..\..\KE_WIN\;..\..\MediumDB\MediumDbWnd\;..\..\GKLIB\VCL\;..\..\GKLIB\VCL_RADS\;D:\USER\GRANIT\SRC\GrKrnl32\MODEMMER\MODEMMERWND\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <BCC_IncludePath>D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;$(BCC_IncludePath)</BCC_IncludePath>
         <ProjectType>VCppStyleDll</ProjectType>
-        <_TCHARMapping>wchar_t</_TCHARMapping>
         <SanitizedProjectName>modemmerwnd</SanitizedProjectName>
         <Multithreaded>true</Multithreaded>
         <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
@@ -69,7 +68,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <UsePackages>false</UsePackages>
-        <_TCHARMapping>char</_TCHARMapping>
         <BCC_StackFrames>true</BCC_StackFrames>
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
         <DynamicRTL>false</DynamicRTL>
@@ -82,6 +80,7 @@
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
         <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;frx23;frxDB23;frxe23;frxTee23;ibmonitor;ibxbindings;ibxpress;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;Intraweb;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;svn;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;vclribbon;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
@@ -113,9 +112,8 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <BCC_UserSuppliedOptions>-tW -tV</BCC_UserSuppliedOptions>
         <DynamicRTL>false</DynamicRTL>
-        <VerInfo_Build>261</VerInfo_Build>
+        <VerInfo_Build>263</VerInfo_Build>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <_TCHARMapping>char</_TCHARMapping>
         <Debugger_RunParams>nosplash -config service</Debugger_RunParams>
         <FinalOutputDir>D:\USER\GRANIT\GRKRNL32\</FinalOutputDir>
         <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
@@ -128,7 +126,7 @@
         <BCC_winl>true</BCC_winl>
         <BCC_wpin>true</BCC_wpin>
         <BCC_wuse>true</BCC_wuse>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.261;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.263;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
@@ -196,6 +194,9 @@
         <CppCompile Include="monitor_otd_med.cpp">
             <BuildOrder>4</BuildOrder>
         </CppCompile>
+        <CppCompile Include="..\..\..\KE_WIN\Grkrwnd.cpp">
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
         <FormResources Include="modemmer_frm.dfm"/>
         <FormResources Include="..\..\GKLIB\VCL\gkmodule_form.dfm"/>
         <FormResources Include="..\..\GKLIB\VCL\about_common_frame.dfm"/>
@@ -230,13 +231,14 @@
                 </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="3">
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
+                <DeployFile LocalName="..\..\..\..\GRKRNL32\modemmerwnd.dll" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>modemmerwnd</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64230mt.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -300,12 +302,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\..\grkrnl32\modemmerwnd.dll" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>modemmerwnd</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32240.dll" Class="DependencyModule">
                     <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
@@ -326,18 +322,23 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\..\GRKRNL32\modemmerwnd.dll" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="..\..\..\..\grkrnl32\modemmerwnd.dll" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>modemmerwnd</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64230mt.dll" Class="DependencyModule">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
                     <Platform Name="Win64">
                         <Overwrite>true</Overwrite>
                     </Platform>

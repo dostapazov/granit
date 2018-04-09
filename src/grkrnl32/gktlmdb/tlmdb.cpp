@@ -68,7 +68,7 @@
  {
     DWORD ret = 0;
     tlmdb_head_rec hr;
-    lstrcpy(hr.magic,tlmdb_magic);
+    lstrcpyA(hr.magic,tlmdb_magic);
     hr.version = 0x00010001;
     out.Write(&hr,sizeof(hr));
     out<<tlmdb_entry_beg;
@@ -157,7 +157,7 @@
    DWORD ret = 0;
    tlmdb_head_rec hr;
    in.Read(&hr,sizeof(hr));
-   if(lstrcmp(hr.magic,tlmdb_magic)==0)
+   if(lstrcmpA(hr.magic,tlmdb_magic)==0)
    {
      if(sync(in,tlmdb_entry_beg))
      {

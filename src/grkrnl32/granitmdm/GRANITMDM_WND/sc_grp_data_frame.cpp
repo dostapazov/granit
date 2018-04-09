@@ -242,7 +242,7 @@ void __fastcall TSCGroupDataFrame::TuOnMoreClick(TObject *Sender)
  tt.addr.addr  = addr.addr;
  tt.object     = (DWORD)ObjectList->Selected->Data;
  tt.tu_command = OTD_TUOP_ON;
- this->begin_call_gkhandle("ׂוסעמגמו ׂ׃- \'ֲÊֻ /+\' ");
+ this->begin_call_gkhandle(_T("ׂוסעמגמו ׂ׃- \'ֲÊֻ /+\' "));
  DWORD ret = mod_iface.call(SCCM_TEST_TUTR,(LPARAM)&tt,NULL);
  done_call_gkhandle(ret);
  if(GKH_RET_SUCCESS == ret)
@@ -263,7 +263,7 @@ void __fastcall TSCGroupDataFrame::TuOffLessClick(TObject *Sender)
  tt.object     = (DWORD)ObjectList->Selected->Data;
  tt.tu_command =  OTD_TUOP_OFF;
  TrUndo->Enabled = addr.fa ? true:false;
- this->begin_call_gkhandle("ׂוסעמגמו ׂ׃- \'־ׂÊֻ/+\' ");
+ this->begin_call_gkhandle(_T("ׂוסעמגמו ׂ׃- \'־ׂÊֻ/+\' "));
  DWORD ret = mod_iface.call(SCCM_TEST_TUTR,(LPARAM)&tt,NULL);
  done_call_gkhandle(ret);
  if(GKH_RET_SUCCESS == ret)
@@ -283,7 +283,7 @@ void __fastcall TSCGroupDataFrame::TrUndoClick(TObject *Sender)
  tt.addr.addr  = addr.addr;
  tt.object     = (DWORD)ObjectList->Selected->Data;
  tt.tu_command =  OTD_TUTROP_CANCEL;
- this->begin_call_gkhandle("ׂוסעמגמו ׂ׃- \'־ְֵּֽׂ\' ");
+ this->begin_call_gkhandle(_T("ׂוסעמגמו ׂ׃- \'־ְֵּֽׂ\' "));
  DWORD ret = mod_iface.call(SCCM_TEST_TUTR,(LPARAM)&tt,NULL);
  done_call_gkhandle(ret);
 

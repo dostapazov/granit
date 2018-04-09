@@ -27,10 +27,10 @@ __fastcall TGrIpxModuleWnd::TGrIpxModuleWnd(TComponent* Owner,HWND p_wnd,GKHANDL
   KeWin::TRect r(0,0,MonitorBox->Width,MonitorBox->Height);
   r.Grow(-4,-10);
   r.Move(4,8);
-  monitor->DoCreate(MonitorBox->Handle,r,-1,1024,"GrNetMonitor");
-  HFONT font = CreateFontA(-12,0,0,0,FW_NORMAL,0,0,0,
+  monitor->DoCreate(MonitorBox->Handle,r,-1,1024,L"GrNetMonitor");
+  HFONT font = CreateFont(-12,0,0,0,FW_NORMAL,0,0,0,
                RUSSIAN_CHARSET,OUT_DEFAULT_PRECIS,CLIP_DEFAULT_PRECIS,DEFAULT_QUALITY,DEFAULT_PITCH,
-               "Courier New");
+               _T("Courier New"));
   font = monitor->SetFont(font,false);
   DeleteObject(font);
  #ifdef COMERCIAL_BUILD
@@ -522,65 +522,65 @@ void     __fastcall TGrIpxModuleWnd::monitor_grnet_kadr (LPGRNET_KADR kadr,DWORD
     DWORD color = tx ? RGB(40,40,130):RGB(40,130,40);
     SYSTEMTIME st;
     GetLocalTime(&st);
-    AnsiString str;
-    str.printf("%02d:%02d:%02d:%03d %s",st.wHour,st.wMinute,st.wSecond,st.wMilliseconds,    tx ? "Ïåðåäà÷à : ":"Ïðèåì    : ");
+    UnicodeString str;
+    str.printf(L"%02d:%02d:%02d:%03d %s",st.wHour,st.wMinute,st.wSecond,st.wMilliseconds,    tx ? L"Ïåðåäà÷à : ":L"Ïðèåì    : ");
     monitor_string(str.c_str(),0,color);
-    str.printf("êàäð ¹%05d ID-%03X net_cmd=%05d ïîïûòêà %02d ",kadr->kadr_num,kadr->id,kadr->command,(DWORD)kadr->retry_num);
+    str.printf(L"êàäð ¹%05d ID-%03X net_cmd=%05d ïîïûòêà %02d ",kadr->kadr_num,kadr->id,kadr->command,(DWORD)kadr->retry_num);
     monitor_string(str.c_str(),0,color);
     lpobject_tu otu = (lpobject_tu) (kadr->data);
     switch(kadr->command)
     {
-     case CmConnect      : monitor_string("Ïîäêëþ÷åíèå...",NULL,RGB(78,120,146));
+     case CmConnect      : monitor_string(L"Ïîäêëþ÷åíèå...",NULL,RGB(78,120,146));
           break;
-     case  CmDisconnect  : monitor_string("Îòêëþ÷åíèå",NULL,RGB(255,0,0));
+     case  CmDisconnect  : monitor_string(L"Îòêëþ÷åíèå",NULL,RGB(255,0,0));
           break;
      case  CmBeginTU     :
-                           str.printf("%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ","Íà÷àëî",otu->kp,otu->tlm_type,otu->sb,otu->obj);
+                           str.printf(L"%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ",L"Íà÷àëî",otu->kp,otu->tlm_type,otu->sb,otu->obj);
                            monitor_string(str.c_str(),NULL,color);
           break;
      case  CmResetTU     :
-                           str.printf("%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ","Îòìåíà âûáîðà",otu->kp,otu->tlm_type,otu->sb,otu->obj);
+                           str.printf(L"%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ",L"Îòìåíà âûáîðà",otu->kp,otu->tlm_type,otu->sb,otu->obj);
                            monitor_string(str.c_str(),NULL,color);
           break;
-     case  CmQueryTU     : str.printf("%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ","Âûáîð",otu->kp,otu->tlm_type,otu->sb,otu->obj);
+     case  CmQueryTU     : str.printf(L"%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ",L"Âûáîð",otu->kp,otu->tlm_type,otu->sb,otu->obj);
                            monitor_string(str.c_str(),NULL,color);
           break;
      case  CmTuFalse     :
-                           str.printf("%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ","Íåóñïåøíîå",otu->kp,otu->tlm_type,otu->sb,otu->obj);
+                           str.printf(L"%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ",L"Íåóñïåøíîå",otu->kp,otu->tlm_type,otu->sb,otu->obj);
                            monitor_string(str.c_str(),NULL,RGB(255,0,0));
           break;
      case  CmTuOn        :
-                           str.printf("%s  %03d.%02d.%02d - %02d ","Êîìàíäà ÂÊËÞ×ÈÒÜ/ÁÎËÜØÅ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
+                           str.printf(L"%s  %03d.%02d.%02d - %02d ",L"Êîìàíäà ÂÊËÞ×ÈÒÜ/ÁÎËÜØÅ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
                            monitor_string(str.c_str(),NULL,color);
           break;
-     case  CmTuOff       : 
-                           str.printf("%s  %03d.%02d.%02d - %02d ","Êîìàíäà ÎÒÊËÞ×ÈÒÜ/ÌÅÍÜØÅ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
+     case  CmTuOff       :
+                           str.printf(L"%s  %03d.%02d.%02d - %02d ",L"Êîìàíäà ÎÒÊËÞ×ÈÒÜ/ÌÅÍÜØÅ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
                            monitor_string(str.c_str(),NULL,color);
           break;
-     case  CmTrNorm      : monitor_string("");
+     case  CmTrNorm      : monitor_string(L"");
           break;
      case  CmTuCancel    :
-                           str.printf("%s  %03d.%02d.%02d - %02d ","Êîìàíäà ÎÒÌÅÍÀ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
+                           str.printf(L"%s  %03d.%02d.%02d - %02d ",L"Êîìàíäà ÎÒÌÅÍÀ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
                            monitor_string(str.c_str(),NULL,color);
           break;
      case  CmEnableTU    :
-                           str.printf("%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ","ÐÀÇÐÅØÅÍÈÅ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
+                           str.printf(L"%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ",L"ÐÀÇÐÅØÅÍÈÅ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
                            monitor_string(str.c_str(),NULL,color);
           break;
      case  CmDisableTU   :
-                           str.printf("%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ","ÇÀÏÐÅÙÅÍÈÅ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
+                           str.printf(L"%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ",L"ÇÀÏÐÅÙÅÍÈÅ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
                            monitor_string(str.c_str(),NULL,color);
           break;
-     case  CmErrorTU     : monitor_string("ÎØÈÁÊÀ ÒÓ",NULL,RGB(255,0,0));
+     case  CmErrorTU     : monitor_string(L"ÎØÈÁÊÀ ÒÓ",NULL,RGB(255,0,0));
           break;
-     case  CmActivateTR  : str.printf("%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ","Àêòèâèçàöèÿ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
+     case  CmActivateTR  : str.printf(L"%s ÒÓ/ÒÐ %03d.%02d.%02d - %02d ",L"Àêòèâèçàöèÿ",otu->kp,otu->tlm_type,otu->sb,otu->obj);
                            monitor_string(str.c_str(),NULL,color);
 
           break;
      case  CmQuery       :
      case  CmQueryCp     :
      case  CmQueryFa     :
-     case  CmQueryGroup  : monitor_string("Âûçîâ äàííûõ");
+     case  CmQueryGroup  : monitor_string(L"Âûçîâ äàííûõ");
           break;
      case  CmCheckConnect: //monitor_string("Ïðîâåðêà ñâÿçè");
           break;
@@ -592,7 +592,7 @@ void     __fastcall TGrIpxModuleWnd::monitor_grnet_kadr (LPGRNET_KADR kadr,DWORD
  }
 }
 
-void     __fastcall make_data_str(char * text,DWORD text_sz,lp_gratony_kadr kadr)
+void     __fastcall make_data_str(TCHAR * text,DWORD text_sz,lp_gratony_kadr kadr)
 {
   LPBYTE data = kadr->data;
   DWORD  data_len = (kadr->len - sizeof(*kadr)+sizeof(kadr->data)+sizeof(kadr->kadr_len));
@@ -603,13 +603,13 @@ void     __fastcall make_data_str(char * text,DWORD text_sz,lp_gratony_kadr kadr
   LPBYTE data_end = data+data_len;
   while(text_len+4<text_sz && data<data_end)
   {
-   text_len+=wsprintf(text+text_len,"%02X ",(DWORD)*data);
+   text_len+=wsprintf(text+text_len,_T("%02X "),(DWORD)*data);
    data++;
   }
  }
 }
 
-void     __fastcall make_data_str_word(char * text,DWORD text_sz,lp_gratony_kadr kadr)
+void     __fastcall make_data_str_word(TCHAR * text,DWORD text_sz,lp_gratony_kadr kadr)
 {
   LPWORD data = (LPWORD)kadr->data;
   DWORD  data_len = (kadr->len - sizeof(*kadr)+sizeof(kadr->data)+sizeof(kadr->kadr_len))/sizeof(WORD);
@@ -620,7 +620,7 @@ void     __fastcall make_data_str_word(char * text,DWORD text_sz,lp_gratony_kadr
   LPWORD data_end = data+data_len;
   while(text_len+4<text_sz && data<data_end)
   {
-   text_len+=wsprintf(text+text_len,"%04X ",(DWORD)*data);
+   text_len+=wsprintf(text+text_len,_T("%04X "),(DWORD)*data);
    data++;
   }
   }
@@ -628,30 +628,30 @@ void     __fastcall make_data_str_word(char * text,DWORD text_sz,lp_gratony_kadr
 
 void     __fastcall TGrIpxModuleWnd::monitor_gratony_kadr( lp_gratony_kadr  kadr,DWORD color)
 {
- AnsiString str;
- char       mon_text[1024];
- str.printf("ÊÏ-%03d ÃÐÓÏÏÀ-%03d ",(DWORD)kadr->numCp,(DWORD)kadr->numGrp);
+ UnicodeString str;
+ TCHAR       mon_text[1024];
+ str.printf(L"ÊÏ-%03d ÃÐÓÏÏÀ-%03d ",(DWORD)kadr->numCp,(DWORD)kadr->numGrp);
  
  switch((DWORD)kadr->InfoType)
  {
-  case tpTs    : str+= " ñèãíàëèçàöèÿ";
-                 make_data_str(mon_text,sizeof(mon_text),kadr);break;
-  case tpTit   : str+= " èçìåðåíèÿ";
-                 make_data_str(mon_text,sizeof(mon_text),kadr);break;
-  case tpReady : str+= " ãîòîâíîñòü";
-                 make_data_str_word(mon_text,sizeof(mon_text),kadr);break;
+  case tpTs    : str+= L" ñèãíàëèçàöèÿ";
+                 make_data_str(mon_text,KERTL_ARRAY_COUNT(mon_text),kadr);break;
+  case tpTit   : str+= L" èçìåðåíèÿ";
+                 make_data_str(mon_text,KERTL_ARRAY_COUNT(mon_text),kadr);break;
+  case tpReady : str+= L" ãîòîâíîñòü";
+                 make_data_str_word(mon_text,KERTL_ARRAY_COUNT(mon_text),kadr);break;
  }
  if(!kadr->P)
-   str+=" ** Îòâåò íà âûçîâ ** ";
+   str+=L" ** Îòâåò íà âûçîâ ** ";
    
  monitor_string(str.c_str(),mon_text,color);
 }
 
-void     __fastcall TGrIpxModuleWnd::monitor_string(char * text1,char * text2,DWORD color)
+void     __fastcall TGrIpxModuleWnd::monitor_string(TCHAR * text1,TCHAR * text2,DWORD color)
 {
   monitor->add_line(text1,color);
   if(text2)
-  monitor->add_line(text2,color);
+     monitor->add_line(text2,color);
   
 
 }
