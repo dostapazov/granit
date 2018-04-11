@@ -305,7 +305,6 @@ bool __fastcall opc_line::set_line_config(LPGKOPC_LINE_CONFIG conf)
       stream.write_string(lua_scripts[1]);
   }
 
-  #pragma warn -8004
   void __fastcall opc_line::read (KeRTL::TStream & stream,DWORD stream_ver )
   {
      //if(stream_ver == OPC_MOD_STREAM_VER)
@@ -328,7 +327,6 @@ bool __fastcall opc_line::set_line_config(LPGKOPC_LINE_CONFIG conf)
 
           str_ptr = line_config.server_prog_id;
           stream.read_string(str_ptr);
-
           if(stream_ver > OPC_MOD_STREAM_VER_2)
              {
               stream>>line_config.options;
@@ -342,7 +340,7 @@ bool __fastcall opc_line::set_line_config(LPGKOPC_LINE_CONFIG conf)
          this->set_line_number(line_config.line_num);
        }
   }
-   #pragma warn .8004
+
   bool  __fastcall opc_line::send        (LPMPROTO_HEADER mph,DWORD sz)
   {
 	if(mph->fa == FA_OTD)
@@ -612,16 +610,21 @@ int  __fastcall opc_line::Execute()
 {
  int  ret = 0;
  DWORD   key;
- DWORD   time_out = WT_RESOLUTION;
+ DWORD   tmo    = 1000;
+ DWORD   ticks  = GetTickCount();
+ DWORD   time_out;
  bool    wr;
  DWORD   bt;
  OVERLAPPED * lpovrlp = NULL;
  WTimer_start(WT_CHECK_CONNECT,WT_CONNECT_TIMEOUT);
 
  do{
+    ticks = GetTickCount()-ticks;
+    time_out = tmo>ticks ? tmo-ticks : 0;
+    time_out = WT_RESOLUTION;
     key = 0;
     wr = icp.GetStatus(key,lpovrlp,time_out,&bt);
-
+    ticks = GetTickCount();
     if(wr){
       switch(key)
       {
@@ -800,7 +803,7 @@ void __fastcall opc_line::__set_bad_diag()
    }
 }
 
-#pragma warn -8004
+
 void __fastcall opc_line::__opc_group_add_items()
 {
      TLockHelper l(locker);
@@ -861,7 +864,6 @@ void __fastcall opc_line::__opc_group_add_items()
       }
 
 }
-#pragma warn .8004
 
 void __fastcall opc_line::__opc_create_group()
 {
@@ -896,13 +898,10 @@ DWORD __fastcall quality2otddiag(WORD quality)
   if(quality)
   {
 
-   if((quality& OPC_QUALITY_MASK) != OPC_QUALITY_GOOD)
-   {
-    if( quality&OPC_QUALITY_NOT_CONNECTED )
-         diag |= OTD_DIAG_CPMASK;
-    if( quality&OPC_QUALITY_DEVICE_FAILURE )
+   if( quality&OPC_QUALITY_NOT_CONNECTED )
+         diag |= OTD_DIAG_CPCONNECT;
+   if( quality&OPC_QUALITY_DEVICE_FAILURE )
          diag |= OTD_DIAG_MODRESPOND;
-   }
   }
   else
   diag = OTD_DIAG_NODATA;
@@ -912,7 +911,7 @@ DWORD __fastcall quality2otddiag(WORD quality)
 #define OPCI_CH_VALUE   1
 #define OPCI_CH_QUALITY 2
 #define OPCI_CH_RCSTATE 4
-#pragma warn -8004
+
 void  __fastcall opc_line::__set_opc_item_values(gkopc_item & item,LPVARIANT v,LPWORD quality,__int64 * time ,LPDWORD rc_state )
 {
    proto_pointer ptr;
@@ -939,7 +938,6 @@ void  __fastcall opc_line::__set_opc_item_values(gkopc_item & item,LPVARIANT v,L
 
    if(v)
     {
-
        VariantCopy(&item.item_state.vDataValue,v);
        __calc_item_value(item);
     }
@@ -1013,8 +1011,9 @@ void  __fastcall opc_line::__set_opc_item_values(gkopc_item & item,LPVARIANT v,L
         if(owner)
            owner->notify(MNF_LINE_ITEM_CHANGED,MAKELONG((WORD)line_number,(WORD)item.item_state.hClient),NULL,0 );
       }
+
+
 }
-#pragma warn .8004
 
   bool __fastcall try_lock(KeRTL::TFASTMutex & locker,DWORD to,DWORD repeat)
   {
@@ -1041,8 +1040,8 @@ void  __fastcall opc_line::__read_sync()
       {
        TLockHelper l(locker);
        opc_items.build_index();
-       ibeg = opc_items.index_begin();
-       iend = opc_items.index_end();
+       ibeg  = opc_items.index_begin();
+       iend  = opc_items.index_end();
        count = __get_opc_handles(handles,ibeg,iend);
       }
 
@@ -1179,9 +1178,8 @@ void __fastcall opc_line::report_com_error(HRESULT res,const TCHAR * msg)
   if(modem)
   {
      TCHAR text[4096];
-     int len = 0;
      _com_error ce(res);
-     snwprintf(text+len,KERTL_ARRAY_COUNT(text),_T("Модем %d линия %d %s\n\rОшибка COM %s"),owner->get_modem_number(),get_number(),msg ? msg:_T(""),ce.ErrorMessage());
+     snwprintf(text,KERTL_ARRAY_COUNT(text),_T("Модем %d линия %d %s\n\rОшибка COM %s"),owner->get_modem_number(),get_number(),msg ? msg:_T(""),ce.ErrorMessage());
      modem->do_report(REPORT_ERROR_TYPE,text,NULL,NULL);
   }
 }
@@ -1194,9 +1192,7 @@ void __fastcall opc_line::report_opc_error(LONG err,const TCHAR * msg)
        wchar_t * err_str = NULL;
        (*opc_server)->GetErrorString(err,0,&err_str);
          TCHAR text[4096];
-         int len = 0;
-
-         snwprintf(text+len,KERTL_ARRAY_COUNT(text),_T("Модем %d линия %d %s\n\rОшибка OPC %d %s"),owner->get_modem_number(),this->get_number(),msg ? msg : _T(""),err,err_str ? err_str : _T(""));
+         snwprintf(text,KERTL_ARRAY_COUNT(text),_T("Модем %d линия %d %s\n\rОшибка OPC %d %s"),owner->get_modem_number(),this->get_number(),msg ? msg : _T(""),err,err_str ? err_str : _T(""));
 
          CoTaskMemFree(err_str);
          modem->do_report(REPORT_ERROR_TYPE,text,NULL,NULL);
@@ -1348,10 +1344,10 @@ void __fastcall opc_line::report_opc_error(LONG err,const TCHAR * msg)
        //v = src;
        VariantChangeType(&v,&src,0,v.vt);
        LPLONG errors;
-       HRESULT r = opc_group->write(1,&item.reg_result.hServer,&v,&errors);
+       HRESULT res = opc_group->write(1,&item.reg_result.hServer,&v,&errors);
        if(errors)
           CoTaskMemFree(errors);
-       if(SUCCEEDED(r)) return true;
+       return SUCCEEDED(res) ? true : false;
      }
     return false;
   }
@@ -1393,17 +1389,16 @@ void __fastcall opc_line::report_opc_error(LONG err,const TCHAR * msg)
        DWORD new_mask = global_quality_mask | quality;
        if(global_quality_mask != new_mask)
        {
-
-         bool need_refresh = ((global_quality_mask^new_mask) & OPC_QUALITY_GOOD );
-         global_quality_mask = new_mask;
-         if(need_refresh) refresh(-1);
+          global_quality_mask |= new_mask;
+          if(global_quality_mask & OPC_QUALITY_GOOD)
+             refresh(-1);
        }
       }
       else
       {
        global_quality_mask &= ~quality;
       }
-    return 0;
+    return 1;
  }
 
 

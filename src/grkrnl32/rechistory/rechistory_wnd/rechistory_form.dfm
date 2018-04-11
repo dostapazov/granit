@@ -20,6 +20,9 @@ inherited RecHistroyForm: TRecHistroyForm
         Width = 150
       end
       item
+        Width = 300
+      end
+      item
         Width = 50
       end>
   end
@@ -695,7 +698,7 @@ inherited RecHistroyForm: TRecHistroyForm
     Left = 528
     Top = 16
     Bitmap = {
-      494C01010B001000080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010B0018000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FAFAFA00EAEAEA00EBEBEB00FCFCFC00595959005151
@@ -1104,6 +1107,13 @@ inherited RecHistroyForm: TRecHistroyForm
     Filter = #1044#1080#1085#1072#1084#1080#1095#1077#1089#1082#1080#1077' '#1073#1080#1073#1083#1080#1086#1090#1077#1082#1080'|*.dll'
     Options = [ofHideReadOnly, ofNoChangeDir, ofPathMustExist, ofFileMustExist, ofNoNetworkButton, ofEnableSizing, ofDontAddToRecent]
     Left = 576
+    Top = 16
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 250
+    OnTimer = Timer1Timer
+    Left = 624
     Top = 16
   end
 end

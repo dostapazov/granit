@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+ï»¿//---------------------------------------------------------------------------
 
 #pragma hdrstop
 #include <vcl.h>
@@ -76,10 +76,20 @@ void     __fastcall TRecHistroyForm::on_module_state(GKHANDLE mod,DWORD state)
   tbStart->Enabled     = stopped;
   tbDbRestore->Enabled = stopped;
   if(running)
-     StatusBar1->Panels->Items[0]->Text = "Çàïèñü âåä¸òñÿ";
-  if(stopped)
-     StatusBar1->Panels->Items[0]->Text = "Çàïèñü îñòàíîâëåíà";
+     {
+      StatusBar1->Panels->Items[0]->Text = "Ð—Ð°Ð¿Ð¸ÑÑŒ Ð²ÐµÐ´Ñ‘Ñ‚ÑÑ";
+      Timer1Timer(this);
+      this->queue_size_delta = queue_size_prev = 0;
+     }
 
+  if(stopped)
+     {
+      StatusBar1->Panels->Items[0]->Text = "Ð—Ð°Ð¿Ð¸ÑÑŒ Ð¾ÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð°";
+
+     }
+
+    Timer1->Enabled = running;
+    Timer1Timer(this);
 }
 
 
@@ -237,7 +247,7 @@ void __fastcall TRecHistroyForm::bApplyClick(TObject *Sender)
   hcfg.timestamp_limit = _wtoi(this->ArchiveDaysLong->Text.c_str());
 
   hcfg.dw_size = hcfg.dw_size;
-  begin_call_gkhandle(L"Ïðèìåíåíèå íàñòðîåê");
+  begin_call_gkhandle(L"ÐŸÑ€Ð¸Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐº");
   LRESULT res = GKH_RET_ERROR;
   if(mod_iface.set_module_config_data(mcd,MCD_SIZE))
   {
@@ -252,13 +262,13 @@ void __fastcall TRecHistroyForm::bApplyClick(TObject *Sender)
 
 void __fastcall TRecHistroyForm::tbStartClick(TObject *Sender)
 {
-  done_call_gkhandle(mod_iface.start(MODULE_START_REQUEST,0),L"Çàïóñê çàïèñè");
+  done_call_gkhandle(mod_iface.start(MODULE_START_REQUEST,0),L"Ð—Ð°Ð¿ÑƒÑÐº Ð·Ð°Ð¿Ð¸ÑÐ¸");
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TRecHistroyForm::tbStopClick(TObject *Sender)
 {
- done_call_gkhandle(mod_iface.stop(MODULE_STOP_REQUEST),L"Îñòàíîâ çàïèñè");
+ done_call_gkhandle(mod_iface.stop(MODULE_STOP_REQUEST),L"ÐžÑÑ‚Ð°Ð½Ð¾Ð² Ð·Ð°Ð¿Ð¸ÑÐ¸");
 }
 //---------------------------------------------------------------------------
 
@@ -421,9 +431,9 @@ void __fastcall  TRecHistroyForm::on_store (LPNOTIFY_CODE nc)
      MDB_RECORD * rec = (MDB_RECORD *)nc->notify_data;
    if(RecFilter->Text.IsEmpty() || DWORD(_wtoi(RecFilter->Text.c_str())) == rec->rec_id)
    {
-     text.printf("Ñîõðàíåíèå èçìåíåíèé rec_id %d ìàñêà = %04X",rec->rec_id, nc->notify_code);
+     text.printf("Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ð¹ rec_id %d Ð¼Ð°ÑÐºÐ° = %04X",rec->rec_id, nc->notify_code);
      if(nc->notify_code& MDBR_FIELD_VALUE)
-         text.cat_printf(" çíà÷=%.3f", rec->value);
+         text.cat_printf(" Ð·Ð½Ð°Ñ‡=%.3f", rec->value);
      if(nc->notify_code& MDBR_FIELD_DIAG)
          text.cat_printf(" diag=%hX",rec->diag);
      if(nc->notify_code& MDBR_FIELD_STATE)
@@ -441,14 +451,14 @@ void __fastcall  TRecHistroyForm::on_store (LPNOTIFY_CODE nc)
 void __fastcall  TRecHistroyForm::on_read  (LPNOTIFY_CODE nc)
 {
   char text[512];
-  snprintf(text,sizeof(text),"×òåíèå èñòîðèè - %s",nc->notify_code ? "ïîëó÷åíèå äàííûõ":"ïîäãîòîâêà çàïðîñà");
+  snprintf(text,sizeof(text),"Ð§Ñ‚ÐµÐ½Ð¸Ðµ Ð¸ÑÑ‚Ð¾Ñ€Ð¸Ð¸ - %s",nc->notify_code ? "Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ñ…":"Ð¿Ð¾Ð´Ð³Ð¾Ñ‚Ð¾Ð²ÐºÐ° Ð·Ð°Ð¿Ñ€Ð¾ÑÐ°");
   monitor_add_line(text);
 }
 
 void    __fastcall TRecHistroyForm::on_send  (LPNOTIFY_CODE nc)
 {
   char text[512];
-  snprintf(text,sizeof(text),"Ïåðåäà÷à ðåçóëüòàòîâ ÷òåíèÿ  %d áàéò",nc->notify_code );
+  snprintf(text,sizeof(text),"ÐŸÐµÑ€ÐµÐ´Ð°Ñ‡Ð° Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ð¾Ð² Ñ‡Ñ‚ÐµÐ½Ð¸Ñ  %d Ð±Ð°Ð¹Ñ‚",nc->notify_code );
   monitor_add_line(text);
 
 }
@@ -456,7 +466,7 @@ void    __fastcall TRecHistroyForm::on_send  (LPNOTIFY_CODE nc)
 void __fastcall  TRecHistroyForm::on_commit(LPNOTIFY_CODE nc)
 {
   char text[512];
-  snprintf(text,sizeof(text),"%s òðàíçàêöèè id %d",nc->notify_code ? "Commit":"Rollback",*(LPDWORD)nc->notify_data);
+  snprintf(text,sizeof(text),"%s Ñ‚Ñ€Ð°Ð½Ð·Ð°ÐºÑ†Ð¸Ð¸ id %d",nc->notify_code ? "Commit":"Rollback",*(LPDWORD)nc->notify_data);
   monitor_add_line(text);
 
 }
@@ -464,14 +474,14 @@ void __fastcall  TRecHistroyForm::on_commit(LPNOTIFY_CODE nc)
 void __fastcall  TRecHistroyForm::on_updidx(LPNOTIFY_CODE nc)
 {
   char text[512];
-  snprintf(text,sizeof(text),"Îáíîâëåíèå ñòàòèñòèêè èíäåêñîâ");
+  snprintf(text,sizeof(text),"ÐžÐ±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ¸ Ð¸Ð½Ð´ÐµÐºÑÐ¾Ð²");
   monitor_add_line(text);
 }
 
 void    __fastcall TRecHistroyForm::on_opendb(LPNOTIFY_CODE nc)
 {
   char text[512];
-  snprintf(text,sizeof(text),"%s áàçû äàííûx",nc->notify_code ? "ÎÒêðûòèå":"Çàêðûòèå");
+  snprintf(text,sizeof(text),"%s Ð±Ð°Ð·Ñ‹ Ð´Ð°Ð½Ð½Ñ‹x",nc->notify_code ? "ÐžÐ¢ÐºÑ€Ñ‹Ñ‚Ð¸Ðµ":"Ð—Ð°ÐºÑ€Ñ‹Ñ‚Ð¸Ðµ");
   monitor_add_line(text);
 }
 
@@ -510,13 +520,13 @@ void    __fastcall TRecHistroyForm::monitor_add_line(char * text)
 
 void __fastcall TRecHistroyForm::tbDbRestoreClick(TObject *Sender)
 {
- //Âîññòàíîâëåíèå ÁÄ
+ //Ð’Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð‘Ð”
  RECHIST_RESTORE rhr;
  ZeroMemory(&rhr,sizeof(rhr));
  rhr.dw_size = sizeof(rhr);
  rhr.page_size = 4096;
  rhr.buffers   = 25000;
- begin_call_gkhandle(L"Âîññòàíîâëåíèå ÁÄ");
+ begin_call_gkhandle(L"Ð’Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð‘Ð”");
  if(!db_path->Text.IsEmpty() && !user->Text.IsEmpty() && !passw->Text.IsEmpty())
  {
    AnsiString str;
@@ -533,7 +543,7 @@ void __fastcall TRecHistroyForm::tbDbRestoreClick(TObject *Sender)
  }
  else
  {
-  StatusBar1->Panels->Items[1]->Text = L"Óêàæèòå ïóòü ê ÁÄ, ïîëüçîâàòåëÿ è ïàðîëü";
+  StatusBar1->Panels->Items[1]->Text = L"Ð£ÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð¿ÑƒÑ‚ÑŒ Ðº Ð‘Ð”, Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ Ð¸ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ";
  }
 }
 //---------------------------------------------------------------------------
@@ -551,6 +561,17 @@ void __fastcall TRecHistroyForm::bStatisticClick(TObject *Sender)
 void __fastcall TRecHistroyForm::bMaintanceClick(TObject *Sender)
 {
    mod_iface.call(RHCM_START_MAINTANCE,0,0);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TRecHistroyForm::Timer1Timer(TObject *Sender)
+{
+  int queue_count = mod_iface.call(RHCM_GET_QUEUE_COUNT,0,0);
+  queue_size_delta = queue_count-queue_size_prev;
+  queue_size_prev  = queue_count;
+  UnicodeString str;
+  str.printf(L"Ð Ð°Ð·Ð¼ÐµÑ€ Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð¸ %d ( âˆ† %d)",queue_count,queue_size_delta);
+  StatusBar1->Panels->Items[2]->Text = str;
 }
 //---------------------------------------------------------------------------
 

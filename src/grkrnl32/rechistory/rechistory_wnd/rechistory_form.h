@@ -91,6 +91,7 @@ __published:	// IDE-managed Components
 	TSpeedButton *bPause;
 	TLabel *Label11;
 	TEdit *RecFilter;
+	TTimer *Timer1;
 	void __fastcall tbSelLibClick(TObject *Sender);
 	void __fastcall cl_libChange(TObject *Sender);
 	void __fastcall bUndoClick(TObject *Sender);
@@ -107,11 +108,14 @@ __published:	// IDE-managed Components
 	void __fastcall tbDbRestoreClick(TObject *Sender);
 	void __fastcall bStatisticClick(TObject *Sender);
 	void __fastcall bMaintanceClick(TObject *Sender);
+	void __fastcall Timer1Timer(TObject *Sender);
 private:	// User declarations
 protected:
        DWORD            Fch_mask;
        void __fastcall  set_ch_mask(DWORD chm);
-       REC_HIST_CONFIG settings;
+       REC_HIST_CONFIG  settings;
+       int              queue_size_delta;
+       int              queue_size_prev;
        int  in_setup;
        void begin_setup(){++in_setup;}
        void end_setup  (){--in_setup;}

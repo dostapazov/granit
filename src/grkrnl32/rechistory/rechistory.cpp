@@ -1,4 +1,4 @@
-#ifndef BOOST_THREAD_USE_LIB
+п»ї#ifndef BOOST_THREAD_USE_LIB
 #define BOOST_THREAD_USE_LIB
 #endif
 
@@ -16,7 +16,7 @@
 #include <boost/scoped_ptr.hpp>
 
 
-static THeap heap(TSysInfo().GetPageSize()<<8); // 512 Кб
+static THeap heap(TSysInfo().GetPageSize()<<8); // 512 РљР±
 static DWORD total_mem_alloc = 0;
 
 void * operator new(size_t sz)
@@ -133,7 +133,7 @@ void __fastcall TRecHistory::replace_str(char ** dst,const char * src)
    memset(&config,0,sizeof(config));
    config.dw_size = sizeof(config);
    alloc_gkhandle(RECHISTORY_MOD_NAME);
-   rep_id = report_reg_event_type(L"Запись истории");
+   rep_id = report_reg_event_type(L"Р—Р°РїРёСЃСЊ РёСЃС‚РѕСЂРёРё");
 //   wr_trans       = NULL;
 //   rd_trans       = NULL;
 //   wr_query_recs  = NULL;
@@ -516,7 +516,7 @@ bool __fastcall TRecHistory::open_data_base(TIBDatabase & ibdb,REC_HIST_CONFIG &
               LPMPROTO_HEADER mph = (LPMPROTO_HEADER)p1;
               if(mproto_check(mph))
                  {
-                    if(handle_query_archive(mph))// Не запрос архива
+                    if(handle_query_archive(mph))// РќРµ Р·Р°РїСЂРѕСЃ Р°СЂС…РёРІР°
                        {
                         data_queue.PutIntoQueue(mph,mproto_size(mph));
                         if(data_queue.QueueCount()>1000)
@@ -533,6 +533,8 @@ bool __fastcall TRecHistory::open_data_base(TIBDatabase & ibdb,REC_HIST_CONFIG &
      {
        switch(cmd)
        {
+         case  RHCM_GET_QUEUE_COUNT : ret = data_queue.QueueCount();
+         break;
          case  RHCM_RESTORE_DATABASE: ret = restore_database((LPRECHIST_RESTORE)p1,(char *)p2) ;
          break;
          case RHCM_START_MAINTANCE:
@@ -677,9 +679,9 @@ bool   __fastcall TRecHistory::read_settings()
         strcpy
         (
         config.sql_rd_history,
-        "--alarm is null - выбор всего \n\r"
-        "--alarm =  0 обычные \n\r"
-        "--alarm =  1  аварийный архив \n\r"
+        "--alarm is null - РІС‹Р±РѕСЂ РІСЃРµРіРѕ \n\r"
+        "--alarm =  0 РѕР±С‹С‡РЅС‹Рµ \n\r"
+        "--alarm =  1  Р°РІР°СЂРёР№РЅС‹Р№ Р°СЂС…РёРІ \n\r"
         "execute block (lst blob = :lst,beg_tm bigint = :beg_tm, end_tm bigint = :end_tm,alarm integer = :alarm) \n\r"
         "returns \n\r"
         "(REC_ID INTEGER,DIAG SMALLINT,STATE SMALLINT,RVALUE BIGINT,CH_TIME BIGINT,is_alarm integer,KVANTS INTEGER,OTDPD INTEGER,wr_time timestamp) \n\r"
@@ -1015,7 +1017,7 @@ DWORD       __fastcall TRecHistory::send_command(DWORD fa,bool begin,bool finish
   if(mask& MDBR_FIELD_SNAME)
      request_record_name(rec.rec_id,true);
 
-  //Сохраняем только изменения значения или состояния, или диагностики
+  //РЎРѕС…СЂР°РЅСЏРµРј С‚РѕР»СЊРєРѕ РёР·РјРµРЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РёР»Рё СЃРѕСЃС‚РѕСЏРЅРёСЏ, РёР»Рё РґРёР°РіРЅРѕСЃС‚РёРєРё
   ret = wr_trans.is_active();
   if(!ret)
       {
@@ -1142,7 +1144,7 @@ DWORD       __fastcall TRecHistory::send_command(DWORD fa,bool begin,bool finish
 
  void __fastcall TRecHistory::report_sql_error(TIBStatus * ibs)
  {
-      string error_text = "Ошибка SQL ";
+      string error_text = "РћС€РёР±РєР° SQL ";
       error_text  +=  ibs->get_ib_class_name();
       error_text  += " : ";
       error_text += ibs->get_error_text();
@@ -1183,7 +1185,7 @@ DWORD       __fastcall TRecHistory::send_command(DWORD fa,bool begin,bool finish
 int            TRecHistory::maintance_thread_proc    ()
 {
     /*
-    Процедура обслуживания производится 3 часа ночи
+    РџСЂРѕС†РµРґСѓСЂР° РѕР±СЃР»СѓР¶РёРІР°РЅРёСЏ РїСЂРѕРёР·РІРѕРґРёС‚СЃСЏ 3 С‡Р°СЃР° РЅРѕС‡Рё
     */
 
        bool updated = false;
@@ -1229,7 +1231,7 @@ void __fastcall TRecHistory::do_maintance_db       ()
   TIBDatabase db;
   TIBTransaction trans;
   TIBSqlQuery    query;
-  report(rep_id,REPORT_INFORMATION_TYPE,L"Обслуживание - запуск");
+  report(rep_id,REPORT_INFORMATION_TYPE,L"РћР±СЃР»СѓР¶РёРІР°РЅРёРµ - Р·Р°РїСѓСЃРє");
   if(open_data_base(db,cfg,&trans,NULL,&query,NULL))
   {
    if(trans.start())
@@ -1245,25 +1247,25 @@ void __fastcall TRecHistory::do_maintance_db       ()
 //      FileTimeToSystemTime((LPFILETIME)&tm,&st);
 //      FileTimeToSystemTime((LPFILETIME)&tm,&st);
 
-     report(rep_id,REPORT_INFORMATION_TYPE,L"Удаение старых записей- запуск");
+     report(rep_id,REPORT_INFORMATION_TYPE,L"РЈРґР°РµРЅРёРµ СЃС‚Р°СЂС‹С… Р·Р°РїРёСЃРµР№- Р·Р°РїСѓСЃРє");
      if(query.prepare(erase_old_data_text))
      {
         query.get_input_field(0) =  tm;
         query.open();
         trans.commit(endtr_retain);
      }
-     report(rep_id,REPORT_INFORMATION_TYPE,L"Удаение старых записей- завершено");
+     report(rep_id,REPORT_INFORMATION_TYPE,L"РЈРґР°РµРЅРёРµ СЃС‚Р°СЂС‹С… Р·Р°РїРёСЃРµР№- Р·Р°РІРµСЂС€РµРЅРѕ");
     }
 
     if(*upd_query_text)
     {
-     report(rep_id,REPORT_INFORMATION_TYPE,L"Обновление статистики индексов - запуск.");
+     report(rep_id,REPORT_INFORMATION_TYPE,L"РћР±РЅРѕРІР»РµРЅРёРµ СЃС‚Р°С‚РёСЃС‚РёРєРё РёРЅРґРµРєСЃРѕРІ - Р·Р°РїСѓСЃРє.");
      if(query.prepare(upd_query_text))
        query.open();
      query.close(true);
      end_transaction(&trans,true);
      notify(RECHISTORY_NOTIFY_UPDIDX,0,0,0);
-     report(rep_id,REPORT_INFORMATION_TYPE,L"Обновление статистики индексов - завершено.");
+     report(rep_id,REPORT_INFORMATION_TYPE,L"РћР±РЅРѕРІР»РµРЅРёРµ СЃС‚Р°С‚РёСЃС‚РёРєРё РёРЅРґРµРєСЃРѕРІ - Р·Р°РІРµСЂС€РµРЅРѕ.");
     }
 
    }
@@ -1327,7 +1329,7 @@ void __fastcall TRecHistory::do_maintance_db       ()
 
 int            TRecHistory::write_sql_thread        ()
 {
-  //Открыть базу
+  //РћС‚РєСЂС‹С‚СЊ Р±Р°Р·Сѓ
       int ret = 0;
       REC_HIST_CONFIG cfg;
       ZeroMemory(&cfg,sizeof(cfg));
@@ -1369,10 +1371,10 @@ int            TRecHistory::write_sql_thread        ()
                   {
                    if(handle_otdm_proto((LPMPROTO_HEADER)bptr.get()))
                    {
-                     //Ошибка при записи в БД
+                     //РћС€РёР±РєР° РїСЂРё Р·Р°РїРёСЃРё РІ Р‘Р”
                      data_queue.DropData();
                      ibdb.Disconnect();
-                     report(rep_id,REPORT_ERROR_TYPE,"Ошибка работы с базой.Отключение.Очистка очереди");
+                     report(rep_id,REPORT_ERROR_TYPE,"РћС€РёР±РєР° СЂР°Р±РѕС‚С‹ СЃ Р±Р°Р·РѕР№.РћС‚РєР»СЋС‡РµРЅРёРµ.РћС‡РёСЃС‚РєР° РѕС‡РµСЂРµРґРё");
                    }
                    else
                    {
@@ -1402,21 +1404,21 @@ int            TRecHistory::write_sql_thread        ()
                }
                else
                {
-                  /*Попытка подключения к базе*/
+                  /*РџРѕРїС‹С‚РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р±Р°Р·Рµ*/
                    if(time_count>5000)
                    {
                        wchar_t rep_text[1024];
-                       swprintf(rep_text,L"Подключение к базе данных %s",cfg.dbpath);
+                       swprintf(rep_text,L"РџРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С… %s",cfg.dbpath);
                        report(this->rep_id,REPORT_INFORMATION_TYPE,rep_text);
                        if(open_data_base(ibdb,cfg,&wr_trans,NULL,&wr_query_recs,NULL))
                           {
                            send_order(true);
-                           report(this->rep_id,REPORT_INFORMATION_TYPE,L"ОК - Запрос кадров отправлен");
+                           report(this->rep_id,REPORT_INFORMATION_TYPE,L"РћРљ - Р—Р°РїСЂРѕСЃ РєР°РґСЂРѕРІ РѕС‚РїСЂР°РІР»РµРЅ");
                            wr_ins_records.set_transaction(wr_trans);
                            wr_ins_string.set_transaction(wr_trans);
                           }
                           else
-                          report(this->rep_id,REPORT_INFORMATION_TYPE,L"Ошибка прдключения к БД");
+                          report(this->rep_id,REPORT_INFORMATION_TYPE,L"РћС€РёР±РєР° РїСЂРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”");
                           time_count  = 0;
                    }
                }
@@ -1445,7 +1447,7 @@ int            TRecHistory::write_sql_thread        ()
 
 LRESULT __fastcall TRecHistory::handle_query_archive (LPMPROTO_HEADER mph)
 {
- //Обработка запроса на получение истории
+ //РћР±СЂР°Р±РѕС‚РєР° Р·Р°РїСЂРѕСЃР° РЅР° РїРѕР»СѓС‡РµРЅРёРµ РёСЃС‚РѕСЂРёРё
  LRESULT ret = GKH_RET_ERROR;
 
   if( mph->fa == FA_OTD_MEDIUM_ALARM_ARCHIVE)
@@ -1462,7 +1464,7 @@ LRESULT __fastcall TRecHistory::handle_query_archive (LPMPROTO_HEADER mph)
             case OTDMPROTO_CMD_QUERY_KADR_ARCHIVES:
 
             {
-           //TODO запустить нитку обработки запроса
+           //TODO Р·Р°РїСѓСЃС‚РёС‚СЊ РЅРёС‚РєСѓ РѕР±СЂР°Р±РѕС‚РєРё Р·Р°РїСЂРѕСЃР°
             DWORD sz = mproto_size(mph);
             LPBYTE  ptr = new BYTE [sz];
             memcpy(ptr,mph,sz);
@@ -1472,7 +1474,7 @@ LRESULT __fastcall TRecHistory::handle_query_archive (LPMPROTO_HEADER mph)
             break;
            case OTDMPROTO_CMD_ARCHIVE_SET_PROPS  :
            {
-           //TODO запустить нитку обработки запроса
+           //TODO Р·Р°РїСѓСЃС‚РёС‚СЊ РЅРёС‚РєСѓ РѕР±СЂР°Р±РѕС‚РєРё Р·Р°РїСЂРѕСЃР°
             DWORD sz = mproto_size(mph);
             LPBYTE  ptr = new BYTE [sz];
             memcpy(ptr,mph,sz);
@@ -1560,7 +1562,7 @@ bool           TRecHistory::query_kadr_alarms_archives  (TIBSqlQuery & query,LPO
 int            TRecHistory::query_archive_set_props(TIBSqlQuery & query,LPOTDM_ARCHIVE_HEADER arch_hdr)
 {
  int ret = 0;
- //Выполнить установку имени и защиту архива
+ //Р’С‹РїРѕР»РЅРёС‚СЊ СѓСЃС‚Р°РЅРѕРІРєСѓ РёРјРµРЅРё Рё Р·Р°С‰РёС‚Сѓ Р°СЂС…РёРІР°
  char qtext [] =
  "update alarmshist ah \n"
  "set  ah.alarm_name = :alarm_name,ah.protect = :protect \n"
@@ -1827,7 +1829,7 @@ void __fastcall TRecHistory::send_archive_query_records_results(DWORD cmd,TIBSql
     }
     else
     {
-      //Отправить кадр
+      //РћС‚РїСЂР°РІРёС‚СЊ РєР°РґСЂ
       mproto_init(mph,0,FA_OTD_MEDIUM_ALARM_ARCHIVE,omph->data_size + sizeof(*omph)-sizeof(omph->data[0]),&to_addr);
       send (mph);
       Sleep(0);
@@ -1928,7 +1930,7 @@ void __fastcall TRecHistory::send_archive_query_alarms_results(DWORD cmd,TIBSqlQ
     }
     else
     {
-      //Отправить кадр
+      //РћС‚РїСЂР°РІРёС‚СЊ РєР°РґСЂ
       mproto_init(mph,0,FA_OTD_MEDIUM_ALARM_ARCHIVE,omph->data_size + sizeof(*omph)-sizeof(omph->data[0]),&to_addr);
       send (mph);
       Sleep(0);
@@ -1964,7 +1966,7 @@ LRESULT __fastcall TRecHistory::restore_database (LPRECHIST_RESTORE rhr,char * c
   LRESULT ret = GKH_RET_ERROR;
   if(!is_running() && check_data_size(rhr,sizeof(*rhr)))
   {
-    //Загрузка библиотеки
+    //Р—Р°РіСЂСѓР·РєР° Р±РёР±Р»РёРѕС‚РµРєРё
     bool lib_loaded = TIBBase::is_clib_loaded();
     if(!lib_loaded)
       {
@@ -2000,7 +2002,7 @@ LRESULT __fastcall TRecHistory::restore_database (LPRECHIST_RESTORE rhr,char * c
         {
          if(!svc.get_svc_text(db_path))
              {
-              string err_str = " Ошибка восстановления  БД\n\r";
+              string err_str = " РћС€РёР±РєР° РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ  Р‘Р”\n\r";
               err_str += db_path;
               err_str += "\n\r";
               err_str += svc.get_error_text();
