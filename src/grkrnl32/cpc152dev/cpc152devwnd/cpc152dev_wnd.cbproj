@@ -123,6 +123,8 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
+        <BCC_OptimizeForSize>true</BCC_OptimizeForSize>
+        <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
     </PropertyGroup>
     <ItemGroup>
         <CppCompile Include="D:\FFT\dspl32\src\dspl.c">

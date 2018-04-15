@@ -204,30 +204,6 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
           inherited PageControl1: TPageControl
             Height = 9
             ExplicitHeight = 9
-            inherited TabSheet1: TTabSheet
-              ExplicitLeft = 4
-              ExplicitTop = 24
-              ExplicitWidth = 523
-              ExplicitHeight = 103
-            end
-            inherited TabSheet2: TTabSheet
-              ExplicitLeft = 4
-              ExplicitTop = 24
-              ExplicitWidth = 523
-              ExplicitHeight = 103
-            end
-            inherited TabSheet3: TTabSheet
-              ExplicitLeft = 4
-              ExplicitTop = 24
-              ExplicitWidth = 523
-              ExplicitHeight = 103
-            end
-            inherited TabSheet4: TTabSheet
-              ExplicitLeft = 4
-              ExplicitTop = 24
-              ExplicitWidth = 523
-              ExplicitHeight = 103
-            end
           end
         end
       end
@@ -245,7 +221,7 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
         end
       end
       object MonSheet: TTabSheet
-        Caption = #1052#1086#1085#1080#1090#1086#1088
+        Caption = #1052#1086#1085#1080#1090#1086#1088' OPC'
         ImageIndex = 3
         object opc_mon: TMemo
           Left = 0
@@ -253,11 +229,40 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
           Width = 538
           Height = 375
           Align = alClient
+          Font.Charset = RUSSIAN_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Courier New'
+          Font.Style = [fsBold]
+          Lines.Strings = (
+            #1048#1079#1074#1080#1085#1080#1090#1077', '#1087#1086#1082#1072' '#1085#1077' '#1088#1077#1072#1083#1080#1079#1086#1074#1072#1085
+            'Sorry, but monitor is not implemented.')
+          ParentFont = False
           TabOrder = 0
-          ExplicitLeft = 16
-          ExplicitTop = 96
-          ExplicitWidth = 185
-          ExplicitHeight = 89
+        end
+      end
+      object MonScriptSheet: TTabSheet
+        Caption = #1052#1086#1085#1080#1090#1086#1088' '#1080#1089#1087#1086#1083#1085#1077#1085#1080#1103' '#1089#1082#1088#1080#1087#1090#1086#1074
+        ImageIndex = 4
+        object TraceMon: TMemo
+          Left = 0
+          Top = 0
+          Width = 538
+          Height = 375
+          Align = alClient
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Courier New'
+          Font.Pitch = fpFixed
+          Font.Style = [fsBold]
+          Font.Quality = fqDraft
+          ParentFont = False
+          PopupMenu = TraceMonPopup
+          ReadOnly = True
+          ScrollBars = ssBoth
+          TabOrder = 0
+          WantReturns = False
         end
       end
       object AboutSheet: TTabSheet
@@ -306,7 +311,7 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
     Left = 664
     Top = 176
     Bitmap = {
-      494C010107000900040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107001000080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -576,5 +581,17 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
       00000000C003E3CF80018001C003C7E780018001C0078FFBC003C003C00F1FFF
       E007E007C01F3FFFF81FF81FC03FFFFF00000000000000000000000000000000
       000000000000}
+  end
+  object TraceMonPopup: TPopupMenu
+    Left = 652
+    Top = 112
+    object N1: TMenuItem
+      Caption = #1054#1095#1080#1089#1090#1080#1090#1100
+      OnClick = N1Click
+    end
+    object N2: TMenuItem
+      Caption = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1089#1105
+      OnClick = N2Click
+    end
   end
 end

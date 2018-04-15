@@ -56,26 +56,24 @@
    int ret = -1;
    if(mph)
    {
-    DWORD need_size  = sizeof(*mph)-sizeof(mph->data[0])+mph->data_size;
-    DWORD alloc_size = need_size+ sizeof(_send_timeout)+ sizeof(SIMPLEDATA);
-    LPSIMPLEDATA  sd = (LPSIMPLEDATA)new char[alloc_size];
+    DWORD mp_size     = mproto_size(mph);
+    LPSIMPLEDATA  sd = alloc_data_buffer(mp_size+sizeof(_send_timeout));
     if(sd)
     {
-     sd->size      = need_size;
      LPBYTE      ptr = sd->data;
      _send_timeout * id  = (_send_timeout*)ptr;
      ptr+=sizeof(_send_timeout);
      id->queued_time    = q_time;
      id->timeout        = timeout_value;
-     CopyMemory (ptr,mph,need_size);
+     CopyMemory (ptr,mph,mp_size);
      TLockHelper l(this->locker);
 
      ret = size();
      if(!ret  ) //Без таймера отправки
-         push_back(sd);
+         push(sd);
       else
       {
-       push_back(sd);
+       push(sd);
        /*
        vector<LPSIMPLEDATA>::iterator beg = this->begin();
        vector<LPSIMPLEDATA>::iterator end = this->end();

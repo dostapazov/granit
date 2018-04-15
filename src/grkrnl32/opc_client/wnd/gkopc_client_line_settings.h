@@ -50,11 +50,6 @@ __published:	// IDE-managed Components
 	TMemo *TrLuaScript;
 	TTabSheet *TabSheet3;
 	TMemo *Memo1;
-	TTabSheet *TabSheet4;
-	TMemo *TraceMon;
-	TPopupMenu *TraceMonPopup;
-	TMenuItem *N1;
-	TMenuItem *N2;
 	TSpeedButton *bRestartLine;
 	void __fastcall server_prog_idDropDown(TObject *Sender);
 	void __fastcall server_type_listChange(TObject *Sender);
@@ -63,8 +58,6 @@ __published:	// IDE-managed Components
         void __fastcall config_editor_destroy(TObject *Sender);
 	void __fastcall cp_numberChange(TObject *Sender);
 	void __fastcall bSelConfigFileClick(TObject *Sender);
-	void __fastcall N1Click(TObject *Sender);
-	void __fastcall N2Click(TObject *Sender);
 	void __fastcall bRestartLineClick(TObject *Sender);
 
 private:	// User declarations
@@ -86,7 +79,6 @@ virtual  void     __fastcall  current_object_change (TObject * value);
 
 public:		// User declarations
 	__fastcall TOpcLineSetingsFrame(TComponent* Owner);
-void    __fastcall trace_monitor(wchar_t *what,void * data,DWORD data_sz);
 
         static UnicodeString __fastcall get_line_text(TGKModuleInterface & mod_iface,DWORD line_num);
 

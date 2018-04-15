@@ -21,6 +21,7 @@
 #include "gkopc_client_line_settings.h"
 #include "gkopcitem_view_frame.h"
 #include "about_common_frame.h"
+#include <Vcl.Menus.hpp>
 //#include <opc_helper.hpp>
 
 //---------------------------------------------------------------------------
@@ -53,6 +54,11 @@ __published:	// IDE-managed Components
 	TToolButton *bRefresh;
 	TTabSheet *MonSheet;
 	TMemo *opc_mon;
+	TTabSheet *MonScriptSheet;
+	TMemo *TraceMon;
+	TPopupMenu *TraceMonPopup;
+	TMenuItem *N1;
+	TMenuItem *N2;
 	void __fastcall bStartClick(TObject *Sender);
 	void __fastcall bStopClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -67,6 +73,8 @@ __published:	// IDE-managed Components
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall FormDestroy(TObject *Sender);
 	void __fastcall bRefreshClick(TObject *Sender);
+	void __fastcall N1Click(TObject *Sender);
+	void __fastcall N2Click(TObject *Sender);
 
 private:	// User declarations
 
@@ -86,6 +94,7 @@ virtual void __fastcall WndProc(Messages::TMessage & msg);
         void __fastcall setup_lines();
         void __fastcall add_opc_line(LPMODEM_LINE_PROPS mlp );
     LRESULT  __fastcall on_gkhandle_notify (GKHANDLE from,LPNOTIFY_CODE nc,DWORD mask);
+    void     __fastcall trace_monitor(wchar_t *what,void * data,DWORD data_sz);
 
         void __fastcall enable_monitor(bool _enable);
 public:		// User declarations

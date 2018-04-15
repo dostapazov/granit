@@ -173,7 +173,10 @@ void     __fastcall  Tcpc152dev_frame::setup_controls(LPCPC152_LINE_CONFIG lc)
 	Freq->Text = str;
 
 	int pos = (int )ceil( log((long double)lc->dft_frame_size)/log((long double)2.0));
+        pos = std::max(pos,UpDown1->Min);
+        pos = std::min(pos,UpDown1->Max);
 	UpDown1->Position = pos;
+        FrameSize->Text   = (1<<pos);
 
 
 	str.printf(ffmt,lc->samples_freq);
@@ -292,7 +295,7 @@ int   __fastcall Tcpc152dev_frame::get_cp_number()
 void __fastcall Tcpc152dev_frame::UpDown1ChangingEx(TObject *Sender, bool &AllowChange,
 		  int NewValue, TUpDownDirection Direction)
 {
- this->FrameSize->Text = 1<<NewValue;
+ this->FrameSize->Text = (1<<NewValue);
 }
 //---------------------------------------------------------------------------
 

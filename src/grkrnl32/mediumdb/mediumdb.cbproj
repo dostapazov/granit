@@ -148,7 +148,6 @@
         <Debugger_RunParams>-nosplash -config -service</Debugger_RunParams>
         <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
         <BCC_DisableOptimizations>false</BCC_DisableOptimizations>
-        <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
         <BCC_DebugLineNumbers>false</BCC_DebugLineNumbers>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
@@ -156,6 +155,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
         <BCC_UserSuppliedOptions> -tWM -5 -Vx -r- -k -tWD -Ve -r</BCC_UserSuppliedOptions>
+        <BCC_OptimizeForSize>true</BCC_OptimizeForSize>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>

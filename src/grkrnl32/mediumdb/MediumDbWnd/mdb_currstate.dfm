@@ -79,7 +79,7 @@ inherited MDBCurrentState: TMDBCurrentState
       Caption = '-----'
     end
     object FullName: TLabel
-      Left = 249
+      Left = 224
       Top = 16
       Width = 44
       Height = 13
@@ -100,28 +100,28 @@ inherited MDBCurrentState: TMDBCurrentState
       Caption = '-----'
     end
     object Label3: TLabel
-      Left = 246
+      Left = 221
       Top = 54
       Width = 144
       Height = 13
       Caption = #1055#1077#1088#1089#1086#1085#1072#1083#1100#1085#1072#1103' '#1044#1080#1072#1075#1085#1086#1089#1090#1080#1082#1072
     end
     object OtdPd: TLabel
-      Left = 398
+      Left = 373
       Top = 54
       Width = 15
       Height = 13
       Caption = '-----'
     end
     object Label4: TLabel
-      Left = 248
+      Left = 223
       Top = 32
       Width = 90
       Height = 13
       Caption = #1056#1072#1079#1085#1080#1094#1072' '#1074#1088#1077#1084#1077#1085#1080
     end
     object TimeDiff: TLabel
-      Left = 398
+      Left = 373
       Top = 32
       Width = 15
       Height = 13

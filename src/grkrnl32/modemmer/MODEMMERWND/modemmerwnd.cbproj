@@ -140,6 +140,8 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <ILINK_LibraryPath>$(BDSLIB)/$(PLATFORM)/release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <BCC_OptimizeForSize>true</BCC_OptimizeForSize>
+        <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
     </PropertyGroup>
     <ItemGroup>
         <LibFiles Include="..\..\..\..\LIB_XE\gkhandle.lib" Condition="'$(Platform)'=='Win32'">

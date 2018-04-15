@@ -4,7 +4,7 @@
         <ProjectVersion>18.3</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Library</AppType>
@@ -57,9 +57,9 @@
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <Multithreaded>true</Multithreaded>
         <SanitizedProjectName>gkopc_client</SanitizedProjectName>
-        <IncludePath>..\GKLIB\;..\..\..\INC\GRKRNL32\;$(KERTL_INC);$(GRKRNL_INC);$(OPC_INC);$(IncludePath)</IncludePath>
+        <IncludePath>..\..\KE_RTL\;..\GKLIB\;..\..\..\INC\GRKRNL32\;$(KERTL_INC);$(GRKRNL_INC);$(OPC_INC);$(IncludePath)</IncludePath>
         <_TCHARMapping>wchar_t</_TCHARMapping>
-        <ILINK_LibraryPath>..\..\..\INC\GRKRNL32\;..\GKLIB\;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>..\..\KE_RTL\;..\..\..\INC\GRKRNL32\;..\GKLIB\;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <BCC_InstructionSet>5</BCC_InstructionSet>
         <ILINK_MapFileType>None</ILINK_MapFileType>
         <BRCC_IncludePath>$(BDS)\include;$(BDS)\include\windows\sdk;$(BDS)\include\windows;$(BRCC_IncludePath)</BRCC_IncludePath>
@@ -163,6 +163,9 @@
         <CppCompile Include="opc_line_lua_script.cpp">
             <BuildOrder>11</BuildOrder>
         </CppCompile>
+        <CppCompile Include="..\..\KE_RTL\kedatas.cpp">
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -224,7 +227,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="F:\ОУИК-Центр\gkopc_client.gkm" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="..\..\..\grkrnl32\gkopc_client.gkm" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>gkopc_client.dll</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -247,6 +250,12 @@
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64250mt.dll" Class="DependencyModule">
                     <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\grkrnl32\gkopc_client.tds" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteName>gkopc_client.tds</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

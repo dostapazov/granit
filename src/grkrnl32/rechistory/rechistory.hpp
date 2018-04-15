@@ -57,6 +57,7 @@ class TRecHistory:public TGKModule//,public TGKThread
 
  KeRTL::TEvent                 term_event;
  KeRTL::TEventSimpleDataQueue  data_queue;
+ KeRTL::TSimpleDataQueue       not_commited_data;
  boost::thread                 main_thread;
  boost::thread                 maintance_thread ;
  boost::thread                 statistic_thread;
@@ -78,7 +79,9 @@ class TRecHistory:public TGKModule//,public TGKThread
  DWORD   __fastcall stop (DWORD reason);
  bool    __fastcall check_data_base       (LPREC_HIST_CONFIG cfg);
  void    __fastcall init_trans_query(TIBDatabase * ibdb,TIBTransaction * trans,TIBSqlQuery * rd_query,bool write);
- bool    __fastcall open_data_base(TIBDatabase & ibdb,REC_HIST_CONFIG & config,TIBTransaction * wr_trans,TIBTransaction * rd_trans,TIBSqlQuery * wr_query,TIBSqlQuery * rd_query);
+ bool    __fastcall open_data_base   (TIBDatabase & ibdb,REC_HIST_CONFIG & config,TIBTransaction * wr_trans,TIBTransaction * rd_trans,TIBSqlQuery * wr_query,TIBSqlQuery * rd_query);
+ bool    __fastcall reopen_data_base (TIBDatabase & ibdb);
+
  void    __fastcall send_order(bool order);
  LRESULT __fastcall send(LPMPROTO_HEADER mph);
  DWORD   __fastcall send_command(DWORD fa,bool begin,bool finish,DWORD cmd,DWORD err,LPVOID data,DWORD data_size );
@@ -98,9 +101,12 @@ class TRecHistory:public TGKModule//,public TGKThread
  DWORD   __fastcall get_window_module     (wchar_t * buf,DWORD bsz);
  LRESULT __fastcall check_query           (char * query);
  LRESULT __fastcall check_query           (TIBTransaction * tr,char * query);
-     int            write_sql_thread      ();
- void    __fastcall report_sql_error      (TIBStatus * ibs);
-     int            maintance_thread_proc ();
+   int              write_sql_thread      ();
+   void  __fastcall write_sql_proc        (int & time_count,int & cycle_count,int commit_after);
+   void  __fastcall write_sql_timeout     (int &time_count, int & cycle_count,REC_HIST_CONFIG & cfg);
+   void  __fastcall report_connect(TIBDatabase & ibdb,const wchar_t * dbpath);
+   void  __fastcall report_sql_error      (TIBStatus * ibs);
+    int             maintance_thread_proc ();
     void __fastcall do_maintance_db       ();
      int            statistic_thread_proc ();
 

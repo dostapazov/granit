@@ -442,28 +442,6 @@ bool     __fastcall  TOpcLineSetingsFrame::apply_scripts ()
    return ret;
 }
 
-void     __fastcall  TOpcLineSetingsFrame::trace_monitor(wchar_t *what,void * data,DWORD data_sz)
-{
-  if(what && *what)
-     TraceMon->Lines->Add(what);
-  TraceMon->Lines->Add(UnicodeString((wchar_t*)data,data_sz/sizeof(wchar_t)));
-}
-
-
-
-
-
-void __fastcall TOpcLineSetingsFrame::N1Click(TObject *Sender)
-{
-   TraceMon->Lines->Clear();
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TOpcLineSetingsFrame::N2Click(TObject *Sender)
-{
-  TraceMon->SelectAll();
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TOpcLineSetingsFrame::bRestartLineClick(TObject *Sender)
 {

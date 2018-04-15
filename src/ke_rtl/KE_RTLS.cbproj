@@ -153,6 +153,8 @@
         <BPILibOutputDir>D:\USER\GRANIT\LIB_XE\</BPILibOutputDir>
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
         <BCC_UserSuppliedOptions> -tWM -5 -Vx -Ve -r</BCC_UserSuppliedOptions>
+        <BCC_OptimizeForSize>true</BCC_OptimizeForSize>
+        <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>

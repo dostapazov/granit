@@ -21,10 +21,10 @@
      {
        dsz = data ? dsz:0;
        DWORD need_size = sizeof(*hdr)-sizeof(hdr->data[0])+dsz;
-       LPSIMPLEDATA sd = (LPSIMPLEDATA)new unsigned char[need_size+sizeof(SIMPLEDATA)];
+       LPSIMPLEDATA sd = alloc_data_buffer(need_size) ;
        if(sd)
        {
-        sd->size = need_size;
+
         LPMPROTO_HEADER dst_hdr = (LPMPROTO_HEADER)sd->data;
         memcpy(dst_hdr,hdr,sizeof(*hdr));
         dst_hdr->data_size = dsz;

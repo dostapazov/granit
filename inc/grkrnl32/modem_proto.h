@@ -89,7 +89,7 @@ inline bool mproto_check(LPMPROTO_HEADER mph)
  return  (0 == otd_calc_checksum(mph,sizeof(*mph)-sizeof(mph->data[0]),OTD_DEF_POLINOM)) ? true : false;
 }
 
-inline DWORD mproto_size(LPMPROTO_HEADER mph) {return mph->data_size + sizeof(*mph) - sizeof(mph->data);}
+inline DWORD mproto_size(LPMPROTO_HEADER mph) {return mph->data_size + sizeof(*mph) - sizeof(mph->data[0]);}
 
 
  struct modem_addr:public MODEM_ADDR

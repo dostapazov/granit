@@ -138,81 +138,74 @@ inherited RecHistroyForm: TRecHistroyForm
       end
       object Label2: TLabel
         Left = 1
-        Top = 31
+        Top = 28
         Width = 73
         Height = 13
         Caption = #1055#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1100
       end
       object Label3: TLabel
         Left = 1
-        Top = 56
+        Top = 50
         Width = 38
         Height = 13
         Caption = #1055#1072#1088#1086#1083#1100
       end
       object Label4: TLabel
-        Left = 4
-        Top = 110
+        Left = 1
+        Top = 96
         Width = 122
         Height = 13
         Caption = #1050#1083#1080#1077#1085#1090#1089#1082#1072#1103' '#1073#1080#1073#1083#1080#1086#1090#1077#1082#1072
       end
       object tbSelLib: TSpeedButton
-        Left = 376
-        Top = 125
+        Left = 501
+        Top = 93
         Width = 23
-        Height = 21
+        Height = 20
         Caption = '...'
         OnClick = tbSelLibClick
       end
       object Label5: TLabel
         Left = 382
-        Top = 55
+        Top = 49
         Width = 121
         Height = 13
         Caption = 'COMMIT '#1087#1086#1089#1083#1077' '#1079#1072#1087#1080#1089#1077#1081
       end
       object Label6: TLabel
         Left = 382
-        Top = 32
+        Top = 29
         Width = 110
         Height = 13
         Caption = 'COMMIT '#1090#1072#1081#1084#1072#1091#1090' ('#1084#1089')'
       end
-      object Label7: TLabel
-        Left = 419
-        Top = 84
-        Width = 91
-        Height = 13
-        Caption = #1056#1072#1079#1084#1077#1088' '#1089#1090#1088#1072#1085#1080#1094#1099
-      end
-      object Label8: TLabel
-        Left = 419
-        Top = 110
-        Width = 52
-        Height = 13
-        Caption = #1041#1091#1092#1092#1077#1088#1086#1074
-      end
       object Label9: TLabel
-        Left = 1
-        Top = 85
+        Left = 217
+        Top = 73
         Width = 170
         Height = 13
         Caption = #1044#1083#1080#1090#1077#1083#1100#1085#1086#1089#1090#1100' '#1093#1088#1072#1085#1077#1085#1080#1103'  '#1072#1088#1093#1080#1074#1086#1074
       end
       object Label10: TLabel
-        Left = 250
-        Top = 84
+        Left = 468
+        Top = 72
         Width = 121
         Height = 13
         Caption = #1076#1085#1077#1081' ( 0 - '#1085#1077#1086#1075#1088#1072#1085#1080#1095#1077#1085#1086')'
+      end
+      object Label12: TLabel
+        Left = 1
+        Top = 73
+        Width = 55
+        Height = 13
+        Caption = #1050#1086#1076#1080#1088#1086#1074#1082#1072
       end
       object db_path: TEdit
         Tag = 2
         Left = 82
         Top = 4
         Width = 523
-        Height = 21
+        Height = 18
         BevelInner = bvNone
         BevelKind = bkFlat
         BorderStyle = bsNone
@@ -223,9 +216,9 @@ inherited RecHistroyForm: TRecHistroyForm
       object user: TEdit
         Tag = 4
         Left = 82
-        Top = 29
+        Top = 26
         Width = 124
-        Height = 21
+        Height = 18
         BevelInner = bvNone
         BevelKind = bkFlat
         BorderStyle = bsNone
@@ -235,9 +228,9 @@ inherited RecHistroyForm: TRecHistroyForm
       object passw: TEdit
         Tag = 8
         Left = 82
-        Top = 54
+        Top = 48
         Width = 124
-        Height = 21
+        Height = 18
         BevelInner = bvNone
         BevelKind = bkFlat
         BorderStyle = bsNone
@@ -247,17 +240,20 @@ inherited RecHistroyForm: TRecHistroyForm
       end
       object cl_lib: TEdit
         Tag = 1
-        Left = 6
-        Top = 125
+        Left = 131
+        Top = 94
         Width = 365
-        Height = 21
+        Height = 18
+        BevelInner = bvNone
+        BevelKind = bkFlat
+        BorderStyle = bsNone
         TabOrder = 3
         OnChange = cl_libChange
       end
       object WrChanges: TCheckBox
         Tag = 16
         Left = 212
-        Top = 31
+        Top = 28
         Width = 121
         Height = 17
         Caption = #1055#1080#1089#1072#1090#1100' '#1080#1079#1084#1077#1085#1077#1085#1080#1103
@@ -267,7 +263,7 @@ inherited RecHistroyForm: TRecHistroyForm
       object WrAlarms: TCheckBox
         Tag = 32
         Left = 212
-        Top = 54
+        Top = 48
         Width = 169
         Height = 17
         Caption = #1055#1080#1089#1072#1090#1100' '#1072#1074#1072#1088#1080#1081#1085#1099#1077' '#1072#1088#1093#1080#1074#1099
@@ -276,9 +272,9 @@ inherited RecHistroyForm: TRecHistroyForm
       end
       object PageControl2: TPageControl
         Left = 0
-        Top = 168
+        Top = 159
         Width = 691
-        Height = 260
+        Height = 267
         ActivePage = TabSheet3
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = RUSSIAN_CHARSET
@@ -292,12 +288,13 @@ inherited RecHistroyForm: TRecHistroyForm
         OnResize = PageControl2Resize
         object TabSheet3: TTabSheet
           Caption = #1047#1072#1087#1080#1089#1100' '#1080#1089#1090#1086#1088#1080#1080
+          ExplicitHeight = 232
           object WrSqlQuery: TMemo
             Tag = 64
             Left = 0
             Top = 0
             Width = 683
-            Height = 232
+            Height = 239
             Align = alClient
             Font.Charset = RUSSIAN_CHARSET
             Font.Color = clNavy
@@ -310,17 +307,19 @@ inherited RecHistroyForm: TRecHistroyForm
             WantTabs = True
             WordWrap = False
             OnChange = WrSqlQueryChange
+            ExplicitHeight = 232
           end
         end
         object TabSheet4: TTabSheet
           Caption = #1063#1090#1077#1085#1080#1077' '#1080#1089#1090#1086#1088#1080#1080
           ImageIndex = 1
+          ExplicitHeight = 232
           object RdSqlQuery: TMemo
             Tag = 128
             Left = 0
             Top = 0
             Width = 683
-            Height = 232
+            Height = 239
             Align = alClient
             Font.Charset = RUSSIAN_CHARSET
             Font.Color = clNavy
@@ -333,17 +332,19 @@ inherited RecHistroyForm: TRecHistroyForm
             WantTabs = True
             WordWrap = False
             OnChange = WrSqlQueryChange
+            ExplicitHeight = 232
           end
         end
         object SQL_clear_hist: TTabSheet
           Caption = #1054#1095#1080#1089#1090#1082#1072' '#1080#1089#1090#1086#1088#1080#1080
           ImageIndex = 4
+          ExplicitHeight = 232
           object SqlClearHist: TMemo
             Tag = 2048
             Left = 0
             Top = 0
             Width = 683
-            Height = 232
+            Height = 239
             Align = alClient
             Font.Charset = RUSSIAN_CHARSET
             Font.Color = clNavy
@@ -353,17 +354,19 @@ inherited RecHistroyForm: TRecHistroyForm
             ParentFont = False
             TabOrder = 0
             OnChange = WrSqlQueryChange
+            ExplicitHeight = 232
           end
         end
         object SQL_idx_update: TTabSheet
           Caption = #1054#1073#1085#1086#1074#1083#1077#1085#1080#1077' '#1089#1090#1072#1090#1080#1089#1090#1080#1082#1080' '#1080#1085#1076#1077#1082#1089#1086#1074
           ImageIndex = 5
+          ExplicitHeight = 232
           object SqlUpdIndexes: TMemo
             Tag = 4096
             Left = 0
             Top = 0
             Width = 683
-            Height = 232
+            Height = 239
             Align = alClient
             Font.Charset = RUSSIAN_CHARSET
             Font.Color = clNavy
@@ -372,11 +375,13 @@ inherited RecHistroyForm: TRecHistroyForm
             Font.Style = []
             ParentFont = False
             TabOrder = 0
+            ExplicitHeight = 232
           end
         end
         object MonSheet: TTabSheet
           Caption = #1052#1086#1085#1080#1090#1086#1088
           ImageIndex = 2
+          ExplicitHeight = 232
           object Panel1: TPanel
             Left = 0
             Top = 0
@@ -518,19 +523,21 @@ inherited RecHistroyForm: TRecHistroyForm
             Left = 0
             Top = 41
             Width = 683
-            Height = 191
+            Height = 198
             Align = alClient
             TabOrder = 1
+            ExplicitHeight = 191
           end
         end
         object tabStats: TTabSheet
           Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
           ImageIndex = 3
+          ExplicitHeight = 232
           object StatsMemo: TMemo
             Left = 0
             Top = 0
             Width = 683
-            Height = 232
+            Height = 239
             Align = alClient
             Font.Charset = RUSSIAN_CHARSET
             Font.Color = clNavy
@@ -540,69 +547,105 @@ inherited RecHistroyForm: TRecHistroyForm
             ParentFont = False
             TabOrder = 0
             WantReturns = False
+            ExplicitHeight = 232
           end
         end
       end
       object CommitTimeOut: TEdit
-        Tag = 256
+        Tag = 512
         Left = 516
-        Top = 28
+        Top = 25
         Width = 89
-        Height = 21
+        Height = 18
         BevelInner = bvNone
         BevelKind = bkFlat
         BorderStyle = bsNone
         TabOrder = 7
+        Text = '200'
         OnChange = cl_libChange
       end
       object CommitAfter: TEdit
-        Tag = 512
+        Tag = 1024
         Left = 516
-        Top = 55
+        Top = 49
         Width = 89
-        Height = 21
+        Height = 18
         BevelInner = bvNone
         BevelKind = bkFlat
         BorderStyle = bsNone
         TabOrder = 8
+        Text = '1000'
         OnChange = cl_libChange
       end
-      object PageSize: TEdit
-        Tag = 256
-        Left = 516
-        Top = 82
-        Width = 46
-        Height = 21
+      object ArchiveDaysLong: TEdit
+        Tag = 2048
+        Left = 400
+        Top = 70
+        Width = 53
+        Height = 17
         BevelInner = bvNone
         BevelKind = bkFlat
         BorderStyle = bsNone
         TabOrder = 9
-        Text = '4096'
         OnChange = cl_libChange
       end
-      object Buffers: TEdit
-        Tag = 256
-        Left = 516
-        Top = 109
-        Width = 59
-        Height = 21
+      object lc_type: TEdit
+        Tag = 16
+        Left = 82
+        Top = 71
+        Width = 124
+        Height = 18
         BevelInner = bvNone
         BevelKind = bkFlat
         BorderStyle = bsNone
         TabOrder = 10
-        Text = '30000'
-      end
-      object ArchiveDaysLong: TEdit
-        Tag = 1024
-        Left = 177
-        Top = 81
-        Width = 53
-        Height = 21
-        BevelInner = bvNone
-        BevelKind = bkFlat
-        BorderStyle = bsNone
-        TabOrder = 11
+        Text = 'WIN1251'
         OnChange = cl_libChange
+      end
+      object GroupBox1: TGroupBox
+        Left = 4
+        Top = 114
+        Width = 518
+        Height = 39
+        Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1089#1086#1079#1076#1072#1085#1080#1103' '#1085#1086#1074#1086#1081' '#1041#1044
+        TabOrder = 11
+        object Label7: TLabel
+          Left = 10
+          Top = 17
+          Width = 91
+          Height = 13
+          Caption = #1056#1072#1079#1084#1077#1088' '#1089#1090#1088#1072#1085#1080#1094#1099
+        end
+        object Label8: TLabel
+          Left = 167
+          Top = 15
+          Width = 52
+          Height = 13
+          Caption = #1041#1091#1092#1092#1077#1088#1086#1074
+        end
+        object PageSize: TEdit
+          Left = 107
+          Top = 15
+          Width = 46
+          Height = 18
+          BevelInner = bvNone
+          BevelKind = bkFlat
+          BorderStyle = bsNone
+          TabOrder = 0
+          Text = '4096'
+          OnChange = cl_libChange
+        end
+        object Buffers: TEdit
+          Left = 235
+          Top = 14
+          Width = 59
+          Height = 18
+          BevelInner = bvNone
+          BevelKind = bkFlat
+          BorderStyle = bsNone
+          TabOrder = 1
+          Text = '30000'
+        end
       end
     end
     object TabSheet2: TTabSheet

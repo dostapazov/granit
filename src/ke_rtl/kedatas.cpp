@@ -5,6 +5,29 @@ namespace KeRTL
 {
 #endif
 
+
+#define SIMPLE_DATA_SW 0x534D5044
+LPSIMPLEDATA          __fastcall TSimpleDataQueue::alloc_data_buffer(int sz)
+{
+ LPSIMPLEDATA buf = (LPSIMPLEDATA)new unsigned char[sz+sizeof(SIMPLEDATA)-sizeof(buf->data[0])];
+ buf->size = sz;
+ buf->sw   = SIMPLE_DATA_SW;
+ return buf;
+}
+
+LPSIMPLEDATA   __fastcall TSimpleDataQueue::alloc_data_buffer(LPVOID data,int sz)
+{
+ LPSIMPLEDATA buf = alloc_data_buffer(sz);
+ CopyMemory(buf->data,data,sz);
+ return buf;
+}
+
+void __fastcall TSimpleDataQueue::release_data_buffer(LPSIMPLEDATA b)
+{
+ if(b &&  b->sw == SIMPLE_DATA_SW)
+    delete[](unsigned char*)b;
+}
+
 TSimpleDataQueue::~TSimpleDataQueue()
 {
   DropData();
@@ -12,52 +35,52 @@ TSimpleDataQueue::~TSimpleDataQueue()
   int  __fastcall TSimpleDataQueue::QueueCount()
   {
    int ret;
-   locker.Lock();
+   TLockHelper l(locker);
    ret = size();
-   locker.Unlock();
    return ret;
   }
 
 void __fastcall TSimpleDataQueue::DropFirst()
 {
- locker.Lock();
+  TLockHelper l(locker);
   if(size())
   {
-   LPSIMPLEDATA data = front();
-   pop();
-   ReleaseDataBuffer(data);
+   LPSIMPLEDATA data = pop();
+   release_data_buffer(data);
   } 
- locker.Unlock();
 
 }
 
 void __fastcall TSimpleDataQueue::DropData()
 {
- locker.Lock();
+ TLockHelper l(locker);
  while(size())
-   DropFirst();
- locker.Unlock();
+       DropFirst();
 }
 
 
  LPSIMPLEDATA __fastcall TSimpleDataQueue::pop()
  {
 
+  TLockHelper l(locker);
   LPSIMPLEDATA ret = NULL;
   if(size())
     {
-     ret = *begin();
-     erase(begin());
+     data_iterator ptr = begin();
+     ret = *ptr;
+     erase(ptr);
     }
     return ret;
  }
 
- void         __fastcall TSimpleDataQueue::push(LPSIMPLEDATA sd,bool to_front)
+ int         __fastcall TSimpleDataQueue::push(LPSIMPLEDATA sd,bool to_front)
  {
+  TLockHelper l(locker);
   if(to_front)
     insert(begin(),sd);
    else
-   push_back(sd);
+    push_back(sd);
+    return size();
  }
 
 
@@ -65,11 +88,12 @@ bool __fastcall TSimpleDataQueue::PutIntoQueue(LPVOID data,int sz,bool to_front)
 {
  if(data && sz)
  {
-  this->locker.Lock(INFINITE);
-  LPSIMPLEDATA p = AllocDataBuffer(data,sz);
-  push(p,to_front);
-  locker.Unlock();
-  return true;
+  LPSIMPLEDATA p = alloc_data_buffer(data,sz);
+  if(p)
+    {
+     push(p,to_front);
+     return true;
+    }
  }
  return false;
 }
@@ -77,24 +101,34 @@ bool __fastcall TSimpleDataQueue::PutIntoQueue(LPVOID data,int sz,bool to_front)
  int  __fastcall TSimpleDataQueue::TopDataSize()
  {
   int ret(0);
-  locker.Lock();
+  TLockHelper l(locker);
   if(!empty())
-    ret = this->front()->size;
-  locker.Unlock();
+    ret = front()->size;
   return ret;
  }
 
  bool __fastcall TSimpleDataQueue::GetFromQueue(LPVOID data,int buf_sz,int*out)
  {
    bool ret(false);
-   locker.Lock();
+   TLockHelper l(locker);
    if(PeekFromQueue(data,buf_sz,out))
    {
     ret = true;
     DropFirst();
    }
-   locker.Unlock();
    return ret;
+ }
+
+ int  __fastcall TSimpleDataQueue::move_to(TSimpleDataQueue & dest,int count)
+ {
+   TLockHelper l(locker);
+   int mv_count = std::min(count,this->QueueCount());
+   count = mv_count;
+   while(count--)
+   {
+    dest.push(pop());
+   }
+   return mv_count;
  }
 
  bool __fastcall TSimpleDataQueue::PeekFromQueue(LPVOID data,int buf_sz,int*out)
@@ -102,8 +136,8 @@ bool __fastcall TSimpleDataQueue::PutIntoQueue(LPVOID data,int sz,bool to_front)
   bool ret(false);
   if(data && buf_sz)
   {
-  locker.Lock();
-  if(!empty())
+   TLockHelper l(locker);
+   if(!empty())
     {
      LPSIMPLEDATA pd = front();
      if(pd->size<=buf_sz)
@@ -117,19 +151,19 @@ bool __fastcall TSimpleDataQueue::PutIntoQueue(LPVOID data,int sz,bool to_front)
     else
       if(out)
          *out = 0;
-  locker.Unlock();
   }
   return ret;
  }
 
- void __fastcall TEventSimpleDataQueue::DropFirst()
- {
-  locker.Lock();
-  TSimpleDataQueue::DropFirst();
-  if(empty())
-     event.SetEvent(false);
-  locker.Unlock();
- }
+// void __fastcall TEventSimpleDataQueue::DropFirst()
+// {
+//  TLockHelper l(locker);
+//  TSimpleDataQueue::DropFirst();
+//  if(empty())
+//     event.SetEvent(false);
+//  locker.Unlock();
+// }
+
  TEvent &  TEventSimpleDataQueue::GetEvent()
  {
   return event;

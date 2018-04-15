@@ -246,7 +246,7 @@
        rec.get_scale_info    (scale_begin,scale_end);
      }
   float scale_dif = fabs(scale_end - scale_begin);
-  if(scale_dif>.0001)
+  if(scale_dif>.00001)
   {
      float percent = fabs(dif/scale_dif)*100.0;
      percent*=100.0;
@@ -268,7 +268,7 @@
    {
      if(!time)  time = GetTime();
      chmask|= MDBR_FIELD_TIME;
-     rec.last_time = time;
+     rec.last_time = rec.time ? rec.time : time;
      rec.time = time;
    }
 
@@ -514,7 +514,7 @@ DWORD        __fastcall med_db::calc_record   (mdb_record & rec,__int64 time)
             percent = rec.percent+1;
             else
             percent = calc_change_percent(rec,new_value);
-         if(!rec.percent ||  (percent > rec.percent) )
+         if(/*!rec.percent || */ (percent > rec.percent) )
          {
            ret|=MDBR_FIELD_VALUE;
            rec.last_value = rec.value;

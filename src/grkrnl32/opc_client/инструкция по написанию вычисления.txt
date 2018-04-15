@@ -5,10 +5,15 @@ item_value    - Значение
 item_quality  - Качество
 Доступны для вызова процедуры
 
+__trace (string text)  
+функция выводит текст в монитор исполнения скриптов
+
 Получить значение тега
-get_value(tag_name string)  
-врзвращает value number значение ,quality number - качество,
-tag_exists integer существование тега
+get_value(string arg_item_id) 
+ возвращает 3 значения 
+ 1) 0 - нет переменной 1 - ok 
+ 2) текущее значение переменной
+ 3) качество переменной
 
 Установить значение тега
 set_value(value number , tag_name string )

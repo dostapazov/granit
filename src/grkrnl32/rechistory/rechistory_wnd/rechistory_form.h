@@ -68,10 +68,6 @@ __published:	// IDE-managed Components
 	TLabel *Label6;
 	TEdit *CommitTimeOut;
 	TEdit *CommitAfter;
-	TEdit *PageSize;
-	TLabel *Label7;
-	TEdit *Buffers;
-	TLabel *Label8;
 	TLabel *Label9;
 	TEdit *ArchiveDaysLong;
 	TLabel *Label10;
@@ -92,6 +88,13 @@ __published:	// IDE-managed Components
 	TLabel *Label11;
 	TEdit *RecFilter;
 	TTimer *Timer1;
+	TLabel *Label12;
+	TEdit *lc_type;
+	TGroupBox *GroupBox1;
+	TLabel *Label7;
+	TEdit *PageSize;
+	TLabel *Label8;
+	TEdit *Buffers;
 	void __fastcall tbSelLibClick(TObject *Sender);
 	void __fastcall cl_libChange(TObject *Sender);
 	void __fastcall bUndoClick(TObject *Sender);

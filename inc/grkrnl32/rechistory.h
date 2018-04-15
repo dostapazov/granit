@@ -28,24 +28,26 @@
 #define RCH_CONF_DBPATH     2
 #define RCH_CONF_USERNAME   4
 #define RCH_CONF_USERPASSW  8
-#define RCH_CONF_WR_CHANGES          0x0010
-#define RCH_CONF_WR_ALARM_ARCHIVES   0x0020
-#define RCH_CONF_SQL_WRHISTROY       0x0040
-#define RCH_CONF_SQL_RDHISTROY       0x0080
-#define RCH_CONF_COMMIT_TIMEOUT      0x0100
-#define RCH_CONF_COMMIT_AFTER        0x0200
-#define RCH_CONF_TIMESTAMP_LIMIT     0x0400
-#define RCH_CONF_SQL_CLEAR_HIST      0x0800
-#define RCH_CONF_SQL_UPD_IDX         0x1000
+#define RCH_CONF_LC_TYPE             0x0010
+#define RCH_CONF_WR_CHANGES          0x0020
+#define RCH_CONF_WR_ALARM_ARCHIVES   0x0040
+#define RCH_CONF_SQL_WRHISTROY       0x0080
+#define RCH_CONF_SQL_RDHISTROY       0x0100
+#define RCH_CONF_COMMIT_TIMEOUT      0x0200
+#define RCH_CONF_COMMIT_AFTER        0x0400
+#define RCH_CONF_TIMESTAMP_LIMIT     0x0800
+#define RCH_CONF_SQL_CLEAR_HIST      0x1000
+#define RCH_CONF_SQL_UPD_IDX         0x2000
 
 #pragma pack(push,1)
 struct REC_HIST_CONFIG
 {
  DWORD dw_size;
  wchar_t client_lib[MAX_PATH<<1];
- wchar_t dbpath    [MAX_PATH];
+ wchar_t dbpath    [MAX_PATH<<1];
  wchar_t user_name [32];
  wchar_t password  [32];
+ wchar_t lc_type   [32];
  BOOL    write_changes;
  BOOL    write_alarm_archives;
  int     commit_time_out;
@@ -77,6 +79,7 @@ struct REC_HIST_CONFIG
 #define REGDW_COMMIT_TIMEOUT       L"COMMIT_TIMEOUT"
 #define REGDW_COMMIT_AFTER         L"COMMIT_AFTER"
 #define REGBIN_TIMESTAMP_LIMIT     L"TIMESTAMP_LIMIT"
+#define REGSTR_LC_TYPE             L"LC_TYPE"
 
 
 #define RCH_CMD_ENUM_KADRS    MCMD(MT_MEDIUMDB_HISTORY,1)

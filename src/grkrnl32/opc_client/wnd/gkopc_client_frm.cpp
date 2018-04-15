@@ -125,7 +125,7 @@ void     __fastcall TGKOpcClientFrm::after_set_gkhandle()
   root_node->Selected = true;
   PostMessage(Handle,WMUSER_SETUP_LINES_TREE ,0,0);
   on_module_state(mod_iface(),mod_iface.get_module_state());
-  set_notify(mod_iface(),MNF_COMMON|MNF_MODEM);
+  set_notify(mod_iface(),MNF_COMMON|MNF_MODEM|MNF_NOTIFY_SCRIPT_TRACE|MNF_NOTIFY_SCRIPT_ERROR);
   DataFrame->mod_handle = mod_handle;
   DataFrame->Align = alClient;
 }
@@ -219,13 +219,7 @@ void __fastcall TGKOpcClientFrm::LinesTreeChange(TObject *Sender, TTreeNode *Nod
         current_frame->on_changed     = on_frame_changed;
         current_frame->mod_handle     = mod_handle;
         current_frame->ch_mask        = 0;
-        if(current_frame == OpcLineSetingsFrame1)
-          set_notify(mod_handle,MNF_NOTIFY_SCRIPT_TRACE|MNF_NOTIFY_SCRIPT_ERROR);
        }
-       else
-         set_notify(mod_handle,MNF_NOTIFY_SCRIPT_TRACE|MNF_NOTIFY_SCRIPT_ERROR);
-
-
    }
 
    current_frame->current_object   = Node;
@@ -344,11 +338,8 @@ LRESULT  __fastcall TGKOpcClientFrm::on_gkhandle_notify (GKHANDLE from,LPNOTIFY_
 
   if(mask == MNF_NOTIFY_SCRIPT_TRACE || mask == MNF_NOTIFY_SCRIPT_ERROR)
     {
-     if(current_frame == OpcLineSetingsFrame1 && current_frame->current_tree_node && nc->notify_code == (DWORD) current_frame->current_tree_node->Data)
-        {
-         OpcLineSetingsFrame1->trace_monitor(mask == MNF_NOTIFY_SCRIPT_ERROR ? L"SCRIPT SYNTAX ERROR":L"",(wchar_t*)nc->notify_data,NOTIFY_DATA_SIZE(nc));
-        }
-        return GKH_RET_SUCCESS;
+      trace_monitor(mask == MNF_NOTIFY_SCRIPT_ERROR ? L"SCRIPT SYNTAX ERROR":L"",(wchar_t*)nc->notify_data,NOTIFY_DATA_SIZE(nc));
+      return GKH_RET_SUCCESS;
     }
   return TGKModuleForm::on_gkhandle_notify (from,nc,mask);
 }
@@ -382,4 +373,25 @@ void __fastcall TGKOpcClientFrm::enable_monitor(bool __enable)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TGKOpcClientFrm::N1Click(TObject *Sender)
+{
+   TraceMon->Lines->Clear();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TGKOpcClientFrm::N2Click(TObject *Sender)
+{
+  TraceMon->SelectAll();
+}
+//---------------------------------------------------------------------------
+
+void     __fastcall  TGKOpcClientFrm::trace_monitor(wchar_t *what,void * data,DWORD data_sz)
+{
+  if(what && *what)
+     TraceMon->Lines->Add(what);
+  TraceMon->Lines->Add(UnicodeString((wchar_t*)data,data_sz/sizeof(wchar_t)));
+}
+
+//---------------------------------------------------------------------------
 

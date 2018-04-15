@@ -143,9 +143,8 @@
         <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Build>116</VerInfo_Build>
+        <VerInfo_Build>122</VerInfo_Build>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
         <BCC_QuietFloatingPoint>false</BCC_QuietFloatingPoint>
         <ILINK_MapFileType>None</ILINK_MapFileType>
         <BCC_DebugLineNumbers>false</BCC_DebugLineNumbers>
@@ -153,7 +152,7 @@
         <VerInfo_Release>1</VerInfo_Release>
         <BCC_StackFrames>true</BCC_StackFrames>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Keys>CompanyName=Home Lab;FileDescription=Kernel for ASDU modules;FileVersion=1.1.1.116;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Home Lab;FileDescription=Kernel for ASDU modules;FileVersion=1.1.1.122;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <ILINK_FullDebugInfo>false</ILINK_FullDebugInfo>
         <BCC_DisableOptimizations>false</BCC_DisableOptimizations>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
@@ -167,6 +166,7 @@
         <Debugger_RunParams> -config -service</Debugger_RunParams>
         <UWP_CppLogo44>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_44.png</UWP_CppLogo44>
         <UWP_CppLogo150>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_150.png</UWP_CppLogo150>
+        <BCC_OptimizeForSize>true</BCC_OptimizeForSize>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>

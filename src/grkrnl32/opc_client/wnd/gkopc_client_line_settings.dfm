@@ -255,7 +255,7 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
     Top = 176
     Width = 531
     Height = 131
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -266,10 +266,6 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = #1057#1082#1088#1080#1087#1090' '#1058#1059
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object TuLuaScript: TMemo
         Tag = 8192
         Left = 0
@@ -294,10 +290,6 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
     object TabSheet2: TTabSheet
       Caption = #1057#1082#1088#1080#1087#1090' '#1058#1056
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object TrLuaScript: TMemo
         Tag = 16384
         Left = 0
@@ -322,10 +314,6 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
     object TabSheet3: TTabSheet
       Caption = #1050#1072#1082' '#1087#1080#1089#1072#1090#1100
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Memo1: TMemo
         Left = 0
         Top = 0
@@ -360,6 +348,9 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
             #1083#1080#1088#1086#1074#1072#1085#1080#1077
           ''
           '  ** '#1044#1086#1089#1090#1091#1087#1085#1099' '#1089#1083#1077#1076#1091#1102#1097#1080#1077' '#1074#1085#1077#1096#1085#1080#1077' '#1092#1091#1085#1082#1094#1080#1080' **'
+          '__trace (string text)  '
+          #1092#1091#1085#1082#1094#1080#1103' '#1074#1099#1074#1086#1076#1080#1090' '#1090#1077#1082#1089#1090' '#1074' '#1084#1086#1085#1080#1090#1086#1088' '#1080#1089#1087#1086#1083#1085#1077#1085#1080#1103' '#1089#1082#1088#1080#1087#1090#1086#1074
+          ''
           'sleep( integer N ) '#1055#1088#1080#1086#1089#1090#1072#1085#1086#1074#1082#1072' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1103' '#1085#1072'   N '#1084#1080#1083#1083#1080#1089#1077#1082#1091#1085#1076
           ''
           'check_terminate () '#1055#1088#1086#1074#1077#1088#1082#1072' '#1085#1077#1086#1073#1093#1086#1076#1080#1084#1086#1089#1090#1080' '#1079#1072#1074#1077#1088#1096#1077#1085#1080#1103'  '
@@ -416,34 +407,6 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
         WantReturns = False
       end
     end
-    object TabSheet4: TTabSheet
-      Caption = #1052#1086#1085#1080#1090#1086#1088' '#1080#1089#1087#1086#1083#1085#1077#1085#1080#1103' '#1089#1082#1088#1080#1090#1086#1074
-      ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
-      object TraceMon: TMemo
-        Left = 0
-        Top = 0
-        Width = 523
-        Height = 103
-        Align = alClient
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -14
-        Font.Name = 'Courier New'
-        Font.Pitch = fpFixed
-        Font.Style = [fsBold]
-        Font.Quality = fqDraft
-        ParentFont = False
-        PopupMenu = TraceMonPopup
-        ReadOnly = True
-        ScrollBars = ssBoth
-        TabOrder = 0
-        WantReturns = False
-      end
-    end
   end
   object OpenDialog1: TOpenDialog
     DefaultExt = '*.opc2otd'
@@ -451,17 +414,5 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
     Options = [ofHideReadOnly, ofNoChangeDir, ofPathMustExist, ofFileMustExist, ofNoNetworkButton, ofEnableSizing, ofDontAddToRecent]
     Left = 448
     Top = 176
-  end
-  object TraceMonPopup: TPopupMenu
-    Left = 348
-    Top = 248
-    object N1: TMenuItem
-      Caption = #1054#1095#1080#1089#1090#1080#1090#1100
-      OnClick = N1Click
-    end
-    object N2: TMenuItem
-      Caption = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1089#1105
-      OnClick = N2Click
-    end
   end
 end

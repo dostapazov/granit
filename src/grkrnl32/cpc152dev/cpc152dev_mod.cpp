@@ -404,6 +404,7 @@ BOOL    __fastcall Tcpc152controller::can_start(DWORD reason,LPARAM p2)
 
   DWORD   __fastcall Tcpc152controller::start    (DWORD reason,LPARAM p2)
   {
+    this->do_recv_puname();
     return TModemBase::start(reason,p2);
   }
   DWORD   __fastcall Tcpc152controller::stop     (DWORD reason)

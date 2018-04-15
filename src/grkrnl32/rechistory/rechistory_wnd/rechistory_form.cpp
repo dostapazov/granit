@@ -106,6 +106,7 @@ void     __fastcall TRecHistroyForm::setup_controls(LPREC_HIST_CONFIG rhc)
   user->Text    = rhc->user_name;
   passw->Text   = rhc->password;
   db_path->Text = rhc->dbpath;
+  lc_type->Text = rhc->lc_type;
   WrChanges->Checked = rhc->write_changes;
   WrAlarms->Checked  = rhc->write_alarm_archives;
   WrSqlQuery->Text   = rhc->sql_wr_history;
@@ -230,6 +231,8 @@ void __fastcall TRecHistroyForm::bApplyClick(TObject *Sender)
   wcsncpy(hcfg.dbpath    ,db_path->Text.c_str(),KERTL_ARRAY_COUNT(hcfg.dbpath));
   wcsncpy(hcfg.user_name ,user->Text.c_str   (),KERTL_ARRAY_COUNT(hcfg.user_name));
   wcsncpy(hcfg.password  ,passw->Text.c_str  (),KERTL_ARRAY_COUNT(hcfg.password));
+  wcsncpy(hcfg.lc_type   ,lc_type->Text.c_str(),KERTL_ARRAY_COUNT(hcfg.lc_type));
+
   hcfg.write_changes        = WrChanges->Checked;
   hcfg.write_alarm_archives = WrAlarms->Checked;
   AnsiString wrq_str = WrSqlQuery->Text;

@@ -339,7 +339,7 @@ TTreeNode * __fastcall TDBLowForm::add_sb (DWORD addr)
     {
      TCHAR str[MAX_PATH];
      get_tlmmodule_rctext(&sa,OTD_ADDR_TYPE_SB,str,sizeof(str));
-     sb = DbTree->Items->AddChild(cp,str);
+     sb = DbTree->Items->AddChild(cp,UnicodeString(str));
      sb->Data = (LPVOID)sa.addr;
      cp->CustomSort(node_comparer,0,false);
 
@@ -486,7 +486,7 @@ void        __fastcall TDBLowForm::update_node_text (TTreeNode * node)
   sotd_addr sa((DWORD)node->Data);
   BYTE buffer[4096];
   get_tlmmodule_rctext(&sa,sa.addrtype(),(TCHAR*)buffer,sizeof(buffer)/sizeof(TCHAR));
-  UnicodeString text = (char*)buffer;
+  UnicodeString text = (TCHAR*)buffer;
   sotd_proto sop;
   if(get_dbentry_data(sa.addr,OTD_PROTO_PART_NAME,0,-1,buffer,sizeof(buffer),sop)>0)
   {

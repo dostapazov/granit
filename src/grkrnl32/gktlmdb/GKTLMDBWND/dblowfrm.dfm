@@ -369,6 +369,7 @@ inherited DBLowForm: TDBLowForm
         FlatScrollBars = True
         GridLines = True
         HideSelection = False
+        Items.ItemData = {}
         ReadOnly = True
         RowSelect = True
         ShowWorkAreas = True
@@ -658,6 +659,7 @@ inherited DBLowForm: TDBLowForm
             Width = 150
           end>
         GridLines = True
+        Items.ItemData = {}
         RowSelect = True
         TabOrder = 0
         ViewStyle = vsReport
@@ -730,7 +732,7 @@ inherited DBLowForm: TDBLowForm
     Left = 24
     Top = 376
     Bitmap = {
-      494C01010A001000100010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010A001400140010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000006528140067291300672913006729130067291300672913000000

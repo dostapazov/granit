@@ -14,6 +14,7 @@
        dft_input =  NULL;
     if(dft_result) fftw_free(dft_result);
        dft_result = NULL;
+     this->dft_frame = 0;
 
   }
 
@@ -28,7 +29,7 @@
     percent     = _percent;
     if(_dft_frame)
     {
-     if(dft_frame != _dft_frame)
+     if(dft_frame != _dft_frame || !this->dft_input || !this->dft_plan || ! this->dft_result)
         {
          release();
          dft_frame = _dft_frame;

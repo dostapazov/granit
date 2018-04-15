@@ -127,9 +127,9 @@
         <TASM_Debugging>None</TASM_Debugging>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Build>21</VerInfo_Build>
+        <VerInfo_Build>27</VerInfo_Build>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=Ostapenko D.V. Norilsk-Azov 1993-2017;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.21;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=IEC-60870 - protocol modem</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Ostapenko D.V. Norilsk-Azov 1993-2017;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.27;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=IEC-60870 - protocol modem</VerInfo_Keys>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>

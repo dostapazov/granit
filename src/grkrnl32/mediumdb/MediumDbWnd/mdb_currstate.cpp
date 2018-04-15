@@ -90,11 +90,11 @@ void        __fastcall setup_time(UnicodeString & result,DWORD sz,__int64 & time
       TCHAR date_time[MAX_PATH];
       SYSTEMTIME st;
       FileTimeToSystemTime((LPFILETIME)&time,&st);
-      int dtl = GetDateFormat(LOCALE_USER_DEFAULT,DATE_SHORTDATE,&st,NULL,date_time,sz);
+      int dtl = GetDateFormat(LOCALE_USER_DEFAULT,DATE_SHORTDATE,&st,NULL,date_time,KERTL_ARRAY_COUNT(date_time));
       dtl--;
       *(date_time+dtl) = ' ';
       dtl++;
-      dtl+=GetTimeFormat(LOCALE_USER_DEFAULT,0,&st,_T("HH':'mm':'ss"),date_time+dtl,sz-dtl);
+      dtl+=GetTimeFormat(LOCALE_USER_DEFAULT,0,&st,_T("HH':'mm':'ss"),date_time+dtl,KERTL_ARRAY_COUNT(date_time)-dtl);
       dtl--;
       wsprintf(date_time+dtl,_T(",%03d"),(DWORD)st.wMilliseconds);
       result = date_time;
@@ -258,35 +258,36 @@ void __fastcall TMDBCurrentState::RecordsListColumnClick(TObject *Sender,
 
 void     __fastcall TMDBCurrentState::setup_additional(mdb_record & rec,DWORD mask)
 {
-  AnsiString str;
+  UnicodeString str;
   if(mask&MDBR_FIELD_VALUE)
     {
-     str.printf("%.2f",rec.last_value);
+     str.printf(L"%.2f",rec.last_value);
      LastValue->Caption = str;
-     str.printf("%d",NS100_MSEC(rec.time - rec.last_time));
+     lldiv_t dt = div(NS100_MSEC(rec.time - rec.last_time),__int64(1000));
+     str.printf(L"%Ld c %003Ld ms",dt.quot,dt.rem);
      TimeDiff->Caption = str;
      float percent =  calc_change_percent(rec);
-     str.printf("%.3f %%",percent);
+     str.printf(L"%.3f %%",percent);
      Percent->Caption = str;
     }
   if(mask&MDBR_FIELD_ADDR)
   {
-  str.printf("%03d.%03d.%03d.%03d ",(DWORD)rec.addr.addr.pu,(DWORD)rec.addr.addr.cp,(DWORD)rec.addr.addr.fa,(DWORD)rec.addr.addr.sb);
+  str.printf(L"%03d.%03d.%03d.%03d ",(DWORD)rec.addr.addr.pu,(DWORD)rec.addr.addr.cp,(DWORD)rec.addr.addr.fa,(DWORD)rec.addr.addr.sb);
   if(rec.addr.param_number!= (DWORD)-1)
-    str.cat_printf("¹ %03d",rec.addr.param_number);
+    str.cat_printf(L"¹ %03d",rec.addr.param_number);
   OtdAddr->Caption = str;
   }
 
   if(mask & MDBR_FIELD_OTDVALUE)
   {
    if(rec.options & MDBR_OPT_DOUBLE_TYPE)
-     str.printf("%.2lf (double)",rec.otd_val_dbl) ;
+     str.printf(L"%.2lf (double)",rec.otd_val_dbl) ;
      else
      {
       if(rec.options & MDBR_OPT_FLOAT_TYPE)
-       str.printf("%.2f (float)",rec.otd_val_flt) ;
+       str.printf(L"%.2f (float)",rec.otd_val_flt) ;
        else
-       str.printf("%u",rec.otd_val) ;
+       str.printf(L"%u",rec.otd_val) ;
      }
 
 
@@ -295,7 +296,7 @@ void     __fastcall TMDBCurrentState::setup_additional(mdb_record & rec,DWORD ma
 
   if(mask & MDBR_FIELD_OTDPD)
   {
-   str.printf("%X",rec.otd_pd) ;
+   str.printf(L"%X",rec.otd_pd) ;
    OtdPd->Caption = str;
   }
 
@@ -313,7 +314,7 @@ void     __fastcall TMDBCurrentState::setup_additional(mdb_record & rec,DWORD ma
   }
   if(mask &(MDBR_FIELD_MIN_VALUE|MDBR_FIELD_MAX_VALUE))
   {
-   str.printf("%.2f .. %.2f",rec.min_value,rec.max_value);
+   str.printf(L"%.2f .. %.2f",rec.min_value,rec.max_value);
    MinMax->Caption = str;
   }
 

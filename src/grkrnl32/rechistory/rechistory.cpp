@@ -163,6 +163,9 @@ void __fastcall TRecHistory::replace_str(char ** dst,const char * src)
           wcsncpy(rc->user_name,config.user_name,sizeof(rc->user_name)/sizeof(*rc->user_name));
        if(mask&RCH_CONF_USERPASSW)
           wcsncpy(rc->password,config.password,sizeof(rc->password)/sizeof(*rc->password));
+       if(mask&RCH_CONF_LC_TYPE  )
+          wcsncpy(rc->lc_type,config.lc_type,sizeof(rc->lc_type)/sizeof(*rc->lc_type));
+
        if(mask&RCH_CONF_WR_CHANGES)
          rc->write_changes = config.write_changes;
 
@@ -208,6 +211,8 @@ void __fastcall TRecHistory::replace_str(char ** dst,const char * src)
          wcscpy(config.user_name,cd->user_name);
        if(mask& RCH_CONF_USERPASSW )
          wcscpy(config.password,cd->password);
+       if(mask& RCH_CONF_LC_TYPE   )
+         wcscpy(config.lc_type,cd->lc_type);
        if(mask&RCH_CONF_WR_CHANGES)
           config.write_changes = cd->write_changes;
        if(mask&RCH_CONF_WR_ALARM_ARCHIVES)
@@ -290,6 +295,11 @@ void __fastcall TRecHistory::replace_str(char ** dst,const char * src)
          *restart = TRUE;
          else
          mask&= ~RCH_CONF_USERPASSW;
+
+       if((mask& RCH_CONF_LC_TYPE  ) && _wcsicmp(config.lc_type,cd->lc_type))
+         *restart = TRUE;
+         else
+         mask&= ~RCH_CONF_LC_TYPE  ;
 
        if( (mask&RCH_CONF_SQL_WRHISTROY) && !stricmp(config.sql_wr_history,cd->sql_wr_history))
             mask &= ~RCH_CONF_SQL_WRHISTROY;
@@ -401,6 +411,14 @@ bool __fastcall TRecHistory::end_transaction(TIBTransaction * tr,bool commit)
     }
   return ret;
 }
+
+bool __fastcall TRecHistory::reopen_data_base(TIBDatabase & ibdb)
+{
+  ibdb.Disconnect();
+  Sleep(200);
+  return ibdb.Connect();
+}
+
 bool __fastcall TRecHistory::open_data_base(TIBDatabase & ibdb,REC_HIST_CONFIG & config
                                             ,TIBTransaction * wr_trans,TIBTransaction * rd_trans
                                             ,TIBSqlQuery * wr_query,TIBSqlQuery * rd_query)
@@ -409,33 +427,34 @@ bool __fastcall TRecHistory::open_data_base(TIBDatabase & ibdb,REC_HIST_CONFIG &
       char dbpath    [MAX_PATH<<1];
       char user_name [MAX_PATH];
       char user_passw[MAX_PATH];
+      char lc_type   [MAX_PATH];
      {
 
       Unicode2Ansi(client_lib,config.client_lib);
       Unicode2Ansi(dbpath,config.dbpath);
       Unicode2Ansi(user_name,config.user_name);
       Unicode2Ansi(user_passw,config.password);
+      Unicode2Ansi(lc_type,KERTL_ARRAY_COUNT(lc_type),config.lc_type);
      }
       if(TIBBase::is_clib_loaded() || TIBBase::init_ib_lib(client_lib))
        {
         ibdb.enable_exception(FALSE);
-        if(ibdb.Connect(dbpath,user_name,user_passw,NULL,"WIN1251",3))
+        if(ibdb.Connect(dbpath,user_name,user_passw,NULL,lc_type,3))
         {
             init_trans_query(&ibdb,wr_trans,wr_query,true);
             init_trans_query(&ibdb,rd_trans,rd_query,true);
         }
         else
         SetLastError(REC_HIST_ERROR_CONNECT_DATABASE);
-
        }
        else
        SetLastError(REC_HIST_ERROR_LOAD_CLIENTLIB);
    if(ibdb.is_connected())
-      notify(RECHISTORY_NOTIFY_OPENDB,TRUE,0,0);
-      else
-      notify(RECHISTORY_NOTIFY_OPENDB,FALSE,0,0);
+       notify(RECHISTORY_NOTIFY_OPENDB,TRUE,0,0);
+       else
+       notify(RECHISTORY_NOTIFY_OPENDB,FALSE,0,0);
 
-   return ibdb.is_connected();
+       return ibdb.is_connected();
 }
 
  BOOL    __fastcall TRecHistory::can_start(DWORD reason,LPARAM p2)
@@ -594,7 +613,9 @@ bool    __fastcall TRecHistory::write_settings()
        wcsncpy(buf,config.password,KERTL_ARRAY_COUNT(config.user_name));
        len = wcslen(buf);
        coder(buf,len);
-       rw.WriteBytes(REGSTR_PASSW,buf,len*sizeof(wchar_t),true);
+       rw.WriteBytes (REGSTR_PASSW,buf,len*sizeof(wchar_t),true);
+
+       rw.WriteString(REGSTR_LC_TYPE,config.lc_type,true);
 
        rw.WriteDword(REGDW_WRITE_ALARM_ARCHIVES,config.write_alarm_archives,true);
        rw.WriteDword(REGDW_WRITE_CHANGES       ,config.write_changes,true);
@@ -642,6 +663,10 @@ bool   __fastcall TRecHistory::read_settings()
        coder(config.password,rd_len/sizeof(wchar_t));
        }
 
+       config.lc_type[rd.ReadString(REGSTR_LC_TYPE,config.lc_type,KERTL_ARRAY_COUNT(config.lc_type),true)] = 0;
+       if(!config.lc_type[0])
+           safe_strcpy(config.lc_type,L"WIN1251");
+
        config.write_changes        = rd.ReadDword(REGDW_WRITE_CHANGES,1,true);
        config.write_alarm_archives = rd.ReadDword(REGDW_WRITE_ALARM_ARCHIVES,1,true);
 
@@ -651,7 +676,7 @@ bool   __fastcall TRecHistory::read_settings()
        rd.ReadBytes(REGSTR_IDX_UPDATE ,config.sql_idx_update,sizeof(config.sql_idx_update),true);
 
        config.commit_time_out = rd.ReadDword(REGDW_COMMIT_TIMEOUT,200 ,true);
-       config.commit_after    = rd.ReadDword(REGDW_COMMIT_AFTER  ,30000,true);
+       config.commit_after    = rd.ReadDword(REGDW_COMMIT_AFTER  ,1000,true);
        config.timestamp_limit = 0;
        rd.ReadBytes(REGBIN_TIMESTAMP_LIMIT,&config.timestamp_limit,sizeof(config.timestamp_limit),true);
 
@@ -1325,39 +1350,13 @@ void __fastcall TRecHistory::do_maintance_db       ()
  }
 
 
-
-
-int            TRecHistory::write_sql_thread        ()
+void __fastcall TRecHistory::write_sql_proc        (int & time_count,int & cycle_count,int commit_after)
 {
-  //Открыть базу
-      int ret = 0;
-      REC_HIST_CONFIG cfg;
-      ZeroMemory(&cfg,sizeof(cfg));
-      cfg.dw_size = sizeof(cfg);
-      get_config_data(-1,&cfg,sizeof(cfg));
-
-      SetThreadPriority(GetCurrentThread(),THREAD_PRIORITY_HIGHEST);
-
-      KeRTL::TEvent _term_event(term_event.Dup(false));
-      data_queue.DropData();
       DWORD buf_sz = 4096;
       std::unique_ptr< BYTE,array_deleter_t<BYTE> > bptr(new BYTE [buf_sz]);
-
-      TSynchroSet ss;
-      ss+= _term_event;
-      ss+= data_queue.GetEvent();
-      int time_count     = 2000;
-      int cycle_count    = 0;
-      int need_terminate = 0;
-
-      while(!need_terminate)
-      {
-          switch(ss.Wait(100))
-          {
-            case 0: need_terminate = 1;break;
-            case 1:
               do{
                 int need_sz = 0;
+
                 if(!data_queue.GetFromQueue(bptr.get(),buf_sz,&need_sz))
                   {
                     //delete [] bptr.release();
@@ -1378,55 +1377,87 @@ int            TRecHistory::write_sql_thread        ()
                    }
                    else
                    {
-                   if(++cycle_count>cfg.commit_after)
+                   if(++cycle_count>commit_after)
                       {
                        end_transaction(&wr_trans,true);
                        cycle_count = 0;
                        time_count  = 0;
-                       get_config_data(RCH_CONF_COMMIT_TIMEOUT|RCH_CONF_COMMIT_AFTER,&cfg,sizeof(cfg));
                       }
                    }
                   }
                   else
                   data_queue.DropData();
                 }while(data_queue.QueueCount() && WAIT_TIMEOUT == data_queue.GetEvent().Wait(0));
-              break;
-            case WAIT_TIMEOUT:
-            time_count+=100;
+
+}
+
+void  __fastcall  TRecHistory::write_sql_timeout        (int &time_count, int & cycle_count ,REC_HIST_CONFIG & cfg)
+{
             if(++time_count>cfg.commit_time_out)
             {
-              get_config_data(RCH_CONF_COMMIT_TIMEOUT|RCH_CONF_COMMIT_AFTER,&cfg,sizeof(cfg));
               if(ibdb.is_connected())
                {
                 end_transaction(&wr_trans,true);
+                not_commited_data.DropData();
                 time_count  = 0;
-                cycle_count = 0;
                }
                else
                {
                   /*Попытка подключения к базе*/
-                   if(time_count>5000)
+
+                   if(time_count>2000)
                    {
-                       wchar_t rep_text[1024];
-                       swprintf(rep_text,L"Подключение к базе данных %s",cfg.dbpath);
-                       report(this->rep_id,REPORT_INFORMATION_TYPE,rep_text);
                        if(open_data_base(ibdb,cfg,&wr_trans,NULL,&wr_query_recs,NULL))
                           {
                            send_order(true);
-                           report(this->rep_id,REPORT_INFORMATION_TYPE,L"ОК - Запрос кадров отправлен");
                            wr_ins_records.set_transaction(wr_trans);
-                           wr_ins_string.set_transaction(wr_trans);
+                           wr_ins_string.set_transaction (wr_trans);
                           }
-                          else
-                          report(this->rep_id,REPORT_INFORMATION_TYPE,L"Ошибка прдключения к БД");
-                          time_count  = 0;
+
+                       report_connect(ibdb,cfg.dbpath);
+                       time_count  = 0;
                    }
                }
                cycle_count = 0;
 
             }
+}
+
+
+int            TRecHistory::write_sql_thread        ()
+{
+  //Открыть базу
+      int ret = 0;
+      REC_HIST_CONFIG cfg;
+      ZeroMemory(&cfg,sizeof(cfg));
+      cfg.dw_size = sizeof(cfg);
+      get_config_data(-1,&cfg,sizeof(cfg));
+
+      SetThreadPriority(GetCurrentThread(),THREAD_PRIORITY_HIGHEST);
+
+      KeRTL::TEvent _term_event(term_event.Dup(false));
+      data_queue.DropData();
+
+      TSynchroSet ss;
+      ss+= _term_event;
+      ss+= data_queue.GetEvent();
+      int time_count     = 2000;
+      int cycle_count    = 0;
+      int need_terminate = 0;
+
+      while(!need_terminate)
+      {
+          switch(ss.Wait(100))
+          {
+            case 0: need_terminate = 1;break;
+            case 1: write_sql_proc(time_count,cycle_count,cfg.commit_after);
+                    break;
+            case WAIT_TIMEOUT:
+            time_count+=100;
+            write_sql_timeout(time_count,cycle_count,cfg);
             break;
           }
+          get_config_data(RCH_CONF_COMMIT_TIMEOUT|RCH_CONF_COMMIT_AFTER,&cfg,sizeof(cfg));
       }
     SetThreadPriority(GetCurrentThread(),THREAD_PRIORITY_NORMAL);
     send_order(false);
@@ -1443,6 +1474,28 @@ int            TRecHistory::write_sql_thread        ()
       __finally{};
     return ret;
 }
+
+void  __fastcall TRecHistory::report_connect(TIBDatabase & ibdb,const wchar_t * dbpath)
+{
+   wchar_t rep_text[MAX_PATH<<1];
+   int rep_sz = KERTL_ARRAY_COUNT(rep_text);
+   int len = snwprintf(rep_text,rep_sz,L"Подключение К БД %s ",dbpath);
+   int rep_type;
+   if(ibdb.is_connected())
+   {
+     rep_type = REPORT_SUCCESS_TYPE;
+     len += snwprintf(rep_text+len,rep_sz-len,L" установлено. Запрос кадров отправлен ",dbpath);
+   }
+   else
+   {
+     len += snwprintf(rep_text+len,rep_sz-len,L" не установлено. ",dbpath);
+     rep_type = REPORT_ERROR_TYPE;
+     Ansi2Unicode(rep_text+len,rep_sz - len, ibdb.get_error_text().c_str());
+   }
+   rep_text[len] = 0;
+   report(rep_id,rep_type,rep_text);
+}
+
 
 
 LRESULT __fastcall TRecHistory::handle_query_archive (LPMPROTO_HEADER mph)

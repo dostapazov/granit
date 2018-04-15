@@ -152,6 +152,8 @@
         <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
         <Debugger_RunParams>-nosplash -config -service</Debugger_RunParams>
         <ILINK_MapFileType>None</ILINK_MapFileType>
+        <BCC_OptimizeForSize>true</BCC_OptimizeForSize>
+        <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <LinkPackageImports>rtl.bpi;vcl.bpi</LinkPackageImports>

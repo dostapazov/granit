@@ -597,7 +597,6 @@ inherited cpc152dev_frame: Tcpc152dev_frame
           ViewStyle = vsReport
           OnChange = AlarmListChange
           OnData = AlarmListData
-          ExplicitHeight = 166
         end
       end
     end

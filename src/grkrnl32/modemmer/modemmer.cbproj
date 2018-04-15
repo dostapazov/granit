@@ -230,6 +230,9 @@
             <BuildOrder>26</BuildOrder>
             <BuildOrder>15</BuildOrder>
         </CppCompile>
+        <CppCompile Include="..\..\KE_RTL\kedatas.cpp">
+            <BuildOrder>20</BuildOrder>
+        </CppCompile>
         <CppCompile Include="..\..\KE_RTL\tlicense.cpp">
             <BuildOrder>19</BuildOrder>
         </CppCompile>
