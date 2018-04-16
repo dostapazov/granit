@@ -482,6 +482,7 @@ void  __fastcall opc_line::__prepare_calc_scripts()
    calc_scripts.reg_function(LUA_FUNC_OPC_SET_ITEMS_QUALITY  ,lua_opc_set_items_quality  );
    calc_scripts.reg_function(LUA_FUNC_OPC_SET_GROUP_QUALITY  ,lua_opc_set_group_quality  );
    calc_scripts.reg_function(LUA_FUNC_OPC_SET_GLOBAL_QUALITY_MASK,lua_opc_set_global_quality_mask);
+   calc_scripts.reg_function(LUA_FUNC_OPC_SET_GLOBAL_DIAG    ,lua_otd_set_line_diag);
 
    calc_scripts.enable_bin_functions();
 }
@@ -537,6 +538,22 @@ void  __fastcall opc_line::__calc_item_value(gkopc_item & item)
 
 
      }
+}
+
+int opc_line::lua_otd_set_line_diag    (lua_State *L)
+{
+  lua::LUAInstance lua(L,false);
+  opc_line * line = NULL;
+  lua.global_get(LUA_CLASS_NAME,(const void*&)line);
+  int top = lua.gettop();
+  if(line && top >1 && lua.isinteger(1))
+  {
+    int is_num = 0;
+    lua_Integer diag  = lua.tointegerx(1,&is_num);
+    line->otd_set_line_diag(diag);
+  }
+
+ return 0;
 }
 
 

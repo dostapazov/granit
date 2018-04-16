@@ -18,6 +18,12 @@ get_value(string arg_item_id)
 Установить значение тега
 set_value(value number , tag_name string )
 
+Установить диагностику по линии 
+set_line_diag(int diag)
+Нет связи с КП             0x08000000
+КП не отвечает             0x04000000
+
+
 Установить качество тегов по ФА-ГРУППЕ
 set_group_quality(int quality,int fa = -1,int group =-1 );
 fa    - значение по умолчанию -1 т.е по всем фа

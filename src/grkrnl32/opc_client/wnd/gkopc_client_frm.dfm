@@ -137,6 +137,12 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
       Height = 403
       ActivePage = ConfigSheet
       Align = alClient
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 0
       OnChange = PageControl1Change
       object ConfigSheet: TTabSheet
@@ -151,16 +157,16 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
           ExplicitLeft = -3
           ExplicitTop = 5
           inherited Label1: TLabel
-            Width = 77
-            ExplicitWidth = 77
+            Width = 90
+            ExplicitWidth = 90
           end
           inherited Label2: TLabel
-            Width = 53
-            ExplicitWidth = 53
+            Width = 62
+            ExplicitWidth = 62
           end
           inherited Label3: TLabel
-            Width = 41
-            ExplicitWidth = 41
+            Width = 48
+            ExplicitWidth = 48
           end
         end
         inline OpcLineSetingsFrame1: TOpcLineSetingsFrame
@@ -175,41 +181,71 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
           ExplicitHeight = 185
           inherited Panel1: TPanel
             inherited Label5: TLabel
-              Width = 104
-              ExplicitWidth = 104
+              Width = 122
+              ExplicitWidth = 122
             end
             inherited Label4: TLabel
-              Width = 52
-              ExplicitWidth = 52
+              Width = 61
+              ExplicitWidth = 61
             end
             inherited Label1: TLabel
-              Width = 40
-              ExplicitWidth = 40
+              Width = 47
+              ExplicitWidth = 47
             end
             inherited Label6: TLabel
-              Width = 77
-              ExplicitWidth = 77
+              Width = 91
+              ExplicitWidth = 91
             end
             inherited Label7: TLabel
-              Width = 106
-              ExplicitWidth = 106
+              Width = 125
+              ExplicitWidth = 125
             end
             inherited GroupBox1: TGroupBox
               inherited Label2: TLabel
-                Width = 19
-                ExplicitWidth = 19
+                Width = 23
+                ExplicitWidth = 23
+              end
+              inherited Label3: TLabel
+                Width = 40
+                ExplicitWidth = 40
+              end
+              inherited Label8: TLabel
+                Width = 44
+                ExplicitWidth = 44
               end
             end
           end
           inherited PageControl1: TPageControl
             Height = 9
             ExplicitHeight = 9
+            inherited TabSheet1: TTabSheet
+              ExplicitLeft = 4
+              ExplicitTop = 24
+              ExplicitWidth = 523
+              ExplicitHeight = 103
+            end
+            inherited TabSheet2: TTabSheet
+              ExplicitLeft = 4
+              ExplicitTop = 24
+              ExplicitWidth = 523
+              ExplicitHeight = 103
+            end
+            inherited TabSheet3: TTabSheet
+              ExplicitLeft = 4
+              ExplicitTop = 24
+              ExplicitWidth = 523
+              ExplicitHeight = 103
+            end
           end
         end
       end
       object ViewOpcItemsSheet: TTabSheet
         Caption = #1055#1088#1086#1089#1084#1086#1090#1088
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         inline DataFrame: TGKOpcItemsViewFrame
           Left = -124
           Top = 19
@@ -223,6 +259,10 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
       object MonSheet: TTabSheet
         Caption = #1052#1086#1085#1080#1090#1086#1088' OPC'
         ImageIndex = 3
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object opc_mon: TMemo
           Left = 0
           Top = 0
@@ -244,6 +284,10 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
       object MonScriptSheet: TTabSheet
         Caption = #1052#1086#1085#1080#1090#1086#1088' '#1080#1089#1087#1086#1083#1085#1077#1085#1080#1103' '#1089#1082#1088#1080#1087#1090#1086#1074
         ImageIndex = 4
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object TraceMon: TMemo
           Left = 0
           Top = 0
@@ -268,6 +312,10 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
       object AboutSheet: TTabSheet
         Caption = #1054' '#1084#1086#1076#1091#1083#1077
         ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         inline AboutCommonFrame1: TAboutCommonFrame
           Left = 0
           Top = 0
@@ -275,7 +323,7 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
           Height = 96
           Align = alTop
           TabOrder = 0
-          ExplicitWidth = 538
+          ExplicitWidth = 122
           ExplicitHeight = 96
           inherited Memo2: TMemo
             Width = 538
@@ -311,7 +359,7 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
     Left = 664
     Top = 176
     Bitmap = {
-      494C010107001000080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107000C000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

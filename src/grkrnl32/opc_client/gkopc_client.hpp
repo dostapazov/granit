@@ -1,4 +1,4 @@
-#ifndef   __GKOPC_CLIENT_HPP__
+п»ї#ifndef   __GKOPC_CLIENT_HPP__
 #define   __GKOPC_CLIENT_HPP__
 #define  BOOST_THREAD_USE_LIB
 #include  <boost/thread.hpp>
@@ -59,6 +59,7 @@ typedef std::vector<OPCHANDLE> opc_handles_t;
 #define LUA_FUNC_OPC_SET_ITEMS_QUALITY   "set_items_quality"
 #define LUA_FUNC_OPC_SET_GROUP_QUALITY   "set_group_quality"
 #define LUA_FUNC_OPC_SET_GLOBAL_QUALITY_MASK   "set_global_quality_mask"
+#define LUA_FUNC_OPC_SET_GLOBAL_DIAG     "set_line_diag"
 
 #define LUA_FUNC_OPC_ITEM_SET_RC_STATE   "set_rc_state"
 
@@ -97,6 +98,7 @@ class opc_line:public modem_line,public TGKThread
   gkopc_items_t::container_t         rc_queue;
   BOOL                               rc_undo_request;
 
+  static int lua_otd_set_line_diag    (lua_State *L);
   static int lua_opc_item_get_value     (lua_State *L);
   static int lua_opc_item_set_value     (lua_State *L);
   static int lua_opc_set_items_quality  (lua_State *L);
@@ -147,7 +149,7 @@ class opc_line:public modem_line,public TGKThread
           void __fastcall do_connect    ();
           void __fastcall do_disconnect ();
           void __fastcall do_refresh    ();
-         DWORD __fastcall refresh(DWORD sbl);/*Функция обновления данных по линии*/
+         DWORD __fastcall refresh(DWORD sbl);/*Р¤СѓРЅРєС†РёСЏ РѕР±РЅРѕРІР»РµРЅРёСЏ РґР°РЅРЅС‹С… РїРѕ Р»РёРЅРёРё*/
 
 
          bool  __fastcall is_need_restart(const GKOPC_LINE_CONFIG & ln_conf);
@@ -167,12 +169,13 @@ class opc_line:public modem_line,public TGKThread
 
          void  __fastcall  handle_changes();
          DWORD __fastcall  get_line_diag(bool rescan);
+         void  __fastcall  otd_set_line_diag(DWORD diag);
 
          void  __fastcall __setup_group_values  (otd_proto * op);
          void  __fastcall __queue_rxdata(otd_proto * op);
 
          void  __fastcall __do_recv_cp_data   (bool inc_name );
-         void  __fastcall __handle_otd_query  (lpotd_proto op);
+         void  __fastcall __handle_otd_query  (lpotd_addr  addr);
          void  __fastcall __handle_otd_control(lpotd_proto op);
          void __fastcall __set_bad_diag();
 

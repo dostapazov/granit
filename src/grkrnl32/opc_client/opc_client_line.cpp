@@ -1,6 +1,7 @@
-#pragma hdrstop
+ï»¿#pragma hdrstop
 #include "gkopc_client.hpp"
 #include <math.h>
+#include <otd_diag.h>
 
 
 extern "C" void tss_cleanup_implemented(void)
@@ -13,7 +14,7 @@ DWORD __fastcall opc_line::get_line_text  (wchar_t * text,DWORD text_sz)
 {
  DWORD ret = GKH_RET_ERROR;
  //TLockHelper l(locker);
- snwprintf(text,text_sz,L"Ëèíèÿ ¹-%d %c %s",this->line_config.line_num,line_config.cp_name[0] ? ':':' ',line_config.cp_name);
+ snwprintf(text,text_sz,L"Ð›Ð¸Ð½Ð¸Ñ â„–-%d %c %s",this->line_config.line_num,line_config.cp_name[0] ? ':':' ',line_config.cp_name);
  return ret;
 }
 
@@ -212,6 +213,7 @@ DWORD __fastcall opc_line::__create_otd_group(DWORD otd_fa,DWORD otd_group,DWORD
    {
       op->addr->cp = line_config.line_num;
       if((line_config.options & GKOPC_LINE_OPT_REPLACE_TIME) && op->time_stamp) *op->time_stamp = GetTime(false);
+      if(op->diag) *op->diag |= this->global_otd_diag;
 
       if(op->kpk)
          otd_proto_protect(op,op->proto_size,OTD_DEF_POLINOM);
@@ -350,7 +352,7 @@ bool __fastcall opc_line::set_line_config(LPGKOPC_LINE_CONFIG conf)
 	      sotd_proto sop;
 	      sop.assign((LPBYTE)mph->data,mph->data_size);
           if(OTD_ADDR_ISQUERY(sop.op.addr))
-           __handle_otd_query(&sop.op);
+           __handle_otd_query(sop.op.addr);
           else
           {
            if( get_number() == DWORD(sop.op.addr->cp) && OTD_FA_ISCTRL(sop.op.addr->fa) )
@@ -360,16 +362,14 @@ bool __fastcall opc_line::set_line_config(LPGKOPC_LINE_CONFIG conf)
      return true;
   }
 
-void __fastcall   opc_line::__handle_otd_query( lpotd_proto op)
+void __fastcall   opc_line::__handle_otd_query( lpotd_addr paddr)
 {
-      if(((DWORD)op->addr->cp == get_number()) || ((DWORD)op->addr->cp == OTD_ADDR_MAXVALUE))
+      if(((DWORD)paddr->cp == get_number()) || ((DWORD)paddr->cp == OTD_ADDR_MAXVALUE))
       {
           __do_recv_cp_data(true);
-//          TLockHelper l(data_locker);
-   TLockHelper l(locker);
-
+          TLockHelper l(locker);
           otd_addr addr;
-          addr.addr = op->addr->addr;
+          addr.addr = paddr->addr;
           addr.cp = addr.pu = 0;
           proto_pointer pptr = storage.begin();
           proto_pointer pend = storage.end  ();
@@ -388,10 +388,10 @@ wchar_t * get_rc_command_text(DWORD command)
 {
  switch(command)
  {
-   case  OTD_TUOP_ON :      return L"ÂÊË-Áîëüøå";
-   case  OTD_TUOP_OFF:      return L"ÎÒÊË-Ìåíüøå";
-   case  OTD_TROP_SET:      return L"ÒÐ-SET";
-   case  OTD_TUTROP_CANCEL: return L"Îòìåíà ÒÓ-ÒÐ";
+   case  OTD_TUOP_ON :      return L"Ð’ÐšÐ›-Ð‘Ð¾Ð»ÑŒÑˆÐµ";
+   case  OTD_TUOP_OFF:      return L"ÐžÐ¢ÐšÐ›-ÐœÐµÐ½ÑŒÑˆÐµ";
+   case  OTD_TROP_SET:      return L"Ð¢Ð -SET";
+   case  OTD_TUTROP_CANCEL: return L"ÐžÑ‚Ð¼ÐµÐ½Ð° Ð¢Ð£-Ð¢Ð ";
  }
  return L"???";
 }
@@ -432,22 +432,22 @@ void __fastcall   opc_line::__handle_otd_control(lpotd_proto op)
                    item.rc_script = lua_scripts[otd_fa];
                 rc_queue.push_back(item);
                 icp.PostStatus(ICP_KEY_REMOTE_CONTROL,rc_queue.size(),NULL);
-                snwprintf(report_text,KERTL_ARRAY_COUNT(report_text),L"%s ÒÓ/ÒÐ êîìàíäà %d [%s] - ïîñòàâëåíà â î÷åðåäü",item.id.c_str(),item.rc_current.command,get_rc_command_text(item.rc_current.command));
+                snwprintf(report_text,KERTL_ARRAY_COUNT(report_text),L"%s Ð¢Ð£/Ð¢Ð  ÐºÐ¾Ð¼Ð°Ð½Ð´Ð° %d [%s] - Ð¿Ð¾ÑÑ‚Ð°Ð²Ð»ÐµÐ½Ð° Ð² Ð¾Ñ‡ÐµÑ€ÐµÐ´ÑŒ",item.id.c_str(),item.rc_current.command,get_rc_command_text(item.rc_current.command));
                 rep_type = REPORT_INFORMATION_TYPE;
              }
              else
              {
-               //Óñòàíîâèòü îøèáêó îòñóòñâòèå îïèñàòåëÿ ÒÓ/ÒÐ
+               //Ð£ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð¾ÑˆÐ¸Ð±ÐºÑƒ Ð¾Ñ‚ÑÑƒÑ‚ÑÐ²Ñ‚Ð¸Ðµ Ð¾Ð¿Ð¸ÑÐ°Ñ‚ÐµÐ»Ñ Ð¢Ð£/Ð¢Ð 
                __int64 tm = GetTime();
                DWORD pdiag = OTD_PDIAG_TUTR_DESCRIPT;
                __set_opc_item_values(opc_items.at(*iptr),NULL,NULL,&tm,&pdiag);
-               snwprintf(report_text,KERTL_ARRAY_COUNT(report_text),L"%s ÒÓ/ÒÐ êîìàíäà %d [%s] - îòñóòñòâóåò îïèñàòåëü",item.id.c_str(),item.rc_current.command,get_rc_command_text(item.rc_current.command));
+               snwprintf(report_text,KERTL_ARRAY_COUNT(report_text),L"%s Ð¢Ð£/Ð¢Ð  ÐºÐ¾Ð¼Ð°Ð½Ð´Ð° %d [%s] - Ð¾Ñ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ð¾Ð¿Ð¸ÑÐ°Ñ‚ÐµÐ»ÑŒ",item.id.c_str(),item.rc_current.command,get_rc_command_text(item.rc_current.command));
                rep_type = REPORT_ERROR_TYPE;
              }
            }
            else
            {
-             //Êîìàíäà îòìåíû
+             //ÐšÐ¾Ð¼Ð°Ð½Ð´Ð° Ð¾Ñ‚Ð¼ÐµÐ½Ñ‹
              gkopc_items_t::iterator rc_ptr = rc_queue.begin();
              gkopc_items_t::iterator rc_end = rc_queue.end  ();
              int   num = 0;
@@ -459,12 +459,12 @@ void __fastcall   opc_line::__handle_otd_control(lpotd_proto op)
                    {
                     rc_queue.erase(rc_ptr);
                     rc_end  = rc_queue.end();
-                    snwprintf(report_text,KERTL_ARRAY_COUNT(report_text),L"%s  Îòìåíà ÒÓ/ÒÐ. Óäàëåíî èç î÷åðåäè",item.id.c_str());
+                    snwprintf(report_text,KERTL_ARRAY_COUNT(report_text),L"%s  ÐžÑ‚Ð¼ÐµÐ½Ð° Ð¢Ð£/Ð¢Ð . Ð£Ð´Ð°Ð»ÐµÐ½Ð¾ Ð¸Ð· Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð¸",item.id.c_str());
                     rep_type = REPORT_INFORMATION_TYPE;
                    }
                    else
                    {
-                    snwprintf(report_text,KERTL_ARRAY_COUNT(report_text),L"%s  Îòìåíà âûïîëíÿåìîé îïåðàöèè ÒÓ/ÒÐ. âûñòàâëåí çàïðîñ íà îòìåíó",item.id.c_str());
+                    snwprintf(report_text,KERTL_ARRAY_COUNT(report_text),L"%s  ÐžÑ‚Ð¼ÐµÐ½Ð° Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÑÐµÐ¼Ð¾Ð¹ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸ Ð¢Ð£/Ð¢Ð . Ð²Ñ‹ÑÑ‚Ð°Ð²Ð»ÐµÐ½ Ð·Ð°Ð¿Ñ€Ð¾Ñ Ð½Ð° Ð¾Ñ‚Ð¼ÐµÐ½Ñƒ",item.id.c_str());
                     rep_type = REPORT_INFORMATION_TYPE;
                     rc_undo_request = TRUE;
                     ++rc_ptr;
@@ -517,7 +517,7 @@ void __fastcall   opc_line::__handle_otd_control(lpotd_proto op)
       	 op.addr->addr = -1;
       	 op.addr->pu   = 0;
          op.addr->cp   = 0;
-         *op.diag      = get_line_diag(false);
+         *op.diag      = get_line_diag(false)|global_otd_diag;
       	 otd_text_set(op.name,line_config.cp_name);
       	 __queue_rxdata(&op);
       	 if(buf!=buffer) delete [] buf;
@@ -529,8 +529,7 @@ void __fastcall   opc_line::__handle_otd_control(lpotd_proto op)
     DWORD ret = 0;
     if(is_connected())
        {
-//          TLockHelper l(data_locker);
-   TLockHelper l(locker);
+        TLockHelper l(locker);
 
           proto_pointer pptr = storage.begin();
           proto_pointer pend = storage.end();
@@ -542,8 +541,21 @@ void __fastcall   opc_line::__handle_otd_control(lpotd_proto op)
        else
        ret = OTD_DIAG_CPMASK;
     return ret;
-
  }
+
+void  __fastcall  opc_line::otd_set_line_diag(DWORD diag)
+{
+ /*Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð´Ð¸Ð°Ð³Ð½Ð¾ÑÑ‚Ð¸ÐºÐ¸ Ð¿Ð¾ Ð»Ð¸Ð½Ð¸Ð¸*/
+ /*ÐšÐ¾Ñ‚Ð¾Ñ€Ð°Ñ Ð±ÑƒÐ´ÐµÑ‚ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÑ‚ÑŒÑÑ Ð¿Ð¾ Ð˜Ð›Ð˜ ÐºÐ¾ Ð²ÑÐµÐ¼ Ð¸ÑÑ…Ð¾Ð´ÑÑ‰Ð¸Ð¼ Ð´Ð°Ð½Ð½Ñ‹Ð¼*/
+   if(global_otd_diag != diag)
+   {
+    global_otd_diag = diag;
+    sotd_addr addr(-1);
+       __handle_otd_query(&addr);
+    if(!diag)   refresh(-1);
+   }
+}
+
 
 
 
@@ -752,7 +764,7 @@ void __fastcall opc_line::do_connect()
    TLockHelper l(locker);
    if(!opc_items.size())
    {
-     this->do_report(REPORT_ERROR_TYPE,L"Íåò çàïèñåé â ôàéëå êîíôèãóðàöèè. Íåçà÷åì çàïóñêàòüñÿ");
+     this->do_report(REPORT_ERROR_TYPE,L"ÐÐµÑ‚ Ð·Ð°Ð¿Ð¸ÑÐµÐ¹ Ð² Ñ„Ð°Ð¹Ð»Ðµ ÐºÐ¾Ð½Ñ„Ð¸Ð³ÑƒÑ€Ð°Ñ†Ð¸Ð¸. ÐÐµÐ·Ð°Ñ‡ÐµÐ¼ Ð·Ð°Ð¿ÑƒÑÐºÐ°Ñ‚ÑŒÑÑ");
      return;
    }
    server_guid = line_config.server_guid;
@@ -850,8 +862,8 @@ void __fastcall opc_line::__opc_group_add_items()
         com_last_result = res;
        if(item.reg_result.hServer == (DWORD)-1)
           {
-            //Íåóäà÷íî çàðåãåñòðèðîâàíî
-            //Óäàëèòü ?
+            //ÐÐµÑƒÐ´Ð°Ñ‡Ð½Ð¾ Ð·Ð°Ñ€ÐµÐ³ÐµÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¾
+            //Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ ?
             //opc_items.erase(ptr);
             //--end;
           }
@@ -1108,7 +1120,7 @@ void __fastcall opc_line::do_refresh()
       HRESULT res = opc_group->async2_refresh(OPC_DS_DEVICE,cancel_id);
       if(FAILED(res))
          {
-          if(res!=HRESULT(-1)) //Èíòåðôåéñ ïîëó÷åí îøèáêà ïðè âûçîâå
+          if(res!=HRESULT(-1)) //Ð˜Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹Ñ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½ Ð¾ÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð²Ñ‹Ð·Ð¾Ð²Ðµ
             report_com_error(res,L"Refresh. do read manual");
           __read_sync();
          }
@@ -1176,7 +1188,7 @@ void __fastcall opc_line::report_com_error(HRESULT res,const TCHAR * msg)
   {
      TCHAR text[4096];
      _com_error ce(res);
-     snwprintf(text,KERTL_ARRAY_COUNT(text),_T("Ìîäåì %d ëèíèÿ %d %s\n\rÎøèáêà COM %s"),owner->get_modem_number(),get_number(),msg ? msg:_T(""),ce.ErrorMessage());
+     snwprintf(text,KERTL_ARRAY_COUNT(text),_T("ÐœÐ¾Ð´ÐµÐ¼ %d Ð»Ð¸Ð½Ð¸Ñ %d %s\n\rÐžÑˆÐ¸Ð±ÐºÐ° COM %s"),owner->get_modem_number(),get_number(),msg ? msg:_T(""),ce.ErrorMessage());
      modem->do_report(REPORT_ERROR_TYPE,text,NULL,NULL);
   }
 }
@@ -1189,7 +1201,7 @@ void __fastcall opc_line::report_opc_error(LONG err,const TCHAR * msg)
        wchar_t * err_str = NULL;
        (*opc_server)->GetErrorString(err,0,&err_str);
          TCHAR text[4096];
-         snwprintf(text,KERTL_ARRAY_COUNT(text),_T("Ìîäåì %d ëèíèÿ %d %s\n\rÎøèáêà OPC %d %s"),owner->get_modem_number(),this->get_number(),msg ? msg : _T(""),err,err_str ? err_str : _T(""));
+         snwprintf(text,KERTL_ARRAY_COUNT(text),_T("ÐœÐ¾Ð´ÐµÐ¼ %d Ð»Ð¸Ð½Ð¸Ñ %d %s\n\rÐžÑˆÐ¸Ð±ÐºÐ° OPC %d %s"),owner->get_modem_number(),this->get_number(),msg ? msg : _T(""),err,err_str ? err_str : _T(""));
 
          CoTaskMemFree(err_str);
          modem->do_report(REPORT_ERROR_TYPE,text,NULL,NULL);

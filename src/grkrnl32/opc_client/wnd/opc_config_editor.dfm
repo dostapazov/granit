@@ -9,7 +9,7 @@ object OpcConfigEditor: TOpcConfigEditor
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
-  Font.Style = []
+  Font.Style = [fsBold]
   OldCreateOrder = False
   Position = poOwnerFormCenter
   OnClose = FormClose
@@ -26,42 +26,42 @@ object OpcConfigEditor: TOpcConfigEditor
     object Label2: TLabel
       Left = 8
       Top = 5
-      Width = 54
+      Width = 61
       Height = 13
       Caption = 'C'#1086#1089#1090#1086#1103#1085#1080#1077
     end
     object Label3: TLabel
-      Left = 274
+      Left = 256
       Top = 5
-      Width = 73
+      Width = 86
       Height = 13
       Caption = #1042#1088#1077#1084#1103' '#1079#1072#1087#1091#1089#1082#1072
     end
     object Label4: TLabel
       Left = 7
       Top = 26
-      Width = 74
+      Width = 87
       Height = 13
       Caption = #1042#1088#1077#1084#1103' '#1089#1077#1088#1074#1077#1088#1072
     end
     object Label1: TLabel
-      Left = 274
+      Left = 256
       Top = 26
-      Width = 93
+      Width = 108
       Height = 13
       Caption = #1042#1088#1077#1084#1103' '#1086#1073#1085#1086#1074#1083#1077#1085#1080#1103
     end
     object Label5: TLabel
       Left = 546
       Top = 5
-      Width = 67
+      Width = 77
       Height = 13
       Caption = #1050#1086#1083'-'#1074#1086' '#1075#1088#1091#1087#1087
     end
     object ServerStateText: TStaticText
       Left = 102
       Top = 3
-      Width = 16
+      Width = 19
       Height = 17
       BorderStyle = sbsSunken
       Caption = '---'
@@ -70,7 +70,7 @@ object OpcConfigEditor: TOpcConfigEditor
     object ServerStartTime: TStaticText
       Left = 373
       Top = 3
-      Width = 16
+      Width = 19
       Height = 17
       BorderStyle = sbsSunken
       Caption = '---'
@@ -79,7 +79,7 @@ object OpcConfigEditor: TOpcConfigEditor
     object ServerCurrentTime: TStaticText
       Left = 102
       Top = 25
-      Width = 16
+      Width = 19
       Height = 17
       BorderStyle = sbsSunken
       Caption = '---'
@@ -88,7 +88,7 @@ object OpcConfigEditor: TOpcConfigEditor
     object ServerUpdateTime: TStaticText
       Left = 373
       Top = 25
-      Width = 16
+      Width = 19
       Height = 17
       BorderStyle = sbsSunken
       Caption = '---'
@@ -97,7 +97,7 @@ object OpcConfigEditor: TOpcConfigEditor
     object GroupCount: TStaticText
       Left = 645
       Top = 3
-      Width = 16
+      Width = 19
       Height = 17
       BorderStyle = sbsSunken
       Caption = '---'
@@ -348,10 +348,16 @@ object OpcConfigEditor: TOpcConfigEditor
             Caption = #1047#1085#1072#1095#1077#1085#1080#1077
             Width = 100
           end>
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
         GridLines = True
         HideSelection = False
         ReadOnly = True
         RowSelect = True
+        ParentFont = False
         TabOrder = 0
         ViewStyle = vsReport
         OnResize = opc_item_props_viewResize
@@ -378,6 +384,12 @@ object OpcConfigEditor: TOpcConfigEditor
             Height = 342
             ActivePage = TabSheet2
             Align = alClient
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
             TabOrder = 0
             object TabSheet2: TTabSheet
               Caption = #1057#1082#1088#1080#1087#1090' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1079#1085#1072#1095#1077#1085#1080#1103
@@ -388,10 +400,18 @@ object OpcConfigEditor: TOpcConfigEditor
                 Width = 437
                 Height = 314
                 Align = alClient
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Courier New'
+                Font.Style = [fsBold]
                 Lines.Strings = (
                   '')
+                ParentFont = False
                 ScrollBars = ssBoth
                 TabOrder = 0
+                ExplicitLeft = -1
+                ExplicitTop = 2
               end
             end
             object TabSheet1: TTabSheet
@@ -402,26 +422,26 @@ object OpcConfigEditor: TOpcConfigEditor
               object Label6: TLabel
                 Left = 4
                 Top = 8
-                Width = 71
+                Width = 83
                 Height = 13
                 Caption = #1054#1073#1098#1077#1082#1090' '#1058#1059'/'#1058#1056
               end
               object Label7: TLabel
                 Left = 4
                 Top = 34
-                Width = 48
+                Width = 57
                 Height = 13
                 Caption = #1058#1101#1075' '#1058#1059'/'#1058#1056
               end
               object Label8: TLabel
                 Left = 6
                 Top = 55
-                Width = 69
+                Width = 79
                 Height = 13
                 Caption = #1057#1082#1088#1080#1087#1090' '#1058#1059'/'#1058#1056
               end
               object tutr_object: TEdit
-                Left = 81
+                Left = 93
                 Top = 6
                 Width = 120
                 Height = 20
@@ -430,9 +450,9 @@ object OpcConfigEditor: TOpcConfigEditor
                 TabOrder = 0
               end
               object tutr_tag: TEdit
-                Left = 80
+                Left = 94
                 Top = 32
-                Width = 344
+                Width = 337
                 Height = 20
                 Anchors = [akLeft, akTop, akRight]
                 BevelKind = bkFlat
@@ -445,8 +465,14 @@ object OpcConfigEditor: TOpcConfigEditor
                 Width = 437
                 Height = 242
                 Align = alBottom
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Courier New'
+                Font.Style = [fsBold]
                 Lines.Strings = (
                   '')
+                ParentFont = False
                 ScrollBars = ssBoth
                 TabOrder = 2
               end
@@ -463,7 +489,7 @@ object OpcConfigEditor: TOpcConfigEditor
                 Ctl3D = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
-                Font.Height = -12
+                Font.Height = -13
                 Font.Name = 'Courier New'
                 Font.Style = [fsBold]
                 Lines.Strings = (
@@ -486,6 +512,12 @@ object OpcConfigEditor: TOpcConfigEditor
                   ''
                   #1059#1089#1090#1072#1085#1086#1074#1080#1090#1100' '#1079#1085#1072#1095#1077#1085#1080#1077' '#1090#1077#1075#1072
                   'set_value(value number , tag_name string )'
+                  ''
+                  #1059#1089#1090#1072#1085#1086#1074#1080#1090#1100' '#1076#1080#1072#1075#1085#1086#1089#1090#1080#1082#1091' '#1087#1086' '#1083#1080#1085#1080#1080' '
+                  'set_line_diag(int diag)'
+                  #1053#1077#1090' '#1089#1074#1103#1079#1080' '#1089' '#1050#1055'             0x08000000'
+                  #1050#1055' '#1085#1077' '#1086#1090#1074#1077#1095#1072#1077#1090'             0x04000000'
+                  ''
                   ''
                   #1059#1089#1090#1072#1085#1086#1074#1080#1090#1100' '#1082#1072#1095#1077#1089#1090#1074#1086' '#1090#1077#1075#1086#1074' '#1087#1086' '#1060#1040'-'#1043#1056#1059#1055#1055#1045
                   'set_group_quality(int quality,int fa = -1,int group =-1 );'
@@ -550,7 +582,7 @@ object OpcConfigEditor: TOpcConfigEditor
     Left = 25
     Top = 97
     Bitmap = {
-      494C01010E0018000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010E001800180010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       00000000000000000000000000000000000000000000F2F2F200F2F2F200F4F4
       F400F4F4F400F6F6F600F6F6F600F6F6F600F6F6F6000000000000000000FAFA

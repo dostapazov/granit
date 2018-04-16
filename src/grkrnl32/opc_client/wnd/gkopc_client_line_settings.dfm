@@ -221,7 +221,7 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
     end
     object bandwidth: TEdit
       Tag = 32
-      Left = 297
+      Left = 327
       Top = 114
       Width = 53
       Height = 21
@@ -234,7 +234,7 @@ inherited OpcLineSetingsFrame: TOpcLineSetingsFrame
       Tag = 64
       Left = 8
       Top = 152
-      Width = 241
+      Width = 279
       Height = 17
       Caption = #1055#1086#1076#1084#1077#1085#1103#1090#1100' '#1074#1088#1077#1084#1103' '#1080#1079#1084#1077#1085#1077#1085#1080#1103' '#1085#1072' '#1090#1077#1082#1091#1097#1077#1077
       TabOrder = 6
