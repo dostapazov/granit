@@ -361,7 +361,7 @@
              delete [] text;
             }
           }
-
+       return items.size();
      }
 
    };

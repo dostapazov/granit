@@ -86,6 +86,7 @@ class opc_line:public modem_line,public TGKThread
   TOpcGroup            * opc_group;
   HRESULT                com_last_result;
   DWORD                  global_quality_mask;
+  DWORD                  global_otd_diag;
 
   typedef opc::TOpcDataCallback<opc_line>  opc_data_callback_t;
   friend opc_data_callback_t;

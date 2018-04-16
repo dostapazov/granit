@@ -130,6 +130,12 @@ void     __fastcall  TGKOpcItemsViewFrame::setup_item(TListItem * item,gkopc_ite
 
       str = variant_type_name(opc_item->reg_result.vtCanonicalDataType);
       item->SubItems->Add(str);
+
+      if(opc_item->group_param.group_data == (DWORD)-1)
+      str = _T("Not assigned");
+      else
+      str.printf(_T("%s:%02u.%03u"),opc_item->group_param.fa ? _T("A"):_T("D"),(unsigned)opc_item->group_param.sb,(unsigned)opc_item->group_param.param );
+      item->SubItems->Add(str);
   }
  }
 }

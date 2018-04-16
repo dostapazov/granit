@@ -2,15 +2,15 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>1899.12.30 00:00:00.000.826,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\single_kadr.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.741,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\record_table.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.241,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib_xe.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.351,D:\USER\GRANIT\SRC\KE_RTL\rx_buffer.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.163,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\tlm_painter\painter_dll_loader.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.779,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\text_table.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.317,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib_xe.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.317,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib_xe.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.915,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\opc_light_iface.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.737,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\kadrs_table.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.568,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\tlm_painter\tlm_bkgnd.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.241,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib_xe.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.741,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\record_table.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.776,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\opc_light_drv.cpp</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">

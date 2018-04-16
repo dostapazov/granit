@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.190,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj=D:\USER\GRANIT\SRC\GrKrnl32\grkrnl.groupproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.190,D:\USER\GRANIT\SRC\GrKrnl32\grkrnl.groupproj=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj</Transaction>
   </Transactions>
 	<Default.Personality>
-		<Projects ActiveProject="D:\USER\GRANIT\src\grkrnl32\rechistory\rechistory.cbproj"/>
+		<Projects ActiveProject="D:\USER\GRANIT\src\grkrnl32\opc_client\wnd\gkopc_client_wnd.cbproj"/>
 	</Default.Personality>
 </BorlandProject>

@@ -40,6 +40,10 @@ inherited GKOpcItemsViewFrame: TGKOpcItemsViewFrame
       item
         Caption = 'DataType'
         Width = 60
+      end
+      item
+        Caption = 'otd addr'
+        Width = 80
       end>
     GridLines = True
     HideSelection = False
@@ -48,5 +52,6 @@ inherited GKOpcItemsViewFrame: TGKOpcItemsViewFrame
     TabOrder = 0
     ViewStyle = vsReport
     OnDeletion = ListView1Deletion
+    ExplicitTop = -3
   end
 end

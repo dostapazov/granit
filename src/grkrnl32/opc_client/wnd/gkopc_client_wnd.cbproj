@@ -119,6 +119,8 @@
         <LinkPackageStatics>rtl.lib;vcl.lib</LinkPackageStatics>
         <BCC_OptimizeForSize>true</BCC_OptimizeForSize>
         <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+        <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
+        <Debugger_RunParams>-nosplash -config -service</Debugger_RunParams>
     </PropertyGroup>
     <ItemGroup>
         <LibFiles Include="..\..\..\..\LIB_XE\gkhandle.lib" Condition="'$(Platform)'=='Win32'">

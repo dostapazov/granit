@@ -49,8 +49,8 @@ int  __fastcall opc_line::load_items_from_file()
     vector<std::wstring> tu_tags;
     while(ptr<end)
     {
-     if(ptr->rc_tag.length())
-        tu_tags.push_back(ptr->rc_tag);
+     if(!ptr->rc_tag.empty())
+         tu_tags.push_back(ptr->rc_tag);
      ++ptr;
     }
 
@@ -63,7 +63,6 @@ int  __fastcall opc_line::load_items_from_file()
            opc_items.insert(item);
       ++tags_beg;
     }
-
   }
   return opc_items.size();
 }
@@ -305,6 +304,7 @@ bool __fastcall opc_line::set_line_config(LPGKOPC_LINE_CONFIG conf)
       stream.write_string(lua_scripts[1]);
   }
 
+  #pragma warn -8004
   void __fastcall opc_line::read (KeRTL::TStream & stream,DWORD stream_ver )
   {
      //if(stream_ver == OPC_MOD_STREAM_VER)
@@ -340,6 +340,8 @@ bool __fastcall opc_line::set_line_config(LPGKOPC_LINE_CONFIG conf)
          this->set_line_number(line_config.line_num);
        }
   }
+
+  #pragma warn -8004
 
   bool  __fastcall opc_line::send        (LPMPROTO_HEADER mph,DWORD sz)
   {
@@ -564,6 +566,7 @@ bool  __fastcall opc_line::do_start ()
  if(!IsRunning())
    {
     global_quality_mask = -1;
+    global_otd_diag     =  0;
     ret = Start();
    }
  return ret;
@@ -610,8 +613,6 @@ int  __fastcall opc_line::Execute()
 {
  int  ret = 0;
  DWORD   key;
- DWORD   tmo    = 1000;
- DWORD   ticks  = GetTickCount();
  DWORD   time_out;
  bool    wr;
  DWORD   bt;
@@ -619,12 +620,9 @@ int  __fastcall opc_line::Execute()
  WTimer_start(WT_CHECK_CONNECT,WT_CONNECT_TIMEOUT);
 
  do{
-    ticks = GetTickCount()-ticks;
-    time_out = tmo>ticks ? tmo-ticks : 0;
     time_out = WT_RESOLUTION;
     key = 0;
     wr = icp.GetStatus(key,lpovrlp,time_out,&bt);
-    ticks = GetTickCount();
     if(wr){
       switch(key)
       {
@@ -810,7 +808,7 @@ void __fastcall opc_line::__opc_group_add_items()
      gkopc_items_t::iterator ptr = opc_items.begin();
      gkopc_items_t::iterator end = opc_items.end();
      int try_count = 0;
-     OPCHANDLE hClient = 0;
+     //OPCHANDLE hClient = 0;
 
      while(this->opc_group &&  ptr<end)
       {
@@ -989,7 +987,6 @@ void  __fastcall opc_line::__set_opc_item_values(gkopc_item & item,LPVARIANT v,L
                changes = true;
               }
            }
-          changes = true;
         }
 
         if(ptr->op.time_stamp)

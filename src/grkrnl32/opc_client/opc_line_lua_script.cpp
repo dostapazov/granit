@@ -105,7 +105,7 @@ int opc_line::lua_opc_item_get_value(lua_State *L)
   int success     (0);
   if(line )
    {
-    unsigned int len = 0;
+    //unsigned int len = 0;
     const char * str = lua_get_item_id(L,1);
     if(str)
       {
@@ -439,10 +439,10 @@ int opc_line::lua_trace      (lua_State *L)
      //Процедура
      lua::LUAInstance  lua;
      rc_prepare_execute(lua);
-     DWORD rc_size = 0;
+ //    DWORD rc_size = 0;
      TLockHelper l (locker);
      gkopc_items_t::iterator ptr  = rc_queue.begin();
-     DWORD    rc_state = 0;
+ //    DWORD    rc_state = 0;
      __int64  cur_time;
      while(!CheckTerminateRequest() && rc_queue.size())
      {
