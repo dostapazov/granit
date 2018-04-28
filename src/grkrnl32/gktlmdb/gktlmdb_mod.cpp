@@ -52,15 +52,21 @@
      {
       lock_param = GKHB_AUTO_LOCK_OFF;
       lowdb.set_module(this);
-      rep_id      = report_reg_event_type(L"GKTLMDB"         ,L"БД нижнего уровня");
-      turep_id    = report_reg_event_type(L"GKTLMDB_TUTR"    ,L"БД нижнего уровня - Операции ТУ" );
+      reg_reports();
      }
   }
 
  TGKTlmDB::~TGKTlmDB()
  {
- 
+
  }
+
+ void   __fastcall TGKTlmDB::reg_reports()
+ {
+      rep_id      = report_reg_event_type(L"GKTLMDB"         ,L"БД нижнего уровня");
+      turep_id    = report_reg_event_type(L"GKTLMDB_TUTR"    ,L"БД нижнего уровня - Операции ТУ" );
+ }
+
 
 
  void __fastcall TGKTlmDB::release(LPVOID p)
@@ -289,7 +295,7 @@ DWORD  __fastcall TGKTlmDB::get_window_module (wchar_t * buf,DWORD bsz)
  DWORD   __fastcall TGKTlmDB::start(DWORD reason,LPARAM p2)
  {
 
-
+  reg_reports();
   DWORD ret = TGKModule::start(reason,p2);
   //Подготовка БД - установка состояний диагностики в -1
   //Регистрация себя как обработчика FA -OTD у ДФА модеммера

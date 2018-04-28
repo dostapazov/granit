@@ -63,9 +63,7 @@ DWORD   __fastcall TMediumDB::get_mem_used()
   lock_param = GKHB_AUTO_LOCK_OFF;
   alloc_gkhandle(MEDIUMDB_MODULE_NAME);
   mdb.set_module(this);
-  report_id      = report_reg_event_type(L"БД-Среднего уровня");
-  report_tu_id   = report_reg_event_type(L"БД-Среднего уровня ТУ-ТР");
-  report_scripts = report_reg_event_type(L"БД-Среднего уровня - ошибки скриптов");
+  reg_reports();
   ZeroMemory(&settings,sizeof(settings));
   mdb_record rec(1);
   rec.min_value = 0;
@@ -81,6 +79,14 @@ DWORD   __fastcall TMediumDB::get_mem_used()
   rec.calc_value(kv);
   SetFlags(KERTL_THREAD_ENABLERESTART,true);
  }
+
+ void   __fastcall TMediumDB::reg_reports()
+ {
+  report_id      = report_reg_event_type(L"DB-MEDIUM",L"БД-Среднего уровня");
+  report_tu_id   = report_reg_event_type(L"DB-MEDIUM-RC",L"БД-Среднего уровня ТУ-ТР");
+  report_scripts = report_reg_event_type(L"DB-MEDIUM-SCRIPTS",L"БД-Среднего уровня - ошибки скриптов");
+ }
+
 
  const char  * __fastcall TMediumDB::get_gkthread_name()
  {
@@ -342,6 +348,7 @@ DWORD   __fastcall TMediumDB::get_mem_used()
  DWORD   __fastcall TMediumDB::start(DWORD reason,LPARAM sp)
  {
   DWORD ret ;
+  reg_reports() ;
   ForceDirs(MEDIUMDB_DATA);
   #ifdef _DEBUG
   test();

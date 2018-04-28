@@ -18,8 +18,10 @@ class TSCGranitModem:public TModemBase
  DWORD                   grsc_event_rep;
  DWORD                   grsc_tutr_rep;
  TGKIoInterface          io_iface;
- DWORD       __fastcall get_mem_used();
- void        __fastcall  release(LPVOID arg);
+
+ void    __fastcall reg_reports();
+ DWORD   __fastcall get_mem_used();
+ void    __fastcall release(LPVOID arg);
 
  bool    __fastcall check_config_data  (DWORD mask,LPVOID buf,DWORD bsz);
  DWORD   __fastcall get_config_data(DWORD mask,LPVOID buf,DWORD bsz);

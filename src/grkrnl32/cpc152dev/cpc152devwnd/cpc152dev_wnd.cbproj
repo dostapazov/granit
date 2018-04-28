@@ -4,7 +4,7 @@
         <ProjectVersion>18.3</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Library</AppType>
@@ -53,9 +53,9 @@
         <ProjectType>VCppStyleDll</ProjectType>
         <AllPackageLibs>rtl.lib;vcl.lib;Tee.lib;vclimg.lib</AllPackageLibs>
         <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
-        <ILINK_LibraryPath>..\..\..\KE_RTL\;D:\FFT\dspl32\src\dspl\;D:\FFT\dspl32\src\;..\..\GKLIB\VCL\;D:\USER\GRANIT\SRC\GrKrnl32\cpc152dev\cpc152devwnd\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>..\;..\..\..\KE_RTL\;D:\FFT\dspl32\src\dspl\;D:\FFT\dspl32\src\;..\..\GKLIB\VCL\;D:\USER\GRANIT\SRC\GrKrnl32\cpc152dev\cpc152devwnd\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <IncludePath>..\..\..\KE_RTL\;D:\FFT\dspl32\src\dspl\;D:\FFT\dspl32\src\;..\..\GKLIB\VCL\;$(GRKRNL_INC);$(KERTL_INC);$(CG_BOOST_ROOT);$(IncludePath)</IncludePath>
+        <IncludePath>..\;..\..\..\KE_RTL\;D:\FFT\dspl32\src\dspl\;D:\FFT\dspl32\src\;..\..\GKLIB\VCL\;$(GRKRNL_INC);$(KERTL_INC);$(CG_BOOST_ROOT);$(IncludePath)</IncludePath>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <DynamicRTL>true</DynamicRTL>
         <UsePackages>true</UsePackages>
@@ -127,9 +127,6 @@
         <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
     </PropertyGroup>
     <ItemGroup>
-        <CppCompile Include="D:\FFT\dspl32\src\dspl.c">
-            <BuildOrder>15</BuildOrder>
-        </CppCompile>
         <LibFiles Include="..\..\..\..\LIB_XE\gkhandle.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>6</BuildOrder>
             <IgnorePath>true</IgnorePath>
@@ -182,6 +179,9 @@
             <DesignClass>TFrame</DesignClass>
             <DependentOn>cpc152_mod_frame.h</DependentOn>
             <BuildOrder>10</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\dspl.c">
+            <BuildOrder>15</BuildOrder>
         </CppCompile>
         <CppCompile Include="..\..\GKLIB\VCL\about_common_frame.cpp">
             <Form>AboutCommonFrame</Form>

@@ -110,6 +110,7 @@
         otd_locker = &get_cpc152controller()->otd_get_locker();
 
     send_queue.DropData();
+    line_state&= ~MODEM_LINE_STATE_RXDATA;
 
     mpb.move_to_begin(mpb.get_data_len(),0);
     pkt_num = 0;

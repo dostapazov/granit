@@ -162,7 +162,7 @@ void       __fastcall main_dblow::send_undo(DWORD addr,DWORD obj)
      ZeroMemory(&op,sizeof(op));
      op.dw_size = sizeof(op);
      mph->fa    = FA_OTD;
-     mph->data_size = otd_proto_format_tutr((LPBYTE)mph->data,sizeof(buffer)-sizeof(*mph),&sa,obj,OTD_TUTROP_CANCEL,0,sizeof(DWORD),0,&op);
+     mph->data_size = otd_proto_format_tutr((LPBYTE)mph->data,sizeof(buffer)-sizeof(*mph),&sa,obj,OTD_TUTROP_CANCEL,0,0,sizeof(DWORD),0,&op);
      sotd_proto sop((LPBYTE)mph->data,mph->data_size);
      sop.op.dw_size = sop.op.dw_size;
      module->send(mph);
@@ -179,11 +179,12 @@ void       __fastcall main_dblow::send_tu(DWORD addr,DWORD obj,BOOL on)
   mph->addr_to.addr = modem_pu.get_modem(sa).addr;
   if(mph->addr_to.addr!=(DWORD)-1)
     {
+     WORD cmd_attr = 0;
      otd_proto op;
      ZeroMemory(&op,sizeof(op));
      op.dw_size = sizeof(op);
      mph->fa    = FA_OTD;
-     mph->data_size = otd_proto_format_tutr((LPBYTE)mph->data,sizeof(buffer)-sizeof(*mph),&sa,obj,on ? OTD_TUOP_ON:OTD_TUOP_OFF,0,sizeof(DWORD),0,&op);
+     mph->data_size = otd_proto_format_tutr((LPBYTE)mph->data,sizeof(buffer)-sizeof(*mph),&sa,obj,on ? OTD_TUOP_ON:OTD_TUOP_OFF,cmd_attr,0,sizeof(DWORD),0,&op);
      sotd_proto sop((LPBYTE)mph->data,mph->data_size);
      sop.op.dw_size = sop.op.dw_size;
      if(module)
@@ -207,19 +208,22 @@ DWORD      __fastcall main_dblow::remove_invalid_dynamic(DWORD addr)
  {
   while(beg<end)
   {
-   if(sa.is_include(*beg->op.addr,true) && (*(beg->op.diag )&OTD_DIAG_MASK) && is_dynamic(beg))
+   if(sa.is_include(*beg->op.addr,true) && is_dynamic(beg))
      {
-      sotd_addr sa(get_owner_addr(*beg->op.addr));
-      dcs.addr = beg->op.addr->addr;
-      module->notify(TLM_DBLOW_NOTIFY_CHANGE,TLM_DBLOW_CODE_REMOVED,&dcs,sizeof(dcs));
-      delete_sop(beg);
-      otd_list.erase(beg);
-      --end;
-      update_diag(sa);
-      ret++;
-     }
+      if((*(beg->op.diag )&OTD_DIAG_MASK)  )
+      {
+       sotd_addr sa(get_owner_addr(*beg->op.addr));
+       dcs.addr = beg->op.addr->addr;
+       module->notify(TLM_DBLOW_NOTIFY_CHANGE,TLM_DBLOW_CODE_REMOVED,&dcs,sizeof(dcs));
+       delete_sop(beg);
+       otd_list.erase(beg);
+       --end;
+       update_diag(sa);
+       ret++;
+      }
      else
      ++beg;
+    }
   }
  }
 
@@ -311,7 +315,7 @@ DWORD  __fastcall main_dblow::handle_ctrl (otd_proto & op,modem_addr & from,LPDW
                mph->addr_to.addr      = from.addr;
                mph->addr_from.addr    = 0;
                mph->data_size = otd_proto_format_tutr((LPBYTE)mph->data,sizeof(buffer)-sizeof(*mph),
-                                                      op.addr,tu_obj_beg,OTD_TUTR_CMDENABLE,
+                                                      op.addr,tu_obj_beg,OTD_TUTR_CMDENABLE,0,
                                                       &tutr.param,sizeof(tutr.param),0,NULL);
                module->send(mph);
 //               tuobj_pd|=OTD_PSTATE_TUTR_PREPARE;
@@ -329,8 +333,9 @@ DWORD  __fastcall main_dblow::handle_ctrl (otd_proto & op,modem_addr & from,LPDW
 
             mph->addr_to.addr      = ma.addr;
             mph->addr_from.addr    = from.addr;
+            WORD cmd_attr = 0;
             mph->data_size = otd_proto_format_tutr((LPBYTE)mph->data,sizeof(buffer)-sizeof(*mph),
-                                                   op.addr,tu_obj_beg,tutr.command,&tutr.param,
+                                                   op.addr,tu_obj_beg,tutr.command,tutr.command_attr,&tutr.param,
                                                    sizeof(tutr.param),0,NULL);
            }
 
@@ -455,12 +460,20 @@ void __fastcall main_dblow::report_tutr_sended(otd_addr & addr,DWORD obj , otd_t
      wchar_t modem_text[MAX_PATH];
      *PUname = *CPname = *op_name = *modem_text = 0;
 
-     switch(tutr.command)
+     switch(tutr.command&OTD_TUTR_OPMASK)
      {
-      case OTD_TUOP_ON      : lstrcpyW(op_name,L"¬ À/+");break;
-      case OTD_TUOP_OFF     : lstrcpyW(op_name,L"Œ“ À/-");break;
-      case OTD_TUTROP_CANCEL: lstrcpyW(op_name,L"Œ“Ã≈Õ¿");break;
+      case OTD_TUOP_ON      : safe_strcpy(op_name,L"¬ À/+");break;
+      case OTD_TUOP_OFF     : safe_strcpy(op_name,L"Œ“ À/-");break;
+      case OTD_TUTROP_CANCEL: safe_strcpy(op_name,L"Œ“Ã≈Õ¿");break;
      }
+
+//     switch(tutr.command&OTD_TUTR_CMDMASK)
+//     {
+//       case OTD_TUTR_CMDSELECT   : safe_strcpy(op_name,L"¬€¡Œ– Œ¡⁄≈ “¿");break;
+//       case OTD_TUTR_CMDENABLE   : safe_strcpy(op_name,L"–¿«–≈ÿ≈Õ»≈ “”/“–");break;
+//       case OTD_TUTR_CMDDESELECT : safe_strcpy(op_name,L"Œ“Ã≈Õ¿ ¬€¡Œ–¿");break;
+//     }
+
      if(*op_name)
      {
       wchar_t rep_text[2048];

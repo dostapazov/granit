@@ -735,7 +735,7 @@ WORD WINAPI otd_calc_checksum (LPVOID buffer,DWORD bsz,DWORD p_del)
 
 /*Ôîğìèğîâàíèå êàäğà ÒÓ / ÒĞ*/
 DWORD WINAPI otd_proto_format_tutr (LPBYTE buf,DWORD bsz,lpotd_addr addr,
-                                    DWORD obj,DWORD tu_command,
+                                    DWORD obj,WORD tu_command,WORD tu_command_attr,
                                     LPVOID param,DWORD param_sz,
                                     DWORD ver,LPVOID _op )
 {
@@ -749,14 +749,15 @@ DWORD WINAPI otd_proto_format_tutr (LPBYTE buf,DWORD bsz,lpotd_addr addr,
  ZeroMemory(&op,sizeof(op));
  op.dw_size         = sizeof(op);
  opp.parts          = OTD_PROTO_PART_DATA|OTD_PROTO_PART_KPK;
- opp.dt_param.type  = tu_command == OTD_TROP_SET ? OTD_TR_COMMAND_SET :OTD_TUTR_COMMAND;
+ opp.dt_param.type  = tu_command == OTD_TROP_SET ? OTD_TR_COMMAND_SET : OTD_TUTR_COMMAND;
  opp.dt_param.first = obj;
  opp.dt_param.count = 1;
  DWORD ret = otd_proto_format_ex(buf,bsz,&opp,0,&op);
  if(ret)
  {
-  lpotd_tutr tutr = (lpotd_tutr) op.data->data;
-  tutr->command   = tu_command;
+  lpotd_tutr tutr    = (lpotd_tutr) op.data->data;
+  tutr->command      = tu_command;
+  tutr->command_attr = tu_command_attr;
   if(tu_command == OTD_TROP_SET)
      memcpy(&tutr->param,param,KeRTL::MIN(param_sz,(DWORD)sizeof(tutr->param)));
   op.addr->addr = addr->addr;

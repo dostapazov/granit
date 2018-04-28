@@ -77,24 +77,6 @@
 #define OTD_FA_ALL           0x07
 #define OTD_FA_DATA_MASK     0x07
 
-#define OTD_TUOP_NOP        0
-#define OTD_TUOP_ON         0x01             //Включить
-#define OTD_TUOP_OFF        0x02             //Отключить
-#define OTD_TROP_MORE       OTD_TUOP_ON      //Больше
-#define OTD_TROP_LESS       OTD_TUOP_OFF     //Меньше
-#define OTD_TROP_SET        0x04             //Установка параметра
-#define OTD_TUTROP_CANCEL   0x08             //Отмена
-#define OTD_TUTROP_UNDO     OTD_TUTROP_CANCEL
-
-#define OTD_TUTR_OPMASK      0x0F
-
-#define OTD_TUTR_CMDSELECT   0x10  //Выбор объекта для ТУ
-#define OTD_TUTR_CMDENABLE   0x20  //Разрешение ТУ/ТР
-#define OTD_TUTR_CMDDESELECT 0x40  //Отмена выбора объекта
-#define OTD_TUTR_CMDMASK     0xF0
-
-
-
 
 //Макросы проверки ФА
 

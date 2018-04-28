@@ -21,6 +21,7 @@ typedef std::vector<OPCHANDLE> opc_handles_t;
 #define ICP_KEY_REMOTE_CONTROL  10
 #define ICP_KEY_HANDLE_CHANGES  100
 #define ICP_KEY_REFRESH         200
+#define ICP_KEY_HANDLE_REQUEST  300
 
 #define WT_RESOLUTION    100
 #define MAX_WT_TIMERS    8
@@ -291,7 +292,8 @@ class TGkOpcModem  : public  TModemBase
   DWORD __fastcall get_pu_diag    (bool rescan);
   DWORD __fastcall scan_pu_diag   ();
   void  __fastcall do_recv_pu_data(bool inc_name );
-
+  void  __fastcall reg_reports();
+LRESULT __fastcall send       (LPMPROTO_HEADER mph,DWORD sz);
   public:
   TGkOpcModem(DWORD number = -1);
   void       __fastcall do_report(DWORD evt_type,wchar_t * rep_text,LPVOID data,DWORD dt_sz);

@@ -153,6 +153,8 @@ class TGkIPModem:public TModemBase , protected TGKThread
  LRESULT     __fastcall set_line_opts(DWORD line_number,  DWORD opts);
 
  virtual   DWORD   __fastcall check_license(){return MOD_LICENSE_REGISTERED; }
+  void       __fastcall reg_reports();
+
 
  public   :
  TGkIPModem();

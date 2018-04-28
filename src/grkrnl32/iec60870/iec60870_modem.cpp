@@ -42,8 +42,13 @@ DWORD   __fastcall Tiec60870modem::get_mem_used()
  {
    lock_param    = GKHB_AUTO_LOCK_OFF;
    alloc_gkhandle();
-   rep_id = report_reg_event_type(L"IEC60870",L"IEC60870-Модем");
+   reg_reports();
  }
+
+void     __fastcall Tiec60870modem::reg_reports()
+{
+ rep_id = report_reg_event_type(L"IEC60870",L"IEC60870-Модем");
+}
 
 
 void __fastcall Tiec60870modem::free_line(modem_line * line)
@@ -286,6 +291,7 @@ int      __fastcall Tiec60870modem::convert_rx_data(LPWORD fa,LPBYTE in,int in_l
 
  DWORD    __fastcall Tiec60870modem::start              (DWORD reason,LPARAM p2)
  {
+     this->reg_reports();
      pu_diag = OTD_DIAG_NODATA|OTD_DIAG_CPMASK;
      DWORD ret =  TModemBase::start(reason,p2);
      if(GKH_RET_SUCCESS == ret)
@@ -550,5 +556,26 @@ int      __fastcall Tiec60870modem::convert_rx_data(LPWORD fa,LPBYTE in,int in_l
   return GKH_RET_ERROR;
  }
 
+ LRESULT    __fastcall Tiec60870modem::send        (LPMPROTO_HEADER mph,DWORD sz)
+ {
+  if(mph && mph->fa == FA_OTD && mph->data_size>=(sizeof(otd_addr)+sizeof(WORD)))
+  {
+    sotd_addr sa(*(LPDWORD)mph->data);
+    /*Проверка номера ПУ или для всех ПУ*/
+    if(sa.pu == OTD_ADDR_MAXVALUE || sa.pu == this->get_pu_number())
+    {
+      if(OTD_ADDR_ISQUERY(&sa))
+      {
+       DWORD parts;
+       otd_proto_get_verpart((LPBYTE)mph->data,mph->data_size,NULL,&parts);
+       do_recv_pu_data((parts&OTD_PROTO_PART_NAME) ? true : false);
+
+      }
+    }
+  }
+
+  TModemBase::send(mph,sz);
+  return GKH_RET_SUCCESS;
+ }
 
 

@@ -194,7 +194,7 @@ DWORD WINAPI otd_proto_calc_size_ex(LPVOID pp,DWORD ver);
 DWORD WINAPI otd_proto_format(LPBYTE buf,DWORD bsz,DWORD parts,DWORD start,DWORD count,DWORD type_data,DWORD type_pd,DWORD type_cm,DWORD name_sz,lpotd_proto op);
 DWORD WINAPI otd_proto_format_ex   (LPBYTE buf,DWORD bsz,LPVOID pp,DWORD ver,LPVOID op);
 DWORD WINAPI otd_proto_format_query(LPBYTE buf,DWORD bsz,lpotd_addr addr,DWORD ver,DWORD parts,LPVOID op);
-DWORD WINAPI otd_proto_format_tutr (LPBYTE buf,DWORD bsz,lpotd_addr addr,DWORD obj,DWORD tu_command,LPVOID param,DWORD param_sz,DWORD ver,LPVOID op );
+DWORD WINAPI otd_proto_format_tutr (LPBYTE buf,DWORD bsz,lpotd_addr addr,DWORD obj,WORD tu_command,WORD tu_command_attr,LPVOID param,DWORD param_sz,DWORD ver,LPVOID op );
 
 // опирвание частей протокола по маске parts
 //ƒаже если parts = 0 то копируетс€ адрес и ver_parts (естесственно parts = 0)

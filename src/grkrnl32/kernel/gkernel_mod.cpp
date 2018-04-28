@@ -258,6 +258,9 @@ DWORD   __fastcall TGRKernel::start(DWORD reason,LPARAM p2)
 
 DWORD   __fastcall TGRKernel::stop (DWORD reason)
 {
+ DWORD ret = GKH_RET_ERROR;
+ if(reason==MODULE_STOP_RELEASE || reason==MODULE_STOP_PROGRAM_SHUTDOWN || reason == MODULE_STOP_RECONFIGURE)
+ {
  report(EVENT_SYSTEM,REPORT_INFORMATION_TYPE,L"Завершение работы ядра");
  SetEvent(terminate_event);
  //останавливаем репортер последним
@@ -277,7 +280,7 @@ DWORD   __fastcall TGRKernel::stop (DWORD reason)
  if(rep_iface)
     modules_list.remove(rep_iface);
 
- DWORD ret=TGKModulesSet::stop(reason);
+ ret = TGKModulesSet::stop(reason);
  ResetEvent(terminate_event);
 
  if(reason == MODULE_STOP_PROGRAM_SHUTDOWN)
@@ -296,7 +299,7 @@ DWORD   __fastcall TGRKernel::stop (DWORD reason)
  }
  else
   modules_list.add(rep_iface);
-
+ }
  return ret;
 }
 

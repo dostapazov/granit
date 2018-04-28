@@ -34,6 +34,7 @@
      strm>>recs_count;
      TLockHelper l(storage_locker);
      recs.clear() ;
+
      while(recs_count)
      {
 	  strm>>rec.number>>rec.otd_fa>>rec.otd_group>>rec.otd_number>>rec.rc_command>>rec.rc_number>>rec.is_float;
@@ -567,7 +568,7 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
     if(data->otd_type == OTD_TR_COMMAND_SET)
       otd_get_value(data,object,&tutr,sizeof(tutr));
       else
-      otd_get_value(data,object,&tutr.command,sizeof(tutr.command));
+      otd_get_value(data,object,&tutr,sizeof(tutr));
 }
 
   void  __fastcall 	iec60870_command_from_otd(const iec60870_record & rec, const otd_tutr &tutr)
@@ -608,7 +609,12 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
                     {
                     if(ref_rec.rc_command !=(BYTE)-1 && ref_rec.rc_number != (DWORD)-1 )
                       {
-                            ref_rec.rc_state = OTD_PSTATE_TUTR_PREPARE;
+                            ref_rec.rc_state  = OTD_PSTATE_TUTR_PREPARE;
+                            if(tutr.command_attr&OTD_TUTR_CMDATTR_INVERSE)
+                               ref_rec.options|= IEC60870_REC_DYNOPT_INVERSE;
+                                else
+                               ref_rec.options&=~IEC60870_REC_DYNOPT_INVERSE;
+
                             BYTE buf[256];
                             iec60870_command_from_otd(ref_rec,tutr);
                             ref_rec.rc_ctrl.se  = cs_select; //Выбрать
@@ -617,7 +623,6 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
                                                                                        ,ref_rec.rc_command,ref_rec.rc_number,line_config.obj_addr_size,ref_rec.rc_ctrl);
                             send(phdr);
                             tutr_active.push_back(ref_rec);
-
                       }
                       else
                       {
@@ -856,6 +861,25 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
      }
    }
 
+   LRESULT  __fastcall Tiec60870line::otd_delete_group      (BYTE otd_fa,BYTE otd_group)
+   {
+     sotd_addr addr(0,0,otd_fa,otd_group);
+     proto_pointer ptr;
+     TLockHelper l(storage_locker);
+     if(storage.find(addr,ptr))
+     {
+         if(ptr->op.diag && is_connected())
+         {
+          *ptr->op.diag = -1;
+          this->__queue_rxdata(&ptr->op);
+         }
+         LPBYTE buf = (LPBYTE)ptr->op.addr;
+         storage.erase(ptr);
+         delete [] buf;
+     }
+     return GKH_RET_ERROR;
+   }
+
    DWORD __fastcall Tiec60870line::otd_create_group(DWORD otd_fa,DWORD otd_group,DWORD first,DWORD count,DWORD otd_type)
    {
      sotd_addr addr(0,0,otd_fa,otd_group);
@@ -996,6 +1020,10 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
        while(cbeg<cend)
         {
           iec60870_record & rec = *cbeg;
+          if( (rec.rc_state & OTD_PSTATE_TUTR_ACTIVE) && (rec.changes_mask &IEC60870_REC_FL_VALUE) )
+            {
+             rec.rc_state = rec.rc_state;
+            }
           owner->notify(MNF_LINE_RECORD_CHANGED,line_num,&rec,sizeof(rec));
           ++cbeg;
         }
@@ -1011,29 +1039,41 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
        DWORD line_num = this->get_number();
        TLockHelper l(storage_locker);
        iec60870_records_t::iterator rec_ptr;
+
        if(rec->otd_group == BYTE(-1) || rec->otd_number == (DWORD)-1)
           rec->otd_group = BYTE(-1) , rec->otd_number = DWORD(-1);
 
        if(records->find(*rec,rec_ptr) && iec60870_record_comparer().compare_otd_number(*rec,*rec_ptr))
         {
           //Идет изменение привязки отд
-          if(rec->otd_number == (DWORD)-1)
-             {
-              __record_changed(*rec_ptr,true);
-             }
-             else
+
+          if(rec->otd_number != (DWORD)-1)
              {
               //Проверка того что адрес не сущтвует
               iec60870_records_t::index_iterator iptr ;
               if(records->find(*rec,iptr))
                  return GKH_RET_ERROR;
              }
+          bool bad_diag = rec->otd_number == (DWORD)-1 ? true : false;
+          __record_changed(*rec_ptr,bad_diag);
+          handle_record_changes();
+
+          BYTE prev_group = rec_ptr->otd_group;
           rec_ptr->otd_group  = rec->otd_group;
           rec_ptr->otd_number = rec->otd_number;
           rec_ptr->changes_mask = (IEC60870_REC_FL_OTD_GROUP|IEC60870_REC_FL_OTD_NUMBER);
           records->index_invalidate();
-          __record_changed(*rec_ptr,false);
-          //owner->notify(MNF_LINE_RECORD_CHANGED,line_num,&*rec_ptr,sizeof(rec_ptr));
+          records->build_index();
+        __record_changed(*rec_ptr,bad_diag);
+
+          if(bad_diag && prev_group != BYTE(-1))
+          {
+            iec60870_record r1(rec->otd_fa,prev_group,0);
+            iec60870_record r2(rec->otd_fa,prev_group,-1);
+            iec60870_records_t::index_iterator iptr1 = records->index_begin()  ,iptr2 = records->index_end() ;
+            if(!records->range(r1,r2,iptr1,iptr2))
+                  otd_delete_group(rec_ptr->otd_fa,prev_group);
+          }
           return GKH_RET_SUCCESS;
         }
         else
@@ -1101,7 +1141,7 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
             *proto_ptr->op.diag = otd_scan_personal_diag(&proto_ptr->op);
             __queue_rxdata(&proto_ptr->op);
            }
-
+          cbeg->changes_mask = 0;
         }
       }
    }

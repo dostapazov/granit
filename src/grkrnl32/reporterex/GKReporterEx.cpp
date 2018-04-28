@@ -5,8 +5,8 @@
 #include <io.h>
 #include <stdio.h>
 #include <dir.h>
-#include <SysUtils.hpp>
-#include <DateUtils.hpp>
+//#include <SysUtils.hpp>
+//#include <DateUtils.hpp>
 #include <string>
 
 #pragma hdrstop
@@ -28,9 +28,21 @@ TGKReporterEx::TGKReporterEx():TGKStdReporter(true)
 
 TGKReporterEx::~TGKReporterEx()
 {
+ close_all_logs();
+}
+
+void  __fastcall TGKReporterEx::close_all_logs()
+{
   Tlog_files::iterator p;
   for (p=log_files.begin(); p!=log_files.end(); p++)
-    delete *p;
+    {
+     delete *p;
+    }
+ log_files.clear  ();
+ log_funcs.clear  () ;
+ reg_events.clear ();
+ event_names.clear() ;
+
 }
 
 
@@ -112,9 +124,10 @@ DWORD __fastcall TGKReporterEx::start(DWORD reason,LPARAM p2)
 DWORD __fastcall TGKReporterEx::stop(DWORD reason)
 {
   DWORD ret;
-  
-  if(reason==MODULE_STOP_REQUEST || reason==MODULE_STOP_PROGRAM_SHUTDOWN)
+
+  if(reason==MODULE_STOP_RELEASE || reason==MODULE_STOP_PROGRAM_SHUTDOWN)
   {
+    close_all_logs();
     report(EVENT_SYSTEM,REPORT_INFORMATION_TYPE,L"Расширенный репортёр остановлен");
     ret=TGKModule::stop(reason);
     if (!ret)
@@ -140,7 +153,9 @@ DWORD __fastcall TGKReporterEx::stop(DWORD reason)
       }
     }
   }
-  
+  else
+  ret = GKH_RET_ERROR;
+
   return ret;
 }
 
@@ -419,20 +434,20 @@ void __fastcall TGKReporterEx::open_files(char * nt)
 {
   register_event("GKSystem","Система");
   SetRegisterFunc(register_event("Exceptions","Исключения"),&ExceptionToStr);
-  char fname1[MAX_PATH],fname2[MAX_PATH];
-  char fmt[] = "%s.%s";
-  wsprintf(fname1,fmt,nt,"log");
-  wsprintf(fname2,fmt,nt,"err");
-  if (FileExists(fname1) || FileExists(fname2))
-  {
-    TLockHelper l(locker);
-
-    TGKStdReporter::open_files(nt);
-    WriteOldLog();
-    WriteOldErr();
-    DeleteFile(fname1);
-    DeleteFile(fname2);
-  }
+//  char fname1[MAX_PATH],fname2[MAX_PATH];
+//  char fmt[] = "%s.%s";
+//  wsprintf(fname1,fmt,nt,"log");
+//  wsprintf(fname2,fmt,nt,"err");
+//  if (access(fname1,0)!=0  || access(fname2,0)!=0)
+//  {
+//    TLockHelper l(locker);
+//
+//    TGKStdReporter::open_files(nt);
+//    WriteOldLog();
+//    WriteOldErr();
+//    DeleteFile(fname1);
+//    DeleteFile(fname2);
+//  }
 }
 
 
@@ -564,40 +579,56 @@ int WINAPI ExceptionToStr(LPVOID Data, char *str, DWORD sz, int Code)
   return len;
 }
 
-UINT __fastcall TGKReporterEx::register_event(char *event, char *event_name)
+KeRTL::TFile *  __fastcall TGKReporterEx::open_event_file(char *event,bool & bad_file)
 {
-  if (!(module_state&(MODULE_STATE_RUNNING|MODULE_STATE_START_PENDING))) return (UINT)-1;
-  vector<string>::iterator p= std::find(reg_events.begin(),reg_events.end(),event);
-  UINT i=p-reg_events.begin();
-  if (p!=reg_events.end()) return i;
   char name[MAX_PATH<<2];
-  /*
-  char drive[MAXDRIVE];
-  char dir[MAXDIR];
-  char file[MAXFILE];
-  char ext[MAXEXT];*/
   GetCurrentDirectory(sizeof(name),name);
-  //fnsplit(name,drive,dir,file,ext);
   strcat(name,"\\log\\");
   if (access(name,0)!=0) mkdir(name);
   strcat(name,event);
   strcat(name,".evt");
-
-  TFile *f;
-  f=new TFile(name,OPEN_ALWAYS,FILE_SHARE_READ,GENERIC_READ | GENERIC_WRITE);
-  bool badfile=!CheckLogFile(f,name);
+  KeRTL::TFile * f= new KeRTL::TFile(name,OPEN_ALWAYS,FILE_SHARE_READ,GENERIC_READ | GENERIC_WRITE);
+  bad_file = !CheckLogFile(f,name);
   f->SeekWr(0,FILE_END);
+  return f;
+}
+
+UINT __fastcall TGKReporterEx::register_event(char *event, char *event_name)
+{
+//  if (!(module_state&(MODULE_STATE_RUNNING|MODULE_STATE_START_PENDING)))
+//      return (UINT)-1;
+  string str(event);
+  vector<string>::iterator p= std::find(reg_events.begin(),reg_events.end(),str);
+  bool badfile;
+  UINT i=std::distance(reg_events.begin(),p);
+  if (p!=reg_events.end())
+      {
+       Tlog_files::reference lf =  log_files.at(i);
+       if(lf && !lf->IsValid() )
+         {
+          delete lf;
+          lf     = NULL;
+         }
+         if(!lf)
+             lf = open_event_file(event,badfile);
+       return i;
+      }
+
   reg_events.push_back(event);
   if (event_name)
     event_names.push_back(event_name);
   else
     event_names.push_back("");
+
+
+  TFile *f = open_event_file(event,badfile);
   log_files.push_back(f);
   log_funcs.push_back(0);
   if (badfile)
   {
-    AnsiString s=s.sprintf("Файл событий '%s' повреждён. Создан новый файл событий.",name);
-    report(EVENT_SYSTEM,REPORT_ERROR_TYPE,s.c_str());
+    char  s[MAX_PATH];
+    sprintf(s,"Файл событий '%s' повреждён. Создан новый файл событий.",event);
+    report(EVENT_SYSTEM,REPORT_ERROR_TYPE,s);
   }
   if (need_notify(MNF_REPORTEREX))
   {

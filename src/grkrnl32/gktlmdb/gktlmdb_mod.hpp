@@ -135,6 +135,9 @@ class TGKTlmDB:public TGKModule
  DWORD  __fastcall get_window_module (wchar_t * buf,DWORD bsz);
  void   __fastcall release(LPVOID);
 
+ void   __fastcall reg_reports();
+
+
  bool    __fastcall read_settings  ();
  bool    __fastcall write_settings ();
 // void    __fastcall start_archives();

@@ -10,8 +10,6 @@
        ret = 0;//this->handle_ctrl(op,from);
      else
      {
-     if(op.addr->addr == 0x410A)
-        op.addr->addr = op.addr->addr;
 
      if(sotd_addr(op.addr->addr).addrtype() == OTD_ADDR_TYPE_SB)
         ret = handle_sb(op,lo_obj,hi_obj);
@@ -246,7 +244,7 @@
     own_addr= own_addr.owner_addr();
 
 
-   if(!(diag&OTD_DIAG_MASK))
+   //if(!(diag&OTD_DIAG_MASK))
    {
     bool obj_changes = false;
     while(loN<=hiN)
@@ -312,9 +310,12 @@
     }
 
    }
-   else
+   //else
+   if((diag&OTD_DIAG_MASK) && dest.personal_diag)
    {
     //Данные недостоверны
+    loN = dest.personal_diag->numbers.loN;
+    hiN = dest.personal_diag->numbers.hiN;
     while(loN<=hiN)
     {
      DWORD pd = 0;
@@ -329,7 +330,9 @@
       changes|=OTD_PROTO_PART_DIAG|OTD_PROTO_PART_PERSONAL_DIAG|OTD_PROTO_PART_PERSONAL_CHMASK;
       if(lo_ch == DWORD(-1))
          lo_ch = loN;
-       hi_ch = loN;
+       else
+         lo_ch = std::min(lo_ch,loN);
+       hi_ch = std::max(hi_ch,loN);
      }
      ++loN;
     }

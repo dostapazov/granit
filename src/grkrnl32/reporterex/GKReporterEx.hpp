@@ -22,6 +22,7 @@ class TGKReporterEx: public TGKStdReporter
         vector<string> event_names;     //полное название лога
         BOOL sound;                     //выдавать звул при ошибке
 protected:
+        void  __fastcall close_all_logs();
         LRESULT __fastcall processing(DWORD cmd,LPARAM p1,LPARAM p2);
         DWORD __fastcall start(DWORD reason,LPARAM p2);
         DWORD __fastcall stop (DWORD reason);
@@ -31,6 +32,7 @@ protected:
         void __fastcall write_gkexception(lpexcept_record er,char * text);
         void __fastcall open_files(char * nt);
         DWORD __fastcall get_module_info(LPMODULE_INFO mi);
+KeRTL::TFile *  __fastcall open_event_file(char *event,bool & bad_file);
         UINT __fastcall register_event(char event[MAX_PATH], char event_name[MAX_PATH]=0);
         void FillBuffer(byte *buf, DWORD length, TMess *event, ...);
         bool __fastcall read_settings();

@@ -149,14 +149,21 @@
          handle_record_changes();
          rec.state &=~MDBR_STATE_TUTR;
          record_changed(rec_id,MDBR_FIELD_STATE);
-         if(rec.is_discrete())
-             new_value =  op_code == OTD_TUOP_ON ? 1.0:0.0;
-          rec.otd_val = rec.calc_kvants(new_value);
-          rec.value   = new_value;
-          rec.time = GetTime();
-          calc_record(rec,rec.time);
-          record_changed(rec,MDBR_FIELD_OTDVALUE|MDBR_FIELD_VALUE|MDBR_FIELD_TIME);
-          handle_record_changes();
+         new_value = rec.value;
+         if(rec.is_discrete() && op_code != OTD_TUTROP_CANCEL)
+           {
+             new_value =  (op_code == OTD_TUOP_ON) ? 1.0:0.0;
+           }
+
+          if(fabs(rec.value-new_value) > .0001)
+          {
+           rec.otd_val = rec.calc_kvants(new_value);
+           rec.value   = new_value;
+           rec.time    = GetTime();
+           calc_record(rec,rec.time);
+           record_changed(rec,MDBR_FIELD_OTDVALUE|MDBR_FIELD_VALUE|MDBR_FIELD_TIME);
+           handle_record_changes();
+          }
         }
         else
         {
@@ -164,7 +171,8 @@
          LPMPROTO_HEADER mph = (LPMPROTO_HEADER)buffer;
          ZeroMemory(mph,sizeof(*mph));
          mph->fa = FA_OTD;
-         mph->data_size =  otd_proto_format_tutr((LPBYTE)mph->data,sizeof(buffer)-sizeof(*mph),&rec.addr.addr,rec.addr.param_number,op_code,0,0,0,NULL);
+         WORD cmd_attr = rec.is_inverse_scale() ? OTD_TUTR_CMDATTR_INVERSE : 0;
+         mph->data_size =  otd_proto_format_tutr((LPBYTE)mph->data,sizeof(buffer)-sizeof(*mph),&rec.addr.addr,rec.addr.param_number,op_code,cmd_attr,0,0,0,NULL);
          module->send(mph);
         }
 

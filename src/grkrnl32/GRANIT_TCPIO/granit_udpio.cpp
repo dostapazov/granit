@@ -51,14 +51,19 @@ LRESULT WINAPI module_main(DWORD cmd,LPARAM p1, LPARAM p2)
       remote_port = 4001;
      data_type = GRUDP_DT_GRANIT;
      //L"CЦ-Гранит Ввод/вывод"
-     wchar_t rep_templ[512];
-     get_lang_string(IDS_REPORT_TITLE,rep_templ,sizeof(rep_templ)/sizeof(wchar_t));
-     report_id =   report_reg_event_type(L"GRSC_UDP_IOMODULE",rep_templ);
      error_open_log_write = FALSE;
      socket = NULL;
      is_connected = FALSE;
-
+     TBaseSocket::InitWS(MAKEWORD(2,2));
   }
+
+  void    __fastcall  TGranitUdpIo::reg_reports()
+  {
+     wchar_t rep_templ[512];
+     get_lang_string(IDS_REPORT_TITLE,rep_templ,sizeof(rep_templ)/sizeof(wchar_t));
+     report_id =   report_reg_event_type(L"GRSC_UDP_IOMODULE",rep_templ);
+  }
+
 
   DWORD   __fastcall TGranitUdpIo::get_config_data(DWORD mask,LPVOID buf,DWORD bsz)
   {
@@ -129,12 +134,24 @@ LRESULT WINAPI module_main(DWORD cmd,LPARAM p1, LPARAM p2)
  BOOL    __fastcall TGranitUdpIo::can_start(DWORD reason,LPARAM p2)
  {
    BOOL   ret = TRUE;
+    int proto[2] = {IPPROTO_TCP,0};
+    WSAPROTOCOL_INFO pi[10] ={0};
+    DWORD sz   = sizeof(pi);
+    int cnt = WSAEnumProtocols(proto,pi,&sz);
+    if(cnt <1)
+       {
+
+        SetLastError(WSAEPROTONOSUPPORT	);
+        ret = FALSE;
+       }
+
    return ret;
  }
 
   DWORD    __fastcall TGranitUdpIo::start      (DWORD reason,LPARAM p)
   {
    DWORD ret = GKH_RET_ERROR;
+   reg_reports();
    error_open_log_write = FALSE;
    if(*remote_addr && remote_port)
    {

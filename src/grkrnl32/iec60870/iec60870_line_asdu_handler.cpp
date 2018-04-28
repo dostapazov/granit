@@ -70,7 +70,7 @@
       }
    }
 
-    void __fastcall Tiec60870line::__record_changed(const iec60870_record & rec,bool bad_diag)
+    void __fastcall Tiec60870line::__record_changed(iec60870_record & rec,bool bad_diag)
     {
       TLockHelper l(storage_locker);
       iec60870_records_t::iterator ptr = record_changes.insert(record_changes.end(),rec);
@@ -78,15 +78,44 @@
          ptr->changes_mask |= IEC60870_REC_FL_QUALITY;
          ptr->quality.quality_byte = -1;
       }
+
+      if(rec.changes_mask & IEC60870_REC_FL_VALUE)
+      {
+       // Изменилось значение
+       if(rec.rc_state & OTD_PSTATE_TUTR_ACTIVE)
+         {
+         TCHAR text[1024];
+         int len = snwprintf(text,sizeof(text),_T("CHANGE VALUE Num = %d "),rec.number);
+         if(rec.is_float)
+           len += snwprintf(text+len,sizeof(text)-len,_T("value = %.3f "),rec.fl_value);
+          else
+           len += snwprintf(text+len,sizeof(text)-len,_T("value = %d "),rec.dw_value);
+
+           len += snwprintf(text+len,sizeof(text)-len,_T(" TU_TR operation - "),rec.dw_value);
+
+           if(is_tu_success(rec))
+              {
+               len += snwprintf(text+len,sizeof(text)-len,_T("successed. timer removed"),rec.dw_value);
+               remove_tutr_timer(rec);
+               rec.rc_state &= ~OTD_PSTATE_TUTR_MASK;
+               ptr->rc_state = rec.rc_state;
+               ptr->changes_mask|= IEC60870_REC_FL_RC_STATE;
+               rec.changes_mask |= IEC60870_REC_FL_RC_STATE;
+              }
+          TRACE(text,0);
+         }
+      }
+
       if(rec.changes_mask & IEC60870_REC_FL_RC_STATE)
          {
-           char text[1024];
-           snprintf(text,sizeof(text),"Num = %d  RC_STATE - %04X",rec.number,rec.rc_state);
-           //TRACE(text,0);
+           TCHAR text[1024];
+           snwprintf(text,sizeof(text),_T("RC_STATE changed Num = %d  RC_STATE - %04X"),rec.number,rec.rc_state);
+           TRACE(text,0);
          }
     }
 
-    void __fastcall Tiec60870line::__update_record(const iec60870_record & src_rec)
+
+    void __fastcall Tiec60870line::__update_record(iec60870_record & src_rec)
     {
       iec60870_records_t * records = get_records_for(src_rec.otd_fa);
       if(records)
@@ -96,7 +125,7 @@
            if(records->find(src_rec,rec_ptr))
             {
              iec60870_record & rec = *rec_ptr;
-             rec.changes_mask = rec ^ src_rec;
+             rec.changes_mask = src_rec.changes_mask;
              if((rec.changes_mask&IEC60870_REC_FL_TIMESTAMP) && (rec.timestamp < src_rec.timestamp))
              {
               rec.dw_value = src_rec.dw_value;
@@ -205,16 +234,55 @@
 	   handle_record_changes();
 	}
 
-  bool  __fastcall Tiec60870line::tutr_need_check(iec60870_record & rec )
+  bool  __fastcall Tiec60870line::is_tu_success    (const iec60870_record & rec )
+  {
+    if(rec.otd_fa == OTD_FA_DISCRETE && (rec.rc_state & OTD_PSTATE_TUTR_ACTIVE))
+    {
+        bool current_pos = bool(rec.dw_value);
+        if(rec.options & IEC60870_REC_DYNOPT_INVERSE)
+           current_pos = !current_pos;
+        bool command_pos = (rec.rc_state & OTD_PSTATE_TUTR_ACTIVE) == OTD_PSTATE_TUTR_ON_MORE  ? true : false;
+        return current_pos == command_pos ? true : false;
+    }
+    return true;
+  }
+
+  void  __fastcall Tiec60870line::remove_tutr_timer(const iec60870_record & rec )
+  {
+    TLockHelper l(locker);
+    iec60870_records_t::container_t::iterator ptr = tutr_active.begin();
+    iec60870_records_t::container_t::iterator end = tutr_active.end  ();
+    while(ptr<end)
+    {
+      if( iec60870_record_comparer().is_equal(rec ,*ptr))
+         {
+          tutr_active.erase(ptr);
+          break;
+         }
+      ++ptr;
+    }
+
+  }
+
+  bool  __fastcall Tiec60870line::tutr_need_check(const iec60870_record & rec )
   {
     bool ret = false;
-    switch(rec.rc_command)
+    if(rec.otd_fa == OTD_FA_DISCRETE)
     {
-      case C_SC_NA_1: ret = rec.dw_value != DWORD(rec.rc_ctrl.var&1) ? true : false;
-      break;
+        bool current_pos = bool(rec.dw_value);
+        if(rec.options & IEC60870_REC_DYNOPT_INVERSE)
+           current_pos = !current_pos;
+        bool command_pos = current_pos;
 
-      case C_DC_NA_1: ret = ((rec.dw_value == 0 && rec.rc_ctrl.var  == dp_on)|| (rec.dw_value != 0 && rec.rc_ctrl.var  == dp_off)) ? true : false;
-      break;
+        switch(rec.rc_command)
+        {
+          case C_SC_NA_1: command_pos =  (rec.rc_ctrl.var&1)         ? true : false;
+          break;
+
+          case C_DC_NA_1: command_pos =  (rec.rc_ctrl.var == dp_on)  ? true : false;
+          break;
+        }
+      ret = current_pos != command_pos ? true : false;
     }
     return ret;
   }
@@ -228,7 +296,7 @@
      {
         rec.rc_timer   = rptr->rc_timer;
         rptr->rc_state = rec.rc_state;
-        //TRACE("Перезапуск таймера ТУ rec %d ",rec.number);
+        TRACE(_T("Перезапуск таймера ТУ rec %d "),rec.number);
      }
   }
 
@@ -262,15 +330,15 @@
      {
       // Нашли в активных ТУ
          iec60870_record  rec = *tutr_ptr;
-         char text[1024];
+         TCHAR text[1024];
          int  text_len = 0;
-         text_len += snprintf(text,KERTL_ARRAY_COUNT(text)-text_len,"asdu->cause = %d ** %d[%s-%d.%d][cmd-%d.%d]"
+         text_len += snwprintf(text,KERTL_ARRAY_COUNT(text)-text_len,_T("asdu->cause = %d ** %d[%s-%d.%d][cmd-%d.%d]")
                       ,(DWORD)asdu->cause
-                      ,(DWORD)rec.number,(DWORD)rec.otd_fa ? "ТИТ":"TC",(DWORD)rec.otd_group,(DWORD)rec.otd_number
+                      ,(DWORD)rec.number,(DWORD)rec.otd_fa ? _T("ТИТ"):_T("TC"),(DWORD)rec.otd_group,(DWORD)rec.otd_number
                       ,(DWORD)rec.rc_command,(DWORD)rec.rc_number
                       );
 
-      //TRACE(text,0);
+      TRACE(text,0);
       if(!asdu->pn && asdu->cause == tc_activation_cfrm)
        {
         if(rctrl->se == cs_execute)
@@ -278,7 +346,7 @@
            // Здесь определить  надо ли перезапускать таймер ту для контроля успеха ту
            // таймер перезапускается в случае если отправлена противоположная команда
            // т.е. На вкл - отключить, на откл.- включить
-           //TRACE("ТУ cs_execute rec %d ",rec.number);
+           TRACE(_T("ТУ cs_execute rec %d "),rec.number);
            if(tutr_need_check(*tutr_ptr))
               {
                tutr_start_timer(*tutr_ptr);
@@ -295,13 +363,13 @@
                     rptr->rc_state         = 0;
                    }
                    tutr_active.erase(tutr_ptr);
-                   //TRACE("Удаление таймера ТУ rec %d ",rec.number);
+                   TRACE(_T("Удаление таймера ТУ rec %d "),rec.number);
 
               }
          }
          else
          {
-           //TRACE("ТУ cs_select отправка cs_execute rec %d ",rec.number);
+           TRACE(_T("ТУ cs_select отправка cs_execute rec %d "),rec.number);
            asdu->cause = tc_activation;
            rctrl->se   = cs_execute;
            send(phdr);

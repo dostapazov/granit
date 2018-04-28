@@ -78,8 +78,13 @@ DWORD   __fastcall Tcpc152controller::get_mem_used()
    dev_cfg.dw_size    = sizeof(dev_cfg);
    lock_param    = GKHB_AUTO_LOCK_OFF;
    alloc_gkhandle();
-   rep_id = report_reg_event_type(L"CPC152DEV",L"CPC152 Контроллер");
+   reg_reports();
    TBaseSocket::InitWS(MAKEWORD(2,2));
+  }
+
+  void    __fastcall Tcpc152controller::reg_reports()
+  {
+   rep_id = report_reg_event_type(L"CPC152DEV",L"CPC152 Контроллер");
   }
 
 
@@ -404,7 +409,8 @@ BOOL    __fastcall Tcpc152controller::can_start(DWORD reason,LPARAM p2)
 
   DWORD   __fastcall Tcpc152controller::start    (DWORD reason,LPARAM p2)
   {
-    this->do_recv_puname();
+    reg_reports();
+    do_recv_puname();
     return TModemBase::start(reason,p2);
   }
   DWORD   __fastcall Tcpc152controller::stop     (DWORD reason)
@@ -696,4 +702,27 @@ BOOL    __fastcall Tcpc152controller::can_start(DWORD reason,LPARAM p2)
    return ret;
 
   }
+
+ LRESULT    __fastcall Tcpc152controller::send        (LPMPROTO_HEADER mph,DWORD sz)
+ {
+  if(mph && mph->fa == FA_OTD && mph->data_size>=(sizeof(otd_addr)+sizeof(WORD)))
+  {
+    sotd_addr sa(*(LPDWORD)mph->data);
+    /*Проверка номера ПУ или для всех ПУ*/
+    if(sa.pu == OTD_ADDR_MAXVALUE || sa.pu == this->get_pu_number())
+    {
+      if(OTD_ADDR_ISQUERY(&sa))
+      {
+       DWORD parts;
+       otd_proto_get_verpart((LPBYTE)mph->data,mph->data_size,NULL,&parts);
+       if(parts&OTD_PROTO_PART_NAME)
+          do_recv_puname();
+      }
+    }
+  }
+
+  TModemBase::send(mph,sz);
+  return GKH_RET_SUCCESS;
+ }
+
 

@@ -1,15 +1,16 @@
 inherited GroupFrame: TGroupFrame
+  Height = 348
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
     Width = 443
-    Height = 293
+    Height = 348
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 277
+    ExplicitHeight = 293
     DesignSize = (
       443
-      293)
+      348)
     object Label1: TLabel
       Left = 240
       Top = 12
@@ -42,14 +43,14 @@ inherited GroupFrame: TGroupFrame
       Left = 3
       Top = 114
       Width = 438
-      Height = 234
+      Height = 229
       Anchors = [akLeft, akTop, akRight, akBottom]
       Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1058#1059'/'#1058#1056
       TabOrder = 5
       Visible = False
       DesignSize = (
         438
-        234)
+        229)
       object AddTuEntry: TSpeedButton
         Left = 140
         Top = 16
@@ -261,7 +262,7 @@ inherited GroupFrame: TGroupFrame
         Left = 1
         Top = 38
         Width = 134
-        Height = 189
+        Height = 184
         Anchors = [akLeft, akTop, akBottom]
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -285,6 +286,7 @@ inherited GroupFrame: TGroupFrame
         TabOrder = 11
         ViewStyle = vsReport
         OnSelectItem = TuTrListSelectItem
+        ExplicitHeight = 189
       end
       object TuCmd: TComboBox
         Left = 316

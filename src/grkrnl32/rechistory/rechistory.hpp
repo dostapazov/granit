@@ -66,6 +66,8 @@ class TRecHistory:public TGKModule//,public TGKThread
  #define  MAINTANCE_START_KEY  1
 
 
+ void    __fastcall reg_reports();
+
  WORD    __fastcall get_type       () {return MT_MEDIUMDB_HISTORY;}
  DWORD   __fastcall get_mem_used   ();
  DWORD   __fastcall get_config_data(DWORD mask,LPVOID buf,DWORD bsz);

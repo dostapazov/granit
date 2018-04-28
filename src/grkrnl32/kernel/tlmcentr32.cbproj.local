@@ -6,14 +6,14 @@
     <Transaction>1899.12.30 00:00:00.000.687,=D:\USER\GRANIT\SRC\KE_WIN\Grkrwnd.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.832,D:\USER\GRANIT\SRC\KE_WIN\gkdlgs.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.036,D:\USER\GRANIT\LIB\GKHANDLE.LIB=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.571,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.148,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.571,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.118,=D:\ERADS\lib\win32\release\usebormm.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.043,D:\USER\GRANIT\LIB\Ke_rtls.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.107,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.618,D:\USER\GRANIT\SRC\GrKrnl32\KERNEL\tlmcentr32.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\KERNEL\grkrnl32.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.245,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.618,D:\USER\GRANIT\SRC\GrKrnl32\KERNEL\grkrnl32.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\KERNEL\tlmcentr32.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.099,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.245,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.189,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="-1" SortType="0">

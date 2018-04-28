@@ -9,7 +9,6 @@
 #include <otd_storage.hpp>
 #include <kestrm.hpp>
 #include <iec60870_modem.h>
-#include <otd_storage.hpp>
 #include <kestrm.hpp>
 #include <wsockdef.h>
 #include <vector>
@@ -129,8 +128,8 @@ class Tiec60870line:public modem_line,protected TGKThread
            void __fastcall handle_asdu       (lpiec60870_proto_header_t phdr);
            template <typename obj_t>
            void  __fastcall handle_objects(lpiec60870_asdu_header asdu);
-           void  __fastcall __update_record (const iec60870_record & rec);
-           void  __fastcall __record_changed(const iec60870_record & rec,bool bad_diag = false);
+           void  __fastcall __update_record ( iec60870_record & rec);
+           void  __fastcall __record_changed( iec60870_record & rec,bool bad_diag = false);
            void  __fastcall __notify_record_changes      (DWORD line_num
                                                           ,iec60870_records_t::container_t::iterator cbeg
                                                           ,iec60870_records_t::container_t::iterator cend);
@@ -140,8 +139,11 @@ class Tiec60870line:public modem_line,protected TGKThread
 
            void  __fastcall handle_remote_control(lpiec60870_proto_header_t phdr);
            bool  __fastcall tutr_find_record(BYTE command,DWORD obj_num,iec60870_records_t::iterator & ptr );
-           void  __fastcall tutr_start_timer (iec60870_record & rec );
-           bool  __fastcall tutr_need_check  (iec60870_record & rec );
+           void  __fastcall tutr_start_timer (      iec60870_record & rec );
+           bool  __fastcall tutr_need_check  (const iec60870_record & rec );
+           bool  __fastcall is_tu_success    (const iec60870_record & rec );
+           void  __fastcall remove_tutr_timer(const iec60870_record & rec );
+
 
 
 
@@ -209,6 +211,7 @@ class Tiec60870line:public modem_line,protected TGKThread
            DWORD    __fastcall enum_asdu_records     (lpiec60870_record rec);
            DWORD    __fastcall get_asdu_record       (lpiec60870_record rec);
            LRESULT  __fastcall otd_create_group      (LPIEC60870_LINE_GROUP_PARAM lgc);
+           LRESULT  __fastcall otd_delete_group      (BYTE otd_fa,BYTE otd_group);
            LRESULT  __fastcall record_bind           (lpiec60870_record rec);
            LRESULT  __fastcall record_bind_rccmd     (lpiec60870_record rec);
            DWORD    __fastcall get_group_count       (DWORD otd_fa,DWORD otd_group);
@@ -229,6 +232,7 @@ class Tiec60870modem : public TModemBase
  IEC60870_MOD_CONFIG  mod_config;
  DWORD                pu_diag;
 
+         void     __fastcall reg_reports();
  virtual void     __fastcall free_line          (modem_line * line);
  virtual DWORD    __fastcall get_modem_flags    (){return  MPF_DATA_SOURCE;}
  virtual int      __fastcall convert_rx_data    (LPWORD fa,LPBYTE in,int in_len,LPBYTE out,DWORD out_sz) ;
@@ -260,7 +264,7 @@ class Tiec60870modem : public TModemBase
          LRESULT __fastcall _line_del(DWORD line_num);
  Tiec60870line * __fastcall get_iec60870_line(DWORD line_num);
          DWORD   __fastcall get_mem_used();
-
+         LRESULT __fastcall send        (LPMPROTO_HEADER mph,DWORD sz);
 
  public:
  Tiec60870modem();

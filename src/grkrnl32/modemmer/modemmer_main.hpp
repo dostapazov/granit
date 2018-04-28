@@ -355,6 +355,7 @@ class TModemmer:public TGKModulesSet
  DWORD   __fastcall on_exception     (lpexcept_record er);
  LRESULT __fastcall handle_fa(LPMPROTO_HEADER mph,GKHANDLE h_from);
  LRESULT __fastcall ctrl_time_sync(LPMPROTO_HEADER mph);
+ void    __fastcall reg_reports();
  virtual   DWORD   __fastcall check_license(){return MOD_LICENSE_REGISTERED; }
 
  public:

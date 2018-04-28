@@ -133,7 +133,7 @@ void __fastcall TRecHistory::replace_str(char ** dst,const char * src)
    memset(&config,0,sizeof(config));
    config.dw_size = sizeof(config);
    alloc_gkhandle(RECHISTORY_MOD_NAME);
-   rep_id = report_reg_event_type(L"Запись истории");
+   reg_reports();
 //   wr_trans       = NULL;
 //   rd_trans       = NULL;
 //   wr_query_recs  = NULL;
@@ -146,6 +146,11 @@ void __fastcall TRecHistory::replace_str(char ** dst,const char * src)
  TRecHistory::~TRecHistory()
  {
  }
+
+  void   __fastcall TRecHistory::reg_reports()
+  {
+   rep_id = report_reg_event_type(L"WR-HISTORY",L"Запись истории");
+  }
 
  DWORD   __fastcall TRecHistory::get_config_data(DWORD mask,LPVOID buf,DWORD bsz)
  {
@@ -468,6 +473,7 @@ bool __fastcall TRecHistory::open_data_base(TIBDatabase & ibdb,REC_HIST_CONFIG &
  DWORD   __fastcall TRecHistory::start(DWORD reason,LPARAM p2)
  {
     DWORD ret = GKH_RET_ERROR;
+    reg_reports();
     modemmer.open(MODEMMER_HANDLE_NAME_W);
     int_line = modemmer.call(MDMCM_REG_INTERNAL_MLINE,LPARAM(_handle),-1);
     pkt_num = 0;

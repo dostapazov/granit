@@ -10,8 +10,6 @@ using namespace KeRTL;
 
  TGkIPModem::TGkIPModem()
  {
-    report_id = this->report_reg_event_type("GKIP_MODEM","TCP/IP модем");
-    //arch_rep_id = report_reg_event_type(L"ALARM_ARCH",L"OTD TCP/IP Аварийные Архивы " );
     ZeroMemory(&settings,sizeof(settings));
     ZeroMemory(used_lines,sizeof(used_lines));
     settings.dw_size = sizeof(settings);
@@ -19,8 +17,16 @@ using namespace KeRTL;
     lock_param    = GKHB_AUTO_LOCK_OFF;
     ZeroMemory(server_sockets,sizeof(server_sockets));
     server_socket_event = NULL;
+    reg_reports();
     TBaseSocket::InitWS(MAKEWORD(2,2));
  }
+
+  void    __fastcall TGkIPModem::reg_reports()
+  {
+    report_id = this->report_reg_event_type("GKIP_MODEM","TCP/IP модем");
+    //arch_rep_id = report_reg_event_type(L"ALARM_ARCH",L"OTD TCP/IP Аварийные Архивы " );
+  }
+
 
  void        __fastcall TGkIPModem::delete_sockets()
  {
@@ -481,6 +487,7 @@ DWORD   __fastcall TGkIPModem::start(DWORD reason,LPARAM p2)
 {
   DWORD ret = GKH_RET_ERROR;
   bool as_client = false;
+  reg_reports();
   lock();
   if(settings.flags&IPM_FLAG_ASCLIENT)
     as_client = true;

@@ -342,8 +342,7 @@ TTreeNode * __fastcall TDBLowForm::add_sb (DWORD addr)
      sb = DbTree->Items->AddChild(cp,UnicodeString(str));
      sb->Data = (LPVOID)sa.addr;
      cp->CustomSort(node_comparer,0,false);
-
-
+     update_node_text(sb);
     }
     return sb;
    }
@@ -365,20 +364,23 @@ TTreeNode * __fastcall TDBLowForm::add_tree_item(otd_proto & op)
   case OTD_ADDR_TYPE_CP  : node = add_cp(op.addr->addr);break;
   case OTD_ADDR_TYPE_SB  : node = add_sb(op.addr->addr);break;
  }
+
  if(node && op.name)
  {
   wchar_t name[MAX_PATH];
   get_tlmmodule_rctext(op.addr,type,name,KERTL_ARRAY_COUNT(name));
+  str = name;
   name[otd_text_getwstr(op.name,name,MAX_PATH)]=0;
   str+=' ';
   str+=name;
   node->Text = str;
  }
+
  if(op.diag)
    set_node_image(node,*op.diag);
    else
    update_node_image(node);
- }  
+ }
  return node;
 }
 
@@ -708,6 +710,17 @@ void        __fastcall TDBLowForm::update_node_image(TTreeNode * node)
  DebugBreak();
 }
 
+TListItem  * __fastcall TDBLowForm::create_param_item(DWORD number)
+{
+   UnicodeString str;
+   TListItem  * item = ListView1->Items->Add();
+   item->Data     = (LPVOID)number;
+   item->Caption  =  number;
+   item->SubItems->Add(str);
+   item->SubItems->Add(str);
+   item->SubItems->Add(str);
+   return item;
+}
 
 void __fastcall TDBLowForm::setup_view(sotd_proto & sop)
 {
@@ -729,16 +742,10 @@ void __fastcall TDBLowForm::setup_view(sotd_proto & sop)
    lo = KeRTL::MIN(lo,(DWORD) sop.op.personal_chmask->numbers.loN);
    hi = KeRTL::MAX(hi,(DWORD) sop.op.personal_chmask->numbers.hiN);
   }
-  UnicodeString str;
+
   while(lo<=hi)
   {
-   TListItem  * item = ListView1->Items->Add();
-   item->Data     = (LPVOID)lo;
-   item->Caption  =  lo;
-   item->SubItems->Add(str);
-   item->SubItems->Add(str);
-   item->SubItems->Add(str);
-   lo++;
+   this->create_param_item(lo++);
   }
 }
 
@@ -753,15 +760,16 @@ union param
  double d_param;
 };
 
-void        __fastcall TDBLowForm::setup_param(lpotd_data data)
+bool    __fastcall TDBLowForm::setup_param(lpotd_data data)
 {
   if(data)
   {
     DWORD lo = data->numbers.loN;
     DWORD hi = data->numbers.hiN;
-    TListItem * item = this->ListView1->FindData(0,(LPVOID)lo,true,false);
-    while(item && lo<=hi)
+    while(lo<=hi)
     {
+     TListItem * item = this->ListView1->FindData(0,(LPVOID)lo,true,false);
+     if(!item) item = this->create_param_item(lo);
      param  p ; p.qw_param = 0;
      otd_get_value(data,lo,&p,sizeof(p));
      UnicodeString str;
@@ -776,11 +784,11 @@ void        __fastcall TDBLowForm::setup_param(lpotd_data data)
       break;
       case OTD_ANALOG_DWORD     : str.printf(L"%lu",(DWORD)p.sh_param);
       break;
-      case OTD_ANALOG_LONG      : str.printf(L"%lu",(DWORD)p.sh_param);
+      case OTD_ANALOG_LONG      : str.printf(L"%ld",(DWORD)p.sh_param);
       break;
-      case OTD_ANALOG_QWORD     : str.printf(L"%Ld",(QWORD)p.sh_param);
+      case OTD_ANALOG_QWORD     : str.printf(L"%Lu",(QWORD)p.sh_param);
       break;
-      case OTD_ANALOG_LONGLONG  : str.printf(L"%Lu",(QWORD)p.sh_param);
+      case OTD_ANALOG_LONGLONG  : str.printf(L"%Ld",(QWORD)p.sh_param);
       break;
       case OTD_SIGNED_FLOAT     :
       case OTD_FLOAT            : str.printf(L"%02f",(float)p.f_param);
@@ -789,18 +797,18 @@ void        __fastcall TDBLowForm::setup_param(lpotd_data data)
       case OTD_DOUBLE           : str.printf(L"%02f",(float)p.d_param);
       break;
       default :
-      //str.printf("%02X",(DWORD)type);
+         str.printf(L"?? type %02X",(DWORD)type);
       break;
 
      }
       item->SubItems->Strings[0] = str;
 
-     if(item->Selected)
-        calc_value();
-     item = ListView1->Items->Item[item->Index+1];
+     if(item->Selected)    calc_value();
      lo++;
     }
+   return lo<hi ? false : true;
   }
+  return true;
 }
 
 void        __fastcall TDBLowForm::setup_pd   (lpotd_data data)
@@ -943,16 +951,16 @@ void        __fastcall TDBLowForm::update_view(DWORD addr,DWORD parts,DWORD low,
    sotd_addr sa((DWORD)DbTree->Selected->Data);
    if(sa.addr!=addr)
      parts = OTD_PROTO_PART_DIAG|OTD_PROTO_PART_PERSONAL_DIAG;
-   BYTE buffer[2048];
+   BYTE buffer[8192];
    sotd_proto  sop;
    if(get_dbentry_data(sa.addr,parts,low,hi,buffer,sizeof(buffer),sop)>0)
    {
-     if(!upd)
+     if(!upd  )
        setup_view(sop);
+       setup_param(sop.op.data);
        setup_diag(sop.op.diag);
        if(!upd || sop.op.time_stamp)
           setup_timestamp((LPFILETIME)sop.op.time_stamp);
-       setup_param(sop.op.data);
        DWORD addr_type = sa.addrtype();
        GroupBox2->Visible = addr_type == OTD_ADDR_TYPE_SB ? true:false;
        switch(addr_type)

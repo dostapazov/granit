@@ -14,7 +14,7 @@
   //send_data(CmEnableTU,otu,sizeof(*otu));
    BYTE  buf[1024];
    sotd_addr sa(pu_number,otu->kp,otu->tlm_type,otu->sb);
-   DWORD len = otd_proto_format_tutr(buf,sizeof(buf),&sa,otu->obj-1, OTD_TUTR_CMDSELECT , NULL,0,0,NULL);
+   DWORD len = otd_proto_format_tutr(buf,sizeof(buf),&sa,otu->obj-1, OTD_TUTR_CMDSELECT ,0, NULL,0,0,NULL);
    queue_rxdata(FA_OTD,buf,len,false,0);
   }
  }
@@ -35,7 +35,7 @@
   //send_data(CmResetTU,otu,sizeof(*otu));
   sotd_addr sa(pu_number,otu->kp,otu->tlm_type,otu->sb);
   BYTE  buf[1024];
-  DWORD len = otd_proto_format_tutr(buf,sizeof(buf),&sa,otu->obj-1, OTD_TUTR_CMDDESELECT , NULL,0,0,NULL);
+  DWORD len = otd_proto_format_tutr(buf,sizeof(buf),&sa,otu->obj-1, OTD_TUTR_CMDDESELECT ,0, NULL,0,0,NULL);
   queue_rxdata(FA_OTD,buf,len,false,0);
  }
 
@@ -56,7 +56,7 @@ void     __fastcall grnet_line::tu_on_more (lp_gratony_kadr kadr)
   sotd_addr sa(pu_number,otu->kp,otu->tlm_type,otu->sb);
   unlock();
   char  buf[1024];    // otd.h
-  DWORD len = otd_proto_format_tutr((LPBYTE)buf,sizeof(buf),&sa,otu->obj-1,OTD_TUOP_ON, NULL,0,0,NULL);
+  DWORD len = otd_proto_format_tutr((LPBYTE)buf,sizeof(buf),&sa,otu->obj-1,OTD_TUOP_ON,0, NULL,0,0,NULL);
   queue_rxdata(FA_OTD,(LPBYTE)buf,len,false,0);
   }
  }
@@ -73,7 +73,7 @@ void     __fastcall grnet_line::tu_on_more (lp_gratony_kadr kadr)
   sotd_addr sa(pu_number,otu->kp,otu->tlm_type,otu->sb);
   unlock();
   char  buf[1024];    // otd.h
-  DWORD len = otd_proto_format_tutr((LPBYTE)buf,sizeof(buf),&sa,otu->obj-1,OTD_TUOP_OFF, NULL,0,0,NULL);
+  DWORD len = otd_proto_format_tutr((LPBYTE)buf,sizeof(buf),&sa,otu->obj-1,OTD_TUOP_OFF,0, NULL,0,0,NULL);
   this->queue_rxdata(FA_OTD,(LPBYTE)buf,len,false,0);
   }
  }
@@ -89,7 +89,7 @@ void     __fastcall grnet_line::tu_on_more (lp_gratony_kadr kadr)
   sotd_addr sa(pu_number,otu->kp,otu->tlm_type,otu->sb);
   unlock();
   char  buf[1024];    // otd.h
-  DWORD len = otd_proto_format_tutr((LPBYTE)buf,sizeof(buf),&sa,otu->obj-1,OTD_TUTROP_CANCEL , NULL,0,0,NULL);
+  DWORD len = otd_proto_format_tutr((LPBYTE)buf,sizeof(buf),&sa,otu->obj-1,OTD_TUTROP_CANCEL,0 , NULL,0,0,NULL);
   this->queue_rxdata(FA_OTD,(LPBYTE)buf,len,false,0);
   }
  }

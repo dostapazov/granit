@@ -71,8 +71,13 @@ LRESULT WINAPI module_main(DWORD cmd,LPARAM p1,LPARAM p2)
 
    lock_param    = GKHB_AUTO_LOCK_OFF;
    alloc_gkhandle();
-   rep_id = report_reg_event_type(L"GKOPC_CLIENT",L"OPC-CLIENT Modem");
+   reg_reports();
 
+  }
+
+  void        __fastcall    TGkOpcModem::reg_reports()
+  {
+   rep_id = report_reg_event_type(L"GKOPC_CLIENT",L"OPC-CLIENT Modem");
   }
 
   void        __fastcall    TGkOpcModem::free_line     (modem_line * line)
@@ -151,6 +156,7 @@ int         __fastcall    TGkOpcModem::convert_rx_data(LPWORD fa,LPBYTE in,int i
 
   DWORD       __fastcall    TGkOpcModem::start(DWORD reason,LPARAM start_param)
   {
+   reg_reports();
    DWORD ret = TModemBase::start(reason,start_param);
    if(ret == GKH_RET_SUCCESS)
        do_recv_pu_data(true);
@@ -569,6 +575,25 @@ int         __fastcall    TGkOpcModem::convert_rx_data(LPWORD fa,LPBYTE in,int i
       }
     return ret;
   }
+
+LRESULT __fastcall TGkOpcModem::send       (LPMPROTO_HEADER mph,DWORD sz)
+{
+  if(mph && mph->fa == FA_OTD && mph->data_size>=(sizeof(otd_addr)+sizeof(WORD)))
+  {
+    sotd_addr sa(*(LPDWORD)mph->data);
+    /*Проверка номера ПУ или для всех ПУ*/
+    if(sa.pu == OTD_ADDR_MAXVALUE || sa.pu == get_pu_number())
+    {
+      if(OTD_ADDR_ISQUERY(&sa))
+      {
+       this->do_recv_pu_data(true);
+      }
+    }
+  }
+
+  return TModemBase::send(mph,sz);
+}
+
 
 
 

@@ -272,7 +272,8 @@ class Tcpc152controller : public TModemBase
   LRESULT __fastcall enum_analogs    (DWORD ln,LPCPC152_ANALOG_STATS  sts);
   LRESULT __fastcall get_line_dft_enabled(DWORD ln ,LPCPC152_DFT_ENABLED data);
   LRESULT __fastcall set_line_dft_enabled(DWORD ln ,LPCPC152_DFT_ENABLED data);
-
+  void    __fastcall reg_reports();
+  LRESULT __fastcall send        (LPMPROTO_HEADER mph,DWORD sz);
   public:
   Tcpc152controller ();
   void        __fastcall do_report(DWORD evt_type,wchar_t * rep_text,LPVOID data,DWORD dt_sz);

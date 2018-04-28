@@ -162,9 +162,10 @@ int         __fastcall get_dbentry_data(DWORD addr,DWORD parts,DWORD low,DWORD h
 void        __fastcall show_param_panel(TTreeNode * node,bool show);
 void        __fastcall update_view(DWORD addr,DWORD parts,DWORD low,DWORD hi,bool upd);
 void        __fastcall setup_view(sotd_proto & sop);
+TListItem * __fastcall create_param_item(DWORD number);
 void        __fastcall setup_timestamp(LPFILETIME ftm);
 void        __fastcall setup_diag     (LPDWORD diag   );
-void        __fastcall setup_param    (lpotd_data data);
+bool        __fastcall setup_param    (lpotd_data data);
 void        __fastcall setup_pd       (lpotd_data data);
 void        __fastcall setup_cp_pd    (lpotd_data data);
 void        __fastcall setup_pu_pd    (lpotd_data data);

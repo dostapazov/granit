@@ -109,12 +109,32 @@ struct otd_block
 #define OTD_BLOCK_GET_SIZE(bl) (sizeof(*(bl))+(bl)->block_size-1)
 
 
+#define OTD_TUOP_NOP        0
+#define OTD_TUOP_ON         0x0001             //Включить
+#define OTD_TUOP_OFF        0x0002             //Отключить
+#define OTD_TROP_MORE       OTD_TUOP_ON      //Больше
+#define OTD_TROP_LESS       OTD_TUOP_OFF     //Меньше
+#define OTD_TROP_SET        0x0004             //Установка параметра
+#define OTD_TUTROP_CANCEL   0x0008             //Отмена
+#define OTD_TUTROP_UNDO     OTD_TUTROP_CANCEL
+
+#define OTD_TUTR_OPMASK      0x000F
+
+#define OTD_TUTR_CMDSELECT   0x0010  //Выбор объекта для ТУ
+#define OTD_TUTR_CMDENABLE   0x0020  //Разрешение ТУ/ТР
+#define OTD_TUTR_CMDDESELECT 0x0040  //Отмена выбора объекта
+#define OTD_TUTR_CMDMASK     0x00F0
+
+#define OTD_TUTR_CMDATTR_INVERSE 0x0001
+
+
 struct otd_tutr
 {
- DWORD               command;
+ WORD                command;
+ WORD                command_attr;
  QWORD               param;
  #ifdef __cplusplus
-   otd_tutr():command(0),param(0){}
+   otd_tutr():command(0),command_attr(0),param(0){}
  #endif
 };
 

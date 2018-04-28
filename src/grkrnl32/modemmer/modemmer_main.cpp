@@ -81,11 +81,16 @@ LRESULT WINAPI module_main(DWORD cmd ,LPARAM p1,LPARAM p2)
  TModemmer::TModemmer():TGKModulesSet(),dfa(this)
  {
   lock_param = GKHB_AUTO_LOCK_OFF;
-  wchar_t evt_page_title[MAX_PATH];
-  LoadStringW(this->lang_dll_instance,IDS_MODULE_NAME,evt_page_title,sizeof(evt_page_title)/sizeof(wchar_t));
-  event_type = report_reg_event_type(MODEMMER_HANDLE_NAME_W,evt_page_title);
   alloc_gkhandle(MODEMMER_HANDLE_NAME_W);
   modems.set_modemmer(this);
+  reg_reports();
+ }
+
+ void    __fastcall TModemmer::reg_reports()
+ {
+   wchar_t evt_page_title[MAX_PATH];
+   LoadStringW(this->lang_dll_instance,IDS_MODULE_NAME,evt_page_title,sizeof(evt_page_title)/sizeof(wchar_t));
+   event_type = report_reg_event_type(MODEMMER_HANDLE_NAME_W,evt_page_title);
  }
 
 TModemmer::~TModemmer()
@@ -137,6 +142,7 @@ DWORD  __fastcall TModemmer::get_window_module (wchar_t * buf,DWORD bsz)
  DWORD    __fastcall TModemmer::start(DWORD reason,LPARAM p2)
  {
    DWORD ret;
+   reg_reports();
     if(reason!= MODULE_START_RECONFIGURE)
       {
        dfa.start();

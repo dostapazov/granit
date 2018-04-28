@@ -83,7 +83,7 @@
      if((DWORD)-1 != modem_addr)
       {
         BYTE buffer[MAX_PATH];
-        DWORD len = otd_proto_format_tutr(buffer,sizeof(buffer),&entry->addr,entry->object,OTD_TUTR_CMDENABLE,NULL,NULL,0,NULL);
+        DWORD len = otd_proto_format_tutr(buffer,sizeof(buffer),&entry->addr,entry->object,OTD_TUTR_CMDENABLE,0,NULL,NULL,0,NULL);
         queue_rxdata(FA_OTD,buffer,len,true,modem_addr);
       }
      grp->set_personal_diag(entry->object,entry->object,OTD_PSTATE_TUTR_PREPARE,true,true);
@@ -353,8 +353,9 @@
  DWORD error = GRSCERR_TUTROBJECT_NOT_SELECTED;
  BOOL  auto_select = FALSE;
  DWORD idx = tutr_find_entry(addr,obj);
+ DWORD cmd_command = cmd.command&(OTD_TUTR_OPMASK|OTD_TUTR_CMDMASK);
 
- if(!(idx<tu_list.size()) && cmd.command!=OTD_TUTROP_CANCEL)
+ if(!(idx<tu_list.size()) && cmd_command!=OTD_TUTROP_CANCEL)
    {
     //При отправке команды ТУ/ТР Remote Control / Remote Adjust
     //Производится автовыбор
@@ -373,7 +374,7 @@
     error = GRSCERR_TUTROBJECT_LOCKED;
     else
     {
-      if(cmd.command == OTD_TUTROP_CANCEL)
+      if(cmd_command == OTD_TUTROP_CANCEL)
       {
        entry->tu_state&=~GRSC_TUTR_STATE_QUEUED|GRSC_TUTR_STATE_CMDON|GRSC_TUTR_STATE_CMDOFF;
        entry->tu_state|= GRSC_TUTR_STATE_CMDCANCEL;
@@ -387,7 +388,7 @@
         if(!(entry->tu_state&GRSC_TUTR_STATE_ACTIVE_MASK))
         {
          entry->tu_state|= GRSC_TUTR_STATE_QUEUED;
-         entry->tu_state|= ( cmd.command == OTD_TUOP_ON ? GRSC_TUTR_STATE_CMDON:GRSC_TUTR_STATE_CMDOFF);
+         entry->tu_state|= ( cmd_command == OTD_TUOP_ON ? GRSC_TUTR_STATE_CMDON:GRSC_TUTR_STATE_CMDOFF);
          if(tutr_is_ready(entry->tu_module))
             error = tutr_activate(idx);
             else

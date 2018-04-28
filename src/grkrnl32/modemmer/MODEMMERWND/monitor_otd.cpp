@@ -45,6 +45,8 @@ int __fastcall get_tu_str(otd_tutr & tutr,TCHAR * out)
    break;
  }
 
+ if(ret && tutr.command_attr & OTD_TUTR_CMDATTR_INVERSE)
+     ret += swprintf(out+ret,_T("(»Õ¬≈–—Õ¿ﬂ ÿ ¿À¿)"));
  return ret;
 }
 

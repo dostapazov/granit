@@ -17,12 +17,17 @@ char sig[] = "[GranitN-SC v01.00]****";
    settings.dw_size=sizeof(settings);
    settings.modem_number = -1;
    settings.pu_number    = -1;
+   this->reg_reports() ;
+ };
+
+  void    __fastcall TSCGranitModem::reg_reports()
+  {
    wchar_t rep_title[MAX_PATH];
    get_lang_string(IDS_SC_EVENT_LOGTITLE,rep_title,sizeof(rep_title)/sizeof(wchar_t));
    grsc_event_rep = report_reg_event_type(L"GRSC_EVENTS",rep_title);
    get_lang_string(IDS_SC_TUTR_LOGTITLE,rep_title,sizeof(rep_title)/sizeof(wchar_t));
    grsc_tutr_rep  = report_reg_event_type(L"GRSC_TUTR",rep_title);
- };
+  }
 
 
  int     __fastcall TSCGranitModem::convert_rx_data(LPWORD /*fa*/,LPBYTE in,int in_len,LPBYTE out,DWORD out_sz)
@@ -326,6 +331,7 @@ char sig[] = "[GranitN-SC v01.00]****";
  DWORD   __fastcall TSCGranitModem::start(DWORD reason,LPARAM start_param)
  {
   DWORD  ret = GKH_RET_ERROR;
+  reg_reports();
          if(io_iface.load(_handle,settings.io_module,NULL))
          {
           char buf[sizeof(MODULE_CONFIG_DATA)+256*sizeof(wchar_t)];

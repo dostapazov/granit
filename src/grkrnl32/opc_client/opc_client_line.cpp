@@ -213,7 +213,7 @@ DWORD __fastcall opc_line::__create_otd_group(DWORD otd_fa,DWORD otd_group,DWORD
    {
       op->addr->cp = line_config.line_num;
       if((line_config.options & GKOPC_LINE_OPT_REPLACE_TIME) && op->time_stamp) *op->time_stamp = GetTime(false);
-      if(op->diag) *op->diag |= this->global_otd_diag;
+      if(op->diag) *op->diag |= global_otd_diag;
 
       if(op->kpk)
          otd_proto_protect(op,op->proto_size,OTD_DEF_POLINOM);
@@ -386,7 +386,7 @@ void __fastcall   opc_line::__handle_otd_query( lpotd_addr paddr)
 
 wchar_t * get_rc_command_text(DWORD command)
 {
- switch(command)
+ switch(command&(OTD_TUTR_CMDMASK|OTD_TUTR_OPMASK))
  {
    case  OTD_TUOP_ON :      return L"ВКЛ-Больше";
    case  OTD_TUOP_OFF:      return L"ОТКЛ-Меньше";
@@ -551,7 +551,7 @@ void  __fastcall  opc_line::otd_set_line_diag(DWORD diag)
    {
     global_otd_diag = diag;
     sotd_addr addr(-1);
-       __handle_otd_query(&addr);
+    this->icp.PostStatus(ICP_KEY_HANDLE_REQUEST,-1,NULL);
     if(!diag)   refresh(-1);
    }
 }
@@ -641,6 +641,7 @@ int  __fastcall opc_line::Execute()
         case ICP_KEY_HANDLE_CHANGES : handle_changes();break;
         case ICP_KEY_REMOTE_CONTROL : rc_start      ();break;
         case ICP_KEY_REFRESH        : do_refresh    ();break;
+        case ICP_KEY_HANDLE_REQUEST : __handle_otd_query((lpotd_addr)&bt); break;
         default : break;
       }
     }
@@ -684,11 +685,11 @@ void  __fastcall  opc_line::handle_changes()
     sotd_addr addr(beg->first);
     if(storage.find(addr,ptr))
       {
-//        if(ptr->op.diag)
-//           {
-//            *ptr->op.diag  = OTD_DIAG_GOOD;
-//            //*ptr->op.diag |= otd_scan_personal_diag(&ptr->op);
-//           }
+        if(ptr->op.diag)
+           {
+            *ptr->op.diag  &= OTD_DIAG_MASK;
+            *ptr->op.diag |= otd_scan_personal_diag(&ptr->op);
+           }
 
         __queue_rxdata(&ptr->op);
         if(ptr->op.personal_chmask)
@@ -904,17 +905,20 @@ void __fastcall opc_line::__opc_create_group()
 
 DWORD __fastcall quality2otddiag(WORD quality)
 {
-  DWORD diag = 0;
+  DWORD diag = OTD_DIAG_NODATA;
   if(quality)
   {
-
-   if( quality&OPC_QUALITY_NOT_CONNECTED )
-         diag |= OTD_DIAG_CPCONNECT;
-   if( quality&OPC_QUALITY_DEVICE_FAILURE )
+   if((quality& OPC_QUALITY_MASK) == OPC_QUALITY_GOOD)
+    diag = 0;
+   else
+   {
+    if( quality&OPC_QUALITY_NOT_CONNECTED )
+          diag |= OTD_DIAG_CPCONNECT;
+    if( quality&OPC_QUALITY_DEVICE_FAILURE )
          diag |= OTD_DIAG_MODRESPOND;
+   }
   }
-  else
-  diag = OTD_DIAG_NODATA;
+  ;
   return diag;
 }
 
@@ -1130,7 +1134,7 @@ DWORD __fastcall opc_line::refresh(DWORD sbl)
 {
   if(is_connected() /*&& !opc_data_callback*/)
      {
-      icp.PostStatus(ICP_KEY_REFRESH,0,0);
+      icp.PostStatus(ICP_KEY_REFRESH,sbl,0);
      }
   return GKH_RET_SUCCESS;
 }

@@ -113,6 +113,11 @@
  #define IEC60870_REC_FL_QUALITY     0x0400
  #define IEC60870_REC_FL_TIMESTAMP   0x0800
  #define IEC60870_REC_FL_ASDU_TYPE   0x1000
+ #define IEC60870_REC_FL_OPTIONS     0x2000
+
+
+ #define IEC60870_REC_DYNOPT_MASK    0x00FF
+ #define IEC60870_REC_DYNOPT_INVERSE 0x0001
 
 
  //Записывается в поле res iec60870_quality
@@ -132,12 +137,13 @@
   DWORD          rc_state;
   BYTE           is_float;
   union{
-		DWORD  dw_value;
-		float  fl_value;
-	   };
-  iec60870_quality       quality;
-  unsigned __int64       timestamp;
-  DWORD                  asdu_type;
+        DWORD      dw_value;
+	float      fl_value;
+       };
+  iec60870_quality quality;
+  unsigned __int64 timestamp;
+  DWORD            asdu_type;
+  DWORD            options;
   #ifdef __cplusplus
   static  bool __fastcall is_value_float (int  )      {return false;}
   static  bool __fastcall is_value_float (long )      {return false;}
@@ -148,10 +154,10 @@
   static  bool __fastcall is_value_float (float)      {return true ;}
   static  bool __fastcall is_value_float (double)     {return true ;}
   static  bool __fastcall is_value_float (long double){return true ;}
-  void __fastcall construct_empty()
+  void __fastcall construct_empty(WORD _ch_mask = -1)
   {
      dw_size  = sizeof(*this);
-	 changes_mask    = -1;
+	 changes_mask    = _ch_mask;
 	 number          = -1;
 	 otd_fa          = otd_group = -1;
 	 otd_number      = -1;
@@ -165,6 +171,7 @@
 	 rc_timer        = 0;
 	 rc_ctrl.control = 0;
          asdu_type       = 0;
+         options         = 0;
   }
 
    iec60870_record(DWORD _otd_fa,DWORD _number)
@@ -193,7 +200,7 @@
    iec60870_record (const obj_t * obj,const DWORD _number,DWORD _asdu_type)
    {
 
-     construct_empty();
+     construct_empty(0);
      asdu_type  = _asdu_type;
      number     = _number;
      this->otd_fa = obj->get_otd_fa();
@@ -204,6 +211,7 @@
         dw_value = obj->get_value();
       quality.quality_byte    = obj->get_quality()->quality_byte;
       timestamp = get_timestamp(obj->get_time());
+      changes_mask = IEC60870_REC_FL_VALUE|IEC60870_REC_FL_QUALITY|IEC60870_REC_FL_TIMESTAMP;
    }
 
    iec60870_record & operator = (const iec60870_record  & src)
@@ -226,6 +234,7 @@
      quality     = src.quality;
      timestamp   = src.timestamp;
      asdu_type   = src.asdu_type;
+     options     = src.options;
      return *this;
    }
 
@@ -312,7 +321,12 @@ inline   __int64  __fastcall get_timestamp(lpiec60870_cp56time2a tm)
  #ifdef __cplusplus
   struct iec60870_record_comparer
   {
-    int __fastcall compare(const iec60870_record & r1 , const iec60870_record & r2 )
+    bool __fastcall is_equal(const iec60870_record & r1 , const iec60870_record & r2 )
+    {
+     return (r1.otd_fa == r2.otd_fa && r1.number == r2.number) ? true : false;
+    }
+
+    int  __fastcall compare (const iec60870_record & r1 , const iec60870_record & r2 )
     {
         if(r1.otd_fa == r2.otd_fa)
            {

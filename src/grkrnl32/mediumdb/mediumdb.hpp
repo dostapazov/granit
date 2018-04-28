@@ -329,6 +329,7 @@ class TMediumDB:public TGKModule,protected TGKThread
  DWORD                 report_scripts;
  TArchiveThread        archvie_thread;
 
+ void    __fastcall reg_reports();
 
  WORD    __fastcall get_type(){return  MT_MEDIUMDB ;}
  DWORD   __fastcall get_config_data(DWORD mask,LPVOID buf,DWORD bsz);

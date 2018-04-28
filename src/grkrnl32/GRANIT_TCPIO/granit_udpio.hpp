@@ -118,6 +118,8 @@ class TGranitUdpIo:public TGKIOBase,public TGKThread
 
 
   void    __fastcall  tx_watchdog();
+  void    __fastcall  reg_reports();
+
   DWORD   __fastcall  report_error      (wchar_t * text,LPVOID data,DWORD data_sz,DWORD type=REPORT_ERROR_TYPE);
   void    __fastcall  check_packet_num(DWORD new_num);
   DWORD   __fastcall  OnException(DWORD ExceptionCode,LPEXCEPTION_POINTERS);

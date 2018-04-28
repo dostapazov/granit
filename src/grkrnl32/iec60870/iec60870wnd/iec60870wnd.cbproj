@@ -4,7 +4,7 @@
         <ProjectVersion>18.3</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Library</AppType>
@@ -116,7 +116,6 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <LinkPackageStatics>rtl.lib;vcl.lib</LinkPackageStatics>
         <Debugger_DebugSourcePath>D:\USER\GRANIT\INC\GRKRNL32\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
-        <_TCHARMapping>char</_TCHARMapping>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
