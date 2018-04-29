@@ -95,7 +95,8 @@
      bool need_restart = (is_worked() &&
                           (ln_conf.cp_number != line_config.cp_number ||
                            ln_conf.host_port != line_config.host_port ||
-                           _wcsicmp(ln_conf.host_addr,line_config.host_addr)
+                           _wcsicmp(ln_conf.host_addr,line_config.host_addr) ||
+                           ln_conf.obj_addr_size != line_config.obj_addr_size
                           )) ? true:false;
 
     return need_restart ;
@@ -155,6 +156,7 @@
 
    bool  __fastcall Tiec60870line::do_start ()
    {
+      this->obj_addr_size = line_config.obj_addr_size;
       modem_line::do_start();
       return TGKThread::Start(8192);
    }
@@ -1020,10 +1022,6 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
        while(cbeg<cend)
         {
           iec60870_record & rec = *cbeg;
-          if( (rec.rc_state & OTD_PSTATE_TUTR_ACTIVE) && (rec.changes_mask &IEC60870_REC_FL_VALUE) )
-            {
-             rec.rc_state = rec.rc_state;
-            }
           owner->notify(MNF_LINE_RECORD_CHANGED,line_num,&rec,sizeof(rec));
           ++cbeg;
         }

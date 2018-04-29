@@ -96,11 +96,7 @@
            if(is_tu_success(rec))
               {
                len += snwprintf(text+len,sizeof(text)-len,_T("successed. timer removed"),rec.dw_value);
-               remove_tutr_timer(rec);
-               rec.rc_state &= ~OTD_PSTATE_TUTR_MASK;
-               ptr->rc_state = rec.rc_state;
-               ptr->changes_mask|= IEC60870_REC_FL_RC_STATE;
-               rec.changes_mask |= IEC60870_REC_FL_RC_STATE;
+               __tutr_finish(rec,0);
               }
           TRACE(text,0);
          }
@@ -125,7 +121,7 @@
            if(records->find(src_rec,rec_ptr))
             {
              iec60870_record & rec = *rec_ptr;
-             rec.changes_mask = src_rec.changes_mask;
+             rec.changes_mask = rec ^ src_rec;
              if((rec.changes_mask&IEC60870_REC_FL_TIMESTAMP) && (rec.timestamp < src_rec.timestamp))
              {
               rec.dw_value = src_rec.dw_value;
@@ -247,21 +243,24 @@
     return true;
   }
 
-  void  __fastcall Tiec60870line::remove_tutr_timer(const iec60870_record & rec )
+  void  __fastcall Tiec60870line::tutr_remove_timer(const iec60870_record & rec )
   {
+    TRACE(_T("Удаление таймера ТУ rec %d "),rec.number);
     TLockHelper l(locker);
-    iec60870_records_t::container_t::iterator ptr = tutr_active.begin();
-    iec60870_records_t::container_t::iterator end = tutr_active.end  ();
-    while(ptr<end)
-    {
-      if( iec60870_record_comparer().is_equal(rec ,*ptr))
-         {
-          tutr_active.erase(ptr);
-          break;
-         }
-      ++ptr;
-    }
+    iec60870_records_t::container_t::iterator ptr ;
+    if(tutr_find_record(rec.rc_command,rec.rc_number,ptr))
+       tutr_active.erase(ptr);
 
+
+  }
+
+  bool  __fastcall is_on_command(DWORD iec_rc_command,iec60870_rctrl & rc_ctrl)
+  {
+        if(iec_rc_command == C_SC_NA_1)
+          return (rc_ctrl.var&1)   ? true : false;
+        if(iec_rc_command == C_DC_NA_1)
+          return  (rc_ctrl.var == dp_on)  ? true : false;
+      return false;
   }
 
   bool  __fastcall Tiec60870line::tutr_need_check(const iec60870_record & rec )
@@ -278,7 +277,6 @@
         {
           case C_SC_NA_1: command_pos =  (rec.rc_ctrl.var&1)         ? true : false;
           break;
-
           case C_DC_NA_1: command_pos =  (rec.rc_ctrl.var == dp_on)  ? true : false;
           break;
         }
@@ -313,6 +311,22 @@
      return false;
   }
 
+  void  __fastcall Tiec60870line::__tutr_finish    (const iec60870_record & rec,DWORD rc_state)
+  {
+     TRACE(_T("Завершение ТУ rec %d "),rec.number);
+     TLockHelper l(storage_locker);
+     tutr_remove_timer(rec);
+     iec60870_records_t * recs = get_records_for(rec.otd_fa);
+     iec60870_records_t::iterator rptr;
+     if(recs && recs->find(rec,rptr))
+     {
+       rptr->rc_state      = rc_state;
+       rptr->changes_mask  = IEC60870_REC_FL_RC_STATE;
+      __record_changed(*rptr);
+     }
+     handle_record_changes();
+  }
+
   void  __fastcall Tiec60870line::handle_remote_control(lpiec60870_proto_header_t phdr )
   {
     lpiec60870_asdu_header asdu = iec60870_proto_get_asdu_header(phdr);
@@ -332,7 +346,7 @@
          iec60870_record  rec = *tutr_ptr;
          TCHAR text[1024];
          int  text_len = 0;
-         text_len += snwprintf(text,KERTL_ARRAY_COUNT(text)-text_len,_T("asdu->cause = %d ** %d[%s-%d.%d][cmd-%d.%d]")
+         text_len += snwprintf(text,KERTL_ARRAY_COUNT(text)-text_len,_T("asdu->cause = %d ** %d[%s-%d.%d][cmd-%d rc_num %d]")
                       ,(DWORD)asdu->cause
                       ,(DWORD)rec.number,(DWORD)rec.otd_fa ? _T("ТИТ"):_T("TC"),(DWORD)rec.otd_group,(DWORD)rec.otd_number
                       ,(DWORD)rec.rc_command,(DWORD)rec.rc_number
@@ -353,18 +367,7 @@
               }
               else
               {
-                 iec60870_records_t * recs = get_records_for(rec.otd_fa);
-                 iec60870_records_t::iterator rptr;
-                 TLockHelper l(storage_locker);
-                 if(recs && recs->find(rec,rptr))
-                   {
-                    tutr_ptr->changes_mask = IEC60870_REC_FL_RC_STATE;
-                    tutr_ptr->rc_state     = 0;
-                    rptr->rc_state         = 0;
-                   }
-                   tutr_active.erase(tutr_ptr);
-                   TRACE(_T("Удаление таймера ТУ rec %d "),rec.number);
-
+                 __tutr_finish(rec,0);
               }
          }
          else
@@ -375,20 +378,22 @@
            send(phdr);
 
            tutr_ptr->changes_mask = IEC60870_REC_FL_RC_STATE;
-           tutr_ptr->rc_state     = rctrl->var ? OTD_PSTATE_TUTR_ON_MORE : OTD_PSTATE_TUTR_OFF_LESS;
+           tutr_ptr->rc_state     = is_on_command(tutr_ptr->rc_command, *rctrl) ? OTD_PSTATE_TUTR_ON_MORE : OTD_PSTATE_TUTR_OFF_LESS;
            tutr_start_timer(*tutr_ptr);
          }
         }
         else
         {
           //Отрицательное подтверждение
+          __tutr_finish(rec,OTD_PDIAG_TUTR_DESCRIPT);
         }
-      if(tutr_ptr->changes_mask)
-       {
-        tutr_ptr->timestamp     = GetTime(false);
-        tutr_ptr->changes_mask |= IEC60870_REC_FL_TIMESTAMP;
-        record_changes.push_back(*tutr_ptr);
-       }
+
+//      if(tutr_ptr->changes_mask)
+//       {
+//        tutr_ptr->timestamp     = GetTime(false);
+//        tutr_ptr->changes_mask |= IEC60870_REC_FL_TIMESTAMP;
+//        __record_changed(*tutr_ptr);
+//       }
 
      }
   }

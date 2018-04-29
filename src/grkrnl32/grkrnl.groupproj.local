@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.190,C:\Users\Димка\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj=D:\USER\GRANIT\SRC\GrKrnl32\grkrnl.groupproj</Transaction>
-  </Transactions>
-	<Default.Personality>
-		<Projects ActiveProject="D:\USER\GRANIT\src\grkrnl32\iec60870\iec60870.cbproj"/>
-	</Default.Personality>
-</BorlandProject>

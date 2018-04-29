@@ -74,6 +74,7 @@ class Tiec60870line:public modem_line,protected TGKThread
    DWORD W_counter;
    int WT[MAX_WT_TIMERS];
    IEC60870_LINE_CONFIG            line_config;
+   DWORD                           obj_addr_size;
 
    TFASTMutex                      storage_locker;
    otd_storage                     storage;
@@ -142,7 +143,8 @@ class Tiec60870line:public modem_line,protected TGKThread
            void  __fastcall tutr_start_timer (      iec60870_record & rec );
            bool  __fastcall tutr_need_check  (const iec60870_record & rec );
            bool  __fastcall is_tu_success    (const iec60870_record & rec );
-           void  __fastcall remove_tutr_timer(const iec60870_record & rec );
+           void  __fastcall tutr_remove_timer(const iec60870_record & rec );
+           void  __fastcall __tutr_finish    (const iec60870_record & rec,DWORD rc_state);
 
 
 
@@ -205,7 +207,7 @@ class Tiec60870line:public modem_line,protected TGKThread
            int      __fastcall write        (KeRTL::TStream & strm);
            int      __fastcall write_records(KeRTL::TStream & strm,iec60870_records_t & recs);
            void     __fastcall do_report(DWORD evt_type,wchar_t * rep_text,LPVOID data,DWORD dt_sz);
-           DWORD    __fastcall get_addr_size  (){TLockHelper l(locker); return line_config.obj_addr_size;}
+           DWORD    __fastcall get_addr_size  (){ return obj_addr_size;}
            iec60870_records_t * __fastcall get_records_for(DWORD otd_fa);
            DWORD    __fastcall get_asdu_records_count(DWORD otd_fa);
            DWORD    __fastcall enum_asdu_records     (lpiec60870_record rec);
