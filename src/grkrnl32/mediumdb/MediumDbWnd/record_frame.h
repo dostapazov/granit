@@ -79,6 +79,7 @@ __published:	// IDE-managed Components
 	TLabel *Label6;
 	TLabel *Label11;
 	TLabel *Label12;
+	TCheckBox *OptCheckTuSuccess;
         void __fastcall CombineListSelectItem(TObject *Sender,
           TListItem *Item, bool Selected);
         void __fastcall CombineListDragOver(TObject *Sender,

@@ -642,9 +642,14 @@ DWORD  __fastcall TGkAwpModule::get_record_ready_state(const mdb_record &rec,LPD
             if(is_alarm )
                ready_state |= rds_analog_alarm;
           }
-         if(rec.is_tu_error()     ) ready_state |= rds_rc_error;
-         if(is_record_rc_prepare(&rec)) ready_state |= rds_rc_prepare;
-         if(is_record_rc_acitive(&rec)) ready_state |= rds_rc_active;
+
+
+         if(rec.is_tu_error()         ) ready_state |= rds_rc_error;
+
+         if(is_record_rc_prepare(&rec))
+            ready_state |= rds_rc_prepare;
+         if(is_record_rc_acitive(&rec))
+            ready_state |= rds_rc_active;
          if(ch_count) *ch_count = changes_count;
    }
     return ready_state;
@@ -680,7 +685,6 @@ DWORD  __fastcall TGkAwpModule::kadr_scan_ready(kadr_t * kadr,bool update)
      }
 
     if(!kadr->changes) new_ready_state &=~ rds_name_flashing;
-
 
    ch_mask  = kadr->ready_state ^ new_ready_state;
    if(update && ch_mask)
@@ -781,6 +785,8 @@ void __fastcall TGkAwpModule::handle_record_depended(DWORD rec_id,DWORD mask)
           kadr_entryes_table::iterator lo_entry,hi_entry;
           if(kadr->range_entry(rec_id,lo_entry,hi_entry))
              {
+              if(rec.state & MDBR_STATE_TUTR_ACTIVE)
+                 rec.state = rec.state;
               if((mask & MDBR_TUTR_STATE_CHANGED) && kadr->user_data)
                  {
                    while(lo_entry<hi_entry)

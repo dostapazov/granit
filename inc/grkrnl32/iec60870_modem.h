@@ -116,8 +116,10 @@
  #define IEC60870_REC_FL_OPTIONS     0x2000
 
 
- #define IEC60870_REC_DYNOPT_MASK    0x00FF
- #define IEC60870_REC_DYNOPT_INVERSE 0x0001
+ #define IEC60870_REC_DYNOPT_MASK             0x00FF
+ #define IEC60870_REC_DYNOPT_CHECK_RC_SUCCESS 0x0001
+ #define IEC60870_REC_DYNOPT_INVERSE          0x0002
+
 
 
  //Записывается в поле res iec60870_quality

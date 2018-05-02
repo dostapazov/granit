@@ -177,6 +177,7 @@ void  __fastcall TTlmKadrForm::get_record_status_text (mdb_record & rec,UnicodeS
      if(rec.is_discrete())
      {
       str.cat_printf(L"[ %s ]",DWORD(rec.value) ? L" ¬ À":L"Œ“ À");
+      if(rec.is_tu_error()) str.cat_printf(L" Õ“” ");
      }
      else
      str.cat_printf(L"[ %9.3f ]",rec.value);

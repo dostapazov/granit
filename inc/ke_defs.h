@@ -194,14 +194,14 @@ typedef QWORD* PQWORD;
  #endif
 
 #ifdef _DEBUG
-    #define TRACE(x,y) \
+    #define TRACE(templ,...) \
     {\
-     TCHAR dbg_text[2048];\
-     wsprintf(dbg_text,x,y);\
+     TCHAR dbg_text[4096];\
+     wsprintf(dbg_text,templ,__VA_ARGS__);\
      OutputDebugString(dbg_text);\
     }
 #else
-#define TRACE(x,y)
+#define TRACE(...) ;
 #endif
 
 #define KERTL_ARRAY_COUNT(x) (sizeof(x)/sizeof(*x))

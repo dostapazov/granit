@@ -111,10 +111,6 @@ object RecordFrame: TRecordFrame
       TabOrder = 0
       object TabSheet1: TTabSheet
         Caption = #1057#1086#1089#1090#1072#1074' '#1074#1099#1095#1080#1089#1083#1103#1077#1084#1086#1075#1086
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object Panel1: TPanel
           Left = 0
           Top = 0
@@ -305,10 +301,6 @@ object RecordFrame: TRecordFrame
       object FormulaSheet: TTabSheet
         Caption = #1060#1086#1088#1084#1091#1083#1072
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object Formula: TMemo
           Left = 0
           Top = 0
@@ -328,10 +320,6 @@ object RecordFrame: TRecordFrame
       object TabSheet2: TTabSheet
         Caption = #1050#1072#1082' '#1087#1080#1089#1072#1090#1100' '#1089#1082#1088#1080#1087#1090#1099
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object Memo1: TMemo
           Left = 0
           Top = 0
@@ -537,9 +525,9 @@ object RecordFrame: TRecordFrame
       Caption = #1055#1086#1088#1086#1075' %'
     end
     object AlarmBox: TGroupBox
-      Left = 241
+      Left = 335
       Top = 134
-      Width = 195
+      Width = 172
       Height = 36
       TabOrder = 11
       Visible = False
@@ -551,16 +539,16 @@ object RecordFrame: TRecordFrame
         Caption = 'min'
       end
       object Label12: TLabel
-        Left = 96
+        Left = 88
         Top = 16
         Width = 20
         Height = 13
         Caption = 'max'
       end
       object MaxAlarm: TEdit
-        Left = 127
+        Left = 112
         Top = 15
-        Width = 60
+        Width = 52
         Height = 15
         BevelInner = bvNone
         BevelKind = bkFlat
@@ -573,7 +561,7 @@ object RecordFrame: TRecordFrame
       object MinAlarm: TEdit
         Left = 28
         Top = 15
-        Width = 60
+        Width = 52
         Height = 16
         BevelInner = bvNone
         BevelKind = bkFlat
@@ -585,30 +573,30 @@ object RecordFrame: TRecordFrame
       end
     end
     object DangerBox: TGroupBox
-      Left = 4
+      Left = 149
       Top = 134
-      Width = 196
+      Width = 172
       Height = 36
       TabOrder = 13
       Visible = False
       object Label5: TLabel
-        Left = 8
+        Left = 4
         Top = 16
         Width = 16
         Height = 13
         Caption = 'min'
       end
       object Label6: TLabel
-        Left = 99
+        Left = 82
         Top = 16
         Width = 20
         Height = 13
         Caption = 'max'
       end
       object MaxDanger: TEdit
-        Left = 128
+        Left = 111
         Top = 15
-        Width = 60
+        Width = 52
         Height = 16
         BevelInner = bvNone
         BevelKind = bkFlat
@@ -619,9 +607,9 @@ object RecordFrame: TRecordFrame
         OnChange = MaxDangerChange
       end
       object MinDanger: TEdit
-        Left = 29
+        Left = 24
         Top = 15
-        Width = 60
+        Width = 52
         Height = 16
         BevelInner = bvNone
         BevelKind = bkFlat
@@ -654,7 +642,7 @@ object RecordFrame: TRecordFrame
       OnClick = StateWorkOutClick
     end
     object OptAlarm: TCheckBox
-      Left = 247
+      Left = 341
       Top = 129
       Width = 82
       Height = 14
@@ -686,7 +674,7 @@ object RecordFrame: TRecordFrame
       OnChange = PercentChange
     end
     object OptDanger: TCheckBox
-      Left = 9
+      Left = 154
       Top = 129
       Width = 131
       Height = 14
@@ -713,8 +701,8 @@ object RecordFrame: TRecordFrame
       OnClick = StateDiscreteValueClick
     end
     object OptPseudo: TCheckBox
-      Left = 285
-      Top = 109
+      Left = 8
+      Top = 129
       Width = 98
       Height = 13
       Caption = #1055#1089#1077#1074#1076#1086#1086#1073#1098#1077#1082#1090
@@ -723,8 +711,8 @@ object RecordFrame: TRecordFrame
       OnClick = OptPseudoClick
     end
     object OptCaution: TCheckBox
-      Left = 400
-      Top = 109
+      Left = 8
+      Top = 148
       Width = 90
       Height = 13
       Caption = #1055#1083#1072#1082#1072#1090
@@ -757,6 +745,17 @@ object RecordFrame: TRecordFrame
       OnCloseUp = ShortNameCloseUp
       OnDropDown = ShortNameDropDown
       OnSelect = ShortNameSelect
+    end
+    object OptCheckTuSuccess: TCheckBox
+      Left = 267
+      Top = 107
+      Width = 134
+      Height = 17
+      Caption = #1055#1088#1086#1074#1077#1088#1103#1090#1100' '#1091#1089#1087#1077#1093' '#1058#1059
+      Checked = True
+      Enabled = False
+      State = cbChecked
+      TabOrder = 14
     end
   end
   object adjust_timer: TTimer

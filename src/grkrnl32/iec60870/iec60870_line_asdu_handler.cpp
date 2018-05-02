@@ -265,7 +265,9 @@
 
   bool  __fastcall Tiec60870line::tutr_need_check(const iec60870_record & rec )
   {
-    bool ret = false;
+   bool ret = false;
+   if(rec.options & IEC60870_REC_DYNOPT_CHECK_RC_SUCCESS)
+   {
     if(rec.otd_fa == OTD_FA_DISCRETE)
     {
         bool current_pos = bool(rec.dw_value);
@@ -282,7 +284,8 @@
         }
       ret = current_pos != command_pos ? true : false;
     }
-    return ret;
+   }
+   return ret;
   }
 
   void  __fastcall Tiec60870line::tutr_start_timer(iec60870_record & rec )
@@ -330,8 +333,6 @@
   void  __fastcall Tiec60870line::handle_remote_control(lpiec60870_proto_header_t phdr )
   {
     lpiec60870_asdu_header asdu = iec60870_proto_get_asdu_header(phdr);
-//    if(asdu->cause == tc_activation_cfrm && !asdu->pn)
-//       ;
     LPBYTE ptr = (LPBYTE)asdu;
     ptr+=sizeof (*asdu);
     DWORD addr_sz = get_addr_size();
@@ -339,11 +340,10 @@
     ptr+=addr_sz;
     iec60870_rctrl * rctrl = (iec60870_rctrl *)ptr;
     iec60870_records_t::iterator tutr_ptr;
-
     if(tutr_find_record(asdu->asdu_type,obj_num,tutr_ptr ))
      {
       // Нашли в активных ТУ
-         iec60870_record  rec = *tutr_ptr;
+         iec60870_record & rec = *tutr_ptr;
          TCHAR text[1024];
          int  text_len = 0;
          text_len += snwprintf(text,KERTL_ARRAY_COUNT(text)-text_len,_T("asdu->cause = %d ** %d[%s-%d.%d][cmd-%d rc_num %d]")
@@ -353,22 +353,21 @@
                       );
 
       TRACE(text,0);
-      if(!asdu->pn && asdu->cause == tc_activation_cfrm)
-       {
+      if(asdu->pn) { __tutr_finish(rec,OTD_PDIAG_TUTR_DESCRIPT); return;}
+
+      switch(asdu->cause)
+      {
+        case tc_activation_cfrm   :
         if(rctrl->se == cs_execute)
          {
            // Здесь определить  надо ли перезапускать таймер ту для контроля успеха ту
            // таймер перезапускается в случае если отправлена противоположная команда
            // т.е. На вкл - отключить, на откл.- включить
            TRACE(_T("ТУ cs_execute rec %d "),rec.number);
-           if(tutr_need_check(*tutr_ptr))
-              {
+           if( tutr_need_check(*tutr_ptr))
                tutr_start_timer(*tutr_ptr);
-              }
               else
-              {
-                 __tutr_finish(rec,0);
-              }
+               __tutr_finish(rec,0 );
          }
          else
          {
@@ -376,17 +375,19 @@
            asdu->cause = tc_activation;
            rctrl->se   = cs_execute;
            send(phdr);
-
-           tutr_ptr->changes_mask = IEC60870_REC_FL_RC_STATE;
-           tutr_ptr->rc_state     = is_on_command(tutr_ptr->rc_command, *rctrl) ? OTD_PSTATE_TUTR_ON_MORE : OTD_PSTATE_TUTR_OFF_LESS;
+//           tutr_ptr->changes_mask = IEC60870_REC_FL_RC_STATE;
+//           tutr_ptr->rc_state     = is_on_command(tutr_ptr->rc_command, *rctrl) ? OTD_PSTATE_TUTR_ON_MORE : OTD_PSTATE_TUTR_OFF_LESS;
            tutr_start_timer(*tutr_ptr);
          }
-        }
-        else
-        {
-          //Отрицательное подтверждение
-          __tutr_finish(rec,OTD_PDIAG_TUTR_DESCRIPT);
-        }
+        break;
+        case tc_deactivation_cfrm :
+             TRACE(_T("deactivation confirm rec %d "),rec.number);
+             __tutr_finish(rec,0 );
+        break;
+        default:
+             TRACE(_T("Unknown transmit cause  %d "),(unsigned)asdu->cause);
+        break;
+      }
 
 //      if(tutr_ptr->changes_mask)
 //       {

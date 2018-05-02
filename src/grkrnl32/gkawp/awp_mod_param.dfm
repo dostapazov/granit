@@ -694,7 +694,7 @@ object AwpModuleParams: TAwpModuleParams
           Caption = #1055#1077#1088#1080#1086#1076' '#1084#1080#1075#1072#1085#1080#1103
         end
         object Label19: TLabel
-          Left = 466
+          Left = 459
           Top = 15
           Width = 27
           Height = 13
@@ -709,7 +709,7 @@ object AwpModuleParams: TAwpModuleParams
           TabOrder = 0
         end
         object Edit1: TEdit
-          Left = 423
+          Left = 418
           Top = 37
           Width = 31
           Height = 21
@@ -719,9 +719,9 @@ object AwpModuleParams: TAwpModuleParams
           Text = '2'
         end
         object ReadySpacer: TUpDown
-          Left = 454
+          Left = 450
           Top = 37
-          Width = 15
+          Width = 14
           Height = 21
           Associate = Edit1
           Min = 1
@@ -730,10 +730,10 @@ object AwpModuleParams: TAwpModuleParams
           TabOrder = 4
         end
         object ready_eq_size: TCheckBox
-          Left = 503
-          Top = 16
+          Left = 492
+          Top = 9
           Width = 135
-          Height = 34
+          Height = 22
           Caption = #1054#1076#1080#1085#1072#1082#1086#1074#1099#1081' '#1088#1072#1079#1084#1077#1088' '#1075#1086#1090#1086#1074#1085#1086#1089#1090#1080
           TabOrder = 5
           WordWrap = True
@@ -749,7 +749,7 @@ object AwpModuleParams: TAwpModuleParams
           Text = '0'
         end
         object FlashPeriod: TEdit
-          Left = 422
+          Left = 418
           Top = 12
           Width = 32
           Height = 19
@@ -757,6 +757,14 @@ object AwpModuleParams: TAwpModuleParams
           BorderStyle = bsNone
           TabOrder = 1
           Text = '0'
+        end
+        object ready_show_rc_error: TCheckBox
+          Left = 493
+          Top = 40
+          Width = 145
+          Height = 17
+          Caption = #1054#1090#1086#1073#1088#1072#1078#1072#1090#1100' '#1085#1077#1091#1089#1087#1077#1093' '#1058#1059
+          TabOrder = 6
         end
       end
       object GroupBox5: TGroupBox
@@ -816,8 +824,6 @@ object AwpModuleParams: TAwpModuleParams
           TabOrder = 0
           OnButtonClicked = ReadyColorsEditButtonClicked
           OnDrawButton = ReadyColorsEditDrawButton
-          ExplicitLeft = 1
-          ExplicitTop = 26
         end
       end
     end

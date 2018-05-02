@@ -187,8 +187,8 @@ typedef _MDB_RECORD*  LPMDB_RECORD;
   inline bool  __fastcall is_record_workout     (const LPMDB_RECORD rec) {return  (rec->state&MDBR_STATE_WORKOUT   ) ? true : false;}
   inline bool  __fastcall is_record_flashing    (const LPMDB_RECORD rec) {return  (rec->state&MDBR_STATE_FLASH     ) ? true : false;}
   inline bool  __fastcall is_record_rc_state    (const LPMDB_RECORD rec) {return  (rec->state&(MDBR_STATE_TUTR_ACTIVE|MDBR_STATE_TUTR_PREPARE) ) ? true : false;}
-  inline bool  __fastcall is_record_rc_prepare  (const LPMDB_RECORD rec) {return  is_record_rc_state(rec)  && !is_record_flashing(rec) ? true : false;}
-  inline bool  __fastcall is_record_rc_acitive  (const LPMDB_RECORD rec) {return  is_record_rc_state(rec)  &&  is_record_flashing(rec) ? true : false;}
+  inline bool  __fastcall is_record_rc_prepare  (const LPMDB_RECORD rec) {return  (rec->state&MDBR_STATE_TUTR_PREPARE) ? true : false;}
+  inline bool  __fastcall is_record_rc_acitive  (const LPMDB_RECORD rec) {return  (rec->state&MDBR_STATE_TUTR_ACTIVE ) ? true : false;}
   inline bool  __fastcall is_record_normal      (const LPMDB_RECORD rec)
    {
     int rv = int((rec->value) ? 1:0);

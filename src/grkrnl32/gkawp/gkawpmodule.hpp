@@ -49,28 +49,30 @@
 #define REGBIN_READY_FONT         L"ready_font"
 #define REGBIN_READY_STATE_FONT   L"ready_state_font"
 #define REGDW_FLASH_PERIOD        L"flash_period"
+#define REGDW_READY_SHOW_RC_ERROR L"ready_show_rc_error"
 
-#define CFGM_MODEM_SOURCE         0x000001
-#define CFGM_DATA_DIR             0x000002
-#define CFGM_COMTRADE_DIR         0x000004
-#define CFGM_COMTRADE_VIEWER      0x000008
-#define CFGM_HOTKEY_RECEIPT_ALL   0x000010
-#define CFGM_HOTKEY_CLEAR_ALL     0x000020
-#define CFGM_PERIOD_RECALL        0x000040
-#define CFGM_LAYOUT_NAME          0x000080
-#define CFGM_SOUND_ALARM          0x000100
-#define CFGM_SOUND_DANGER         0x000200
-#define CFGM_SOUND_DISPARITY      0x000400
-#define CFGM_SOUND_BACK           0x000800
+#define CFGM_MODEM_SOURCE         0x00000001
+#define CFGM_DATA_DIR             0x00000002
+#define CFGM_COMTRADE_DIR         0x00000004
+#define CFGM_COMTRADE_VIEWER      0x00000008
+#define CFGM_HOTKEY_RECEIPT_ALL   0x00000010
+#define CFGM_HOTKEY_CLEAR_ALL     0x00000020
+#define CFGM_PERIOD_RECALL        0x00000040
+#define CFGM_LAYOUT_NAME          0x00000080
+#define CFGM_SOUND_ALARM          0x00000100
+#define CFGM_SOUND_DANGER         0x00000200
+#define CFGM_SOUND_DISPARITY      0x00000400
+#define CFGM_SOUND_BACK           0x00000800
 
-#define CFGM_READY_MONITOR        0x001000
-#define CFGM_READY_STABLE_TIMER   0x002000
-#define CFGM_READY_SPACE          0x004000
-#define CFGM_READY_EQUAL_SIZE     0x008000
-#define CFGM_READY_COLORS         0x010000
-#define CFGM_READY_FONT           0x020000
-#define CFGM_READY_STATE_FONT     0x040000
-#define CFGM_FLASH_PERIOD         0x080000
+#define CFGM_READY_MONITOR        0x00001000
+#define CFGM_READY_STABLE_TIMER   0x00002000
+#define CFGM_READY_SPACE          0x00004000
+#define CFGM_READY_EQUAL_SIZE     0x00008000
+#define CFGM_READY_COLORS         0x00010000
+#define CFGM_READY_FONT           0x00020000
+#define CFGM_READY_STATE_FONT     0x00040000
+#define CFGM_FLASH_PERIOD         0x00080000
+#define CFGM_READY_SHOW_RC_ERROR  0x00100000
 
 #define KADRS_FILE_NAME       L"kadrs.data"
 #define NAMES_FILE_NAME       L"names.data"
@@ -116,6 +118,7 @@ struct TAWParameters
   LOGFONTW        ready_font;
   LOGFONTW        ready_state_font;
   int             flash_period;
+  bool            ready_show_rc_error;
 };
 
 #pragma pack(pop)
@@ -412,6 +415,7 @@ class TGkAwpModule:public TGKModule
           void   __fastcall show_all_windows(bool show);
           DWORD  __fastcall kadrs_scan_ready   ();
           void   __fastcall kadrs_set_bad_ready();
+          bool   __fastcall ready_show_rc_error();
 
           bool   __fastcall is_source_addr(MODEM_ADDR & from );
 
@@ -483,6 +487,12 @@ inline DWORD  __fastcall TGkAwpModule::get_kadr_recall_period()
 {
    locker l(mut);
    return params.recall_period*1000;
+}
+
+inline bool   __fastcall TGkAwpModule::ready_show_rc_error()
+{
+   locker l(mut);
+   return params.ready_show_rc_error;
 }
 
 inline modem_addr  __fastcall TGkAwpModule::get_modem_source()

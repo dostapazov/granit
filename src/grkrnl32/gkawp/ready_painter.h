@@ -35,7 +35,7 @@ private:
 
   void          __fastcall ready_paint_border(HDC dc,const RECT & r,const bool stable,const bool selected);
   void          __fastcall ready_paint_name  (HDC dc,const RECT & r,const UnicodeString text,const DWORD diag,const bool flash_erase);
-  void          __fastcall ready_paint_state (HDC dc,const RECT & r,const DWORD ready_state ,const bool flash_erase);
+  void          __fastcall ready_paint_state (HDC dc,const RECT & r,const DWORD ready_state ,const bool flash_erase,const bool show_rc_error);
 
   ready_painter_t(){Fon_get_text = NULL; Fon_get_kadr = NULL;}
   public:
@@ -46,7 +46,7 @@ private:
   ready_painter_t  & operator = (const ready_painter_t  & src);
  ~ready_painter_t  (){}
 
-  void          __fastcall     ready_paint    (HDC dc,mdb_kadr_entry & entry,bool erase,bool flash_erase,HBITMAP bk_bmp);
+  void          __fastcall     ready_paint    (HDC dc,mdb_kadr_entry & entry,const bool erase,const bool flash_erase,HBITMAP bk_bmp,const bool show_rc_error);
   MDB_GSIZE     __fastcall     ready_calc_size(HDC dc,mdb_kadr_entry & entry);
   UnicodeString __fastcall     get_ready_text (single_kadr & skadr);
   single_kadr * __fastcall     get_kadr       (DWORD kadr_id){ return (Fon_get_kadr) ? on_get_kadr(kadr_id) : NULL; };

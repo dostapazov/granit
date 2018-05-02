@@ -125,7 +125,9 @@ struct otd_block
 #define OTD_TUTR_CMDDESELECT 0x0040  //Отмена выбора объекта
 #define OTD_TUTR_CMDMASK     0x00F0
 
-#define OTD_TUTR_CMDATTR_INVERSE 0x0001
+#define OTD_TUTR_CMDATTR_CHECK_SUCCESS 0x0001
+#define OTD_TUTR_CMDATTR_INVERSE       0x0002
+
 
 
 struct otd_tutr
