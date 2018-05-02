@@ -112,6 +112,7 @@ __published:	// IDE-managed Components
 	TEdit *FlashPeriod;
 	TLabel *Label19;
 	TLabel *Label20;
+	TCheckBox *ready_show_rc_error;
 	void __fastcall bSelViewerClick(TObject *Sender);
 	void __fastcall bSelDataFolderClick(TObject *Sender);
 	void __fastcall bSelExporFolderClick(TObject *Sender);

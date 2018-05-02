@@ -431,6 +431,7 @@ void __fastcall TAwpModuleParams::ReadyColorsEditButtonClicked(TObject *Sender, 
    snd_alarm->Text             = params.sound_alarm;
    snd_danger->Text            = params.sound_danger;
    FlashPeriod->Text           = params.flash_period;
+   ready_show_rc_error->Checked= params.ready_show_rc_error;
    bRefreshKadrClick(this);
   }
 
@@ -456,6 +457,8 @@ void __fastcall TAwpModuleParams::ReadyColorsEditButtonClicked(TObject *Sender, 
    GetObjectW(ReadyFont->Font->Handle,sizeof(params.ready_font),&params.ready_font);
    GetObjectW(StateFont->Font->Handle,sizeof(params.ready_font),&params.ready_state_font);
    params.flash_period           = std::max(250,abs(_wtoi(FlashPeriod->Text.c_str())));
+   params.ready_show_rc_error    = ready_show_rc_error->Checked;
+
  }
 
 
@@ -501,7 +504,7 @@ void __fastcall TAwpModuleParams::ReadyTestPaint(TObject *Sender)
    entry.position.x = entry.position.y = 2;
    entry.size = rp.ready_calc_size(ReadyTest->Canvas->Handle,entry);
    entry.set_selected(true);
-   rp.ready_paint(ReadyTest->Canvas->Handle,entry,false,Timer1->Tag&1,NULL);
+   rp.ready_paint(ReadyTest->Canvas->Handle,entry,false,Timer1->Tag&1,NULL,true);
 }
 //---------------------------------------------------------------------------
 

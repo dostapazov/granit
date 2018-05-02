@@ -404,7 +404,12 @@ void    __fastcall TGkAwpModule::create_folders  ()
      if(main_form && (mask& (CFGM_READY_SPACE|CFGM_READY_EQUAL_SIZE|CFGM_READY_MONITOR|CFGM_READY_FONT|CFGM_READY_STATE_FONT)))
         main_form->layout_ready();
 
-     if(CFGM_FLASH_PERIOD)  params.flash_period = new_params->flash_period;
+     if(mask & CFGM_FLASH_PERIOD)        params.flash_period         = new_params->flash_period;
+     if(mask & CFGM_READY_SHOW_RC_ERROR)
+        {
+         params.ready_show_rc_error  = new_params->ready_show_rc_error;
+         if(main_form) main_form->Repaint();
+        }
 
     }
    }
@@ -448,6 +453,7 @@ void    __fastcall TGkAwpModule::create_folders  ()
     if(memcmp(&params.ready_font      ,&new_params->ready_font      ,sizeof(new_params->ready_font  )))     {ch_mask |= CFGM_READY_FONT   ;}
     if(memcmp(&params.ready_state_font,&new_params->ready_state_font,sizeof(new_params->ready_state_font))) {ch_mask |= CFGM_READY_STATE_FONT   ;}
     if(params.flash_period           != new_params->flash_period          ) {ch_mask|= CFGM_FLASH_PERIOD;}
+    if(params.ready_show_rc_error    != new_params->ready_show_rc_error   ) {ch_mask|= CFGM_READY_SHOW_RC_ERROR;}
    }
    else
    ret = false;
@@ -520,7 +526,8 @@ bool    __fastcall TGkAwpModule::_read_params   ()
   if(!rd.ReadBytes(REGBIN_READY_FONT      ,&params.ready_font      ,sizeof(params.ready_font      ),true))
       params.ready_font.lfHeight = -20;
    rd.ReadBytes(REGBIN_READY_STATE_FONT,&params.ready_state_font,sizeof(params.ready_state_font),true);
-   params.flash_period = rd.ReadDword(REGDW_FLASH_PERIOD,500,true);
+   params.flash_period        = rd.ReadDword(REGDW_FLASH_PERIOD,500,true);
+   params.ready_show_rc_error = (bool)rd.ReadDword(REGDW_READY_SHOW_RC_ERROR,0,true);
    return true;
  }
   return false;
@@ -705,6 +712,7 @@ bool    __fastcall TGkAwpModule::_write_params ()
     wr.WriteBytes (REGBIN_READY_FONT        ,&params.ready_font,sizeof(params.ready_font) ,true);
     wr.WriteBytes (REGBIN_READY_STATE_FONT  ,&params.ready_state_font,sizeof(params.ready_state_font) ,true);
     wr.WriteDword (REGDW_FLASH_PERIOD       ,params.flash_period ,true);
+    wr.WriteDword (REGDW_READY_SHOW_RC_ERROR,params.ready_show_rc_error ,true);
     return true;
   }
   return false;

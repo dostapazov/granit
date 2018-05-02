@@ -171,7 +171,7 @@
          LPMPROTO_HEADER mph = (LPMPROTO_HEADER)buffer;
          ZeroMemory(mph,sizeof(*mph));
          mph->fa = FA_OTD;
-         WORD cmd_attr = rec.is_inverse_scale() ? OTD_TUTR_CMDATTR_INVERSE : 0;
+         WORD cmd_attr  =  OTD_TUTR_CMDATTR_CHECK_SUCCESS | (rec.is_inverse_scale() ? OTD_TUTR_CMDATTR_INVERSE : 0);
          mph->data_size =  otd_proto_format_tutr((LPBYTE)mph->data,sizeof(buffer)-sizeof(*mph),&rec.addr.addr,rec.addr.param_number,op_code,cmd_attr,0,0,0,NULL);
          module->send(mph);
         }

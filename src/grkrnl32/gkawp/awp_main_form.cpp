@@ -243,9 +243,10 @@ void __fastcall  TAwpMainForm::set_kadr_layout_params(int _ready_space,bool _rea
    HDC  dc;
    bool erase;
    bool flash_erase;
+   bool show_rc_error;
    HBITMAP  bk_bmp;
-   ready_paint_action_t(ready_painter_t * rp,HDC _dc,bool _erase,bool _flash_erase,HBITMAP bmp)
-                       :ready_painter(rp),dc(_dc),erase(_erase),flash_erase(_flash_erase),bk_bmp(bmp)
+   ready_paint_action_t(ready_painter_t * rp,HDC _dc,bool _erase,bool _flash_erase,HBITMAP bmp,bool _show_rc_error)
+                       :ready_painter(rp),dc(_dc),erase(_erase),flash_erase(_flash_erase),bk_bmp(bmp),show_rc_error(_show_rc_error)
    {}
    ready_paint_action_t(const ready_paint_action_t& src)
    {*this = src;}
@@ -254,18 +255,19 @@ void __fastcall  TAwpMainForm::set_kadr_layout_params(int _ready_space,bool _rea
      ready_painter = src.ready_painter;
      dc = src.dc;
      erase = src.erase;flash_erase = src.flash_erase;bk_bmp = src.bk_bmp;
+     show_rc_error = src.show_rc_error;
      return *this;
    }
    void  __fastcall operator()(mdb_kadr_entry & entry)
    {
-    ready_painter->ready_paint(dc,entry,erase,flash_erase,bk_bmp);
+    ready_painter->ready_paint(dc,entry,erase,flash_erase,bk_bmp,show_rc_error);
    }
  };
 
  void         __fastcall TAwpMainForm::paint_entryes    (bool erase,bool flash)
  {
    ready_painter_t * rp = get_ready_painter();
-   for_each(Fkadr->entryes.begin(),Fkadr->entryes.end(),ready_paint_action_t(rp,paint_area->Canvas->Handle,erase,(Fflash_counter&1),this->bkgnd()));
+   for_each(Fkadr->entryes.begin(),Fkadr->entryes.end(),ready_paint_action_t(rp,paint_area->Canvas->Handle,erase,(Fflash_counter&1),this->bkgnd(),module->ready_show_rc_error()));
  }
 
  void      __fastcall  TAwpMainForm::select_changed  (DWORD offset,bool selected)

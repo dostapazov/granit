@@ -76,7 +76,7 @@
 
   wchar_t   ready_painter_t::state_chars[] = L" uanHMCy";
 
-  void __fastcall ready_painter_t::ready_paint_state (HDC dc,const RECT & r,const DWORD ready_state ,const bool flash_erase)
+  void __fastcall ready_painter_t::ready_paint_state (HDC dc,const RECT & r,const DWORD ready_state ,const bool flash_erase,const bool show_rc_error)
   {
     //Отрисовка состояние
     if(!state_char_size.cx)  get_max_char_size(dc,state_font,state_chars,state_char_size);
@@ -136,11 +136,29 @@
       case 7: //Ту-тр
            if((ready_state & rds_rc)  )
              {
-               if(!(ready_state&rds_rc_active ) || !flash_erase )
-                  {
-                    out_ch = this->state_chars [7];
-                    color = (ready_state & rds_rc) == rds_rc_error ? ready_colors->state_danger : ready_colors->tutr;
-                  }
+               if(ready_state & (rds_rc_active|rds_rc_prepare))
+               {
+                 if( (ready_state & rds_rc_active) && flash_erase)
+                    color = color;
+                 if(!flash_erase || (ready_state & rds_rc_prepare))
+                 {
+                  out_ch = this->state_chars [7];
+                  color =  ready_colors->tutr;
+                 }
+               }
+               else
+               {
+                 if(show_rc_error)
+                 {
+                  out_ch = this->state_chars [7];
+                  color =  ready_colors->state_danger;
+                 }
+               }
+//               if(!(ready_state&rds_rc_active ) || !flash_erase )
+//                  {
+//                    out_ch = this->state_chars [7];
+//                    color = (ready_state & rds_rc) == rds_rc_error ? ready_colors->state_danger : ready_colors->tutr;
+//                  }
              }
       break;
       }
@@ -154,7 +172,7 @@
     }
   }
 
-  void __fastcall  ready_painter_t::ready_paint    (HDC dc,mdb_kadr_entry & entry,bool erase,bool flash_erase,HBITMAP bk_bmp)
+  void __fastcall  ready_painter_t::ready_paint    (HDC dc,mdb_kadr_entry & entry,bool erase,bool flash_erase,HBITMAP bk_bmp,bool show_rc_error)
   {
     single_kadr * skadr = this->get_kadr(entry.rec_id);
     RECT r;entry.get_rect(r);
@@ -162,7 +180,7 @@
     {
       ready_paint_border(dc,r,skadr->is_stable(),entry.is_selected());
       ready_paint_name  (dc,r,get_ready_text(*skadr),skadr->kadr.kadr_diag,(skadr->ready_state&rds_name_flashing)&&flash_erase);
-      ready_paint_state (dc,r,skadr->ready_state,flash_erase);
+      ready_paint_state (dc,r,skadr->ready_state,flash_erase,show_rc_error);
     }
     else
     do_erase(r,bk_bmp);

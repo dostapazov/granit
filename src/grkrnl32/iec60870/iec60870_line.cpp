@@ -611,11 +611,18 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
                     {
                     if(ref_rec.rc_command !=(BYTE)-1 && ref_rec.rc_number != (DWORD)-1 )
                       {
-                            ref_rec.rc_state  = OTD_PSTATE_TUTR_PREPARE;
+                            ref_rec.rc_state  = tutr.command == OTD_TUOP_ON ? OTD_PSTATE_TUTR_ON_MORE : OTD_PSTATE_TUTR_OFF_LESS;
+
                             if(tutr.command_attr&OTD_TUTR_CMDATTR_INVERSE)
                                ref_rec.options|= IEC60870_REC_DYNOPT_INVERSE;
                                 else
                                ref_rec.options&=~IEC60870_REC_DYNOPT_INVERSE;
+
+                            if(tutr.command_attr&OTD_TUTR_CMDATTR_CHECK_SUCCESS)
+                               ref_rec.options|= IEC60870_REC_DYNOPT_CHECK_RC_SUCCESS;
+                                else
+                               ref_rec.options&=~IEC60870_REC_DYNOPT_CHECK_RC_SUCCESS;
+
 
                             BYTE buf[256];
                             iec60870_command_from_otd(ref_rec,tutr);
@@ -624,6 +631,8 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
                             phdr = iec60870_proto_control(buf,sizeof(buf),line_config.dev_addr,line_config.common_addr
                                                                                        ,ref_rec.rc_command,ref_rec.rc_number,line_config.obj_addr_size,ref_rec.rc_ctrl);
                             send(phdr);
+                            if(!ref_rec.rc_timer)
+                                ref_rec.rc_timer = 1000;
                             tutr_active.push_back(ref_rec);
                       }
                       else
@@ -1022,6 +1031,8 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
        while(cbeg<cend)
         {
           iec60870_record & rec = *cbeg;
+          if(rec.number == 6)
+             TRACE(_T("changed rec %d mask %X rc_state %d"),rec.number,rec.changes_mask,rec.rc_state);
           owner->notify(MNF_LINE_RECORD_CHANGED,line_num,&rec,sizeof(rec));
           ++cbeg;
         }
