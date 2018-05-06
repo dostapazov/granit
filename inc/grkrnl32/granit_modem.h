@@ -273,11 +273,15 @@ typedef struct _SC_DYNAMIC_GRP
 #define SCCM_ENUM_TUENTRY   MCMD(MT_MODEM,1210)
 //p1 = LPGRSC_TU_ENTRY,p2 = tu_index
 
-#define GRSC_TUFL_NOCHECK   0x80000000  // Не проверять успешность ТУ
-#define GRSC_TUFL_TSINVERSE 0x40000000  /* Признак инверсной ТС */
-#define GRSC_TUFL_RAviaRC   0x20000000  /* ТР через ТУ */
+#define GRSC_TUFL_NOCHECK            0x80000000  // Не проверять успешность ТУ
+#define GRSC_TUFL_TSINVERSE          0x40000000  /* Признак инверсной ТС */
+#define GRSC_TUFL_RAviaRC            0x20000000  /* ТР через ТУ */
 
-#define GRSC_TUFL_MASK      0xFFFF0000
+#define GRSC_TUFL_DYN_CHECK          0x00080000
+#define GRSC_TUFL_DYN_INVERSE        0x00040000
+
+
+#define GRSC_TUFL_MASK               0xFFFF0000
 
 #define GRSC_TUTR_STATE_SELECTED     0x00000001 //Объект ТУ/ТР выбран
 #define GRSC_TUTR_STATE_ACTIVE       0x00000002 //Команда ТУ/ТР отправлена и активен таймер удержания контактов

@@ -835,11 +835,12 @@ DWORD   __fastcall gr_group::set_personal_diag(DWORD lo_obj,DWORD hi_obj,DWORD p
 
 void    __fastcall gr_group::reset_tu_error(DWORD lo,DWORD hi)
 {
- static int _dbg = 0;
  if(grp_data && grp_data->personal_diag)
   {
-   _dbg++;
-   set_personal_diag(lo,hi,OTD_PDIAG_TUTR_FAIL,(_dbg&1)? true:false,true);
+//    static int _dbg = 0;
+//   _dbg++;
+//   set_personal_diag(lo,hi,OTD_PDIAG_TUTR_FAIL,(_dbg&1)? true:false,true);
+   set_personal_diag(lo,hi,OTD_PDIAG_TUTR_FAIL,false,true);
   }
 }
 

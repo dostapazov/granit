@@ -413,10 +413,11 @@ int opc_line::lua_trace      (lua_State *L)
      string_from_wstr(str,item.rc_tag.c_str());
      lua.global_set((const char*)LUA_RC_TAG,(char*)str.c_str());
 
-     lua.global_set(LUA_RC_OBJECT ,(lua_Integer)item.rc_object  );
-     lua.global_set(LUA_RC_COMMAND,(lua_Integer)item.rc_current.command);
-     lua.global_set(LUA_RC_VALUE  ,(lua_Number)item.rc_current .param  );
-
+     lua.global_set(LUA_RC_OBJECT     ,(lua_Integer)item.rc_object  );
+     lua.global_set(LUA_RC_COMMAND    ,(lua_Integer)item.rc_current.command);
+     lua.global_set(LUA_RC_VALUE      ,(lua_Number)item.rc_current .param  );
+     lua.global_set(LUA_OPC_ITEM_VALUE_INVERSE,(lua_Integer)((item.rc_current.command_attr & OTD_TUTR_CMDATTR_INVERSE       ) ? true : false));
+     lua.global_set(LUA_RC_CHECK_SUCCESS      ,(lua_Integer)((item.rc_current.command_attr & OTD_TUTR_CMDATTR_CHECK_SUCCESS ) ? true : false));
 
      int ret = lua.do_string(item.rc_script.c_str());
      //TRACE(L"End LUA script ret = %d",ret);

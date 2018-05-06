@@ -48,11 +48,13 @@ typedef std::vector<OPCHANDLE> opc_handles_t;
 
 #define LUA_OPC_ITEM_VALUE               "item_value"
 #define LUA_OPC_ITEM_QUALITY             "item_quality"
+#define LUA_OPC_ITEM_VALUE_INVERSE       "item_inverse"
 
 #define LUA_RC_TAG                       "rc_tag"
 #define LUA_RC_OBJECT                    "rc_object"
 #define LUA_RC_COMMAND                   "rc_command"
 #define LUA_RC_VALUE                     "rc_value"
+#define LUA_RC_CHECK_SUCCESS             "rc_check_success"
 
 
 #define LUA_FUNC_OPC_ITEM_GET_VALUE      "get_value"

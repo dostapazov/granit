@@ -293,6 +293,7 @@ DWORD  __fastcall main_dblow::handle_ctrl (otd_proto & op,modem_addr & from,LPDW
      //DWORD   tutr_log_len =
      module->get_modem_line_text(from,tutr_log_text,sizeof(tutr_log_text)/sizeof(wchar_t));
      proto_pointer ptr = find( *op.addr );
+
      if(!(ptr>=this->end()) && ptr->op.data)
      {
        mph->fa      = FA_OTD;

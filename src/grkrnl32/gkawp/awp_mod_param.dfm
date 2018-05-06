@@ -31,7 +31,7 @@ object AwpModuleParams: TAwpModuleParams
     Top = 0
     Width = 655
     Height = 379
-    ActivePage = ReadySheet
+    ActivePage = TabSheet1
     Align = alTop
     Anchors = [akLeft, akTop, akRight, akBottom]
     DoubleBuffered = True
@@ -159,70 +159,74 @@ object AwpModuleParams: TAwpModuleParams
     object TabSheet2: TTabSheet
       Caption = #1056#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1077' '#1092#1072#1081#1083#1086#1074' '#1080' '#1076#1086#1087#1086#1083#1085#1080#1090#1077#1083#1100#1085#1099#1077' '#1085#1072#1089#1090#1088#1086#1081#1082#1080
       ImageIndex = 1
+      ExplicitLeft = 8
       object Label1: TLabel
         Left = 7
-        Top = 0
+        Top = 3
         Width = 145
         Height = 13
         Caption = #1055#1072#1087#1082#1072' '#1076#1083#1103' '#1093#1088#1072#1085#1077#1085#1080#1103' '#1092#1072#1081#1083#1086#1074
       end
       object bSelDataFolder: TSpeedButton
-        Left = 578
-        Top = 15
+        Left = 621
+        Top = 2
         Width = 23
-        Height = 22
+        Height = 20
         Caption = '...'
+        Flat = True
         OnClick = bSelDataFolderClick
       end
       object Label2: TLabel
         Left = 5
-        Top = 39
+        Top = 29
         Width = 194
         Height = 13
         Caption = #1055#1072#1087#1082#1072' '#1076#1083#1103' '#1093#1088#1072#1085#1077#1085#1080#1103' '#1092#1072#1081#1083#1086#1074' '#1101#1082#1089#1087#1086#1088#1090#1072
       end
       object bSelExporFolder: TSpeedButton
-        Left = 576
-        Top = 54
+        Left = 622
+        Top = 27
         Width = 23
-        Height = 22
+        Height = 19
         Caption = '...'
+        Flat = True
         OnClick = bSelExporFolderClick
       end
       object Label3: TLabel
         Left = 6
-        Top = 78
+        Top = 49
         Width = 159
         Height = 13
         Caption = #1055#1088#1086#1075#1088#1072#1084#1084#1072' '#1087#1088#1086#1089#1084#1086#1090#1088#1072' '#1101#1082#1089#1087#1086#1088#1090#1072
       end
       object bSelViewer: TSpeedButton
-        Left = 577
-        Top = 93
+        Left = 620
+        Top = 65
         Width = 24
-        Height = 22
+        Height = 19
         Caption = '...'
+        Flat = True
         OnClick = bSelViewerClick
       end
       object Label8: TLabel
-        Left = 353
-        Top = 145
+        Left = -3
+        Top = 257
         Width = 155
         Height = 13
         Caption = #1055#1077#1088#1080#1086#1076#1080#1095#1077#1089#1082#1080#1081' '#1074#1099#1079#1086#1074' '#1076#1072#1085#1085#1099#1093
       end
       object Label12: TLabel
-        Left = 568
-        Top = 145
+        Left = 212
+        Top = 257
         Width = 21
         Height = 13
         Caption = #1089#1077#1082'.'
       end
       object DataFolder: TEdit
-        Left = 7
-        Top = 16
-        Width = 565
-        Height = 21
+        Left = 205
+        Top = 3
+        Width = 414
+        Height = 19
         BevelInner = bvNone
         BevelKind = bkFlat
         BorderStyle = bsNone
@@ -230,10 +234,10 @@ object AwpModuleParams: TAwpModuleParams
         Text = 'wp_data'
       end
       object ExportFolder: TEdit
-        Left = 6
-        Top = 55
-        Width = 564
-        Height = 21
+        Left = 205
+        Top = 26
+        Width = 414
+        Height = 19
         BevelInner = bvNone
         BevelKind = bkFlat
         BorderStyle = bsNone
@@ -242,17 +246,17 @@ object AwpModuleParams: TAwpModuleParams
       end
       object ExportViewer: TEdit
         Left = 5
-        Top = 94
-        Width = 565
-        Height = 21
+        Top = 65
+        Width = 612
+        Height = 19
         BevelInner = bvNone
         BevelKind = bkFlat
         BorderStyle = bsNone
         TabOrder = 2
       end
       object GroupBox1: TGroupBox
-        Left = 616
-        Top = 3
+        Left = 305
+        Top = 256
         Width = 321
         Height = 55
         Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1074#1088#1077#1084#1077#1085#1080' '#1074#1099#1073#1086#1088#1082#1080' '#1072#1074#1088#1080#1081#1085#1099#1093' '#1076#1072#1085#1085#1099#1093
@@ -291,8 +295,8 @@ object AwpModuleParams: TAwpModuleParams
         end
       end
       object OrderPeriod: TEdit
-        Left = 514
-        Top = 142
+        Left = 158
+        Top = 254
         Width = 48
         Height = 21
         BevelKind = bkFlat
@@ -302,28 +306,28 @@ object AwpModuleParams: TAwpModuleParams
       end
       object GroupBox2: TGroupBox
         Left = 3
-        Top = 121
-        Width = 337
-        Height = 51
+        Top = 90
+        Width = 325
+        Height = 42
         Caption = #1043#1086#1088#1103#1095#1080#1077' '#1082#1083#1072#1074#1096#1080
         TabOrder = 4
         object Label6: TLabel
           Left = 8
-          Top = 24
+          Top = 15
           Width = 87
           Height = 13
           Caption = #1050#1074#1080#1090#1080#1088#1086#1074#1072#1090#1100' '#1074#1089#1105
         end
         object Label7: TLabel
-          Left = 185
-          Top = 24
+          Left = 181
+          Top = 16
           Width = 51
           Height = 13
           Caption = #1057#1085#1103#1090#1100' '#1074#1089#1105
         end
         object HotKeyReceiptAll: THotKey
           Left = 101
-          Top = 22
+          Top = 14
           Width = 75
           Height = 19
           HotKey = 0
@@ -331,29 +335,137 @@ object AwpModuleParams: TAwpModuleParams
           TabOrder = 0
         end
         object HotKeyClearAll: THotKey
-          Left = 255
-          Top = 22
-          Width = 75
+          Left = 241
+          Top = 14
+          Width = 79
           Height = 19
           HotKey = 0
           Modifiers = []
           TabOrder = 1
         end
       end
-    end
-    object TabSheet3: TTabSheet
-      Caption = #1056#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1077' && '#1079#1074#1091#1082#1080
-      ImageIndex = 2
-      object GroupBox3: TGroupBox
+      object GroupBox4: TGroupBox
         Left = 0
-        Top = 3
-        Width = 465
-        Height = 57
-        Caption = #1056#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1077' '#1082#1072#1076#1088#1086#1074
-        TabOrder = 0
-        object bReadLayout: TSpeedButton
-          Left = 418
+        Top = 134
+        Width = 644
+        Height = 116
+        Caption = #1047#1074#1091#1082
+        TabOrder = 6
+        object Label9: TLabel
+          Left = 8
           Top = 16
+          Width = 138
+          Height = 13
+          Caption = #1055#1077#1088#1077#1093#1086#1076' '#1074' '#1085#1077#1089#1086#1086#1090#1074#1077#1090#1089#1090#1074#1080#1077
+        end
+        object Label10: TLabel
+          Left = 6
+          Top = 40
+          Width = 123
+          Height = 13
+          Caption = #1042#1086#1079#1074#1088#1072#1090' '#1074' '#1089#1086#1086#1090#1074#1077#1090#1089#1090#1074#1080#1077
+        end
+        object bSelDisparitySnd: TSpeedButton
+          Left = 615
+          Top = 13
+          Width = 23
+          Height = 22
+          Caption = '...'
+          Flat = True
+          OnClick = bSelDisparitySndClick
+        end
+        object bSelBackSnd: TSpeedButton
+          Left = 615
+          Top = 39
+          Width = 23
+          Height = 22
+          Caption = '...'
+          Flat = True
+          OnClick = bSelDisparitySndClick
+        end
+        object Label17: TLabel
+          Left = 6
+          Top = 64
+          Width = 37
+          Height = 13
+          Caption = #1040#1074#1072#1088#1080#1103
+        end
+        object bSelAlarmSnd: TSpeedButton
+          Left = 615
+          Top = 64
+          Width = 23
+          Height = 22
+          Caption = '...'
+          Flat = True
+          OnClick = bSelDisparitySndClick
+        end
+        object Label18: TLabel
+          Left = 6
+          Top = 94
+          Width = 54
+          Height = 13
+          Caption = #1054#1087#1072#1089#1085#1086#1089#1090#1100
+        end
+        object bSelDangerSnd: TSpeedButton
+          Left = 615
+          Top = 91
+          Width = 23
+          Height = 22
+          Caption = '...'
+          Flat = True
+          OnClick = bSelDisparitySndClick
+        end
+        object snd_disparity: TEdit
+          Left = 152
+          Top = 13
+          Width = 460
+          Height = 21
+          BevelInner = bvNone
+          BevelKind = bkFlat
+          BorderStyle = bsNone
+          TabOrder = 0
+        end
+        object snd_back: TEdit
+          Left = 152
+          Top = 38
+          Width = 460
+          Height = 21
+          BevelInner = bvNone
+          BevelKind = bkFlat
+          BorderStyle = bsNone
+          TabOrder = 1
+        end
+        object snd_alarm: TEdit
+          Left = 152
+          Top = 64
+          Width = 460
+          Height = 21
+          BevelInner = bvNone
+          BevelKind = bkFlat
+          BorderStyle = bsNone
+          TabOrder = 2
+        end
+        object snd_danger: TEdit
+          Left = 152
+          Top = 91
+          Width = 460
+          Height = 21
+          BevelInner = bvNone
+          BevelKind = bkFlat
+          BorderStyle = bsNone
+          TabOrder = 3
+        end
+      end
+      object GroupBox3: TGroupBox
+        Left = 330
+        Top = 90
+        Width = 314
+        Height = 42
+        Caption = #1056#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1077' '#1082#1072#1076#1088#1086#1074
+        TabOrder = 7
+        object bReadLayout: TSpeedButton
+          Left = 278
+          Top = 11
           Width = 28
           Height = 28
           Hint = #1055#1088#1086#1095#1080#1090#1072#1090#1100' '#1088#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1077
@@ -418,8 +530,8 @@ object AwpModuleParams: TAwpModuleParams
           OnClick = bReadLayoutClick
         end
         object bSaveCurrentLayout: TSpeedButton
-          Left = 385
-          Top = 16
+          Left = 244
+          Top = 11
           Width = 28
           Height = 28
           Hint = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1090#1077#1082#1091#1097#1077#1077' '#1088#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1077
@@ -484,122 +596,14 @@ object AwpModuleParams: TAwpModuleParams
           OnClick = bSaveCurrentLayoutClick
         end
         object Layouts: TComboBox
-          Left = 8
-          Top = 20
-          Width = 371
+          Left = 5
+          Top = 14
+          Width = 233
           Height = 21
           BevelKind = bkFlat
           TabOrder = 0
           OnChange = LayoutsChange
           OnDropDown = LayoutsDropDown
-        end
-      end
-      object GroupBox4: TGroupBox
-        Left = 0
-        Top = 61
-        Width = 644
-        Height = 180
-        Caption = #1047#1074#1091#1082
-        TabOrder = 1
-        object Label9: TLabel
-          Left = 8
-          Top = 16
-          Width = 138
-          Height = 13
-          Caption = #1055#1077#1088#1077#1093#1086#1076' '#1074' '#1085#1077#1089#1086#1086#1090#1074#1077#1090#1089#1090#1074#1080#1077
-        end
-        object Label10: TLabel
-          Left = 6
-          Top = 54
-          Width = 123
-          Height = 13
-          Caption = #1042#1086#1079#1074#1088#1072#1090' '#1074' '#1089#1086#1086#1090#1074#1077#1090#1089#1090#1074#1080#1077
-        end
-        object bSelDisparitySnd: TSpeedButton
-          Left = 576
-          Top = 30
-          Width = 23
-          Height = 22
-          Caption = '...'
-          OnClick = bSelDisparitySndClick
-        end
-        object bSelBackSnd: TSpeedButton
-          Left = 576
-          Top = 72
-          Width = 23
-          Height = 22
-          Caption = '...'
-          OnClick = bSelDisparitySndClick
-        end
-        object Label17: TLabel
-          Left = 6
-          Top = 96
-          Width = 37
-          Height = 13
-          Caption = #1040#1074#1072#1088#1080#1103
-        end
-        object bSelAlarmSnd: TSpeedButton
-          Left = 575
-          Top = 109
-          Width = 23
-          Height = 22
-          Caption = '...'
-          OnClick = bSelDisparitySndClick
-        end
-        object Label18: TLabel
-          Left = 5
-          Top = 136
-          Width = 54
-          Height = 13
-          Caption = #1054#1087#1072#1089#1085#1086#1089#1090#1100
-        end
-        object bSelDangerSnd: TSpeedButton
-          Left = 575
-          Top = 151
-          Width = 23
-          Height = 22
-          Caption = '...'
-          OnClick = bSelDisparitySndClick
-        end
-        object snd_disparity: TEdit
-          Left = 6
-          Top = 30
-          Width = 565
-          Height = 21
-          BevelInner = bvNone
-          BevelKind = bkFlat
-          BorderStyle = bsNone
-          TabOrder = 0
-        end
-        object snd_back: TEdit
-          Left = 5
-          Top = 72
-          Width = 565
-          Height = 21
-          BevelInner = bvNone
-          BevelKind = bkFlat
-          BorderStyle = bsNone
-          TabOrder = 1
-        end
-        object snd_alarm: TEdit
-          Left = 5
-          Top = 110
-          Width = 565
-          Height = 21
-          BevelInner = bvNone
-          BevelKind = bkFlat
-          BorderStyle = bsNone
-          TabOrder = 2
-        end
-        object snd_danger: TEdit
-          Left = 4
-          Top = 152
-          Width = 565
-          Height = 21
-          BevelInner = bvNone
-          BevelKind = bkFlat
-          BorderStyle = bsNone
-          TabOrder = 3
         end
       end
     end
@@ -719,7 +723,7 @@ object AwpModuleParams: TAwpModuleParams
           Text = '2'
         end
         object ReadySpacer: TUpDown
-          Left = 450
+          Left = 449
           Top = 37
           Width = 14
           Height = 21
@@ -866,19 +870,19 @@ object AwpModuleParams: TAwpModuleParams
   object SelViewerDlg: TOpenDialog
     Filter = #1055#1088#1086#1075#1088#1072#1084#1084#1099'|*.exe'
     Options = [ofHideReadOnly, ofNoChangeDir, ofPathMustExist, ofFileMustExist, ofNoTestFileCreate, ofEnableSizing, ofDontAddToRecent]
-    Left = 380
-    Top = 320
+    Left = 68
+    Top = 376
   end
   object ColorDialog1: TColorDialog
-    Left = 308
-    Top = 320
+    Left = 36
+    Top = 376
   end
   object SoundOpenDlg: TOpenDialog
     DefaultExt = 'wav'
     Filter = #1047#1074#1091#1082#1080'|*.wav'
     Options = [ofHideReadOnly, ofNoChangeDir, ofPathMustExist, ofFileMustExist, ofEnableSizing, ofDontAddToRecent]
-    Left = 580
-    Top = 320
+    Left = 164
+    Top = 376
   end
   object ReadyFont: TFontDialog
     Font.Charset = DEFAULT_CHARSET
@@ -888,15 +892,15 @@ object AwpModuleParams: TAwpModuleParams
     Font.Style = []
     Options = [fdTrueTypeOnly, fdEffects, fdNoVectorFonts, fdApplyButton]
     OnApply = ReadyFontApply
-    Left = 444
-    Top = 320
+    Left = 100
+    Top = 376
   end
   object Timer1: TTimer
     Enabled = False
     Interval = 500
     OnTimer = Timer1Timer
-    Left = 604
-    Top = 240
+    Left = 4
+    Top = 376
   end
   object StateFont: TFontDialog
     Font.Charset = DEFAULT_CHARSET
@@ -906,7 +910,7 @@ object AwpModuleParams: TAwpModuleParams
     Font.Style = []
     Options = [fdEffects, fdApplyButton]
     OnApply = ReadyFontApply
-    Left = 500
-    Top = 320
+    Left = 132
+    Top = 376
   end
 end

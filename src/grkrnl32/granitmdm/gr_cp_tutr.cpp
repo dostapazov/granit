@@ -182,10 +182,9 @@
   otd_tutr tutr ;
   DWORD object = op->data->numbers.loN;
   tutr.command = 0;
-  if(op->data->otd_type == OTD_TR_COMMAND_SET)
-     otd_get_value(op->data,object,&tutr,sizeof(tutr));
-     else
-     otd_get_value(op->data,object,&tutr.command,sizeof(tutr.command));
+  tutr.command_attr = 0;
+  tutr.param   = 0;
+  otd_get_value(op->data,object,&tutr,sizeof(tutr));
   GRSC_TU_ENTRY tu_entry;
   ZeroMemory(&tu_entry,sizeof(tu_entry));
   tu_entry.dw_size = sizeof(tu_entry);
@@ -277,13 +276,14 @@
 
 
            //Снять признак подготовки
-           grp->set_personal_diag(entry->object,entry->object,OTD_PSTATE_TUTR_PREPARE,false,false );
+           grp->set_personal_diag(entry->object,entry->object,OTD_PSTATE_TUTR_PREPARE|OTD_PDIAG_TUTR_DESCRIPT|OTD_PDIAG_TUTR_FAIL,false,false );
 
            grp->set_personal_diag(entry->object,entry->object,
                                   (entry->tu_state & GRSC_TUTR_STATE_CMDON) ? OTD_PSTATE_TUTR_ON_MORE : OTD_PSTATE_TUTR_OFF_LESS
                                   ,true,true
                                   );
           }
+
         if(is_RA(entry))
          {
           //для ТР
@@ -291,18 +291,22 @@
          }
         else
         {
-        entry->curr_value = entry->end_value = 0;
-        //Успех ТУ/ТР проверяется при  не тестовом КП и неустановленном флаге не проверке успеха
-        if(grp && !( (flags&GRSC_FLAG_TEST) || (entry->tu_flags&GRSC_TUFL_NOCHECK) ) )
-        {
-         entry->curr_value = grp->get_object_value(entry->object,(entry->tu_flags&GRSC_TUFL_TSINVERSE) ? true:false);
-         if(((entry->tu_state&GRSC_TUTR_STATE_CMDON) && !entry->curr_value) || ((entry->tu_state&GRSC_TUTR_STATE_CMDOFF) && entry->curr_value))
-           {
-            entry->tu_state|=GRSC_TUTR_STATE_WAITING;
-            entry->end_value = (!entry->curr_value)&1;
-           }
-        }
+            entry->curr_value = entry->end_value = 0;
+           //Успех ТУ/ТР проверяется при  не тестовом КП и неустановленном флаге не проверке успеха
+            if(grp && !(flags&GRSC_FLAG_TEST) )
+            {
+             if( ( entry->tu_flags&GRSC_TUFL_DYN_CHECK  ) || !(entry->tu_flags&GRSC_TUFL_NOCHECK))
+             {
+             entry->curr_value = grp->get_object_value(entry->object,(entry->tu_flags&(GRSC_TUFL_TSINVERSE|GRSC_TUFL_DYN_INVERSE)) ? true:false);
+             if(((entry->tu_state&GRSC_TUTR_STATE_CMDON) && !entry->curr_value) || ((entry->tu_state&GRSC_TUTR_STATE_CMDOFF) && entry->curr_value))
+               {
+                entry->tu_state|=GRSC_TUTR_STATE_WAITING;
+                entry->end_value = (!entry->curr_value)&1;
+               }
+             }
+            }
        }
+
        modem_notify(MNCODE_SC_DATACHANGED,get_otd_addr(),0,idx,idx,GRSC_ACR_TUENTRY_CHANGED);
        error = 0;
        otd_tutr _tc;
@@ -387,8 +391,13 @@
       {
         if(!(entry->tu_state&GRSC_TUTR_STATE_ACTIVE_MASK))
         {
-         entry->tu_state|= GRSC_TUTR_STATE_QUEUED;
-         entry->tu_state|= ( cmd_command == OTD_TUOP_ON ? GRSC_TUTR_STATE_CMDON:GRSC_TUTR_STATE_CMDOFF);
+         entry->tu_state |= GRSC_TUTR_STATE_QUEUED;
+         entry->tu_state |= ( cmd_command == OTD_TUOP_ON ? GRSC_TUTR_STATE_CMDON:GRSC_TUTR_STATE_CMDOFF);
+         entry->tu_flags &= ~(GRSC_TUFL_DYN_CHECK|GRSC_TUFL_DYN_INVERSE);
+
+         if(cmd.command_attr & OTD_TUTR_CMDATTR_CHECK_SUCCESS ) entry->tu_flags|=GRSC_TUFL_DYN_CHECK;
+         if(cmd.command_attr & OTD_TUTR_CMDATTR_INVERSE       ) entry->tu_flags|=GRSC_TUFL_DYN_INVERSE;
+
          if(tutr_is_ready(entry->tu_module))
             error = tutr_activate(idx);
             else
@@ -401,7 +410,7 @@
         }
         else error = GRSCERR_TUTROBJECT_LOCKED;
       }
-      
+
      if(auto_select)
        tutr_deselect(modem_addr,addr,obj,tu_entry);
     }
