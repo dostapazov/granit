@@ -617,6 +617,7 @@ DWORD        __fastcall med_db::record_change_addr   (mdb_record & record,LPMDB_
               upd_rec.diag = MDBR_DIAG_BAD;
             ++low_ptr;
            }
+         records.rebuild_indexes();
        }
   }
   return ret ;

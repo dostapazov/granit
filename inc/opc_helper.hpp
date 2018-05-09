@@ -498,6 +498,7 @@ inline HRESULT __fastcall TOpcGroup::set_items_active_state(DWORD dw_count,OPCHA
 
 inline bool    __fastcall TOpcGroup::async2_callback_enable(bool enable)
 {
+
   if(get_iface(async_io2))
   {
     if(SUCCEEDED(async_io2->SetEnable(enable)))

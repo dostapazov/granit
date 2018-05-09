@@ -366,18 +366,20 @@ void __fastcall   opc_line::__handle_otd_query( lpotd_addr paddr)
 {
       if(((DWORD)paddr->cp == get_number()) || ((DWORD)paddr->cp == OTD_ADDR_MAXVALUE))
       {
-          __do_recv_cp_data(true);
+          sotd_addr addr(0,0,paddr->fa,paddr->sb);
+          if(addr.sb == OTD_ADDR_MAXVALUE && (addr.fa&OTD_FA_DATA_MASK) == OTD_FA_DATA_MASK)
+             __do_recv_cp_data(true);
           TLockHelper l(locker);
-          otd_addr addr;
-          addr.addr = paddr->addr;
-          addr.cp = addr.pu = 0;
+
           proto_pointer pptr = storage.begin();
           proto_pointer pend = storage.end  ();
           if(storage.get_range(addr,pptr,pend))
           {
               while(pptr<pend)
               {
-                __queue_rxdata(&pptr->op);
+
+                if(addr.is_include(*pptr->op.addr,true))
+                   __queue_rxdata(&pptr->op);
                 ++pptr;
               }
           }
@@ -535,6 +537,11 @@ void __fastcall   opc_line::__handle_otd_control(lpotd_proto op)
           proto_pointer pend = storage.end();
           while(pptr<pend)
           {
+           DWORD mod_diag = pptr->op.diag ? *pptr->op.diag : 0;
+           //otd_diag.h
+           if(mod_diag & OTD_DIAG_MASK)
+              ret |= OTD_PART_DIAG_PARAM;
+           ret |= (mod_diag&OTD_STATE_TUTR_MASK);
            ++pptr;
           }
        }
@@ -657,7 +664,9 @@ void __fastcall opc_line::on_connect_timeout()
  if(is_connected())
  {
    if(!opc_server->update_status())
-        connect(false);
+        {
+         connect(false);
+        }
  }
  else
      do_connect();
@@ -734,7 +743,7 @@ void  __fastcall opc_line::stop_async  ()
 
 void  __fastcall opc_line::on_connect   ()
 {
-  Sleep(1000);
+  Sleep(1500);
   __opc_create_group();
   build_otd_storage();
   start_async();
@@ -758,7 +767,7 @@ void  __fastcall opc_line::on_disconnect()
 
 void __fastcall opc_line::do_connect()
 {
-
+  com_last_result  = 0;
   GUID server_guid = {0};
   wchar_t host[MAX_PATH] = {0};
   {
@@ -777,14 +786,10 @@ void __fastcall opc_line::do_connect()
   {
       set_state(MODEM_LINE_STATE_CONNECTING,true,true);
       HRESULT res = opc_server->create_instance(server_guid,host);
-      if(res)
+      if(FAILED(res))
       {
-        if(com_last_result != res)
-        {
-         com_last_result = res;
          report_com_error(res);
          set_state(MODEM_LINE_STATE_CONNECTING,false,true);
-        }
       }
   }
   connect( opc_server->IsBound() );

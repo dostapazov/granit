@@ -159,7 +159,10 @@ int         __fastcall    TGkOpcModem::convert_rx_data(LPWORD fa,LPBYTE in,int i
    reg_reports();
    DWORD ret = TModemBase::start(reason,start_param);
    if(ret == GKH_RET_SUCCESS)
+      {
+       pu_diag = 0;
        do_recv_pu_data(true);
+      }
    return ret;
   }
 
@@ -585,9 +588,7 @@ LRESULT __fastcall TGkOpcModem::send       (LPMPROTO_HEADER mph,DWORD sz)
     if(sa.pu == OTD_ADDR_MAXVALUE || sa.pu == get_pu_number())
     {
       if(OTD_ADDR_ISQUERY(&sa))
-      {
-       this->do_recv_pu_data(true);
-      }
+       do_recv_pu_data(true);
     }
   }
 
