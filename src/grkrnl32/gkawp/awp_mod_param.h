@@ -133,7 +133,6 @@ __published:	// IDE-managed Components
 	void __fastcall SpeedButton4Click(TObject *Sender);
 	void __fastcall KadrListDeletion(TObject *Sender, TListItem *Item);
 	void __fastcall KadrListChange(TObject *Sender, TListItem *Item, TItemChange Change);
-	void __fastcall PageControl1Change(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall bSaveCurrentLayoutClick(TObject *Sender);
 	void __fastcall bReadLayoutClick(TObject *Sender);

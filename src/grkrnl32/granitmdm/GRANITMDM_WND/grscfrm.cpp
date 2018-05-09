@@ -52,6 +52,12 @@ __fastcall TSCGranFrm::TSCGranFrm(TComponent* Owner,HWND owner_hwnd,GKHANDLE han
  #endif
 }
 //---------------------------------------------------------------------------
+void        __fastcall TSCGranFrm::setup_form_sizes()
+{
+ TGKModuleForm::setup_form_sizes();
+ SCTree->Width = Width/4;
+}
+
 
 void     __fastcall TSCGranFrm::after_set_gkhandle()
 {

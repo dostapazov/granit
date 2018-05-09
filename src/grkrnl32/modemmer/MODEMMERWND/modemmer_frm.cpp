@@ -42,6 +42,11 @@ __fastcall TModemmerFrm::TModemmerFrm(TComponent* Owner,HWND owner_hwnd,GKHANDLE
 
 }
 //---------------------------------------------------------------------------
+void        __fastcall TModemmerFrm::setup_form_sizes()
+{
+   TGKModuleForm::setup_form_sizes();
+   ModemsTree->Width = Width/4;
+}
 
 void       __fastcall  set_node_image_index(TTreeNode * node,int idx)
 {

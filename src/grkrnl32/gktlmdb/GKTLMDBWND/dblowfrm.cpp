@@ -28,6 +28,11 @@ __fastcall TDBLowForm::TDBLowForm(TComponent* Owner,HWND parent,GKHANDLE handle)
 
 }
 //---------------------------------------------------------------------------
+void        __fastcall TDBLowForm::setup_form_sizes()
+{
+   TGKModuleForm::setup_form_sizes();
+   DbTree->Width = Width/4;
+}
 
 bool __fastcall is_static(sotd_proto & sop)
 {

@@ -288,7 +288,6 @@ inherited RecHistroyForm: TRecHistroyForm
         OnResize = PageControl2Resize
         object TabSheet3: TTabSheet
           Caption = #1047#1072#1087#1080#1089#1100' '#1080#1089#1090#1086#1088#1080#1080
-          ExplicitHeight = 232
           object WrSqlQuery: TMemo
             Tag = 64
             Left = 0
@@ -307,12 +306,14 @@ inherited RecHistroyForm: TRecHistroyForm
             WantTabs = True
             WordWrap = False
             OnChange = WrSqlQueryChange
-            ExplicitHeight = 232
           end
         end
         object TabSheet4: TTabSheet
           Caption = #1063#1090#1077#1085#1080#1077' '#1080#1089#1090#1086#1088#1080#1080
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
           ExplicitHeight = 232
           object RdSqlQuery: TMemo
             Tag = 128
@@ -338,6 +339,9 @@ inherited RecHistroyForm: TRecHistroyForm
         object SQL_clear_hist: TTabSheet
           Caption = #1054#1095#1080#1089#1090#1082#1072' '#1080#1089#1090#1086#1088#1080#1080
           ImageIndex = 4
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
           ExplicitHeight = 232
           object SqlClearHist: TMemo
             Tag = 2048
@@ -360,6 +364,9 @@ inherited RecHistroyForm: TRecHistroyForm
         object SQL_idx_update: TTabSheet
           Caption = #1054#1073#1085#1086#1074#1083#1077#1085#1080#1077' '#1089#1090#1072#1090#1080#1089#1090#1080#1082#1080' '#1080#1085#1076#1077#1082#1089#1086#1074
           ImageIndex = 5
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
           ExplicitHeight = 232
           object SqlUpdIndexes: TMemo
             Tag = 4096
@@ -381,6 +388,9 @@ inherited RecHistroyForm: TRecHistroyForm
         object MonSheet: TTabSheet
           Caption = #1052#1086#1085#1080#1090#1086#1088
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
           ExplicitHeight = 232
           object Panel1: TPanel
             Left = 0
@@ -532,6 +542,9 @@ inherited RecHistroyForm: TRecHistroyForm
         object tabStats: TTabSheet
           Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
           ImageIndex = 3
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
           ExplicitHeight = 232
           object StatsMemo: TMemo
             Left = 0
@@ -651,6 +664,10 @@ inherited RecHistroyForm: TRecHistroyForm
     object TabSheet2: TTabSheet
       Caption = #1054' '#1084#1086#1076#1091#1083#1077
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Memo1: TMemo
         Left = 0
         Top = 87
@@ -684,7 +701,7 @@ inherited RecHistroyForm: TRecHistroyForm
         Height = 87
         Align = alTop
         TabOrder = 1
-        ExplicitWidth = 691
+        ExplicitWidth = 304
         ExplicitHeight = 87
         inherited Memo2: TMemo
           Width = 691
@@ -697,6 +714,10 @@ inherited RecHistroyForm: TRecHistroyForm
     object InstructionSheet: TTabSheet
       Caption = #1048#1085#1089#1090#1088#1091#1082#1094#1080#1103' '#1087#1086' '#1079#1072#1087#1091#1089#1082#1091
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Memo2: TMemo
         Left = 0
         Top = 0
@@ -741,7 +762,7 @@ inherited RecHistroyForm: TRecHistroyForm
     Left = 528
     Top = 16
     Bitmap = {
-      494C01010B0018000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010B001000100010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FAFAFA00EAEAEA00EBEBEB00FCFCFC00595959005151

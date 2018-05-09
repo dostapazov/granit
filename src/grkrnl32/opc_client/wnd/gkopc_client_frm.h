@@ -84,6 +84,7 @@ private:	// User declarations
 virtual void     __fastcall on_module_state(GKHANDLE mod,DWORD state);
 virtual void     __fastcall on_module_config_change(GKHANDLE mod,LPMODULE_CONFIG_DATA mcd);
 virtual void     __fastcall after_set_gkhandle();
+virtual void     __fastcall setup_form_sizes();
         void     __fastcall done_call_gkhandle(LRESULT ret,const wchar_t * str);
         void     __fastcall begin_call_gkhandle(const wchar_t * cmd_name);
         void     __fastcall set_current_frame(TGKModuleFrame * value);

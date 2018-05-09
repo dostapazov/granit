@@ -33,6 +33,17 @@ __fastcall TGKExplorerFrm::TGKExplorerFrm(TComponent* Owner,HWND own_wnd,GKHANDL
 }
 //---------------------------------------------------------------------------
 
+void     __fastcall TGKExplorerFrm::setup_form_sizes()
+{
+   float w = Monitor->WorkareaRect.Width ();
+   float h = Monitor->WorkareaRect.Height();
+   if(w>640)
+      Width  = w*0.7;
+   if(h>460)
+      Height = h*0.7;
+   ModulesTree->Width = Width/4;
+}
+
 void __fastcall TGKExplorerFrm::SetCommandStatus(AnsiString value)
 {
         if(StatusBar1->Panels->Items[1]->Text != value) {
@@ -44,7 +55,6 @@ AnsiString __fastcall TGKExplorerFrm::GetCommandStatus()
 {
         return StatusBar1->Panels->Items[1]->Text;
 }
-
 
 GKHANDLE __fastcall TGKExplorerFrm::GetGKHandle(TTreeNode * node)
 {

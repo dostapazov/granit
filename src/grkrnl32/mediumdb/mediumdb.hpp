@@ -404,7 +404,7 @@ inline  void       __fastcall TMediumDB::mdb_report_tutr(DWORD rep_type,wchar_t 
 
  inline  void       __fastcall TMediumDB::mdb_report_alarm_danger(DWORD rep_type,wchar_t * rep_text,LPVOID data ,DWORD dtsz )
  {
-  mdb_report(this->report_alarm_danger_id,rep_type,rep_text,data,dtsz);
+  mdb_report(report_alarm_danger_id,rep_type,rep_text,data,dtsz);
  }
 
 

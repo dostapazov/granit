@@ -124,6 +124,7 @@ void    __fastcall on_removed_module(GKHANDLE owner,GKHANDLE mod,DWORD mod_type)
 void    __fastcall on_renamed_module(GKHANDLE mod_handle);
         __property AnsiString CommandStatus  = { read=GetCommandStatus, write=SetCommandStatus };
 void    __fastcall BeforeDestruction(void);
+virtual void     __fastcall setup_form_sizes();
 
 public:		// User declarations
         __fastcall TGKExplorerFrm(TComponent* Owner,HWND own_wnd,GKHANDLE h);

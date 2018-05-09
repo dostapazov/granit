@@ -38,6 +38,7 @@ __fastcall TAwpModuleParams::TAwpModuleParams(TComponent* Owner,TGkAwpModule    
      MonitorSelect->Items->Add(str);
    }
    PageControl1->ActivePageIndex = 0;
+
 }
 //---------------------------------------------------------------------------
 
@@ -546,11 +547,6 @@ void __fastcall TAwpModuleParams::KadrListChange(TObject *Sender, TListItem *Ite
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TAwpModuleParams::PageControl1Change(TObject *Sender)
-{
-  Timer1->Enabled = PageControl1->ActivePage == ReadySheet ? true:false;
-}
-//---------------------------------------------------------------------------
 
 
 void __fastcall TAwpModuleParams::Timer1Timer(TObject *Sender)

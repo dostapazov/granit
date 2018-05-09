@@ -93,6 +93,8 @@ TListItem *   __fastcall  add_line(DWORD num,GKIPM_LINE_ADDRS & la);
 TListItem *   __fastcall  find_line       (TListView * lst,DWORD num);
 void          __fastcall  setup_client_opts(DWORD opts);
 DWORD         __fastcall  get_client_opts  ();
+void          __fastcall  setup_form_sizes(){}
+
 
 public:		// User declarations
 virtual        __fastcall TGkIPModemFrm(TComponent* Owner):TGKModuleForm(Owner){};

@@ -3,8 +3,8 @@ inherited ReporterExFrm: TReporterExFrm
   Top = 151
   Action = AClearAll
   Caption = #1055#1088#1086#1089#1084#1086#1090#1088' '#1089#1086#1086#1073#1097#1077#1085#1080#1081
-  ClientHeight = 604
-  ClientWidth = 695
+  ClientHeight = 453
+  ClientWidth = 632
   Constraints.MinHeight = 300
   Constraints.MinWidth = 400
   OldCreateOrder = True
@@ -12,28 +12,33 @@ inherited ReporterExFrm: TReporterExFrm
   OnClose = FormClose
   OnResize = FormResize
   OnShow = FormShow
-  ExplicitWidth = 703
-  ExplicitHeight = 631
+  ExplicitWidth = 640
+  ExplicitHeight = 480
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = 29
-    Width = 695
-    Height = 556
+    Top = 25
+    Width = 632
+    Height = 409
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitTop = 29
+    ExplicitWidth = 695
+    ExplicitHeight = 556
     object Splitter1: TSplitter
-      Left = 153
+      Left = 240
       Top = 0
-      Height = 556
+      Height = 409
+      ExplicitLeft = 153
+      ExplicitHeight = 556
     end
     object TreeView: TTreeView
       Left = 0
       Top = 0
-      Width = 153
-      Height = 556
+      Width = 240
+      Height = 409
       Align = alLeft
       DragMode = dmAutomatic
       Font.Charset = RUSSIAN_CHARSET
@@ -55,37 +60,45 @@ inherited ReporterExFrm: TReporterExFrm
         0430043D044B043504340000000000000000000000FFFFFFFFFFFFFFFF000000
         000000000000000000010B1F043E04410442043E0440043E043D043D04380435
         04}
+      ExplicitHeight = 560
     end
     object Panel2: TPanel
-      Left = 156
+      Left = 243
       Top = 0
-      Width = 539
-      Height = 556
+      Width = 389
+      Height = 409
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitLeft = 156
+      ExplicitWidth = 539
+      ExplicitHeight = 556
       object Splitter2: TSplitter
         Left = 0
-        Top = 432
-        Width = 539
+        Top = 285
+        Width = 389
         Height = 3
         Cursor = crVSplit
         Align = alBottom
         OnCanResize = Splitter2CanResize
+        ExplicitTop = 432
+        ExplicitWidth = 539
       end
       object Splitter3: TSplitter
         Left = 0
-        Top = 356
-        Width = 539
+        Top = 209
+        Width = 389
         Height = 3
         Cursor = crVSplit
         Align = alBottom
         OnCanResize = Splitter3CanResize
+        ExplicitTop = 356
+        ExplicitWidth = 539
       end
       object MemoData: TMemo
         Left = 0
-        Top = 435
-        Width = 539
+        Top = 288
+        Width = 389
         Height = 121
         Align = alBottom
         Font.Charset = RUSSIAN_CHARSET
@@ -97,12 +110,14 @@ inherited ReporterExFrm: TReporterExFrm
         ReadOnly = True
         ScrollBars = ssVertical
         TabOrder = 2
+        ExplicitTop = 435
+        ExplicitWidth = 539
       end
       object ListView: TListView
         Left = 0
         Top = 0
-        Width = 539
-        Height = 356
+        Width = 389
+        Height = 209
         Align = alClient
         Columns = <
           item
@@ -143,11 +158,13 @@ inherited ReporterExFrm: TReporterExFrm
         OnChange = ListViewChange
         OnData = ListViewData
         OnDataHint = ListViewDataHint
+        ExplicitWidth = 539
+        ExplicitHeight = 356
       end
       object MemoDesc: TMemo
         Left = 0
-        Top = 359
-        Width = 539
+        Top = 212
+        Width = 389
         Height = 73
         Align = alBottom
         Font.Charset = RUSSIAN_CHARSET
@@ -159,13 +176,15 @@ inherited ReporterExFrm: TReporterExFrm
         ReadOnly = True
         ScrollBars = ssVertical
         TabOrder = 1
+        ExplicitTop = 359
+        ExplicitWidth = 539
       end
     end
   end
   object StatusBar: TStatusBar
     Left = 0
-    Top = 585
-    Width = 695
+    Top = 434
+    Width = 632
     Height = 19
     Panels = <
       item
@@ -177,17 +196,20 @@ inherited ReporterExFrm: TReporterExFrm
       item
         Width = 70
       end>
+    ExplicitTop = 585
+    ExplicitWidth = 695
   end
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 695
-    Height = 29
+    Width = 632
+    Height = 25
     Caption = 'ToolBar1'
     Images = ImageTypes
     ParentShowHint = False
     ShowHint = True
     TabOrder = 2
+    ExplicitWidth = 884
     object TbClose: TToolButton
       Left = 0
       Top = 0
@@ -314,10 +336,10 @@ inherited ReporterExFrm: TReporterExFrm
     end
   end
   object ImageTypes: TImageList
-    Left = 16
-    Top = 112
+    Left = 184
+    Top = 40
     Bitmap = {
-      494C01010D001100040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001000080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -856,12 +878,12 @@ inherited ReporterExFrm: TReporterExFrm
     Enabled = False
     Interval = 3000
     OnTimer = TimerTimer
-    Left = 16
-    Top = 144
+    Left = 184
+    Top = 88
   end
   object ActionList1: TActionList
-    Left = 16
-    Top = 176
+    Left = 176
+    Top = 208
     object AClearAll: TAction
       Caption = #1055#1088#1086#1089#1084#1086#1090#1088' '#1089#1086#1086#1073#1097#1077#1085#1080#1081
       ShortCut = 49219
@@ -873,7 +895,7 @@ inherited ReporterExFrm: TReporterExFrm
     Filter = #1060#1072#1081#1083#1099' '#1089#1086#1073#1099#1090#1080#1081' (*.evt)|*.evt|'#1042#1089#1077' '#1092#1072#1081#1083#1099' (*.*)|*.*'
     Options = [ofHideReadOnly, ofNoChangeDir, ofFileMustExist, ofEnableSizing]
     Title = #1042#1085#1077#1096#1085#1080#1081' '#1092#1072#1081#1083' '#1089#1086#1073#1099#1090#1080#1081
-    Left = 16
-    Top = 208
+    Left = 184
+    Top = 152
   end
 end

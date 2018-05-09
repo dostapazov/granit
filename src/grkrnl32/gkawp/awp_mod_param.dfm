@@ -37,7 +37,6 @@ object AwpModuleParams: TAwpModuleParams
     DoubleBuffered = True
     ParentDoubleBuffered = False
     TabOrder = 0
-    OnChange = PageControl1Change
     object TabSheet1: TTabSheet
       Caption = #1050#1072#1076#1088#1099' '#1080' '#1080#1089#1090#1086#1095#1085#1080#1082#1080
       DesignSize = (
@@ -159,7 +158,6 @@ object AwpModuleParams: TAwpModuleParams
     object TabSheet2: TTabSheet
       Caption = #1056#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1077' '#1092#1072#1081#1083#1086#1074' '#1080' '#1076#1086#1087#1086#1083#1085#1080#1090#1077#1083#1100#1085#1099#1077' '#1085#1072#1089#1090#1088#1086#1081#1082#1080
       ImageIndex = 1
-      ExplicitLeft = 8
       object Label1: TLabel
         Left = 7
         Top = 3

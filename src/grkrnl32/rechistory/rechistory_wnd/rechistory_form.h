@@ -141,7 +141,7 @@ void    __fastcall on_updidx   (LPNOTIFY_CODE nc);
 void    __fastcall on_opendb   (LPNOTIFY_CODE nc);
 void    __fastcall on_statistic(LPNOTIFY_CODE nc);
 void    __fastcall monitor_add_line(char * text);
-
+void    __fastcall setup_form_sizes(){}
 
 
 public:		// User declarations

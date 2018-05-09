@@ -242,10 +242,6 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
       object ViewOpcItemsSheet: TTabSheet
         Caption = #1055#1088#1086#1089#1084#1086#1090#1088
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         inline DataFrame: TGKOpcItemsViewFrame
           Left = -124
           Top = 19
@@ -254,15 +250,14 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
           TabOrder = 0
           ExplicitLeft = -124
           ExplicitTop = 19
+          inherited ListView1: TListView
+            ExplicitTop = 0
+          end
         end
       end
       object MonSheet: TTabSheet
         Caption = #1052#1086#1085#1080#1090#1086#1088' OPC'
         ImageIndex = 3
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object opc_mon: TMemo
           Left = 0
           Top = 0
@@ -284,10 +279,6 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
       object MonScriptSheet: TTabSheet
         Caption = #1052#1086#1085#1080#1090#1086#1088' '#1080#1089#1087#1086#1083#1085#1077#1085#1080#1103' '#1089#1082#1088#1080#1087#1090#1086#1074
         ImageIndex = 4
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object TraceMon: TMemo
           Left = 0
           Top = 0
@@ -312,10 +303,6 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
       object AboutSheet: TTabSheet
         Caption = #1054' '#1084#1086#1076#1091#1083#1077
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         inline AboutCommonFrame1: TAboutCommonFrame
           Left = 0
           Top = 0
@@ -323,7 +310,7 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
           Height = 96
           Align = alTop
           TabOrder = 0
-          ExplicitWidth = 122
+          ExplicitWidth = 538
           ExplicitHeight = 96
           inherited Memo2: TMemo
             Width = 538
@@ -359,7 +346,7 @@ inherited GKOpcClientFrm: TGKOpcClientFrm
     Left = 664
     Top = 176
     Bitmap = {
-      494C010107000C000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107001000100010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

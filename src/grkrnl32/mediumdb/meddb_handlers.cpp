@@ -873,7 +873,8 @@ void __fastcall med_db::report_alarm_danger(mdb_record & rec)
     get_name(rec.rec_id,false,rec_name,MAX_PATH);
     swprintf(rec_name+lstrlenW(rec_name),L" %d.%d.%d.%d-%d",(DWORD)rec.addr.addr.pu,(DWORD)rec.addr.addr.cp,(DWORD)rec.addr.addr.fa,(DWORD)rec.addr.addr.sb,(DWORD)rec.addr.param_number);
     swprintf(rep_text,L" %s сотояние объекта  %s  значение %.2f",(rec.state & MDBR_STATE_ALARM)? L"Аварийное":L"Предупредительное",  rec_name,rec.value);
-    module->mdb_report_alarm_danger(REPORT_ERROR_TYPE,rep_text,0,0);
+    module->mdb_report_alarm_danger(   rec.is_alarm_state() ? REPORT_ERROR_TYPE : REPORT_WARNING_TYPE,rep_text,0,0);
+
 
 
 }

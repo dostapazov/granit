@@ -39,8 +39,19 @@ TGKModuleForm   * __fastcall TGKModuleForm::get_form(HWND wnd)
  return ret;
 }
 
+void __fastcall TGKModuleForm::setup_form_sizes()
+{
+   float w = Monitor->WorkareaRect.Width ();
+   float h = Monitor->WorkareaRect.Height();
+   if(w>800)
+      Width  = w*0.7;
+   if(h>600)
+      Height = h*0.7;
+}
+
 void __fastcall TGKModuleForm::AfterConstruction(void)
 {
+setup_form_sizes();
 TForm::AfterConstruction();
 if(owner_window) ::SendMessage(owner_window,WGKM_WND_CREATED,WPARAM(mod_iface()),LPARAM(this->Handle));
 if(mod_iface()) after_set_gkhandle();

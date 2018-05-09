@@ -84,29 +84,29 @@ protected:
 int     in_setup;
 TTreeNode           * root_node;
 TGKModuleFrame      * Fcurrent_frame;
-void       __fastcall after_set_gkhandle();
-void       __fastcall done_call_gkhandle(LRESULT ret,wchar_t * str);
-void       __fastcall begin_call_gkhandle(wchar_t * cmd_name);
-LRESULT    __fastcall on_gkhandle_notify (GKHANDLE from,LPNOTIFY_CODE nc,DWORD mask);
-void       __fastcall on_line_state      (const LPMODEM_LINE_STATE mls);
-TTreeNode* __fastcall find_line_node (DWORD line_number);
-void       __fastcall set_node_image_index (TTreeNode * node,DWORD line_state);
-TTreeNode* __fastcall add_line_node(DWORD line_num,DWORD line_state);
+        void       __fastcall after_set_gkhandle();
+        void       __fastcall done_call_gkhandle(LRESULT ret,wchar_t * str);
+        void       __fastcall begin_call_gkhandle(wchar_t * cmd_name);
+        LRESULT    __fastcall on_gkhandle_notify (GKHANDLE from,LPNOTIFY_CODE nc,DWORD mask);
+        void       __fastcall on_line_state      (const LPMODEM_LINE_STATE mls);
+        TTreeNode* __fastcall find_line_node (DWORD line_number);
+        void       __fastcall set_node_image_index (TTreeNode * node,DWORD line_state);
+        TTreeNode* __fastcall add_line_node(DWORD line_num,DWORD line_state);
 
+        void       __fastcall on_module_state(GKHANDLE mod,DWORD state);
+        void       __fastcall on_module_config_change(GKHANDLE mod,LPMODULE_CONFIG_DATA mcd);
+        bool       __fastcall get_module_settings();
+        void       __fastcall set_current_frame(TGKModuleFrame * value);
+        void       __fastcall on_frame_changed (TObject * sender);
+        void       __fastcall setup_lines_tree ();
 
+        void       __fastcall on_spectr_destroy   (TObject * sender);
+        void       __fastcall setup_view_tab      ();
+        void       __fastcall update_connect_state();
+virtual void       __fastcall WndProc(Messages::TMessage &msg);
+virtual void       __fastcall setup_form_sizes();
 
-void     __fastcall on_module_state(GKHANDLE mod,DWORD state);
-void     __fastcall on_module_config_change(GKHANDLE mod,LPMODULE_CONFIG_DATA mcd);
-bool     __fastcall get_module_settings();
-void     __fastcall set_current_frame(TGKModuleFrame * value);
-void     __fastcall on_frame_changed (TObject * sender);
-void     __fastcall setup_lines_tree ();
-         __fastcall TCpc152DevFrm    (TComponent* Owner);
-virtual void __fastcall WndProc(Messages::TMessage &msg);
-
-void     __fastcall on_spectr_destroy   (TObject * sender);
-void     __fastcall setup_view_tab      ();
-void     __fastcall update_connect_state();
+             __fastcall TCpc152DevFrm    (TComponent* Owner);
 
 public:		// User declarations
 	__fastcall TCpc152DevFrm(TComponent* Owner,HWND,GKHANDLE);

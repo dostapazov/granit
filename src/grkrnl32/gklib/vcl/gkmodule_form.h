@@ -75,6 +75,7 @@ virtual void     __fastcall on_removed_module(GKHANDLE owner,GKHANDLE mod,DWORD 
 virtual void     __fastcall on_renamed_module(GKHANDLE mod){};
 virtual void     __fastcall after_set_gkhandle();
 virtual void     __fastcall show_module_wnd(GKHANDLE handle,DWORD wnd_type,LPVOID param);
+virtual void     __fastcall setup_form_sizes();
         void     __fastcall set_notify(GKHANDLE h,DWORD mask);
         void     __fastcall reset_notify(GKHANDLE h,DWORD mask);
         GKHANDLE __fastcall get_form_notify_gkhandle(){return form_gkhandle;}

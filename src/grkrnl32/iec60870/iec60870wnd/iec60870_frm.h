@@ -105,7 +105,7 @@ TTreeNode* __fastcall find_line_node(DWORD line_num);
         __property TGKModuleFrame * current_frame = {read = Fcurrent_frame, write = set_current_frame};
 
 virtual void __fastcall WndProc(Messages::TMessage &msg);
-
+virtual void __fastcall setup_form_sizes();
 
 public:		// User declarations
 	__fastcall TIec60870Frm(TComponent* Owner,HWND,GKHANDLE);

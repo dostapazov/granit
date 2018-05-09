@@ -186,6 +186,7 @@ bool     __fastcall is_tu_enabled(char * name,WORD sock_num);
 bool     __fastcall enable_tu_client(char * name,WORD socket,bool enable);
 void     __fastcall begin_command(char * text);
 void     __fastcall end_command  (DWORD cmd_ret);
+virtual void __fastcall setup_form_sizes(){}
 
 public:		// User declarations
         __fastcall TGrIpxModuleWnd(TComponent* Owner,HWND p_wnd,GKHANDLE handle);

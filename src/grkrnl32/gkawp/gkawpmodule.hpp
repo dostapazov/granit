@@ -334,6 +334,7 @@ class TGkAwpModule:public TGKModule
   virtual   DWORD   __fastcall get_window_module  (wchar_t * buf,DWORD bsz);
             void    __fastcall param_window_close (TObject * sender,TCloseAction & ca);
             void    __fastcall param_change_orders();
+            void    __fastcall param_page_change  (TObject *Sender);
             void    __fastcall remove_kadr_order  (DWORD kadr_id);
 
 

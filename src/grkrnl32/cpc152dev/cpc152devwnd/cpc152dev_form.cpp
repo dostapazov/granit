@@ -23,6 +23,13 @@ __fastcall TCpc152DevFrm::TCpc152DevFrm(TComponent* Owner,HWND parent,GKHANDLE h
 }
 //---------------------------------------------------------------------------
 
+void        __fastcall TCpc152DevFrm::setup_form_sizes()
+{
+ TGKModuleForm::setup_form_sizes();
+ Cpc152Tree->Width = Width/4;
+}
+
+
 void     __fastcall TCpc152DevFrm::begin_call_gkhandle(wchar_t * cmd_name)
 {
  StatusBar1->Panels->Items[0]->Text =  cmd_name;

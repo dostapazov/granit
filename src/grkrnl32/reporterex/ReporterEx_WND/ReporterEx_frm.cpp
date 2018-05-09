@@ -31,6 +31,13 @@ __fastcall TReporterExFrm::~TReporterExFrm()
     Close();
 }
 
+void  __fastcall TReporterExFrm::setup_form_sizes()
+{
+  TGKModuleForm::setup_form_sizes();
+  TreeView->Width = Width/4;
+}
+
+
 void __fastcall TReporterExFrm::FormShow(TObject *Sender)
 {
   TbSound->Down=mod_iface.call(RCM_MESSAGE_SOUND,0,0);

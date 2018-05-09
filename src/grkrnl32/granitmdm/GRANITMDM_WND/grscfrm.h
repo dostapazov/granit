@@ -153,6 +153,8 @@ TTreeNode * __fastcall find_group_node(DWORD addr,TTreeNode * cp_node = NULL);
 
 TTreeNode * __fastcall find_node      (DWORD addr);
 
+void        __fastcall setup_form_sizes();
+
 void        __fastcall on_changes(TSCBaseFrame * sender){ch_mask = sender->changes_mask;}
         BEGIN_MESSAGE_MAP
                 VCL_MESSAGE_HANDLER(WM_SYSCOMMAND, TMessage, OnSysCommand)

@@ -42,6 +42,12 @@ __fastcall TMediumDBFrm::TMediumDBFrm(TComponent* Owner,HWND wnd,GKHANDLE handle
  
 }
 //---------------------------------------------------------------------------
+void        __fastcall TMediumDBFrm::setup_form_sizes()
+{
+ TGKModuleForm::setup_form_sizes();
+ MdbTree->Width = Width/3;
+}
+
 void __fastcall TMediumDBFrm::BeforeDestruction()
 {
   if(current_states)

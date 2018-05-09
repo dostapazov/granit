@@ -118,6 +118,19 @@ HICON   __fastcall TGkAwpModule::get_module_icon    (bool small )
        return mi.icon;
 }
 
+void __fastcall TGkAwpModule::param_page_change(TObject *Sender)
+{
+ if(mod_params_wnd)
+ {
+  bool is_ready = mod_params_wnd->PageControl1->ActivePage == mod_params_wnd->ReadySheet ? true:false;
+  mod_params_wnd->Timer1->Enabled = is_ready;
+  if(main_form)
+     main_form->editable = is_ready;
+ }
+}
+//---------------------------------------------------------------------------
+
+
 void    __fastcall TGkAwpModule::param_window_show  ()
 {
   if(!mod_params_wnd)
@@ -125,14 +138,12 @@ void    __fastcall TGkAwpModule::param_window_show  ()
        mod_params_wnd = new TAwpModuleParams(NULL,this);
        mod_params_wnd->Icon->Handle = get_module_icon();
        mod_params_wnd->OnClose = param_window_close;
+       mod_params_wnd->PageControl1->OnChange = param_page_change;
        mod_params_wnd->enum_layouts = this->enum_layouts;
        mod_params_wnd->open_layout  = do_open_layout;
        mod_params_wnd->save_layout  = do_save_layout;
        if(main_form)
-          {
-           main_form->editable = true;
            main_form->set_form_screen_position(mod_params_wnd);
-          }
        mod_params_wnd->Visible = true;
        Application->ProcessMessages();
        mod_params_wnd->set_parameters(params);
@@ -872,7 +883,7 @@ void    __fastcall TGkAwpModule::show_main_form()
     if(IsDebuggerPresent()) main_form->FormStyle = fsNormal;
     main_form->Visible = true;
     if(!params.layout_name.IsEmpty()) this->do_open_layout(params.layout_name);
-
+    param_page_change(mod_params_wnd);
 }
 
 bool    __fastcall TGkAwpModule::open_modemmer()

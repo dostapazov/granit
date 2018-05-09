@@ -2,7 +2,7 @@ inherited ModemmerFrm: TModemmerFrm
   Left = 142
   Top = 221
   Caption = ''
-  ClientHeight = 456
+  ClientHeight = 426
   ClientWidth = 628
   Constraints.MinHeight = 472
   Constraints.MinWidth = 636
@@ -14,22 +14,21 @@ inherited ModemmerFrm: TModemmerFrm
   OnResize = FormResize
   OnShow = FormShow
   ExplicitWidth = 636
-  ExplicitHeight = 502
+  ExplicitHeight = 472
   PixelsPerInch = 96
   TextHeight = 13
   object Splitter1: TSplitter
     Left = 184
     Top = 29
     Width = 4
-    Height = 406
+    Height = 376
     OnMoved = Splitter1Moved
-    ExplicitHeight = 376
   end
   object ModemsTree: TTreeView
     Left = 0
     Top = 29
     Width = 184
-    Height = 406
+    Height = 376
     Align = alLeft
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -47,13 +46,12 @@ inherited ModemmerFrm: TModemmerFrm
     OnDblClick = ModemsTreeDblClick
     OnDeletion = ModemsTreeDeletion
     OnKeyPress = ModemsTreeKeyPress
-    ExplicitHeight = 364
   end
   object PageControl1: TPageControl
     Left = 188
     Top = 29
     Width = 440
-    Height = 406
+    Height = 376
     ActivePage = TabSheet1
     Align = alClient
     Font.Charset = RUSSIAN_CHARSET
@@ -64,17 +62,11 @@ inherited ModemmerFrm: TModemmerFrm
     ParentFont = False
     TabOrder = 1
     OnChange = PageControl1Change
-    ExplicitWidth = 452
-    ExplicitHeight = 364
     object TabSheet1: TTabSheet
       Caption = #1054#1073#1097#1080#1081
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 444
-      ExplicitHeight = 336
       DesignSize = (
         432
-        378)
+        348)
       object ModemBox: TGroupBox
         Left = 0
         Top = 0
@@ -84,7 +76,6 @@ inherited ModemmerFrm: TModemmerFrm
         Caption = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1086' '#1084#1086#1076#1077#1084#1077
         TabOrder = 0
         Visible = False
-        ExplicitWidth = 442
         object Label2: TLabel
           Left = 132
           Top = 14
@@ -138,15 +129,13 @@ inherited ModemmerFrm: TModemmerFrm
         Left = 0
         Top = 36
         Width = 431
-        Height = 341
+        Height = 311
         Anchors = [akLeft, akTop, akRight, akBottom]
         Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072' '#1083#1080#1085#1080#1080
         ParentShowHint = False
         ShowHint = False
         TabOrder = 1
         Visible = False
-        ExplicitWidth = 443
-        ExplicitHeight = 299
         object Label4: TLabel
           Left = 11
           Top = 14
@@ -720,22 +709,16 @@ inherited ModemmerFrm: TModemmerFrm
     object TabSheet2: TTabSheet
       Caption = #1055#1088#1086#1089#1084#1086#1090#1088
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         432
-        378)
+        348)
       object MonitorBox: TGroupBox
         Left = 1
         Top = 84
         Width = 430
-        Height = 293
+        Height = 263
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 1
-        ExplicitWidth = 442
-        ExplicitHeight = 251
       end
       object FilterBox: TGroupBox
         Left = 312
@@ -954,18 +937,14 @@ inherited ModemmerFrm: TModemmerFrm
     object RedirectSheet: TTabSheet
       Caption = #1056#1077#1076#1080#1088#1077#1082#1090#1086#1088
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         432
-        378)
+        348)
       object RedirectList: TListView
         Left = 0
         Top = 72
         Width = 296
-        Height = 244
+        Height = 214
         Anchors = [akLeft, akTop, akBottom]
         Columns = <
           item
@@ -989,11 +968,10 @@ inherited ModemmerFrm: TModemmerFrm
         TabOrder = 5
         ViewStyle = vsReport
         OnSelectItem = RedirectListSelectItem
-        ExplicitHeight = 202
       end
       object RedirNewBtn: TBitBtn
         Left = 2
-        Top = 327
+        Top = 297
         Width = 100
         Height = 26
         Anchors = [akLeft, akBottom]
@@ -1044,11 +1022,10 @@ inherited ModemmerFrm: TModemmerFrm
           0E0E0E0E0E0E0B08171B0C1B1B1B1B1B1B1B1B1B1B1B1B1B1B0C}
         TabOrder = 6
         OnClick = RedirNewBtnClick
-        ExplicitTop = 285
       end
       object RedirDeleteBtn: TBitBtn
         Left = 215
-        Top = 327
+        Top = 297
         Width = 100
         Height = 26
         Anchors = [akLeft, akBottom]
@@ -1099,11 +1076,10 @@ inherited ModemmerFrm: TModemmerFrm
           1311110F0E0C0A081B1F121F1F1F1F1F1F1F1F1F1F1F1F1F1F12}
         TabOrder = 7
         OnClick = RedirDeleteBtnClick
-        ExplicitTop = 285
       end
       object RedirEditBtn: TBitBtn
         Left = 108
-        Top = 327
+        Top = 297
         Width = 100
         Height = 26
         Anchors = [akLeft, akBottom]
@@ -1154,7 +1130,6 @@ inherited ModemmerFrm: TModemmerFrm
           1818181818181818181818181818181818181818181818181818}
         TabOrder = 8
         OnClick = RedirEditBtnClick
-        ExplicitTop = 285
       end
       object RedirectEnable: TCheckBox
         Left = 8
@@ -1220,27 +1195,19 @@ inherited ModemmerFrm: TModemmerFrm
     object TabSheet4: TTabSheet
       Caption = #1047#1072#1088#1077#1075#1077#1089#1090#1088#1080#1088#1086#1074#1072#1085#1085#1099#1077' '#1086#1073#1088#1072#1073#1086#1090#1095#1080#1082#1080
       ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object DfaTree: TTreeView
         Left = 0
         Top = 0
         Width = 432
-        Height = 378
+        Height = 348
         Align = alClient
         Indent = 19
         TabOrder = 0
-        ExplicitWidth = 444
-        ExplicitHeight = 336
       end
     end
     object pgAbout: TTabSheet
       Caption = #1054' '#1084#1086#1076#1091#1083#1077
       ImageIndex = 3
-      ExplicitWidth = 116
-      ExplicitHeight = 135
       object Label31: TLabel
         Left = 26
         Top = 104
@@ -1258,12 +1225,12 @@ inherited ModemmerFrm: TModemmerFrm
         Height = 94
         Align = alTop
         TabOrder = 0
-        ExplicitWidth = 116
+        ExplicitWidth = 432
         ExplicitHeight = 94
         inherited Memo2: TMemo
           Width = 432
           Height = 94
-          ExplicitWidth = 116
+          ExplicitWidth = 432
           ExplicitHeight = 94
         end
       end
@@ -1271,7 +1238,7 @@ inherited ModemmerFrm: TModemmerFrm
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 435
+    Top = 405
     Width = 628
     Height = 21
     Panels = <
@@ -1282,8 +1249,6 @@ inherited ModemmerFrm: TModemmerFrm
       item
         Width = 50
       end>
-    ExplicitTop = 393
-    ExplicitWidth = 640
   end
   object ToolBar1: TToolBar
     Left = 0
@@ -1298,7 +1263,6 @@ inherited ModemmerFrm: TModemmerFrm
     ParentShowHint = False
     ShowHint = True
     TabOrder = 3
-    ExplicitWidth = 640
     object AddModemBtn: TToolButton
       Left = 0
       Top = 0
@@ -1465,7 +1429,7 @@ inherited ModemmerFrm: TModemmerFrm
     Left = 112
     Top = 367
     Bitmap = {
-      494C010110001800080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101100018000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000005000000001002000000000000050
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

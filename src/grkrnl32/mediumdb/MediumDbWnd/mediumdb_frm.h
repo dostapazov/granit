@@ -202,7 +202,7 @@ TTreeNode *
         void __fastcall comb_frm_close(TObject *Sender, TCloseAction & ca);
 
 virtual void __fastcall BeforeDestruction();
-
+virtual void __fastcall setup_form_sizes ();
 
 public:		// User declarations
         __fastcall TMediumDBFrm(TComponent* Owner,HWND,GKHANDLE);

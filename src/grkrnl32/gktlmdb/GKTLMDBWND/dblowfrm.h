@@ -192,7 +192,7 @@ void        __fastcall apply_sb(otd_addr & addr);
 void        __fastcall apply_cp(otd_addr & addr);
 void        __fastcall apply_pu(otd_addr & addr);
 void        __fastcall apply_settings();
-
+void        __fastcall setup_form_sizes();
 
 
 public:		// User declarations

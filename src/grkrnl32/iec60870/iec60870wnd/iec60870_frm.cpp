@@ -29,6 +29,13 @@ __fastcall TIec60870Frm::TIec60870Frm(TComponent* Owner,HWND _parent,GKHANDLE _h
  in_setup  = 0;
 }
 
+void        __fastcall TIec60870Frm::setup_form_sizes()
+{
+ TGKModuleForm::setup_form_sizes();
+ ModemTree->Width = Width/4;
+}
+
+
 void __fastcall TIec60870Frm::WndProc(Messages::TMessage &msg)
 {
   switch(msg.Msg)

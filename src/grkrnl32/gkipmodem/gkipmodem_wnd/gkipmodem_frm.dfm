@@ -443,6 +443,8 @@ inherited GkIPModemFrm: TGkIPModemFrm
     object TabSheet1: TTabSheet
       Caption = #1054' '#1084#1086#1076#1091#1083#1077
       ImageIndex = 2
+      ExplicitWidth = 304
+      ExplicitHeight = 166
       object Label4: TLabel
         Left = 24
         Top = 104
@@ -459,7 +461,7 @@ inherited GkIPModemFrm: TGkIPModemFrm
         Height = 98
         Align = alTop
         TabOrder = 0
-        ExplicitWidth = 623
+        ExplicitWidth = 304
         ExplicitHeight = 98
         inherited Memo2: TMemo
           Width = 623

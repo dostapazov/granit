@@ -29,6 +29,13 @@ __fastcall TGKOpcClientFrm::TGKOpcClientFrm(TComponent* Owner, HWND parent, GKHA
 {
 }
 
+void        __fastcall TGKOpcClientFrm::setup_form_sizes()
+{
+ TGKModuleForm::setup_form_sizes();
+ LinesTree->Width = Width/4;
+}
+
+
 void __fastcall TGKOpcClientFrm::WndProc(Messages::TMessage & msg)
 {
    if(msg.Msg == WMUSER_SETUP_LINES_TREE)

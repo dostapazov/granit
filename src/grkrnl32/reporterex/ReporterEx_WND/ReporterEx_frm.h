@@ -87,6 +87,8 @@ private:
         void __fastcall on_report_refresh(LPNOTIFY_CODE nc);	// User declarations
         void __fastcall on_report_newevent(LPNOTIFY_CODE nc);
         void __fastcall ResizeView();
+virtual void  __fastcall setup_form_sizes();
+
 public:		// User declarations
         __fastcall TReporterExFrm(TComponent* Owner,HWND owner_hwnd,GKHANDLE handle = 0);
         __fastcall ~TReporterExFrm();
