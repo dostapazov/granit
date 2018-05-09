@@ -327,6 +327,7 @@ class TMediumDB:public TGKModule,protected TGKThread
  DWORD                 report_id;
  DWORD                 report_tu_id;
  DWORD                 report_scripts;
+ DWORD                 report_alarm_danger_id;
  TArchiveThread        archvie_thread;
 
  void    __fastcall reg_reports();
@@ -372,10 +373,11 @@ class TMediumDB:public TGKModule,protected TGKThread
 
   DWORD   __fastcall scale_calc(DWORD scale_id,DWORD  & kvants,float & result ,bool direct);
   DWORD   __fastcall scale_minmax(LPSC_MINMAX mm){return scale.call(CM_SC_MINMAX,(LPARAM)mm,0);}
-  void    __fastcall mdb_report(DWORD rep_id,DWORD rep_type,wchar_t * rep_text,LPVOID data = 0,DWORD dtsz = 0);
-  void    __fastcall mdb_report(DWORD rep_type,wchar_t * rep_text,LPVOID data = 0,DWORD dtsz = 0);
-  void    __fastcall mdb_report_tutr(DWORD rep_type,wchar_t * rep_text,LPVOID data = 0,DWORD dtsz = 0);
-  void    __fastcall mdb_report_script(DWORD rep_type,const wchar_t * rep_text,LPVOID data = 0,DWORD dtsz = 0)
+  void    __fastcall mdb_report             (DWORD rep_id,DWORD rep_type,wchar_t * rep_text,LPVOID data = 0,DWORD dtsz = 0);
+  void    __fastcall mdb_report             (DWORD rep_type,wchar_t * rep_text,LPVOID data = 0,DWORD dtsz = 0);
+  void    __fastcall mdb_report_alarm_danger(DWORD rep_type,wchar_t * rep_text,LPVOID data = 0,DWORD dtsz = 0);
+  void    __fastcall mdb_report_tutr        (DWORD rep_type,wchar_t * rep_text,LPVOID data = 0,DWORD dtsz = 0);
+  void    __fastcall mdb_report_script      (DWORD rep_type,const wchar_t * rep_text,LPVOID data = 0,DWORD dtsz = 0)
   {
     mdb_report(report_scripts,rep_type,(wchar_t*)rep_text,data,dtsz);
   }
@@ -398,6 +400,11 @@ inline  void       __fastcall TMediumDB::mdb_report(DWORD rep_type,wchar_t * rep
 inline  void       __fastcall TMediumDB::mdb_report_tutr(DWORD rep_type,wchar_t * rep_text,LPVOID data ,DWORD dtsz )
  {
   mdb_report(this->report_tu_id,rep_type,rep_text,data,dtsz);
+ }
+
+ inline  void       __fastcall TMediumDB::mdb_report_alarm_danger(DWORD rep_type,wchar_t * rep_text,LPVOID data ,DWORD dtsz )
+ {
+  mdb_report(this->report_alarm_danger_id,rep_type,rep_text,data,dtsz);
  }
 
 

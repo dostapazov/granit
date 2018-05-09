@@ -82,9 +82,10 @@ DWORD   __fastcall TMediumDB::get_mem_used()
 
  void   __fastcall TMediumDB::reg_reports()
  {
-  report_id      = report_reg_event_type(L"DB-MEDIUM",L"БД-Среднего уровня");
-  report_tu_id   = report_reg_event_type(L"DB-MEDIUM-RC",L"БД-Среднего уровня ТУ-ТР");
-  report_scripts = report_reg_event_type(L"DB-MEDIUM-SCRIPTS",L"БД-Среднего уровня - ошибки скриптов");
+  report_id              = report_reg_event_type(L"DB-MEDIUM",L"БД-Среднего уровня");
+  report_tu_id           = report_reg_event_type(L"DB-MEDIUM-RC",L"БД-Среднего уровня ТУ-ТР");
+  report_scripts         = report_reg_event_type(L"DB-MEDIUM-SCRIPTS",L"БД-Среднего уровня - ошибки скриптов");
+  report_alarm_danger_id = report_reg_event_type(L"DB-MEDIUM-ALARMS-DANGERS",L"БД-Среднего уровня Аварии-Предупреждения");
  }
 
 

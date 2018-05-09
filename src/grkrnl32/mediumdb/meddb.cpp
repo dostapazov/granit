@@ -588,7 +588,7 @@ void         __fastcall med_db::auto_create_owners(MDB_RECORD & rec)
             ++ins_count;
            }
 
-     }while(atype>OTD_ADDR_TYPE_PU);
+     }while(atype>OTD_ADDR_TYPE_PU && OTD_ADDR_TYPE_BROADCAST < OTD_ADDR_TYPE_BROADCAST);
 
    if(ins_count)
      config_change(MDB_CCFL_RECORD_TABLE);
