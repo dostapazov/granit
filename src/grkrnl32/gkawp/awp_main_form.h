@@ -18,6 +18,7 @@
 
 #include "about_form.h"
 #include "login_dlg.h"
+#include <gksecur_proto.h>
 
 class ready_painter_t;
 
@@ -113,7 +114,8 @@ void    __fastcall set_window_monitor(int mon_idx,bool no_layout);
         void __fastcall  set_ready_colors      (const READY_COLORS & rclrs);
         void __fastcall  layout_ready          ();
         void __fastcall  set_form_screen_position(TForm * frm);
-        bool __fastcall  hot_key_register  (int id,WORD hot_key);
+        bool __fastcall  hot_key_register    (int id,WORD hot_key);
+        void __fastcall  set_login_session_id(SESSION_ID ssid    );
 
 };
 //---------------------------------------------------------------------------

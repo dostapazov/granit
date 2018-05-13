@@ -91,6 +91,9 @@ __published:	// IDE-managed Components
 	void __fastcall tbAlarmHistoryListClick(TObject *Sender);
 	void __fastcall CautionsPopupPopup(TObject *Sender);
 	void __fastcall tbRequestOscilogrammClick(TObject *Sender);
+	void __fastcall FormResize(TObject *Sender);
+	void __fastcall StatusBar1DrawPanel(TStatusBar *StatusBar, TStatusPanel *Panel,
+          const TRect &Rect);
 
 private:	// User declarations
      TGkAwpModule          * module;

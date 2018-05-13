@@ -39,7 +39,7 @@ typedef struct  _SESSION_DESCRIPT
 typedef std::map<std::wstring,DWORD>     Tusers_map;
 typedef std::pair<SESSION_ID,SESSION_ID> Tsessions;
 typedef std::map<modem_addr, Tsessions>  Tmodem_sessions;
-//typedef std::map<DWORD,modem_addr>
+typedef std::multimap<DWORD,modem_addr>  Tuser_login;
 
 
 #define USERS_RECID     0
@@ -59,6 +59,8 @@ class TGKSecurityMod:public TGKModule
  Tmodem_sessions modem_sessions;
 
  static unsigned __int64 secret_word;
+
+ virtual DWORD __fastcall check_license(){return MOD_LICENSE_REGISTERED; }
 
  WORD    __fastcall get_type       () {return MT_SECURITY;}
  DWORD   __fastcall get_mem_used   ();
@@ -80,15 +82,17 @@ class TGKSecurityMod:public TGKModule
  bool       __fastcall get_user_entry (DWORD user_id,LPUSER_ENTRY entry) ;
  SESSION_ID __fastcall login(wchar_t * user_name,wchar_t * password);
  LRESULT    __fastcall handle_proto(LPMPROTO_HEADER mph,DWORD sz);
- LRESULT    __fastcall handle_cmd_login(LPMPROTO_HEADER mph);
- LRESULT    __fastcall enum_user       ();
- LRESULT    __fastcall on_notify_code(LPNOTIFY_CODE nc,DWORD mask);
+ LRESULT    __fastcall handle_cmd_login (LPMPROTO_HEADER mph);
+ LRESULT    __fastcall handle_cmd_logout(LPMPROTO_HEADER mph);
+ LRESULT    __fastcall enum_user          (LPUSER_ENTRY entry,DWORD idx);
+ LRESULT    __fastcall on_notify_code     (LPNOTIFY_CODE nc,DWORD mask);
  LRESULT    __fastcall on_modem_line_state(LPMODEM_LINE_STATE mls);
-  bool      __fastcall handle_line_logout(MODEM_ADDR ma);
+  bool      __fastcall handle_line_logout (MODEM_ADDR ma);
+ LRESULT    __fastcall check_right        (DWORD _ma,LPVOID ctx);
 
  LRESULT    __fastcall send       (LPMPROTO_HEADER mph);
  DWORD      __fastcall mproto_send(MODEM_ADDR & to,DWORD cmd,DWORD err,LPVOID data,DWORD data_size,bool respond,bool begin,bool finish );
- virtual  DWORD      __fastcall check_license(){return MOD_LICENSE_REGISTERED; }
+
 
  public:
  TGKSecurityMod();

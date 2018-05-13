@@ -427,6 +427,8 @@ void      __fastcall  TAwpMainForm::on_source_connect(bool connect)
     {
 
     }
+    set_login_session_id(0);
+
 }
 
 //---------------------------------------------------------------------------
@@ -693,4 +695,18 @@ void __fastcall TAwpMainForm::miLoginClick(TObject *Sender)
  }
 //---------------------------------------------------------------------------
 
+void __fastcall  TAwpMainForm::set_login_session_id(SESSION_ID ssid    )
+{
+  if(login_dlg)
+  {
+    UnicodeString str = ssid == 0 ? L"Не авторизовано" : L"Ключ сессии";
+    if(ssid)
+       str.cat_printf(L" %X:%X",((LPDWORD)&ssid)[1],((LPDWORD)&ssid)[0]);
+    login_dlg->user_passw->Text = UnicodeString();
+    login_dlg->StatusBar1->Panels->Items[0]->Text = str;
+    if(!ssid) login_dlg->SetFocus();
+  }
+}
+
+//---------------------------------------------------------------------------
 

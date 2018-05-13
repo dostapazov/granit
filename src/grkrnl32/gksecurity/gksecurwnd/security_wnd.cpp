@@ -32,3 +32,25 @@ void     __fastcall TSecurityWnd::on_module_config_change(GKHANDLE mod,LPMODULE_
 
 }
 
+void     __fastcall TSecurityWnd::after_set_gkhandle()
+{
+  TGKModuleForm::after_set_gkhandle();
+  setup_users_tree();
+}
+
+void     __fastcall TSecurityWnd::setup_users_tree  ()
+{
+  users_tree->Items->BeginUpdate() ;
+  USER_ENTRY ue;
+  ue.dwSize = sizeof(ue);
+  DWORD idx = 0;
+
+  while(mod_iface.call(SCM_ENUM_USERS,LPARAM(&ue),idx++) == GKH_RET_SUCCESS)
+  {
+   TTreeNode * node = users_tree->Items->AddObject(NULL,ue.user_name,(LPVOID)ue.user_id);
+  }
+
+  users_tree->Items->EndUpdate  () ;
+}
+
+

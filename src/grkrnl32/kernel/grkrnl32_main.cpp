@@ -23,9 +23,9 @@ TCHAR intro_text[] =
 char except_text[MAX_PATH] = {0};
 const wchar_t reg_key[] =
 #ifdef COMERCIAL_BUILD
-L"Software\\КомПА\\ОУИК_Центр\\" ;
+L"Software\\КомПА\\ОУИК_Центр" ;
 #else
- L"Software\\SDTU\\GRKERNEL32\\" ;
+ L"Software\\SDTU\\GRKERNEL32" ;
 #endif
 
 const TCHAR *commands[] =
@@ -108,16 +108,16 @@ GKHANDLE __fastcall kernel_load(TGKModuleLoader & kldr,wchar_t * instance,bool s
     kHandle = kldr.create_module();
     TGKModuleInterface iface(kHandle,true);
     dll_name[0] = 0;//Строку в которую прочитаем путь к папке для сохранения настроек
-    rg.ReadString(MREG_VALUE_CONFIGFOLDER,dll_name,sizeof(dll_name)/sizeof(wchar_t));
+    _make_name(dll_name,KERTL_ARRAY_COUNT(dll_name),instance,L".config_folder",L'\\');
     MODULE_INIT mi;
     mi.dw_size = sizeof(mi);
     mi.owner   = 0;
     mi.reg_key = rg();
 
-    mi.reg_key_name      = newstr((wchar_t*)key_name);
-    mi.reg_key_name_size = lstrlenW(key_name);
-    mi.config_folder = 0;//dll_name;
-    mi.config_folder_size = 0;// lstrlenW(dll_name);
+    mi.reg_key_name       = newstr((wchar_t*)key_name);
+    mi.reg_key_name_size  = lstrlenW(key_name);
+    mi.config_folder      = dll_name;
+    mi.config_folder_size = lstrlenW(dll_name);
     if(iface.module_init(&mi))
      {
       iface.set_language(LANGIDFROMLCID(GetThreadLocale()));

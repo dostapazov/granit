@@ -12,7 +12,8 @@
 #include <scale.h>
 #include "orders_table.hpp"
 #include "comb_table.hpp"
-#include  <lua/lua_iface.hpp>
+#include <lua/lua_iface.hpp>
+#include <gksecurity.h>
 
 
 
@@ -318,6 +319,7 @@ class TMediumDB:public TGKModule,protected TGKThread
  med_db                mdb;
  TGKModuleInterface    modemmer;
  TGKModuleInterface    scale;
+ TGKModuleInterface    security;
 
  TEventSimpleDataQueue input_queue;
  rx_buffer             handle_buffer;

@@ -59,9 +59,9 @@ namespace KeRTL
      bool    __fastcall GetClassName(char * Buff,LPDWORD cbSize,bool root = false);
      bool    __fastcall GetClassName(wchar_t * Buff,LPDWORD cbSize,bool root = false);
      bool    __fastcall Flush();
-     bool    __fastcall EnumKeys(int idx,char * NameBuf,LPDWORD nsz,bool root = false,char * ClassName = 0,LPDWORD csz = 0);
-     bool    __fastcall EnumKeys(int idx,wchar_t * NameBuf,LPDWORD nsz,bool root = false,wchar_t * ClassName = 0,LPDWORD csz = 0);
-     bool    __fastcall EnumValues(int idx,char * NameBuf,LPDWORD bsz,LPDWORD type,bool root = false,LPVOID data=0,LPDWORD dtsz=0);
+     bool    __fastcall EnumKeys  (int idx,char    * NameBuf,LPDWORD nsz,bool root = false,char * ClassName = 0,LPDWORD csz = 0);
+     bool    __fastcall EnumKeys  (int idx,wchar_t * NameBuf,LPDWORD nsz,bool root = false,wchar_t * ClassName = 0,LPDWORD csz = 0);
+     bool    __fastcall EnumValues(int idx,char    * NameBuf,LPDWORD bsz,LPDWORD type,bool root = false,LPVOID data=0,LPDWORD dtsz=0);
      bool    __fastcall EnumValues(int idx,wchar_t * NameBuf,LPDWORD bsz,LPDWORD type,bool root = false,LPVOID data=0,LPDWORD dtsz=0);
      HKEY    operator()(){return CurrentKey;}
   };
@@ -110,11 +110,12 @@ namespace KeRTL
       bool    __fastcall WriteBytes  (const wchar_t * ValName,LPVOID val,DWORD sz,bool root = false);
       bool    __fastcall DeleteValue (const wchar_t * ValName,bool root = false);
       bool    __fastcall DeleteKey   (const wchar_t * ValName,bool root = false);
-
+      DWORD   __fastcall Save        (const wchar_t * file_name,bool root = false,LPSECURITY_ATTRIBUTES sa = NULL,DWORD flags = REG_LATEST_FORMAT);
+      DWORD   __fastcall Save        (const   char  * file_name,bool root = false,LPSECURITY_ATTRIBUTES sa = NULL,DWORD flags = REG_LATEST_FORMAT);
   };
 
 #ifndef __BORLANDC__
-#pragma  warning  (disable  : 4250 ) 
+#pragma  warning  (disable  : 4250 )
 #endif
 
   KERTL_CLASS TRegsRdWr:public TRegsReader,public TRegsWriter
@@ -169,6 +170,17 @@ inline  bool    __fastcall TRegsBase::Flush()
 {
   return bool (ERROR_SUCCESS == RegFlushKey(RootKey));
 }
+
+inline  DWORD  __fastcall TRegsWriter::Save (const wchar_t * file_name,bool root ,LPSECURITY_ATTRIBUTES sa,DWORD flags )
+{
+  return RegSaveKeyExW(root ? RootKey : CurrentKey,file_name,sa,flags);
+}
+
+inline  DWORD  __fastcall TRegsWriter::Save (const  char   * file_name,bool root ,LPSECURITY_ATTRIBUTES sa,DWORD flags )
+{
+  return RegSaveKeyExA(root ? RootKey : CurrentKey,file_name,sa,flags);
+}
+
 
 #ifndef _NO_NAMESPACE
 }

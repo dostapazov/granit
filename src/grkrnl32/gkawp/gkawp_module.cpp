@@ -23,6 +23,7 @@
 #include "awp_main_form.h"
 #include <tregstry.hpp>
 #include "tlm_kadr.h"
+
 #pragma argsused
 
   KeRTL::THeap  TGkAwpModule::mod_heap;
@@ -84,7 +85,7 @@ extern "C" void tss_cleanup_implemented(void)
     paint_context = tlmpaint::painter_dll::get_instance()->paint_context_create();
     thread_term_event = NULL;
     rx_queue          = NULL;
-    local_ssid = remote_ssid = -1;
+    local_ssid = remote_ssid = 0;
  }
 //------------------------------------------------------------------------------
 void    __fastcall TGkAwpModule::release      (LPVOID arg)
@@ -930,7 +931,8 @@ DWORD   __fastcall TGkAwpModule::start(DWORD reason,LPARAM as_service)
   thread_term_request  = 0;
   disparity_count      = back_count = alarms_count = danger_count = 0;
   history_present      = FALSE;
-  this->is_connected   = FALSE;
+  is_connected         = FALSE;
+
   if(as_service)
   {
      report(EVENT_SYSTEM,REPORT_INFORMATION_TYPE,L"Модуль просмотра нет смысла запускать в режиме службы");
@@ -1235,6 +1237,7 @@ bool   __fastcall TGkAwpModule::get_opened_kadrs(kadrs_t & _kadrs)
 void    __fastcall TGkAwpModule::on_source_connect   (bool connect)
 {
   is_connected = connect;
+  remote_ssid = local_ssid = 0;
   if(main_form) PostMessage(main_form->Handle,WM_ON_SOURCE_CONNECT,connect,0);
   if(connect)
     {

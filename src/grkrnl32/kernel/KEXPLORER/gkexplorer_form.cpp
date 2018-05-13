@@ -7,6 +7,7 @@
 #include "activation_form.h"
 #include <kfname.hpp>
 #include <tlicense.hpp>
+#include <ke_secur.hpp>
 
 
 //---------------------------------------------------------------------------
@@ -695,4 +696,16 @@ void    __fastcall TGKExplorerFrm::BeforeDestruction(void)
   ModulesTree->Items->Clear();
   TGKModuleForm::BeforeDestruction();
 }
+
+void __fastcall TGKExplorerFrm::miSaveRegistrySettingsClick(TObject *Sender)
+{
+  if(SaveDialog1->Execute(Handle))
+  {
+    this->begin_gk_command(L"Сохранение наcтроек модуля");
+    TGKModuleInterface mod(GetGKHandle(ModulesTree->Selected),true);
+    LRESULT ret = mod.call(MCMD_SAVE_REGISTRY,(LPARAM)SaveDialog1->FileName.c_str(),0);
+    end_gk_command(mod(),ret,GetLastError());
+  }
+}
+//---------------------------------------------------------------------------
 

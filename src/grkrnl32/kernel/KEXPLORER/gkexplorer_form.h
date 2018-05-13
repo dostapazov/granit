@@ -71,6 +71,9 @@ __published:	// IDE-managed Components
 	TMenuItem *miRegisterModule;
 	TMenuItem *miGenPrelicenseData;
 	TAboutCommonFrame *AboutCommonFrame1;
+	TMenuItem *N2;
+	TMenuItem *miSaveRegistrySettings;
+	TSaveDialog *SaveDialog1;
         void __fastcall MiCloseClick(TObject *Sender);
         void __fastcall MiAddModuleClick(TObject *Sender);
         void __fastcall ModulesTreeChange(TObject *Sender,
@@ -96,6 +99,7 @@ __published:	// IDE-managed Components
 	void __fastcall miGenTrialLicenseClick(TObject *Sender);
 	void __fastcall miRegisterModuleClick(TObject *Sender);
 	void __fastcall miGenPrelicenseDataClick(TObject *Sender);
+	void __fastcall miSaveRegistrySettingsClick(TObject *Sender);
 private:	// User declarations
 
 TTreeNode  * added_module_node;

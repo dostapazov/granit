@@ -26,6 +26,7 @@
 #include <alloc.h>
 #include <kfname.hpp>
 #include <kertlio.hpp>
+#include <ke_secur.hpp>
 
     KeRTL::TFASTMutex  TGKModule::resource_locker;
     HINSTANCE          TGKModule::dll_instance      = NULL;
@@ -337,6 +338,9 @@ LRESULT __fastcall TGKModule::processing(DWORD cmd,LPARAM p1,LPARAM p2)
   break;
   case MCMD_LICENSE_INCTIME:
        ret = license_inc_time(p1);
+  break;
+  case MCMD_SAVE_REGISTRY  :
+       ret = module_save_registry((wchar_t*) p1 );
   break;
 
   default:
@@ -1314,6 +1318,83 @@ bool __fastcall TGKModule::check_valid_copy()
    license.close();
    return ret;
   }
+
+//HRESULT ModifyPrivilege(IN LPCTSTR szPrivilege,IN BOOL fEnable)
+//{
+//    HRESULT hr = S_OK;
+//    TOKEN_PRIVILEGES NewState;
+//    LUID             luid;
+//    HANDLE hToken    = NULL;
+//
+//    // Open the process token for this process.
+//    if (!OpenProcessToken(GetCurrentProcess(),
+//                          TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY,
+//                          &hToken ))
+//    {
+//        //printf("Failed OpenProcessToken\n");
+//        return ERROR_FUNCTION_FAILED;
+//    }
+//
+//    // Get the local unique ID for the privilege.
+//    if ( !LookupPrivilegeValue( NULL,
+//                                szPrivilege,
+//                                &luid ))
+//    {
+//        CloseHandle( hToken );
+//        //printf("Failed LookupPrivilegeValue\n");
+//        return ERROR_FUNCTION_FAILED;
+//    }
+//
+//    // Assign values to the TOKEN_PRIVILEGE structure.
+//    NewState.PrivilegeCount = 1;
+//    NewState.Privileges[0].Luid = luid;
+//    NewState.Privileges[0].Attributes =
+//              (fEnable ? SE_PRIVILEGE_ENABLED : 0);
+//
+//    // Adjust the token privilege.
+//    if (!AdjustTokenPrivileges(hToken,
+//                               FALSE,
+//                               &NewState,
+//                               0,
+//                               NULL,
+//                               NULL))
+//    {
+//        //printf("Failed AdjustTokenPrivileges\n");
+//        hr = ERROR_FUNCTION_FAILED;
+//    }
+//
+//    // Close the handle.
+//    CloseHandle(hToken);
+//
+//    return hr;
+//}
+
+ LRESULT __fastcall TGKModule::module_save_registry( const wchar_t * file_name )
+ {
+//     TRegsWriter rw(DupKey(reg_key));
+//     return  rw.Save(file_name,true);
+//       SECURITY_ATTRIBUTES sa;
+//       SECURITY_DESCRIPTOR sd;
+//       ZeroMemory(&sa,sizeof(sa));
+//       sa.nLength = sizeof(sa);
+//       sa.bInheritHandle = TRUE;
+//       ZeroMemory(&sd,sizeof(sd));
+//       if(InitializeSecurityDescriptor(&sd,SECURITY_DESCRIPTOR_REVISION) &&
+//       SetSecurityDescriptorDacl(&sd,TRUE,(PACL)NULL,FALSE))
+//       sa.lpSecurityDescriptor = &sd;
+
+     TProcessToken token(GetCurrentProcess());
+     if(SUCCEEDED(token.modify_privilege(SE_BACKUP_NAME,true)))
+     {
+     DWORD error = RegSaveKeyExW(reg_key,file_name,NULL,REG_STANDARD_FORMAT);
+     token.modify_privilege(SE_BACKUP_NAME,FALSE);
+     if(error)
+        {SetLastError(error); return  GKH_RET_ERROR ; }
+     return    GKH_RET_SUCCESS;
+     }
+    return GKH_RET_ERROR;
+ }
+
 
 
 

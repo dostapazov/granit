@@ -361,6 +361,9 @@ DWORD   __fastcall TMediumDB::get_mem_used()
   modemmer.call(MDMCM_REGISTER_HANDLER,LPARAM(_handle),FA_OTD_MEDIUM_ALARM_ARCHIVE);
   scale.open(SCALE_NAME_W);
   scale.set_notify(_handle,MNF_SCALE,true);
+
+  security.open(GKSECURITY_MOD_NAME);
+
   terminate_event.SetEvent(false);
   TGKThread::Start(32684,false,NULL);
   archvie_thread.Start(32684);

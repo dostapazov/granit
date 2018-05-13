@@ -79,14 +79,17 @@ TGKModule()
    LRESULT ret = GKH_RET_ERROR;
    switch(cmd)
    {
-    case MDMCM_FA_HANDLE:
-    ret =  this->handle_proto((LPMPROTO_HEADER)p1,(DWORD)p2);
+    case MDMCM_FA_HANDLE   : ret =  handle_proto((LPMPROTO_HEADER)p1,(DWORD)p2);
     break;
+    case SCM_ENUM_USERS    : ret =  enum_user((LPUSER_ENTRY)p1,p2);break;
+    case SCM_GET_USER_INFO : break;
+    case SCM_CHECK_RIGHTS  : ret = check_right(p1,(LPVOID)p2);break;
     default: ret = TGKModule::processing(cmd,p1,p2);
     break;
    }
   return ret;
  }
+
 
  DWORD   __fastcall TGKSecurityMod::start(DWORD reason,LPARAM p2)
  {
@@ -151,7 +154,7 @@ TGKModule()
   sdata->create(1,(char*)&secret_word,sizeof(secret_word),512);
   DWORD cnt = 0;
   DWORD rec_id = sdata->add_record(&cnt,sizeof(cnt));
-  add_user(L"sysadm",L"");
+  add_user(L"sysadm",L"sysadm");
  }
 #pragma warn .8004
 
@@ -295,7 +298,8 @@ DWORD       __fastcall TGKSecurityMod::mproto_send(MODEM_ADDR & to,DWORD cmd,DWO
           }
       }
       else
-      SetLastError(-1/*NO_USER*/);
+      SetLastError(ERROR_NO_SUCH_USER);
+
      }
   return ret;
  }
@@ -313,8 +317,8 @@ DWORD       __fastcall TGKSecurityMod::mproto_send(MODEM_ADDR & to,DWORD cmd,DWO
       LPOTDM_PROTO_HEADER omph = (LPOTDM_PROTO_HEADER)mph->data;
       switch(omph->command&OTDM_COMMAND_MASK)
       {
-       case GKSECUR_PROTO_CMD_LOGIN:   ret = handle_cmd_login(mph);
-       break;
+       case GKSECUR_PROTO_CMD_LOGIN  :   ret = handle_cmd_login (mph) ; break;
+       case GKSECUR_PROTO_CMD_LOGOUT :   ret = handle_cmd_logout(mph); break;
       }
      }
      return  ret;
@@ -348,6 +352,30 @@ DWORD       __fastcall TGKSecurityMod::mproto_send(MODEM_ADDR & to,DWORD cmd,DWO
 
   return ret;
  }
+
+ LRESULT    __fastcall TGKSecurityMod::handle_cmd_logout(LPMPROTO_HEADER mph)
+ {
+
+     LRESULT ret = GKH_RET_ERROR;
+     LPOTDM_PROTO_HEADER omph = (LPOTDM_PROTO_HEADER)mph->data;
+     modem_addr ma(mph->addr_from);
+     if(omph->data_size >= (sizeof(SESSION_ID)*2))
+     {
+       LPSESSION_ID ss_ids = (LPSESSION_ID) omph->data;
+       TLockHelper l(locker);
+       if(modem_sessions.count(ma))
+       {
+        Tsessions &ss = modem_sessions[ma];
+        if(ss.first == ss_ids[0] && ss.second == ss_ids[1])
+          {
+             ret = GKH_RET_SUCCESS;
+          }
+       }
+     }
+     mproto_send(ma,omph->command,ret,omph->data,omph->data_size,true,true,true);
+     return ret;
+ }
+
 
  LRESULT  __fastcall TGKSecurityMod::on_notify_code(LPNOTIFY_CODE nc,DWORD mask)
  {
@@ -389,7 +417,38 @@ DWORD       __fastcall TGKSecurityMod::mproto_send(MODEM_ADDR & to,DWORD cmd,DWO
   }
 
 
+LRESULT    __fastcall TGKSecurityMod::check_right       (DWORD _ma,LPVOID ctx)
+{
+    LRESULT ret = GKH_RET_ERROR;
+    modem_addr ma(_ma);
+    TLockHelper l(locker);
+    if(modem_sessions.count(ma))
+    {
 
+    }
+  return ret;
+}
+
+LRESULT    __fastcall TGKSecurityMod::enum_user         (LPUSER_ENTRY entry,DWORD idx)
+{
+   LRESULT ret = GKH_RET_ERROR;
+   if(check_data_size(entry,sizeof(entry)))
+     {
+        TLockHelper l(locker);
+        if(idx<this->users_map.size())
+        {
+         Tusers_map::iterator ptr = users_map.begin();
+         std::advance(ptr,idx);
+         entry->user_id = ptr->second;
+         wcsncpy(entry->user_name,ptr->first.c_str(),KERTL_ARRAY_COUNT(entry->user_name));
+         entry->user_password[0] = 0;
+         ret = GKH_RET_SUCCESS;
+        }
+        else
+        SetLastError(ERROR_MORE_DATA);
+     }
+   return  ret;
+}
 
 
 

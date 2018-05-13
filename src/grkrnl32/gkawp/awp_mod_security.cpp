@@ -1,5 +1,6 @@
 #pragma hdrstop
 #include "gkawpmodule.hpp"
+#include "awp_main_form.h"
 
 
 DWORD  __fastcall TGkAwpModule::send_login_request (UnicodeString user_name,UnicodeString passw)
@@ -23,11 +24,22 @@ DWORD  __fastcall TGkAwpModule::send_login_request (UnicodeString user_name,Unic
 LRESULT __fastcall TGkAwpModule::handle_security  (MODEM_ADDR & from,  LPOTDM_PROTO_HEADER omph, DWORD data_size)
 {
      LRESULT ret = GKH_RET_SUCCESS;
-     if(omph->command & OTDM_RESPOND )
+     OTDM_PROTO_STATE  ps(omph);
+     if(ps.is_respond )
      {
-      ret = GKH_RET_SUCCESS;
+      switch(ps.command)
+      {
+       case GKSECUR_PROTO_CMD_LOGIN:
+       {
+          remote_ssid = ps.is_error ? 0 : *((LPSESSION_ID)ps.p_any);
+          if(this->main_form)
+            {
+             main_form->set_login_session_id(remote_ssid);
+            }
+       }
+       break;
+      }
      }
-
     return ret;
 }
 

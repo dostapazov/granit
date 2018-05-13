@@ -405,6 +405,9 @@ typedef struct _NOTIFY_CODE
 //Активизация лицензии
 //p1 wchar_t * actiavtion_key   p2 = DWORD length
 
+#define MCMD_SAVE_REGISTRY             120L
+//Сохранение реестра в файл p1 = wchar_t * file_name
+
 
 
 

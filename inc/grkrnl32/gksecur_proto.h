@@ -10,8 +10,10 @@
 #include <otdm_proto.h>
 #endif
 
+#pragma pack(push,1)
 
 typedef QWORD SESSION_ID;
+typedef SESSION_ID*  LPSESSION_ID;
 
 //Протокол безопасности начинается с заголова OTDM_PROTO_HEADER
 
@@ -24,6 +26,14 @@ typedef QWORD SESSION_ID;
 //4 kpk
 //  Ответ с флагом OTDM_RESPOND
 //  SESSION_ID
+
+#define GKSECUR_PROTO_CMD_LOGOUT   2
+//OTDM_PROTO_HEADER::data
+//1 SESSION_ID * remote_ssid
+//2 SESSION_ID * local_session_id
+
+
+#pragma pack(pop)
 
 #ifdef __cplusplus
 extern "C"{

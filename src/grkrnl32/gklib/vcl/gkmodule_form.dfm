@@ -2,8 +2,8 @@ object GKModuleForm: TGKModuleForm
   Left = 473
   Top = 393
   Caption = 'GKModuleForm'
-  ClientHeight = 335
-  ClientWidth = 411
+  ClientHeight = 436
+  ClientWidth = 609
   Color = clBtnFace
   Font.Charset = RUSSIAN_CHARSET
   Font.Color = clWindowText

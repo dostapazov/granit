@@ -435,6 +435,13 @@ enum TWaitResult {WaitFailed = WAIT_FAILED , WaitOk = WAIT_OBJECT_0,
   public:
   TProcess():THandleBased(NULL) ,process_id(0),thread_id(0),process_thread(INVALID_HANDLE_VALUE)
   {};
+  TProcess(HANDLE hProcess):THandleBased(hProcess) ,process_id(0),thread_id(0),process_thread(INVALID_HANDLE_VALUE)
+  {
+   if(IsValid())
+   {
+     process_id    = GetProcessId(hProcess);
+   }
+  };
   virtual ~TProcess(){Release();}
   bool __fastcall Create(const char * exename, const char * cmd_line = NULL,
                          const char * environment = NULL,const char * curdir = NULL,
@@ -454,8 +461,6 @@ enum TWaitResult {WaitFailed = WAIT_FAILED , WaitOk = WAIT_OBJECT_0,
   bool  __fastcall WaitStartup(DWORD TimeOut = INFINITE){ return WaitForInputIdle(Handle,TimeOut) ? false:true;}
   DWORD __fastcall GetExitCode() { DWORD ret = -1;if(IsValid()) GetExitCodeProcess(Handle,&ret); return ret; }
  };
-
-
 
 /***************************** Inline inplementation **************************/
 

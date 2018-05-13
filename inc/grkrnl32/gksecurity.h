@@ -37,6 +37,7 @@ typedef struct _GKS_USER_INFO
 
 
 #define SCM_ENUM_USERS     MCMD(MT_SECURITY,1)
+//p1 = LPUSER_ENTRY  p2 idx;
 
 //Добавление пользователя
 //p1 =  LPWSTR user_name,p2 = LPWSTR user_password
@@ -45,6 +46,10 @@ typedef struct _GKS_USER_INFO
 #define SCM_SET_USER_INFO  MCMD(MT_SECURITY,3)
 
 #define SCM_GET_USER_INFO  MCMD(MT_SECURITY,4)
+
+#define SCM_CHECK_RIGHTS   MCMD(MT_SECURITY,100)
+// p1 = MODEM_ADDR p2 LPVOID
+
 
 #pragma pack(pop);
 

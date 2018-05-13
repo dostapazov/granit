@@ -9,6 +9,9 @@
 #include <Forms.hpp>
 #include <KeRTL.hpp>
 #include <gkmodules.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.ToolWin.hpp>
 #include <vector>
 #include <map>
 

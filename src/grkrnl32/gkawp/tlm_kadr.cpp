@@ -173,7 +173,7 @@ void  __fastcall TTlmKadrForm::get_record_status_text (mdb_record & rec,UnicodeS
      UnicodeString rec_text;
      if(rec.name!=rec.sname)
         rec_text = get_name(rec,false);
-     str.printf(L"ID-%u ",rec.rec_id);
+     //str.printf(L"ID-%u ",rec.rec_id);
      if(rec.is_discrete())
      {
       str.cat_printf(L"[ %s ]",DWORD(rec.value) ? L" ÂÊË":L"ÎÒÊË");
@@ -183,6 +183,9 @@ void  __fastcall TTlmKadrForm::get_record_status_text (mdb_record & rec,UnicodeS
      str.cat_printf(L"[ %9.3f ]",rec.value);
 
      str.cat_printf(L" %s |",rec_text.c_str());
+
+     if(rec.addr.param_number != (DWORD)-1 && rec.addr.addr.addr != DWORD(-1))
+     {
      str.cat_printf(L" otd-addr %03hd.%03hd.%03hd.%03hd-%03hd"
                    ,(short)rec.addr.addr.pu
                    ,(short)rec.addr.addr.cp
@@ -190,6 +193,7 @@ void  __fastcall TTlmKadrForm::get_record_status_text (mdb_record & rec,UnicodeS
                    ,(short)rec.addr.addr.sb
                    ,(short)rec.addr.param_number
                    );
+     }
 
      str.cat_printf(L" DIAG %02d(%s) OTD-DIAG %04X ",rec.diag,rec.diag ? L"BAD":L"OK",rec.otd_pd);
      UnicodeString  state_str = TGkAwpModule::get_state_text(rec.state&MDBR_STATE_DYN_MASK);
@@ -206,8 +210,7 @@ void __fastcall  TTlmKadrForm::show_entry_info       (mdb_kadr_entry *entry)
        if(module->get_record(entry->rec_id,rec))
             {
              get_record_status_text(rec,text);
-             if(IsDebuggerPresent())
-               text.cat_printf(L" EN=%d",entry->number);
+             if(IsDebuggerPresent()) text.cat_printf(L" EN=%d",entry->number);
             }
      }
      else
@@ -222,7 +225,8 @@ void __fastcall  TTlmKadrForm::show_entry_info       (mdb_kadr_entry *entry)
 
         }
      }
-   StatusBar1->Panels->Items[0]->Text = text;
+     StatusBar1->Panels->Items[0]->Text = text;
+
 }
 //---------------------------------------------------------------------------
 
@@ -1095,6 +1099,22 @@ void __fastcall TTlmKadrForm::tbRequestOscilogrammClick(TObject *Sender)
      mproto_init(mph,0,FA_OTD_MEDIUM,sizeof(*oscp)+sizeof(*omph),&ma);
      module->send_data(mph);
    }
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TTlmKadrForm::FormResize(TObject *Sender)
+{
+  TTlmPainterForm::FormResize(Sender);
+  StatusBar1->Panels->Items[0]->Width = paint_area->Width;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TTlmKadrForm::StatusBar1DrawPanel(TStatusBar *StatusBar, TStatusPanel *Panel,
+          const TRect &Rect)
+{
+
+  StatusBar->Canvas->TextRect(Rect,1,3,Panel->Text);
 }
 //---------------------------------------------------------------------------
 

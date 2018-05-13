@@ -110,6 +110,7 @@ class TGKModule:public TGKHandleBased
            LRESULT __fastcall license_gen_request(LPCWSTR  file_name);
            bool    __fastcall open_license();
  virtual   DWORD   __fastcall license_inc_time(DWORD v);
+           LRESULT __fastcall module_save_registry( const wchar_t * file_name );
 
 
  public:

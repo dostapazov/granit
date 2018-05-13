@@ -60,7 +60,7 @@
     <PropertyGroup Condition="'$(Base)'!=''">
         <ILINK_DisplayTime>true</ILINK_DisplayTime>
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
-        <IncludePath>..\..\KE_WIN\;..\GKLIB\;$(IncludePath)</IncludePath>
+        <IncludePath>..\..\KE_RTL\;..\..\KE_WIN\;..\GKLIB\;$(IncludePath)</IncludePath>
         <IntermediateOutputDir>$(GRKRNL_TEMP)\$(Platform)\$(CONFIG)\grkernel</IntermediateOutputDir>
         <ILINK_MapFileType>None</ILINK_MapFileType>
         <SanitizedProjectName>tlmcentr32</SanitizedProjectName>
@@ -75,7 +75,7 @@
         <DCC_AdditionalSwitches> -N0d:\temp\ -M</DCC_AdditionalSwitches>
         <PackageImports>rtl.bpi;vcl.bpi;vclx.bpi;bcbsmp.bpi;dbrtl.bpi;vcldb.bpi;adortl.bpi;ibsmp.bpi;bdertl.bpi;vcldbx.bpi;teeui.bpi;teedb.bpi;tee.bpi;dss.bpi;ibxpress.bpi;dsnap.bpi;vclie.bpi;inetdb.bpi;inet.bpi;webdsnap.bpi;bcbie.bpi;bcboffice2k.bpi;$(PackageImports)</PackageImports>
         <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
-        <ILINK_LibraryPath>..\..\KE_WIN\;..\GKLIB\;$(BDS)\lib;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>..\..\KE_RTL\;..\..\KE_WIN\;..\GKLIB\;$(BDS)\lib;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <TASM_AdditionalSwitches> /w2 d:\temp\</TASM_AdditionalSwitches>
         <TASM_IncludePath>..;..\KERNEL;..\..\KE_WIN;$(BDS)\Projects;..\GKLIB;$(BDS)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE\VCL;$(TASM_IncludePath)</TASM_IncludePath>
         <BCC_GenerateWindowsApp>true</BCC_GenerateWindowsApp>
@@ -124,7 +124,7 @@
         <DCC_AdditionalSwitches> -N0d:\temp\ -M -V</DCC_AdditionalSwitches>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <Debugger_RunParams> -config -service</Debugger_RunParams>
+        <Debugger_RunParams> -config -service nosplash</Debugger_RunParams>
         <BCC_StackFrames>true</BCC_StackFrames>
         <ILINK_MapFileType>None</ILINK_MapFileType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -143,7 +143,7 @@
         <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Build>129</VerInfo_Build>
+        <VerInfo_Build>132</VerInfo_Build>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <BCC_QuietFloatingPoint>false</BCC_QuietFloatingPoint>
         <ILINK_MapFileType>None</ILINK_MapFileType>
@@ -152,7 +152,7 @@
         <VerInfo_Release>1</VerInfo_Release>
         <BCC_StackFrames>true</BCC_StackFrames>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Keys>CompanyName=Home Lab;FileDescription=Kernel for ASDU modules;FileVersion=1.1.1.129;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Home Lab;FileDescription=Kernel for ASDU modules;FileVersion=1.1.1.132;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <ILINK_FullDebugInfo>false</ILINK_FullDebugInfo>
         <BCC_DisableOptimizations>false</BCC_DisableOptimizations>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
@@ -219,6 +219,9 @@
         <CppCompile Include="grkrnl32_service.cpp">
             <BuildOrder>26</BuildOrder>
             <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\..\KE_RTL\storage.cpp">
+            <BuildOrder>13</BuildOrder>
         </CppCompile>
         <CppCompile Include="..\..\KE_WIN\Grkrwnd.cpp">
             <BuildOrder>13</BuildOrder>
@@ -362,6 +365,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="..\..\..\grkrnl32\tlmcentr32.tds" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteName>tlmcentr32.tds</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\..\..\LIB_XE\gklib.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
@@ -375,12 +384,6 @@
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32240mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="D:\ERADS\18.0\lib\win32\release\memmgr.lib" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

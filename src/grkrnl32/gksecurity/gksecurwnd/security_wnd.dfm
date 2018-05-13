@@ -6,21 +6,12 @@ inherited SecurityWnd: TSecurityWnd
   ExplicitHeight = 378
   PixelsPerInch = 96
   TextHeight = 13
-  object Splitter1: TSplitter
-    Left = 185
-    Top = 29
-    Height = 303
-    ExplicitLeft = 186
-    ExplicitHeight = 287
-  end
   object StatusBar1: TStatusBar
     Left = 0
     Top = 332
     Width = 518
     Height = 19
     Panels = <>
-    ExplicitTop = 316
-    ExplicitWidth = 411
   end
   object ToolBar1: TToolBar
     Left = 0
@@ -31,28 +22,31 @@ inherited SecurityWnd: TSecurityWnd
     EdgeBorders = [ebBottom]
     TabOrder = 1
   end
-  object Panel1: TPanel
+  object PageControl1: TPageControl
     Left = 0
     Top = 29
-    Width = 185
+    Width = 518
     Height = 303
-    Align = alLeft
-    BevelOuter = bvNone
-    TabOrder = 2
-    ExplicitTop = 0
-    ExplicitHeight = 22
-  end
-  object Panel2: TPanel
-    Left = 188
-    Top = 29
-    Width = 330
-    Height = 303
+    ActivePage = users_sheet
     Align = alClient
-    BevelOuter = bvNone
-    TabOrder = 3
-    ExplicitLeft = 120
-    ExplicitTop = 160
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    TabOrder = 2
+    object users_sheet: TTabSheet
+      Caption = #1055#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1080
+      object Splitter1: TSplitter
+        Left = 161
+        Top = 0
+        Width = 4
+        Height = 275
+      end
+      object users_tree: TTreeView
+        Left = 0
+        Top = 0
+        Width = 161
+        Height = 275
+        Align = alLeft
+        Indent = 19
+        TabOrder = 0
+      end
+    end
   end
 end

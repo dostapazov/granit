@@ -382,6 +382,7 @@ typedef OTDM_PROTO_IMAGE_CHUNK*  LPOTDM_PROTO_PAINT_IMAGE_CHUNK;
       DWORD error;
       DWORD data_size;
       union{
+            LPVOID                     p_any;
             LPDWORD                    p_data;
             LPOTDM_PROTO_KADR          p_kadr;
             LPOTDM_PROTO_IMAGE_BEGIN   p_image_begin;

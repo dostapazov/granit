@@ -51,7 +51,7 @@ object LoginDlg: TLoginDlg
     BevelKind = bkFlat
     BorderStyle = bsNone
     PasswordChar = '*'
-    TabOrder = 1
+    TabOrder = 3
   end
   object bLogin: TBitBtn
     Left = 299
@@ -71,7 +71,7 @@ object LoginDlg: TLoginDlg
     Caption = #1054#1090#1084#1077#1085#1072
     Kind = bkCancel
     NumGlyphs = 2
-    TabOrder = 3
+    TabOrder = 1
     OnClick = bCancelClick
   end
   object StatusBar1: TStatusBar
