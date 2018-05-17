@@ -380,6 +380,7 @@ DWORD   __fastcall TMediumDB::get_mem_used()
  DWORD   __fastcall TMediumDB::stop (DWORD reason)
  {
     DWORD ret ;
+
     terminate_event.SetEvent(true);
     archvie_thread.TerminateAndWait(3000,true);
     terminate_event.SetEvent(true);
@@ -397,7 +398,7 @@ DWORD   __fastcall TMediumDB::get_mem_used()
     modemmer.set_notify(_handle,MNF_MODEM,FALSE);
     modemmer.call(MDMCM_UNREGISTER_HANDLER,LPARAM(_handle),FA_OTD_MEDIUM);
     modemmer.call(MDMCM_UNREGISTER_HANDLER,LPARAM(_handle),FA_OTD_MEDIUM_ALARM_ARCHIVE);
-
+    security.close();
 
   if(reason!=MODULE_STOP_PROGRAM_SHUTDOWN)
   {
@@ -411,11 +412,15 @@ DWORD   __fastcall TMediumDB::get_mem_used()
        mdb.handle_record_changes();
   }
 
-    scale.set_notify(_handle,MNF_SCALE,FALSE);
-    scale.close();
+    if(scale.is_valid())
+    {
+     scale.set_notify(_handle,MNF_SCALE,FALSE);
+     scale.close();
+    }
 
     modemmer.close();
-    this->cc_flags |=MDB_CCFL_RECORD_TABLE;
+
+    cc_flags |=MDB_CCFL_RECORD_TABLE;
     ret = TGKModule::stop(reason);
   return ret;
  }

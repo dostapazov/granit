@@ -1,3 +1,4 @@
+#pragma hdrstop
 #include <windows.h>
 #include <freeimage.hpp>
 #include "grkrnl32_main.hpp"
@@ -15,7 +16,7 @@
  TGKAppWindow::TGKAppWindow(GKHANDLE khandle)
              :
              kernel_handle(khandle)
-             ,tray_menu(MAKEINTRESOURCE(IDM_TRAY_MENU))
+             ,tray_menu(MAKEINTRESOURCE(IDM_TRAY_MENU),ModuleInstance)
  {
    *instance = 0;
    create_taskbar_msg = RegisterWindowMessageW(L"TaskbarCreated");
@@ -200,7 +201,7 @@ void     __fastcall TGKAppWindow::show_menu(int x,int y)
   if(TWindow::OnWMCreate(ps))
     {
       wchar_t str[MAX_PATH];
-      ::HINSTANCE hInst = GetModuleHandle(0);
+      ::HINSTANCE hInst = ModuleInstance;// GetModuleHandle(0);
       TGKModuleInterface(this->kernel_handle,true).get_module_name(str,KERTL_ARRAY_COUNT(str));
       mod_name  = newstr(str);
       LoadStringW(hInst,IDS_WORK,str,KERTL_ARRAY_COUNT(str));
@@ -311,75 +312,6 @@ int __fastcall gkapp_window(GKHANDLE kernel,BOOL show_setup,const TCHAR * instan
      return ret == IDCANCEL ? 0:ret;
 }
 
-
-
-//TModule freeimg;
-//
-//HBITMAP __fastcall DibToDdb(FIBITMAP * fi_bmp,int width,int height)
-//{
-// HDC ScreenDC = 0;
-// HDC MemDC    = 0;
-// HBITMAP Bmp  = 0;
-// if(!freeimg.GetInstance()) return NULL;
-// dll_proc1<FIBITMAP *,LPBITMAPINFO> pFreeImage_GetInfo(freeimg.GetInstance(),"_FreeImage_GetInfo@4");
-// dll_proc1<FIBITMAP *,char*>        pFreeImage_GetBits(freeimg.GetInstance(),"_FreeImage_GetBits@4");
-// if( fi_bmp)
-// {
-//  ScreenDC = CreateDC("DISPLAY",0,0,0);
-//  if(ScreenDC)
-//  {
-//   MemDC    = CreateCompatibleDC(ScreenDC);
-//   if(MemDC)
-//   {
-//     LPBITMAPINFO bi = pFreeImage_GetInfo(fi_bmp);
-//     if(!width)  width  = bi->bmiHeader.biWidth;
-//     if(!height) height = bi->bmiHeader.biHeight;
-//     Bmp = CreateCompatibleBitmap(ScreenDC,width,height);
-//     if(Bmp)
-//     {
-//      SetBitmapDimensionEx(Bmp,width,height,NULL);
-//      Bmp =(HBITMAP) SelectObject(MemDC,Bmp);
-//      SetStretchBltMode(MemDC,COLORONCOLOR);
-//      StretchDIBits(
-//              MemDC,0,0,width,height,0,0,
-//              bi->bmiHeader.biWidth,
-//              bi->bmiHeader.biHeight,
-//              pFreeImage_GetBits(fi_bmp),bi,DIB_RGB_COLORS,SRCCOPY
-//              );
-//      Bmp = (HBITMAP)SelectObject(MemDC,Bmp);
-//     }
-//   }
-//  }
-// }
-//
-// if(ScreenDC)
-//    DeleteDC(ScreenDC);
-// if(MemDC)
-//    DeleteDC(MemDC);
-// return Bmp;
-//}
-//
-//  HBITMAP __fastcall  load_image(const wchar_t * image_name)
-//  {
-//    HBITMAP  ret     = NULL;
-//    if( !freeimg.GetInstance()) return NULL;
-//    dll_proc1<const wchar_t*,FREE_IMAGE_FORMAT>                 pFreeImage_GetFileTypeU(freeimg.GetInstance(),"_FreeImage_GetFileTypeU@8");
-//    dll_proc1<FIBITMAP *>                                       pFreeImage_Unload      (freeimg.GetInstance(),"_FreeImage_Unload@4");
-//    dll_proc3<FREE_IMAGE_FORMAT,const wchar_t *,int,FIBITMAP *> pFreeImage_LoadU       (freeimg.GetInstance(),"_FreeImage_LoadU@12");
-//    FREE_IMAGE_FORMAT  img_fmt = pFreeImage_GetFileTypeU(image_name);
-//    if(img_fmt != FIF_UNKNOWN)
-//    {
-//     FIBITMAP *fbmp = pFreeImage_LoadU(img_fmt,image_name,0);
-//     if(fbmp)
-//       {
-//        ret = DibToDdb(fbmp,0,0);
-//        pFreeImage_Unload(fbmp);
-//       }
-//    }
-//    return  ret;
-//  }
-//
-//
 
   void __fastcall splash_list(std::vector<std::wstring> & fvect,const wchar_t * templ)
   {

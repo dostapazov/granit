@@ -131,7 +131,7 @@
         <DCC_AdditionalSwitches> -N0d:\temp\ -M -V</DCC_AdditionalSwitches>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <Debugger_RunParams>-config  </Debugger_RunParams>
+        <Debugger_RunParams>-config  -service</Debugger_RunParams>
         <BCC_StackFrames>true</BCC_StackFrames>
         <ILINK_MapFileType>None</ILINK_MapFileType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -156,7 +156,7 @@
         <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Build>137</VerInfo_Build>
+        <VerInfo_Build>142</VerInfo_Build>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
         <BCC_QuietFloatingPoint>false</BCC_QuietFloatingPoint>
@@ -166,7 +166,7 @@
         <VerInfo_Release>1</VerInfo_Release>
         <BCC_StackFrames>true</BCC_StackFrames>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Keys>CompanyName=Home Lab;FileDescription=Kernel for ASDU modules;FileVersion=1.1.1.137;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Home Lab;FileDescription=Kernel for ASDU modules;FileVersion=1.1.1.142;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <ILINK_FullDebugInfo>false</ILINK_FullDebugInfo>
         <BCC_DisableOptimizations>false</BCC_DisableOptimizations>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
@@ -183,60 +183,8 @@
         <AppEnableHighDPI>true</AppEnableHighDPI>
     </PropertyGroup>
     <ItemGroup>
-        <LibFiles Include="..\..\..\LIB_XE64\KE_RTLS.a" Condition="'$(Platform)'=='Win64'">
-            <BuildOrder>14</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
-        <LibFiles Include="..\..\..\LIB_XE\gkhandle.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>9</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
-        <LibFiles Include="..\..\..\LIB_XE\gklib.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>10</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
-        <LibFiles Include="..\..\..\LIB_XE\KE_RTLS.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>11</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
-        <CppCompile Include="..\GKLIB\gkhandle_based.cpp">
-            <BuildOrder>29</BuildOrder>
-            <BuildOrder>1</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\GKLIB\gkmodules.cpp">
-            <BuildOrder>5</BuildOrder>
-            <BuildOrder>35</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\GKLIB\gkmodules_list.cpp">
-            <BuildOrder>4</BuildOrder>
-            <BuildOrder>38</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\GKLIB\gkmodules_set.cpp">
-            <BuildOrder>41</BuildOrder>
-            <BuildOrder>3</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\GKLIB\gkmodule_loader.cpp">
-            <BuildOrder>32</BuildOrder>
+        <CppCompile Include="tlmcentr32_main.cpp">
             <BuildOrder>0</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="gkapp_wnd.cpp">
-            <BuildOrder>17</BuildOrder>
-            <BuildOrder>11</BuildOrder>
-        </CppCompile>
-        <ResourceCompile Include="grkrnl32.rc">
-            <BuildOrder>20</BuildOrder>
-            <BuildOrder>10</BuildOrder>
-        </ResourceCompile>
-        <CppCompile Include="grkrnl32_main.cpp">
-            <BuildOrder>9</BuildOrder>
-            <BuildOrder>5</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="grkrnl32_service.cpp">
-            <BuildOrder>26</BuildOrder>
-            <BuildOrder>2</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\KE_WIN\Grkrwnd.cpp">
-            <BuildOrder>13</BuildOrder>
         </CppCompile>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -377,12 +325,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\LIB_XE\gklib.lib" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="..\..\..\LIB_XE64\KE_RTLS.a" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win64">
                         <RemoteDir>.\</RemoteDir>
@@ -396,12 +338,6 @@
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32240mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="D:\ERADS\18.0\lib\win32\release\memmgr.lib" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -433,12 +369,6 @@
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\LIB_XE\KE_RTLS.lib" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -485,6 +415,12 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\grkrnl32\grkrnl32.tds" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteName>grkrnl32.tds</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -551,12 +487,6 @@
                 </DeployFile>
                 <DeployFile LocalName="D:\ERADS\18.0\lib\win32\release\memmgr.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\LIB_XE\gkhandle.lib" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>

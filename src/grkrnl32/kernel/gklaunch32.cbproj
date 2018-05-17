@@ -1,8 +1,8 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{76B303F8-8742-4897-97C1-61AEF8C9F958}</ProjectGuid>
+        <ProjectGuid>{627ABA55-02C2-4792-BC6A-897482BF10AB}</ProjectGuid>
         <ProjectVersion>18.3</ProjectVersion>
-        <FrameworkType>VCL</FrameworkType>
+        <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -38,52 +38,44 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
-        <Cfg_2_Win32>true</Cfg_2_Win32>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
-        <Base>true</Base>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
-        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
-        <Multithreaded>true</Multithreaded>
-        <ILINK_LibraryPath>..\..\GKLIB\VCL\;..\..\GKLIB\VCL_RADS\;D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <SanitizedProjectName>gkipmodemwnd</SanitizedProjectName>
-        <IncludePath>..\..\GKLIB\VCL\;..\..\GKLIB\VCL_RADS\;D:\USER\GRANIT\SRC\GrKrnl32\GKIPMODEM\GKIPMODEM_WND\;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;$(IncludePath)</IncludePath>
-        <ProjectType>VCppStyleDll</ProjectType>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
-        <DynamicRTL>true</DynamicRTL>
-        <UsePackages>true</UsePackages>
-        <IntermediateOutputDir>$(GRKRNL_TEMP)\$(Platform)\$(CONFIG)\gkipmodem\wnd</IntermediateOutputDir>
-        <FinalOutputDir>$(GRKRNL_BIN)</FinalOutputDir>
+        <IntermediateOutputDir>.\$(Platform)\$(Config)</IntermediateOutputDir>
+        <FinalOutputDir>.\$(Platform)\$(Config)</FinalOutputDir>
         <BCC_wpar>false</BCC_wpar>
         <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
         <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
-        <VerInfo_Locale>1049</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <ProjectType>VCppStyleDll</ProjectType>
+        <PackageImports>CloudService;DataSnapFireDAC;emsclient;emsclientfiredac;FireDAC;FireDACCommon;FireDACCommonDriver;FireDACIBDriver;FireDACSqliteDriver;inet;RESTBackendComponents;RESTComponents;soapmidas;soaprtl;soapserver;$(PackageImports)</PackageImports>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <Multithreaded>true</Multithreaded>
+        <SanitizedProjectName>gklaunch32</SanitizedProjectName>
+        <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+        <_TCHARMapping>char</_TCHARMapping>
+        <IncludePath>..\gkcomerr\;..\GKLIB\;..\..\KE_RTL\;..\..\KE_WIN\;$(KERTL_INC);$(GRKRNL_INC);$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>..\gkcomerr\;..\GKLIB\;..\..\KE_RTL\;..\..\KE_WIN\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DynamicRTL>false</DynamicRTL>
-        <BCC_StackFrames>true</BCC_StackFrames>
-        <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
-        <Manifest_File>None</Manifest_File>
-        <ILINK_DisplayTime>true</ILINK_DisplayTime>
-        <ILINK_MapFileType>None</ILINK_MapFileType>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <ILINK_LibraryPath>D:\ERADS\lib\win32\release\;D:\ERADS\18.0\lib\win32\release\;D:\ERADS\17.0\lib\win32\release\;D:\USER\GRANIT\LIB_XE\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsedge;emshosting;FireDACADSDriver;FireDACASADriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;ibmonitor;ibxbindings;ibxpress;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inetdb;inetdbxpress;Intraweb;rtl;svn;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;frx23;frxDB23;frxe23;frxTee23;ibmonitor;ibxbindings;ibxpress;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;Intraweb;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;svn;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;vclribbon;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
-        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(ModuleName);FileDescription=$(ModuleName);ProductName=$(ModuleName)</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <FinalOutputDir>$(GRKRNL_BIN)</FinalOutputDir>
+        <ILINK_MapFileType>None</ILINK_MapFileType>
+        <Manifest_File>(None)</Manifest_File>
+        <ILINK_LibraryPath>D:\USER\GRANIT\LIB_XE\;$(BDS)\lib;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <_TCHARMapping>wchar_t</_TCHARMapping>
+        <IntermediateOutputDir>$(GRKRNL_TEMP)\$(Platform)\$(CONFIG)\grkernel</IntermediateOutputDir>
+        <BPILibOutputDir>$(GRKRNL_LIB)</BPILibOutputDir>
+        <BRCC_IncludePath>..;..\KERNEL;..\..\KE_WIN;$(BDS)\Projects;..\GKLIB;$(BDS)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE\VCL;$(BDS)\include;$(BDS)\include\windows;$(BDS)\include\windows\sdk;$(BRCC_IncludePath)</BRCC_IncludePath>
+        <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
+        <Debugger_RunParams>-config  -service</Debugger_RunParams>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
-        <PackageImports>adortl;appanalytics;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;ibmonitor;ibxbindings;ibxpress;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;Intraweb;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;vclribbon;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <PackageImports>adortl;appanalytics;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsedge;emshosting;FireDACADSDriver;FireDACASADriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;ibmonitor;ibxbindings;ibxpress;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inetdb;inetdbxpress;Intraweb;rtl;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
@@ -108,73 +100,54 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <DynamicRTL>false</DynamicRTL>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <Debugger_RunParams>-nosplash -config -service</Debugger_RunParams>
-        <_TCHARMapping>char</_TCHARMapping>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <UsePackages>false</UsePackages>
-        <LinkPackageStatics>rtl.lib;vcl.lib</LinkPackageStatics>
-        <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <Manifest_File>C:\Users\dostap\Documents\Embarcadero\Studio\Projects\(None)</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
         <TASM_Debugging>None</TASM_Debugging>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <Debugger_RunParams>-nosplash -config -service</Debugger_RunParams>
-        <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\grkrnl32.exe</Debugger_HostApplication>
-        <LinkPackageStatics>rtl.lib;vcl.lib</LinkPackageStatics>
-        <DynamicRTL>false</DynamicRTL>
-        <UsePackages>false</UsePackages>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <BCC_OptimizeForSize>true</BCC_OptimizeForSize>
-        <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
-    </PropertyGroup>
     <ItemGroup>
-        <LibFiles Include="..\..\..\..\LIB_XE\gkhandle.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>4</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
-        <LibFiles Include="..\..\..\..\LIB_XE\gklib.lib" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="..\..\..\LIB_XE\gkhandle.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>5</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <LibFiles Include="..\..\..\..\LIB_XE\KE_RTLS.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>6</BuildOrder>
+        <LibFiles Include="..\..\..\LIB_XE\gklib.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>4</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
-        <PCHCompile Include="gkipmodemwndPCH1.h">
+        <LibFiles Include="..\..\..\LIB_XE\KE_RTLS.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>0</BuildOrder>
-            <PCH>true</PCH>
-        </PCHCompile>
-        <CppCompile Include="gkipmodem_frm.cpp">
-            <Form>GkIPModemFrm</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>gkipmodem_frm.h</DependentOn>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <ResourceCompile Include="..\gkcomerr\gkcomerr.rc">
+            <Form>gkcomerr.res</Form>
+            <BuildOrder>15</BuildOrder>
+        </ResourceCompile>
+        <CppCompile Include="gkapp_wnd.cpp">
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
+        <ResourceCompile Include="grkrnl32.rc">
+            <Form>grkrnl32.res</Form>
+            <BuildOrder>3</BuildOrder>
+        </ResourceCompile>
+        <CppCompile Include="grkrnl32_main.cpp">
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="grkrnl32_service.cpp">
+            <BuildOrder>1</BuildOrder>
+        </CppCompile>
+        <DefFile Include="tcentr32.def">
+            <BuildOrder>14</BuildOrder>
+        </DefFile>
+        <CppCompile Include="..\..\KE_RTL\storage.cpp">
             <BuildOrder>8</BuildOrder>
         </CppCompile>
-        <CppCompile Include="gkipmodem_wnd_main.cpp">
+        <CppCompile Include="..\..\KE_WIN\Grkrwnd.cpp">
             <BuildOrder>7</BuildOrder>
         </CppCompile>
-        <CppCompile Include="..\..\GKLIB\VCL\about_common_frame.cpp">
-            <Form>AboutCommonFrame</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TFrame</DesignClass>
-            <DependentOn>..\..\GKLIB\VCL\about_common_frame.h</DependentOn>
-            <BuildOrder>8</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\GKLIB\VCL\gkmodule_form.cpp">
-            <Form>GKModuleForm</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>..\..\GKLIB\VCL\gkmodule_form.h</DependentOn>
-            <BuildOrder>7</BuildOrder>
-        </CppCompile>
-        <FormResources Include="gkipmodem_frm.dfm"/>
-        <FormResources Include="..\..\GKLIB\VCL\about_common_frame.dfm"/>
-        <FormResources Include="..\..\GKLIB\VCL\gkmodule_form.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -206,47 +179,7 @@
                 </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="3">
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c240mt.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c250mt.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin64\borlndmm.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32230.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin\borlndmm.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgstl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32230mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -256,18 +189,43 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\..\grkrnl32\gkipmodemwnd.dll" Configuration="Release" Class="ProjectOutput">
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin64\borlndmm.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin\borlndmm.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <RemoteName>gkipmodemwnd</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\grkrnl32\gklaunch32" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>gklaunch32</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgstl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgsqlite3.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32250mt.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32240mt.dll" Class="DependencyModule">
                     <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -277,24 +235,14 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32240.dll" Class="DependencyModule">
+                <DeployFile LocalName="..\..\..\grkrnl32\gklaunch32.dll" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
+                        <RemoteName>gklaunch32</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\..\grkrnl32\gkipmodemwnd.dll" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>gkipmodemwnd</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64240.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64240mt.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -303,17 +251,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64230mt.dll" Class="DependencyModule">
                     <Platform Name="Win64">
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -351,7 +294,6 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="AndroidLibnativeX86File"/>
                 <DeployClass Name="AndroidServiceOutput">
                     <Platform Name="Android">
                         <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
@@ -671,8 +613,8 @@
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>

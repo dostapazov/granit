@@ -5,7 +5,7 @@
  Его задача только лишь загрузить DLL-модуль ядра.
 
 -----------------------------------------------------------------------------*/
-
+#pragma hdrstop
 #include "grkrnl32_main.hpp"
 
 #if _MSC_VER >=1200
@@ -393,17 +393,8 @@ int __fastcall run_as_app(::HINSTANCE hi1,::HINSTANCE hi2, TCHAR * cmd_line ,int
 //если в командной строке есть ключ - service то надо запускать как сервис
 int WINAPI wWinMain(::HINSTANCE hi1,::HINSTANCE hi2, TCHAR * cmd_line ,int cmd_show)
 {
-  #ifndef _DEBUG
-  /*if(IsDebuggerPresent())
-     {
-      LPBYTE ptr = NULL;
-      for(;;)
-        strcpy(ptr,"Under debugger");
-
-     }
-  */
-  #endif
   int ret;
+  if(!ModuleInstance) ModuleInstance = hi1;
   //Установка текущего каталога
   TCHAR curr_path[MAX_PATH<<1];
   if(GetPtrModuleName(hi1,curr_path,KERTL_ARRAY_COUNT(curr_path)))
@@ -423,7 +414,7 @@ int WINAPI wWinMain(::HINSTANCE hi1,::HINSTANCE hi2, TCHAR * cmd_line ,int cmd_s
       SetCurrentDirectory(curr_path);
      }
    }
-  LoadStringA(0,IDS_MAINLOOP_EXCEPT,except_text,KERTL_ARRAY_COUNT(except_text));
+  LoadStringA(ModuleInstance,IDS_MAINLOOP_EXCEPT,except_text,KERTL_ARRAY_COUNT(except_text));
   CharLowerBuff(cmd_line,lstrlen(cmd_line));
   bool service = safe_strstr(cmd_line,commands[APP_CMDLINE_SERVICE]) ? true : false;
   bool config  = safe_strstr(cmd_line,commands[APP_CMDLINE_CONFIG] ) ? true : false;
@@ -442,12 +433,35 @@ int WINAPI wWinMain(::HINSTANCE hi1,::HINSTANCE hi2, TCHAR * cmd_line ,int cmd_s
   return ret;
 }
 
-#pragma warn -8057
-LRESULT WINAPI module_main(DWORD cmd ,LPARAM,LPARAM)
+
+extern "C" int WINAPI kernel_main(::HINSTANCE hi1,::HINSTANCE hi2, TCHAR * cmd_line ,int cmd_show)
 {
-	return 1;
+   return   wWinMain(hi1,hi2,cmd_line,cmd_show);
+}
+
+#pragma warn -8057
+extern "C" BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fwdreason, LPVOID lpvReserved)
+{
+ /*#ifdef _DEBUG
+ test();
+ #endif
+ */
+
+
+ if(fwdreason == DLL_PROCESS_ATTACH)
+    {
+     ModuleInstance = hinstDLL;
+     DisableThreadLibraryCalls(hinstDLL);
+    }
+  return TRUE;
+}
+
+__declspec(dllexport) LRESULT WINAPI gkmodule_entry(DWORD cmd,LPARAM p1, LPARAM p2)
+{
+ return 0;
 }
 #pragma warn .8057
+
 
 
 

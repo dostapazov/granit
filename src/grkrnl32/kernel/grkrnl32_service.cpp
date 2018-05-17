@@ -1,3 +1,4 @@
+#pragma hdrstop
 #include "grkrnl32_main.hpp"
 
 extern TCHAR * commands[];
@@ -46,7 +47,7 @@ int  __fastcall svc_install(::HINSTANCE hi1 )
      if(!sch || INVALID_HANDLE_VALUE == sch)
      {
      wchar_t svc_dsp_name[256];
-     if(!LoadStringW(hi1,IDS_SERVICE_DISPLAY,svc_dsp_name,sizeof(svc_dsp_name)/sizeof(wchar_t)))
+     if(!LoadStringW(ModuleInstance,IDS_SERVICE_DISPLAY,svc_dsp_name,sizeof(svc_dsp_name)/sizeof(wchar_t)))
         svc_dsp_name[0] = 0;
         lstrcatW(svc_dsp_name,L"-");
         lstrcatW(svc_dsp_name,svc_instance);

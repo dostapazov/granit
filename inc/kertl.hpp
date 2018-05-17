@@ -409,6 +409,7 @@ enum TWaitResult {WaitFailed = WAIT_FAILED , WaitOk = WAIT_OBJECT_0,
    ~TModule(){Unload();}
    bool       __fastcall IsLoaded(){return hModule ? true : false;};
    HINSTANCE  __fastcall GetInstance(){return hModule;}
+   HINSTANCE  operator   ()(){return hModule;}
    virtual   void __fastcall AfterLoad(){};
    virtual   void __fastcall BeforeUnload(){};
    virtual   bool __fastcall CanUnload();

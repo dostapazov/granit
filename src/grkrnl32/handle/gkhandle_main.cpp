@@ -340,8 +340,9 @@ typedef struct _handle_struct
          = std::lower_bound(handles_data.begin(),handles_data.end(),hs,_handle_struct_less());
          if(*i == hs)
             {
-             handles_data.erase(i);
+
 			 hs->lock();
+                         handles_data.erase(i);
 			 hs->call(HANDLE_SUBCMD_RELEASE,0,0);
 			 delete hs;
 
