@@ -56,10 +56,10 @@ bool     __fastcall  TOpcLineSetingsFrame::apply_changes ()
      return false;
      else
      {
+       ch_mask &= (TuLuaScript->Tag | TrLuaScript->Tag);
        memcpy(&line_config,&line_conf,sizeof(line_config));
        current_tree_node->Text = get_line_text(mod_iface, line_config.line_num);
        current_tree_node->Data = (LPVOID)line_config.line_num;
-       ch_mask &= TuLuaScript->Tag | TrLuaScript->Tag;
        apply_scripts();
      }
  }

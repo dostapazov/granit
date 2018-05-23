@@ -146,18 +146,12 @@ class Tiec60870line:public modem_line,protected TGKThread
            void  __fastcall tutr_remove_timer(const iec60870_record & rec );
            void  __fastcall __tutr_finish    (const iec60870_record & rec,DWORD rc_state);
 
-
-
-
-           void  __fastcall __setup_group_values (otd_proto * op);
-           void  __fastcall __queue_rxdata(otd_proto * op);
-
+           void  __fastcall __setup_group_values(otd_proto * op);
+           void  __fastcall __queue_rxdata      (otd_proto * op);
            void  __fastcall __set_bad_diag      ();
-
            void  __fastcall __handle_otd_query  (otd_proto * op);
-           void  __fastcall  __do_recv_cp_data  (bool inc_name );
-
-            void  __fastcall __handle_otd_control(otd_proto * op);
+           void  __fastcall __do_recv_cp_data   (bool inc_name );
+           void  __fastcall __handle_otd_control(otd_proto * op);
 
 
            int   __fastcall socket_execute       ();

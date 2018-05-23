@@ -3,7 +3,7 @@ inherited CPFrame: TCPFrame
     Left = 0
     Top = 0
     Width = 443
-    Height = 277
+    Height = 293
     Align = alClient
     TabOrder = 0
     object Label1: TLabel
@@ -74,7 +74,7 @@ inherited CPFrame: TCPFrame
       Height = 20
       BevelKind = bkFlat
       BorderStyle = bsNone
-      TabOrder = 1
+      TabOrder = 2
       Text = 'CpNum'
       OnChange = CpNameChange
     end
@@ -87,7 +87,7 @@ inherited CPFrame: TCPFrame
       AutoSize = False
       BorderStyle = sbsSunken
       Caption = 'GrpCount'
-      TabOrder = 2
+      TabOrder = 1
     end
     object CpTestFlag: TCheckBox
       Left = 12

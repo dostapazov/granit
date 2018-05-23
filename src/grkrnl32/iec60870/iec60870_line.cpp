@@ -1031,8 +1031,8 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
        while(cbeg<cend)
         {
           iec60870_record & rec = *cbeg;
-          if(rec.number == 6)
-             TRACE(_T("changed rec %d mask %X rc_state %d"),rec.number,rec.changes_mask,rec.rc_state);
+//          if(rec.number == 6)
+//             TRACE(_T("changed rec %d mask %X rc_state %d"),rec.number,rec.changes_mask,rec.rc_state);
           owner->notify(MNF_LINE_RECORD_CHANGED,line_num,&rec,sizeof(rec));
           ++cbeg;
         }
@@ -1196,6 +1196,8 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
           proto_pointer pend = storage.end();
           while(pptr<pend)
           {
+           if(pptr->op.diag)
+           ret  |= *pptr->op.diag;
            ++pptr;
           }
        }

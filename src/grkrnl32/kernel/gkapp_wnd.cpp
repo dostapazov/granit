@@ -177,6 +177,7 @@ void     __fastcall TGKAppWindow::show_menu(int x,int y)
       {
        mwl.destroy_window(mw_handle);
        mw_handle = 0;
+       mwl.unload_module();
       }
    EndModal(CM_APP_RESTART);
    break;
@@ -185,9 +186,9 @@ void     __fastcall TGKAppWindow::show_menu(int x,int y)
    if(mw_handle)
       {
        mwl.close_window(mw_handle);
-       //mwl.destroy_window(mw_handle);
+       mwl.destroy_window(mw_handle);
        mw_handle = 0;
-       //mwl.unload_module();
+       mwl.unload_module();
       }
    EndModal(IDCANCEL);
    break;
@@ -273,8 +274,21 @@ void     __fastcall TGKAppWindow::show_menu(int x,int y)
 
  void     __fastcall TGKAppWindow::ProcessMessages()
  {
-   if(mwl.is_loaded() && mw_handle && mwl.process_messages())
-     return;
+   if(mwl.is_loaded() && mw_handle )
+     {
+      if(mwl.process_messages())
+         return;
+     }
+     else
+     {
+//      if(mwl.is_loaded())
+//        {
+//         mwl.unload_module();
+//         SetProcessWorkingSetSize(GetCurrentProcess(),min_working_sz,min_working_sz);
+//        }
+      if(mw_handle)      mw_handle = NULL;
+     }
+
 
      TWindow::ProcessMessages();
  }

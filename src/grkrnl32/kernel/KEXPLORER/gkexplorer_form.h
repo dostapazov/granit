@@ -100,6 +100,7 @@ __published:	// IDE-managed Components
 	void __fastcall miRegisterModuleClick(TObject *Sender);
 	void __fastcall miGenPrelicenseDataClick(TObject *Sender);
 	void __fastcall miSaveRegistrySettingsClick(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 
 TTreeNode  * added_module_node;

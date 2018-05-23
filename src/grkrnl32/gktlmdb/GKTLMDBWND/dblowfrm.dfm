@@ -143,7 +143,7 @@ inherited DBLowForm: TDBLowForm
     Top = 29
     Width = 452
     Height = 366
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 2
     OnChange = PageControl1Change
@@ -223,7 +223,7 @@ inherited DBLowForm: TDBLowForm
           BevelInner = bvNone
           BevelKind = bkFlat
           BorderStyle = bsNone
-          TabOrder = 0
+          TabOrder = 1
           Text = 'ModLoNum'
           OnChange = ModLoNumChange
         end
@@ -236,7 +236,7 @@ inherited DBLowForm: TDBLowForm
           AutoSize = False
           BorderStyle = sbsSunken
           Caption = #1040#1085#1072#1083#1086#1075#1086#1074#1099#1081' '#1084#1086#1076#1091#1083#1100
-          TabOrder = 1
+          TabOrder = 0
         end
         object ModStatic: TCheckBox
           Left = 12
@@ -244,7 +244,7 @@ inherited DBLowForm: TDBLowForm
           Width = 245
           Height = 17
           Caption = #1055#1086#1089#1090#1086#1103#1085#1085#1072#1103' '#1082#1086#1085#1092#1080#1075#1091#1088#1072#1094#1080#1103
-          TabOrder = 2
+          TabOrder = 3
           OnClick = CpStaticClick
         end
         object ModHiNum: TEdit
@@ -255,7 +255,7 @@ inherited DBLowForm: TDBLowForm
           BevelInner = bvNone
           BevelKind = bkFlat
           BorderStyle = bsNone
-          TabOrder = 3
+          TabOrder = 2
           Text = 'ModHiNum'
           OnChange = ModLoNumChange
         end
@@ -372,7 +372,7 @@ inherited DBLowForm: TDBLowForm
         ReadOnly = True
         RowSelect = True
         ShowWorkAreas = True
-        TabOrder = 0
+        TabOrder = 1
         ViewStyle = vsReport
         OnSelectItem = ListView1SelectItem
       end
@@ -385,7 +385,7 @@ inherited DBLowForm: TDBLowForm
         AutoSize = False
         BorderStyle = sbsSunken
         Caption = 'TimeStamp'
-        TabOrder = 1
+        TabOrder = 0
       end
       object GroupBox1: TGroupBox
         Left = 0
@@ -460,7 +460,7 @@ inherited DBLowForm: TDBLowForm
         Height = 19
         Anchors = [akLeft, akBottom]
         Caption = #1042#1050#1051'/+'
-        TabOrder = 3
+        TabOrder = 5
         Visible = False
         OnClick = Button1Click
       end
@@ -471,7 +471,7 @@ inherited DBLowForm: TDBLowForm
         Height = 19
         Anchors = [akLeft, akBottom]
         Caption = #1054#1058#1050#1051'/--'
-        TabOrder = 4
+        TabOrder = 6
         Visible = False
         OnClick = Button2Click
       end
@@ -483,7 +483,7 @@ inherited DBLowForm: TDBLowForm
         Anchors = [akLeft, akBottom]
         AutoSize = False
         BorderStyle = sbsSunken
-        TabOrder = 5
+        TabOrder = 3
       end
       object GroupBox2: TGroupBox
         Left = 284
@@ -491,7 +491,7 @@ inherited DBLowForm: TDBLowForm
         Width = 153
         Height = 111
         Caption = #1047#1085#1072#1095#1077#1085#1080#1077
-        TabOrder = 6
+        TabOrder = 4
         object Label11: TLabel
           Left = 8
           Top = 15
@@ -543,7 +543,7 @@ inherited DBLowForm: TDBLowForm
           Top = 79
           Width = 64
           Height = 21
-          TabOrder = 2
+          TabOrder = 3
           Text = '250'
         end
         object Kvants: TEdit
@@ -551,7 +551,7 @@ inherited DBLowForm: TDBLowForm
           Top = 54
           Width = 64
           Height = 21
-          TabOrder = 3
+          TabOrder = 2
           Text = '250'
           OnChange = ScaleBegChange
         end
@@ -730,7 +730,7 @@ inherited DBLowForm: TDBLowForm
     Left = 24
     Top = 376
     Bitmap = {
-      494C01010A002800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010A002C002C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000006528140067291300672913006729130067291300672913000000

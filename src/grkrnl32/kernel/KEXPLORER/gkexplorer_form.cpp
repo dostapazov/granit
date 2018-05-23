@@ -43,6 +43,7 @@ void     __fastcall TGKExplorerFrm::setup_form_sizes()
    if(h>460)
       Height = h*0.7;
    ModulesTree->Width = Width/4;
+   ModuleInfoFrame1->FrameResize(this);
 }
 
 void __fastcall TGKExplorerFrm::SetCommandStatus(AnsiString value)
@@ -436,7 +437,10 @@ void __fastcall TGKExplorerFrm::FormClose(TObject *Sender,
 {
 
   if(Action == caHide)
+  {
     ModulesTree->Items->Clear();
+
+  }
 }
 //---------------------------------------------------------------------------
 
@@ -706,6 +710,12 @@ void __fastcall TGKExplorerFrm::miSaveRegistrySettingsClick(TObject *Sender)
     LRESULT ret = mod.call(MCMD_SAVE_REGISTRY,(LPARAM)SaveDialog1->FileName.c_str(),0);
     end_gk_command(mod(),ret,GetLastError());
   }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TGKExplorerFrm::FormShow(TObject *Sender)
+{
+ ModuleInfoFrame1->FrameResize(this);
 }
 //---------------------------------------------------------------------------
 

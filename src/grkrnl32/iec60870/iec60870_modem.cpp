@@ -292,7 +292,7 @@ int      __fastcall Tiec60870modem::convert_rx_data(LPWORD fa,LPBYTE in,int in_l
  DWORD    __fastcall Tiec60870modem::start              (DWORD reason,LPARAM p2)
  {
      this->reg_reports();
-     pu_diag = OTD_DIAG_NODATA|OTD_DIAG_CPMASK;
+     pu_diag = 0;
      DWORD ret =  TModemBase::start(reason,p2);
      if(GKH_RET_SUCCESS == ret)
         do_recv_pu_data(true);
@@ -301,7 +301,7 @@ int      __fastcall Tiec60870modem::convert_rx_data(LPWORD fa,LPBYTE in,int in_l
 
  DWORD    __fastcall Tiec60870modem::stop               (DWORD reason)
  {
-     pu_diag = OTD_DIAG_NODATA|OTD_DIAG_CPMASK;
+     pu_diag = OTD_DIAG_NODATA|OTD_DIAG_PUMASK;
      do_recv_pu_data(false);
      DWORD ret =  TModemBase::stop(reason);
      if(ret == GKH_RET_SUCCESS)
@@ -364,7 +364,7 @@ int      __fastcall Tiec60870modem::convert_rx_data(LPWORD fa,LPBYTE in,int in_l
       	 otd_proto_format_ex(buf,need_size,&opp,0,&op);
       	 op.addr->addr = -1;
       	 op.addr->pu   = mod_config.pu_number;
-         *op.diag      = get_pu_diag(false);
+         *op.diag      = get_pu_diag(true);
       	 otd_text_set(op.name,mod_config.pu_name);
       	 queue_rxdata(0,-1,0,FA_OTD,buf,op.proto_size,false);
       	 if(buf!=buffer) delete [] buf;
@@ -379,6 +379,18 @@ int      __fastcall Tiec60870modem::convert_rx_data(LPWORD fa,LPBYTE in,int in_l
 
    DWORD __fastcall Tiec60870modem::scan_pu_diag  ()
    {
+     TLockHelper l(locker);
+     pu_diag   = 0;
+     DWORD idx = 0 ;
+     MODEM_LINE_PROPS mlp;
+     bzero(&mlp,sizeof(mlp));
+     mlp.dw_size = sizeof(mlp);
+
+     while(GKH_RET_SUCCESS == enum_lines(idx++,&mlp))
+     {
+       Tiec60870line * line =  get_iec60870_line(mlp.addr.line);
+       if(line) pu_diag|= (line->get_line_diag(true) & OTD_DIAG_MASK);
+     }
      return pu_diag;
    }
 
