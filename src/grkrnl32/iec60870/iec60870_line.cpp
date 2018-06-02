@@ -1147,7 +1147,7 @@ void __fastcall get_tutr(otd_data * data,DWORD & object,otd_tutr & tutr)
          if(ch_count  )
            {
             *proto_ptr->op.diag = 0;
-            *proto_ptr->op.diag = otd_scan_personal_diag(&proto_ptr->op);
+            *proto_ptr->op.diag |= otd_scan_personal_diag(&proto_ptr->op);
             __queue_rxdata(&proto_ptr->op);
            }
           cbeg->changes_mask = 0;
