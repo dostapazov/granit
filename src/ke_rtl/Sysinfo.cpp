@@ -1,6 +1,7 @@
 //Реализация TSysInfo
 //Ke_rtl.dll Остапенко Д.В. March 2000
 #include <kertl.hpp>
+//#include <versionhelper.h>
 
 #ifndef _NO_NAMESPACE
 namespace KeRTL
@@ -9,14 +10,14 @@ namespace KeRTL
 
  TSysInfo si;
 
- OSVERSIONINFO TSysInfo::osvi = {0};
- SYSTEM_INFO   TSysInfo::si   = {0};
+ OSVERSIONINFOEX TSysInfo::osvi = {0};
+ SYSTEM_INFO     TSysInfo::si   = {0};
 
 
  TSysInfo::TSysInfo()
  {
   osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
-  GetVersionEx(&osvi);
+  GetVersionEx((LPOSVERSIONINFO)&osvi);
   GetSystemInfo(&si);
  }
 

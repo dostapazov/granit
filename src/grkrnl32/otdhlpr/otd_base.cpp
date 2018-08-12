@@ -37,7 +37,7 @@ DWORD WINAPI _get_bit_value(LPBYTE bytes,DWORD idx)
 
 void  WINAPI _set_bit_value(LPBYTE bytes,DWORD idx,DWORD value)
 {
- div_t dt  = div(idx,8);
+ div_t dt  = fast_divP2(idx,8);
  bytes+=dt.quot;
  BYTE mask = 0x80>>dt.rem;
  if(value)

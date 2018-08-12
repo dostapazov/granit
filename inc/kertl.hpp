@@ -107,8 +107,8 @@ inline KERTL_FUNC int       __fastcall safe_strlen(const  char   * s)
  KERTL_CLASS  TSysInfo
  {
    protected:
-    static OSVERSIONINFO osvi;
-    static SYSTEM_INFO   si;
+	static OSVERSIONINFOEX osvi;
+    static SYSTEM_INFO     si;
     public   :
     TSysInfo();
     enum TPlatform {pWin32s = VER_PLATFORM_WIN32s ,

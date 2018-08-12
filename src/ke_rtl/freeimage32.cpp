@@ -53,7 +53,7 @@ HBITMAP __fastcall TFreeImage::DibToDdb(FIBITMAP * fi_bmp,int width,int height)
  HBITMAP Bmp  = 0;
  if(fi_bmp)
  {
-  ScreenDC = CreateDC(L"DISPLAY",0,0,0);
+  ScreenDC = CreateDCW(L"DISPLAY",0,0,0);
   if(ScreenDC)
   {
    MemDC    = CreateCompatibleDC(ScreenDC);
