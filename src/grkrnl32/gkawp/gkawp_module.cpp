@@ -419,11 +419,17 @@ void    __fastcall TGkAwpModule::create_folders  ()
      if(mask & CFGM_FLASH_PERIOD)        params.flash_period         = new_params->flash_period;
      if(mask & CFGM_READY_SHOW_RC_ERROR)
         {
-         params.ready_show_rc_error  = new_params->ready_show_rc_error;
-         if(main_form) main_form->Repaint();
-        }
+		 params.ready_show_rc_error  = new_params->ready_show_rc_error;
+		 if(main_form) main_form->Repaint();
+		}
 
-    }
+	 if(mask & CFGM_READY_TOPMOST)
+	 {
+		 params.ready_top_most = new_params->ready_top_most;
+		 if(main_form) main_form->Repaint();
+	 }
+
+	}
    }
    return ret;
  }
@@ -437,8 +443,8 @@ void    __fastcall TGkAwpModule::create_folders  ()
    LPMODULE_CONFIG_DATA mcd;
    if(mask && buf && bsz > sizeof(*mcd))
    {
-    mcd = (LPMODULE_CONFIG_DATA)buf;
-    TAWParameters * new_params ;
+	mcd = (LPMODULE_CONFIG_DATA)buf;
+	TAWParameters * new_params ;
     memcpy(&new_params,mcd->data,sizeof(new_params));
     locker l(mut);
     this->cc_flags |= CCFL_PARAMS;
@@ -881,7 +887,7 @@ void    __fastcall TGkAwpModule::show_main_form()
       main_form->set_window_monitor(params.ready_monitor,false);
 
     }
-    if(IsDebuggerPresent()) main_form->FormStyle = fsNormal;
+    if(IsDebuggerPresent() || !params.ready_top_most) main_form->FormStyle = fsNormal;
     main_form->Visible = true;
     if(!params.layout_name.IsEmpty()) this->do_open_layout(params.layout_name);
     param_page_change(mod_params_wnd);

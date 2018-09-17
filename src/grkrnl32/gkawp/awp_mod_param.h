@@ -112,6 +112,7 @@ __published:	// IDE-managed Components
 	TSpeedButton *bReadLayout;
 	TSpeedButton *bSaveCurrentLayout;
 	TComboBox *Layouts;
+	TCheckBox *ready_topmost;
 	void __fastcall bSelViewerClick(TObject *Sender);
 	void __fastcall bSelDataFolderClick(TObject *Sender);
 	void __fastcall bSelExporFolderClick(TObject *Sender);

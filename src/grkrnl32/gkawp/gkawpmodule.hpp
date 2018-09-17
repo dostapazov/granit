@@ -50,6 +50,7 @@
 #define REGBIN_READY_STATE_FONT   L"ready_state_font"
 #define REGDW_FLASH_PERIOD        L"flash_period"
 #define REGDW_READY_SHOW_RC_ERROR L"ready_show_rc_error"
+#define REGDW_READY_TOPMOST       L"ready_topmost"
 
 #define CFGM_MODEM_SOURCE         0x00000001
 #define CFGM_DATA_DIR             0x00000002
@@ -73,6 +74,8 @@
 #define CFGM_READY_STATE_FONT     0x00040000
 #define CFGM_FLASH_PERIOD         0x00080000
 #define CFGM_READY_SHOW_RC_ERROR  0x00100000
+#define CFGM_READY_TOPMOST        0x00200000
+
 
 #define KADRS_FILE_NAME       L"kadrs.data"
 #define NAMES_FILE_NAME       L"names.data"
@@ -119,6 +122,7 @@ struct TAWParameters
   LOGFONTW        ready_state_font;
   int             flash_period;
   bool            ready_show_rc_error;
+  bool            ready_top_most;
 };
 
 #pragma pack(pop)

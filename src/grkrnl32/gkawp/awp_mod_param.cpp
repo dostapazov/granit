@@ -433,6 +433,7 @@ void __fastcall TAwpModuleParams::ReadyColorsEditButtonClicked(TObject *Sender, 
    snd_danger->Text            = params.sound_danger;
    FlashPeriod->Text           = params.flash_period;
    ready_show_rc_error->Checked= params.ready_show_rc_error;
+   ready_topmost->Checked      = params.ready_top_most;
    bRefreshKadrClick(this);
   }
 
@@ -459,6 +460,7 @@ void __fastcall TAwpModuleParams::ReadyColorsEditButtonClicked(TObject *Sender, 
    GetObjectW(StateFont->Font->Handle,sizeof(params.ready_font),&params.ready_state_font);
    params.flash_period           = std::max(250,abs(_wtoi(FlashPeriod->Text.c_str())));
    params.ready_show_rc_error    = ready_show_rc_error->Checked;
+   params.ready_top_most         = ready_topmost->Checked;
 
  }
 

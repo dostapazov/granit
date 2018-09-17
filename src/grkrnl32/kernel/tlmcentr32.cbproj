@@ -3,7 +3,7 @@
         <ProjectGuid>{52AF567B-5FAA-44AA-AED7-9CB18066AFBF}</ProjectGuid>
         <ProjectType>CppGuiApplication</ProjectType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <FrameworkType>None</FrameworkType>
         <ProjectVersion>18.4</ProjectVersion>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>

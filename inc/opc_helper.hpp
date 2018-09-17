@@ -992,7 +992,7 @@ inline  HRESULT __fastcall TOpcGroup::add_item    (OPCHANDLE  hClient,const wcha
        ret = browser->BrowseOPCItemIDs(browse_type,szFilter ? szFilter :L"",var_type,access_right,&es);
        if(SUCCEEDED(ret))
            {
-            enum_items.Reset(es);
+			enum_items.Reset(es);
             enum_items->Reset();
            }
       }
@@ -1007,13 +1007,14 @@ inline  HRESULT __fastcall TOpcGroup::add_item    (OPCHANDLE  hClient,const wcha
       HRESULT ret = -1;
       if(enum_items)
       {
-        DWORD     fetched = 0;
-        wchar_t * text = NULL;
-        ret = enum_items->Next(1,&text,&fetched);
-        item_name = SUCCEEDED(ret) ? text : L"";
-        if(text) ::CoTaskMemFree(text);
-      }
-      return ret;
+		DWORD     fetched = 0;
+		wchar_t * text = NULL;
+		ret = enum_items->Next(1,&text,&fetched);
+		item_name = SUCCEEDED(ret) ? text : L"";
+		if(text) ::CoTaskMemFree(text);
+        return fetched ? S_OK : S_FALSE;
+	  }
+	  return ret;
    }
 
    template <typename StringType>

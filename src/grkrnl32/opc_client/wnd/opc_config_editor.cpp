@@ -143,7 +143,7 @@ void    __fastcall TOpcConfigEditor::opc_open_server ()
     {
       UnicodeString str(_com_error(res).ErrorMessage());
       MessageBox(Handle,str.c_str(),_T("Ошибка отгрытия сервера"),MB_OK);
-    }
+	}
    }
   opc_server_refresh_info();
 }
@@ -221,9 +221,10 @@ void    __fastcall TOpcConfigEditor::fill_opc_items()
   if(opc_server && opc_server->IsBound())
   {
    if(!opc_browser) opc_browser = new opc::TOpcBrowseServerAddrSpace(*opc_server);
-   this->is_tree_model = opc_browser->is_tree_model();
-   if(is_tree_model)
-      fill_opc_items_tree(NULL);
+   is_tree_model   = opc_browser->is_tree_model();
+   tbFlat->Enabled = is_tree_model;
+   if(is_tree_model && !tbFlat->Down)
+	  fill_opc_items_tree(NULL);
       else
       fill_opc_items_flat();
 
@@ -238,7 +239,7 @@ void    __fastcall TOpcConfigEditor::fill_opc_items_tree(TTreeNode * node)
   set_current_group(node,opc_browser);
   OpcServerItemsTree->Items->BeginUpdate();
 
-  if(S_OK == opc_browser->items_enum(OPC_BRANCH,L"", VT_EMPTY,0))
+  if(SUCCEEDED( opc_browser->items_enum(OPC_BRANCH,L"", VT_EMPTY,0)) )
     {
       UnicodeString str;
       while(S_OK == opc_browser->item_next(str))
@@ -249,7 +250,7 @@ void    __fastcall TOpcConfigEditor::fill_opc_items_tree(TTreeNode * node)
             }
     }
 
-    if(S_OK == opc_browser->items_enum(OPC_LEAF))
+    if(SUCCEEDED( opc_browser->items_enum(OPC_LEAF,edFilter->Text.c_str())))
      {
       UnicodeString str;
       while(S_OK == opc_browser->item_next(str))
@@ -311,11 +312,12 @@ void    __fastcall TOpcConfigEditor::fill_opc_items_tree(TTreeNode * node)
 void    __fastcall TOpcConfigEditor::fill_opc_items_flat()
 {
   OpcServerItemsTree->Items->BeginUpdate();
-  HRESULT res = opc_browser->items_enum(OPC_FLAT);
-  if(S_OK == res)
+  this->set_current_group(NULL,opc_browser);
+  HRESULT res = opc_browser->items_enum(OPC_FLAT,edFilter->Text.c_str());
+  if(SUCCEEDED( res) )
   {
     UnicodeString item_id;
-    while(S_OK == (res = opc_browser->item_next(item_id)))
+    while(S_OK == opc_browser->item_next(item_id))
       {
 
         /*TTreeNode * node =*/ OpcServerItemsTree->Items->Add(NULL,item_id);
@@ -329,7 +331,16 @@ void    __fastcall TOpcConfigEditor::fill_opc_items_flat()
 void __fastcall TOpcConfigEditor::tbRefreshOpcItemsClick(TObject *Sender)
 {
   if(!opc_server || !opc_server->IsBound()) this->opc_open_server();
-  fill_opc_items();
+  TTreeNode * node = OpcServerItemsTree->Selected;
+  if(!node ||  tbFlat->Down || !is_tree_model)
+	 fill_opc_items();
+	 else
+	 {
+	  node->DeleteChildren();
+	  bool allow_expand = true;
+	  OpcServerItemsTreeExpanding(OpcServerItemsTree,node,allow_expand);
+      node->Expand(false);
+	 }
 }
 //---------------------------------------------------------------------------
 void __fastcall TOpcConfigEditor::Timer1Timer(TObject *Sender)
@@ -337,20 +348,43 @@ void __fastcall TOpcConfigEditor::Timer1Timer(TObject *Sender)
  opc_server_refresh_info();
 }
 //---------------------------------------------------------------------------
+TListItem * __fastcall get_list_item(TListView * lv, int idx = -1)
+{
+  TListItem * item;
+  if(idx>=0 && idx< lv->Items->Count)
+   item = lv->Items->Item[idx];
+   else
+   {
+	item = lv->Items->Add();
+    item->SubItems->Add(UnicodeString());
+   }
+   return item;
+}
+
+void    __fastcall TOpcConfigEditor::setup_item_result        (OPCITEMRESULT * iresult)
+{
+ TListItem * item;
+   item = get_list_item(opc_item_props_view);
+   item->Caption = L"HSERVER";
+   item->SubItems->Strings[0] = iresult->hServer;
+   item = get_list_item(opc_item_props_view);
+   item->Caption = L"Canonical Data Type";
+   item->SubItems->Strings[0] = variant_type_name((DWORD)iresult->vtCanonicalDataType);
+   item = get_list_item(opc_item_props_view);
+   item->Caption = L"Access Rights";
+   item->SubItems->Strings[0] = iresult->dwAccessRights;
+}
+
+//---------------------------------------------------------------------------
 void    __fastcall TOpcConfigEditor::setup_opc_item_props_list(DWORD prop_count,LPDWORD prop_ids,LPWSTR * prop_descr,LPVARIANT  prop_values)
 {
   for(DWORD i = 0;i<prop_count;i++)
   {
-   TListItem * item;
-   if(i<(DWORD)opc_item_props_view->Items->Count)
-      item = opc_item_props_view->Items->Item[i];
-      else
-      item = opc_item_props_view->Items->Add();
+	TListItem * item;
+	item = get_list_item(opc_item_props_view);
     item->Caption = *prop_descr;
     OleVariant ov(*prop_values);
-
-
-    UnicodeString prop_str;
+	UnicodeString prop_str;
      if(ov.IsArray())
      {
       int array_count = ov.ArrayDimCount();
@@ -485,14 +519,30 @@ bool    __fastcall TOpcConfigEditor::identfy_divisor(TTreeNode *item_node)
 
 }
 
+void     __fastcall TOpcConfigEditor::show_opc_error (HRESULT res)
+{
+  UnicodeString str;
+  if(FAILED(res) && opc_server->IsBound())
+	 {
+	  wchar_t *err_str = NULL;
+	  (*opc_server)->GetErrorString(res,0,&err_str);
+	  if(err_str)
+	  {
+		str = err_str;
+        CoTaskMemFree(err_str);
+      }
+	 }
+	 StatusBar1->Panels->Items[1]->Text = str;
+}
 
-void __fastcall TOpcConfigEditor::add_to_opc_group(const wchar_t * item_id)
+
+HRESULT __fastcall TOpcConfigEditor::add_to_opc_group(const wchar_t * item_id,OPCITEMRESULT * iresult)
 {
   if(!opc_group)
   {
-       opc_group = new opc::TOpcGroup(*opc_server);opc_group->create_group(L"TestGroup",0,0,0);
+	   opc_group = new opc::TOpcGroup(*opc_server);opc_group->create_group(L"TestGroup",0,0,0);
   }
-  opc_group->add_item(opc_group->get_group_count(),item_id,NULL,NULL);
+  return opc_group->add_item(opc_group->get_group_count(),item_id,NULL,iresult);
 }
 
 void __fastcall TOpcConfigEditor::OpcServerItemsTreeChange(TObject *Sender, TTreeNode *Node)
@@ -506,32 +556,38 @@ void __fastcall TOpcConfigEditor::OpcServerItemsTreeChange(TObject *Sender, TTre
   LPWSTR * prop_descr = NULL;
   LPWORD   prop_data_types = NULL;
   UnicodeString opc_id = get_item_opc_id(Node,this->divisor,this->prefix);
-  HRESULT res = iprops->QueryAvailableProperties(opc_id.c_str(),&prop_count,&prop_ids,&prop_descr,&prop_data_types);
-  if(S_OK == res )
-   {
-     LPVARIANT prop_values = NULL;
-     LPLONG    errors;
-     res = iprops->GetItemProperties(opc_id.c_str(),prop_count,prop_ids,&prop_values,&errors);
-     if(res)
-       {
-        add_to_opc_group(opc_id.c_str());
-        res = iprops->GetItemProperties(opc_id.c_str(),prop_count,prop_ids,&prop_values,&errors);
-        opc_group->remove_item(0);
-       }
-     if(S_OK == res)
-        setup_opc_item_props_list(prop_count,prop_ids,prop_descr,prop_values);
-        else
-        opc_item_props_view->Clear();
+  OPCITEMRESULT  iresult;
+  opc_item_props_view->Clear();
+  HRESULT res = add_to_opc_group(opc_id.c_str(),&iresult);
+  StatusBar1->Panels->Items[0]->Text = opc_id;
+  StatusBar1->Panels->Items[1]->Text = UnicodeString();
 
-     com_mem_free(prop_count,prop_values);
-     com_mem_free(errors);
+  if(SUCCEEDED(res))
+  {
+   setup_item_result(&iresult);
+   res = iprops->QueryAvailableProperties(opc_id.c_str(),&prop_count,&prop_ids,&prop_descr,&prop_data_types);
+   if(SUCCEEDED(res) )
+   {
+	 LPVARIANT prop_values = NULL;
+	 LPLONG    errors;
+	 res = iprops->GetItemProperties(opc_id.c_str(),prop_count,prop_ids,&prop_values,&errors);
+//	 if(res)
+//	   {
+//		res = iprops->GetItemProperties(opc_id.c_str(),prop_count,prop_ids,&prop_values,&errors);
+//	   }
+	 if(S_OK == res)
+		setup_opc_item_props_list(prop_count,prop_ids,prop_descr,prop_values);
+	 com_mem_free(prop_count,prop_values);
+	 com_mem_free(errors);
    }
-   else
-   opc_item_props_view->Clear();
+   opc_group->remove_item(0);
+  }
 
    com_mem_free(prop_ids);
    com_mem_free(prop_data_types);
    com_mem_free(prop_count,prop_descr);
+
+   show_opc_error(res);
 
    tbAddItem->Enabled = check_enable_add_item();
    tbRemove->Enabled  = check_enable_delete_item();
@@ -1191,19 +1247,18 @@ void __fastcall TOpcConfigEditor::OpcServerItemsTreeExpanding(TObject *Sender, T
   // Вот тут начинаем  читать все что принадлежит группе
 
   if(Node->Data == FOLDER_NODE_ATTR)
-    {
-      if(Node->Count)
-      {
-       TTreeNode *  first_child = Node->getFirstChild();
-       if(first_child && first_child->Text.IsEmpty() && first_child->Data == FOLDER_TEMPL_ATTR)
-       {
-          OpcServerItemsTree->Cursor = crHourGlass;
-          fill_opc_items_tree(Node);
-          first_child->Delete();
-          OpcServerItemsTree->Cursor = crDefault;
-       }
-      }
-    }
+	{
+       Node->Owner->BeginUpdate();
+	   TTreeNode *  first_child =  Node->getFirstChild();
+	   if(!first_child || ( first_child && first_child->Text.IsEmpty() &&  first_child->Data == FOLDER_TEMPL_ATTR))
+	   {
+		  OpcServerItemsTree->Cursor = crHourGlass;
+		  fill_opc_items_tree(Node);
+          if(first_child ) first_child->Delete();
+		  OpcServerItemsTree->Cursor = crDefault;
+	   }
+       Node->Owner->EndUpdate();
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -1433,5 +1488,7 @@ void __fastcall TOpcConfigEditor::bImportClick(TObject *Sender)
   }
 
 }
+//---------------------------------------------------------------------------
+
 //---------------------------------------------------------------------------
 

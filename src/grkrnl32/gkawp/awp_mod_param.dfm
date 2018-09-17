@@ -31,7 +31,7 @@ object AwpModuleParams: TAwpModuleParams
     Top = 0
     Width = 655
     Height = 379
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alTop
     Anchors = [akLeft, akTop, akRight, akBottom]
     DoubleBuffered = True
@@ -207,15 +207,15 @@ object AwpModuleParams: TAwpModuleParams
         OnClick = bSelViewerClick
       end
       object Label8: TLabel
-        Left = -3
+        Left = 2
         Top = 257
         Width = 155
         Height = 13
         Caption = #1055#1077#1088#1080#1086#1076#1080#1095#1077#1089#1082#1080#1081' '#1074#1099#1079#1086#1074' '#1076#1072#1085#1085#1099#1093
       end
       object Label12: TLabel
-        Left = 212
-        Top = 257
+        Left = 217
+        Top = 256
         Width = 21
         Height = 13
         Caption = #1089#1077#1082'.'
@@ -293,8 +293,8 @@ object AwpModuleParams: TAwpModuleParams
         end
       end
       object OrderPeriod: TEdit
-        Left = 158
-        Top = 254
+        Left = 163
+        Top = 253
         Width = 48
         Height = 21
         BevelKind = bkFlat
@@ -603,6 +603,15 @@ object AwpModuleParams: TAwpModuleParams
           OnChange = LayoutsChange
           OnDropDown = LayoutsDropDown
         end
+      end
+      object ready_topmost: TCheckBox
+        Left = 0
+        Top = 286
+        Width = 176
+        Height = 17
+        Alignment = taLeftJustify
+        Caption = #1043#1086#1090#1086#1074#1085#1086#1089#1090#1080' '#1087#1086' '#1074#1077#1088#1093' '#1086#1082#1086#1085
+        TabOrder = 8
       end
     end
     object ReadySheet: TTabSheet

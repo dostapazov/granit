@@ -25,14 +25,14 @@ void __fastcall TMonFrame::create_mon_instance()
   r.Grow(-12,-12);
   r.Move(4,12);
   try{
-      char txtv_name [MAX_PATH];
-      safe_strcpy(txtv_name,"ModbusMonitor");
-      int name_len = lstrlen(txtv_name);
+	  wchar_t txtv_name [MAX_PATH];
+      safe_strcpy(txtv_name,L"ModbusMonitor");
+      int name_len = lstrlenW(txtv_name);
       int create_limit = 128;
       int create_cntr = 0;
       while(!mon.DoCreate(MonBox->Handle,r,-1,1024,txtv_name) && create_cntr<create_limit)
       {
-        wsprintf(txtv_name+name_len,"%d",create_cntr++);
+        wsprintfW(txtv_name+name_len,L"%d",create_cntr++);
       }
      }
     catch(...)
@@ -44,14 +44,14 @@ void __fastcall TMonFrame::create_mon_instance()
         LOGFONT log_font = {0};
         log_font.lfHeight   = -12;
         log_font.lfCharSet  = RUSSIAN_CHARSET;
-        strcpy(log_font.lfFaceName ,"Courier New");
+        wcscpy(log_font.lfFaceName ,_T("Courier New"));
         if(log_font.lfFaceName[0])
          font = CreateFontIndirect(&log_font);
         if(!font)
         {
         font = CreateFont(-12,0,0,0,FW_NORMAL ,0,0,0,
                                 Font->Charset,OUT_DEFAULT_PRECIS,CLIP_DEFAULT_PRECIS,DEFAULT_QUALITY,DEFAULT_PITCH,
-                                "Courier New");
+                                log_font.lfFaceName);
          GetObject(font,sizeof(log_font),&log_font);
         }
         font = mon.SetFont(font,false);

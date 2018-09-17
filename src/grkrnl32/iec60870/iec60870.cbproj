@@ -4,7 +4,7 @@
         <ProjectVersion>18.4</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Library</AppType>
@@ -116,9 +116,9 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <BCC_InstructionSet>5</BCC_InstructionSet>
-        <VerInfo_Build>122</VerInfo_Build>
+        <VerInfo_Build>123</VerInfo_Build>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Keys>CompanyName=Ostapenko D.V. Norilsk-Azov 1993-2017;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.122;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=IEC-60870 - protocol modem</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Ostapenko D.V. Norilsk-Azov 1993-2017;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.123;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=IEC-60870 - protocol modem</VerInfo_Keys>
         <Debugger_DebugSourcePath>D:\USER\GRANIT\INC\GRKRNL32\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">

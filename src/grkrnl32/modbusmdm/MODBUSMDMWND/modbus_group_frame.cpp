@@ -252,7 +252,7 @@ bool __fastcall TModbusGroupFrm::apply_changes ()
    }
    else
     {
-     MessageBox(Handle, "Не указана тип группы","Ошибка",MB_ICONSTOP);
+     MessageBox(Handle, _T("Не указана тип группы"),_T("Ошибка"),MB_ICONSTOP);
      ret = false;
     }
     return ret;

@@ -119,7 +119,10 @@ __published:	// IDE-managed Components
 	TMemo *Memo1;
 	TMemo *TuTrScript;
 	TLabel *Label8;
-	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
+	TToolButton *tbFlat;
+	TPanel *Panel5;
+	TEdit *edFilter;
+
 	void __fastcall tbRefreshOpcItemsClick(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall OpcServerItemsTreeChange(TObject *Sender, TTreeNode *Node);
@@ -149,6 +152,7 @@ __published:	// IDE-managed Components
 	void __fastcall StatusBar1DrawPanel(TStatusBar *StatusBar, TStatusPanel *Panel,
           const TRect &Rect);
 	void __fastcall bImportClick(TObject *Sender);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 
 
 private:	// User declarations
@@ -168,7 +172,9 @@ private:	// User declarations
 
          gkopc_items_vector opc_items;
          UnicodeString  divisor;
-         UnicodeString  prefix;
+		 UnicodeString  prefix;
+		 UnicodeString  folder_divisor;
+		 UnicodeString  item_divisor;
 
          int     progress_top;
          int     progress_current;
@@ -188,12 +194,13 @@ UnicodeString    __fastcall get_opc_config_name();
          void    __fastcall opc_open_server ();
          void    __fastcall opc_server_refresh_info();
          void    __fastcall set_opc_state_text(OPCSERVERSTATE state);
-         void    __fastcall add_to_opc_group(const wchar_t * item_id);
+         HRESULT __fastcall add_to_opc_group(const wchar_t * item_id,OPCITEMRESULT * iresult);
 
-         void    __fastcall fill_opc_items();
+		 void    __fastcall fill_opc_items();
          void    __fastcall fill_opc_items_tree(TTreeNode * parent);
          void    __fastcall fill_opc_items_flat();
-         void    __fastcall setup_opc_item_props_list(DWORD prop_count,LPDWORD prop_ids,LPWSTR * prop_descr,LPVARIANT  prop_values);
+		 void    __fastcall setup_opc_item_props_list(DWORD prop_count,LPDWORD prop_ids,LPWSTR * prop_descr,LPVARIANT  prop_values);
+		 void    __fastcall setup_item_result        (OPCITEMRESULT * iresult);
     TTreeNode*   __fastcall create_group_node(TTreeNode * node,DWORD num = -1);
          bool    __fastcall check_enable_add_item   ();
          bool    __fastcall check_enable_delete_item();
@@ -217,12 +224,9 @@ gkopc_items_vector::iterator  __fastcall add_gkopc_item(UnicodeString id,Unicode
         void     __fastcall swap_otd_nodes     (TTreeNode * node1,TTreeNode * node2);
         void     __fastcall set_otd_node_group_param(TTreeNode * node,const group_param_t &gp);
         void     __fastcall set_item_personal_params(gkopc_item_def_vcl & item,bool from_controls);
-        void     __fastcall set_item_personal_params(TTreeNode * node,bool from_controls);
+		void     __fastcall set_item_personal_params(TTreeNode * node,bool from_controls);
 
-
-
-
-
+		void     __fastcall show_opc_error (HRESULT res);
 
 public:		// User declarations
 	__fastcall TOpcConfigEditor(TComponent* Owner);
