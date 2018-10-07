@@ -172,8 +172,9 @@ inline  void __fastcall TVariant::clear()
 
    ~TOpcServer()
    {
-      release_status();
-      Reset();
+	  release_status();
+	  Release();
+	  Reset  ();
    }
 
    bool    __fastcall  update_status  (){ release_status(); return get_status();}
@@ -442,7 +443,7 @@ class TOpcServerListBase:public TComInterface<ListClass>
 
    ~TOpcGroup()
    {
-    remove_group   ();
+    remove_group   (true);
     sync_io.Reset  ();
     async_io.Reset ();
     async_io2.Reset();
@@ -457,7 +458,7 @@ class TOpcServerListBase:public TComInterface<ListClass>
    HRESULT __fastcall set_active      (bool active);
    HRESULT __fastcall add_item        (OPCHANDLE  hClient,const wchar_t * item_id,const wchar_t * access_path = NULL ,OPCITEMRESULT * res_ptr = NULL);
    HRESULT __fastcall remove_item     (DWORD item_idx);
-   HRESULT __fastcall remove_group    ();
+   HRESULT __fastcall remove_group    (bool force  = false);
    DWORD   __fastcall get_group_count(){return item_results.size();}
    template <typename IfaceType>
    bool    __fastcall get_iface(TComInterface<IfaceType> & _iface);
@@ -755,8 +756,7 @@ inline  HRESULT __fastcall TOpcGroup::read(bool from_device,DWORD * count,OPCITE
      ret = server->AddGroup(_group_name,active,_rate,client_handle,&time_bias,&dead_band,_lcid,&server_handle,&rate,IID_IUnknown,&punk);
      if(SUCCEEDED(ret))
          {
-          group.Bind(punk,true);
-          punk->Release     ();
+          group.Bind(punk,false);
           item_results.clear();
          }
     }
@@ -787,7 +787,7 @@ inline  HRESULT __fastcall TOpcGroup::read(bool from_device,DWORD * count,OPCITE
      HRESULT res = -1;
      if(get_iface(group_mgt))
      {
-       int new_active = 0;
+	   int new_active = 0;
        res = group_mgt->SetState(&rate,&rate,&new_active,&time_bias,&dead_band,&lcid,&client_handle);
        if(SUCCEEDED(res))
           active = new_active;
@@ -840,16 +840,14 @@ inline HRESULT __fastcall TOpcGroup::remove_items  (std::vector<TOpcItemResult>:
    return -1;
  }
 
- inline HRESULT __fastcall TOpcGroup::remove_group ()
+ inline HRESULT __fastcall TOpcGroup::remove_group (bool force)
 {
    if(item_mgt)
    {
-     HRESULT ret = remove_items(item_results.begin(),item_results.end());
-     if(SUCCEEDED(ret))
-        ret = server->RemoveGroup(server_handle,FALSE);
-     if(SUCCEEDED(ret))
-        client_handle = server_handle = 0;
-     return ret;
+	 HRESULT ret = item_results.size() ? remove_items(item_results.begin(),item_results.end()) : S_OK;
+	 ret = server->RemoveGroup(server_handle,force);
+     client_handle = server_handle = 0;
+	 return ret;
    }
    return -1;
 }
@@ -985,16 +983,19 @@ inline  HRESULT __fastcall TOpcGroup::add_item    (OPCHANDLE  hClient,const wcha
  inline
    HRESULT          __fastcall TOpcBrowseServerAddrSpace::items_enum (OPCBROWSETYPE browse_type,const wchar_t * szFilter ,WORD var_type ,DWORD access_right  )
    {
-     HRESULT ret = -1;
+	 HRESULT ret = -1;
+	 if(enum_items.IsBound())
+	     enum_items.Release();
      if(browser)
       {
        IEnumString * es = NULL;
-       ret = browser->BrowseOPCItemIDs(browse_type,szFilter ? szFilter :L"",var_type,access_right,&es);
+	   ret = browser->BrowseOPCItemIDs(browse_type,szFilter ? szFilter :L"",var_type,access_right,&es);
        if(SUCCEEDED(ret))
            {
+            es->Reset();
 			enum_items.Reset(es);
-            enum_items->Reset();
-           }
+			enum_items->Reset();
+		   }
       }
 
      return ret;

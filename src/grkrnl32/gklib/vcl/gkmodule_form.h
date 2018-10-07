@@ -243,7 +243,7 @@ class wnd_module_starter
    if(mf)
    {
     mf->ModalResult = mrCancel;
-    mf->Hide();
+    mf->Close();
    }
    break;
    case MWCM_SETFOCUS_WINDOW:

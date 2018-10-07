@@ -188,7 +188,7 @@ void     __fastcall TGKAppWindow::show_menu(int x,int y)
        mwl.close_window(mw_handle);
        mwl.destroy_window(mw_handle);
        mw_handle = 0;
-       mwl.unload_module();
+       //mwl.unload_module();
       }
    EndModal(IDCANCEL);
    break;

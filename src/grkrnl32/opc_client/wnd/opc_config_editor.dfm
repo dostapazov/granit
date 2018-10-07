@@ -142,9 +142,11 @@ object OpcConfigEditor: TOpcConfigEditor
       PopupMenu = PopupMenu1
       ReadOnly = True
       RowSelect = True
+      SortType = stText
       TabOrder = 0
       OnAddition = OpcServerItemsTreeAddition
       OnChange = OpcServerItemsTreeChange
+      OnCollapsing = OpcServerItemsTreeCollapsing
       OnCustomDrawItem = OpcServerItemsTreeCustomDrawItem
       OnDeletion = OpcServerItemsTreeDeletion
       OnExpanding = OpcServerItemsTreeExpanding
@@ -191,7 +193,7 @@ object OpcConfigEditor: TOpcConfigEditor
       object Panel5: TPanel
         Left = 82
         Top = 0
-        Width = 146
+        Width = 104
         Height = 24
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -203,24 +205,66 @@ object OpcConfigEditor: TOpcConfigEditor
         object edFilter: TEdit
           Left = 0
           Top = 0
-          Width = 142
+          Width = 100
           Height = 20
           Align = alClient
+          BorderStyle = bsNone
           TabOrder = 0
           Text = '*'
-          ExplicitHeight = 21
+        end
+      end
+      object Panel6: TPanel
+        Left = 186
+        Top = 0
+        Width = 262
+        Height = 24
+        Caption = 'Panel6'
+        ShowCaption = False
+        TabOrder = 1
+        object Label9: TLabel
+          Left = 6
+          Top = 5
+          Width = 143
+          Height = 13
+          Caption = #1056#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100' '#1101#1083#1077#1084#1077#1085#1090#1086#1074
+        end
+        object Label10: TLabel
+          Left = 181
+          Top = 3
+          Width = 35
+          Height = 13
+          Caption = #1087#1072#1087#1086#1082
+        end
+        object FolderDiv: TEdit
+          Left = 222
+          Top = 1
+          Width = 26
+          Height = 21
+          BevelKind = bkFlat
+          BorderStyle = bsNone
+          TabOrder = 0
+        end
+        object ItemDiv: TEdit
+          Left = 152
+          Top = 1
+          Width = 26
+          Height = 21
+          BevelKind = bkFlat
+          BorderStyle = bsNone
+          TabOrder = 1
+          Text = '.'
         end
       end
       object ToolButton2: TToolButton
-        Left = 228
+        Left = 448
         Top = 0
-        Width = 45
+        Width = 21
         Caption = 'ToolButton2'
         ImageIndex = 1
         Style = tbsSeparator
       end
       object tbCreateGroup: TToolButton
-        Left = 273
+        Left = 469
         Top = 0
         Hint = #1057#1086#1079#1076#1072#1090#1100' '#1075#1088#1091#1087#1087#1091
         Caption = 'tbCreateGroup'
@@ -228,7 +272,7 @@ object OpcConfigEditor: TOpcConfigEditor
         OnClick = tbCreateGroupClick
       end
       object ToolButton1: TToolButton
-        Left = 296
+        Left = 492
         Top = 0
         Width = 25
         Caption = 'ToolButton1'
@@ -236,7 +280,7 @@ object OpcConfigEditor: TOpcConfigEditor
         Style = tbsSeparator
       end
       object tbAddItem: TToolButton
-        Left = 321
+        Left = 517
         Top = 0
         Hint = #1044#1086#1073#1072#1074#1080#1090#1100
         Caption = #1055#1086#1084#1077#1089#1090#1080#1090#1100
@@ -245,7 +289,7 @@ object OpcConfigEditor: TOpcConfigEditor
         OnClick = tbAddItemClick
       end
       object tbRemove: TToolButton
-        Left = 344
+        Left = 540
         Top = 0
         Hint = #1059#1076#1072#1083#1080#1090#1100
         Caption = 'tbRemove'
@@ -254,7 +298,7 @@ object OpcConfigEditor: TOpcConfigEditor
         OnClick = tbRemoveClick
       end
       object ToolButton5: TToolButton
-        Left = 367
+        Left = 563
         Top = 0
         Width = 18
         Caption = 'ToolButton5'
@@ -262,7 +306,7 @@ object OpcConfigEditor: TOpcConfigEditor
         Style = tbsSeparator
       end
       object tbMoveUp: TToolButton
-        Left = 385
+        Left = 581
         Top = 0
         Hint = #1042#1074#1077#1088#1093
         Enabled = False
@@ -270,7 +314,7 @@ object OpcConfigEditor: TOpcConfigEditor
         OnClick = tbMoveUpClick
       end
       object tbMoveDown: TToolButton
-        Left = 408
+        Left = 604
         Top = 0
         Hint = #1042#1085#1080#1079
         Caption = 'tbMoveDown'
@@ -279,7 +323,7 @@ object OpcConfigEditor: TOpcConfigEditor
         OnClick = tbMoveDownClick
       end
       object tbRenumber: TToolButton
-        Left = 431
+        Left = 627
         Top = 0
         Hint = #1055#1077#1088#1077#1085#1091#1084#1077#1088#1072#1094#1080#1103' '#1073#1077#1079' '#1088#1072#1079#1088#1099#1074#1086#1074
         Caption = 'tbRenumber'
@@ -288,7 +332,7 @@ object OpcConfigEditor: TOpcConfigEditor
         OnClick = tbRenumberClick
       end
       object ToolButton3: TToolButton
-        Left = 454
+        Left = 650
         Top = 0
         Width = 89
         Caption = 'ToolButton3'
@@ -296,14 +340,14 @@ object OpcConfigEditor: TOpcConfigEditor
         Style = tbsSeparator
       end
       object ApplyPersonal: TToolButton
-        Left = 543
+        Left = 739
         Top = 0
         Hint = #1055#1088#1080#1084#1077#1085#1080#1090#1100' '#1087#1072#1088#1072#1084#1077#1090#1088#1099' '#1101#1083#1077#1084#1077#1085#1090#1072' '#1041#1044
         ImageIndex = 8
         OnClick = ApplyPersonalClick
       end
       object UndoPersonal: TToolButton
-        Left = 566
+        Left = 762
         Top = 0
         Hint = #1042#1077#1088#1085#1091#1090#1100' '#1087#1072#1088#1072#1084#1077#1090#1088#1099' '#1101#1083#1077#1084#1077#1085#1090#1072' '#1041#1044
         Caption = 'UndoPersonal'
@@ -311,7 +355,7 @@ object OpcConfigEditor: TOpcConfigEditor
         OnClick = UndoPersonalClick
       end
       object ToolButton4: TToolButton
-        Left = 589
+        Left = 785
         Top = 0
         Width = 8
         Caption = 'ToolButton4'
@@ -319,7 +363,7 @@ object OpcConfigEditor: TOpcConfigEditor
         Style = tbsSeparator
       end
       object bExport: TToolButton
-        Left = 597
+        Left = 793
         Top = 0
         Hint = #1069#1082#1089#1087#1086#1088#1090' '#1041#1044' '#1074' CSV'
         Caption = 'bExport'
@@ -327,7 +371,7 @@ object OpcConfigEditor: TOpcConfigEditor
         OnClick = bExportClick
       end
       object bImport: TToolButton
-        Left = 620
+        Left = 816
         Top = 0
         Hint = #1048#1084#1087#1086#1088#1090' '#1041#1044' '#1080#1079' CSV'
         Caption = 'bImport'
@@ -615,7 +659,7 @@ object OpcConfigEditor: TOpcConfigEditor
     Left = 25
     Top = 97
     Bitmap = {
-      494C01010F003C003C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010F004400440010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       00000000000000000000000000000000000000000000F2F2F200F2F2F200F4F4
       F400F4F4F400F6F6F600F6F6F600F6F6F600F6F6F6000000000000000000FAFA

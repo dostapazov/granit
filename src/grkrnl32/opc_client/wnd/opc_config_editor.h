@@ -122,6 +122,11 @@ __published:	// IDE-managed Components
 	TToolButton *tbFlat;
 	TPanel *Panel5;
 	TEdit *edFilter;
+	TPanel *Panel6;
+	TLabel *Label9;
+	TEdit *FolderDiv;
+	TLabel *Label10;
+	TEdit *ItemDiv;
 
 	void __fastcall tbRefreshOpcItemsClick(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
@@ -153,6 +158,8 @@ __published:	// IDE-managed Components
           const TRect &Rect);
 	void __fastcall bImportClick(TObject *Sender);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
+	void __fastcall OpcServerItemsTreeCollapsing(TObject *Sender, TTreeNode *Node, bool &AllowCollapse);
+
 
 
 private:	// User declarations
@@ -171,10 +178,10 @@ private:	// User declarations
          TTreeNode *    analog2_node;
 
          gkopc_items_vector opc_items;
-         UnicodeString  divisor;
-		 UnicodeString  prefix;
-		 UnicodeString  folder_divisor;
-		 UnicodeString  item_divisor;
+//       UnicodeString  divisor;
+//		 UnicodeString  prefix;
+//		 UnicodeString  folder_divisor;
+//		 UnicodeString  item_divisor;
 
          int     progress_top;
          int     progress_current;
