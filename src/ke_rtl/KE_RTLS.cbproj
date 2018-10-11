@@ -68,26 +68,14 @@
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-<<<<<<< HEAD
-        <DCC_ObjOutput>$(GRKRNL_TEMP)</DCC_ObjOutput>
-||||||| merged common ancestors
-        <DCC_ObjOutput>d:\temp\</DCC_ObjOutput>
-=======
         <DCC_ObjOutput>$(KRKRNL_TEMP)</DCC_ObjOutput>
->>>>>>> d62dd0de6e0ec0d7b09186cd7703a3e6440cc5d0
         <TASM_IncludePath>$(BDS)\Projects;..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BDS)\include;$(BDS)\include\vcl;D:\USER\GRANIT\INC;D:\USER\DVERI-K\Mdoors\inc\ibase;$(TASM_IncludePath)</TASM_IncludePath>
         <FinalOutputDir>$(GRKRNL_LIB)</FinalOutputDir>
         <TASM_Debugging>None</TASM_Debugging>
         <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
         <BRCC_IncludePath>$(BDS)\Projects;..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BDS)\include;$(BDS)\include\vcl;D:\USER\GRANIT\INC;D:\USER\DVERI-K\Mdoors\inc\ibase;$(BRCC_IncludePath)</BRCC_IncludePath>
         <DynamicRTL>true</DynamicRTL>
-<<<<<<< HEAD
-        <BCC_IncludePath>..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BDS)\include;$(BCC_IncludePath)</BCC_IncludePath>
-||||||| merged common ancestors
-        <BCC_IncludePath>..\..\PROJS;..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BDS)\include;D:\USER\GRANIT\INC;$(BCC_IncludePath)</BCC_IncludePath>
-=======
         <BCC_IncludePath>..\GrKrnl32;..\NETRTL;..\KE_WIN;$(BDS)\include;$(BCC_IncludePath)</BCC_IncludePath>
->>>>>>> d62dd0de6e0ec0d7b09186cd7703a3e6440cc5d0
         <DCC_CBuilderOutput>JPHN</DCC_CBuilderOutput>
         <TASM_AdditionalSwitches> /w2 d:\temp\</TASM_AdditionalSwitches>
         <BCC_PCHCache>true</BCC_PCHCache>
