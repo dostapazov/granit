@@ -66,7 +66,7 @@
         <VerInfo_Locale>1049</VerInfo_Locale>
         <IncludePath>tlm_painter\;..\..\GRNET32\;..\..\COMMON\;..\..\KE_RTL\;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC\LIGHTOPC;D:\USER\GRANIT\INC\;$(IncludePath)</IncludePath>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <BRCC_OutputDir>d:\temp\</BRCC_OutputDir>
+        <BRCC_OutputDir>$(GRKRNL_TEMP)</BRCC_OutputDir>
         <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
         <BCC_OptimizationLevel>Level2</BCC_OptimizationLevel>
         <BCC_IncludePath>..\..\KE_RTL;..\..\..\PROJS;..\..\GRNET32;..\..\COMMON;$(BDS)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;$(BCC_IncludePath)</BCC_IncludePath>
@@ -81,7 +81,7 @@
         <DCC_AdditionalSwitches> -N0d:\temp\ -M</DCC_AdditionalSwitches>
         <TASM_Debugging>None</TASM_Debugging>
         <BCC_PCHCache>true</BCC_PCHCache>
-        <DCC_ObjOutput>d:\temp\</DCC_ObjOutput>
+        <DCC_ObjOutput>$(GRKRNL_TEMP)</DCC_ObjOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <Manifest_File>None</Manifest_File>
@@ -419,13 +419,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
