@@ -59,17 +59,15 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <IncludePath>..\..\KE_RTL\;..\..\CALCF\;..\GKLIB\;$(IncludePath)</IncludePath>
         <SanitizedProjectName>mediumdb</SanitizedProjectName>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1049</VerInfo_Locale>
         <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-        <BCC_IncludePath>..;..\GKTLMDB;..\..\..\PROJS;..\..\KE_RTL;..\GKLIB;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;$(BDS)\include;$(BCC_IncludePath)</BCC_IncludePath>
-        <TASM_AdditionalSwitches> /w2 D:\temp\modemmer\</TASM_AdditionalSwitches>
-        <DCC_ObjOutput>D:\temp\modemmer\</DCC_ObjOutput>
-        <ILINK_IntermediateOutputPath>D:\temp\modemmer</ILINK_IntermediateOutputPath>
+        <BCC_IncludePath>$(BDS)\include;$(BCC_IncludePath)</BCC_IncludePath>
+        <TASM_AdditionalSwitches> /w2 $(GRKRNL_TEMP)\modemmer\</TASM_AdditionalSwitches>
+        <ILINK_IntermediateOutputPath>$(GRKRNL_TEMP)\modemmer</ILINK_IntermediateOutputPath>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
-        <ILINK_LibraryPath>..\..\KE_RTL\;..\..\CALCF\;..\GKLIB\;..;..\GKTLMDB;..\..\..\INC\GRKRNL32;..\GRIPXMOD;..\..\KE_RTL;..\GKLIB;..\..\..\PROJS;$(BDS)\lib\obj;$(BDS)\lib;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>..\GKLIB\;..\..\CALCF\;..\..\KE_RTL\;$(BDS)\lib;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <TASM_Debugging>Full</TASM_Debugging>
         <BRCC_IncludePath>$(BDS)\include;$(BDS)\include\windows\sdk;$(GRKRNL_INC);$(BRCC_IncludePath)</BRCC_IncludePath>
         <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
@@ -77,11 +75,14 @@
         <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
         <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
         <PackageImports>vcl.bpi;rtl.bpi;dbrtl.bpi;adortl.bpi;vcldb.bpi;vclx.bpi;bdertl.bpi;vcldbx.bpi;ibxpress.bpi;dsnap.bpi;dsnap.bpi;dsnapcon.bpi;teeui.bpi;teedb.bpi;tee.bpi;dss.bpi;dsnapcon.bpi;bcbsmp.bpi;vclie.bpi;xmlrtl.bpi;inet.bpi;inetdbbde.bpi;inetdbxpress.bpi;inetdb.bpi;webdsnap.bpi;bcbie.bpi;websnap.bpi;soaprtl.bpi;dbexpress.bpi;dbxcds.bpi;indycore.bpi;indysystem.bpi;bcboffice2k.bpi;DclClxIBXtras.bpi;$(PackageImports)</PackageImports>
-        <TASM_IncludePath>..;..\GKTLMDB;..\..\..\PROJS;..\..\KE_RTL;..\GKLIB;D:\USER\GRANIT\INC;..\..\..\INC\GRKRNL32;$(BDS)\include;$(TASM_IncludePath)</TASM_IncludePath>
-        <DCC_AdditionalSwitches> -N0D:\temp\modemmer\ -M</DCC_AdditionalSwitches>
+        <TASM_IncludePath>$(BDS)\include;$(TASM_IncludePath)</TASM_IncludePath>
+        <DCC_AdditionalSwitches> -N0$(GRKRNL_TEMP)\modemmer\ -M</DCC_AdditionalSwitches>
         <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
         <ILINK_WinAppType>DLL</ILINK_WinAppType>
         <IntermediateOutputDir>$(GRKRNL_TEMP)\$(Platform)\$(CONFIG)\mediumdb</IntermediateOutputDir>
+        <IncludePath>..\GKLIB\;..\..\CALCF\;..\..\KE_RTL\;$(KERTL_INC);$(GRKRNL_INC);$(IncludePath)</IncludePath>
+        <BRCC_OutputDir>$(GRKRNL_TEMP)</BRCC_OutputDir>
+        <TASM_OutputDir>$(GRKRNL_TEMP)</TASM_OutputDir>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
@@ -91,7 +92,6 @@
         <FinalOutputDir>$(GRKRNL_BIN)</FinalOutputDir>
         <BCC_StackFrames>true</BCC_StackFrames>
         <Manifest_File>None</Manifest_File>
-        <ILINK_LibraryPath>D:\ERADS\18.0\lib\win32\release\;D:\ERADS\lib\win32\release\;D:\USER\LIB\;D:\ERADS\17.0\lib\win32\release\;D:\USER\GRANIT\LIB_XE\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <BCC_Defines>STRICT;$(BCC_Defines)</BCC_Defines>
         <Debugger_RunParams>nosplash -config</Debugger_RunParams>
         <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\grkrnl32.exe</Debugger_HostApplication>
@@ -115,7 +115,7 @@
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
         <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
         <ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <DCC_AdditionalSwitches> -N0D:\temp\modemmer\ -M -V</DCC_AdditionalSwitches>
+        <DCC_AdditionalSwitches> -N0$(GRKRNL_TEMP)\modemmer\ -M -V</DCC_AdditionalSwitches>
         <DCC_Define>DEBUG;$(DCC_Define);$(DCC_Define)</DCC_Define>
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
     </PropertyGroup>
@@ -141,7 +141,7 @@
         <BCC_OptimizationLevel>Level2</BCC_OptimizationLevel>
         <TASM_Debugging>None</TASM_Debugging>
         <ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <DCC_AdditionalSwitches> -N0D:\temp\modemmer\ -M -$O+</DCC_AdditionalSwitches>
+        <DCC_AdditionalSwitches> -N0$(GRKRNL_TEMP)\modemmer\ -M -$O+</DCC_AdditionalSwitches>
         <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
@@ -344,8 +344,8 @@
                 </HistoryLists_hlConditionals>
                 <HistoryLists_hlIntOutputDir>
                     <HistoryLists_hlIntOutputDir Name="Count">2</HistoryLists_hlIntOutputDir>
-                    <HistoryLists_hlIntOutputDir Name="Item0">D:\temp\modemmer</HistoryLists_hlIntOutputDir>
-                    <HistoryLists_hlIntOutputDir Name="Item1">D:\temp</HistoryLists_hlIntOutputDir>
+                    <HistoryLists_hlIntOutputDir Name="Item0">$(GRKRNL_TEMP)\modemmer</HistoryLists_hlIntOutputDir>
+                    <HistoryLists_hlIntOutputDir Name="Item1">$(GRKRNL_TEMP)</HistoryLists_hlIntOutputDir>
                 </HistoryLists_hlIntOutputDir>
                 <HistoryLists_hlFinalOutputDir>
                     <HistoryLists_hlFinalOutputDir Name="Count">2</HistoryLists_hlFinalOutputDir>
@@ -395,8 +395,6 @@
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k250.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp250.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k250.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Platforms>
@@ -445,12 +443,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\grkrnl32\mediumdb.tds" Configuration="Release" Class="DebugSymbols">
-                    <Platform Name="Win32">
-                        <RemoteName>mediumdb.tds</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
                     <Platform Name="Win64">
                         <Overwrite>true</Overwrite>
@@ -458,6 +450,12 @@
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
                     <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\grkrnl32\mediumdb.tds" Configuration="Release" Class="DebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteName>mediumdb.tds</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

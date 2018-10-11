@@ -811,9 +811,9 @@ void __fastcall TOpcConfigEditor::add_gkopc_item(TTreeNode * src_node,TTreeNode 
 
    gp.param = 0;
    if(dst_node->Count)
-     gp.param = group_param_t(dst_node->Item[dst_node->Count-1]->Data).param+1;
-     TTreeNode * otd_node = OtdTree->Items->AddChild(dst_node,UnicodeString());
-     add_gkopc_item(get_item_opc_id(src_node,ItemDiv->Text.Trim(),FolderDiv->Text.Trim()),UnicodeString(),gp,src_node,otd_node);
+	 gp.param = group_param_t(dst_node->Item[dst_node->Count-1]->Data).param+1;
+	 TTreeNode * otd_node = OtdTree->Items->AddChild(dst_node,UnicodeString());
+	 add_gkopc_item(get_item_opc_id(src_node,ItemDiv->Text.Trim(),FolderDiv->Text.Trim()),UnicodeString(),gp,src_node,otd_node);
 }
 
 
@@ -823,8 +823,9 @@ void __fastcall TOpcConfigEditor::tbAddItemClick(TObject *Sender)
   TTreeNode * node = OtdTree->Selected;
   for(DWORD i = 0;i<OpcServerItemsTree->SelectionCount;i++)
       {
-       TTreeNode * src_node = OpcServerItemsTree->Selections[i];
-       if(!src_node->Data)
+	   TTreeNode * src_node = OpcServerItemsTree->Selections[i];
+	   tree_item_def * idef = get_tree_item_def(src_node);
+	   if(idef && !idef->is_branch && !idef->in_use)
          add_gkopc_item(src_node,node);
       }
   node->Expanded = true;

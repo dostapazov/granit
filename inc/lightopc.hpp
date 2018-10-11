@@ -15,7 +15,7 @@
 
 //#pragma pack(push,1)
 
-#include <lightopc.h>
+#include <lightopc/lightopc.h>
 #include <vector>
 #include <functional>
 
