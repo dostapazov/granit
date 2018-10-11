@@ -65,30 +65,32 @@
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1049</VerInfo_Locale>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <TASM_AdditionalSwitches> /w2 d:\temp\</TASM_AdditionalSwitches>
+        <TASM_AdditionalSwitches> /w2 $(GRKRNL_TEMP)</TASM_AdditionalSwitches>
         <ILINK_LibraryPath>$(BDS)\lib;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
         <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
         <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
-        <BRCC_OutputDir>d:\temp\</BRCC_OutputDir>
+        <BRCC_OutputDir>$(GRKRNL_TEMP)</BRCC_OutputDir>
         <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
         <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
-        <TASM_IncludePath>$(BDS)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;$(TASM_IncludePath)</TASM_IncludePath>
+        <TASM_IncludePath>$(BDS)\include;$(TASM_IncludePath)</TASM_IncludePath>
         <ILINK_AppType>Windows</ILINK_AppType>
         <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-        <BRCC_IncludePath>$(BDS)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;$(BRCC_IncludePath)</BRCC_IncludePath>
-        <ILINK_IntermediateOutputPath>d:\temp</ILINK_IntermediateOutputPath>
-        <BCC_IncludePath>$(BDS)\include;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC;$(BCC_IncludePath)</BCC_IncludePath>
+        <BRCC_IncludePath>$(BDS)\include;$(BRCC_IncludePath)</BRCC_IncludePath>
+        <ILINK_IntermediateOutputPath>$(GRKRNL_TEMP)</ILINK_IntermediateOutputPath>
+        <BCC_IncludePath>$(BDS)\include;$(BCC_IncludePath)</BCC_IncludePath>
         <TASM_Debugging>Full</TASM_Debugging>
         <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
-        <DCC_AdditionalSwitches> -N0d:\temp\ -M</DCC_AdditionalSwitches>
+        <DCC_AdditionalSwitches> -N0$(GRKRNL_TEMP) -M</DCC_AdditionalSwitches>
         <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
         <PackageImports>rtl.bpi;vcl.bpi;vclx.bpi;bcbsmp.bpi;dbrtl.bpi;vcldb.bpi;adortl.bpi;ibsmp.bpi;bdertl.bpi;vcldbx.bpi;teeui.bpi;teedb.bpi;tee.bpi;dss.bpi;ibxpress.bpi;dsnap.bpi;vclie.bpi;inetdb.bpi;inet.bpi;webdsnap.bpi;bcbie.bpi;bcboffice2k.bpi;$(PackageImports)</PackageImports>
         <ILINK_WinAppType>DLL</ILINK_WinAppType>
         <ILINK_BpiLibOutputDir>D:\USER\GRANIT\LIB</ILINK_BpiLibOutputDir>
-        <DCC_ObjOutput>d:\temp\</DCC_ObjOutput>
+        <DCC_ObjOutput>$(GRKRNL_TEMP)</DCC_ObjOutput>
         <BCC_PCHCache>true</BCC_PCHCache>
+        <TASM_OutputDir>$(GRKRNL_TEMP)</TASM_OutputDir>
+        <IncludePath>$(KERTL_INC);$(GRKRNL_INC);$(IncludePath)</IncludePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
@@ -125,7 +127,7 @@
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
         <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
-        <DCC_AdditionalSwitches> -N0d:\temp\ -M -V</DCC_AdditionalSwitches>
+        <DCC_AdditionalSwitches> -N0$(GRKRNL_TEMP) -M -V</DCC_AdditionalSwitches>
         <DCC_Define>DEBUG;$(DCC_Define);$(DCC_Define)</DCC_Define>
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
     </PropertyGroup>
@@ -135,6 +137,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+        <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
@@ -146,7 +149,7 @@
         <BCC_OptimizationLevel>Level2</BCC_OptimizationLevel>
         <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
         <TASM_Debugging>None</TASM_Debugging>
-        <DCC_AdditionalSwitches> -N0d:\temp\ -M -$O+</DCC_AdditionalSwitches>
+        <DCC_AdditionalSwitches> -N0$(GRKRNL_TEMP) -M -$O+</DCC_AdditionalSwitches>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
@@ -318,8 +321,6 @@
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k250.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp250.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k250.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Platforms>

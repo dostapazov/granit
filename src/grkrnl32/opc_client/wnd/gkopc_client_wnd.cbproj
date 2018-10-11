@@ -105,7 +105,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <LinkPackageStatics>rtl.lib;vcl.lib</LinkPackageStatics>
-        <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
+        <Debugger_HostApplication>$(GRKRNL_BIN)\tlmcentr32.exe</Debugger_HostApplication>
         <Debugger_RunParams>-nosplash -config -service</Debugger_RunParams>
         <Debugger_DebugSourcePath>D:\USER\GRANIT\INC\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>

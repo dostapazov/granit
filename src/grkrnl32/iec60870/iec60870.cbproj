@@ -116,9 +116,9 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <BCC_InstructionSet>5</BCC_InstructionSet>
-        <VerInfo_Build>124</VerInfo_Build>
+        <VerInfo_Build>125</VerInfo_Build>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Keys>CompanyName=Ostapenko D.V. Norilsk-Azov 1993-2017;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.124;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=IEC-60870 - protocol modem</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Ostapenko D.V. Norilsk-Azov 1993-2017;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.125;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=IEC-60870 - protocol modem</VerInfo_Keys>
         <Debugger_DebugSourcePath>D:\USER\GRANIT\INC\GRKRNL32\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">

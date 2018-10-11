@@ -64,12 +64,12 @@
         <SanitizedProjectName>gklib</SanitizedProjectName>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1049</VerInfo_Locale>
-        <IncludePath>tlm_painter\;..\..\GRNET32\;..\..\COMMON\;..\..\KE_RTL\;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\GRANIT\INC\LIGHTOPC;D:\USER\GRANIT\INC\;$(IncludePath)</IncludePath>
+        <IncludePath>tlm_painter\;..\..\COMMON\;..\..\KE_RTL\;$(KERTL_INC);$(GRKRNL_INC);$(IncludePath)</IncludePath>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <BRCC_OutputDir>$(GRKRNL_TEMP)</BRCC_OutputDir>
         <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
         <BCC_OptimizationLevel>Level2</BCC_OptimizationLevel>
-        <BCC_IncludePath>..\..\KE_RTL;..\..\..\PROJS;..\..\GRNET32;..\..\COMMON;$(BDS)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;$(BCC_IncludePath)</BCC_IncludePath>
+        <BCC_IncludePath>..\..\KE_RTL;..\..\COMMON;$(BDS)\include;$(BCC_IncludePath)</BCC_IncludePath>
         <TASM_AdditionalSwitches> /w2 d:\temp\</TASM_AdditionalSwitches>
         <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <TASM_IncludePath>..\..\KE_RTL;..\..\..\PROJS;..\..\GRNET32;..\..\COMMON;$(BDS)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;$(TASM_IncludePath)</TASM_IncludePath>
@@ -236,10 +236,6 @@
             <BuildOrder>29</BuildOrder>
             <BuildOrder>15</BuildOrder>
         </CppCompile>
-        <CppCompile Include="..\..\GRNET32\grnet32wrapper.cpp">
-            <BuildOrder>9</BuildOrder>
-            <BuildOrder>11</BuildOrder>
-        </CppCompile>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -388,7 +384,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\LIB_XE\gklib.lib" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="..\..\..\lib\gklib.lib" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>gklib.lib</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -471,6 +467,12 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgsqlite3.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\lib\gklib.tds" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteName>gklib.tds</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

@@ -70,22 +70,22 @@
         <Defines>STRICT;$(Defines)</Defines>
         <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
-        <BCC_IncludePath>..;..\KERNEL;..\..\KE_WIN;..\GKLIB;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;$(BCC_IncludePath)</BCC_IncludePath>
+        <BCC_IncludePath>..;..\KERNEL;..\..\KE_WIN;..\GKLIB;$(BCC_IncludePath)</BCC_IncludePath>
         <TASM_Debugging>Full</TASM_Debugging>
-        <DCC_AdditionalSwitches> -N0d:\temp\ -M</DCC_AdditionalSwitches>
+        <DCC_AdditionalSwitches> -N0$(GRKRNL_TEMP)\ -M</DCC_AdditionalSwitches>
         <PackageImports>rtl.bpi;vcl.bpi;vclx.bpi;bcbsmp.bpi;dbrtl.bpi;vcldb.bpi;adortl.bpi;ibsmp.bpi;bdertl.bpi;vcldbx.bpi;teeui.bpi;teedb.bpi;tee.bpi;dss.bpi;ibxpress.bpi;dsnap.bpi;vclie.bpi;inetdb.bpi;inet.bpi;webdsnap.bpi;bcbie.bpi;bcboffice2k.bpi;$(PackageImports)</PackageImports>
         <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
         <ILINK_LibraryPath>..\..\KE_RTL\;..\..\KE_WIN\;..\GKLIB\;$(BDS)\lib;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <TASM_AdditionalSwitches> /w2 d:\temp\</TASM_AdditionalSwitches>
+        <TASM_AdditionalSwitches> /w2 $(GRKRNL_TEMP)\</TASM_AdditionalSwitches>
         <TASM_IncludePath>..;..\KERNEL;..\..\KE_WIN;$(BDS)\Projects;..\GKLIB;$(BDS)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE\VCL;$(TASM_IncludePath)</TASM_IncludePath>
         <BCC_GenerateWindowsApp>true</BCC_GenerateWindowsApp>
         <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
         <ILINK_AppType>Windows</ILINK_AppType>
         <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
         <BCC_PCHCache>true</BCC_PCHCache>
-        <ILINK_IntermediateOutputPath>d:\temp</ILINK_IntermediateOutputPath>
+        <ILINK_IntermediateOutputPath>$(GRKRNL_TEMP)</ILINK_IntermediateOutputPath>
         <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
-        <DCC_ObjOutput>d:\temp\</DCC_ObjOutput>
+        <DCC_ObjOutput>$(GRKRNL_TEMP)\</DCC_ObjOutput>
         <BRCC_IncludePath>..;..\KERNEL;..\..\KE_WIN;$(BDS)\Projects;..\GKLIB;$(BDS)\include;D:\USER\GRANIT\INC;D:\USER\GRANIT\INC\GRKRNL32;D:\USER\INCLUDE\VCL;$(BRCC_IncludePath)</BRCC_IncludePath>
         <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
@@ -122,7 +122,7 @@
         <ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
         <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
-        <DCC_AdditionalSwitches> -N0d:\temp\ -M -V</DCC_AdditionalSwitches>
+        <DCC_AdditionalSwitches> -N0$(GRKRNL_TEMP)\ -M -V</DCC_AdditionalSwitches>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <Debugger_RunParams> -config -service nosplash</Debugger_RunParams>
@@ -141,7 +141,7 @@
         <TASM_Debugging>None</TASM_Debugging>
         <ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <BCC_OptimizationLevel>Level2</BCC_OptimizationLevel>
-        <DCC_AdditionalSwitches> -N0d:\temp\ -M -$O+</DCC_AdditionalSwitches>
+        <DCC_AdditionalSwitches> -N0$(GRKRNL_TEMP)\ -M -$O+</DCC_AdditionalSwitches>
         <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
@@ -285,8 +285,6 @@
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k250.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp250.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k250.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Platforms>
@@ -468,6 +466,13 @@
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
                     <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Configuration="Debug" Class="UWP_CppLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

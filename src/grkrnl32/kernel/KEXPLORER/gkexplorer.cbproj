@@ -62,7 +62,7 @@
         <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
         <ILINK_GenerateImportLibrary>false</ILINK_GenerateImportLibrary>
         <ILINK_LibraryPath>..\..\GKLIB\VCL\;..\..\GKLIB\;$(GRKRNL_LIB);$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <IncludePath>..\..\GKLIB\VCL\;..\..\GKLIB\;D:\USER\GRANIT\SRC\GrKrnl32\KERNEL\KEXPLORER\;D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\;D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\;$(KERTL_INC);$(GRKRNL_INC);$(IncludePath)</IncludePath>
+        <IncludePath>..\..\GKLIB\VCL\;..\..\GKLIB\;$(KERTL_INC);$(GRKRNL_INC);$(IncludePath)</IncludePath>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>gkexplorer</SanitizedProjectName>
         <Multithreaded>true</Multithreaded>
@@ -254,8 +254,6 @@
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k250.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp250.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k250.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="3">

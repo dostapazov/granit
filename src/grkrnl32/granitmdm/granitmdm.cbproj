@@ -123,8 +123,8 @@
         <Debugger_RunParams>-nosplash -config -service</Debugger_RunParams>
         <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.142;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
-        <VerInfo_Build>142</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.143;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Build>143</VerInfo_Build>
         <ILINK_wsrd>false</ILINK_wsrd>
         <BCC_wpar>false</BCC_wpar>
         <_TCHARMapping>char</_TCHARMapping>

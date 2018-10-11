@@ -156,7 +156,7 @@
         <CppCompile Include="tlmobj_painter_main.cpp">
             <BuildOrder>1</BuildOrder>
         </CppCompile>
-        <LibFiles Include="..\..\..\..\LIB\PICTDLGS.LIB" Condition="'$(Platform)'=='Win32'">
+        <LibFiles Include="C:\LIB\PICTDLGS.LIB" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>6</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
