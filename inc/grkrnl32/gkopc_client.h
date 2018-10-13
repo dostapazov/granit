@@ -1,4 +1,4 @@
-
+п»ї
 #ifndef __GKOPC_CLIENT_MODEM_INC__
 #define __GKOPC_CLIENT_MODEM_INC__
 
@@ -66,7 +66,7 @@
 
  typedef GKOPC_LINE_CONFIG * LPGKOPC_LINE_CONFIG;
 
- #define GKOPC_LINE_OPT_REPLACE_TIME    0x00001 //Заменять время изменения данных на текущее
+ #define GKOPC_LINE_OPT_REPLACE_TIME    0x00001 //Р—Р°РјРµРЅСЏС‚СЊ РІСЂРµРјСЏ РёР·РјРµРЅРµРЅРёСЏ РґР°РЅРЅС‹С… РЅР° С‚РµРєСѓС‰РµРµ
 
  #define CMD_OPC_GET_LINE   MCMD(MT_MODEM_OPC,1000)
  //get line config p1 = (LPGKOPC_LINE_CONFIG)
@@ -98,7 +98,7 @@
  #define CMD_OPC_LINE_GET_TR_SCRIPT MCMD(MT_MODEM_OPC,1020)
  #define CMD_OPC_LINE_SET_TR_SCRIPT MCMD(MT_MODEM_OPC,1021)
  //p1 - line-no ,p2 = LPSCRIPT_TEXT
- //Если text_len < 0 => недостаточная длина буфера
+ //Р•СЃР»Рё text_len < 0 => РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅР°СЏ РґР»РёРЅР° Р±СѓС„РµСЂР°
 
 
  #define CMD_OPC_LINE_GET_ITEM      MCMD(MT_MODEM_OPC,2000)
@@ -286,7 +286,7 @@
 
                     std::string::const_pointer   astr;
 
-                    //Запись скрипта ТУ
+                    //Р—Р°РїРёСЃСЊ СЃРєСЂРёРїС‚Р° РўРЈ
                     astr = beg->rc_script.c_str();
                     length     = strlen(astr);
                     st.add_chunk (rec_id,(void*)astr,length);
@@ -294,7 +294,7 @@
                        length/=sizeof(wchar_t);
                     max_length = std::max(max_length,length );
 
-                    //Запись скрипта вычисления значения
+                    //Р—Р°РїРёСЃСЊ СЃРєСЂРёРїС‚Р° РІС‹С‡РёСЃР»РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ
                     astr = beg->calc_script.c_str();
                     length     = strlen(astr);
                     st.add_chunk (rec_id,(void*)astr,length);
@@ -302,7 +302,7 @@
                        length/=sizeof(wchar_t);
                     max_length = std::max(max_length,length );
 
-                    //Запись имени тэга
+                    //Р—Р°РїРёСЃСЊ РёРјРµРЅРё С‚СЌРіР°
                     wstr = beg->rc_tag.c_str();
                     length     = wcslen(wstr);
                     max_length = std::max(max_length,length);

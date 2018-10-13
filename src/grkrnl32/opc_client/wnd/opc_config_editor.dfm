@@ -380,7 +380,6 @@ object OpcConfigEditor: TOpcConfigEditor
         Font.Style = []
         GridLines = True
         HideSelection = False
-        Items.ItemData = {}
         ReadOnly = True
         RowSelect = True
         ParentFont = False
@@ -420,6 +419,10 @@ object OpcConfigEditor: TOpcConfigEditor
             object TabSheet2: TTabSheet
               Caption = #1057#1082#1088#1080#1087#1090' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1079#1085#1072#1095#1077#1085#1080#1103
               ImageIndex = 1
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object CalcScript: TMemo
                 Left = 0
                 Top = 0
@@ -440,6 +443,10 @@ object OpcConfigEditor: TOpcConfigEditor
             end
             object TabSheet1: TTabSheet
               Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1058#1059'/'#1058#1056
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               DesignSize = (
                 437
                 314)
@@ -504,6 +511,10 @@ object OpcConfigEditor: TOpcConfigEditor
             object TabSheet4: TTabSheet
               Caption = #1050#1072#1082' '#1087#1080#1089#1072#1090#1100' '#1089#1082#1088#1080#1087#1090#1099' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103
               ImageIndex = 3
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object Memo1: TMemo
                 Left = 0
                 Top = 0
@@ -608,7 +619,7 @@ object OpcConfigEditor: TOpcConfigEditor
     Left = 25
     Top = 97
     Bitmap = {
-      494C01010F005000500010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010F005400540010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       00000000000000000000000000000000000000000000F2F2F200F2F2F200F4F4
       F400F4F4F400F6F6F600F6F6F600F6F6F600F6F6F6000000000000000000FAFA
