@@ -74,7 +74,7 @@
         <OutputExt>gkm</OutputExt>
         <Manifest_File>(None)</Manifest_File>
         <ILINK_LibraryPath>D:\ERADS\19.0\lib\win32\release\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
+        <Debugger_HostApplication>$(GRKRNL_BIN)\tlmcentr32.exe</Debugger_HostApplication>
         <Debugger_RunParams>-nosplash -config -service</Debugger_RunParams>
         <IncludePath>$(CG_BOOST_ROOT);$(IncludePath)</IncludePath>
         <Defines>STRICT;NO_VCL;_NO_VCL;$(Defines)</Defines>

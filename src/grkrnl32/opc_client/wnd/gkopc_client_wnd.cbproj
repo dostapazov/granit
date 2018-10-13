@@ -74,6 +74,7 @@
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <Manifest_File>(None)</Manifest_File>
         <ILINK_LibraryPath>D:\ERADS\19.0\lib\win32\release\;D:\USER\GRANIT\LIB_XE\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <Debugger_HostApplication>$(GRKRNL_BIN)\tlmcentr32.exe</Debugger_HostApplication>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <PackageImports>adortl;appanalytics;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsedge;emshosting;FireDACADSDriver;FireDACASADriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;ibmonitor;ibxbindings;ibxpress;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inetdb;inetdbxpress;Intraweb;rtl;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
@@ -120,7 +121,6 @@
         <LinkPackageStatics>rtl.lib;vcl.lib</LinkPackageStatics>
         <BCC_OptimizeForSize>true</BCC_OptimizeForSize>
         <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
-        <Debugger_HostApplication>D:\USER\GRANIT\GRKRNL32\tlmcentr32.exe</Debugger_HostApplication>
         <Debugger_RunParams>-nosplash -config -service</Debugger_RunParams>
     </PropertyGroup>
     <ItemGroup>
@@ -200,16 +200,9 @@
             <DependentOn>opc_config_editor.h</DependentOn>
             <BuildOrder>13</BuildOrder>
         </CppCompile>
-        <CppCompile Include="sel_div_pref.cpp">
-            <Form>SelItemDivPref</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>sel_div_pref.h</DependentOn>
-            <BuildOrder>16</BuildOrder>
-        </CppCompile>
         <FormResources Include="gkopc_client_mod_settings_frame.dfm"/>
         <FormResources Include="gkopc_client_line_settings.dfm"/>
         <FormResources Include="gkopc_client_frm.dfm"/>
-        <FormResources Include="sel_div_pref.dfm"/>
         <FormResources Include="opc_config_editor.dfm"/>
         <FormResources Include="gkopcitem_view_frame.dfm"/>
         <FormResources Include="..\..\GKLIB\VCL\gkmod_frame.dfm"/>

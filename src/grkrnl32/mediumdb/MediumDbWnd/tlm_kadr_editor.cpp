@@ -9,6 +9,7 @@
 #pragma link "tlm_painter_form"
 #pragma resource "*.dfm"
 TTlmKadrEditor *TlmKadrEditor;
+#pragma message "this module should be compiled with the form open in IDE, as well as TTlmKadrForm"
 //---------------------------------------------------------------------------
 __fastcall TTlmKadrEditor::TTlmKadrEditor(TComponent* Owner)
 	: TTlmPainterForm(Owner)

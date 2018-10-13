@@ -11,6 +11,9 @@
 #pragma package(smart_init)
 #pragma link "tlm_painter_form"
 #pragma resource "*.dfm"
+
+#pragma message "this module should be compiled with the form open in IDE, as well as TTlmKadrForm"
+
 TTlmKadrForm *TlmKadrForm;
 //---------------------------------------------------------------------------
 __fastcall TTlmKadrForm::TTlmKadrForm(TComponent* Owner)

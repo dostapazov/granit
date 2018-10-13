@@ -1013,7 +1013,7 @@ inline  HRESULT __fastcall TOpcGroup::add_item    (OPCHANDLE  hClient,const wcha
 		ret = enum_items->Next(1,&text,&fetched);
 		item_name = SUCCEEDED(ret) ? text : L"";
 		if(text) ::CoTaskMemFree(text);
-        return fetched ? S_OK : S_FALSE;
+        ret = fetched ? S_OK : S_FALSE;
 	  }
 	  return ret;
    }

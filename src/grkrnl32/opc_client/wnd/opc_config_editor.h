@@ -119,14 +119,8 @@ __published:	// IDE-managed Components
 	TMemo *Memo1;
 	TMemo *TuTrScript;
 	TLabel *Label8;
-	TToolButton *tbFlat;
 	TPanel *Panel5;
 	TEdit *edFilter;
-	TPanel *Panel6;
-	TLabel *Label9;
-	TEdit *FolderDiv;
-	TLabel *Label10;
-	TEdit *ItemDiv;
 
 	void __fastcall tbRefreshOpcItemsClick(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
@@ -138,7 +132,6 @@ __published:	// IDE-managed Components
 	void __fastcall tbAddItemClick(TObject *Sender);
 	void __fastcall OpcServerItemsTreeCustomDrawItem(TCustomTreeView *Sender, TTreeNode *Node,
           TCustomDrawState State, bool &DefaultDraw);
-	void __fastcall OpcServerItemsTreeAddition(TObject *Sender, TTreeNode *Node);
 	void __fastcall OpcServerItemsTreeDeletion(TObject *Sender, TTreeNode *Node);
 	void __fastcall OtdTreeDeletion(TObject *Sender, TTreeNode *Node);
 	void __fastcall miSaveClick(TObject *Sender);
@@ -178,10 +171,6 @@ private:	// User declarations
          TTreeNode *    analog2_node;
 
          gkopc_items_vector opc_items;
-//       UnicodeString  divisor;
-//		 UnicodeString  prefix;
-//		 UnicodeString  folder_divisor;
-//		 UnicodeString  item_divisor;
 
          int     progress_top;
          int     progress_current;
@@ -213,7 +202,6 @@ UnicodeString    __fastcall get_opc_config_name();
          bool    __fastcall check_enable_delete_item();
          bool    __fastcall add_gkopc_item(UnicodeString id,UnicodeString access_path,group_param_t & gp,gkopc_items_vector::iterator & ptr);
          void    __fastcall add_gkopc_item (TTreeNode * src,TTreeNode * dst);
-         bool    __fastcall identfy_divisor(TTreeNode *item_node);
          void    __fastcall do_export(UnicodeString file_name);
          void    __fastcall do_import(UnicodeString file_name);
 
@@ -244,8 +232,8 @@ public:		// User declarations
         __property bool          changes         = {read = get_changes        , write = set_changes         };
 
          void    __fastcall opc_open_server (GUID _guid,UnicodeString host,UnicodeString ProgId);
-
-         void    __fastcall set_current_group(TTreeNode * node,opc::TOpcBrowseServerAddrSpace *  opc_browser);
+		 void    __fastcall set_current_group(TTreeNode * node,opc::TOpcBrowseServerAddrSpace *  opc_browser);
+         void    __fastcall check_opc_item_in_use(TTreeNode *Node);
 
 static  UnicodeString __fastcall get_time_str(__int64 timestamp,bool local = true);
 static  void          __fastcall com_mem_free(LPVOID ptr){CoTaskMemFree(ptr);}
@@ -256,7 +244,7 @@ static  bool          __fastcall is_param     (TTreeNode * node);
 static  bool          __fastcall is_group     (TTreeNode * node);
 static  bool          __fastcall is_group_root(TTreeNode * node);
 static UnicodeString  __fastcall get_param_text(DWORD pn);
-static UnicodeString  __fastcall get_item_opc_id(TTreeNode * node,UnicodeString _divisor,UnicodeString _prefix);
+static UnicodeString  __fastcall get_item_opc_id(TTreeNode * node);
 
 
 };
