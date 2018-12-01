@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.066,D:\USER\GRANIT\LIB\gklib.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.812,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.996,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.419,D:\USER\GRANIT\LIB\GKHANDLE.LIB=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.691,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.526,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.400,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.296,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.731,D:\USER\GRANIT\LIB\Ke_rtls.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.176,=D:\USER\GRANIT\SRC\KE_RTL\tlicense.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.938,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.783,=D:\USER\GRANIT\src\KE_RTL\kedatas.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.420,=D:\ERADS\lib\win32\release\usebormm.lib</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="-1" SortType="0">
+	</ProjectSortOrder>
+</BorlandProject>

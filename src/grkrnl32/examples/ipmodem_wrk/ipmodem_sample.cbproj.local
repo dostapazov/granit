@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.097,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.001,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.840,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.012,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.697,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\mproto_buffer.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.087,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.441,=D:\USER\GRANIT\SRC\KE_RTL\rx_buffer.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.598,C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\ipmodem_sample_pch.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.990,=C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.827,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.952,=D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\ipmodem_wrk.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.500,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.744,C:\Users\dmw2k\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\Examples\IPMODEM_WRK\ipmodem_sample.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.612,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.923,=D:\USER\GRANIT\SRC\GrKrnl32\MODEMMER\MODEMMERWND\monitor_otd_med.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.986,=D:\USER\GRANIT\SRC\GrKrnl32\Examples\PROCMDM_APP\mon_otd.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.475,D:\USER\GRANIT\src\grkrnl32\examples\PROCMDM_APP\mon_otd.cpp=D:\USER\GRANIT\src\grkrnl32\examples\ipmodem_wrk\mon_otd.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.517,D:\USER\GRANIT\src\grkrnl32\MODEMMER\MODEMMERWND\monitor_otd_med.cpp=D:\USER\GRANIT\src\grkrnl32\examples\ipmodem_wrk\monitor_otd_med.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.201,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+  </Transactions>
+</BorlandProject>

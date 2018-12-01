@@ -1,0 +1,26 @@
+EXPORTS
+  GRNET_DestroyObj                @3
+  GRNET_CreateGranClient          @2
+  GRNET_Start                     @6
+  GRNET_Stop                      @7
+
+  GRNET_CreateGranServer          @1
+  GRNET_Send                      @4
+  GRNET_Recv                      @5
+  GRNET_GetRxEvent                @8
+  GRNET_GetRestartEvent           @9
+  GRNET_IsClient                  @10
+  GRNET_IsServer                  @11
+  GRNET_EnumClients               @12
+  GRNET_Restart                   @13
+  GRNET_GetWSAError               @16
+  GRNET_GetName                   @17
+  GRNET_GetIpxSocket              @18
+  GRNET_GetServerName             @19
+  GRNET_GetServerIpxSocket        @20
+  GRNET_GetWaitReceiptTimeout     @21
+  GRNET_SetWaitReceiptTimeout     @22
+  GRNET_GetSendRetryCount         @23
+  GRNET_SetSendRetryCount         @24
+  GRNET_EnableReconnect           @25
+  GRNET_DisconnectAllClients      @26

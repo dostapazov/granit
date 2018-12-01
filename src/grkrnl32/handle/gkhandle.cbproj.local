@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.216,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.824,=D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\pch1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.257,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.867,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.751,D:\USER\GRANIT\LIB_XE\KE_RTLS.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.808,D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_xe.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.870,=D:\USER\GRANIT\LIB_XE64\KE_RTLS.a</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.761,D:\USER\GRANIT\LIB\Ke_rtls.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.731,=D:\USER\GRANIT\LIB\KE_RTLS_XE4.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.824,D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle_xe.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.441,D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\HANDLE\gkhandle.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

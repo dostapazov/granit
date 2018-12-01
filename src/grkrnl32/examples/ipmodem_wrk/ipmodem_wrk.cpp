@@ -97,8 +97,8 @@ void __fastcall TIpModemSampleFrm::update_status_line()
 
 }
 
-void __fastcall monitor_otd(KeWin::TTextViewer<char> * monitor, LPBYTE data, DWORD data_size);
-void __fastcall monitor_otd_medium( KeWin::TTextViewer<char>* monitor, LPBYTE data, DWORD data_size);
+void __fastcall monitor_otd(KeWin::TTextViewer<wchar_t> * monitor, LPBYTE data, DWORD data_size);
+void __fastcall monitor_otd_medium( KeWin::TTextViewer<wchar_t>* monitor, LPBYTE data, DWORD data_size);
 
 void __fastcall TIpModemSampleFrm::handle_recv()
 {

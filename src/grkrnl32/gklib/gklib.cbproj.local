@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.826,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\single_kadr.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.241,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib_xe.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.351,D:\USER\GRANIT\SRC\KE_RTL\rx_buffer.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.163,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\tlm_painter\painter_dll_loader.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.779,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\text_table.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.317,D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib.cbproj=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gklib_xe.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.915,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\opc_light_iface.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.737,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\kadrs_table.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.568,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\tlm_painter\tlm_bkgnd.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.741,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\record_table.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.776,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\opc_light_drv.cpp</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="..\..\..\src"/>
+    <File Path="..\..\COMMON"/>
+    <File Path="..\..\COMMON\crcunit_wrapper.CPP"/>
+    <File Path="tlm_painter"/>
+    <File Path="tlm_painter\painter_dll_loader.cpp"/>
+    <File Path="tlm_painter\tlm_bkgnd.cpp"/>
+    <File Path="gkhandles_list.cpp"/>
+    <File Path="gkhandle_based.cpp"/>
+    <File Path="gkio_iface.cpp"/>
+    <File Path="gkmodules.cpp"/>
+    <File Path="gkmodules_list.cpp"/>
+    <File Path="gkmodules_set.cpp"/>
+    <File Path="gkmodule_loader.cpp"/>
+    <File Path="gkreporter.cpp"/>
+    <File Path="gkutils.cpp"/>
+    <File Path="kadrs_table.cpp"/>
+    <File Path="modem.cpp"/>
+    <File Path="modem_line.cpp"/>
+    <File Path="modem_queue.cpp"/>
+    <File Path="mproto_buffer.cpp"/>
+    <File Path="opc_light_drv.cpp"/>
+    <File Path="otd_storage.cpp"/>
+    <File Path="record_table.cpp"/>
+    <File Path="single_kadr.cpp"/>
+    <File Path="text_table.cpp"/>
+    <File Path="__module_entry.cpp"/>
+  </ProjectSortOrder>
+</BorlandProject>

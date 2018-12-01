@@ -114,6 +114,9 @@
         <Projects Include="modbusmdm\MODBUSMDMWND\modbus_mdm_wnd.cbproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="examples\ipmodem_wrk\ipmodem_sample.cbproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -455,14 +458,23 @@
     <Target Name="modbus_mdm_wnd:Make">
         <MSBuild Projects="modbusmdm\MODBUSMDMWND\modbus_mdm_wnd.cbproj" Targets="Make"/>
     </Target>
+    <Target Name="ipmodem_sample">
+        <MSBuild Projects="examples\ipmodem_wrk\ipmodem_sample.cbproj"/>
+    </Target>
+    <Target Name="ipmodem_sample:Clean">
+        <MSBuild Projects="examples\ipmodem_wrk\ipmodem_sample.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ipmodem_sample:Make">
+        <MSBuild Projects="examples\ipmodem_wrk\ipmodem_sample.cbproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="KE_RTLS;gklib;gkhandle;grkrnl32;gklaunch32;otdhlpr;gkernel;gkexplorer;ReporterEx;ReporterExWnd;modemmer;modemmerwnd;gkipmodem;gkipmodemwnd;gktlmdb;gktlmdbwnd;mediumdb;mediumdbwnd;rechistory;rechistory_wnd;granitmdm;granitmdmwnd;granit_udpio;iec60870;iec60870wnd;gripxmod;gripxmodwnd;gkopc_client;gkopc_client_wnd;tlmobj_painter;gk_workplace;gksecurity;gksecurwnd;cpc152dev;cpc152dev_wnd;modbus_mdm;modbus_mdm_wnd"/>
+        <CallTarget Targets="KE_RTLS;gklib;gkhandle;grkrnl32;gklaunch32;otdhlpr;gkernel;gkexplorer;ReporterEx;ReporterExWnd;modemmer;modemmerwnd;gkipmodem;gkipmodemwnd;gktlmdb;gktlmdbwnd;mediumdb;mediumdbwnd;rechistory;rechistory_wnd;granitmdm;granitmdmwnd;granit_udpio;iec60870;iec60870wnd;gripxmod;gripxmodwnd;gkopc_client;gkopc_client_wnd;tlmobj_painter;gk_workplace;gksecurity;gksecurwnd;cpc152dev;cpc152dev_wnd;modbus_mdm;modbus_mdm_wnd;ipmodem_sample"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="KE_RTLS:Clean;gklib:Clean;gkhandle:Clean;grkrnl32:Clean;gklaunch32:Clean;otdhlpr:Clean;gkernel:Clean;gkexplorer:Clean;ReporterEx:Clean;ReporterExWnd:Clean;modemmer:Clean;modemmerwnd:Clean;gkipmodem:Clean;gkipmodemwnd:Clean;gktlmdb:Clean;gktlmdbwnd:Clean;mediumdb:Clean;mediumdbwnd:Clean;rechistory:Clean;rechistory_wnd:Clean;granitmdm:Clean;granitmdmwnd:Clean;granit_udpio:Clean;iec60870:Clean;iec60870wnd:Clean;gripxmod:Clean;gripxmodwnd:Clean;gkopc_client:Clean;gkopc_client_wnd:Clean;tlmobj_painter:Clean;gk_workplace:Clean;gksecurity:Clean;gksecurwnd:Clean;cpc152dev:Clean;cpc152dev_wnd:Clean;modbus_mdm:Clean;modbus_mdm_wnd:Clean"/>
+        <CallTarget Targets="KE_RTLS:Clean;gklib:Clean;gkhandle:Clean;grkrnl32:Clean;gklaunch32:Clean;otdhlpr:Clean;gkernel:Clean;gkexplorer:Clean;ReporterEx:Clean;ReporterExWnd:Clean;modemmer:Clean;modemmerwnd:Clean;gkipmodem:Clean;gkipmodemwnd:Clean;gktlmdb:Clean;gktlmdbwnd:Clean;mediumdb:Clean;mediumdbwnd:Clean;rechistory:Clean;rechistory_wnd:Clean;granitmdm:Clean;granitmdmwnd:Clean;granit_udpio:Clean;iec60870:Clean;iec60870wnd:Clean;gripxmod:Clean;gripxmodwnd:Clean;gkopc_client:Clean;gkopc_client_wnd:Clean;tlmobj_painter:Clean;gk_workplace:Clean;gksecurity:Clean;gksecurwnd:Clean;cpc152dev:Clean;cpc152dev_wnd:Clean;modbus_mdm:Clean;modbus_mdm_wnd:Clean;ipmodem_sample:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="KE_RTLS:Make;gklib:Make;gkhandle:Make;grkrnl32:Make;gklaunch32:Make;otdhlpr:Make;gkernel:Make;gkexplorer:Make;ReporterEx:Make;ReporterExWnd:Make;modemmer:Make;modemmerwnd:Make;gkipmodem:Make;gkipmodemwnd:Make;gktlmdb:Make;gktlmdbwnd:Make;mediumdb:Make;mediumdbwnd:Make;rechistory:Make;rechistory_wnd:Make;granitmdm:Make;granitmdmwnd:Make;granit_udpio:Make;iec60870:Make;iec60870wnd:Make;gripxmod:Make;gripxmodwnd:Make;gkopc_client:Make;gkopc_client_wnd:Make;tlmobj_painter:Make;gk_workplace:Make;gksecurity:Make;gksecurwnd:Make;cpc152dev:Make;cpc152dev_wnd:Make;modbus_mdm:Make;modbus_mdm_wnd:Make"/>
+        <CallTarget Targets="KE_RTLS:Make;gklib:Make;gkhandle:Make;grkrnl32:Make;gklaunch32:Make;otdhlpr:Make;gkernel:Make;gkexplorer:Make;ReporterEx:Make;ReporterExWnd:Make;modemmer:Make;modemmerwnd:Make;gkipmodem:Make;gkipmodemwnd:Make;gktlmdb:Make;gktlmdbwnd:Make;mediumdb:Make;mediumdbwnd:Make;rechistory:Make;rechistory_wnd:Make;granitmdm:Make;granitmdmwnd:Make;granit_udpio:Make;iec60870:Make;iec60870wnd:Make;gripxmod:Make;gripxmodwnd:Make;gkopc_client:Make;gkopc_client_wnd:Make;tlmobj_painter:Make;gk_workplace:Make;gksecurity:Make;gksecurwnd:Make;cpc152dev:Make;cpc152dev_wnd:Make;modbus_mdm:Make;modbus_mdm_wnd:Make;ipmodem_sample:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Modemmer'">
@@ -686,6 +698,12 @@
             <ProjectGuid>{7DB5B844-21DD-4FB4-896D-DEBCD6AB9C6B}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="examples\ipmodem_wrk\ipmodem_sample.cbproj">
+            <ProjectGuid>{9F34FF03-1D02-44EA-830F-21E9B1B1D208}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
     </ItemGroup>
@@ -912,6 +930,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="examples\ipmodem_wrk\ipmodem_sample.cbproj">
+            <ProjectGuid>{9F34FF03-1D02-44EA-830F-21E9B1B1D208}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='GrKernel'">
         <BuildGroupProject Include="GKLIB\gklib.cbproj">
@@ -1134,6 +1158,12 @@
             <ProjectGuid>{7DB5B844-21DD-4FB4-896D-DEBCD6AB9C6B}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="examples\ipmodem_wrk\ipmodem_sample.cbproj">
+            <ProjectGuid>{9F34FF03-1D02-44EA-830F-21E9B1B1D208}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
     </ItemGroup>

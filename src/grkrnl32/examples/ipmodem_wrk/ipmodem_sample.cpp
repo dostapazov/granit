@@ -33,3 +33,8 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 	return 0;
 }
 //---------------------------------------------------------------------------
+
+extern "C" LRESULT WINAPI module_main(DWORD cmd,LPARAM p1, LPARAM p2)
+{
+   return 0;
+}

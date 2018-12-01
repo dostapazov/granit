@@ -22,7 +22,7 @@
 #include <otdm_proto.h>
 
 
-typedef KeWin::TTextViewer<char> TRecvMonitor;
+typedef KeWin::TTextViewer<wchar_t> TRecvMonitor;
 
 //---------------------------------------------------------------------------
 class TIpModemSampleFrm : public TForm

@@ -55,12 +55,16 @@ object IpModemSampleFrm: TIpModemSampleFrm
       Top = 15
       Width = 413
       Height = 134
-      ActivePage = TabSheet2
+      ActivePage = TabSheet1
       Align = alRight
       TabOrder = 2
       OnChange = PageControl1Change
       object TabSheet1: TTabSheet
         Caption = 'OTD'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object CheckBox8: TCheckBox
           Tag = 1024
           Left = 0
@@ -200,6 +204,10 @@ object IpModemSampleFrm: TIpModemSampleFrm
       object TabSheet2: TTabSheet
         Caption = 'OTD_MEDIUM'
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Label3: TLabel
           Left = 0
           Top = 8
@@ -272,6 +280,10 @@ object IpModemSampleFrm: TIpModemSampleFrm
       object TabSheet3: TTabSheet
         Caption = 'OTD_ARCHIVE'
         ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Button11: TButton
           Left = 2
           Top = 1

@@ -1,0 +1,9 @@
+COMMON         Общий каталог(crcunit, hdlcunit)
+GRKRNL32       Ядро
+GRNET32        DLL - Сервер, клиент GRANIT на основе IPX
+KE_RTL         RTL
+KE_WIN         Классы окон(Windows)
+OSCGRAPH       DLL - Осцилограф для осцилограмм VRTF-TM512
+TLMSQL         
+CALCF
+ 

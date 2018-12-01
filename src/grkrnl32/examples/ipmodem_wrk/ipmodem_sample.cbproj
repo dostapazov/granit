@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{9F34FF03-1D02-44EA-830F-21E9B1B1D208}</ProjectGuid>
-        <ProjectVersion>18.2</ProjectVersion>
+        <ProjectVersion>18.4</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <AppType>Application</AppType>
         <MainSource>ipmodem_sample.cpp</MainSource>
@@ -69,7 +69,6 @@
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <DynamicRTL>false</DynamicRTL>
-        <_TCHARMapping>char</_TCHARMapping>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <UsePackages>false</UsePackages>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -157,14 +156,14 @@
             <DependentOn>ipmodem_wrk.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
-        <CppCompile Include="..\PROCMDM_APP\mon_otd.cpp">
+        <CppCompile Include="monitor_otd_med.cpp">
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="mon_otd.cpp">
             <BuildOrder>7</BuildOrder>
         </CppCompile>
         <CppCompile Include="..\..\GKLIB\mproto_buffer.cpp">
             <BuildOrder>6</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\..\MODEMMER\MODEMMERWND\monitor_otd_med.cpp">
-            <BuildOrder>10</BuildOrder>
         </CppCompile>
         <CppCompile Include="..\..\..\KE_RTL\rx_buffer.cpp">
             <BuildOrder>5</BuildOrder>

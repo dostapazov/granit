@@ -1,0 +1,52 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: grnet32 - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x419 /fo"d:\temp/grnet32.res" /i "\USER\GRANIT\SRC\GRNET32" /d "NDEBUG" "D:\USER\GRANIT\SRC\GRNET32\grnet32.rc"" 
+Creating temporary file "H:\TEMP\RSPE.tmp" with contents
+[
+/nologo /G5 /ML /W3 /vd0 /GR /GX /O2 /I "d:\user\granit\inc" /I "d:\user\granit\src\grnet32" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "STRICT" /D _WIN32_IE=0x0505 /Fp"d:\temp/grnet32.pch" /YX /Fo"d:\temp/" /Fd"d:\temp/" /FD /c 
+"D:\USER\GRANIT\SRC\GRNET32\CRCUNIT1.CPP"
+"D:\USER\GRANIT\SRC\GRNET32\GRNET32.cpp"
+"D:\USER\GRANIT\SRC\GRNET32\grnet32wnd.cpp"
+"D:\USER\GRANIT\SRC\GRNET32\grnetbsase.cpp"
+"D:\USER\GRANIT\SRC\GRNET32\grnetclient.cpp"
+"D:\USER\GRANIT\SRC\GRNET32\grnetserver.cpp"
+]
+Creating command line "cl.exe @H:\TEMP\RSPE.tmp" 
+Creating temporary file "H:\TEMP\RSPF.tmp" with contents
+[
+ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib /nologo /base:"0x12000000" /subsystem:windows /dll /incremental:no /pdb:"d:\user\granit\lib_ms/grnet32.pdb" /map:"d:\temp/grnet32.map" /machine:I386 /def:"..\GRNET32.def" /out:"d:\user\granit\grkrnl32\grnet32.dll" /implib:"d:\user\granit\lib_ms/grnet32.lib" /opt:ref 
+\temp\CRCUNIT1.OBJ
+\temp\GRNET32.obj
+\temp\grnet32wnd.obj
+\temp\grnetbsase.obj
+\temp\grnetclient.obj
+\temp\grnetserver.obj
+\temp\grnet32.res
+..\..\..\lib_ms\kertls.lib
+]
+Creating command line "link.exe @H:\TEMP\RSPF.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+CRCUNIT1.CPP
+GRNET32.cpp
+grnet32wnd.cpp
+grnetbsase.cpp
+grnetclient.cpp
+grnetserver.cpp
+Linking...
+   Creating library d:\user\granit\lib_ms/grnet32.lib and object d:\user\granit\lib_ms/grnet32.exp
+
+
+
+<h3>Results</h3>
+grnet32.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

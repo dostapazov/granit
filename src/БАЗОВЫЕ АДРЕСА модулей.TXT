@@ -1,0 +1,31 @@
+Базовые адреса DLL (ImageBase address)
+
+ gkhandle.dll       0x04000000  
+ otdhlpr.dll        0x04000000
+ gkcommerr.dll      0x04000000
+
+ grkernel.gkm       0x10000000
+                    
+
+ reporterEx.gkm     0x11000000
+ gklogger.gkm       0x11000000
+
+
+ modemmer.gkm       0x12000000
+ gkipmodem.gkm      0x13000000
+ vtdcnt.gkm         0x14000000
+ modbusmdm.gkm      0x15000000
+ 
+ granitmdm.gkm      
+ ft2usbio.mio       
+ gripxmod.gkm       
+ processmdm.gkm     
+ 
+ gktlmdb.gkm        0x20000000
+ mediumdb.gkm       0x21000000
+ gktlmviewer.gkm    0x22000000 
+ rechistory.gkm     0x23000000
+ rechistory.gkm     0x24000000
+
+
+ scale.gkm          

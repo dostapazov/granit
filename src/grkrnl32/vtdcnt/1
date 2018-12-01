@@ -1,0 +1,54 @@
+‘а ў­Ґ­ЁҐ д ©«®ў vtdcnt_mod.cpp Ё J:\GRANIT\VTDCNT\VTDCNT~2.CPP
+***** vtdcnt_mod.cpp
+
+ void       __fastcall TVtdCntModem::on_socket_disconnect(DWORD err)
+***** J:\GRANIT\VTDCNT\VTDCNT~2.CPP
+
+ void       __fastcall TVtdCntModem::send_pu_diag(DWORD diag)
+ {
+  BYTE buf[128];
+  sotd_proto sop;
+  DWORD len = otd_proto_format(buf,sizeof(buf),OTD_PROTO_PART_DIAG|OTD_PROTO_PART_KPK,0,0,0,0,0,0,&sop());
+  sop.op.addr->addr = -1;
+  lock();
+    sop.op.addr->pu = this->mod_config.pu_number;
+  unlock();
+  *sop.op.diag = diag;
+  otd_proto_protect(&sop(),len,OTD_DEF_POLINOM);
+  queue_rxdata(-1,0,FA_OTD,buf,len,false);
+ }
+ 
+ void       __fastcall TVtdCntModem::on_socket_disconnect(DWORD err)
+*****
+
+***** vtdcnt_mod.cpp
+  is_connected = FALSE;
+  /*Пробежаться по всем линиям сбросить соединение и сбросить очередь на передачу*/
+  last_query_size = 0;
+***** J:\GRANIT\VTDCNT\VTDCNT~2.CPP
+  is_connected = FALSE;
+
+  last_query_size = 0;
+*****
+
+***** vtdcnt_mod.cpp
+
+ }
+***** J:\GRANIT\VTDCNT\VTDCNT~2.CPP
+
+  /*Пробежаться по всем линиям сбросить соединение и сбросить очередь на передачу*/
+  DWORD idx = 0;
+  modem_line * line;
+  lock();
+  do{
+    line = get_line_byindex(idx++);
+    if(line)
+       line->connect(false);
+    }while(line);
+  unlock();
+  //Отправить диагностику ПУ нет связи
+  send_pu_diag(OTD_DIAG_PUCONNECT);
+
+ }
+*****
+
