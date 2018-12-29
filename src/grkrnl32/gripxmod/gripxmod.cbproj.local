@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.909,D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\grnet_line_convert.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.428,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\grnet_line_convert.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.874,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.723,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.578,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.114,=D:\USER\GRANIT\SRC\COMMON\CRCUNIT.CPP</Transaction>
     <Transaction>1899.12.30 00:00:00.000.953,D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\gripxmod.cbproj=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.428,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\grnet_line_convert.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.909,D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\grnet_line_convert.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.357,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.588,D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\File1.cpp=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.985,D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\File1.cpp=</Transaction>
@@ -15,18 +15,18 @@
     <Transaction>1899.12.30 00:00:00.000.664,D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\tu_clients.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.092,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\grnet_convert.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.961,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\gripxmod_main.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.627,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\grnet_line_tu.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.015,D:\ERADS\19.0\lib\win32\release\memmgr.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.727,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\grnet_server.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.301,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\granit_diag.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.770,=D:\ERADS\19.0\lib\win32\release\memmgr.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.015,D:\ERADS\19.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.627,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\grnet_line_tu.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.528,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\grnet_line_imp.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.770,=D:\ERADS\19.0\lib\win32\release\memmgr.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.011,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.051,D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\gripxmod1PCH1.h=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.578,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.723,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.070,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\gripx_mod.rc</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.433,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.330,=D:\USER\GRANIT\SRC\GrKrnl32\GRIPXMOD\grnet_line.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.458,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\grnet_dos.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.433,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
   </Transactions>
 </BorlandProject>

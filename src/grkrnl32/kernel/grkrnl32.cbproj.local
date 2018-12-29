@@ -2,20 +2,20 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>1899.12.30 00:00:00.000.956,D:\USER\GRANIT\src\grkrnl32\KERNEL\grkrnl32_main.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.648,D:\USER\GRANIT\src\grkrnl32\GKLIB\gkmodules.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.499,=D:\USER\GRANIT\LIB_XE64\KE_RTLS.a</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.036,D:\USER\GRANIT\LIB\GKHANDLE.LIB=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.832,D:\USER\GRANIT\SRC\KE_WIN\gkdlgs.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.975,D:\USER\GRANIT\LIB_XE64\KE_RTLS.a=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.648,D:\USER\GRANIT\src\grkrnl32\GKLIB\gkmodules.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.148,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.571,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.036,D:\USER\GRANIT\LIB\GKHANDLE.LIB=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.970,D:\USER\GRANIT\src\grkrnl32\KERNEL\grkrnl32_service.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.646,D:\USER\GRANIT\src\grkrnl32\GKLIB\gkhandle_based.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.040,D:\USER\GRANIT\LIB\gklib.lib=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.970,D:\USER\GRANIT\src\grkrnl32\KERNEL\grkrnl32_service.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.802,=D:\USER\GRANIT\src\grkrnl32\kernel\tlmcentr32_main.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.975,D:\USER\GRANIT\LIB_XE64\KE_RTLS.a=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.511,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.650,D:\USER\GRANIT\src\grkrnl32\GKLIB\gkmodules_list.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.832,D:\USER\GRANIT\SRC\KE_WIN\gkdlgs.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.658,=D:\USER\GRANIT\SRC\KE_WIN\gkdlgs.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.650,D:\USER\GRANIT\src\grkrnl32\GKLIB\gkmodules_list.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.802,=D:\USER\GRANIT\src\grkrnl32\kernel\tlmcentr32_main.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.189,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.916,D:\USER\GRANIT\LIB_XE\gklib.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.099,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
@@ -23,8 +23,8 @@
     <Transaction>1899.12.30 00:00:00.000.043,D:\USER\GRANIT\LIB\Ke_rtls.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.885,D:\USER\GRANIT\src\grkrnl32\KERNEL\gkapp_wnd.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.613,=D:\ERADS\lib\win32\release\usebormm.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.110,D:\USER\GRANIT\src\KE_WIN\Grkrwnd.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.687,=D:\USER\GRANIT\SRC\KE_WIN\Grkrwnd.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.110,D:\USER\GRANIT\src\KE_WIN\Grkrwnd.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.651,D:\USER\GRANIT\src\grkrnl32\GKLIB\gkmodules_set.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.653,D:\USER\GRANIT\src\grkrnl32\GKLIB\gkmodule_loader.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.910,D:\USER\GRANIT\LIB_XE\gkhandle.lib=</Transaction>

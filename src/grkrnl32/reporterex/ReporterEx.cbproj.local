@@ -16,17 +16,17 @@
     <Transaction>1899.12.30 00:00:00.000.847,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\gkreporter.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.509,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.706,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.058,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.066,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.928,=D:\ERADS\lib\win32\release\usebormm.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.605,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.213,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.729,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.606,D:\ERADS\17.0\lib\win32\release\memmgr.lib=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.008,=D:\ERADS\17.0\lib\win32\release\memmgr.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.015,=D:\ERADS\18.0\lib\win32\release\memmgr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.058,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.213,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.062,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.729,=C:\Users\Димка\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="-1" SortType="0">
 	</ProjectSortOrder>

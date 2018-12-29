@@ -242,10 +242,12 @@ bool __fastcall TModbusGroupFrm::apply_changes ()
     {
      if(modbus_group->group_no != mg.group_no ||  mg.command != modbus_group->command) // Новая группа создана
        {
-         mod_iface.call(MBCM_DELETE_GROUP,(LPARAM)&modbus_group,0);
+         mod_iface.call(MBCM_DELETE_GROUP,(LPARAM)modbus_group,0);
        }
 
-     memcpy(&modbus_group,&mg,sizeof(mg));
+	 LPMODBUS_GROUP  grp = modbus_group;
+	 if(grp)
+	    memcpy(grp,&mg,sizeof(mg));
      Ftree_node->Text = get_group_name(&mg);
      ch_mask = 0;
     }
@@ -273,7 +275,7 @@ bool __fastcall TModbusGroupFrm::delete_current()
 {
     bool ret = true;
     if(!is_new_group())
-      ret = mod_iface.call(MBCM_DELETE_GROUP,(LPARAM)&modbus_group,0) ? false : true ;
+      ret = mod_iface.call(MBCM_DELETE_GROUP,(LPARAM)modbus_group,0) ? false : true ;
     if(ret)
        Ftree_node->Delete();
     ch_mask = 0;

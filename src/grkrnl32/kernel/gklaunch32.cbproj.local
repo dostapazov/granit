@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.154,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.861,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.092,D:\USER\GRANIT\src\grkrnl32\kernel\tcentr32.cbproj=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.847,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.858,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.154,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.424,=D:\USER\GRANIT\src\KE_WIN\Grkrwnd.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.847,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.861,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.731,=D:\USER\GRANIT\src\grkrnl32\KERNEL\grkrnl32.rc</Transaction>
     <Transaction>1899.12.30 00:00:00.000.671,D:\USER\GRANIT\src\grkrnl32\GKLIB\gkhandle_based.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.840,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.441,D:\USER\GRANIT\src\grkrnl32\kernel\kstartup32.cbproj=D:\USER\GRANIT\src\grkrnl32\kernel\tcentr32.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.724,=D:\USER\GRANIT\src\grkrnl32\KERNEL\grkrnl32_service.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.814,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\groupedItems.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.738,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.941,D:\USER\GRANIT\src\grkrnl32\kernel\tcentr32.def=D:\USER\GRANIT\src\grkrnl32\kernel\New1.def</Transaction>
     <Transaction>1899.12.30 00:00:00.000.072,D:\USER\GRANIT\src\grkrnl32\kernel\tcentr32.def=D:\USER\GRANIT\src\grkrnl32\kernel\gklaunch32.def</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.880,=D:\USER\GRANIT\src\KE_RTL\storage.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.695,D:\USER\GRANIT\src\grkrnl32\GKLIB\gkmodule_loader.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.424,=D:\USER\GRANIT\src\KE_WIN\Grkrwnd.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.738,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.814,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\groupedItems.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.182,=D:\USER\GRANIT\src\grkrnl32\GKLIB\gkmodule_loader.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.695,D:\USER\GRANIT\src\grkrnl32\GKLIB\gkmodule_loader.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.880,=D:\USER\GRANIT\src\KE_RTL\storage.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.092,D:\USER\GRANIT\src\grkrnl32\kernel\tcentr32.cbproj=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.951,=D:\USER\GRANIT\src\grkrnl32\GKLIB\gkhandle_based.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.682,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.675,D:\USER\GRANIT\src\grkrnl32\GKLIB\gkmodules_set.cpp=</Transaction>

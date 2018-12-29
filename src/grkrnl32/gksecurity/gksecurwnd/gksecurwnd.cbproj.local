@@ -11,12 +11,12 @@
     <Transaction>1899.12.30 00:00:00.000.828,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmod_frame.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.192,D:\USER\GRANIT\SRC\GrKrnl32\GKSECURITY\gksecurwnd\security_wnd.h=D:\USER\GRANIT\SRC\GrKrnl32\GKSECURITY\gksecurwnd\Unit1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.870,=D:\USER\GRANIT\LIB_XE\gklib.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.877,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.338,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.848,D:\USER\GRANIT\SRC\GrKrnl32\GKSECURITY\gksecurwnd\gksecurwnd.cbproj=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.514,D:\USER\GRANIT\SRC\GrKrnl32\GKSECURITY\gksecurwnd\gksecurwndPCH1.h=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.338,=D:\USER\GRANIT\LIB_XE\KE_RTLS.lib</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.834,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.877,=D:\USER\GRANIT\LIB_XE\gkhandle.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.213,=D:\USER\GRANIT\LIB_XE\otdhlpr.lib</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.834,=D:\USER\GRANIT\SRC\GrKrnl32\GKLIB\VCL\gkmodule_form.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.171,D:\USER\GRANIT\SRC\GrKrnl32\GKSECURITY\gksecurwnd\gksecurwnd_main.cpp=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.890,=C:\Users\dostap\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
   </Transactions>

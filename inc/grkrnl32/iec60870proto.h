@@ -268,32 +268,32 @@ struct iec60870_qoi
 
 struct iec60870_asdu_header
 {
-    BYTE asdu_type;
-    union
-    {
-    BYTE bt0;
-        struct{
-        BYTE obj_count:7; // Кол-во объектов
-        BYTE seq      :1; // Последовательная нумерация
-        };
-    };
-    union
-    {
-    BYTE bt1;
-        struct{
-        BYTE cause    :6; // Причина передачи
-        BYTE pn       :1; // Positive / Negative
-        BYTE test     :1; // Тест
-        };
-    };
-    BYTE origin_addr;
-    WORD common_addr;
-    iec60870_asdu_header()
-    {
-      asdu_type = bt0 = bt1 = 0;
-      origin_addr =   0;
-      common_addr =  -1;
-    }
+	BYTE asdu_type;
+	union
+	{
+	BYTE bt0;
+		struct{
+		BYTE obj_count:7; // Кол-во объектов
+		BYTE seq      :1; // Последовательная нумерация
+		};
+	};
+	union
+	{
+	BYTE bt1;
+		struct{
+		BYTE cause    :6; // Причина передачи
+		BYTE pn       :1; // Positive / Negative
+		BYTE test     :1; // Тест
+		};
+	};
+	BYTE origin_addr;
+	WORD common_addr;
+	iec60870_asdu_header()
+	{
+	  asdu_type = bt0 = bt1 = 0;
+	  origin_addr =   0;
+	  common_addr =  -1;
+	}
 };
 
 typedef iec60870_asdu_header* lpiec60870_asdu_header;
@@ -302,30 +302,30 @@ typedef iec60870_asdu_header* lpiec60870_asdu_header;
 
 union iec60870_quality
 {
-    BYTE quality_byte;
-    struct{
-            unsigned char var :2;
-            unsigned char res :2;
-            unsigned char bl  :1; // blocked/not blocked
-            unsigned char sb  :1; // substituted/not substituted
-            unsigned char nt  :1; // not topical/topical
-            unsigned char iv  :1; // valid/invalid
-    };
+	BYTE quality_byte;
+	struct{
+			unsigned char var :2;
+			unsigned char res :2;
+			unsigned char bl  :1; // blocked/not blocked
+			unsigned char sb  :1; // substituted/not substituted
+			unsigned char nt  :1; // not topical/topical
+			unsigned char iv  :1; // valid/invalid
+	};
 };
 
 typedef iec60870_quality* lpiec60870_quality;
 
 union iec60870_quality_mes
 {
-    BYTE quality_byte;
+	BYTE quality_byte;
  struct {
-         unsigned char overflow :1;  //Overflow
-         unsigned char res      :3;
-         unsigned char bl       :1; // blocked/not blocked
-         unsigned char sb       :1; // substituted/not substituted
-         unsigned char nt       :1; // not topical/topical
-         unsigned char iv       :1; // valid/invalid
-       };
+		 unsigned char overflow :1;  //Overflow
+		 unsigned char res      :3;
+		 unsigned char bl       :1; // blocked/not blocked
+		 unsigned char sb       :1; // substituted/not substituted
+		 unsigned char nt       :1; // not topical/topical
+		 unsigned char iv       :1; // valid/invalid
+	   };
 };
 
 typedef iec60870_quality_mes* lpiec60870_quality_mes;
@@ -336,9 +336,9 @@ struct iec60870_type_M_SP_NA_1
   iec60870_quality  quality;
  #ifdef __cplusplus
   DWORD                 __fastcall get_value  () const {return (DWORD)(quality.var&1);}
-  const lpiec60870_quality    __fastcall get_quality() const {return (const lpiec60870_quality)&quality;}
   lpiec60870_cp24time2a __fastcall get_time   () const {return NULL;}
   DWORD                 __fastcall get_otd_fa () const {return OTD_FA_DISCRETE;}
+  const lpiec60870_quality __fastcall get_quality() const {return (const lpiec60870_quality)&quality;}
  #endif
 };
 
@@ -348,10 +348,10 @@ struct iec60870_type_M_SP_TA_1
   iec60870_quality    quality;
   iec60870_cp24time2a time;
  #ifdef __cplusplus
-  DWORD                 __fastcall get_value  () const {return (DWORD)(quality.var&1);}
-  const lpiec60870_quality    __fastcall get_quality() const {return (const lpiec60870_quality)&quality;}
+  DWORD                    __fastcall get_value  () const {return (DWORD)(quality.var&1);}
+  DWORD                    __fastcall get_otd_fa () const {return OTD_FA_DISCRETE;}
+  const lpiec60870_quality __fastcall get_quality() const {return (const lpiec60870_quality)&quality;}
   const lpiec60870_cp24time2a __fastcall get_time   () const {return (const lpiec60870_cp24time2a)&time;}
-  DWORD                 __fastcall get_otd_fa () const {return OTD_FA_DISCRETE;}
  #endif
 };
 
@@ -399,9 +399,9 @@ union iec60870_rctrl
    BYTE   control;
    struct
    {
-     BYTE var  :2;
-     BYTE qu   :5;
-     BYTE se   :1;
+	 BYTE var  :2;
+	 BYTE qu   :5;
+	 BYTE se   :1;
    };
 };
 
@@ -414,9 +414,9 @@ inline DWORD __fastcall get_dp_value( const  iec60870_quality  & quality)
   if(ret == dp_off) ret = 0;
   else
   {
-    if(ret == dp_on) ret = 1;
-    else
-    const_cast<iec60870_quality &>(quality).iv = 1;//Установить недостоверность
+	if(ret == dp_on) ret = 1;
+	else
+	const_cast<iec60870_quality &>(quality).iv = 1;//Установить недостоверность
   }
   return ret ? 1:0;
 }

@@ -192,12 +192,12 @@
 		  case M_SP_TA_1: handle_objects<iec60870_type_M_SP_TA_1>(asdu);break;
 		  case M_DP_NA_1: handle_objects<iec60870_type_M_DP_NA_1>(asdu);break;
 		  case M_DP_TA_1: handle_objects<iec60870_type_M_DP_TA_1>(asdu);break;
-                  case M_ST_NA_1: handle_objects<iec60870_type_M_ST_NA_1>(asdu);break;
-                  case M_ST_TA_1: handle_objects<iec60870_type_M_ST_TA_1>(asdu);break;
+		  case M_ST_NA_1: handle_objects<iec60870_type_M_ST_NA_1>(asdu);break;
+		  case M_ST_TA_1: handle_objects<iec60870_type_M_ST_TA_1>(asdu);break;
 		  case M_ME_NA_1: handle_objects<iec60870_type_M_ME_NA_1>(asdu);break;
 		  case M_ME_TA_1: handle_objects<iec60870_type_M_ME_TA_1>(asdu);break;
 		  case M_ME_NB_1: handle_objects<iec60870_type_M_ME_NB_1>(asdu);break;
-                  case M_ME_TB_1: handle_objects<iec60870_type_M_ME_TB_1>(asdu);break;
+		  case M_ME_TB_1: handle_objects<iec60870_type_M_ME_TB_1>(asdu);break;
 		  case M_ME_NC_1: handle_objects<iec60870_type_M_ME_NC_1>(asdu);break;
 		  case M_ME_TC_1: handle_objects<iec60870_type_M_ME_TC_1>(asdu);break;
 		  case M_SP_TB_1: handle_objects<iec60870_type_M_SP_TB_1>(asdu);break;
@@ -290,8 +290,10 @@
 
   void  __fastcall Tiec60870line::tutr_start_timer(iec60870_record & rec )
   {
-     iec60870_records_t * recs = get_records_for(rec.otd_fa);
-     iec60870_records_t::iterator rptr;
+	 iec60870_records_t * recs = get_records_for(rec.otd_fa);
+	 //auto iec60870_records_t * recs = get_records_for(rec.otd_fa);
+
+	 iec60870_records_t::iterator rptr;
      TLockHelper l(storage_locker);
      if(recs && recs->find(rec,rptr))
      {
