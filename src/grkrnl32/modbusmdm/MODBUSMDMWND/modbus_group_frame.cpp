@@ -245,7 +245,9 @@ bool __fastcall TModbusGroupFrm::apply_changes ()
          mod_iface.call(MBCM_DELETE_GROUP,(LPARAM)&modbus_group,0);
        }
 
-     memcpy(&modbus_group,&mg,sizeof(mg));
+	 LPMODBUS_GROUP  grp = modbus_group;
+	 if(grp)
+	    memcpy(grp,&mg,sizeof(mg));
      Ftree_node->Text = get_group_name(&mg);
      ch_mask = 0;
     }
