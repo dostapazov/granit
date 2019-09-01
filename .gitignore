@@ -1,0 +1,6 @@
+*.~*
+*.dsk
+*.log
+*.exe
+*.dll
+grkrnl32/*
