@@ -128,6 +128,10 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <ItemGroup>
+        <LibFiles Include="D:\ERADS\18.0\lib\win32\release\memmgr.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>14</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
         <LibFiles Include="..\..\..\..\LIB_XE\gkhandle.lib" Condition="'$(Platform)'=='Win32'">
             <BuildOrder>6</BuildOrder>
             <IgnorePath>true</IgnorePath>
@@ -205,15 +209,11 @@
             <DependentOn>modbus_mon_frame.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
-        <LibFiles Include="D:\ERADS\18.0\lib\win32\release\memmgr.lib" Condition="'$(Platform)'=='Win32'">
-            <BuildOrder>14</BuildOrder>
-            <IgnorePath>true</IgnorePath>
-        </LibFiles>
-        <FormResources Include="modbus_mdm_form.dfm"/>
         <FormResources Include="modbus_group_frame.dfm"/>
         <FormResources Include="modbus_device_frame.dfm"/>
-        <FormResources Include="modbus_mon_frame.dfm"/>
         <FormResources Include="mdbus_mod_cfg_frame.dfm"/>
+        <FormResources Include="modbus_mdm_form.dfm"/>
+        <FormResources Include="modbus_mon_frame.dfm"/>
         <FormResources Include="..\..\GKLIB\VCL\gkmod_frame.dfm"/>
         <FormResources Include="..\..\GKLIB\VCL\gkmodule_form.dfm"/>
         <FormResources Include="..\..\GKLIB\VCL\about_common_frame.dfm"/>
@@ -252,12 +252,12 @@
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
                     <Platform Name="Win64">
 ||||||| merged common ancestors
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+=======
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-=======
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64230mt.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
->>>>>>> d62dd0de6e0ec0d7b09186cd7703a3e6440cc5d0
+>>>>>>> granit/master
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -357,36 +357,36 @@
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
                     <Platform Name="Win32">
 ||||||| merged common ancestors
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64230mt.dll" Class="DependencyModule">
                     <Platform Name="Win64">
 =======
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
                     <Platform Name="Win64">
->>>>>>> d62dd0de6e0ec0d7b09186cd7703a3e6440cc5d0
+>>>>>>> granit/master
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
 <<<<<<< HEAD
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
 ||||||| merged common ancestors
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
+=======
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64230mt.dll" Class="DependencyModule">
+>>>>>>> granit/master
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+<<<<<<< HEAD
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64230mt.dll" Class="DependencyModule">
                     <Platform Name="Win64">
-=======
+||||||| merged common ancestors
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
                     <Platform Name="Win32">
->>>>>>> d62dd0de6e0ec0d7b09186cd7703a3e6440cc5d0
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-<<<<<<< HEAD
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64230mt.dll" Class="DependencyModule">
-||||||| merged common ancestors
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
 =======
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64250.dll" Class="DependencyModule">
->>>>>>> d62dd0de6e0ec0d7b09186cd7703a3e6440cc5d0
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
                     <Platform Name="Win64">
+>>>>>>> granit/master
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

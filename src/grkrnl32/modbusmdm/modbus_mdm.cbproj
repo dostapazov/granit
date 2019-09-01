@@ -87,6 +87,7 @@ $(PreBuildEvent)]]></PreBuildEvent>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <ILINK_LibraryPath>D:\ERADS\lib\win32\release\;D:\ERADS\18.0\lib\win32\release\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_BaseAddress>0x15000000</ILINK_BaseAddress>
         <BCC_PCHWithExternalTypeFiles>false</BCC_PCHWithExternalTypeFiles>
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
         <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
@@ -390,6 +391,16 @@ $(PreBuildEvent)]]></PreBuildEvent>
                 <DeployFile LocalName="..\..\..\GRKRNL32\modbus_mdm.gkm" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>modbus_mdm.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64230.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c240.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -840,7 +851,8 @@ $(PreBuildEvent)]]></PreBuildEvent>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
     <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
-        <PreBuildEvent>compile_mc.bat</PreBuildEvent>
+        <PreBuildEvent>compile_mc.bat
+</PreBuildEvent>
         <PreBuildEventIgnoreExitCode>True</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
@@ -848,7 +860,8 @@ $(PreBuildEvent)]]></PreBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win64'">
-        <PreBuildEvent>compile_mc.bat</PreBuildEvent>
+        <PreBuildEvent>compile_mc.bat
+</PreBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
@@ -856,7 +869,8 @@ $(PreBuildEvent)]]></PreBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
-        <PreBuildEvent>compile_mc.bat</PreBuildEvent>
+        <PreBuildEvent>compile_mc.bat
+</PreBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
@@ -864,7 +878,8 @@ $(PreBuildEvent)]]></PreBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win64'">
-        <PreBuildEvent>compile_mc.bat</PreBuildEvent>
+        <PreBuildEvent>compile_mc.bat
+</PreBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
